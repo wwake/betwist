@@ -13,6 +13,8 @@
 		91FA967A2C81333E0011BB7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FA96792C81333E0011BB7F /* Preview Assets.xcassets */; };
 		91FA96842C81333E0011BB7F /* betwistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96832C81333E0011BB7F /* betwistTests.swift */; };
 		91FA969D2C813F5E0011BB7F /* _todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 91FA969C2C813F5E0011BB7F /* _todo.txt */; };
+		91FA96A02C8141010011BB7F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 91FA969F2C8141010011BB7F /* .swiftlint.yml */; };
+		91FA96A42C814BAE0011BB7F /* betwist.key in Resources */ = {isa = PBXBuildFile; fileRef = 91FA96A32C814BAE0011BB7F /* betwist.key */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		91FA96832C81333E0011BB7F /* betwistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = betwistTests.swift; sourceTree = "<group>"; };
 		91FA969C2C813F5E0011BB7F /* _todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _todo.txt; sourceTree = "<group>"; };
 		91FA969E2C813F880011BB7F /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
+		91FA969F2C8141010011BB7F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		91FA96A32C814BAE0011BB7F /* betwist.key */ = {isa = PBXFileReference; lastKnownFileType = file; path = betwist.key; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 		91FA96662C81333A0011BB7F = {
 			isa = PBXGroup;
 			children = (
+				91FA96A32C814BAE0011BB7F /* betwist.key */,
+				91FA969F2C8141010011BB7F /* .swiftlint.yml */,
 				91FA969E2C813F880011BB7F /* betwist.xctestplan */,
 				91FA969C2C813F5E0011BB7F /* _todo.txt */,
 				91FA96712C81333A0011BB7F /* betwist */,
@@ -129,6 +135,7 @@
 				91FA967B2C81333E0011BB7F /* Sources */,
 				91FA967C2C81333E0011BB7F /* Frameworks */,
 				91FA967D2C81333E0011BB7F /* Resources */,
+				91FA96A12C8141C90011BB7F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -168,6 +175,9 @@
 				Base,
 			);
 			mainGroup = 91FA96662C81333A0011BB7F;
+			packageReferences = (
+				91FA96A22C8144FF0011BB7F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+			);
 			productRefGroup = 91FA96702C81333A0011BB7F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -183,7 +193,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91FA96A02C8141010011BB7F /* .swiftlint.yml in Resources */,
 				91FA969D2C813F5E0011BB7F /* _todo.txt in Resources */,
+				91FA96A42C814BAE0011BB7F /* betwist.key in Resources */,
 				91FA967A2C81333E0011BB7F /* Preview Assets.xcassets in Resources */,
 				91FA96772C81333E0011BB7F /* Assets.xcassets in Resources */,
 			);
@@ -197,6 +209,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		91FA96A12C8141C90011BB7F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >>/dev/null; then\n  swiftlint\nelse\n  echo \"warning: swiftlint not installed\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		91FA966B2C81333A0011BB7F /* Sources */ = {
@@ -264,7 +297,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -327,7 +360,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -475,6 +508,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		91FA96A22C8144FF0011BB7F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.56.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 91FA96672C81333A0011BB7F /* Project object */;
 }
