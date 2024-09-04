@@ -62,10 +62,10 @@
 		91FA96662C81333A0011BB7F = {
 			isa = PBXGroup;
 			children = (
+				91FA969C2C813F5E0011BB7F /* _todo.txt */,
 				91FA96A32C814BAE0011BB7F /* betwist.key */,
 				91FA969F2C8141010011BB7F /* .swiftlint.yml */,
 				91FA969E2C813F880011BB7F /* betwist.xctestplan */,
-				91FA969C2C813F5E0011BB7F /* _todo.txt */,
 				91FA96712C81333A0011BB7F /* betwist */,
 				91FA96822C81333E0011BB7F /* betwistTests */,
 				91FA96702C81333A0011BB7F /* Products */,
