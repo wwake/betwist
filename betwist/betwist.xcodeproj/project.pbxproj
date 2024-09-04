@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
+		912CFEEA2C88A6B10074C066 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE82C88A6B10074C066 /* README.md */; };
 		91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96722C81333A0011BB7F /* betwistApp.swift */; };
 		91FA96752C81333A0011BB7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96742C81333A0011BB7F /* ContentView.swift */; };
 		91FA96772C81333E0011BB7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FA96762C81333E0011BB7F /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		912CFEE72C88A6B10074C066 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		91FA966F2C81333A0011BB7F /* betwist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betwist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA96722C81333A0011BB7F /* betwistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = betwistApp.swift; sourceTree = "<group>"; };
 		91FA96742C81333A0011BB7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				91FA969C2C813F5E0011BB7F /* _todo.txt */,
+				912CFEE72C88A6B10074C066 /* LICENSE */,
+				912CFEE82C88A6B10074C066 /* README.md */,
 				91FA96A32C814BAE0011BB7F /* betwist.key */,
 				91FA969F2C8141010011BB7F /* .swiftlint.yml */,
 				91FA969E2C813F880011BB7F /* betwist.xctestplan */,
@@ -193,8 +199,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912CFEE92C88A6B10074C066 /* LICENSE in Resources */,
 				91FA96A02C8141010011BB7F /* .swiftlint.yml in Resources */,
 				91FA969D2C813F5E0011BB7F /* _todo.txt in Resources */,
+				912CFEEA2C88A6B10074C066 /* README.md in Resources */,
 				91FA96A42C814BAE0011BB7F /* betwist.key in Resources */,
 				91FA967A2C81333E0011BB7F /* Preview Assets.xcassets in Resources */,
 				91FA96772C81333E0011BB7F /* Assets.xcassets in Resources */,
