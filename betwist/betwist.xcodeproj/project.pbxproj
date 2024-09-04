@@ -90,9 +90,9 @@
 		91FA96712C81333A0011BB7F /* betwist */ = {
 			isa = PBXGroup;
 			children = (
+				91FA96762C81333E0011BB7F /* Assets.xcassets */,
 				91FA96722C81333A0011BB7F /* betwistApp.swift */,
 				91FA96742C81333A0011BB7F /* ContentView.swift */,
-				91FA96762C81333E0011BB7F /* Assets.xcassets */,
 				91FA96782C81333E0011BB7F /* Preview Content */,
 			);
 			path = betwist;
