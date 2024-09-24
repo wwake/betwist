@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
 		912CFEEA2C88A6B10074C066 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE82C88A6B10074C066 /* README.md */; };
+		9181F09A2CA33C2A0091A771 /* ABoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181F0992CA33C2A0091A771 /* ABoard.swift */; };
 		91BB90E62C9314750051FA2D /* word.list in Resources */ = {isa = PBXBuildFile; fileRef = 91BB90E52C9314750051FA2D /* word.list */; };
 		91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96722C81333A0011BB7F /* betwistApp.swift */; };
 		91FA96752C81333A0011BB7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96742C81333A0011BB7F /* ContentView.swift */; };
 		91FA96772C81333E0011BB7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FA96762C81333E0011BB7F /* Assets.xcassets */; };
 		91FA967A2C81333E0011BB7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FA96792C81333E0011BB7F /* Preview Assets.xcassets */; };
-		91FA96842C81333E0011BB7F /* betwistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96832C81333E0011BB7F /* betwistTests.swift */; };
 		91FA969D2C813F5E0011BB7F /* _todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 91FA969C2C813F5E0011BB7F /* _todo.txt */; };
 		91FA96A02C8141010011BB7F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 91FA969F2C8141010011BB7F /* .swiftlint.yml */; };
 		91FA96A42C814BAE0011BB7F /* betwist.key in Resources */ = {isa = PBXBuildFile; fileRef = 91FA96A32C814BAE0011BB7F /* betwist.key */; };
@@ -33,6 +33,7 @@
 /* Begin PBXFileReference section */
 		912CFEE72C88A6B10074C066 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		9181F0992CA33C2A0091A771 /* ABoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABoard.swift; sourceTree = "<group>"; };
 		91BB90E52C9314750051FA2D /* word.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = word.list; path = ../../../../Downloads/word.list; sourceTree = "<group>"; };
 		91FA966F2C81333A0011BB7F /* betwist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betwist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA96722C81333A0011BB7F /* betwistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = betwistApp.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		91FA96762C81333E0011BB7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91FA96792C81333E0011BB7F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91FA967F2C81333E0011BB7F /* betwistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = betwistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		91FA96832C81333E0011BB7F /* betwistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = betwistTests.swift; sourceTree = "<group>"; };
 		91FA969C2C813F5E0011BB7F /* _todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _todo.txt; sourceTree = "<group>"; };
 		91FA969E2C813F880011BB7F /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
 		91FA969F2C8141010011BB7F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		91FA96822C81333E0011BB7F /* betwistTests */ = {
 			isa = PBXGroup;
 			children = (
-				91FA96832C81333E0011BB7F /* betwistTests.swift */,
+				9181F0992CA33C2A0091A771 /* ABoard.swift */,
 			);
 			path = betwistTests;
 			sourceTree = "<group>";
@@ -171,6 +171,7 @@
 					};
 					91FA967E2C81333E0011BB7F = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1600;
 						TestTargetID = 91FA966E2C81333A0011BB7F;
 					};
 				};
@@ -257,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91FA96842C81333E0011BB7F /* betwistTests.swift in Sources */,
+				9181F09A2CA33C2A0091A771 /* ABoard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +306,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -368,7 +369,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -453,17 +454,18 @@
 		91FA96972C81333F0011BB7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7B9VB3YTHK;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.betwistTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/betwist.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/betwist";
@@ -473,13 +475,13 @@
 		91FA96982C81333F0011BB7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7B9VB3YTHK;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.betwistTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
