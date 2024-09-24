@@ -11,6 +11,7 @@
 		912CFEEA2C88A6B10074C066 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE82C88A6B10074C066 /* README.md */; };
 		9181F09A2CA33C2A0091A771 /* ABoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181F0992CA33C2A0091A771 /* ABoard.swift */; };
 		9181F09C2CA3444A0091A771 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181F09B2CA3444A0091A771 /* Board.swift */; };
+		9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181F09D2CA347370091A771 /* Int+wrap.swift */; };
 		91BB90E62C9314750051FA2D /* word.list in Resources */ = {isa = PBXBuildFile; fileRef = 91BB90E52C9314750051FA2D /* word.list */; };
 		91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96722C81333A0011BB7F /* betwistApp.swift */; };
 		91FA96752C81333A0011BB7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96742C81333A0011BB7F /* ContentView.swift */; };
@@ -36,6 +37,7 @@
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9181F0992CA33C2A0091A771 /* ABoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABoard.swift; sourceTree = "<group>"; };
 		9181F09B2CA3444A0091A771 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		9181F09D2CA347370091A771 /* Int+wrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+wrap.swift"; sourceTree = "<group>"; };
 		91BB90E52C9314750051FA2D /* word.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = word.list; path = ../../../../Downloads/word.list; sourceTree = "<group>"; };
 		91FA966F2C81333A0011BB7F /* betwist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betwist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA96722C81333A0011BB7F /* betwistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = betwistApp.swift; sourceTree = "<group>"; };
@@ -95,10 +97,11 @@
 		91FA96712C81333A0011BB7F /* betwist */ = {
 			isa = PBXGroup;
 			children = (
-				9181F09B2CA3444A0091A771 /* Board.swift */,
 				91FA96762C81333E0011BB7F /* Assets.xcassets */,
 				91FA96722C81333A0011BB7F /* betwistApp.swift */,
+				9181F09B2CA3444A0091A771 /* Board.swift */,
 				91FA96742C81333A0011BB7F /* ContentView.swift */,
+				9181F09D2CA347370091A771 /* Int+wrap.swift */,
 				91FA96782C81333E0011BB7F /* Preview Content */,
 			);
 			path = betwist;
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91FA96752C81333A0011BB7F /* ContentView.swift in Sources */,
+				9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */,
 				91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */,
 				9181F09C2CA3444A0091A771 /* Board.swift in Sources */,
 			);
