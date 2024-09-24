@@ -1,7 +1,7 @@
 {
   "configurations" : [
     {
-      "id" : "68E7871F-08D9-495A-B07D-A9E60B60587C",
+      "id" : "1F4680BD-CECD-4D22-8244-B200CC0494C8",
       "name" : "Test Scheme Action",
       "options" : {
 
@@ -9,12 +9,6 @@
     }
   ],
   "defaultOptions" : {
-    "environmentVariableEntries" : [
-      {
-        "key" : "IDEPreferLogStreaming",
-        "value" : "YES"
-      }
-    ],
     "targetForVariableExpansion" : {
       "containerPath" : "container:betwist.xcodeproj",
       "identifier" : "91FA966E2C81333A0011BB7F",
@@ -23,6 +17,7 @@
   },
   "testTargets" : [
     {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:betwist.xcodeproj",
         "identifier" : "91FA967E2C81333E0011BB7F",
