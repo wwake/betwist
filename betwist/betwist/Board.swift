@@ -12,17 +12,15 @@ struct Board {
     ]
   }
 
+  func wrap(_ index: Int, _ size: Int) -> Int {
+    var wrappedIndex = index
+    while wrappedIndex < 0 {
+      wrappedIndex += size
+    }
+    return wrappedIndex % size
+  }
+
   subscript(_ row: Int, _ column: Int) -> String {
-    var wrappedRow = row
-    while wrappedRow < 0 {
-      wrappedRow += size
-    }
-
-    var wrappedColumn = column
-    while wrappedColumn < 0 {
-      wrappedColumn += size
-    }
-
-    return board[wrappedRow % size][wrappedColumn % size]
+    board[wrap(row, size)][wrap(column, size)]
   }
 }
