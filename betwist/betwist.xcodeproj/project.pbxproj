@@ -12,6 +12,7 @@
 		9181F09A2CA33C2A0091A771 /* ABoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181F0992CA33C2A0091A771 /* ABoard.swift */; };
 		9181F09C2CA3444A0091A771 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181F09B2CA3444A0091A771 /* Board.swift */; };
 		9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181F09D2CA347370091A771 /* Int+wrap.swift */; };
+		9181F0A22CA34EA60091A771 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 9181F0A12CA34EA60091A771 /* Algorithms */; };
 		91BB90E62C9314750051FA2D /* word.list in Resources */ = {isa = PBXBuildFile; fileRef = 91BB90E52C9314750051FA2D /* word.list */; };
 		91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96722C81333A0011BB7F /* betwistApp.swift */; };
 		91FA96752C81333A0011BB7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96742C81333A0011BB7F /* ContentView.swift */; };
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9181F0A22CA34EA60091A771 /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +71,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9181F0A02CA34EA60091A771 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		91FA96662C81333A0011BB7F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +90,7 @@
 				91BB90E52C9314750051FA2D /* word.list */,
 				91FA96712C81333A0011BB7F /* betwist */,
 				91FA96822C81333E0011BB7F /* betwistTests */,
+				9181F0A02CA34EA60091A771 /* Frameworks */,
 				91FA96702C81333A0011BB7F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -193,6 +203,7 @@
 			mainGroup = 91FA96662C81333A0011BB7F;
 			packageReferences = (
 				91FA96A22C8144FF0011BB7F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				9181F09F2CA34E610091A771 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = 91FA96702C81333A0011BB7F /* Products */;
 			projectDirPath = "";
@@ -533,6 +544,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9181F09F2CA34E610091A771 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 		91FA96A22C8144FF0011BB7F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
@@ -542,6 +561,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9181F0A12CA34EA60091A771 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9181F09F2CA34E610091A771 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 91FA96672C81333A0011BB7F /* Project object */;
 }

@@ -1,15 +1,14 @@
+import Algorithms
+import Foundation
+
 struct Board {
   let size: Int
   let board: [[String]]
 
-  init(_ size: Int) {
+  init(_ size: Int, _ source: any Sequence<String>) {
     self.size = size
-    self.board = [
-      ["A", "B", "C", "D"],
-      ["E", "F", "G", "H"],
-      ["A", "B", "C", "D"],
-      ["E", "F", "G", "H"],
-    ]
+
+    self.board = Array(source).chunks(ofCount: size).map(Array.init)
   }
 
   subscript(_ row: Int, _ column: Int) -> String {
