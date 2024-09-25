@@ -39,4 +39,58 @@ struct ABoard {
     #expect(board[0, 0] == board[0, -4])
     #expect(board[3, 3] == board[-1, 3])
   }
+
+  @Test
+  func identical_locations_are_not_neighbors() {
+    let sut = Board(4, bigBoard)
+
+    #expect(!sut.hasNeighbors(Location(0, 0), Location(0, 0)))
+  }
+
+  @Test
+  func neighbors_in_same_column() {
+    let sut = Board(4, bigBoard)
+    #expect(sut.hasNeighbors(Location(0, 0), Location(0, 1)))
+  }
+
+  @Test
+  func neighbors_in_same_row() {
+    let sut = Board(4, bigBoard)
+    #expect(sut.hasNeighbors(Location(1, 0), Location(0, 0)))
+  }
+
+  @Test
+  func neighbors_touching_diagonally() {
+    let sut = Board(4, bigBoard)
+    #expect(sut.hasNeighbors(Location(1, 1), Location(0, 0)))
+  }
+
+  @Test
+  func neighbors_are_symmetric() {
+    let sut = Board(4, bigBoard)
+
+    #expect(sut.hasNeighbors(Location(0, 0), Location(0, 1)))
+    #expect(sut.hasNeighbors(Location(0, 1), Location(0, 0)))
+
+    #expect(!sut.hasNeighbors(Location(0, 0), Location(0, 2)))
+    #expect(!sut.hasNeighbors(Location(0, 2), Location(0, 0)))
+  }
+
+  @Test
+  func neighbors_in_wrapped_row() {
+    let sut = Board(4, bigBoard)
+    #expect(sut.hasNeighbors(Location(0, 1), Location(3, 1)))
+  }
+
+  @Test
+  func neighbors_in_wrapped_column() {
+    let sut = Board(4, bigBoard)
+    #expect(sut.hasNeighbors(Location(2, 0), Location(2, 3)))
+  }
+
+  @Test
+  func neighbors_touching_diagonally_when_wrapped() {
+    let sut = Board(4, bigBoard)
+    #expect(sut.hasNeighbors(Location(0, 0), Location(3, 3)))
+  }
 }

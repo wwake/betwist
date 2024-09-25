@@ -1,4 +1,4 @@
-struct Location {
+struct Location: Equatable {
   let row: Int
   let column: Int
 

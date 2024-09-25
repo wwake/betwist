@@ -15,9 +15,17 @@ struct Board {
     board[row %% size][column %% size]
   }
 
+  func isClose(_ index1: Int, _ index2: Int, wrap: Int) -> Bool {
+    let rowDistance = abs(index1 - index2)
+    let rowIsClose = rowDistance <= 1 || rowDistance == wrap - 1
+    return rowIsClose
+  }
+
   func hasNeighbors(_ location1: Location, _ location2: Location) -> Bool {
-    abs(location1.row - location2.row) <= 1
-      &&
-    abs(location1.column - location2.column) <= 1
+    if location1 == location2 {
+      return false
+    }
+
+    return isClose(location1.row, location2.row, wrap: size) && isClose(location1.column, location2.column, wrap: size)
   }
 }
