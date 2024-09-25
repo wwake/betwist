@@ -1,8 +1,6 @@
 @testable import betwist
 import Testing
 
-
-
 struct ASelection {
   @Test
   func starts_empty() {
