@@ -26,6 +26,9 @@ struct Selection {
   mutating func select(_ location: Location) {
     if count == 0 {
       selection = [location]
+    } else if selection.contains(location) {
+      let index = selection.firstIndex(of: location)!
+      selection = selection.dropLast(count - index - 1)
     } else if board.hasNeighbors(last!, location) {
       selection.append(location)
     } else {

@@ -49,4 +49,17 @@ struct ASelection {
     #expect(sut.count == 1)
     #expect(sut.guess == "C")
   }
+
+  @Test
+  func selecting_existing_location_unwinds_selection() {
+    let board = Board(2, ["A", "B", "C", "D"])
+    var sut = Selection(board)
+    sut.select(Location(0, 1))
+    sut.select(Location(0, 0))
+
+    sut.select(Location(0, 1))
+
+    #expect(sut.count == 1)
+    #expect(sut.guess == "B")
+  }
 }
