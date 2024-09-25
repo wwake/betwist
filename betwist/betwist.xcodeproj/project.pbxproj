@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910C97A92CA48AAD00893B79 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97A82CA48AAD00893B79 /* Location.swift */; };
+		910C97AC2CA48AF400893B79 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97AA2CA48AD900893B79 /* Selection.swift */; };
 		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
 		912CFEEA2C88A6B10074C066 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE82C88A6B10074C066 /* README.md */; };
 		914A539A2CA3664E00C05BB7 /* betwist.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 914A53992CA3664E00C05BB7 /* betwist.xctestplan */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		910C97922CA3690600893B79 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
+		910C97A82CA48AAD00893B79 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		910C97AA2CA48AD900893B79 /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 		912CFEE72C88A6B10074C066 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		914A53992CA3664E00C05BB7 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 		91FA96712C81333A0011BB7F /* betwist */ = {
 			isa = PBXGroup;
 			children = (
+				910C97AA2CA48AD900893B79 /* Selection.swift */,
+				910C97A82CA48AAD00893B79 /* Location.swift */,
 				91FA96762C81333E0011BB7F /* Assets.xcassets */,
 				91FA96722C81333A0011BB7F /* betwistApp.swift */,
 				9181F09B2CA3444A0091A771 /* Board.swift */,
@@ -273,8 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				910C97AC2CA48AF400893B79 /* Selection.swift in Sources */,
 				91FA96752C81333A0011BB7F /* ContentView.swift in Sources */,
 				9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */,
+				910C97A92CA48AAD00893B79 /* Location.swift in Sources */,
 				91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */,
 				9181F09C2CA3444A0091A771 /* Board.swift in Sources */,
 			);

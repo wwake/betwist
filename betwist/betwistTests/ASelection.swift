@@ -1,49 +1,37 @@
 @testable import betwist
 import Testing
 
-struct Selection {
-  let board: Board
 
-  var selection = [(row: Int, column: Int)]()
-
-  var count: Int {
-    selection.count
-  }
-
-  var guess: String {
-    selection
-      .map { row, column in
-        board[row, column]
-      }
-      .joined()
-  }
-
-  init(_ board: Board) {
-    self.board = board
-  }
-
-  mutating func append(_ row: Int, _ column: Int) {
-    selection.append((row: row, column: column))
-  }
-}
 
 struct ASelection {
   @Test
   func starts_empty() {
     let board = Board(2, ["A", "B", "C", "D"])
-    let selection = Selection(board)
-    #expect(selection.count == 0)
-    #expect(selection.guess.isEmpty)
+    let sut = Selection(board)
+    #expect(sut.count == 0)
+    #expect(sut.guess.isEmpty)
   }
 
   @Test
   func can_start_new_word() {
     let board = Board(2, ["A", "B", "C", "D"])
-    var selection = Selection(board)
+    var sut = Selection(board)
 
-    selection.append(1, 0)
+    sut.select(Location(1, 0))
 
-    #expect(selection.count == 1)
-    #expect(selection.guess == "C")
+    #expect(sut.count == 1)
+    #expect(sut.guess == "C")
+  }
+
+  @Test
+  func can_extend_word_by_selecting_neighbor() {
+    let board = Board(2, ["A", "B", "C", "D"])
+    var sut = Selection(board)
+    sut.select(Location(0, 1))
+
+    sut.select(Location(0, 0))
+
+    #expect(sut.count == 2)
+    #expect(sut.guess == "BA")
   }
 }

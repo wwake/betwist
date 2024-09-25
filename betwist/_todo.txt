@@ -1,4 +1,3 @@
-
 * Extend a selection to a neighbor
 * Click away from neighbor to start new one
 
