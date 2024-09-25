@@ -34,4 +34,21 @@ struct ASelection {
     #expect(sut.count == 2)
     #expect(sut.guess == "BA")
   }
+
+  @Test
+  func selecting_non_neighbor_starts_new_word() {
+    let board = Board(4, [
+      "A", "B", "C", "D",
+      "E", "F", "G", "H",
+      "I", "J", "K", "L",
+      "M", "N", "O", "P",
+    ])
+    var sut = Selection(board)
+    sut.select(Location(0, 0))
+
+    sut.select(Location(0, 2))
+
+    #expect(sut.count == 1)
+    #expect(sut.guess == "C")
+  }
 }

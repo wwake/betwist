@@ -7,6 +7,10 @@ struct Selection {
     selection.count
   }
 
+  var last: Location? {
+    selection.last
+  }
+
   var guess: String {
     selection
       .map { location in
@@ -20,6 +24,12 @@ struct Selection {
   }
 
   mutating func select(_ location: Location) {
-    selection.append(location)
+    if count == 0 {
+      selection = [location]
+    } else if board.hasNeighbors(last!, location) {
+      selection.append(location)
+    } else {
+      selection = [location]
+    }
   }
 }

@@ -14,4 +14,10 @@ struct Board {
   subscript(_ row: Int, _ column: Int) -> String {
     board[row %% size][column %% size]
   }
+
+  func hasNeighbors(_ location1: Location, _ location2: Location) -> Bool {
+    abs(location1.row - location2.row) <= 1
+      &&
+    abs(location1.column - location2.column) <= 1
+  }
 }

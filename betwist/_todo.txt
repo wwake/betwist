@@ -1,5 +1,7 @@
-* Extend a selection to a neighbor
 * Click away from neighbor to start new one
+
+2024-09-25 - WORD-24-02 - Selecting Words
+* Extend a selection to a neighbor
 
 2024-09-24 - WORD-24-01 - Introducing Betwist
 * Introduce the game idea
