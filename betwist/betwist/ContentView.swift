@@ -11,22 +11,31 @@ struct GridButton: ViewModifier {
 
   func foregroundColor(_ type: SelectionType) -> Color {
     switch type {
-    case .open: return .black
-    default: return .white
+    case .open:
+      return .black
+
+    default:
+      return .white
     }
   }
 
   func backgroundColor(_ type: SelectionType) -> Color {
     switch type {
-    case .open: return Color(white: 1.0, opacity: 0.75)
-    default: return .black
+    case .open:
+      return Color(white: 1.0, opacity: 0.75)
+
+    default:
+      return .black
     }
   }
 
   func borderColor(_ type: SelectionType) -> Color {
     switch type {
-    case .last: return .red
-    default: return .black
+    case .last:
+      return .red
+
+    default:
+      return .black
     }
   }
 
@@ -43,11 +52,12 @@ struct GridButton: ViewModifier {
 }
 
 struct ContentView: View {
+  @Binding var game: Game
   @Binding var selection: Selection
 
   var body: some View {
     VStack {
-      Text(selection.guess)
+      Text(game.selection.guess)
         .font(.largeTitle)
         .padding(8)
         .frame(minWidth: 200)
@@ -55,18 +65,18 @@ struct ContentView: View {
         .border(.white)
         .accessibilityAddTraits(.isButton)
         .onTapGesture {
-          selection.clear()
+          game.selection.clear()
         }
 
-      ForEach(0..<selection.board.size, id: \.self) { row in
+      ForEach(0..<game.selection.board.size, id: \.self) { row in
         HStack {
-          ForEach(0..<selection.board.size, id: \.self) { column in
-            Button("\(selection.board[row, column])") {
+          ForEach(0..<game.selection.board.size, id: \.self) { column in
+            Button("\(game.selection.board[row, column])") {
               let location = Location(row, column)
-                selection.select(location)
+              game.selection.select(location)
             }
             .frame(width: 30, height: 30)
-            .modifier(GridButton(selection, Location(row, column)))
+            .modifier(GridButton(game.selection, Location(row, column)))
           }
         }
       }
@@ -78,7 +88,8 @@ struct ContentView: View {
 }
 
 #Preview {
+  @Previewable @State var game = Game(2, ["A", "B", "C", "D"])
   @Previewable @State var selection = Selection(Board(2, ["A", "B", "C", "D"]))
 
-  ContentView(selection: $selection)
+  ContentView(game: $game, selection: $selection)
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9104FD2E2CA5E85900A8CBB3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9104FD2D2CA5E85500A8CBB3 /* Game.swift */; };
 		910C97A92CA48AAD00893B79 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97A82CA48AAD00893B79 /* Location.swift */; };
 		910C97AC2CA48AF400893B79 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97AA2CA48AD900893B79 /* Selection.swift */; };
 		910C97AE2CA4990700893B79 /* ALocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97AD2CA4990700893B79 /* ALocation.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9104FD2D2CA5E85500A8CBB3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		910C97922CA3690600893B79 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
 		910C97A82CA48AAD00893B79 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		910C97AA2CA48AD900893B79 /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		91FA96712C81333A0011BB7F /* betwist */ = {
 			isa = PBXGroup;
 			children = (
+				9104FD2D2CA5E85500A8CBB3 /* Game.swift */,
 				91FA96762C81333E0011BB7F /* Assets.xcassets */,
 				91FA96722C81333A0011BB7F /* betwistApp.swift */,
 				9181F09B2CA3444A0091A771 /* Board.swift */,
@@ -284,6 +287,7 @@
 			files = (
 				910C97AC2CA48AF400893B79 /* Selection.swift in Sources */,
 				91FA96752C81333A0011BB7F /* ContentView.swift in Sources */,
+				9104FD2E2CA5E85900A8CBB3 /* Game.swift in Sources */,
 				9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */,
 				910C97A92CA48AAD00893B79 /* Location.swift in Sources */,
 				91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */,
