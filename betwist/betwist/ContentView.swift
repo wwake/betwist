@@ -53,7 +53,6 @@ struct GridButton: ViewModifier {
 
 struct ContentView: View {
   @Binding var game: Game
-  @Binding var selection: Selection
 
   var body: some View {
     VStack {
@@ -89,7 +88,6 @@ struct ContentView: View {
 
 #Preview {
   @Previewable @State var game = Game(2, ["A", "B", "C", "D"])
-  @Previewable @State var selection = Selection(Board(2, ["A", "B", "C", "D"]))
 
-  ContentView(game: $game, selection: $selection)
+  ContentView(game: $game)
 }
