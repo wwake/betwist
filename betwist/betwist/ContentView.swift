@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct GridButton: ViewModifier {
-  var selection: Selection
+  var game: Game
   var location: Location
 
-  init(_ selection: Selection, _ location: Location) {
-    self.selection = selection
+  init(_ game: Game, _ location: Location) {
+    self.game = game
     self.location = location
   }
 
@@ -40,7 +40,7 @@ struct GridButton: ViewModifier {
   }
 
   func body(content: Content) -> some View {
-    let type = selection.type(location)
+    let type = game.type(at: location)
 
     return content
       .font(.largeTitle)
@@ -74,7 +74,7 @@ struct ContentView: View {
               game.select(Location(row, column))
             }
             .frame(width: 30, height: 30)
-            .modifier(GridButton(game.selection, Location(row, column)))
+            .modifier(GridButton(game, Location(row, column)))
           }
         }
       }

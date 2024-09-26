@@ -16,15 +16,19 @@ struct Game {
     selection.guess
   }
 
-  mutating func deselectAll() {
-    selection.clear()
-  }
-
   subscript(_ row: Int, _ column: Int) -> String {
     board[row, column]
   }
 
+  mutating func deselectAll() {
+    selection.clear()
+  }
+
   mutating func select(_ location: Location) {
     selection.select(location)
+  }
+
+  func type(at location: Location) -> SelectionType {
+    selection.type(location)
   }
 }
