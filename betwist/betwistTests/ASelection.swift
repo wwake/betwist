@@ -64,6 +64,17 @@ struct ASelection {
   }
 
   @Test
+  func can_clear() {
+    let board = Board(2, ["A", "B", "C", "D"])
+    var sut = Selection(board)
+    sut.select(Location(1, 0))
+
+    sut.clear()
+
+    #expect(sut.count == 0)
+  }
+
+  @Test
   func has_type_for_each_location() {
     let board = Board(2, ["A", "B", "C", "D"])
     var sut = Selection(board)

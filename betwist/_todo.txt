@@ -1,10 +1,12 @@
-* Highlight selected letters
 * Submit a word - and clear selection
 * Highlight the last letter differently
 * Formatting
 * Show the list of accepted words
 
 * Dictionary - don't erase non-words
+
+2024-09-26 - WORD-24-03 - Highlight Selection
+* Highlight selected letters
 
 2024-09-25 - WORD-24-02 - Selecting Words
 * Extend a selection to a neighbor

@@ -53,12 +53,17 @@ struct ContentView: View {
         .frame(minWidth: 200)
         .frame(height: 50)
         .border(.white)
+        .accessibilityAddTraits(.isButton)
+        .onTapGesture {
+          selection.clear()
+        }
 
       ForEach(0..<selection.board.size, id: \.self) { row in
         HStack {
           ForEach(0..<selection.board.size, id: \.self) { column in
             Button("\(selection.board[row, column])") {
-              selection.select(Location(row, column))
+              let location = Location(row, column)
+                selection.select(location)
             }
             .frame(width: 30, height: 30)
             .modifier(GridButton(selection, Location(row, column)))

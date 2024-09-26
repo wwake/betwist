@@ -40,6 +40,10 @@ struct Selection {
     }
   }
 
+  mutating func clear() {
+    selection.removeAll()
+  }
+
   func type(_ location: Location) -> SelectionType {
     if location == last {
       return .last
