@@ -118,14 +118,14 @@
 		91FA96712C81333A0011BB7F /* betwist */ = {
 			isa = PBXGroup;
 			children = (
-				910C97AA2CA48AD900893B79 /* Selection.swift */,
-				910C97A82CA48AAD00893B79 /* Location.swift */,
 				91FA96762C81333E0011BB7F /* Assets.xcassets */,
 				91FA96722C81333A0011BB7F /* betwistApp.swift */,
 				9181F09B2CA3444A0091A771 /* Board.swift */,
 				91FA96742C81333A0011BB7F /* ContentView.swift */,
 				9181F09D2CA347370091A771 /* Int+wrap.swift */,
+				910C97A82CA48AAD00893B79 /* Location.swift */,
 				91FA96782C81333E0011BB7F /* Preview Content */,
+				910C97AA2CA48AD900893B79 /* Selection.swift */,
 			);
 			path = betwist;
 			sourceTree = "<group>";

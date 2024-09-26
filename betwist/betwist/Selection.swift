@@ -1,3 +1,7 @@
+enum SelectionType {
+  case first, middle, last, open
+}
+
 struct Selection {
   let board: Board
 
@@ -34,5 +38,16 @@ struct Selection {
     } else {
       selection = [location]
     }
+  }
+
+  func type(_ location: Location) -> SelectionType {
+    if location == last {
+      return .last
+    } else if selection.first == location {
+      return .first
+    } else if selection.contains(location) {
+      return .middle
+    }
+    return .open
   }
 }

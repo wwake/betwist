@@ -62,4 +62,18 @@ struct ASelection {
     #expect(sut.count == 1)
     #expect(sut.guess == "B")
   }
+
+  @Test
+  func has_type_for_each_location() {
+    let board = Board(2, ["A", "B", "C", "D"])
+    var sut = Selection(board)
+    sut.select(Location(0, 0))
+    sut.select(Location(0, 1))
+    sut.select(Location(1, 0))
+
+    #expect(sut.type(Location(0, 0)) == .first)
+    #expect(sut.type(Location(0, 1)) == .middle)
+    #expect(sut.type(Location(1, 0)) == .last)
+    #expect(sut.type(Location(1, 1)) == .open)
+  }
 }
