@@ -18,7 +18,7 @@ struct GridButton: ViewModifier {
 
   func backgroundColor(_ type: SelectionType) -> Color {
     switch type {
-    case .open: return .white
+    case .open: return Color(white: 1.0, opacity: 0.75)
     default: return .black
     }
   }
@@ -49,6 +49,7 @@ struct ContentView: View {
     VStack {
       Text(selection.guess)
         .font(.largeTitle)
+        .frame(height: 50)
 
       ForEach(0..<selection.board.size, id: \.self) { row in
         HStack {
@@ -56,12 +57,15 @@ struct ContentView: View {
             Button("\(selection.board[row, column])") {
               selection.select(Location(row, column))
             }
+            .frame(width: 30, height: 30)
             .modifier(GridButton(selection, Location(row, column)))
           }
         }
       }
     }
     .padding()
+    .containerRelativeFrame([.horizontal, .vertical])
+    .background(Gradient(colors: [.gray, .black]).opacity(0.5))
   }
 }
 
