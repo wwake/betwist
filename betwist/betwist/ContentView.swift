@@ -56,7 +56,7 @@ struct ContentView: View {
 
   var body: some View {
     VStack {
-      Text(game.selection.guess)
+      Text(game.guess)
         .font(.largeTitle)
         .padding(8)
         .frame(minWidth: 200)
@@ -64,15 +64,14 @@ struct ContentView: View {
         .border(.white)
         .accessibilityAddTraits(.isButton)
         .onTapGesture {
-          game.selection.clear()
+          game.deselectAll()
         }
 
-      ForEach(0..<game.selection.board.size, id: \.self) { row in
+      ForEach(0..<game.size, id: \.self) { row in
         HStack {
-          ForEach(0..<game.selection.board.size, id: \.self) { column in
-            Button("\(game.selection.board[row, column])") {
-              let location = Location(row, column)
-              game.selection.select(location)
+          ForEach(0..<game.size, id: \.self) { column in
+            Button("\(game[row, column])") {
+              game.select(Location(row, column))
             }
             .frame(width: 30, height: 30)
             .modifier(GridButton(game.selection, Location(row, column)))
