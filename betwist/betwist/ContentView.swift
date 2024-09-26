@@ -64,6 +64,7 @@ struct ContentView: View {
         .border(.white)
         .accessibilityAddTraits(.isButton)
         .onTapGesture {
+          game.collect()
           game.deselectAll()
         }
 
@@ -78,6 +79,8 @@ struct ContentView: View {
           }
         }
       }
+
+      Text(verbatim: String(game.guesses.joined(by: "\n")))
     }
     .padding()
     .containerRelativeFrame([.horizontal, .vertical])

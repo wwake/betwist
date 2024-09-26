@@ -1,6 +1,7 @@
 struct Game {
   let board: Board
   var selection: Selection
+  var guesses = [String]()
 
   init(_ size: Int, _ source: any Sequence<String>) {
     self.board = Board(size, source)
@@ -30,5 +31,9 @@ struct Game {
 
   func type(at location: Location) -> SelectionType {
     selection.type(location)
+  }
+
+  mutating func collect() {
+    guesses.append(guess)
   }
 }
