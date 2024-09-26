@@ -49,7 +49,10 @@ struct ContentView: View {
     VStack {
       Text(selection.guess)
         .font(.largeTitle)
+        .padding(8)
+        .frame(minWidth: 200)
         .frame(height: 50)
+        .border(.white)
 
       ForEach(0..<selection.board.size, id: \.self) { row in
         HStack {
