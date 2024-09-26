@@ -53,38 +53,48 @@ struct GridButton: ViewModifier {
 
 struct ContentView: View {
   @Binding var game: Game
+  @State private var guessOffset: CGFloat = 0
 
   var body: some View {
-    VStack {
-      Text(game.guess)
-        .font(.largeTitle)
-        .padding(8)
-        .frame(minWidth: 200)
-        .frame(height: 50)
-        .border(.white)
-        .accessibilityAddTraits(.isButton)
-        .onTapGesture {
-          game.collect()
-          game.deselectAll()
-        }
-
-      ForEach(0..<game.size, id: \.self) { row in
-        HStack {
-          ForEach(0..<game.size, id: \.self) { column in
-            Button("\(game[row, column])") {
-              game.select(Location(row, column))
+    ZStack {
+      VStack {
+        Text(game.guess)
+          .font(.largeTitle)
+          .padding(8)
+          .frame(minWidth: 200)
+          .frame(height: 50)
+          .border(.white)
+          .accessibilityAddTraits(.isButton)
+          .offset(y: guessOffset)
+          .onTapGesture {
+            withAnimation(.easeInOut(duration: 1.25)) {
+              guessOffset = 300
             }
-            .frame(width: 30, height: 30)
-            .modifier(GridButton(game, Location(row, column)))
+            completion: {
+              guessOffset = 0
+              game.collect()
+              game.deselectAll()
+            }
+          }
+
+        ForEach(0..<game.size, id: \.self) { row in
+          HStack {
+            ForEach(0..<game.size, id: \.self) { column in
+              Button("\(game[row, column])") {
+                game.select(Location(row, column))
+              }
+              .frame(width: 30, height: 30)
+              .modifier(GridButton(game, Location(row, column)))
+            }
           }
         }
-      }
 
-      Text(verbatim: String(game.guesses.joined(by: "\n")))
+        Text(verbatim: String(game.guesses.joined(by: "\n")))
+      }
+      .padding()
+      .containerRelativeFrame([.horizontal, .vertical])
+      .background(Gradient(colors: [.gray, .black]).opacity(0.5))
     }
-    .padding()
-    .containerRelativeFrame([.horizontal, .vertical])
-    .background(Gradient(colors: [.gray, .black]).opacity(0.5))
   }
 }
 

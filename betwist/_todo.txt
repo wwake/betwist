@@ -1,12 +1,23 @@
-* Submit a word - and clear selection
+
+* Animation - experiment with opacity
+
 * Show the list of accepted words
+  - as a sheet?
+  - insert in front of list?
+* No duplicates
+
+* Sound
 
 * Dictionary - don't erase non-words
+* Running count or score
 
 2024-09-26 - WORD-24-03 - Highlight Selection
 * Highlight selected letters
 * Highlight the last letter differently
 * Improve board's formatting
+* Submit a word - and clear selection
+* Minimal version - Show the list of accepted words
+* Played with animation
 
 2024-09-25 - WORD-24-02 - Selecting Words
 * Extend a selection to a neighbor
