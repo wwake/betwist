@@ -90,6 +90,8 @@ struct ContentView: View {
         }
 
         Text(verbatim: String(game.guesses.joined(by: "\n")))
+
+        Spacer()
       }
       .padding()
       .containerRelativeFrame([.horizontal, .vertical])

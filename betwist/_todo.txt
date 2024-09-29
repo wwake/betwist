@@ -3,13 +3,19 @@
 
 * Show the list of accepted words
   - as a sheet?
-  - insert in front of list?
+  - insert in front of list? (add test)
+  
 * No duplicates
+
+* Rotate UDLR
+
+* Game maker (generate random boards)
 
 * Sound
 
 * Dictionary - don't erase non-words
 * Running count or score
+* Error field
 
 2024-09-26 - WORD-24-03 - Highlight Selection
 * Highlight selected letters
