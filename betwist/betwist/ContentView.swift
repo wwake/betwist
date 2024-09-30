@@ -89,9 +89,12 @@ struct ContentView: View {
           }
         }
 
-        Text(verbatim: String(game.guesses.joined(by: "\n")))
-          .font(.title)
+        ScrollView {
+          Text(verbatim: String(game.guesses.joined(by: "\n")))
+            .font(.title)
 
+        }
+        
         Spacer()
       }
       .padding()

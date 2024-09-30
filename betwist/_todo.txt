@@ -1,6 +1,3 @@
-
-* Animation - experiment with opacity
-
 * Show the list of accepted words
   - as a sheet?
   - insert in front of list? (add test)
@@ -16,6 +13,8 @@
 * Dictionary - don't erase non-words
 * Running count or score
 * Error field
+
+* Animation - experiment with opacity [defer] - Note that we slide behind the grid
 
 2024-09-26 - WORD-24-03 - Highlight Selection
 * Highlight selected letters
