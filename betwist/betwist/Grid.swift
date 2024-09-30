@@ -1,18 +1,18 @@
 import Algorithms
 import Foundation
 
-struct Board {
+struct Grid {
   let size: Int
-  let board: [[String]]
+  let grid: [[String]]
 
   init(_ size: Int, _ source: any Sequence<String>) {
     self.size = size
 
-    self.board = Array(source).chunks(ofCount: size).map(Array.init)
+    self.grid = Array(source).chunks(ofCount: size).map(Array.init)
   }
 
   subscript(_ row: Int, _ column: Int) -> String {
-    board[row %% size][column %% size]
+    grid[row %% size][column %% size]
   }
 
   func isClose(_ index1: Int, _ index2: Int, wrap: Int) -> Bool {

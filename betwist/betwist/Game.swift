@@ -1,10 +1,10 @@
 struct Game {
-  let board: Board
+  let board: Grid
   var selection: Selection
   var guesses = [String]()
 
   init(_ size: Int, _ source: any Sequence<String>) {
-    self.board = Board(size, source)
+    self.board = Grid(size, source)
 
     self.selection = Selection(board)
   }
