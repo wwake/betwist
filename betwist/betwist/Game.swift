@@ -1,16 +1,16 @@
 struct Game {
-  let board: Grid
+  let grid: Grid
   var selection: Selection
   var guesses = [String]()
 
   init(_ size: Int, _ source: any Sequence<String>) {
-    self.board = Grid(size, source)
+    self.grid = Grid(size, source)
 
-    self.selection = Selection(board)
+    self.selection = Selection(grid)
   }
 
   var size: Int {
-    board.size
+    grid.size
   }
 
   var guess: String {
@@ -18,7 +18,7 @@ struct Game {
   }
 
   subscript(_ row: Int, _ column: Int) -> String {
-    board[row, column]
+    grid[row, column]
   }
 
   mutating func deselectAll() {

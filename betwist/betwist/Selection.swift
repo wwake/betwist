@@ -3,7 +3,7 @@ enum SelectionType {
 }
 
 struct Selection {
-  let board: Grid
+  let grid: Grid
 
   var selection = [Location]()
 
@@ -18,13 +18,13 @@ struct Selection {
   var guess: String {
     selection
       .map { location in
-        board[location.row, location.column]
+        grid[location.row, location.column]
       }
       .joined()
   }
 
   init(_ board: Grid) {
-    self.board = board
+    self.grid = board
   }
 
   mutating func select(_ location: Location) {
@@ -33,7 +33,7 @@ struct Selection {
       return
     }
 
-    if count == 0 || board.hasNeighbors(last!, location) {
+    if count == 0 || grid.hasNeighbors(last!, location) {
       selection.append(location)
     } else {
       selection = [location]
