@@ -22,7 +22,7 @@ struct GridButton: ViewModifier {
   func backgroundColor(_ type: SelectionType) -> Color {
     switch type {
     case .open:
-      return Color(white: 1.0, opacity: 0.75)
+      return Color(white: 1.0, opacity: 0.85)
 
     default:
       return .black
@@ -67,8 +67,8 @@ struct ContentView: View {
           .accessibilityAddTraits(.isButton)
           .offset(y: guessOffset)
           .onTapGesture {
-            withAnimation(.easeInOut(duration: 1.25)) {
-              guessOffset = 300
+            withAnimation(.easeInOut(duration: 1)) {
+              guessOffset = 350
             }
             completion: {
               guessOffset = 0
@@ -90,6 +90,7 @@ struct ContentView: View {
         }
 
         Text(verbatim: String(game.guesses.joined(by: "\n")))
+          .font(.title)
 
         Spacer()
       }
