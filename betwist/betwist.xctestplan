@@ -17,7 +17,7 @@
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
+      "parallelizable" : false,
       "target" : {
         "containerPath" : "container:betwist.xcodeproj",
         "identifier" : "91FA967E2C81333E0011BB7F",

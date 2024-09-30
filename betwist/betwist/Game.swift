@@ -34,6 +34,6 @@ struct Game {
   }
 
   mutating func collect() {
-    guesses.append(guess)
+    guesses.insert(guess, at: 0)
   }
 }

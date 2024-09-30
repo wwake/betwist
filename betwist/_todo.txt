@@ -1,13 +1,10 @@
-* Show the list of accepted words
-  - as a sheet?
-  - insert in front of list? (add test)
-  
-* No duplicates
+* Game maker (generate random boards)
+
 
 * Rotate UDLR
 
-* Game maker (generate random boards)
 
+* No duplicates
 * Sound
 
 * Dictionary - don't erase non-words
@@ -15,6 +12,10 @@
 * Error field
 
 * Animation - experiment with opacity [defer] - Note that we slide behind the grid
+
+2024-09-30 - WORD-24-04 - Show Guesses
+* Put the word list in a scrollable view (rather than popping up as a sheet)
+* Add the newest guess to the front of the list
 
 2024-09-26 - WORD-24-03 - Highlight Selection
 * Highlight selected letters
