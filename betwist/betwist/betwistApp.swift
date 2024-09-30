@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct betwistApp: App {
-  @State private var game = Game(4, "ABCDEFGHIJKLMNOP".map { String($0) })
+  @State private var game = Game(5, GameMaker(5))
 
   var body: some Scene {
     WindowGroup {

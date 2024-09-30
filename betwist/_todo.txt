@@ -1,8 +1,6 @@
-* Game maker (generate random boards)
-
-
 * Rotate UDLR
 
+* Make cell size depend on window size
 
 * No duplicates
 * Sound
@@ -16,6 +14,7 @@
 2024-09-30 - WORD-24-04 - Show Guesses
 * Put the word list in a scrollable view (rather than popping up as a sheet)
 * Add the newest guess to the front of the list
+* Game maker (generate random boards)
 
 2024-09-26 - WORD-24-03 - Highlight Selection
 * Highlight selected letters
