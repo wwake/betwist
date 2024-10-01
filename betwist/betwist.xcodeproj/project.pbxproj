@@ -18,6 +18,7 @@
 		911EE9EC2CAC7970005C391D /* GridButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9EB2CAC7970005C391D /* GridButtonStyle.swift */; };
 		911EE9EE2CAC79B7005C391D /* MotionControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9ED2CAC79B7005C391D /* MotionControls.swift */; };
 		911EE9F02CAC7CB9005C391D /* ATwister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9EF2CAC7CB9005C391D /* ATwister.swift */; };
+		911EE9F22CAC8096005C391D /* Twister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9F12CAC8096005C391D /* Twister.swift */; };
 		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
 		912CFEEA2C88A6B10074C066 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE82C88A6B10074C066 /* README.md */; };
 		914A539A2CA3664E00C05BB7 /* betwist.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 914A53992CA3664E00C05BB7 /* betwist.xctestplan */; };
@@ -58,6 +59,7 @@
 		911EE9EB2CAC7970005C391D /* GridButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridButtonStyle.swift; sourceTree = "<group>"; };
 		911EE9ED2CAC79B7005C391D /* MotionControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionControls.swift; sourceTree = "<group>"; };
 		911EE9EF2CAC7CB9005C391D /* ATwister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATwister.swift; sourceTree = "<group>"; };
+		911EE9F12CAC8096005C391D /* Twister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twister.swift; sourceTree = "<group>"; };
 		912CFEE72C88A6B10074C066 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		914A53992CA3664E00C05BB7 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				91FA96762C81333E0011BB7F /* Assets.xcassets */,
 				91FA96722C81333A0011BB7F /* betwistApp.swift */,
 				9181F09B2CA3444A0091A771 /* Grid.swift */,
+				911EE9F12CAC8096005C391D /* Twister.swift */,
 				91FA96742C81333A0011BB7F /* ContentView.swift */,
 				911EE9E62CAB28CE005C391D /* GameMaker.swift */,
 				911EE9EB2CAC7970005C391D /* GridButtonStyle.swift */,
@@ -313,6 +316,7 @@
 				910C97A92CA48AAD00893B79 /* Location.swift in Sources */,
 				91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */,
 				9181F09C2CA3444A0091A771 /* Grid.swift in Sources */,
+				911EE9F22CAC8096005C391D /* Twister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
