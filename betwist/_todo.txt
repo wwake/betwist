@@ -1,11 +1,12 @@
-* Add a checkbox to commit word
-* Make cell size depend on window size
-
 * Error field
+* Word too short
 * No duplicates
 
-
 * Dictionary - don't erase non-words
+
+* Should you get prefixes for free?
+
+* Make cell size depend on window size
 * Running count or score
 
 * Sound
@@ -23,7 +24,7 @@
   + https://stackoverflow.com/questions/60885532/how-to-detect-swiping-up-down-left-and-right-with-swiftui-on-a-view
   + https://stackoverflow.com/questions/58891309/swiftui-how-to-implement-swipgesture
   + https://www.hackingwithswift.com/books/ios-swiftui/how-to-use-gestures-in-swiftui
-
+* Add a checkbox to commit word
 
 2024-09-30 - WORD-24-04 - Show Guesses
 * Put the word list in a scrollable view (rather than popping up as a sheet)
