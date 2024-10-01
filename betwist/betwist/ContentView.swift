@@ -37,7 +37,14 @@ struct ContentView: View {
               .modifier(GridButtonStyle(game, Location(row, column)))
             }
           }
-        }
+        }.gesture(
+          DragGesture(minimumDistance: 50)
+          .onEnded { dragInfo in
+            withAnimation {
+              print(dragInfo.startLocation.direction(to: dragInfo.location))
+            }
+          }
+        )
 
         MotionControls(game: $game)
 
