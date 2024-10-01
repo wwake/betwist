@@ -41,7 +41,7 @@ struct ContentView: View {
           DragGesture(minimumDistance: 50)
           .onEnded { dragInfo in
             withAnimation {
-              print(dragInfo.startLocation.direction(to: dragInfo.location))
+              game.twist(dragInfo.startLocation.direction(to: dragInfo.location))
             }
           }
         )
