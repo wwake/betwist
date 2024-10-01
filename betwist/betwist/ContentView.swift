@@ -4,28 +4,42 @@ struct ContentView: View {
   @Binding var game: Game
   @State private var guessOffset: CGFloat = 0
 
+  fileprivate func collectWord() {
+    withAnimation(.easeInOut(duration: 1)) {
+      guessOffset = 350
+    }
+    completion: {
+      guessOffset = 0
+      game.collect()
+      game.deselectAll()
+    }
+  }
+  
   var body: some View {
     ZStack {
       VStack {
-        Text(game.guess)
-          .font(.largeTitle)
-          .padding(8)
-          .frame(minWidth: 200)
-          .frame(height: 50)
-          .border(.white)
-          .accessibilityAddTraits(.isButton)
-          .offset(y: guessOffset)
-          .zIndex(1)
-          .onTapGesture {
-            withAnimation(.easeInOut(duration: 1)) {
-              guessOffset = 350
+        HStack {
+          Text(game.guess)
+            .font(.largeTitle)
+            .padding(8)
+            .frame(minWidth: 200)
+            .frame(height: 50)
+            .border(.white)
+            .accessibilityAddTraits(.isButton)
+            .offset(y: guessOffset)
+            .zIndex(1)
+            .onTapGesture {
+              collectWord()
             }
-            completion: {
-              guessOffset = 0
-              game.collect()
-              game.deselectAll()
-            }
+          Button {
+            collectWord()
+          } label: {
+            Image(systemName: "checkmark.circle.fill")
+              .imageScale(.large)
+              .foregroundStyle(.green)
           }
+          .zIndex(1)
+        }
 
         ForEach(game.rowIndexes, id: \.self) { row in
           HStack {
