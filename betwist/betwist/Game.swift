@@ -1,5 +1,5 @@
 struct Game {
-  let grid: Grid
+  var grid: Grid
   var selection: Selection
   var guesses = [String]()
 
@@ -35,5 +35,17 @@ struct Game {
 
   mutating func collect() {
     guesses.insert(guess, at: 0)
+  }
+
+  mutating func twist(_ direction: Directions) {
+    grid.twist(direction)
+  }
+
+  var rowIndexes: [Int] {
+    grid.rowIndexes
+  }
+
+  var columnIndexes: [Int] {
+    grid.columnIndexes
   }
 }

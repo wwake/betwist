@@ -1,13 +1,18 @@
-* Rotate UDLR
+
+* Add animation to twisting
+* Improve the buttons for twisting
+* Allow swipe for twisting
+* Consider a separate object for twisting
 
 * Make cell size depend on window size
 
+* Error field
 * No duplicates
+
 * Sound
 
 * Dictionary - don't erase non-words
 * Running count or score
-* Error field
 
 * Animation - experiment with opacity [defer] - Note that we slide behind the grid
 
@@ -15,6 +20,7 @@
 * Put the word list in a scrollable view (rather than popping up as a sheet)
 * Add the newest guess to the front of the list
 * Game maker (generate random boards)
+* Twist UDLR for the grid
 
 2024-09-26 - WORD-24-03 - Highlight Selection
 * Highlight selected letters

@@ -77,9 +77,9 @@ struct ContentView: View {
             }
           }
 
-        ForEach(0..<game.size, id: \.self) { row in
+        ForEach(game.rowIndexes, id: \.self) { row in
           HStack {
-            ForEach(0..<game.size, id: \.self) { column in
+            ForEach(game.columnIndexes, id: \.self) { column in
               Button("\(game[row, column])") {
                 game.select(Location(row, column))
               }
@@ -89,12 +89,26 @@ struct ContentView: View {
           }
         }
 
+        HStack {
+          Button("Left") {
+            game.twist(.left)
+          }
+          Button("Right") {
+            game.twist(.right)
+          }
+          Button("Up") {
+            game.twist(.up)
+          }
+          Button("Down") {
+            game.twist(.down)
+          }
+        }
+
         ScrollView {
           Text(verbatim: String(game.guesses.joined(by: "\n")))
             .font(.title)
-
         }
-        
+
         Spacer()
       }
       .padding()
