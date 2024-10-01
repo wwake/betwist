@@ -66,6 +66,7 @@ struct ContentView: View {
           .border(.white)
           .accessibilityAddTraits(.isButton)
           .offset(y: guessOffset)
+          .zIndex(1)
           .onTapGesture {
             withAnimation(.easeInOut(duration: 1)) {
               guessOffset = 350
