@@ -91,16 +91,24 @@ struct ContentView: View {
 
         HStack {
           Button("Left") {
-            game.twist(.left)
+            withAnimation {
+              game.twist(.left)
+            }
           }
           Button("Right") {
-            game.twist(.right)
+            withAnimation {
+              game.twist(.right)
+            }
           }
           Button("Up") {
-            game.twist(.up)
+            withAnimation {
+              game.twist(.up)
+            }
           }
           Button("Down") {
-            game.twist(.down)
+            withAnimation {
+              game.twist(.down)
+            }
           }
         }
 
