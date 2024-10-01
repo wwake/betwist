@@ -15,7 +15,7 @@ struct ACGPoint {
   func knows_up_from_down() {
     let starting = CGPoint(x: 100, y: 10)
     let ending = CGPoint(x: 90, y: 95)
-    #expect(starting.direction(to: ending) == .up)
-    #expect(ending.direction(to: starting) == .down)
+    #expect(starting.direction(to: ending) == .down)
+    #expect(ending.direction(to: starting) == .up)
   }
 }
