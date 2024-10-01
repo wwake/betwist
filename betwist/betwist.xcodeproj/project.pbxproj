@@ -134,19 +134,19 @@
 		91FA96712C81333A0011BB7F /* betwist */ = {
 			isa = PBXGroup;
 			children = (
-				9104FD2D2CA5E85500A8CBB3 /* Game.swift */,
 				91FA96762C81333E0011BB7F /* Assets.xcassets */,
 				91FA96722C81333A0011BB7F /* betwistApp.swift */,
-				9181F09B2CA3444A0091A771 /* Grid.swift */,
-				911EE9F12CAC8096005C391D /* Twister.swift */,
 				91FA96742C81333A0011BB7F /* ContentView.swift */,
+				9104FD2D2CA5E85500A8CBB3 /* Game.swift */,
 				911EE9E62CAB28CE005C391D /* GameMaker.swift */,
+				9181F09B2CA3444A0091A771 /* Grid.swift */,
 				911EE9EB2CAC7970005C391D /* GridButtonStyle.swift */,
 				9181F09D2CA347370091A771 /* Int+wrap.swift */,
 				910C97A82CA48AAD00893B79 /* Location.swift */,
 				911EE9ED2CAC79B7005C391D /* MotionControls.swift */,
 				91FA96782C81333E0011BB7F /* Preview Content */,
 				910C97AA2CA48AD900893B79 /* Selection.swift */,
+				911EE9F12CAC8096005C391D /* Twister.swift */,
 			);
 			path = betwist;
 			sourceTree = "<group>";
@@ -162,11 +162,11 @@
 		91FA96822C81333E0011BB7F /* betwistTests */ = {
 			isa = PBXGroup;
 			children = (
-				9181F0992CA33C2A0091A771 /* AGrid.swift */,
-				9181F0A52CA3556D0091A771 /* ASelection.swift */,
-				910C97AD2CA4990700893B79 /* ALocation.swift */,
 				911EE9E22CAB21E5005C391D /* AGame.swift */,
 				911EE9E42CAB24CA005C391D /* AGameMaker.swift */,
+				9181F0992CA33C2A0091A771 /* AGrid.swift */,
+				910C97AD2CA4990700893B79 /* ALocation.swift */,
+				9181F0A52CA3556D0091A771 /* ASelection.swift */,
 				911EE9EF2CAC7CB9005C391D /* ATwister.swift */,
 			);
 			path = betwistTests;

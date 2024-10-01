@@ -7,25 +7,20 @@ struct Twister {
 
   var corner: Location
 
+  let deltas: [Directions: DeltaLocation] = [
+    .left: DeltaLocation(0, 1),
+    .right: DeltaLocation(0, -1),
+    .up: DeltaLocation(1, 0),
+    .down: DeltaLocation(-1, 0),
+  ]
+
   init(_ size: Int) {
     self.size = size
     self.corner = Location(0, 0)
   }
 
   mutating func twist(_ direction: Directions) {
-    switch direction {
-    case .left:
-      corner = Location(corner.row, (corner.column + 1) %% size)
-
-    case .right:
-      corner = Location(corner.row, (corner.column - 1) %% size)
-
-    case .up:
-      corner = Location((corner.row + 1) %% size, corner.column)
-
-    case .down:
-      corner = Location((corner.row - 1) %% size, corner.column)
-    }
+    corner = corner.movedBy(deltas[direction]!, size: size)
   }
 
   var rowIndexes: [Int] {

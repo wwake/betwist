@@ -45,4 +45,10 @@ struct ALocation {
   func isClose_touching_diagonally_when_wrapped() {
     #expect(Location(0, 0).isClose(Location(3, 3), wrap: 4))
   }
+
+  @Test
+  func moves_by_a_delta() {
+    #expect(Location(3, 5).movedBy(DeltaLocation(1, -3), size: 6) == Location(4, 2))
+    #expect(Location(1, 2).movedBy(DeltaLocation(5, -3), size: 4) == Location(2, 3))
+  }
 }
