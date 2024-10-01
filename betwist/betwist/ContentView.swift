@@ -27,7 +27,6 @@ struct ContentView: View {
             .border(.white)
             .accessibilityAddTraits(.isButton)
             .offset(y: guessOffset)
-            .zIndex(1)
             .onTapGesture {
               collectWord()
             }
@@ -35,11 +34,11 @@ struct ContentView: View {
             collectWord()
           } label: {
             Image(systemName: "checkmark.circle.fill")
-              .imageScale(.large)
+              .font(.largeTitle)
               .foregroundStyle(.green)
           }
-          .zIndex(1)
         }
+        .zIndex(1)
 
         ForEach(game.rowIndexes, id: \.self) { row in
           HStack {
