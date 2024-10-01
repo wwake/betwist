@@ -11,6 +11,7 @@ struct MotionControls: View {
     } label: {
       Image(systemName: imageName)
         .imageScale(.large)
+        .accessibilityLabel(Text("\(direction)"))
     }
     .tint(.white)
     .buttonStyle(.bordered)
@@ -22,10 +23,9 @@ struct MotionControls: View {
 
       HStack {
         button(.left, "arrow.left.circle")
+        button(.down, "arrow.down.circle")
         button(.right, "arrow.right.circle")
       }
-
-      button(.down, "arrow.down.circle")
     }
   }
 }

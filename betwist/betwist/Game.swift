@@ -1,10 +1,13 @@
 struct Game {
   var grid: Grid
+  var twister: Twister
+
   var selection: Selection
   var guesses = [String]()
 
   init(_ size: Int, _ source: any Sequence<String>) {
     self.grid = Grid(size, source)
+    self.twister = Twister(size)
 
     self.selection = Selection(grid)
   }
@@ -38,14 +41,14 @@ struct Game {
   }
 
   mutating func twist(_ direction: Directions) {
-    grid.twist(direction)
+    twister.twist(direction)
   }
 
   var rowIndexes: [Int] {
-    grid.rowIndexes
+    twister.rowIndexes
   }
 
   var columnIndexes: [Int] {
-    grid.columnIndexes
+    twister.columnIndexes
   }
 }

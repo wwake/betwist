@@ -17,6 +17,8 @@
 
 * Animation - experiment with opacity [defer]
 
+* Twist up - draws funny on first time only - simplify case & file a report?
+
 2024-10-01 - WORD-24-05 - Let's Twist Again
 * Add animation to twisting
 * Change zIndex so word sliding down is in front

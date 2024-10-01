@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 struct ContentView: View {
   @Binding var game: Game
   @State private var guessOffset: CGFloat = 0
