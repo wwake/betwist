@@ -1,5 +1,3 @@
-* Change zIndex so word sliding down is in front
-
 * Improve the buttons for twisting
 * Allow swipe for twisting
   + https://stackoverflow.com/questions/60885532/how-to-detect-swiping-up-down-left-and-right-with-swiftui-on-a-view
@@ -12,15 +10,17 @@
 * Error field
 * No duplicates
 
-* Sound
 
 * Dictionary - don't erase non-words
 * Running count or score
+
+* Sound
 
 * Animation - experiment with opacity [defer]
 
 2024-10-01 - WORD-24-05 - Let's Twist Again
 * Add animation to twisting
+* Change zIndex so word sliding down is in front
 
 
 2024-09-30 - WORD-24-04 - Show Guesses

@@ -51,6 +51,60 @@ struct GridButton: ViewModifier {
   }
 }
 
+struct MotionControls: View {
+  @Binding var game: Game
+
+  var body: some View {
+    VStack {
+      Button {
+        withAnimation {
+          game.twist(.up)
+        }
+      } label: {
+        Image(systemName: "arrow.up.circle")
+          .imageScale(.large)
+      }
+      .buttonStyle(.bordered)
+      .tint(.mint)
+
+      HStack {
+        Button {
+          withAnimation {
+            game.twist(.left)
+          }
+        } label: {
+          Image(systemName: "arrow.left.circle")
+            .imageScale(.large)
+        }
+        .buttonStyle(.bordered)
+        .tint(.mint)
+
+        Button {
+          withAnimation {
+            game.twist(.right)
+          }
+        } label: {
+          Image(systemName: "arrow.right.circle")
+            .imageScale(.large)
+        }
+      }
+      .buttonStyle(.bordered)
+      .tint(.mint)
+
+      Button {
+        withAnimation {
+          game.twist(.down)
+        }
+      } label: {
+        Image(systemName: "arrow.down.circle")
+          .imageScale(.large)
+      }
+      .buttonStyle(.bordered)
+      .tint(.mint)
+
+    }
+  }
+}
 struct ContentView: View {
   @Binding var game: Game
   @State private var guessOffset: CGFloat = 0
@@ -90,28 +144,7 @@ struct ContentView: View {
           }
         }
 
-        HStack {
-          Button("Left") {
-            withAnimation {
-              game.twist(.left)
-            }
-          }
-          Button("Right") {
-            withAnimation {
-              game.twist(.right)
-            }
-          }
-          Button("Up") {
-            withAnimation {
-              game.twist(.up)
-            }
-          }
-          Button("Down") {
-            withAnimation {
-              game.twist(.down)
-            }
-          }
-        }
+        MotionControls(game: $game)
 
         ScrollView {
           Text(verbatim: String(game.guesses.joined(by: "\n")))
