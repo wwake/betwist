@@ -15,6 +15,8 @@
 		911EE9E52CAB24CA005C391D /* AGameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E42CAB24CA005C391D /* AGameMaker.swift */; };
 		911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E62CAB28CE005C391D /* GameMaker.swift */; };
 		911EE9EA2CAC6C5E005C391D /* word.list in Resources */ = {isa = PBXBuildFile; fileRef = 911EE9E92CAC6C5E005C391D /* word.list */; };
+		911EE9EC2CAC7970005C391D /* GridButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9EB2CAC7970005C391D /* GridButtonStyle.swift */; };
+		911EE9EE2CAC79B7005C391D /* MotionControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9ED2CAC79B7005C391D /* MotionControls.swift */; };
 		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
 		912CFEEA2C88A6B10074C066 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE82C88A6B10074C066 /* README.md */; };
 		914A539A2CA3664E00C05BB7 /* betwist.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 914A53992CA3664E00C05BB7 /* betwist.xctestplan */; };
@@ -52,6 +54,8 @@
 		911EE9E42CAB24CA005C391D /* AGameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGameMaker.swift; sourceTree = "<group>"; };
 		911EE9E62CAB28CE005C391D /* GameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaker.swift; sourceTree = "<group>"; };
 		911EE9E92CAC6C5E005C391D /* word.list */ = {isa = PBXFileReference; lastKnownFileType = text; path = word.list; sourceTree = "<group>"; };
+		911EE9EB2CAC7970005C391D /* GridButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridButtonStyle.swift; sourceTree = "<group>"; };
+		911EE9ED2CAC79B7005C391D /* MotionControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionControls.swift; sourceTree = "<group>"; };
 		912CFEE72C88A6B10074C066 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		914A53992CA3664E00C05BB7 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
@@ -132,8 +136,10 @@
 				9181F09B2CA3444A0091A771 /* Grid.swift */,
 				91FA96742C81333A0011BB7F /* ContentView.swift */,
 				911EE9E62CAB28CE005C391D /* GameMaker.swift */,
+				911EE9EB2CAC7970005C391D /* GridButtonStyle.swift */,
 				9181F09D2CA347370091A771 /* Int+wrap.swift */,
 				910C97A82CA48AAD00893B79 /* Location.swift */,
+				911EE9ED2CAC79B7005C391D /* MotionControls.swift */,
 				91FA96782C81333E0011BB7F /* Preview Content */,
 				910C97AA2CA48AD900893B79 /* Selection.swift */,
 			);
@@ -294,10 +300,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				911EE9EC2CAC7970005C391D /* GridButtonStyle.swift in Sources */,
 				910C97AC2CA48AF400893B79 /* Selection.swift in Sources */,
 				91FA96752C81333A0011BB7F /* ContentView.swift in Sources */,
 				9104FD2E2CA5E85900A8CBB3 /* Game.swift in Sources */,
 				9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */,
+				911EE9EE2CAC79B7005C391D /* MotionControls.swift in Sources */,
 				911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */,
 				910C97A92CA48AAD00893B79 /* Location.swift in Sources */,
 				91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */,
