@@ -2,9 +2,13 @@
 * Add animation to twisting
 * Improve the buttons for twisting
 * Allow swipe for twisting
+  + https://stackoverflow.com/questions/60885532/how-to-detect-swiping-up-down-left-and-right-with-swiftui-on-a-view
+  + https://stackoverflow.com/questions/58891309/swiftui-how-to-implement-swipgesture
+  + https://www.hackingwithswift.com/books/ios-swiftui/how-to-use-gestures-in-swiftui
 * Consider a separate object for twisting
 
 * Make cell size depend on window size
+* Change zIndex so word sliding down is in front
 
 * Error field
 * No duplicates
@@ -14,7 +18,7 @@
 * Dictionary - don't erase non-words
 * Running count or score
 
-* Animation - experiment with opacity [defer] - Note that we slide behind the grid
+* Animation - experiment with opacity [defer]
 
 2024-09-30 - WORD-24-04 - Show Guesses
 * Put the word list in a scrollable view (rather than popping up as a sheet)

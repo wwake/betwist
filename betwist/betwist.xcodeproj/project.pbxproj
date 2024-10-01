@@ -14,6 +14,7 @@
 		911EE9E32CAB21E5005C391D /* AGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E22CAB21E5005C391D /* AGame.swift */; };
 		911EE9E52CAB24CA005C391D /* AGameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E42CAB24CA005C391D /* AGameMaker.swift */; };
 		911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E62CAB28CE005C391D /* GameMaker.swift */; };
+		911EE9EA2CAC6C5E005C391D /* word.list in Resources */ = {isa = PBXBuildFile; fileRef = 911EE9E92CAC6C5E005C391D /* word.list */; };
 		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
 		912CFEEA2C88A6B10074C066 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE82C88A6B10074C066 /* README.md */; };
 		914A539A2CA3664E00C05BB7 /* betwist.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 914A53992CA3664E00C05BB7 /* betwist.xctestplan */; };
@@ -50,6 +51,7 @@
 		911EE9E22CAB21E5005C391D /* AGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGame.swift; sourceTree = "<group>"; };
 		911EE9E42CAB24CA005C391D /* AGameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGameMaker.swift; sourceTree = "<group>"; };
 		911EE9E62CAB28CE005C391D /* GameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaker.swift; sourceTree = "<group>"; };
+		911EE9E92CAC6C5E005C391D /* word.list */ = {isa = PBXFileReference; lastKnownFileType = text; path = word.list; sourceTree = "<group>"; };
 		912CFEE72C88A6B10074C066 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		914A53992CA3664E00C05BB7 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				91FA96A32C814BAE0011BB7F /* betwist.key */,
 				91FA969F2C8141010011BB7F /* .swiftlint.yml */,
 				914A53992CA3664E00C05BB7 /* betwist.xctestplan */,
+				911EE9E92CAC6C5E005C391D /* word.list */,
 				91FA96712C81333A0011BB7F /* betwist */,
 				91FA96822C81333E0011BB7F /* betwistTests */,
 				9181F0A02CA34EA60091A771 /* Frameworks */,
@@ -248,6 +251,7 @@
 				91FA96A02C8141010011BB7F /* .swiftlint.yml in Resources */,
 				91FA969D2C813F5E0011BB7F /* _todo.txt in Resources */,
 				912CFEEA2C88A6B10074C066 /* README.md in Resources */,
+				911EE9EA2CAC6C5E005C391D /* word.list in Resources */,
 				91FA96A42C814BAE0011BB7F /* betwist.key in Resources */,
 				914A539A2CA3664E00C05BB7 /* betwist.xctestplan in Resources */,
 				91FA967A2C81333E0011BB7F /* Preview Assets.xcassets in Resources */,
