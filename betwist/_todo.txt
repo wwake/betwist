@@ -1,14 +1,13 @@
 * Error message
 * Word too short
 * No duplicates
-
-* Defect - tapping a letter while the "collect" animations runs adds the letter to the guess that's moving down
-* Defect - button only works if you click exactly on the letter
-
+* Make guess change color if message shown
 
 * Dictionary - don't erase non-words
 
 * Should you get prefixes for free?
+
+* Defect - button only works if you click exactly on the letter
 
 * Make cell size depend on window size
 * Running count or score
@@ -18,6 +17,9 @@
 * Animation - experiment with opacity [defer]
 
 * Twist up - draws funny on first time only - simplify case & file a report?
+
+2024-10-02 - WORD-24-06 - Only Dictionary Words!
+* Defect fixed - tapping a letter while the "collect" animations runs adds the letter to the guess that's moving down
 
 2024-10-01 - WORD-24-05 - Let's Twist Again
 * Add animation to twisting

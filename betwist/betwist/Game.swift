@@ -1,9 +1,13 @@
 struct Game {
+  static let minimumSize = 4
+
   var grid: Grid
   var twister: Twister
 
   var selection: Selection
   var guesses = [String]()
+
+  var message = ""
 
   init(_ size: Int, _ source: any Sequence<String>) {
     self.grid = Grid(size, source)
@@ -28,12 +32,14 @@ struct Game {
     selection.blocked = true
   }
 
-  mutating func deselectAll() {
-    selection.clear()
-  }
-
   mutating func select(_ location: Location) {
     selection.select(location)
+    message = ""
+  }
+
+  mutating func deselectAll() {
+    selection.clear()
+    message = ""
   }
 
   func type(at location: Location) -> SelectionType {
@@ -41,6 +47,11 @@ struct Game {
   }
 
   mutating func collect() {
+    guard guess.count >= Self.minimumSize else {
+      message = "Word is too short"
+      return
+    }
+
     guesses.insert(guess, at: 0)
   }
 
