@@ -46,11 +46,14 @@ struct Game {
     selection.type(location)
   }
 
-  mutating func collect() {
-    guard guess.count >= Self.minimumSize else {
+  mutating func validate() {
+    if guess.count < Self.minimumSize {
       message = "Word is too short"
-      return
     }
+  }
+
+  mutating func collect() {
+    guard message.isEmpty else { return }
 
     guesses.insert(guess, at: 0)
   }

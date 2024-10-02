@@ -49,13 +49,25 @@ struct AGame {
   }
 
   @Test
-  func collecting_short_word_gets_message() {
+  func collecting_doesnt_collect_word_that_got_message() {
+    var game = Game(2, ["A", "B", "C", "D"])
+    game.select(Location(0, 1))
+    game.message = "Word is too short"
+
+    game.collect()
+
+    #expect(game.message == "Word is too short")
+    #expect(game.guesses.isEmpty)
+  }
+
+  @Test
+  func validating_short_word_gets_message() {
     var game = Game(2, ["A", "B", "C", "D"])
     game.select(Location(0, 1))
     game.select(Location(0, 0))
     game.select(Location(1, 1))
 
-    game.collect()
+    game.validate()
 
     #expect(game.message == "Word is too short")
   }

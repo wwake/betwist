@@ -5,6 +5,7 @@ struct ContentView: View {
   @State private var guessOffset: CGFloat = 0
 
   fileprivate func collectWord() {
+    
     game.blockSelection()
     withAnimation(.easeInOut(duration: 1)) {
       guessOffset = 350
@@ -35,11 +36,15 @@ struct ContentView: View {
             collectWord()
           } label: {
             Image(systemName: "checkmark.circle.fill")
+              .accessibilityLabel(Text("Enter"))
               .font(.largeTitle)
               .foregroundStyle(.green)
           }
         }
         .zIndex(1)
+
+        Text(game.message)
+          .foregroundStyle(.red)
 
         ForEach(game.rowIndexes, id: \.self) { row in
           HStack {
