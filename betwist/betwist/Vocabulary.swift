@@ -1,4 +1,4 @@
-struct Vocabulary {
+class Vocabulary {
   let words: [String]
 
   init(_ words: [String]) {
