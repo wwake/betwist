@@ -7,6 +7,8 @@ struct Game {
   var selection: Selection
   var guesses = [String]()
 
+  var vocabulary: Vocabulary
+
   var message = ""
 
   init(_ size: Int, _ source: any Sequence<String>, _ vocabulary: Vocabulary = NullVocabulary()) {
@@ -14,6 +16,7 @@ struct Game {
     self.twister = Twister(size)
 
     self.selection = Selection(grid)
+    self.vocabulary = vocabulary
   }
 
   var size: Int {
@@ -49,6 +52,8 @@ struct Game {
   mutating func validate() {
     if guess.count < Self.minimumSize {
       message = "Word is too short"
+    } else if !vocabulary.contains(guess) {
+      message = "That's not a word!"
     }
   }
 

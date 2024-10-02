@@ -71,4 +71,29 @@ struct AGame {
 
     #expect(game.message == "Word is too short")
   }
-}
+
+  @Test
+  func validating_legal_word_gets_no_message() {
+    var game = Game(2, ["A", "B", "C", "D"], Vocabulary(["BACD"]))
+    game.select(Location(0, 1))
+    game.select(Location(0, 0))
+    game.select(Location(1, 0))
+    game.select(Location(1, 1))
+
+    game.validate()
+
+    #expect(game.message.isEmpty)
+  }
+
+  @Test
+  func validating_illegal_word_gets_a_message() {
+    var game = Game(2, ["A", "B", "C", "D"], Vocabulary(["ABCD"]))
+    game.select(Location(0, 1))
+    game.select(Location(0, 0))
+    game.select(Location(1, 0))
+    game.select(Location(1, 1))
+
+    game.validate()
+
+    #expect(game.message == "That's not a word!")
+  }}

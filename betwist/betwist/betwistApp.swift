@@ -9,6 +9,4 @@ struct betwistApp: App {
       ContentView(game: $game)
     }
   }
-
-
 }
