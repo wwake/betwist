@@ -1,18 +1,6 @@
 @testable import betwist
 import Testing
 
-struct Vocabulary {
-  let words: [String]
-
-  init(_ words: [String]) {
-    self.words = words
-  }
-
-  func contains(_ word: String) -> Bool {
-    words.contains(word)
-  }
-}
-
 struct AVocabulary {
   @Test
   func finds_word_that_is_there() {
