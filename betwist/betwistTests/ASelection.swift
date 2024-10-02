@@ -4,7 +4,7 @@ import Testing
 struct ASelection {
   @Test
   func starts_empty() {
-    let grid = Grid(2, ["A", "B", "C", "D"])
+    let grid = LetterGrid(2, ["A", "B", "C", "D"])
     let sut = Selection(grid)
     #expect(sut.count == 0)
     #expect(sut.guess.isEmpty)
@@ -12,7 +12,7 @@ struct ASelection {
 
   @Test
   func can_start_new_word() {
-    let grid = Grid(2, ["A", "B", "C", "D"])
+    let grid = LetterGrid(2, ["A", "B", "C", "D"])
     var sut = Selection(grid)
 
     sut.select(Location(1, 0))
@@ -23,7 +23,7 @@ struct ASelection {
 
   @Test
   func can_extend_word_by_selecting_neighbor() {
-    let grid = Grid(2, ["A", "B", "C", "D"])
+    let grid = LetterGrid(2, ["A", "B", "C", "D"])
     var sut = Selection(grid)
     sut.select(Location(0, 1))
 
@@ -35,7 +35,7 @@ struct ASelection {
 
   @Test
   func selecting_non_neighbor_starts_new_word() {
-    let grid = Grid(4, [
+    let grid = LetterGrid(4, [
       "A", "B", "C", "D",
       "E", "F", "G", "H",
       "I", "J", "K", "L",
@@ -52,7 +52,7 @@ struct ASelection {
 
   @Test
   func selecting_existing_location_unwinds_selection() {
-    let grid = Grid(2, ["A", "B", "C", "D"])
+    let grid = LetterGrid(2, ["A", "B", "C", "D"])
     var sut = Selection(grid)
     sut.select(Location(0, 1))
     sut.select(Location(0, 0))
@@ -65,7 +65,7 @@ struct ASelection {
 
   @Test
   func can_clear() {
-    let grid = Grid(2, ["A", "B", "C", "D"])
+    let grid = LetterGrid(2, ["A", "B", "C", "D"])
     var sut = Selection(grid)
     sut.select(Location(1, 0))
 
@@ -76,7 +76,7 @@ struct ASelection {
 
   @Test
   func has_type_for_each_location() {
-    let grid = Grid(2, ["A", "B", "C", "D"])
+    let grid = LetterGrid(2, ["A", "B", "C", "D"])
     var sut = Selection(grid)
     sut.select(Location(0, 0))
     sut.select(Location(0, 1))
@@ -90,7 +90,7 @@ struct ASelection {
 
   @Test
   func ignores_selection_while_blocked() {
-    let grid = Grid(2, ["A", "B", "C", "D"])
+    let grid = LetterGrid(2, ["A", "B", "C", "D"])
     var sut = Selection(grid)
     sut.blocked = true
 
@@ -101,7 +101,7 @@ struct ASelection {
 
   @Test
   func clearing_removes_block() {
-    let grid = Grid(2, ["A", "B", "C", "D"])
+    let grid = LetterGrid(2, ["A", "B", "C", "D"])
     var sut = Selection(grid)
     sut.blocked = true
 

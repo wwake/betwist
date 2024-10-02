@@ -3,7 +3,7 @@ enum SelectionType {
 }
 
 struct Selection {
-  let grid: Grid
+  let grid: LetterGrid
 
   var selection = [Location]()
 
@@ -25,7 +25,7 @@ struct Selection {
       .joined()
   }
 
-  init(_ board: Grid) {
+  init(_ board: LetterGrid) {
     self.grid = board
   }
 

@@ -1,7 +1,7 @@
 struct Game {
   static let minimumSize = 4
 
-  var grid: Grid
+  var grid: LetterGrid
   var twister: Twister
 
   var selection: Selection
@@ -10,7 +10,7 @@ struct Game {
   var message = ""
 
   init(_ size: Int, _ source: any Sequence<String>) {
-    self.grid = Grid(size, source)
+    self.grid = LetterGrid(size, source)
     self.twister = Twister(size)
 
     self.selection = Selection(grid)

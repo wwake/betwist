@@ -1,7 +1,7 @@
 import Algorithms
 import Foundation
 
-struct Grid {
+struct LetterGrid {
   let size: Int
   let grid: [[String]]
 

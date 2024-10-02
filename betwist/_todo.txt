@@ -1,9 +1,7 @@
-* Error message
-* Word too short
+* Dictionary - ("That's not a word!")
+
 * No duplicates
 * Make guess change color if message shown
-
-* Dictionary - don't erase non-words
 
 * Should you get prefixes for free?
 
@@ -20,6 +18,9 @@
 
 2024-10-02 - WORD-24-06 - Only Dictionary Words!
 * Defect fixed - tapping a letter while the "collect" animations runs adds the letter to the guess that's moving down
+* Add error message display
+* Show error when word too short
+* Don't reset selection for invalid words
 
 2024-10-01 - WORD-24-05 - Let's Twist Again
 * Add animation to twisting
