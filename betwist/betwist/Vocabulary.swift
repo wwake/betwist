@@ -9,3 +9,13 @@ class Vocabulary {
     words.contains(word)
   }
 }
+
+class NullVocabulary: Vocabulary {
+  init() {
+    super.init([])
+  }
+
+  override func contains(_ word: String) -> Bool {
+    true
+  }
+}

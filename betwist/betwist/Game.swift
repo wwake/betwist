@@ -9,7 +9,7 @@ struct Game {
 
   var message = ""
 
-  init(_ size: Int, _ source: any Sequence<String>) {
+  init(_ size: Int, _ source: any Sequence<String>, _ vocabulary: Vocabulary = NullVocabulary()) {
     self.grid = LetterGrid(size, source)
     self.twister = Twister(size)
 
