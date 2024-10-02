@@ -24,6 +24,10 @@ struct Game {
     grid[row, column]
   }
 
+  mutating func blockSelection() {
+    selection.blocked = true
+  }
+
   mutating func deselectAll() {
     selection.clear()
   }

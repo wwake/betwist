@@ -5,6 +5,7 @@ struct ContentView: View {
   @State private var guessOffset: CGFloat = 0
 
   fileprivate func collectWord() {
+    game.blockSelection()
     withAnimation(.easeInOut(duration: 1)) {
       guessOffset = 350
     }
@@ -14,7 +15,7 @@ struct ContentView: View {
       game.deselectAll()
     }
   }
-  
+
   var body: some View {
     ZStack {
       VStack {

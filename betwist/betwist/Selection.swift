@@ -7,6 +7,8 @@ struct Selection {
 
   var selection = [Location]()
 
+  var blocked = false
+
   var count: Int {
     selection.count
   }
@@ -28,6 +30,8 @@ struct Selection {
   }
 
   mutating func select(_ location: Location) {
+    guard !blocked else { return }
+
     if let index = selection.firstIndex(of: location) {
       selection = selection.dropLast(count - index - 1)
       return
@@ -42,6 +46,7 @@ struct Selection {
 
   mutating func clear() {
     selection.removeAll()
+    blocked = false
   }
 
   func type(_ location: Location) -> SelectionType {

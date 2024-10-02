@@ -1,6 +1,10 @@
-* Error field
+* Error message
 * Word too short
 * No duplicates
+
+* Defect - tapping a letter while the "collect" animations runs adds the letter to the guess that's moving down
+* Defect - button only works if you click exactly on the letter
+
 
 * Dictionary - don't erase non-words
 
