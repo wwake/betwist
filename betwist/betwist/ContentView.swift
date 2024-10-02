@@ -5,7 +5,9 @@ struct ContentView: View {
   @State private var guessOffset: CGFloat = 0
 
   fileprivate func collectWord() {
-    
+    game.validate()
+    if !game.message.isEmpty { return }
+
     game.blockSelection()
     withAnimation(.easeInOut(duration: 1)) {
       guessOffset = 350
@@ -45,6 +47,7 @@ struct ContentView: View {
 
         Text(game.message)
           .foregroundStyle(.red)
+          .frame(height: 20)
 
         ForEach(game.rowIndexes, id: \.self) { row in
           HStack {
