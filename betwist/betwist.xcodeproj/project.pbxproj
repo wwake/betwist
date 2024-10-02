@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,6 @@
 		911EE9E32CAB21E5005C391D /* AGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E22CAB21E5005C391D /* AGame.swift */; };
 		911EE9E52CAB24CA005C391D /* AGameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E42CAB24CA005C391D /* AGameMaker.swift */; };
 		911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E62CAB28CE005C391D /* GameMaker.swift */; };
-		911EE9EA2CAC6C5E005C391D /* word.list in Resources */ = {isa = PBXBuildFile; fileRef = 911EE9E92CAC6C5E005C391D /* word.list */; };
 		911EE9EC2CAC7970005C391D /* GridButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9EB2CAC7970005C391D /* GridButtonStyle.swift */; };
 		911EE9EE2CAC79B7005C391D /* MotionControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9ED2CAC79B7005C391D /* MotionControls.swift */; };
 		911EE9F02CAC7CB9005C391D /* ATwister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9EF2CAC7CB9005C391D /* ATwister.swift */; };
@@ -31,7 +30,6 @@
 		9181F0A62CA3556D0091A771 /* ASelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181F0A52CA3556D0091A771 /* ASelection.swift */; };
 		91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96722C81333A0011BB7F /* betwistApp.swift */; };
 		91FA96752C81333A0011BB7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96742C81333A0011BB7F /* ContentView.swift */; };
-		91FA96772C81333E0011BB7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FA96762C81333E0011BB7F /* Assets.xcassets */; };
 		91FA967A2C81333E0011BB7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FA96792C81333E0011BB7F /* Preview Assets.xcassets */; };
 		91FA969D2C813F5E0011BB7F /* _todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 91FA969C2C813F5E0011BB7F /* _todo.txt */; };
 		91FA96A02C8141010011BB7F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 91FA969F2C8141010011BB7F /* .swiftlint.yml */; };
@@ -57,7 +55,6 @@
 		911EE9E22CAB21E5005C391D /* AGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGame.swift; sourceTree = "<group>"; };
 		911EE9E42CAB24CA005C391D /* AGameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGameMaker.swift; sourceTree = "<group>"; };
 		911EE9E62CAB28CE005C391D /* GameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaker.swift; sourceTree = "<group>"; };
-		911EE9E92CAC6C5E005C391D /* word.list */ = {isa = PBXFileReference; lastKnownFileType = text; path = word.list; sourceTree = "<group>"; };
 		911EE9EB2CAC7970005C391D /* GridButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridButtonStyle.swift; sourceTree = "<group>"; };
 		911EE9ED2CAC79B7005C391D /* MotionControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionControls.swift; sourceTree = "<group>"; };
 		911EE9EF2CAC7CB9005C391D /* ATwister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATwister.swift; sourceTree = "<group>"; };
@@ -74,13 +71,16 @@
 		91FA966F2C81333A0011BB7F /* betwist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betwist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA96722C81333A0011BB7F /* betwistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = betwistApp.swift; sourceTree = "<group>"; };
 		91FA96742C81333A0011BB7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		91FA96762C81333E0011BB7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91FA96792C81333E0011BB7F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91FA967F2C81333E0011BB7F /* betwistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = betwistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA969C2C813F5E0011BB7F /* _todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _todo.txt; sourceTree = "<group>"; };
 		91FA969F2C8141010011BB7F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		91FA96A32C814BAE0011BB7F /* betwist.key */ = {isa = PBXFileReference; lastKnownFileType = file; path = betwist.key; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		911EE9F72CAD99A7005C391D /* resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = resources; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		91FA966C2C81333A0011BB7F /* Frameworks */ = {
@@ -118,7 +118,6 @@
 				91FA96A32C814BAE0011BB7F /* betwist.key */,
 				91FA969F2C8141010011BB7F /* .swiftlint.yml */,
 				914A53992CA3664E00C05BB7 /* betwist.xctestplan */,
-				911EE9E92CAC6C5E005C391D /* word.list */,
 				91FA96712C81333A0011BB7F /* betwist */,
 				91FA96822C81333E0011BB7F /* betwistTests */,
 				9181F0A02CA34EA60091A771 /* Frameworks */,
@@ -138,9 +137,9 @@
 		91FA96712C81333A0011BB7F /* betwist */ = {
 			isa = PBXGroup;
 			children = (
-				911EE9F32CAC8A42005C391D /* CGPoint+direction.swift */,
-				91FA96762C81333E0011BB7F /* Assets.xcassets */,
+				911EE9F72CAD99A7005C391D /* resources */,
 				91FA96722C81333A0011BB7F /* betwistApp.swift */,
+				911EE9F32CAC8A42005C391D /* CGPoint+direction.swift */,
 				91FA96742C81333A0011BB7F /* ContentView.swift */,
 				9104FD2D2CA5E85500A8CBB3 /* Game.swift */,
 				911EE9E62CAB28CE005C391D /* GameMaker.swift */,
@@ -192,6 +191,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				911EE9F72CAD99A7005C391D /* resources */,
 			);
 			name = betwist;
 			productName = betwist;
@@ -269,11 +271,9 @@
 				91FA96A02C8141010011BB7F /* .swiftlint.yml in Resources */,
 				91FA969D2C813F5E0011BB7F /* _todo.txt in Resources */,
 				912CFEEA2C88A6B10074C066 /* README.md in Resources */,
-				911EE9EA2CAC6C5E005C391D /* word.list in Resources */,
 				91FA96A42C814BAE0011BB7F /* betwist.key in Resources */,
 				914A539A2CA3664E00C05BB7 /* betwist.xctestplan in Resources */,
 				91FA967A2C81333E0011BB7F /* Preview Assets.xcassets in Resources */,
-				91FA96772C81333E0011BB7F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
