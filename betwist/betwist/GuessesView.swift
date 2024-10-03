@@ -4,12 +4,12 @@ struct GuessesView: View {
   @Environment(\.dismiss)
   var dismiss
 
-  var guesses: [String]
+  var guesses: Guesses
 
   var body: some View {
     VStack {
       ScrollView {
-        Text(verbatim: String(guesses.joined(by: "\n")))
+        Text(verbatim: guesses.asString)
           .font(.title)
       }
       Button("Done") {

@@ -5,7 +5,7 @@ struct Game {
   var twister: Twister
 
   var selection: Selection
-  var guesses = [String]()
+  var guesses = Guesses()
 
   var vocabulary: Vocabulary
 
@@ -62,7 +62,7 @@ struct Game {
   mutating func collect() {
     guard message.isEmpty && !guess.isEmpty else { return }
 
-    guesses.insert(guess, at: 0)
+    guesses.prepend(guess)
   }
 
   func lastLocationSelected(was location: Location) -> Bool {

@@ -95,7 +95,7 @@ struct ContentView: View {
           .opacity(game.guesses.isEmpty ? 0 : 1)
 
           ScrollView {
-            Text(verbatim: String(game.guesses.joined(by: "\n")))
+            Text(verbatim: game.guesses.asString)
               .font(.title2)
               .frame(width: 300)
           }
