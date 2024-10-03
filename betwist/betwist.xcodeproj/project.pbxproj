@@ -22,6 +22,7 @@
 		911EE9F62CAC8A71005C391D /* ACGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9F52CAC8A71005C391D /* ACGPoint.swift */; };
 		911EE9F92CADD10F005C391D /* AVocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9F82CADD10F005C391D /* AVocabulary.swift */; };
 		911EE9FB2CADD2D6005C391D /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9FA2CADD2D6005C391D /* Vocabulary.swift */; };
+		911EE9FD2CAF26E4005C391D /* GuessesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9FC2CAF26E4005C391D /* GuessesView.swift */; };
 		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
 		912CFEEA2C88A6B10074C066 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE82C88A6B10074C066 /* README.md */; };
 		914A539A2CA3664E00C05BB7 /* betwist.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 914A53992CA3664E00C05BB7 /* betwist.xctestplan */; };
@@ -65,6 +66,7 @@
 		911EE9F52CAC8A71005C391D /* ACGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACGPoint.swift; sourceTree = "<group>"; };
 		911EE9F82CADD10F005C391D /* AVocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVocabulary.swift; sourceTree = "<group>"; };
 		911EE9FA2CADD2D6005C391D /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
+		911EE9FC2CAF26E4005C391D /* GuessesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessesView.swift; sourceTree = "<group>"; };
 		912CFEE72C88A6B10074C066 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		914A53992CA3664E00C05BB7 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		91FA96712C81333A0011BB7F /* betwist */ = {
 			isa = PBXGroup;
 			children = (
+				911EE9FC2CAF26E4005C391D /* GuessesView.swift */,
 				911EE9F72CAD99A7005C391D /* resources */,
 				91FA96722C81333A0011BB7F /* betwistApp.swift */,
 				911EE9F32CAC8A42005C391D /* CGPoint+direction.swift */,
@@ -318,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				911EE9FD2CAF26E4005C391D /* GuessesView.swift in Sources */,
 				911EE9EC2CAC7970005C391D /* GridButtonStyle.swift in Sources */,
 				910C97AC2CA48AF400893B79 /* Selection.swift in Sources */,
 				911EE9FB2CADD2D6005C391D /* Vocabulary.swift in Sources */,

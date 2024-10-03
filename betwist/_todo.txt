@@ -1,4 +1,4 @@
-* Tap last letter submits partial word
+* Tap last letter submits word
 * No duplicates
 
 * Make cell size depend on window size - GeometryReader
