@@ -24,6 +24,7 @@
 		911EE9FB2CADD2D6005C391D /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9FA2CADD2D6005C391D /* Vocabulary.swift */; };
 		911EE9FD2CAF26E4005C391D /* GuessesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9FC2CAF26E4005C391D /* GuessesView.swift */; };
 		911EE9FF2CAF2DE4005C391D /* Guesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9FE2CAF2DDF005C391D /* Guesses.swift */; };
+		911EEA012CAF30D7005C391D /* TheGuesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EEA002CAF30D7005C391D /* TheGuesses.swift */; };
 		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
 		912CFEEA2C88A6B10074C066 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE82C88A6B10074C066 /* README.md */; };
 		914A539A2CA3664E00C05BB7 /* betwist.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 914A53992CA3664E00C05BB7 /* betwist.xctestplan */; };
@@ -69,6 +70,7 @@
 		911EE9FA2CADD2D6005C391D /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
 		911EE9FC2CAF26E4005C391D /* GuessesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessesView.swift; sourceTree = "<group>"; };
 		911EE9FE2CAF2DDF005C391D /* Guesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guesses.swift; sourceTree = "<group>"; };
+		911EEA002CAF30D7005C391D /* TheGuesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGuesses.swift; sourceTree = "<group>"; };
 		912CFEE72C88A6B10074C066 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		914A53992CA3664E00C05BB7 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				911EE9EF2CAC7CB9005C391D /* ATwister.swift */,
 				911EE9F52CAC8A71005C391D /* ACGPoint.swift */,
 				911EE9F82CADD10F005C391D /* AVocabulary.swift */,
+				911EEA002CAF30D7005C391D /* TheGuesses.swift */,
 			);
 			path = betwistTests;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			files = (
 				9181F0A62CA3556D0091A771 /* ASelection.swift in Sources */,
 				911EE9E52CAB24CA005C391D /* AGameMaker.swift in Sources */,
+				911EEA012CAF30D7005C391D /* TheGuesses.swift in Sources */,
 				911EE9F02CAC7CB9005C391D /* ATwister.swift in Sources */,
 				911EE9F92CADD10F005C391D /* AVocabulary.swift in Sources */,
 				911EE9E32CAB21E5005C391D /* AGame.swift in Sources */,

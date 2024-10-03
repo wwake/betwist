@@ -18,7 +18,7 @@ struct AGame {
 
     game.collect()
 
-    #expect(game.guesses == ["BDCA", "ABCD"])
+    #expect(game.guesses.description == "BDCA\nABCD")
   }
 
   @Test
