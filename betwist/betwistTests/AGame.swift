@@ -49,6 +49,14 @@ struct AGame {
   }
 
   @Test
+  func collecting_empty_word_gets_ignored() {
+    var game = Game(2, ["A", "B", "C", "D"])
+    game.collect()
+    #expect(game.guesses.isEmpty)
+    #expect(game.message.isEmpty)
+  }
+
+  @Test
   func collecting_doesnt_collect_word_that_got_message() {
     var game = Game(2, ["A", "B", "C", "D"])
     game.select(Location(0, 1))
@@ -58,6 +66,15 @@ struct AGame {
 
     #expect(game.message == "Word is too short")
     #expect(game.guesses.isEmpty)
+  }
+
+  @Test
+  func validating_empty_word_gets_no_message() {
+    var game = Game(2, ["A", "B", "C", "D"])
+
+    game.validate()
+
+    #expect(game.message.isEmpty)
   }
 
   @Test

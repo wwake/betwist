@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct GuessesView: View {
-  @Environment(\.dismiss) var dismiss
+  @Environment(\.dismiss)
+  var dismiss
 
   var guesses: [String]
 
@@ -16,7 +17,7 @@ struct GuessesView: View {
       }
       .buttonStyle(.bordered)
       .foregroundStyle(Color.black)
-
+      .padding(8)
     }
   }
 }
@@ -104,6 +105,7 @@ struct ContentView: View {
             showGuesses.toggle()
           } label: {
             Image(systemName: "doc.text.magnifyingglass")
+              .accessibilityLabel(Text("View Guesses"))
           }
           .opacity(game.guesses.isEmpty ? 0 : 1)
 

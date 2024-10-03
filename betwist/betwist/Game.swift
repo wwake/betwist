@@ -50,6 +50,8 @@ struct Game {
   }
 
   mutating func validate() {
+    if guess.count == 0 { return }
+
     if guess.count < Self.minimumSize {
       message = "Word is too short"
     } else if !vocabulary.contains(guess) {
@@ -58,7 +60,7 @@ struct Game {
   }
 
   mutating func collect() {
-    guard message.isEmpty else { return }
+    guard message.isEmpty && !guess.isEmpty else { return }
 
     guesses.insert(guess, at: 0)
   }
