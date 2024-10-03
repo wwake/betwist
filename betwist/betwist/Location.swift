@@ -17,8 +17,12 @@ struct Location: Equatable {
     self.column = column
   }
 
-  func isClose(_ other: Location, wrap: Int) -> Bool {
-    isClose(self.row, other.row, wrap: wrap) && isClose(self.column, other.column, wrap: wrap)
+  func hasNeighbor(_ other: Location, wrap size: Int) -> Bool {
+    if self == other {
+      return false
+    }
+
+    return isClose(self.row, other.row, wrap: size) && isClose(self.column, other.column, wrap: size)
   }
 
   fileprivate func isClose(_ index1: Int, _ index2: Int, wrap: Int) -> Bool {

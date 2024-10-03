@@ -83,8 +83,6 @@ struct ContentView: View {
           }
         )
 
-       // MotionControls(game: $game)
-
         HStack {
           Button {
             showGuesses.toggle()

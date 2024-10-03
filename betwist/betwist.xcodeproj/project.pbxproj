@@ -15,7 +15,6 @@
 		911EE9E52CAB24CA005C391D /* AGameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E42CAB24CA005C391D /* AGameMaker.swift */; };
 		911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E62CAB28CE005C391D /* GameMaker.swift */; };
 		911EE9EC2CAC7970005C391D /* GridButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9EB2CAC7970005C391D /* GridButtonStyle.swift */; };
-		911EE9EE2CAC79B7005C391D /* MotionControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9ED2CAC79B7005C391D /* MotionControls.swift */; };
 		911EE9F02CAC7CB9005C391D /* ATwister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9EF2CAC7CB9005C391D /* ATwister.swift */; };
 		911EE9F22CAC8096005C391D /* Twister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9F12CAC8096005C391D /* Twister.swift */; };
 		911EE9F42CAC8A48005C391D /* CGPoint+direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9F32CAC8A42005C391D /* CGPoint+direction.swift */; };
@@ -61,7 +60,6 @@
 		911EE9E42CAB24CA005C391D /* AGameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGameMaker.swift; sourceTree = "<group>"; };
 		911EE9E62CAB28CE005C391D /* GameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaker.swift; sourceTree = "<group>"; };
 		911EE9EB2CAC7970005C391D /* GridButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridButtonStyle.swift; sourceTree = "<group>"; };
-		911EE9ED2CAC79B7005C391D /* MotionControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionControls.swift; sourceTree = "<group>"; };
 		911EE9EF2CAC7CB9005C391D /* ATwister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATwister.swift; sourceTree = "<group>"; };
 		911EE9F12CAC8096005C391D /* Twister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twister.swift; sourceTree = "<group>"; };
 		911EE9F32CAC8A42005C391D /* CGPoint+direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+direction.swift"; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				9181F09D2CA347370091A771 /* Int+wrap.swift */,
 				9181F09B2CA3444A0091A771 /* LetterGrid.swift */,
 				910C97A82CA48AAD00893B79 /* Location.swift */,
-				911EE9ED2CAC79B7005C391D /* MotionControls.swift */,
 				91FA96782C81333E0011BB7F /* Preview Content */,
 				911EE9F72CAD99A7005C391D /* resources */,
 				910C97AA2CA48AD900893B79 /* Selection.swift */,
@@ -335,7 +332,6 @@
 				9104FD2E2CA5E85900A8CBB3 /* Game.swift in Sources */,
 				911EE9FF2CAF2DE4005C391D /* Guesses.swift in Sources */,
 				9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */,
-				911EE9EE2CAC79B7005C391D /* MotionControls.swift in Sources */,
 				911EE9F42CAC8A48005C391D /* CGPoint+direction.swift in Sources */,
 				911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */,
 				910C97A92CA48AAD00893B79 /* Location.swift in Sources */,

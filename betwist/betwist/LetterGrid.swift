@@ -15,20 +15,7 @@ struct LetterGrid {
     grid[row %% size][column %% size]
   }
 
-  func isClose(_ index1: Int, _ index2: Int, wrap: Int) -> Bool {
-    let distance = abs(index1 - index2)
-    return distance <= 1 || distance == wrap - 1
-  }
-
-  fileprivate func isClose(_ location1: Location, _ location2: Location, wrap: Int) -> Bool {
-    isClose(location1.row, location2.row, wrap: wrap) && isClose(location1.column, location2.column, wrap: wrap)
-  }
-
   func hasNeighbors(_ location1: Location, _ location2: Location) -> Bool {
-    if location1 == location2 {
-      return false
-    }
-
-    return location1.isClose(location2, wrap: size)
+    location1.hasNeighbor(location2, wrap: size)
   }
 }
