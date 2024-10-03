@@ -8,8 +8,10 @@ struct Guesses {
   var isEmpty: Bool {
     guesses.isEmpty
   }
+}
 
-  var asString: String {
+extension Guesses: CustomStringConvertible {
+  public var description: String {
     String(guesses.joined(by: "\n"))
   }
 }

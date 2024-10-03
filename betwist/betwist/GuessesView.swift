@@ -9,7 +9,7 @@ struct GuessesView: View {
   var body: some View {
     VStack {
       ScrollView {
-        Text(verbatim: guesses.asString)
+        Text(verbatim: guesses.description)
           .font(.title)
       }
       Button("Done") {
