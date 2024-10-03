@@ -38,6 +38,21 @@ struct AGame {
   }
 
   @Test
+  func selectingLastCell_false_if_nothing_selected() {
+    let game = Game(2, ["A", "B", "C", "D"])
+    #expect(!game.lastLocationSelected(was: Location(0, 0)))
+  }
+
+  @Test
+  func selectingLastCell_true_only_if_location_matches() {
+    var game = Game(2, ["A", "B", "C", "D"])
+    game.select(Location(0, 0))
+
+    #expect(game.lastLocationSelected(was: Location(0, 0)))
+    #expect(!game.lastLocationSelected(was: Location(0, 1)))
+  }
+
+  @Test
   func deselectAll_clears_the_message() {
     var game = Game(2, ["A", "B", "C", "D"])
     game.select(Location(0, 0))

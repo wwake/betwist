@@ -65,6 +65,10 @@ struct Game {
     guesses.insert(guess, at: 0)
   }
 
+  func lastLocationSelected(was location: Location) -> Bool {
+    selection.last == location
+  }
+
   mutating func twist(_ direction: Directions) {
     twister.twist(direction)
   }
