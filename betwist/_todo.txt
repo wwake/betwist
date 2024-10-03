@@ -1,6 +1,5 @@
-* No message for length of 0
-* No duplicates
 * Tap last letter submits partial word
+* No duplicates
 
 * Make cell size depend on window size - GeometryReader
 
@@ -27,6 +26,7 @@
 
 2024-10-3 - WORD-24-07 - Some Rules, & a Better View
 * Pop out list of guessed words
+* No message for length of 0
 
 2024-10-02 - WORD-24-06 - Only Dictionary Words!
 * Defect fixed - tapping a letter while the "collect" animations runs adds the letter to the guess that's moving down

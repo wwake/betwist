@@ -28,6 +28,8 @@ struct ContentView: View {
   @State private var showGuesses = false
 
   fileprivate func collectWord() {
+    if game.guess.isEmpty { return }
+
     game.validate()
     if !game.message.isEmpty { return }
 
