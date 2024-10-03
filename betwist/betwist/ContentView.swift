@@ -1,8 +1,30 @@
 import SwiftUI
 
+struct GuessesView: View {
+  @Environment(\.dismiss) var dismiss
+
+  var guesses: [String]
+
+  var body: some View {
+    VStack {
+      ScrollView {
+        Text(verbatim: String(guesses.joined(by: "\n")))
+          .font(.title)
+      }
+      Button("Done") {
+        dismiss()
+      }
+      .buttonStyle(.bordered)
+      .foregroundStyle(Color.black)
+
+    }
+  }
+}
+
 struct ContentView: View {
   @Binding var game: Game
   @State private var guessOffset: CGFloat = 0
+  @State private var showGuesses = false
 
   fileprivate func collectWord() {
     game.validate()
@@ -23,12 +45,19 @@ struct ContentView: View {
     ZStack {
       VStack {
         HStack {
+          Image("TheIcon")
+            .resizable()
+            .scaledToFit()
+            .frame(maxWidth: 128, maxHeight: 128)
+            .accessibilityLabel(Text("Betwist"))
           Text(game.guess)
             .font(.largeTitle)
-            .padding(8)
-            .frame(minWidth: 200)
-            .frame(height: 50)
-            .border(.white)
+            .foregroundStyle(game.message.isEmpty ? Color.black : Color.red)
+            .frame(minWidth: 230)
+            .frame(height: 40)
+            .padding(4)
+            .background(Color(white: 1.0, opacity: 0.85))
+            .border(.black, width: 2)
             .accessibilityAddTraits(.isButton)
             .offset(y: guessOffset)
             .onTapGesture {
@@ -68,11 +97,21 @@ struct ContentView: View {
           }
         )
 
-        MotionControls(game: $game)
+       // MotionControls(game: $game)
 
-        ScrollView {
-          Text(verbatim: String(game.guesses.joined(by: "\n")))
-            .font(.title)
+        HStack {
+          Button {
+            showGuesses.toggle()
+          } label: {
+            Image(systemName: "doc.text.magnifyingglass")
+          }
+          .opacity(game.guesses.isEmpty ? 0 : 1)
+
+          ScrollView {
+            Text(verbatim: String(game.guesses.joined(by: "\n")))
+              .font(.title2)
+              .frame(width: 300)
+          }
         }
 
         Spacer()
@@ -80,6 +119,9 @@ struct ContentView: View {
       .padding()
       .containerRelativeFrame([.horizontal, .vertical])
       .background(Gradient(colors: [.gray, .black]).opacity(0.5))
+      .sheet(isPresented: $showGuesses) {
+        GuessesView(guesses: game.guesses)
+      }
     }
   }
 }

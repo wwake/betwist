@@ -1,14 +1,24 @@
-* Dictionary - ("That's not a word!")
-
+* Pop out list of guessed words
 * No duplicates
-* Make guess change color if message shown
+* No message for length of 0
+* Tap last letter submits partial word
+
+* Make cell size depend on window size - GeometryReader
+
+* Demo mode for first-time use (drop those arrows!)
 
 * Should you get prefixes for free?
+* Running count or score
+
+* Generate full list of words you didn't guess
 
 * Defect - button only works if you click exactly on the letter
 
-* Make cell size depend on window size
-* Running count or score
+* New game
+
+* Set parameters (eg board size)
+
+* Better set of generated letters?
 
 * Sound
 
@@ -21,6 +31,10 @@
 * Add error message display
 * Show error when word too short
 * Don't reset selection for invalid words
+* Dictionary - ("That's not a word!")
+* Make guess change color if message shown
+* Improve format of partial word
+* Add icon to left of partial word (for visual balance)
 
 2024-10-01 - WORD-24-05 - Let's Twist Again
 * Add animation to twisting
