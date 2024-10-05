@@ -6,6 +6,9 @@
 * Should you get prefixes for free?
 * Running count or score
 
+* Show potential neighbors?
+* Use colors instead of b&w
+
 * Generate full list of words you didn't guess
 
 * Defect - button only works if you click exactly on the letter
@@ -14,17 +17,19 @@
 
 * Set parameters (eg board size)
 
-* Better set of generated letters?
-
 * Sound
 
 * Animation - experiment with opacity [defer]
 
 * Twist up - draws funny on first time only - simplify case & file a report?
 
+Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swiftui-layout-protocol-f7b0efeeacbf
+
+
 2024-10-3 - WORD-24-07 - Some Rules, & a Better View
 * Pop out list of guessed words
 * No message for length of 0
+* Improved set of generated letters
 * Double-tap last letter submits word
 * No duplicates - move word to the top of the list
 
@@ -61,7 +66,7 @@
 * Improve board's formatting
 * Submit a word - and clear selection
 * Minimal version - Show the list of accepted words
-* Played with animation
+* Added some animation
 
 2024-09-25 - WORD-24-02 - Selecting Words
 * Extend a selection to a neighbor
