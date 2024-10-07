@@ -128,4 +128,17 @@ struct AGame {
     game.validate()
 
     #expect(game.message == "That's not a word!")
-  }}
+  }
+
+  @Test
+  func hue_for_same_location_is_the_same() {
+    let game = Game(2, ["A", "B", "C", "D"], Vocabulary(["ABCD"]))
+    #expect(game.hue(at: Location(1, 0)) == game.hue(at: Location(1, 0)))
+  }
+
+  @Test
+  func hue_for_different_locations_is_different() {
+    let game = Game(2, ["A", "B", "C", "D"], Vocabulary(["ABCD"]))
+    #expect(game.hue(at: Location(1, 0)) != game.hue(at: Location(1, 1)))
+  }
+}

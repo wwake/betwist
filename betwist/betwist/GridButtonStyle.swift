@@ -16,14 +16,13 @@ struct GridButtonStyle: ViewModifier {
 
     default:
       return Color(.cellForegroundSelected)
-
     }
   }
 
   func backgroundColor(_ type: SelectionType) -> Color {
     switch type {
     case .open:
-      return Color(.cellBackgroundOpen)
+      return Color(hue: game.hue(at: location), saturation: 0.15, brightness: 1.0)
 
     default:
       return Color(.cellBackgroundSelected)
@@ -34,6 +33,9 @@ struct GridButtonStyle: ViewModifier {
     switch type {
     case .first:
       return Color(.cellBorderFirst)
+
+    case .middle:
+      return Color(.cellBorderMiddle)
 
     case .last:
       return Color(.cellBorderLast)
@@ -51,6 +53,6 @@ struct GridButtonStyle: ViewModifier {
       .frame(width: 48, height: 48)
       .background(backgroundColor(type))
       .foregroundStyle(foregroundColor(type))
-      .border(borderColor(type), width: 2)
+      .border(borderColor(type), width: 1)
   }
 }

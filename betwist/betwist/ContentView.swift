@@ -59,30 +59,32 @@ struct ContentView: View {
           .foregroundStyle(.red)
           .frame(height: 20)
 
-        ForEach(game.rowIndexes, id: \.self) { row in
-          HStack {
-            ForEach(game.columnIndexes, id: \.self) { column in
-              Button {
-                let location = Location(row, column)
-                if game.lastLocationSelected(was: location) {
-                  collectWord()
-                } else {
-                  game.select(location)
+        VStack(spacing: 0) {
+          ForEach(game.rowIndexes, id: \.self) { row in
+            HStack(spacing: 0) {
+              ForEach(game.columnIndexes, id: \.self) { column in
+                Button {
+                  let location = Location(row, column)
+                  if game.lastLocationSelected(was: location) {
+                    collectWord()
+                  } else {
+                    game.select(location)
+                  }
+                } label: {
+                  Text("\(game[row, column])")
                 }
-              } label: {
-                Text("\(game[row, column])")
+                .modifier(GridButtonStyle(game, Location(row, column)))
               }
-              .modifier(GridButtonStyle(game, Location(row, column)))
             }
-          }
-        }.gesture(
-          DragGesture(minimumDistance: 50)
-          .onEnded { dragInfo in
-            withAnimation {
-              game.twist(dragInfo.startLocation.direction(to: dragInfo.location))
-            }
-          }
-        )
+          }.gesture(
+            DragGesture(minimumDistance: 50)
+              .onEnded { dragInfo in
+                withAnimation {
+                  game.twist(dragInfo.startLocation.direction(to: dragInfo.location))
+                }
+              }
+          )
+        }
 
         HStack {
           Button {

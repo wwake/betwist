@@ -1,5 +1,4 @@
 * Change the scrolling
-* Colors?
 * Do we need directions?
 
 * Demo mode for first-time use (drop those arrows!)
@@ -36,6 +35,8 @@ Tessellations?
 * Make the whole button sensitive to touch, not just the letter only
 * Fixed cell size (now 48x48)
 * Give the first cell a gray border
+* Add letter-grid colors to the asset catalog
+* Assign persistent colors to cell backgrounds
 
 2024-10-3 - WORD-24-07 - Some Rules, & a Better View
 * Pop out list of guessed words

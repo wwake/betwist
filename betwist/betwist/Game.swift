@@ -1,5 +1,6 @@
 struct Game {
   static let minimumSize = 4
+  static let maxPuzzleSize = 10
 
   var grid: LetterGrid
   var twister: Twister
@@ -11,12 +12,16 @@ struct Game {
 
   var message = ""
 
+  private var hues: [Double]
+
   init(_ size: Int, _ source: any Sequence<String>, _ vocabulary: Vocabulary = NullVocabulary()) {
     self.grid = LetterGrid(size, source)
     self.twister = Twister(size)
 
     self.selection = Selection(grid)
     self.vocabulary = vocabulary
+
+    self.hues = (0..<(Self.maxPuzzleSize * Self.maxPuzzleSize)).map { _ in Double.random(in: 0..<1.0)}
   }
 
   var size: Int {
@@ -47,6 +52,10 @@ struct Game {
 
   func type(at location: Location) -> SelectionType {
     selection.type(location)
+  }
+
+  func hue(at location: Location) -> Double {
+    hues[location.row * size + location.column]
   }
 
   mutating func validate() {
