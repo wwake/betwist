@@ -31,6 +31,9 @@ struct GridButtonStyle: ViewModifier {
 
   func borderColor(_ type: SelectionType) -> Color {
     switch type {
+    case .first:
+      return Color(white: 0.85)
+
     case .last:
       return .red
 

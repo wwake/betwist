@@ -36,6 +36,7 @@ Tessellations?
 
 2024-10-07 - WORD-24-08 - Size-Sensitive Views
 * Make the whole button sensitive to touch, not just the letter only
+* Give the first cell a gray border
 
 2024-10-3 - WORD-24-07 - Some Rules, & a Better View
 * Pop out list of guessed words
