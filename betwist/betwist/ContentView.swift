@@ -62,15 +62,16 @@ struct ContentView: View {
         ForEach(game.rowIndexes, id: \.self) { row in
           HStack {
             ForEach(game.columnIndexes, id: \.self) { column in
-              Button("\(game[row, column])") {
+              Button {
                 let location = Location(row, column)
                 if game.lastLocationSelected(was: location) {
                   collectWord()
                 } else {
                   game.select(location)
                 }
+              } label: {
+                Text("\(game[row, column])")
               }
-              .frame(width: 30, height: 30)
               .modifier(GridButtonStyle(game, Location(row, column)))
             }
           }

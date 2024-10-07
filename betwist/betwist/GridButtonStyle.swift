@@ -44,7 +44,7 @@ struct GridButtonStyle: ViewModifier {
 
     return content
       .font(.largeTitle)
-      .padding(20)
+      .frame(width: 48, height: 48)
       .background(backgroundColor(type))
       .foregroundStyle(foregroundColor(type))
       .border(borderColor(type), width: 2)

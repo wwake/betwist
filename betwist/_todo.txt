@@ -1,5 +1,8 @@
-
+* Fixed cell size
+* Change the scrolling
+* Colors?
 * Make cell size depend on window size - GeometryReader
+* Do we need directions?
 
 * Demo mode for first-time use (drop those arrows!)
 
@@ -23,8 +26,16 @@
 
 * Twist up - draws funny on first time only - simplify case & file a report?
 
+Unbounded
+
 Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swiftui-layout-protocol-f7b0efeeacbf
 
+Triangles
+Tessellations?
+
+
+2024-10-07 - WORD-24-08 - Size-Sensitive Views
+* Make the whole button sensitive to touch, not just the letter only
 
 2024-10-3 - WORD-24-07 - Some Rules, & a Better View
 * Pop out list of guessed words
