@@ -1,7 +1,5 @@
-* Fixed cell size
 * Change the scrolling
 * Colors?
-* Make cell size depend on window size - GeometryReader
 * Do we need directions?
 
 * Demo mode for first-time use (drop those arrows!)
@@ -36,6 +34,7 @@ Tessellations?
 
 2024-10-07 - WORD-24-08 - Size-Sensitive Views
 * Make the whole button sensitive to touch, not just the letter only
+* Fixed cell size (now 48x48)
 * Give the first cell a gray border
 
 2024-10-3 - WORD-24-07 - Some Rules, & a Better View

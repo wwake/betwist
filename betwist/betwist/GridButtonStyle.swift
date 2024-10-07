@@ -12,33 +12,34 @@ struct GridButtonStyle: ViewModifier {
   func foregroundColor(_ type: SelectionType) -> Color {
     switch type {
     case .open:
-      return .black
+      return Color(.cellForegroundOpen)
 
     default:
-      return .white
+      return Color(.cellForegroundSelected)
+
     }
   }
 
   func backgroundColor(_ type: SelectionType) -> Color {
     switch type {
     case .open:
-      return Color(white: 1.0, opacity: 0.85)
+      return Color(.cellBackgroundOpen)
 
     default:
-      return .black
+      return Color(.cellBackgroundSelected)
     }
   }
 
   func borderColor(_ type: SelectionType) -> Color {
     switch type {
     case .first:
-      return Color(white: 0.85)
+      return Color(.cellBorderFirst)
 
     case .last:
-      return .red
+      return Color(.cellBorderLast)
 
     default:
-      return .black
+      return Color(.cellBorderDefault)
     }
   }
 
