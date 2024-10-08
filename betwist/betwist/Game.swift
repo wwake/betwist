@@ -21,7 +21,7 @@ struct Game {
     self.selection = Selection(grid)
     self.vocabulary = vocabulary
 
-    self.hues = (0..<(Self.maxPuzzleSize * Self.maxPuzzleSize)).map { _ in Double.random(in: 0..<1.0)}
+    self.hues = (0..<(Self.maxPuzzleSize * Self.maxPuzzleSize)).map { _ in Double.random(in: 0..<1.0) }
   }
 
   var size: Int {
@@ -71,7 +71,12 @@ struct Game {
   mutating func collect() {
     guard message.isEmpty && !guess.isEmpty else { return }
 
-    guesses.prepend(guess)
+    for length in Self.minimumSize...guess.count {
+      let prefix = String(guess.prefix(length))
+      if vocabulary.contains(prefix) {
+        guesses.prepend(prefix)
+      }
+    }
   }
 
   func lastLocationSelected(was location: Location) -> Bool {

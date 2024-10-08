@@ -15,4 +15,12 @@ struct AVocabulary {
 
     #expect(!sut.contains("goodbye"))
   }
+
+  @Test
+  func knows_whether_string_is_prefix_of_a_longer_word() {
+    let sut = Vocabulary(["ease", "east", "easy", "west"])
+    #expect(sut.hasPrefix("eas"))
+    #expect(!sut.hasPrefix("east"))
+    #expect(!sut.hasPrefix("north"))
+  }
 }

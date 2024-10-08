@@ -11,6 +11,8 @@ struct Guesses {
   }
 }
 
+extension Guesses: Equatable { }
+
 extension Guesses: CustomStringConvertible {
   public var description: String {
     String(guesses.joined(by: "\n"))

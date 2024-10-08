@@ -141,4 +141,28 @@ struct AGame {
     let game = Game(2, ["A", "B", "C", "D"], Vocabulary(["ABCD"]))
     #expect(game.hue(at: Location(1, 0)) != game.hue(at: Location(1, 1)))
   }
+
+  @Test
+  func collect_collects_prefix_words_long_to_short() {
+    var game = Game(
+      3,
+      [
+       "M", "A", "S",
+       "T", "E", "R",
+       "Y", "X", "X",
+      ],
+      Vocabulary(["MAST", "MASTER", "MASTERY", "TEAM"])
+    )
+
+    game.select(Location(0, 0))
+    game.select(Location(0, 1))
+    game.select(Location(0, 2))
+    game.select(Location(1, 0))
+    game.select(Location(1, 1))
+    game.select(Location(1, 2))
+    game.select(Location(2, 0))
+    game.collect()
+
+    #expect(game.guesses.description == "MASTERY\nMASTER\nMAST")
+  }
 }

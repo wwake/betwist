@@ -1,17 +1,19 @@
-* Change the scrolling
-* Do we need directions?
-
-* Demo mode for first-time use (drop those arrows!)
-
-* Should you get prefixes for free?
-* Running count or score
-
-* Show potential neighbors?
-* Use colors instead of b&w
 
 * Generate full list of words you didn't guess
 
-* Defect - button only works if you click exactly on the letter
+* Running count or score
+
+* Show potential neighbors?
+
+* Determine how many cells worth you moved
+* Move during onChange, not just onEnded
+* Debounce during the drag process
+* Change the scrolling
+* Do we need directions?
+
+* Mark prefix words in a different color (or other indication)
+
+* Demo mode for first-time use (drop those arrows!)
 
 * New game
 
@@ -30,6 +32,8 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 Triangles
 Tessellations?
 
+2024-10-08 - WORD-24-09 - Partial Credit
+* When you submit a long word, credit any shorter words that start it
 
 2024-10-07 - WORD-24-08 - Size-Sensitive Views
 * Make the whole button sensitive to touch, not just the letter only
@@ -37,6 +41,7 @@ Tessellations?
 * Give the first cell a gray border
 * Add letter-grid colors to the asset catalog
 * Assign persistent colors to cell backgrounds
+* Spike moving while dragging
 
 2024-10-3 - WORD-24-07 - Some Rules, & a Better View
 * Pop out list of guessed words

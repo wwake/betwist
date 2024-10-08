@@ -8,6 +8,10 @@ class Vocabulary {
   func contains(_ word: String) -> Bool {
     words.contains(word)
   }
+
+  func hasPrefix(_ prefix: String) -> Bool {
+    words.contains { $0.starts(with: prefix) && $0 != prefix }
+  }
 }
 
 class NullVocabulary: Vocabulary {
