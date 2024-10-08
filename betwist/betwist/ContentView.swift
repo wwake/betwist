@@ -78,11 +78,12 @@ struct ContentView: View {
             }
           }.gesture(
             DragGesture(minimumDistance: 25)
-              .onChanged { dragInfo in
-                print("Start: \(dragInfo.startLocation.x) \(dragInfo.startLocation.y)")
-                print("Move horizontally \(Int(dragInfo.location.x - dragInfo.startLocation.x)/50)")
-                print("Move vertically \(Int(dragInfo.location.y - dragInfo.startLocation.y)/50)")
-              }
+// Spike live scrolling
+//              .onChanged { dragInfo in
+//                print("Start: \(dragInfo.startLocation.x) \(dragInfo.startLocation.y)")
+//                print("Move horizontally \(Int(dragInfo.location.x - dragInfo.startLocation.x) / 50)")
+//                print("Move vertically \(Int(dragInfo.location.y - dragInfo.startLocation.y)/50)")
+//              }
               .onEnded { dragInfo in
                 withAnimation {
                   game.twist(dragInfo.startLocation.direction(to: dragInfo.location))

@@ -1,5 +1,5 @@
-
-* Generate full list of words you didn't guess
+* Generate full list of words for board
+* Use list of words instead of searching whole dictionary during game
 
 * Running count or score
 
@@ -34,6 +34,7 @@ Tessellations?
 
 2024-10-08 - WORD-24-09 - Partial Credit
 * When you submit a long word, credit any shorter words that start it
+* Make vocabulary know whether a string is a prefix of a longer word
 
 2024-10-07 - WORD-24-08 - Size-Sensitive Views
 * Make the whole button sensitive to touch, not just the letter only

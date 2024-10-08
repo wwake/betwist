@@ -37,3 +37,5 @@ struct Location: Equatable {
     )
   }
 }
+
+extension Location: Hashable { }

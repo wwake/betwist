@@ -147,9 +147,9 @@ struct AGame {
     var game = Game(
       3,
       [
-       "M", "A", "S",
-       "T", "E", "R",
-       "Y", "X", "X",
+        "M", "A", "S",
+        "T", "E", "R",
+        "Y", "X", "X",
       ],
       Vocabulary(["MAST", "MASTER", "MASTERY", "TEAM"])
     )
@@ -164,5 +164,26 @@ struct AGame {
     game.collect()
 
     #expect(game.guesses.description == "MASTERY\nMASTER\nMAST")
+  }
+
+  @Test
+  func finds_all_answers_in_1_cell_board() {
+    let game = Game(1, ["A"], Vocabulary(["A"]))
+    #expect(game.allAnswers == Set(["A"]))
+  }
+
+  @Test(.disabled())
+  func finds_all_answers_in_4_cell_board() {
+    let game = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUN", "FUND"]))
+    #expect(game.allAnswers == Set(["FUN", "FUND"]))
+  }
+
+  @Test
+  func knows_openNeighbors() {
+    let game = Game(2, ["F", "U", "N", "D"])
+    var selection = Selection(game.grid)
+    selection.select(Location(0, 0))
+
+    #expect(game.openNeighbors(selection) == [Location(0, 1), Location(1, 0), Location(1, 1)])
   }
 }
