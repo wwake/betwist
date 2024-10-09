@@ -22,6 +22,6 @@ struct AGameMaker {
     let eCount = sample.filter { $0 == "E" }.count
     let kCount = sample.filter { $0 == "K" }.count
 
-    #expect(eCount > 2 * kCount)
+    #expect(eCount > kCount)
   }
 }

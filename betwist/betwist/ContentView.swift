@@ -105,6 +105,9 @@ struct ContentView: View {
             Text(verbatim: game.guesses.description)
               .font(.title2)
               .frame(width: 300)
+            Divider()
+            Text("All answers")
+           Text(verbatim: "\(game.allAnswers)")
           }
         }
 

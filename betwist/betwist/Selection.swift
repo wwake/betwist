@@ -9,6 +9,16 @@ struct Selection {
 
   var blocked = false
 
+  init(grid: LetterGrid) {
+    self.grid = grid
+  }
+
+  init(_ from: Selection, _ location: Location) {
+    self.grid = from.grid
+    selection = from.selection
+    selection.append(location)
+  }
+
   var count: Int {
     selection.count
   }

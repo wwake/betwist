@@ -186,4 +186,16 @@ struct AGame {
 
     #expect(game.openNeighbors(selection) == [Location(0, 1), Location(1, 0), Location(1, 1)])
   }
+
+  @Test
+  func knows_openNeighbors_when_some_selected() {
+    let game = Game(2, ["F", "U", "N", "D"])
+    var selection = Selection(game.grid)
+
+    selection.select(Location(0, 1))
+    selection.select(Location(1, 0))
+    selection.select(Location(0, 0))
+
+    #expect(game.openNeighbors(selection) == [Location(1, 1)])
+  }
 }

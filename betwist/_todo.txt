@@ -1,3 +1,4 @@
+
 * Generate full list of words for board
 * Use list of words instead of searching whole dictionary during game
 
@@ -10,6 +11,9 @@
 * Debounce during the drag process
 * Change the scrolling
 * Do we need directions?
+
+* Warn on duplicate words
+* Sort answers
 
 * Mark prefix words in a different color (or other indication)
 

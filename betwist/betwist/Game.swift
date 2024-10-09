@@ -51,6 +51,10 @@ struct Game {
   }
 
   func type(at location: Location) -> SelectionType {
+    type(at: location, in: selection)
+  }
+
+  func type(at location: Location, in selection: Selection) -> SelectionType {
     selection.type(location)
   }
 
@@ -95,23 +99,6 @@ struct Game {
     twister.columnIndexes
   }
 
-  var allAnswers: Set<String> {
-    var result = Set<String>()
-
-    for row in rowIndexes {
-      for column in columnIndexes {
-        let location = Location(row, column)
-        var selection = Selection(grid)
-        selection.select(location)
-        if vocabulary.contains(selection.guess) {
-          result.insert(selection.guess)
-        }
-        tryAllExtensions(&result, selection)
-      }
-    }
-    return result
-  }
-
   func openNeighbors(_ selection: Selection) -> Set<Location> {
     guard selection.last != nil else {
       return Set<Location>()
@@ -124,11 +111,39 @@ struct Game {
 
     return Set(locations)
       .filter {
-        type(at: $0) == .open
+        type(at: $0, in: selection) == .open
       }
+  }
+
+  var allAnswers: Set<String> {
+    var result = Set<String>()
+
+    for row in rowIndexes {
+      for column in columnIndexes {
+        let location = Location(row, column)
+        var selection = Selection(grid)
+        selection.select(location)
+        if vocabulary.contains(selection.guess) {
+          result.insert(selection.guess)
+        }
+        if vocabulary.hasPrefix(selection.guess) {
+          tryAllExtensions(&result, selection)
+        }
+      }
+    }
+    return result
   }
 
   func tryAllExtensions(_ result: inout Set<String>, _ selection: Selection) {
     let neighbors = openNeighbors(selection)
+    neighbors.forEach { location in
+      let newSelection = Selection(selection, location)
+      if vocabulary.contains(selection.guess) {
+        result.insert(selection.guess)
+      }
+      if vocabulary.hasPrefix(selection.guess) {
+        tryAllExtensions(&result, newSelection)
+      }
+    }
   }
 }
