@@ -1,12 +1,8 @@
 class Vocabulary {
   let words: [String]
-  //let wordSet: Set<String>
-  var containsCount = 0
-  var prefixCount = 0
 
   init(_ words: [String]) {
     self.words = words
-//    self.wordSet = Set(words)
   }
 
   fileprivate func binarySearchIndex(_ target: String, _ words: [String]) -> Int {
@@ -23,6 +19,8 @@ class Vocabulary {
     return upper
   }
 
+  // This is for a plain "contains" search (using the
+  // "Programming Pearls" binary search - but we no longer use it.
   fileprivate func binarySearch(_ target: String, _ words: [String]) -> Int {
     var result = binarySearchIndex(target, words)
     if result >= words.count || words[result] != target {
@@ -34,23 +32,11 @@ class Vocabulary {
   func contains(_ word: String) -> Bool {
     let (contained, _) = containsAndPrefixes(word)
     return contained
-//    containsCount += 1
-//    return wordSet.contains(word)
-  //  binarySearch(word, words) >= 0
   }
 
   func hasPrefix(_ prefix: String) -> Bool {
-    prefixCount += 1
-    let index = binarySearchIndex(prefix, words)
-
-    if index >= words.count { return false }
-
-    if words[index] == prefix {
-      if index + 1 >= words.count { return false }
-      return words[index + 1].starts(with: prefix)
-    }
-
-    return words[index].starts(with: prefix)
+    let (_, prefixed) = containsAndPrefixes(prefix)
+    return prefixed
   }
 
   func containsAndPrefixes(_ target: String) -> (Bool, Bool) {
