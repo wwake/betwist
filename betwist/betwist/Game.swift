@@ -123,12 +123,20 @@ struct Game {
         let location = Location(row, column)
         var selection = Selection(grid)
         selection.select(location)
-        if vocabulary.contains(selection.guess) {
+
+        let (contained, prefixed) = vocabulary.containsAndPrefixes(selection.guess)
+        if contained {
           result.insert(selection.guess)
         }
-        if vocabulary.hasPrefix(selection.guess) {
+        if prefixed {
           tryAllExtensions(&result, selection)
         }
+//        if vocabulary.contains(selection.guess) {
+//          result.insert(selection.guess)
+//        }
+//        if vocabulary.hasPrefix(selection.guess) {
+//          tryAllExtensions(&result, selection)
+//        }
       }
     }
     return result
@@ -138,12 +146,20 @@ struct Game {
     let neighbors = openNeighbors(selection)
     neighbors.forEach { location in
       let newSelection = Selection(selection, location)
-      if vocabulary.contains(selection.guess) {
+      let (contained, prefixed) = vocabulary.containsAndPrefixes(selection.guess)
+      if contained {
         result.insert(selection.guess)
       }
-      if vocabulary.hasPrefix(selection.guess) {
+      if prefixed {
         tryAllExtensions(&result, newSelection)
       }
+
+//      if vocabulary.contains(selection.guess) {
+//        result.insert(selection.guess)
+//      }
+//      if vocabulary.hasPrefix(selection.guess) {
+//        tryAllExtensions(&result, newSelection)
+//      }
     }
   }
 }

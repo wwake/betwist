@@ -1,4 +1,8 @@
+* Try a word set
+* Try a 3- or 4-letter prefix dictionary
+* Bloom filter - multiple hashes for a probabilistic answer
 
+* Don't generate the full list until later
 * Generate full list of words for board
 * Use list of words instead of searching whole dictionary during game
 
