@@ -131,12 +131,6 @@ struct Game {
         if prefixed {
           tryAllExtensions(&result, selection)
         }
-//        if vocabulary.contains(selection.guess) {
-//          result.insert(selection.guess)
-//        }
-//        if vocabulary.hasPrefix(selection.guess) {
-//          tryAllExtensions(&result, selection)
-//        }
       }
     }
     return result

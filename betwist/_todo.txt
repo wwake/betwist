@@ -1,10 +1,9 @@
-* Try a word set
-* Try a 3- or 4-letter prefix dictionary
-* Bloom filter - multiple hashes for a probabilistic answer
+
+* Refactor allAnswers and tryAllExtensions
+
+* Use list of words instead of searching whole dictionary during game
 
 * Don't generate the full list until later
-* Generate full list of words for board
-* Use list of words instead of searching whole dictionary during game
 
 * Running count or score
 
@@ -40,9 +39,23 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 Triangles
 Tessellations?
 
+Ideas for faster lookup
+* Try a 3- or 4-letter prefix dictionary
+* Bloom filter - multiple hashes for a probabilistic answer
+* Generate full list of words for board - with some performance improvements
+
+2024-10-10 - WORD-24-11 - Find All Words Faster (10x?)
+* Try a word set - sped up some
+* Compute "contains" and hasPrefix at the same time - sped up enough to keep
+
+2024-10-09 - Word-24-10 - Performance
+* Change from linear to binary search - reduced time to find all words to a couple seconds
+* Try splitting dictionary by first letter - ran a little slower
+
 2024-10-08 - WORD-24-09 - Partial Credit
 * When you submit a long word, credit any shorter words that start it
 * Make vocabulary know whether a string is a prefix of a longer word
+* Find all words for a board ('the answers') - our first version worked but took ~2.5 hours to compute it
 
 2024-10-07 - WORD-24-08 - Size-Sensitive Views
 * Make the whole button sensitive to touch, not just the letter only

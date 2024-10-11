@@ -120,7 +120,7 @@ struct AVocabulary {
       let contained = sut.contains(word)
       let prefixed = sut.hasPrefix(word)
 //      let (contained, prefixed) = sut.containsAndPrefixes(randomWords[index])
-      if contained {
+      if contained || prefixed {
         result += 1
       }
     }
