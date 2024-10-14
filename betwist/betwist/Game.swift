@@ -106,7 +106,7 @@ struct Game {
 
     let locations = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
       .map { deltaRow, deltaColumn in
-         Location((selection.last!.row + deltaRow) %% size, (selection.last!.column + deltaColumn) %% size)
+        Location((selection.last!.row + deltaRow) %% size, (selection.last!.column + deltaColumn) %% size)
       }
 
     return Set(locations)
@@ -117,43 +117,31 @@ struct Game {
 
   var allAnswers: Set<String> {
     var result = Set<String>()
-
-    for row in rowIndexes {
-      for column in columnIndexes {
-        let location = Location(row, column)
-        var selection = Selection(grid)
-        selection.select(location)
-
-        let (contained, prefixed) = vocabulary.containsAndPrefixes(selection.guess)
-        if contained {
-          result.insert(selection.guess)
-        }
-        if prefixed {
-          tryAllExtensions(&result, selection)
-        }
-      }
-    }
+    tryAllExtensions(&result, Selection(grid), allLocations)
     return result
   }
 
-  func tryAllExtensions(_ result: inout Set<String>, _ selection: Selection) {
-    let neighbors = openNeighbors(selection)
-    neighbors.forEach { location in
+  fileprivate var allLocations: Set<Location> {
+    var neighbors = Set<Location>()
+    for row in rowIndexes {
+      for column in columnIndexes {
+        neighbors.insert(Location(row, column))
+      }
+    }
+    return neighbors
+  }
+
+  fileprivate func tryAllExtensions(_ result: inout Set<String>, _ selection: Selection, _ neighbors: Set<Location>) {
+    for location in neighbors {
       let newSelection = Selection(selection, location)
-      let (contained, prefixed) = vocabulary.containsAndPrefixes(selection.guess)
+      let (contained, prefixed) = vocabulary.containsAndPrefixes(newSelection.guess)
       if contained {
-        result.insert(selection.guess)
+        result.insert(newSelection.guess)
       }
       if prefixed {
-        tryAllExtensions(&result, newSelection)
+        let neighbors = openNeighbors(newSelection)
+        tryAllExtensions(&result, newSelection, neighbors)
       }
-
-//      if vocabulary.contains(selection.guess) {
-//        result.insert(selection.guess)
-//      }
-//      if vocabulary.hasPrefix(selection.guess) {
-//        tryAllExtensions(&result, newSelection)
-//      }
     }
   }
 }

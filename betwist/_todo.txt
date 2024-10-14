@@ -1,13 +1,6 @@
-
 * Refactor allAnswers and tryAllExtensions
 
-* Use list of words instead of searching whole dictionary during game
-
-* Don't generate the full list until later
-
-* Running count or score
-
-* Show potential neighbors?
+* Show potential neighbors
 
 * Determine how many cells worth you moved
 * Move during onChange, not just onEnded
@@ -15,10 +8,19 @@
 * Change the scrolling
 * Do we need directions?
 
+
 * Warn on duplicate words
 * Sort answers
 
 * Mark prefix words in a different color (or other indication)
+
+
+* Use list of words instead of searching whole dictionary during game
+
+* Don't generate the full list until later
+
+* Running count or score
+
 
 * Demo mode for first-time use (drop those arrows!)
 
@@ -46,7 +48,7 @@ Ideas for faster lookup
 
 2024-10-10 - WORD-24-11 - Find All Words Faster (10x?)
 * Try a word set - sped up some
-* Compute "contains" and hasPrefix at the same time - sped up enough to keep
+* Compute "contains" and "hasPrefix" at the same time - sped up enough to keep
 
 2024-10-09 - Word-24-10 - Performance
 * Change from linear to binary search - reduced time to find all words to a couple seconds

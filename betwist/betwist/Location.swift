@@ -39,3 +39,9 @@ struct Location: Equatable {
 }
 
 extension Location: Hashable { }
+
+extension Location: CustomDebugStringConvertible {
+  var debugDescription: String {
+    "(\(row), \(column))"
+  }
+}
