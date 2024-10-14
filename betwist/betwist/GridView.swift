@@ -9,17 +9,7 @@ struct GridView: View {
       ForEach(game.rowIndexes, id: \.self) { row in
         HStack(spacing: 0) {
           ForEach(game.columnIndexes, id: \.self) { column in
-            Button {
-              let location = Location(row, column)
-              if game.lastLocationSelected(was: location) {
-                collectWord()
-              } else {
-                game.select(location)
-              }
-            } label: {
-              Text("\(game[row, column])")
-            }
-            .modifier(GridButtonStyle(game, Location(row, column)))
+            LetterView(game: $game, row: row, column: column, collectWord: collectWord)
           }
         }
       }.gesture(
