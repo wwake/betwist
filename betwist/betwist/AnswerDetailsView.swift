@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct GuessesView: View {
+struct AnswerDetailsView: View {
   @Environment(\.dismiss)
   var dismiss
 
