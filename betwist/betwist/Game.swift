@@ -99,26 +99,24 @@ struct Game {
     twister.columnIndexes
   }
 
+  var allAnswers: Set<String> {
+    var result = Set<String>()
+    let selection = Selection(grid)
+    tryAllExtensions(&result, selection, openNeighbors(selection))
+    return result
+  }
+
   func openNeighbors(_ selection: Selection) -> Set<Location> {
     guard selection.last != nil else {
-      return Set<Location>()
+      return allLocations
     }
 
-    let locations = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
-      .map { deltaRow, deltaColumn in
-        Location((selection.last!.row + deltaRow) %% size, (selection.last!.column + deltaColumn) %% size)
-      }
+    let locations = selection.last!.allNeighbors(wrap: size)
 
     return Set(locations)
       .filter {
         type(at: $0, in: selection) == .open
       }
-  }
-
-  var allAnswers: Set<String> {
-    var result = Set<String>()
-    tryAllExtensions(&result, Selection(grid), allLocations)
-    return result
   }
 
   fileprivate var allLocations: Set<Location> {

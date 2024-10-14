@@ -189,6 +189,14 @@ struct AGame {
   }
 
   @Test
+  func openNeighbors_includes_all_locations_when_selection_empty() {
+    let game = Game(2, ["F", "U", "N", "D"])
+    let selection = Selection(game.grid)
+
+    #expect(game.openNeighbors(selection) == [Location(0, 0), Location(0, 1), Location(1, 0), Location(1, 1)])
+  }
+
+  @Test
   func knows_openNeighbors() {
     let game = Game(2, ["F", "U", "N", "D"])
     var selection = Selection(game.grid)

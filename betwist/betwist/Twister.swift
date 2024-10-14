@@ -20,7 +20,7 @@ struct Twister {
   }
 
   mutating func twist(_ direction: Directions) {
-    corner = corner.movedBy(deltas[direction]!, size: size)
+    corner = corner.movedBy(deltas[direction]!, wrap: size)
   }
 
   var rowIndexes: [Int] {

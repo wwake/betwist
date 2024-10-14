@@ -30,7 +30,15 @@ struct Location: Equatable {
     return distance <= 1 || distance == wrap - 1
   }
 
-  func movedBy(_ delta: DeltaLocation, size: Int) -> Location {
+  func allNeighbors(wrap size: Int) -> Set<Location> {
+    let locations = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
+      .map { deltaRow, deltaColumn in
+        Location((row + deltaRow) %% size, (column + deltaColumn) %% size)
+      }
+    return Set(locations)
+  }
+
+  func movedBy(_ delta: DeltaLocation, wrap size: Int) -> Location {
     Location(
       (self.row + delta.deltaRow) %% size,
       (self.column + delta.deltaColumn) %% size
