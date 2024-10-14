@@ -85,7 +85,34 @@ struct ASelection {
     #expect(sut.type(Location(0, 0)) == .first)
     #expect(sut.type(Location(0, 1)) == .middle)
     #expect(sut.type(Location(1, 0)) == .last)
-    #expect(sut.type(Location(1, 1)) == .open)
+    #expect(sut.type(Location(1, 1)) == .neighbor)
+  }
+
+  @Test
+  func has_type_for_neighbors() {
+    let grid = LetterGrid(4, [String](repeating: "X", count: 16))
+    var sut = Selection(grid)
+    sut.select(Location(1, 1))
+
+    #expect(sut.type(Location(0, 0)) == .neighbor)
+    #expect(sut.type(Location(0, 1)) == .neighbor)
+    #expect(sut.type(Location(0, 2)) == .neighbor)
+    #expect(sut.type(Location(0, 3)) == .open)
+
+    #expect(sut.type(Location(1, 0)) == .neighbor)
+    #expect(sut.type(Location(1, 1)) == .last)
+    #expect(sut.type(Location(1, 2)) == .neighbor)
+    #expect(sut.type(Location(1, 3)) == .open)
+
+    #expect(sut.type(Location(2, 0)) == .neighbor)
+    #expect(sut.type(Location(2, 1)) == .neighbor)
+    #expect(sut.type(Location(2, 2)) == .neighbor)
+    #expect(sut.type(Location(2, 3)) == .open)
+
+    #expect(sut.type(Location(3, 0)) == .open)
+    #expect(sut.type(Location(3, 1)) == .open)
+    #expect(sut.type(Location(3, 2)) == .open)
+    #expect(sut.type(Location(3, 3)) == .open)
   }
 
   @Test

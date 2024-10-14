@@ -116,6 +116,7 @@ struct Game {
     return Set(locations)
       .filter {
         type(at: $0, in: selection) == .open
+        || type(at: $0, in: selection) == .neighbor
       }
   }
 

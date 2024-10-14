@@ -1,5 +1,3 @@
-* Refactor allAnswers and tryAllExtensions
-
 * Show potential neighbors
 
 * Determine how many cells worth you moved
@@ -8,12 +6,10 @@
 * Change the scrolling
 * Do we need directions?
 
-
 * Warn on duplicate words
 * Sort answers
 
 * Mark prefix words in a different color (or other indication)
-
 
 * Use list of words instead of searching whole dictionary during game
 
@@ -45,6 +41,9 @@ Ideas for faster lookup
 * Try a 3- or 4-letter prefix dictionary
 * Bloom filter - multiple hashes for a probabilistic answer
 * Generate full list of words for board - with some performance improvements
+
+2024-10-14 - WORD-24-12 - Refactor allAnswers()
+* Refactor allAnswers and tryAllExtensions to reduce duplication
 
 2024-10-10 - WORD-24-11 - Find All Words Faster (10x?)
 * Try a word set - sped up some

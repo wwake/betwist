@@ -1,5 +1,5 @@
 enum SelectionType {
-  case first, middle, last, open
+  case first, middle, last, open, neighbor
 }
 
 struct Selection {
@@ -66,6 +66,10 @@ struct Selection {
       return .first
     } else if selection.contains(location) {
       return .middle
+    } else if last == nil {
+      return .open
+    } else if last!.hasNeighbor(location, wrap: grid.size) {
+      return .neighbor
     }
     return .open
   }
