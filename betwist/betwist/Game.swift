@@ -36,6 +36,10 @@ struct Game {
     grid[row, column]
   }
 
+  subscript(_ location: Location) -> String {
+    grid[location.row, location.column]
+  }
+
   mutating func blockSelection() {
     selection.blocked = true
   }
