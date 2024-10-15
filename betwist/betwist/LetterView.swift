@@ -1,6 +1,7 @@
 import SwiftUI
 
-struct LetterView: View {
+struct LetterView<S: Shape>: View {
+  var shape: S
   @Binding var game: Game
 
   var location: Location
@@ -9,7 +10,7 @@ struct LetterView: View {
   var chooser = ColorChooser()
 
   var body: some View {
-    Rectangle()
+    shape
       .stroke(chooser.borderColor(game.type(at: location)), lineWidth: 4.0)
       .fill(chooser.backgroundColor(game.type(at: location), hue: game.hue(at: location)))
       .frame(width: 50, height: 50)

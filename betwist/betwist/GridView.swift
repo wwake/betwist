@@ -9,7 +9,7 @@ struct GridView: View {
       ForEach(game.rowIndexes, id: \.self) { row in
         HStack(spacing: 0) {
           ForEach(game.columnIndexes, id: \.self) { column in
-            LetterView(game: $game, location: Location(row, column), collectWord: collectWord)
+            LetterView(shape: Rectangle(), game: $game, location: Location(row, column), collectWord: collectWord)
           }
         }
       }.gesture(
