@@ -8,6 +8,9 @@ struct LetterView: View {
   var collectWord: () -> ()
 
   var body: some View {
+    Rectangle()
+      .frame(width: 50, height: 50)
+
     Button {
       let location = Location(row, column)
       if game.lastLocationSelected(was: location) {

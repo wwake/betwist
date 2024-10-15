@@ -9,15 +9,7 @@ extension Text {
   }
 }
 
-struct GridButtonStyle: ViewModifier {
-  var game: Game
-  var location: Location
-
-  init(_ game: Game, _ location: Location) {
-    self.game = game
-    self.location = location
-  }
-
+struct ColorChooser {
   func foregroundColor(_ type: SelectionType) -> Color {
     switch type {
     case .open, .neighbor:
@@ -28,10 +20,10 @@ struct GridButtonStyle: ViewModifier {
     }
   }
 
-  func backgroundColor(_ type: SelectionType) -> Color {
+  func backgroundColor(_ type: SelectionType, hue: Double) -> Color {
     switch type {
     case .open, .neighbor:
-      return Color(hue: game.hue(at: location), saturation: 0.15, brightness: 1.0)
+      return Color(hue: hue, saturation: 0.15, brightness: 1.0)
 
     default:
       return Color(.cellBackgroundSelected)
@@ -56,6 +48,18 @@ struct GridButtonStyle: ViewModifier {
       return Color(.cellBorderDefault)
     }
   }
+}
+
+struct GridButtonStyle: ViewModifier {
+  var game: Game
+  var location: Location
+
+  var chooser = ColorChooser()
+
+  init(_ game: Game, _ location: Location) {
+    self.game = game
+    self.location = location
+  }
 
   func body(content: Content) -> some View {
     let type = game.type(at: location)
@@ -63,9 +67,9 @@ struct GridButtonStyle: ViewModifier {
     return content
       .font(.largeTitle)
       .frame(width: 48, height: 48)
-      .background(backgroundColor(type))
-      .foregroundStyle(foregroundColor(type))
-      .border(borderColor(type), width: 1)
+      .background(chooser.backgroundColor(type, hue: game.hue(at: location)))
+      .foregroundStyle(chooser.foregroundColor(type))
+      .border(chooser.borderColor(type), width: 1)
       .italic(type == .neighbor)
   }
 }
