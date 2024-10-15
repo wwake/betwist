@@ -1,4 +1,4 @@
-* Separate out views in ContentView
+
 * Draw Shapes instead of Buttons
 * On dragEnded, update location
 * Move during onChange, not just onEnded
@@ -46,6 +46,7 @@ Ideas for faster lookup
 2024-10-14 - WORD-24-12 - Refactor allAnswers()
 * Refactor allAnswers and tryAllExtensions to reduce duplication
 * Show potential next letters as italic, with a red border
+* Extract GridView from ContentView, and LetterView from GridView; pull out other views from ContentView as functions
 
 2024-10-10 - WORD-24-11 - Find All Words Faster (10x?)
 * Try a word set - sped up some
