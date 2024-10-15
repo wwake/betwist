@@ -10,13 +10,14 @@
 		9104FD2E2CA5E85900A8CBB3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9104FD2D2CA5E85500A8CBB3 /* Game.swift */; };
 		910C6FAC2CBDB4BF00BD6A0D /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C6FAB2CBDB4BF00BD6A0D /* GridView.swift */; };
 		910C6FAE2CBDB6AD00BD6A0D /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C6FAD2CBDB6AD00BD6A0D /* LetterView.swift */; };
+		910C6FB02CBEED2000BD6A0D /* Text+italic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C6FAF2CBEED2000BD6A0D /* Text+italic.swift */; };
+		910C6FB22CBEED7500BD6A0D /* ColorChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C6FB12CBEED7500BD6A0D /* ColorChooser.swift */; };
 		910C97A92CA48AAD00893B79 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97A82CA48AAD00893B79 /* Location.swift */; };
 		910C97AC2CA48AF400893B79 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97AA2CA48AD900893B79 /* Selection.swift */; };
 		910C97AE2CA4990700893B79 /* ALocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97AD2CA4990700893B79 /* ALocation.swift */; };
 		911EE9E32CAB21E5005C391D /* AGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E22CAB21E5005C391D /* AGame.swift */; };
 		911EE9E52CAB24CA005C391D /* AGameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E42CAB24CA005C391D /* AGameMaker.swift */; };
 		911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E62CAB28CE005C391D /* GameMaker.swift */; };
-		911EE9EC2CAC7970005C391D /* GridButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9EB2CAC7970005C391D /* GridButtonStyle.swift */; };
 		911EE9F02CAC7CB9005C391D /* ATwister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9EF2CAC7CB9005C391D /* ATwister.swift */; };
 		911EE9F22CAC8096005C391D /* Twister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9F12CAC8096005C391D /* Twister.swift */; };
 		911EE9F42CAC8A48005C391D /* CGPoint+direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9F32CAC8A42005C391D /* CGPoint+direction.swift */; };
@@ -56,6 +57,8 @@
 		9104FD2D2CA5E85500A8CBB3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		910C6FAB2CBDB4BF00BD6A0D /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		910C6FAD2CBDB6AD00BD6A0D /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
+		910C6FAF2CBEED2000BD6A0D /* Text+italic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+italic.swift"; sourceTree = "<group>"; };
+		910C6FB12CBEED7500BD6A0D /* ColorChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChooser.swift; sourceTree = "<group>"; };
 		910C97922CA3690600893B79 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
 		910C97A82CA48AAD00893B79 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		910C97AA2CA48AD900893B79 /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
@@ -63,7 +66,6 @@
 		911EE9E22CAB21E5005C391D /* AGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGame.swift; sourceTree = "<group>"; };
 		911EE9E42CAB24CA005C391D /* AGameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGameMaker.swift; sourceTree = "<group>"; };
 		911EE9E62CAB28CE005C391D /* GameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaker.swift; sourceTree = "<group>"; };
-		911EE9EB2CAC7970005C391D /* GridButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridButtonStyle.swift; sourceTree = "<group>"; };
 		911EE9EF2CAC7CB9005C391D /* ATwister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATwister.swift; sourceTree = "<group>"; };
 		911EE9F12CAC8096005C391D /* Twister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twister.swift; sourceTree = "<group>"; };
 		911EE9F32CAC8A42005C391D /* CGPoint+direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+direction.swift"; sourceTree = "<group>"; };
@@ -155,7 +157,7 @@
 				91FA96742C81333A0011BB7F /* ContentView.swift */,
 				9104FD2D2CA5E85500A8CBB3 /* Game.swift */,
 				911EE9E62CAB28CE005C391D /* GameMaker.swift */,
-				911EE9EB2CAC7970005C391D /* GridButtonStyle.swift */,
+				910C6FB12CBEED7500BD6A0D /* ColorChooser.swift */,
 				910C6FAB2CBDB4BF00BD6A0D /* GridView.swift */,
 				911EE9FE2CAF2DDF005C391D /* Guesses.swift */,
 				9181F09D2CA347370091A771 /* Int+wrap.swift */,
@@ -167,6 +169,7 @@
 				910C97AA2CA48AD900893B79 /* Selection.swift */,
 				911EE9F12CAC8096005C391D /* Twister.swift */,
 				911EE9FA2CADD2D6005C391D /* Vocabulary.swift */,
+				910C6FAF2CBEED2000BD6A0D /* Text+italic.swift */,
 			);
 			path = betwist;
 			sourceTree = "<group>";
@@ -331,7 +334,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				911EE9FD2CAF26E4005C391D /* AnswerDetailsView.swift in Sources */,
-				911EE9EC2CAC7970005C391D /* GridButtonStyle.swift in Sources */,
 				910C97AC2CA48AF400893B79 /* Selection.swift in Sources */,
 				911EE9FB2CADD2D6005C391D /* Vocabulary.swift in Sources */,
 				91FA96752C81333A0011BB7F /* ContentView.swift in Sources */,
@@ -341,6 +343,8 @@
 				9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */,
 				911EE9F42CAC8A48005C391D /* CGPoint+direction.swift in Sources */,
 				911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */,
+				910C6FB22CBEED7500BD6A0D /* ColorChooser.swift in Sources */,
+				910C6FB02CBEED2000BD6A0D /* Text+italic.swift in Sources */,
 				910C97A92CA48AAD00893B79 /* Location.swift in Sources */,
 				91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */,
 				9181F09C2CA3444A0091A771 /* LetterGrid.swift in Sources */,

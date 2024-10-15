@@ -27,16 +27,5 @@ struct LetterView: View {
           game.select(location)
         }
       }
-
-//    Button {
-//      if game.lastLocationSelected(was: location) {
-//        collectWord()
-//      } else {
-//        game.select(location)
-//      }
-//    } label: {
-//      Text("\(game[location])")
-//    }
-//    .modifier(GridButtonStyle(game, location))
   }
 }

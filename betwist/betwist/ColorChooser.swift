@@ -1,14 +1,5 @@
 import SwiftUI
 
-extension Text {
-  func italic(enabled: Bool) -> Text {
-    if enabled {
-      return self.italic()
-    }
-    return self
-  }
-}
-
 struct ColorChooser {
   func foregroundColor(_ type: SelectionType) -> Color {
     switch type {
@@ -47,29 +38,5 @@ struct ColorChooser {
     default:
       return Color(.cellBorderDefault)
     }
-  }
-}
-
-struct GridButtonStyle: ViewModifier {
-  var game: Game
-  var location: Location
-
-  var chooser = ColorChooser()
-
-  init(_ game: Game, _ location: Location) {
-    self.game = game
-    self.location = location
-  }
-
-  func body(content: Content) -> some View {
-    let type = game.type(at: location)
-
-    return content
-      .font(.largeTitle)
-      .frame(width: 48, height: 48)
-      .background(chooser.backgroundColor(type, hue: game.hue(at: location)))
-      .foregroundStyle(chooser.foregroundColor(type))
-      .border(chooser.borderColor(type), width: 1)
-      .italic(type == .neighbor)
   }
 }
