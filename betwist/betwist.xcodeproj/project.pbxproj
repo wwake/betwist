@@ -12,6 +12,7 @@
 		910C6FAE2CBDB6AD00BD6A0D /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C6FAD2CBDB6AD00BD6A0D /* LetterView.swift */; };
 		910C6FB02CBEED2000BD6A0D /* Text+italic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C6FAF2CBEED2000BD6A0D /* Text+italic.swift */; };
 		910C6FB22CBEED7500BD6A0D /* ColorChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C6FB12CBEED7500BD6A0D /* ColorChooser.swift */; };
+		910C6FB62CBEF78D00BD6A0D /* InfiniteGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C6FB52CBEF78D00BD6A0D /* InfiniteGrid.swift */; };
 		910C97A92CA48AAD00893B79 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97A82CA48AAD00893B79 /* Location.swift */; };
 		910C97AC2CA48AF400893B79 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97AA2CA48AD900893B79 /* Selection.swift */; };
 		910C97AE2CA4990700893B79 /* ALocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97AD2CA4990700893B79 /* ALocation.swift */; };
@@ -59,6 +60,7 @@
 		910C6FAD2CBDB6AD00BD6A0D /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
 		910C6FAF2CBEED2000BD6A0D /* Text+italic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+italic.swift"; sourceTree = "<group>"; };
 		910C6FB12CBEED7500BD6A0D /* ColorChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChooser.swift; sourceTree = "<group>"; };
+		910C6FB52CBEF78D00BD6A0D /* InfiniteGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteGrid.swift; sourceTree = "<group>"; };
 		910C97922CA3690600893B79 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
 		910C97A82CA48AAD00893B79 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		910C97AA2CA48AD900893B79 /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				91FA96722C81333A0011BB7F /* betwistApp.swift */,
 				911EE9F32CAC8A42005C391D /* CGPoint+direction.swift */,
 				91FA96742C81333A0011BB7F /* ContentView.swift */,
+				910C6FB52CBEF78D00BD6A0D /* InfiniteGrid.swift */,
 				9104FD2D2CA5E85500A8CBB3 /* Game.swift */,
 				911EE9E62CAB28CE005C391D /* GameMaker.swift */,
 				910C6FB12CBEED7500BD6A0D /* ColorChooser.swift */,
@@ -342,6 +345,7 @@
 				911EE9FF2CAF2DE4005C391D /* Guesses.swift in Sources */,
 				9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */,
 				911EE9F42CAC8A48005C391D /* CGPoint+direction.swift in Sources */,
+				910C6FB62CBEF78D00BD6A0D /* InfiniteGrid.swift in Sources */,
 				911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */,
 				910C6FB22CBEED7500BD6A0D /* ColorChooser.swift in Sources */,
 				910C6FB02CBEED2000BD6A0D /* Text+italic.swift in Sources */,

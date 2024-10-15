@@ -84,7 +84,7 @@ struct ContentView: View {
           .foregroundStyle(.red)
           .frame(height: 20)
 
-        GridView(game: $game, collectWord: collectWord)
+        InfiniteGrid(game: $game, collectWord: collectWord)
 
         answersView()
 
@@ -105,3 +105,5 @@ struct ContentView: View {
 
   ContentView(game: $game)
 }
+
+
