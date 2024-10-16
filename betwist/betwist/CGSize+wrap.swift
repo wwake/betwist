@@ -1,24 +1,42 @@
 import Foundation
 
 extension CGSize {
-  func translateWrapped(_ translation: CGSize, _ theBoardSize: CGFloat) -> CGSize {
+  func wrap(_ wrap: CGFloat) -> CGSize {
     var offset = self
 
-    let visibleSize: CGFloat = theBoardSize / 2
-    while offset.width < -25 {
-      offset.width += visibleSize
+    let boundary = 0.5 * wrap
+    while offset.width < -boundary {
+      offset.width += wrap
     }
-    while offset.width >= 25 {
-      offset.width -= visibleSize
-    }
-
-    while offset.height < 0 {
-      offset.height += visibleSize - 25
-    }
-    while offset.height >= visibleSize {
-      offset.height -= visibleSize
+    while offset.height < -boundary {
+      offset.height += wrap
     }
 
-    return offset
+    while offset.width >= boundary {
+      offset.width -= wrap
+    }
+
+    while offset.height >= boundary {
+      offset.height -= wrap
+    }
+
+      return offset
+//
+//    let visibleSize: CGFloat = wrap / 2
+//    while offset.width < -25 {
+//      offset.width += visibleSize
+//    }
+//    while offset.width >= 25 {
+//      offset.width -= visibleSize
+//    }
+//
+//    while offset.height < 0 {
+//      offset.height += visibleSize - 25
+//    }
+//    while offset.height >= visibleSize {
+//      offset.height -= visibleSize
+//    }
+//
+//    return offset
   }
 }

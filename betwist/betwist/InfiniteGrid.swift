@@ -20,25 +20,24 @@ struct InfiniteGrid: View {
     .offset(offset)
     .clipShape(Rectangle())
     .gesture(
-      DragGesture(minimumDistance: 4)
+      DragGesture(minimumDistance: 2)
         .onChanged { dragInfo in
-          print("translation \(dragInfo.translation)")
           offset = dragInfo.translation
+          let previousOffset = offset
+          offset = offset.wrap(250)
 
-          offset = offset.translateWrapped(dragInfo.translation, 500)
-
-          print("offset=\(offset)")
+          print("offset=\(offset) \(previousOffset)")
         }
-        .onEnded { dragInfo in
-          withAnimation {
-            if abs(offset.width) > 25 || abs(offset.height) > 25 {
-                // move the grid
-
-              print("final offset = \(offset)")
-            } else {
-                offset = .zero
-            }
-          }
+        .onEnded { _ in
+//          withAnimation {
+//            if abs(offset.width) > 25 || abs(offset.height) > 25 {
+//                // move the grid
+//
+//              print("final offset = \(offset)")
+//            } else {
+//                offset = .zero
+//            }
+//          }
         }
     )
   }
