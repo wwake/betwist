@@ -5,6 +5,7 @@ struct InfiniteGrid: View {
   var collectWord: () -> Void
 
   @State private var offset = CGSize.zero
+  @State private var previousTranslation = CGSize.zero
 
   var body: some View {
     VStack(spacing: 0) {
@@ -22,11 +23,16 @@ struct InfiniteGrid: View {
     .gesture(
       DragGesture(minimumDistance: 2)
         .onChanged { dragInfo in
-          offset = dragInfo.translation
-          let previousOffset = offset
+          offset.width += dragInfo.translation.width - previousTranslation.width
+          offset.height += dragInfo.translation.height - previousTranslation.height
+          previousTranslation = dragInfo.translation
+
           offset = offset.wrap(250)
 
-          print("offset=\(offset) \(previousOffset)")
+          print("offset=\(offset) translation=\(dragInfo.translation)")
+        }
+        .onEnded { _ in
+          previousTranslation = CGSize.zero
         }
     )
   }
