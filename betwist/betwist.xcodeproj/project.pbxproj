@@ -196,6 +196,7 @@
 		91FA96822C81333E0011BB7F /* betwistTests */ = {
 			isa = PBXGroup;
 			children = (
+				910C6FB92CC03A3300BD6A0D /* ACGSize.swift */,
 				911EE9E22CAB21E5005C391D /* AGame.swift */,
 				911EE9E42CAB24CA005C391D /* AGameMaker.swift */,
 				9181F0992CA33C2A0091A771 /* ALetterGrid.swift */,
@@ -205,7 +206,6 @@
 				911EE9F52CAC8A71005C391D /* ACGPoint.swift */,
 				911EE9F82CADD10F005C391D /* AVocabulary.swift */,
 				911EEA002CAF30D7005C391D /* TheGuesses.swift */,
-				910C6FB92CC03A3300BD6A0D /* ACGSize.swift */,
 			);
 			path = betwistTests;
 			sourceTree = "<group>";

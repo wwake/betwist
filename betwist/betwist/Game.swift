@@ -147,4 +147,16 @@ struct Game {
       }
     }
   }
+
+  var wordCount: Int {
+    8
+  }
+
+  var letterCount: Int {
+    67
+  }
+
+  var mostLetters: Int {
+    7
+  }
 }

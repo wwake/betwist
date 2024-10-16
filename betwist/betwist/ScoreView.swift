@@ -9,12 +9,12 @@ struct ScoreView: View {
         Text("Score")
           .font(.title3)
 
-      Text("Words: 7")
+      Text("Words: \(game.wordCount)")
         .bold()
 
-      Text("Letters: 67")
+      Text("Letters: \(game.letterCount)")
 
-      Text("Most Letters: 7")
+      Text("Most Letters: \(game.mostLetters)")
     }
     .bold()
   }
