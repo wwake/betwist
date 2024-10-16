@@ -1,33 +1,27 @@
+* Running count or score
 
-* Warn on duplicate words
-* Sort answers
+* Sort answers (by length)
 
 * Mark prefix words in a different color (or other indication)
 
-* Don't generate the full list until later
+* New game
 
-* Running count or score
+* Warn on duplicate words
 
 * Rotation?
 
-* Demo mode for first-time use (drop those arrows!)
+* Don't generate the full list until later
 
-* New game
 
 * Set parameters (eg board size)
 
 * Sound
 
 * Animation - experiment with opacity [defer]
-
-* Twist up - draws funny on first time only - simplify case & file a report?
-
-Unbounded
+Tessellations?
 
 Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swiftui-layout-protocol-f7b0efeeacbf
 
-Triangles
-Tessellations?
 
 Ideas for faster lookup
 * Try a 3- or 4-letter prefix dictionary

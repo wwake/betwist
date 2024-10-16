@@ -52,7 +52,7 @@ struct ContentView: View {
       ScrollView {
         Text(verbatim: game.guesses.description)
           .font(.title2)
-          .frame(width: 300)
+          .frame(width: 150)
         Divider()
 //            Text("All answers")
 //            Text(verbatim: "\(game.allAnswers)")
@@ -88,7 +88,10 @@ struct ContentView: View {
 
         InfiniteGrid(cellSize: Self.cellSize, game: $game, collectWord: collectWord)
 
-        answersView()
+        HStack {
+          ScoreView(game: $game)
+          answersView()
+        }
 
         Spacer()
       }
