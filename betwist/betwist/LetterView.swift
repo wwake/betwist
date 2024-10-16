@@ -2,6 +2,8 @@ import SwiftUI
 
 struct LetterView<S: Shape>: View {
   var shape: S
+  var size: Double
+
   @Binding var game: Game
 
   var location: Location
@@ -13,7 +15,7 @@ struct LetterView<S: Shape>: View {
     shape
       .stroke(chooser.borderColor(game.type(at: location)), lineWidth: 4.0)
       .fill(chooser.backgroundColor(game.type(at: location), hue: game.hue(at: location)))
-      .frame(width: 50, height: 50)
+      .frame(width: size, height: size)
       .overlay {
         Text("\(game[location])")
           .font(.largeTitle)

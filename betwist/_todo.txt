@@ -1,13 +1,4 @@
 
-* Fix scrolling so we have the effect of an infinite grid
-
-* On dragEnded, update location
-* Move during onChange, not just onEnded
-* Determine how many cells worth you moved
-* Debounce during the drag process
-* Change the scrolling
-* Do we need directions?
-
 * Warn on duplicate words
 * Sort answers
 
@@ -17,6 +8,7 @@
 
 * Running count or score
 
+* Rotation?
 
 * Demo mode for first-time use (drop those arrows!)
 
@@ -44,6 +36,7 @@ Ideas for faster lookup
 * Generate full list of words for board - with some performance improvements - and use that as the "dictionary"
 
 2024-10-16 - WORD-24-14 - Wrap for Infinite Space
+* Fix scrolling so we have the effect of an infinite grid
 
 
 2024-10-15 - WORD-24-13 - Buttons ⇒ Shapes

@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
+  static var cellSize = 50.0
+
   @Binding var game: Game
   @State private var guessOffset: CGFloat = 0
   @State private var showGuesses = false
@@ -84,7 +86,7 @@ struct ContentView: View {
           .foregroundStyle(.red)
           .frame(height: 20)
 
-        InfiniteGrid(game: $game, collectWord: collectWord)
+        InfiniteGrid(cellSize: Self.cellSize, game: $game, collectWord: collectWord)
 
         answersView()
 
