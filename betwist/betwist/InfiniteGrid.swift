@@ -60,7 +60,6 @@ struct InfiniteGrid: View {
             } else {
                 offset = .zero
             }
-
           }
         }
     )

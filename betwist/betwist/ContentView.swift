@@ -66,7 +66,7 @@ struct ContentView: View {
 
     game.blockSelection()
     withAnimation(.easeInOut(duration: 1)) {
-      guessOffset = 350
+      guessOffset = 375
     }
     completion: {
       guessOffset = 0
@@ -105,5 +105,3 @@ struct ContentView: View {
 
   ContentView(game: $game)
 }
-
-

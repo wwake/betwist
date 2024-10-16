@@ -1,5 +1,6 @@
 
-* Draw Shapes instead of Buttons
+* Fix scrolling so we have the effect of an infinite grid
+
 * On dragEnded, update location
 * Move during onChange, not just onEnded
 * Determine how many cells worth you moved
@@ -11,8 +12,6 @@
 * Sort answers
 
 * Mark prefix words in a different color (or other indication)
-
-* Use list of words instead of searching whole dictionary during game
 
 * Don't generate the full list until later
 
@@ -41,7 +40,12 @@ Tessellations?
 Ideas for faster lookup
 * Try a 3- or 4-letter prefix dictionary
 * Bloom filter - multiple hashes for a probabilistic answer
-* Generate full list of words for board - with some performance improvements
+* Trie
+* Generate full list of words for board - with some performance improvements - and use that as the "dictionary"
+
+2024-10-15 - WORD-24-13 - Buttons ⇒ Shapes
+* Draw Shapes instead of Buttons
+* Allow infinite scrolling (though it still has glitches)
 
 2024-10-14 - WORD-24-12 - Refactor allAnswers()
 * Refactor allAnswers and tryAllExtensions to reduce duplication
