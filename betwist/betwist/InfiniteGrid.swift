@@ -2,7 +2,7 @@ import SwiftUI
 
 struct InfiniteGrid: View {
   @Binding var game: Game
-  var collectWord: () -> ()
+  var collectWord: () -> Void
 
   @State private var offset = CGSize.zero
 
@@ -27,17 +27,6 @@ struct InfiniteGrid: View {
           offset = offset.wrap(250)
 
           print("offset=\(offset) \(previousOffset)")
-        }
-        .onEnded { _ in
-//          withAnimation {
-//            if abs(offset.width) > 25 || abs(offset.height) > 25 {
-//                // move the grid
-//
-//              print("final offset = \(offset)")
-//            } else {
-//                offset = .zero
-//            }
-//          }
         }
     )
   }

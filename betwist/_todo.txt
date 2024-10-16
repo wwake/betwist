@@ -43,6 +43,9 @@ Ideas for faster lookup
 * Trie
 * Generate full list of words for board - with some performance improvements - and use that as the "dictionary"
 
+2024-10-16 - WORD-24-14 - Wrap for Infinite Space
+
+
 2024-10-15 - WORD-24-13 - Buttons ⇒ Shapes
 * Draw Shapes instead of Buttons
 * Allow infinite scrolling (though it still has glitches)
