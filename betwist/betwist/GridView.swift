@@ -2,7 +2,7 @@ import SwiftUI
 
 struct GridView: View {
   @Binding var game: Game
-  var collectWord: () -> ()
+  var collectWord: () -> Void
 
   var body: some View {
     VStack(spacing: 0) {

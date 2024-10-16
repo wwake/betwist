@@ -5,7 +5,7 @@ struct LetterView<S: Shape>: View {
   @Binding var game: Game
 
   var location: Location
-  var collectWord: () -> ()
+  var collectWord: () -> Void
 
   var chooser = ColorChooser()
 

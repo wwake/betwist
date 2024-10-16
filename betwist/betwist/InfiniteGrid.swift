@@ -6,39 +6,17 @@ struct InfiniteGrid: View {
 
   @State private var offset = CGSize.zero
 
-  fileprivate func adjustOffset(_ initialOffset: CGSize, _ translation: CGSize) -> CGSize {
-
-    var offset = initialOffset
-
-    let visibleSize: CGFloat = 250
-    while (offset.width < -25) {
-      offset.width += visibleSize
-    }
-    while (offset.width >= 25) {
-      offset.width -= visibleSize
-    }
-    
-    while (offset.height < 0) {
-      offset.height += visibleSize - 25
-    }
-    while (offset.height >= visibleSize) {
-      offset.height -= visibleSize
-    }
-
-    return offset
-  }
-  
   var body: some View {
     VStack(spacing: 0) {
-      ForEach(1...3, id: \.self) { row in
+      ForEach(1...3, id: \.self) { _ in
         HStack(spacing: 0) {
-          ForEach(1...3, id: \.self) { column in
+          ForEach(1...3, id: \.self) { _ in
             GridView(game: $game, collectWord: collectWord)
           }
         }
       }
     }
-    .frame(width: 6*50, height: 6*50)
+    .frame(width: 6 * 50, height: 6 * 50)
     .offset(offset)
     .clipShape(Rectangle())
     .gesture(
@@ -47,7 +25,7 @@ struct InfiniteGrid: View {
           print("translation \(dragInfo.translation)")
           offset = dragInfo.translation
 
-          offset = adjustOffset(offset, dragInfo.translation)
+          offset = offset.translateWrapped(dragInfo.translation, 500)
 
           print("offset=\(offset)")
         }
