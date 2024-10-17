@@ -25,33 +25,32 @@ struct ContentView: View {
   }
 
   var body: some View {
-    ZStack {
-      VStack {
-        GuessView(game: $game, offset: guessOffset) {
-          collectWord()
-        }
-
-        Text(game.message)
-          .foregroundStyle(.red)
-          .frame(height: 20)
-
-        InfiniteGrid(cellSize: Self.cellSize, game: $game, collectWord: collectWord)
-
-        HStack(alignment: .top) {
-          ScoreView(game: $game)
-          AnswersView(game: $game) {
-            showGuesses.toggle()
-          }
-        }
-
-        Spacer()
+    VStack {
+      GuessView(game: $game, offset: guessOffset) {
+        collectWord()
       }
-      .padding()
-      .containerRelativeFrame([.horizontal, .vertical])
-      .background(Gradient(colors: [.gray, .black]).opacity(0.5))
-      .sheet(isPresented: $showGuesses) {
-        AnswerDetailsView(guesses: game.guesses)
-      }
+
+      Text(game.message)
+        .foregroundStyle(.red)
+        .frame(height: 20)
+
+      InfiniteGrid(cellSize: Self.cellSize, game: $game, collectWord: collectWord)
+        .border(.pink)
+
+      //HStack(alignment: .top) {
+        ScoreView(game: $game)
+//        AnswersView(game: $game) {
+//          showGuesses.toggle()
+//        }
+//      }
+      Spacer()
+    }
+    .padding(.top, 40)
+    .ignoresSafeArea()
+  //  .containerRelativeFrame([.horizontal, .vertical])
+    .background(Gradient(colors: [.gray, .black]).opacity(0.5))
+    .sheet(isPresented: $showGuesses) {
+      AnswerDetailsView(guesses: game.guesses)
     }
   }
 }

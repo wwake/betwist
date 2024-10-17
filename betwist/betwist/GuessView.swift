@@ -13,6 +13,7 @@ struct GuessView: View {
         .scaledToFit()
         .frame(width: 40, height: 40)
         .accessibilityLabel(Text("Betwist"))
+
       Text(game.guess)
         .font(.largeTitle)
         .foregroundStyle(game.message.isEmpty ? Color.black : Color.red)
@@ -26,6 +27,7 @@ struct GuessView: View {
         .onTapGesture {
           action()
         }
+
       Button {
         action()
       } label: {
@@ -35,6 +37,6 @@ struct GuessView: View {
           .foregroundStyle(.green)
       }
     }
-    .zIndex(1)
+    .zIndex(10)
   }
 }

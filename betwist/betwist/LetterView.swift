@@ -32,6 +32,6 @@ struct LetterView<S: Shape>: View {
           game.select(location)
         }
       }
-      .zIndex(type == .last ? 2 : 0)
+      .zIndex(type == .last ? 2 : 1)
   }
 }

@@ -1,4 +1,6 @@
 
+* Rotation?
+
 * Sort answers (by length)
 * Mark prefix words in a different color (or other indication)
 
@@ -6,7 +8,7 @@
 
 * Warn on duplicate words
 
-* Rotation?
+* iPad is so big it overwhelms our approach to infinite grid
 
 * Don't generate the full list until later
 
