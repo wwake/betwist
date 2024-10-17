@@ -18,7 +18,7 @@ struct InfiniteGrid: View {
         }
       }
     }
-    .frame(width: (Double(game.size) + 0.5) * cellSize , height: (Double(game.size)  + 0.5) * cellSize)
+    .frame(width: (Double(game.size) + 0.5) * cellSize, height: (Double(game.size) + 0.5) * cellSize)
     .offset(offset)
     .clipShape(Rectangle())
     .gesture(

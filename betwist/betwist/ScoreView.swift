@@ -17,8 +17,3 @@ struct ScoreView: View {
     .bold()
   }
 }
-
-
-//#Preview {
-//    ScoreView()
-//}

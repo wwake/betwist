@@ -5,7 +5,7 @@ struct GuessView: View {
   var offset: CGFloat
 
   var action: () -> Void
-  
+
   var body: some View {
     HStack {
       Image("TheIcon")
