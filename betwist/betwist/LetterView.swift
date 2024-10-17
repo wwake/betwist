@@ -12,15 +12,17 @@ struct LetterView<S: Shape>: View {
   var chooser = ColorChooser()
 
   var body: some View {
+    let type = game.type(at: location)
+
     shape
-      .stroke(chooser.borderColor(game.type(at: location)), lineWidth: 4.0)
-      .fill(chooser.backgroundColor(game.type(at: location), hue: game.hue(at: location)))
+      .stroke(chooser.borderColor(type), lineWidth: type == .last ? 6.0: 2.0)
+      .fill(chooser.backgroundColor(type, hue: game.hue(at: location)))
       .frame(width: size, height: size)
       .overlay {
         Text("\(game[location])")
           .font(.largeTitle)
-          .italic(game.type(at: location) == .neighbor)
-          .foregroundStyle(chooser.foregroundColor(game.type(at: location)))
+          .italic(type == .neighbor)
+          .foregroundStyle(chooser.foregroundColor(type))
           .allowsHitTesting(false)
       }
       .onTapGesture {
@@ -30,5 +32,6 @@ struct LetterView<S: Shape>: View {
           game.select(location)
         }
       }
+      .zIndex(type == .last ? 2 : 0)
   }
 }

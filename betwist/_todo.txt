@@ -10,7 +10,6 @@
 
 * Don't generate the full list until later
 
-
 * Set parameters (eg board size)
 
 * Sound
@@ -33,6 +32,8 @@ Ideas for faster lookup
 2024-10-17 - WORD-24-14 - Scoring
 * Introduced Score object
 * Made game calculate scores (mostly from Guesses)
+* Made top area (guess) take less space
+
 
 2024-10-16 - WORD-24-14 - Wrap for Infinite Space
 * Worked out a good algorithm for when to switch views to simulate infinite space
