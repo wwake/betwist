@@ -7,59 +7,6 @@ struct ContentView: View {
   @State private var guessOffset: CGFloat = 0
   @State private var showGuesses = false
 
-  func guessView() -> some View {
-    HStack {
-      Image("TheIcon")
-        .resizable()
-        .scaledToFit()
-        .frame(maxWidth: 128, maxHeight: 128)
-        .accessibilityLabel(Text("Betwist"))
-      Text(game.guess)
-        .font(.largeTitle)
-        .foregroundStyle(game.message.isEmpty ? Color.black : Color.red)
-        .frame(minWidth: 230)
-        .frame(height: 40)
-        .padding(4)
-        .background(Color(white: 1.0, opacity: 0.85))
-        .border(.black, width: 2)
-        .accessibilityAddTraits(.isButton)
-        .offset(y: guessOffset)
-        .onTapGesture {
-          collectWord()
-        }
-      Button {
-        collectWord()
-      } label: {
-        Image(systemName: "checkmark.circle.fill")
-          .accessibilityLabel(Text("Enter"))
-          .font(.largeTitle)
-          .foregroundStyle(.green)
-      }
-    }
-    .zIndex(1)
-  }
-
-  func answersView() -> some View {
-    HStack {
-      Button {
-        showGuesses.toggle()
-      } label: {
-        Image(systemName: "doc.text.magnifyingglass")
-          .accessibilityLabel(Text("View Guesses"))
-      }
-      .opacity(game.guesses.isEmpty ? 0 : 1)
-
-      ScrollView {
-        Text(verbatim: game.guesses.description)
-          .font(.title2)
-          .frame(width: 150)
-        Divider()
-//            Text("All answers")
-//            Text(verbatim: "\(game.allAnswers)")
-      }
-    }
-  }
-
   fileprivate func collectWord() {
     if game.guess.isEmpty { return }
 
@@ -80,7 +27,9 @@ struct ContentView: View {
   var body: some View {
     ZStack {
       VStack {
-        guessView()
+        GuessView(game: $game, offset: guessOffset) {
+          collectWord()
+        }
 
         Text(game.message)
           .foregroundStyle(.red)
@@ -88,9 +37,11 @@ struct ContentView: View {
 
         InfiniteGrid(cellSize: Self.cellSize, game: $game, collectWord: collectWord)
 
-        HStack {
+        HStack(alignment: .top) {
           ScoreView(game: $game)
-          answersView()
+          AnswersView(game: $game) {
+            showGuesses.toggle()
+          }
         }
 
         Spacer()

@@ -10,7 +10,6 @@ struct ScoreView: View {
           .font(.title3)
 
       Text("Words: \(game.wordCount)")
-        .bold()
 
       Text("Letters: \(game.letterCount)")
 

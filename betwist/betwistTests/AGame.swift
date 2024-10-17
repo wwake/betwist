@@ -216,4 +216,13 @@ struct AGame {
 
     #expect(game.openNeighbors(selection) == [Location(1, 1)])
   }
+
+  @Test()
+  func scores_answers() {
+    let game = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUN", "FUND"]))
+    #expect(game.wordCount == 2)
+    #expect(game.letterCount == 7)
+    #expect(game.mostLetters == 4)
+  }
+
 }
