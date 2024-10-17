@@ -1,7 +1,5 @@
-* Running count or score
 
 * Sort answers (by length)
-
 * Mark prefix words in a different color (or other indication)
 
 * New game
@@ -32,6 +30,12 @@ Ideas for faster lookup
 2024-10-16 - WORD-24-14 - Wrap for Infinite Space
 * Fix scrolling so we have the effect of an infinite grid
 
+2024-10-17 - WORD-24-14 - Scoring
+* Introduced Score object
+* Made game calculate scores (mostly from Guesses)
+
+2024-10-16 - WORD-24-14 - Wrap for Infinite Space
+* Worked out a good algorithm for when to switch views to simulate infinite space
 
 2024-10-15 - WORD-24-13 - Buttons ⇒ Shapes
 * Draw Shapes instead of Buttons

@@ -11,7 +11,7 @@ struct GuessView: View {
       Image("TheIcon")
         .resizable()
         .scaledToFit()
-        .frame(maxWidth: 128, maxHeight: 128)
+        .frame(width: 40, height: 40)
         .accessibilityLabel(Text("Betwist"))
       Text(game.guess)
         .font(.largeTitle)
