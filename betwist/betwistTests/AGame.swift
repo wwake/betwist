@@ -219,10 +219,14 @@ struct AGame {
 
   @Test()
   func scores_answers() {
-    let game = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUN", "FUND"]))
-    #expect(game.wordCount == 2)
-    #expect(game.letterCount == 7)
-    #expect(game.mostLetters == 4)
-  }
+    var game = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
+    game.select(Location(0, 0))
+    game.select(Location(0, 1))
+    game.select(Location(1, 0))
+    game.select(Location(1, 1))
 
+    game.collect()
+
+    #expect(game.score == Score(wordCount: 1, letterCount: 4, mostLetters: 4))
+  }
 }

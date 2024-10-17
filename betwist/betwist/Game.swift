@@ -148,15 +148,7 @@ struct Game {
     }
   }
 
-  var wordCount: Int {
-    8
-  }
-
-  var letterCount: Int {
-    67
-  }
-
-  var mostLetters: Int {
-    7
+  var score: Score {
+    Score(wordCount: guesses.wordCount, letterCount: guesses.letterCount, mostLetters: guesses.mostLetters)
   }
 }

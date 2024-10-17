@@ -41,6 +41,7 @@
 		91A387722CC056C800E00F7B /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A387712CC056C800E00F7B /* ScoreView.swift */; };
 		91A387742CC1427100E00F7B /* AnswersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A387732CC1427100E00F7B /* AnswersView.swift */; };
 		91A387762CC144E600E00F7B /* GuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A387752CC144E500E00F7B /* GuessView.swift */; };
+		91A387782CC1889700E00F7B /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A387772CC1889700E00F7B /* Score.swift */; };
 		91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96722C81333A0011BB7F /* betwistApp.swift */; };
 		91FA96752C81333A0011BB7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96742C81333A0011BB7F /* ContentView.swift */; };
 		91FA967A2C81333E0011BB7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FA96792C81333E0011BB7F /* Preview Assets.xcassets */; };
@@ -94,6 +95,7 @@
 		91A387712CC056C800E00F7B /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		91A387732CC1427100E00F7B /* AnswersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersView.swift; sourceTree = "<group>"; };
 		91A387752CC144E500E00F7B /* GuessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessView.swift; sourceTree = "<group>"; };
+		91A387772CC1889700E00F7B /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		91FA966F2C81333A0011BB7F /* betwist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betwist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA96722C81333A0011BB7F /* betwistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = betwistApp.swift; sourceTree = "<group>"; };
 		91FA96742C81333A0011BB7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		91FA96712C81333A0011BB7F /* betwist */ = {
 			isa = PBXGroup;
 			children = (
+				91A387772CC1889700E00F7B /* Score.swift */,
 				911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */,
 				91A387732CC1427100E00F7B /* AnswersView.swift */,
 				91FA96722C81333A0011BB7F /* betwistApp.swift */,
@@ -362,6 +365,7 @@
 				9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */,
 				91A387762CC144E600E00F7B /* GuessView.swift in Sources */,
 				91A387722CC056C800E00F7B /* ScoreView.swift in Sources */,
+				91A387782CC1889700E00F7B /* Score.swift in Sources */,
 				911EE9F42CAC8A48005C391D /* CGPoint+direction.swift in Sources */,
 				910C6FB62CBEF78D00BD6A0D /* InfiniteGrid.swift in Sources */,
 				911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */,

@@ -9,6 +9,22 @@ struct Guesses {
   var isEmpty: Bool {
     guesses.isEmpty
   }
+
+  var wordCount: Int {
+    guesses.count
+  }
+
+  var letterCount: Int {
+    guesses.reduce(0) { soFar, next in
+      soFar + next.count
+    }
+  }
+
+  var mostLetters: Int {
+    guesses
+      .map { $0.count }
+      .max() ?? 0
+  }
 }
 
 extension Guesses: Equatable { }
