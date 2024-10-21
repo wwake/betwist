@@ -31,9 +31,27 @@ struct ContentView: View {
           collectWord()
         }
 
-        Text(game.message)
+        HStack {
+          Button {
+            //rotateLeft()
+          } label: {
+            Image(systemName: "arrow.counterclockwise")
+              .accessibilityLabel(Text("Rotate Left"))
+          }.circled()
+
+          Text(game.message)
           .foregroundStyle(.red)
-          .frame(height: 20)
+          .frame(width: 250, height: 40)
+          .opacity(game.message.isEmpty ? 0.0 : 1.0)
+
+          Button {
+            //rotateRight()
+          } label: {
+            Image(systemName: "arrow.clockwise")
+              .accessibilityLabel(Text("Rotate Right"))
+          }
+          .circled()
+        }
 
         InfiniteGrid(game: $game, collectWord: collectWord, cellSize: Self.cellSize, boardSize: geometry.size.width)
 
