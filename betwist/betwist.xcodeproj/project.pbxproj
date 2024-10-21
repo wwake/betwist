@@ -129,6 +129,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		917642212CC6D8E90064AD48 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				911EE9F32CAC8A42005C391D /* CGPoint+direction.swift */,
+				910C6FB72CC0390F00BD6A0D /* CGSize+wrap.swift */,
+				910C6FB12CBEED7500BD6A0D /* ColorChooser.swift */,
+				9104FD2D2CA5E85500A8CBB3 /* Game.swift */,
+				911EE9E62CAB28CE005C391D /* GameMaker.swift */,
+				911EE9FE2CAF2DDF005C391D /* Guesses.swift */,
+				9181F09D2CA347370091A771 /* Int+wrap.swift */,
+				9181F09B2CA3444A0091A771 /* LetterGrid.swift */,
+				910C97A82CA48AAD00893B79 /* Location.swift */,
+				91A387772CC1889700E00F7B /* Score.swift */,
+				910C97AA2CA48AD900893B79 /* Selection.swift */,
+				911EE9F12CAC8096005C391D /* Twister.swift */,
+				911EE9FA2CADD2D6005C391D /* Vocabulary.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		917642222CC6D8F00064AD48 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */,
+				91A387732CC1427100E00F7B /* AnswersView.swift */,
+				91FA96742C81333A0011BB7F /* ContentView.swift */,
+				910C6FAB2CBDB4BF00BD6A0D /* GridView.swift */,
+				91A387752CC144E500E00F7B /* GuessView.swift */,
+				910C6FB52CBEF78D00BD6A0D /* InfiniteGrid.swift */,
+				910C6FAD2CBDB6AD00BD6A0D /* LetterView.swift */,
+				91A387712CC056C800E00F7B /* ScoreView.swift */,
+				910C6FAF2CBEED2000BD6A0D /* Text+italic.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		9181F0A02CA34EA60091A771 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,31 +201,11 @@
 		91FA96712C81333A0011BB7F /* betwist */ = {
 			isa = PBXGroup;
 			children = (
-				91A387772CC1889700E00F7B /* Score.swift */,
-				911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */,
-				91A387732CC1427100E00F7B /* AnswersView.swift */,
+				917642212CC6D8E90064AD48 /* model */,
+				917642222CC6D8F00064AD48 /* view */,
 				91FA96722C81333A0011BB7F /* betwistApp.swift */,
-				911EE9F32CAC8A42005C391D /* CGPoint+direction.swift */,
-				910C6FB72CC0390F00BD6A0D /* CGSize+wrap.swift */,
-				910C6FB12CBEED7500BD6A0D /* ColorChooser.swift */,
-				91FA96742C81333A0011BB7F /* ContentView.swift */,
-				9104FD2D2CA5E85500A8CBB3 /* Game.swift */,
-				911EE9E62CAB28CE005C391D /* GameMaker.swift */,
-				910C6FAB2CBDB4BF00BD6A0D /* GridView.swift */,
-				911EE9FE2CAF2DDF005C391D /* Guesses.swift */,
-				91A387752CC144E500E00F7B /* GuessView.swift */,
-				910C6FB52CBEF78D00BD6A0D /* InfiniteGrid.swift */,
-				9181F09D2CA347370091A771 /* Int+wrap.swift */,
-				9181F09B2CA3444A0091A771 /* LetterGrid.swift */,
-				910C6FAD2CBDB6AD00BD6A0D /* LetterView.swift */,
-				910C97A82CA48AAD00893B79 /* Location.swift */,
 				91FA96782C81333E0011BB7F /* Preview Content */,
 				911EE9F72CAD99A7005C391D /* resources */,
-				91A387712CC056C800E00F7B /* ScoreView.swift */,
-				910C97AA2CA48AD900893B79 /* Selection.swift */,
-				910C6FAF2CBEED2000BD6A0D /* Text+italic.swift */,
-				911EE9F12CAC8096005C391D /* Twister.swift */,
-				911EE9FA2CADD2D6005C391D /* Vocabulary.swift */,
 			);
 			path = betwist;
 			sourceTree = "<group>";
