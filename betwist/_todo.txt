@@ -1,4 +1,4 @@
-* Change button that shows more guesses
+* Extract ViewModifier for buttons
 
 * Rotation?
 
@@ -32,6 +32,7 @@ Ideas for faster lookup
 2024-10-21 - WORD-24-16 - Main View and Rotation
 * Limit last three guesses shown on main page
 * Fix view so GeometryReader at top and rest lays out OK
+* Change button that shows more guesses
 
 2024-10-17 - WORD-24-15 - Scoring
 * Introduced Score object

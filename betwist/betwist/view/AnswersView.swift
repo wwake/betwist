@@ -18,11 +18,7 @@ struct AnswersView: View {
           Button("More...") {
             viewAction()
           }
-          .bold()
-          .padding(6)
-          .foregroundStyle(.white)
-          .background(.accent)
-          .cornerRadius(10)
+          .capsuled()
         }
       .opacity(game.guesses.isEmpty ? 0 : 1)
     }

@@ -15,11 +15,7 @@ struct AnswerDetailsView: View {
       Button("Done") {
         dismiss()
       }
-      .bold()
-      .padding(6)
-      .foregroundStyle(.white)
-      .background(.accent)
-      .cornerRadius(10)
+      .capsuled()
     }
     .padding()
   }
