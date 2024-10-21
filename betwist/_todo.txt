@@ -33,6 +33,8 @@ Ideas for faster lookup
 * Fix view so GeometryReader at top and rest lays out OK
 * Change button that shows more guesses
 * Extract ViewModifier for buttons
+* Add accent-color (mint) border around grid
+* Add (inactive) rotate buttons
 
 2024-10-17 - WORD-24-15 - Scoring
 * Introduced Score object

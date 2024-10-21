@@ -16,6 +16,7 @@ struct InfiniteGrid: View {
           HStack(spacing: 0) {
             ForEach(1...3, id: \.self) { _ in
               GridView(cellSize: cellSize, game: $game, collectWord: collectWord)
+                .border(.accent)
             }
           }
         }
