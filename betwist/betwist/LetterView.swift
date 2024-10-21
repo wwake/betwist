@@ -15,7 +15,7 @@ struct LetterView<S: Shape>: View {
     let type = game.type(at: location)
 
     shape
-      .stroke(chooser.borderColor(type), lineWidth: type == .last ? 6.0: 2.0)
+      .stroke(chooser.borderColor(type), lineWidth: type == .last ? 6.0 : 2.0)
       .fill(chooser.backgroundColor(type, hue: game.hue(at: location)))
       .frame(width: size, height: size)
       .overlay {
@@ -32,6 +32,7 @@ struct LetterView<S: Shape>: View {
           game.select(location)
         }
       }
+      .accessibilityAddTraits(.isButton)
       .zIndex(type == .last ? 2 : 1)
   }
 }

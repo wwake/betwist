@@ -1,15 +1,16 @@
 import SwiftUI
 
 struct InfiniteGrid: View {
-  var cellSize: Double
   @Binding var game: Game
   var collectWord: () -> Void
+  var cellSize: Double
+  var boardSize: Double
 
   @State private var offset = CGSize.zero
   @State private var priorOffset = CGSize.zero
 
   var body: some View {
-    GeometryReader { proxy in
+    VStack {
       VStack(spacing: 0) {
         ForEach(1...3, id: \.self) { _ in
           HStack(spacing: 0) {
@@ -20,7 +21,7 @@ struct InfiniteGrid: View {
         }
       }
       .offset(offset)
-      .frame(minWidth: proxy.size.width, maxWidth: proxy.size.width, minHeight: proxy.size.width, maxHeight: proxy.size.width)
+      .frame(minWidth: boardSize, maxWidth: boardSize, minHeight: boardSize, maxHeight: boardSize)
       .clipped()
       .gesture(
         DragGesture(minimumDistance: 4)

@@ -18,7 +18,7 @@ struct AnswersView: View {
           Text("Found Words")
             .font(.title3)
             .bold()
-          Text(verbatim: game.guesses.description)
+          Text(verbatim: game.guesses.preview)
             .font(.title2)
             .frame(width: 150)
           //            Divider()

@@ -1,3 +1,4 @@
+* The grid takes extra space at the bottom. Try moving the Geometry Reader up to ContentView and putting score & answers inside.
 
 * Rotation?
 
@@ -10,7 +11,7 @@
 
 * iPad is so big it overwhelms our approach to infinite grid
 
-* Don't generate the full list until later
+* Don't generate the full answer list until later
 
 * Set parameters (eg board size)
 
@@ -28,14 +29,12 @@ Ideas for faster lookup
 * Trie
 * Generate full list of words for board - with some performance improvements - and use that as the "dictionary"
 
-2024-10-16 - WORD-24-14 - Wrap for Infinite Space
-* Fix scrolling so we have the effect of an infinite grid
-
-2024-10-17 - WORD-24-14 - Scoring
+2024-10-17 - WORD-24-15 - Scoring
 * Introduced Score object
 * Made game calculate scores (mostly from Guesses)
 * Made top area (guess) take less space
-
+* Made the grid fill the area horizontally
+* GeometryReader apparently acts like it wants to take the rest of the available space vertically. Investigate further.
 
 2024-10-16 - WORD-24-14 - Wrap for Infinite Space
 * Worked out a good algorithm for when to switch views to simulate infinite space

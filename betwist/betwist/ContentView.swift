@@ -25,32 +25,32 @@ struct ContentView: View {
   }
 
   var body: some View {
-    VStack {
-      GuessView(game: $game, offset: guessOffset) {
-        collectWord()
+    GeometryReader { proxy in
+      VStack {
+        GuessView(game: $game, offset: guessOffset) {
+          collectWord()
+        }
+
+        Text(game.message)
+          .foregroundStyle(.red)
+          .frame(height: 20)
+
+        InfiniteGrid(game: $game, collectWord: collectWord, cellSize: Self.cellSize, boardSize: proxy.size.width)
+
+        HStack(alignment: .top) {
+          ScoreView(score: game.score)
+          AnswersView(game: $game) {
+            showGuesses.toggle()
+          }
+        }
+        Spacer()
       }
-
-      Text(game.message)
-        .foregroundStyle(.red)
-        .frame(height: 20)
-
-      InfiniteGrid(cellSize: Self.cellSize, game: $game, collectWord: collectWord)
-        .border(.pink)
-
-      //HStack(alignment: .top) {
-        ScoreView(game: $game)
-//        AnswersView(game: $game) {
-//          showGuesses.toggle()
-//        }
-//      }
-      Spacer()
-    }
-    .padding(.top, 40)
-    .ignoresSafeArea()
-  //  .containerRelativeFrame([.horizontal, .vertical])
-    .background(Gradient(colors: [.gray, .black]).opacity(0.5))
-    .sheet(isPresented: $showGuesses) {
-      AnswerDetailsView(guesses: game.guesses)
+      .padding(.top, 40)
+      .ignoresSafeArea()
+      .background(Gradient(colors: [.gray, .black]).opacity(0.5))
+      .sheet(isPresented: $showGuesses) {
+        AnswerDetailsView(guesses: game.guesses)
+      }
     }
   }
 }

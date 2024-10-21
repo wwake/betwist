@@ -1,8 +1,19 @@
 import Foundation
 
 extension CGSize {
-  fileprivate func wrapDouble(_ input: Double, wrap: Double) -> Double {
-    var value = input
+  func wrap(_ wrap: Double) -> CGSize {
+    var offset = self
+
+    offset.width = offset.width.wrap0Centered(wrap)
+    offset.height = offset.height.wrap0Centered(wrap)
+
+    return offset
+  }
+}
+
+extension CGFloat {
+  func wrap0Centered(_ wrap: Double) -> Double {
+    var value = self
     let boundary = 0.5 * wrap
 
     while value < -boundary {
@@ -14,14 +25,5 @@ extension CGSize {
     }
 
     return value
-  }
-
-  func wrap(_ wrap: Double) -> CGSize {
-    var offset = self
-
-    offset.width = wrapDouble(offset.width, wrap: wrap)
-    offset.height = wrapDouble(offset.height, wrap: wrap)
-
-    return offset
   }
 }

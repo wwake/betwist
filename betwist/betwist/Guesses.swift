@@ -15,8 +15,8 @@ struct Guesses {
   }
 
   var letterCount: Int {
-    guesses.reduce(0) { soFar, next in
-      soFar + next.count
+    guesses.reduce(0) { soFar, word in
+      soFar + word.count
     }
   }
 
@@ -24,6 +24,14 @@ struct Guesses {
     guesses
       .map { $0.count }
       .max() ?? 0
+  }
+
+  var preview: String {
+    String(
+      guesses
+      .prefix(3)
+      .joined(by: "\n")
+    )
   }
 }
 
