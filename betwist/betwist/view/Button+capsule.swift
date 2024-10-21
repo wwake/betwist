@@ -4,7 +4,8 @@ struct ButtonCapsuleModifier: ViewModifier {
   func body(content: Content) -> some View {
     content
       .bold()
-      .padding(6)
+      .padding([.top, .bottom], 6)
+      .padding([.leading, .trailing], 16)
       .foregroundStyle(.white)
       .background(.accent)
       .cornerRadius(10)

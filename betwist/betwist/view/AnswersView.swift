@@ -5,21 +5,20 @@ struct AnswersView: View {
   var viewAction: () -> Void
 
   var body: some View {
-    VStack {
-        ScrollView {
-          Text("Found Words")
-            .font(.title3)
-            .bold()
+    VStack(spacing: 0) {
+      ScrollView {
+        Text("Found Words")
+          .font(.title3)
 
-          Text(verbatim: game.guesses.preview)
-            .font(.title2)
-            .frame(width: 150)
+        Text(verbatim: game.guesses.preview)
+          .frame(width: 150)
 
-          Button("More...") {
-            viewAction()
-          }
-          .capsuled()
+        Button("More...") {
+          viewAction()
         }
+        .capsuled()
+      }
+      .bold()
       .opacity(game.guesses.isEmpty ? 0 : 1)
     }
   }
