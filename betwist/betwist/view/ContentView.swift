@@ -4,7 +4,7 @@ struct ContentView: View {
   static var cellSize = 50.0
 
   @Binding var game: Game
-  @State private var guessOffset: CGFloat = 0
+  @State private var guessProgress = 0.0
   @State private var showGuesses = false
 
   fileprivate func collectWord() {
@@ -14,20 +14,20 @@ struct ContentView: View {
     if !game.message.isEmpty { return }
 
     game.blockSelection()
-    withAnimation(.easeInOut(duration: 1)) {
-      guessOffset = 375
+    withAnimation(.easeInOut(duration: 0.75)) {
+      guessProgress = 1.0
     }
     completion: {
-      guessOffset = 0
+      guessProgress = 0.0
       game.collect()
       game.deselectAll()
     }
   }
 
   var body: some View {
-    GeometryReader { proxy in
+    GeometryReader { geometry in
       VStack {
-        GuessView(game: $game, offset: guessOffset) {
+        GuessView(game: $game, guessProgress: guessProgress, height: 500) {
           collectWord()
         }
 
@@ -35,7 +35,7 @@ struct ContentView: View {
           .foregroundStyle(.red)
           .frame(height: 20)
 
-        InfiniteGrid(game: $game, collectWord: collectWord, cellSize: Self.cellSize, boardSize: proxy.size.width)
+        InfiniteGrid(game: $game, collectWord: collectWord, cellSize: Self.cellSize, boardSize: geometry.size.width)
 
         HStack(alignment: .top) {
           ScoreView(score: game.score)
