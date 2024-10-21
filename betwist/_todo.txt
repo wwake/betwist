@@ -1,4 +1,4 @@
-* The grid takes extra space at the bottom. Try moving the Geometry Reader up to ContentView and putting score & answers inside.
+* Change button that shows more guesses
 
 * Rotation?
 
@@ -28,6 +28,10 @@ Ideas for faster lookup
 * Bloom filter - multiple hashes for a probabilistic answer
 * Trie
 * Generate full list of words for board - with some performance improvements - and use that as the "dictionary"
+
+2024-10-21 - WORD-24-16 - Main View and Rotation
+* Limit last three guesses shown on main page
+* Fix view so GeometryReader at top and rest lays out OK
 
 2024-10-17 - WORD-24-15 - Scoring
 * Introduced Score object

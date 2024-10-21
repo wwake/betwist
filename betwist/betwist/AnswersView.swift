@@ -6,26 +6,24 @@ struct AnswersView: View {
 
   var body: some View {
     VStack {
-      HStack {
-        Button {
-          viewAction()
-        } label: {
-          Image(systemName: "doc.text.magnifyingglass")
-            .accessibilityLabel(Text("View Guesses"))
-        }
-
         ScrollView {
           Text("Found Words")
             .font(.title3)
             .bold()
+
           Text(verbatim: game.guesses.preview)
             .font(.title2)
             .frame(width: 150)
-          //            Divider()
-          //            Text("All answers")
-          //            Text(verbatim: "\(game.allAnswers)")
+
+          Button("More...") {
+            viewAction()
+          }
+          .bold()
+          .padding(6)
+          .foregroundStyle(.white)
+          .background(.accent)
+          .cornerRadius(10)
         }
-      }
       .opacity(game.guesses.isEmpty ? 0 : 1)
     }
   }

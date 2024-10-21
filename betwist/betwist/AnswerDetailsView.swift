@@ -15,9 +15,12 @@ struct AnswerDetailsView: View {
       Button("Done") {
         dismiss()
       }
-      .buttonStyle(.bordered)
-      .foregroundStyle(Color.black)
-      .padding(8)
+      .bold()
+      .padding(6)
+      .foregroundStyle(.white)
+      .background(.accent)
+      .cornerRadius(10)
     }
+    .padding()
   }
 }
