@@ -1,4 +1,5 @@
 * Mark prefix words in a different color (or other indication)
+* Should Guesses manage the prefix testing & insertion?
 
 * Sort answers (by length)
 

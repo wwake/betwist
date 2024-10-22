@@ -14,7 +14,11 @@ struct Guesses {
     guess(guessString, userGuessed: true)
   }
 
-  mutating func guess(_ guessString: String, userGuessed: Bool) {
+  mutating func guessPrefix(_ guessString: String) {
+    guess(guessString, userGuessed: false)
+  }
+
+  fileprivate mutating func guess(_ guessString: String, userGuessed: Bool) {
     let guess = Guess(word: guessString, userGuessed: userGuessed)
     guesses.removeAll { $0 == guess }
     guesses.insert(guess, at: 0)
