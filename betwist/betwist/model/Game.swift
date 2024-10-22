@@ -91,14 +91,6 @@ struct Game {
     selection.last == location
   }
 
-  var rowIndexes: [Int] {
-    twister.rowIndexes
-  }
-
-  var columnIndexes: [Int] {
-    twister.columnIndexes
-  }
-
   var allAnswers: Set<String> {
     var result = Set<String>()
     let selection = Selection(grid)
@@ -122,8 +114,8 @@ struct Game {
 
   fileprivate var allLocations: Set<Location> {
     var neighbors = Set<Location>()
-    for row in rowIndexes {
-      for column in columnIndexes {
+    for row in 0..<size {
+      for column in 0..<size {
         neighbors.insert(Location(row, column))
       }
     }

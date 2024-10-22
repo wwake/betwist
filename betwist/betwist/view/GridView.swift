@@ -7,9 +7,9 @@ struct GridView: View {
 
   var body: some View {
     VStack(spacing: 0) {
-      ForEach(game.rowIndexes, id: \.self) { row in
+      ForEach(0..<game.size, id: \.self) { row in
         HStack(spacing: 0) {
-          ForEach(game.columnIndexes, id: \.self) { column in
+          ForEach(0..<game.size, id: \.self) { column in
             LetterView(
               shape: Rectangle(),
               size: cellSize,

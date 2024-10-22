@@ -23,8 +23,6 @@
 		911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E62CAB28CE005C391D /* GameMaker.swift */; };
 		911EE9F02CAC7CB9005C391D /* ATwister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9EF2CAC7CB9005C391D /* ATwister.swift */; };
 		911EE9F22CAC8096005C391D /* Twister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9F12CAC8096005C391D /* Twister.swift */; };
-		911EE9F42CAC8A48005C391D /* CGPoint+direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9F32CAC8A42005C391D /* CGPoint+direction.swift */; };
-		911EE9F62CAC8A71005C391D /* ACGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9F52CAC8A71005C391D /* ACGPoint.swift */; };
 		911EE9F92CADD10F005C391D /* AVocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9F82CADD10F005C391D /* AVocabulary.swift */; };
 		911EE9FB2CADD2D6005C391D /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9FA2CADD2D6005C391D /* Vocabulary.swift */; };
 		911EE9FD2CAF26E4005C391D /* AnswerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */; };
@@ -79,8 +77,6 @@
 		911EE9E62CAB28CE005C391D /* GameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaker.swift; sourceTree = "<group>"; };
 		911EE9EF2CAC7CB9005C391D /* ATwister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATwister.swift; sourceTree = "<group>"; };
 		911EE9F12CAC8096005C391D /* Twister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twister.swift; sourceTree = "<group>"; };
-		911EE9F32CAC8A42005C391D /* CGPoint+direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+direction.swift"; sourceTree = "<group>"; };
-		911EE9F52CAC8A71005C391D /* ACGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACGPoint.swift; sourceTree = "<group>"; };
 		911EE9F82CADD10F005C391D /* AVocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVocabulary.swift; sourceTree = "<group>"; };
 		911EE9FA2CADD2D6005C391D /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
 		911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerDetailsView.swift; sourceTree = "<group>"; };
@@ -134,7 +130,6 @@
 		917642212CC6D8E90064AD48 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				911EE9F32CAC8A42005C391D /* CGPoint+direction.swift */,
 				910C6FB72CC0390F00BD6A0D /* CGSize+wrap.swift */,
 				910C6FB12CBEED7500BD6A0D /* ColorChooser.swift */,
 				9104FD2D2CA5E85500A8CBB3 /* Game.swift */,
@@ -224,7 +219,6 @@
 		91FA96822C81333E0011BB7F /* betwistTests */ = {
 			isa = PBXGroup;
 			children = (
-				911EE9F52CAC8A71005C391D /* ACGPoint.swift */,
 				910C6FB92CC03A3300BD6A0D /* ACGSize.swift */,
 				911EE9E22CAB21E5005C391D /* AGame.swift */,
 				911EE9E42CAB24CA005C391D /* AGameMaker.swift */,
@@ -386,7 +380,6 @@
 				91A387722CC056C800E00F7B /* ScoreView.swift in Sources */,
 				917642242CC6D9D70064AD48 /* Button+viewModifier.swift in Sources */,
 				91A387782CC1889700E00F7B /* Score.swift in Sources */,
-				911EE9F42CAC8A48005C391D /* CGPoint+direction.swift in Sources */,
 				910C6FB62CBEF78D00BD6A0D /* InfiniteGrid.swift in Sources */,
 				911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */,
 				910C6FB22CBEED7500BD6A0D /* ColorChooser.swift in Sources */,
@@ -413,7 +406,6 @@
 				911EE9E32CAB21E5005C391D /* AGame.swift in Sources */,
 				910C97AE2CA4990700893B79 /* ALocation.swift in Sources */,
 				9181F09A2CA33C2A0091A771 /* ALetterGrid.swift in Sources */,
-				911EE9F62CAC8A71005C391D /* ACGPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

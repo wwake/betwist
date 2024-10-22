@@ -1,27 +1,37 @@
-enum Directions {
-  case up, down, left, right
-}
-
 struct Twister {
   var size: Int
 
-  let deltas: [Directions: DeltaLocation] = [
-    .left: DeltaLocation(0, 1),
-    .right: DeltaLocation(0, -1),
-    .up: DeltaLocation(1, 0),
-    .down: DeltaLocation(-1, 0),
-  ]
+  var transform: [[Location]]
 
   init(_ size: Int) {
     self.size = size
+
+    var newTransform = Self.makeTransform(size: size)
+    for row in 0..<size {
+      for column in 0..<size {
+        newTransform[row][column ] = Location(row, column)
+      }
+    }
+    transform = newTransform
   }
 
-  var rowIndexes: [Int] {
-    (0..<size).map { $0 %% size }
+  subscript (location: Location) -> Location {
+    transform[location.row][location.column]
   }
 
-  var columnIndexes: [Int] {
-    (0..<size).map { $0 %% size }
+  static func makeTransform(size: Int) -> [[Location]] {
+    let newRow = [Location](repeating: Location(0, 0), count: size)
+    return [[Location]](repeating: newRow, count: size)
+  }
+
+  mutating func rotateLeft() {
+    var newTransform = Self.makeTransform(size: size)
+    for row in 0..<size {
+      for column in 0..<size {
+        newTransform[row][column] = transform[column][size - 1 - row]
+      }
+    }
+    transform = newTransform
   }
 }
 

@@ -1,4 +1,3 @@
-* Remove old "twist" function
 * Rotation
 
 * Sort answers (by length)
@@ -29,6 +28,10 @@ Ideas for faster lookup
 * Bloom filter - multiple hashes for a probabilistic answer
 * Trie
 * Performance idea: Generate full list of words for board - with some performance improvements - and use that as the "dictionary"
+
+2024-10-22 - WORD-24-17 - Rotate via Twister
+* Remove old "twist" function
+
 
 2024-10-21 - WORD-24-16 - Main View and Rotation
 * Limit last three guesses shown on main page
