@@ -33,11 +33,13 @@ struct Game {
   }
 
   subscript(_ row: Int, _ column: Int) -> String {
-    grid[row, column]
+    let newLocation = twister[Location(row, column)]
+    return grid[newLocation.row, newLocation.column]
   }
 
   subscript(_ location: Location) -> String {
-    grid[location.row, location.column]
+    let newLocation = twister[location]
+    return grid[newLocation.row, newLocation.column]
   }
 
   mutating func blockSelection() {
