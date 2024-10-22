@@ -85,7 +85,7 @@ struct Game {
     for length in Self.minimumSize...guess.count {
       let prefix = String(guess.prefix(length))
       if vocabulary.contains(prefix) {
-        guesses.prepend(prefix)
+        guesses.guess(prefix)
       }
     }
   }

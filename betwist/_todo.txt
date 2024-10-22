@@ -1,17 +1,16 @@
-* Rotation
-
-* Sort answers (by length)
 * Mark prefix words in a different color (or other indication)
 
+* Sort answers (by length)
+
 * Click first letter to cancel whole word
+* Warn on duplicate words
 
 * New game
 
-* Warn on duplicate words
 
-* iPad is so big it overwhelms our approach to infinite grid
+* iPad is so big it overwhelms our approach to infinite grid [limit size artificially]
 
-* Don't generate the full answer list until later
+* When do we generate the full answer list? now or later
 
 * Set parameters (eg board size)
 
@@ -22,6 +21,11 @@ Tessellations?
 
 Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swiftui-layout-protocol-f7b0efeeacbf
 
+Mirror - top<->bottom, left<->right, diagonal-left <-> diagonal-right
+Trigger mirror by shake? [random mirror]
+Trigger by swipe from the edge?
+
+Rotation trigger by rotating phone left or right but ignoring rotation back to normal position
 
 Ideas for faster lookup
 * Try a 3- or 4-letter prefix dictionary
@@ -31,7 +35,7 @@ Ideas for faster lookup
 
 2024-10-22 - WORD-24-17 - Rotate via Twister
 * Remove old "twist" function
-
+* Rotation - left or right via button
 
 2024-10-21 - WORD-24-16 - Main View and Rotation
 * Limit last three guesses shown on main page

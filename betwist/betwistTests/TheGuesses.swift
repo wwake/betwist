@@ -5,18 +5,18 @@ struct TheGuesses {
   @Test
   func inserts_word_at_the_beginning() {
     var sut = Guesses()
-    sut.prepend("STICKS")
-    sut.prepend("FISH")
+    sut.guess("STICKS")
+    sut.guess("FISH")
     #expect(sut.description == "FISH\nSTICKS")
   }
 
   @Test
   func moves_duplicate_word_to_the_beginning() {
     var sut = Guesses()
-    sut.prepend("FISH")
-    sut.prepend("STICKS")
+    sut.guess("FISH")
+    sut.guess("STICKS")
 
-    sut.prepend("FISH")
+    sut.guess("FISH")
 
     #expect(sut.description == "FISH\nSTICKS")
   }
