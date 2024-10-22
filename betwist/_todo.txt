@@ -1,8 +1,10 @@
 
-* Rotation?
+* Rotation
 
 * Sort answers (by length)
 * Mark prefix words in a different color (or other indication)
+
+* Click first letter to cancel whole word
 
 * New game
 
@@ -26,11 +28,12 @@ Ideas for faster lookup
 * Try a 3- or 4-letter prefix dictionary
 * Bloom filter - multiple hashes for a probabilistic answer
 * Trie
-* Generate full list of words for board - with some performance improvements - and use that as the "dictionary"
+* Performance idea: Generate full list of words for board - with some performance improvements - and use that as the "dictionary"
 
 2024-10-21 - WORD-24-16 - Main View and Rotation
 * Limit last three guesses shown on main page
 * Fix view so GeometryReader at top and rest lays out OK
+* Add opacity & scale to our animation
 * Change button that shows more guesses
 * Extract ViewModifier for buttons
 * Add accent-color (mint) border around grid
