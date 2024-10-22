@@ -33,7 +33,7 @@ struct ContentView: View {
 
         HStack {
           Button {
-            //rotateLeft()
+            // rotateLeft()
           } label: {
             Image(systemName: "arrow.counterclockwise")
               .accessibilityLabel(Text("Rotate Left"))
@@ -45,7 +45,7 @@ struct ContentView: View {
           .opacity(game.message.isEmpty ? 0.0 : 1.0)
 
           Button {
-            //rotateRight()
+            // rotateRight()
           } label: {
             Image(systemName: "arrow.clockwise")
               .accessibilityLabel(Text("Rotate Right"))

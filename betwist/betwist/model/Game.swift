@@ -91,10 +91,6 @@ struct Game {
     selection.last == location
   }
 
-  mutating func twist(_ direction: Directions) {
-    twister.twist(direction)
-  }
-
   var rowIndexes: [Int] {
     twister.rowIndexes
   }

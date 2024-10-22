@@ -1,4 +1,4 @@
-
+* Remove old "twist" function
 * Rotation
 
 * Sort answers (by length)
