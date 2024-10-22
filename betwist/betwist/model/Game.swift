@@ -47,7 +47,7 @@ struct Game {
   }
 
   mutating func select(_ location: Location) {
-    selection.select(location)
+    selection.select(twister[location])
     message = ""
   }
 
@@ -61,11 +61,12 @@ struct Game {
   }
 
   func type(at location: Location, in selection: Selection) -> SelectionType {
-    selection.type(location)
+    selection.type(twister[location])
   }
 
   func hue(at location: Location) -> Double {
-    hues[location.row * size + location.column]
+    let newLocation = twister[location]
+    return hues[newLocation.row * size + newLocation.column]
   }
 
   mutating func validate() {
@@ -90,7 +91,7 @@ struct Game {
   }
 
   func lastLocationSelected(was location: Location) -> Bool {
-    selection.last == location
+    selection.last == twister[location]
   }
 
   var allAnswers: Set<String> {
@@ -140,5 +141,9 @@ struct Game {
 
   var score: Score {
     Score(wordCount: guesses.wordCount, letterCount: guesses.letterCount, mostLetters: guesses.mostLetters)
+  }
+
+  mutating func rotateLeft() {
+    twister.rotateLeft()
   }
 }

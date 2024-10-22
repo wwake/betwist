@@ -24,6 +24,7 @@ struct InfiniteGrid: View {
       .offset(offset)
       .frame(minWidth: boardSize, maxWidth: boardSize, minHeight: boardSize, maxHeight: boardSize)
       .clipped()
+      .contentShape(Rectangle())
       .gesture(
         DragGesture(minimumDistance: 4)
           .onChanged { dragInfo in
