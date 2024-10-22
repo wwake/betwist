@@ -82,12 +82,13 @@ struct Game {
   mutating func collect() {
     guard message.isEmpty && !guess.isEmpty else { return }
 
-    for length in Self.minimumSize...guess.count {
+    for length in Self.minimumSize..<guess.count {
       let prefix = String(guess.prefix(length))
       if vocabulary.contains(prefix) {
         guesses.guess(prefix)
       }
     }
+    guesses.guess(guess)
   }
 
   func lastLocationSelected(was location: Location) -> Bool {

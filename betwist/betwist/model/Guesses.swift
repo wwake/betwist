@@ -1,12 +1,21 @@
 struct Guess: Equatable {
   let word: String
+  let userGuessed: Bool
+
+  var count: Int {
+    word.count
+  }
 }
 
 struct Guesses {
   var guesses = [Guess]()
 
   mutating func guess(_ guessString: String) {
-    let guess = Guess(word: guessString)
+    guess(guessString, userGuessed: true)
+  }
+
+  mutating func guess(_ guessString: String, userGuessed: Bool) {
+    let guess = Guess(word: guessString, userGuessed: userGuessed)
     guesses.removeAll { $0 == guess }
     guesses.insert(guess, at: 0)
   }
@@ -21,13 +30,13 @@ struct Guesses {
 
   var letterCount: Int {
     guesses.reduce(0) { soFar, guess in
-      soFar + guess.word.count
+      soFar + guess.count
     }
   }
 
   var mostLetters: Int {
     guesses
-      .map { $0.word.count }
+      .map { $0.count }
       .max() ?? 0
   }
 
