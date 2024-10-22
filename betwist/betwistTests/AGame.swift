@@ -167,6 +167,19 @@ struct AGame {
   }
 
   @Test
+  func collect_rejects_invalid_word() {
+    var game = Game(2, ["A", "B", "C", "D"], Vocabulary(["ABCD"]))
+    game.select(Location(0, 1))
+    game.select(Location(0, 0))
+    game.select(Location(1, 0))
+    game.select(Location(1, 1))
+
+    game.collect()
+
+    #expect(game.guesses.wordCount == 0)
+  }
+
+  @Test
   func finds_all_answers_in_1_cell_board() {
     let game = Game(1, ["A"], Vocabulary(["A"]))
     #expect(game.allAnswers == Set(["A"]))

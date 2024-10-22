@@ -88,7 +88,9 @@ struct Game {
         guesses.guessPrefix(prefix)
       }
     }
-    guesses.guess(guess)
+    if vocabulary.contains(guess) {
+      guesses.guess(guess)
+    }
   }
 
   func lastLocationSelected(was location: Location) -> Bool {
