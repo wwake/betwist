@@ -33,6 +33,12 @@ struct Twister {
     }
     transform = newTransform
   }
+
+  mutating func rotateRight() {
+    rotateLeft()
+    rotateLeft()
+    rotateLeft()
+  }
 }
 
 // 0,0  0,1  0,2   ABC

@@ -146,4 +146,8 @@ struct Game {
   mutating func rotateLeft() {
     twister.rotateLeft()
   }
+
+  mutating func rotateRight() {
+    twister.rotateRight()
+  }
 }

@@ -45,7 +45,7 @@ struct ContentView: View {
           .opacity(game.message.isEmpty ? 0.0 : 1.0)
 
           Button {
-            // rotateRight()
+            game.rotateRight()
           } label: {
             Image(systemName: "arrow.clockwise")
               .accessibilityLabel(Text("Rotate Right"))
