@@ -1,23 +1,22 @@
-* Mark prefix words in a different color (or other indication)
-* Should Guesses manage the prefix testing & insertion?
+
+* Warn on duplicate words
+* Change rules for replacing existing words
+* Should Guesses manage prefix testing & insertion?
 
 * Sort answers (by length)
 
 * Click first letter to cancel whole word
-* Warn on duplicate words
 
 * New game
-
-
-* iPad is so big it overwhelms our approach to infinite grid [limit size artificially]
-
-* When do we generate the full answer list? now or later
-
 * Set parameters (eg board size)
+
+
+* iPad is so big it overwhelms our approach to infinite grid [limit size artificially?]
+
+* When should we generate the full answer list? now or later?
 
 * Sound
 
-* Animation - experiment with opacity [defer]
 Tessellations?
 
 Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swiftui-layout-protocol-f7b0efeeacbf
@@ -37,6 +36,7 @@ Ideas for faster lookup
 2024-10-22 - WORD-24-17 - Rotate via Twister
 * Remove old "twist" function
 * Rotation - left or right via button
+* Mark prefix words in a different color and weight
 
 2024-10-21 - WORD-24-16 - Main View and Rotation
 * Limit last three guesses shown on main page

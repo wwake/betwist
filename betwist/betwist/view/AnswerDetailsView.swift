@@ -8,10 +8,17 @@ struct AnswerDetailsView: View {
 
   var body: some View {
     VStack {
+      Text("Words You Found")
+        .font(.title)
+
       ScrollView {
-        Text(verbatim: guesses.description)
-          .font(.title)
+        ForEach(guesses.guesses) {
+          Text(verbatim: $0.word)
+            .bold($0.userGuessed)
+            .foregroundStyle($0.userGuessed ? .black : .accent)
+        }
       }
+
       Button("Done") {
         dismiss()
       }

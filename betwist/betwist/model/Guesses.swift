@@ -1,4 +1,7 @@
-struct Guess: Equatable {
+import Foundation
+
+struct Guess: Identifiable, Equatable {
+  let id = UUID()
   let word: String
   let userGuessed: Bool
 
