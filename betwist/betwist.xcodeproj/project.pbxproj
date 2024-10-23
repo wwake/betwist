@@ -131,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				910C6FB72CC0390F00BD6A0D /* CGSize+wrap.swift */,
-				910C6FB12CBEED7500BD6A0D /* ColorChooser.swift */,
 				9104FD2D2CA5E85500A8CBB3 /* Game.swift */,
 				911EE9E62CAB28CE005C391D /* GameMaker.swift */,
 				911EE9FE2CAF2DDF005C391D /* Answers.swift */,
@@ -152,6 +151,7 @@
 				917642232CC6D9C40064AD48 /* Button+viewModifier.swift */,
 				911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */,
 				91A387732CC1427100E00F7B /* AnswersView.swift */,
+				910C6FB12CBEED7500BD6A0D /* ColorChooser.swift */,
 				91FA96742C81333A0011BB7F /* ContentView.swift */,
 				910C6FAB2CBDB4BF00BD6A0D /* GridView.swift */,
 				91A387752CC144E500E00F7B /* AnswerInProgressView.swift */,

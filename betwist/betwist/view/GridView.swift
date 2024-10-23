@@ -17,7 +17,6 @@ struct GridView: View {
               location: Location(row, column),
               collectWord: collectWord
             )
-            .padding(1)
           }
         }
       }

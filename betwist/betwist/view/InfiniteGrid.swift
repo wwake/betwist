@@ -12,11 +12,10 @@ struct InfiniteGrid: View {
   var body: some View {
     VStack {
       VStack(spacing: 0) {
-        ForEach(1...3, id: \.self) { _ in
+        ForEach(1...3, id: \.self) { row in
           HStack(spacing: 0) {
-            ForEach(1...3, id: \.self) { _ in
+            ForEach(1...3, id: \.self) { column in
               GridView(cellSize: cellSize, game: $game, collectWord: collectWord)
-                .border(.accent)
             }
           }
         }

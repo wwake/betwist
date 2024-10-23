@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct LetterView<S: Shape>: View {
+struct LetterView<S: InsettableShape>: View {
   var shape: S
   var size: Double
 
@@ -15,8 +15,8 @@ struct LetterView<S: Shape>: View {
     let type = game.type(at: location)
 
     shape
-      .stroke(chooser.borderColor(type), lineWidth: type == .last ? 6.0 : 2.0)
       .fill(chooser.backgroundColor(type, hue: game.hue(at: location)))
+      .strokeBorder(chooser.borderColor(type), lineWidth: chooser.borderWidth(type))
       .frame(width: size, height: size)
       .overlay {
         Text("\(game[location])")
@@ -33,6 +33,5 @@ struct LetterView<S: Shape>: View {
         }
       }
       .accessibilityAddTraits(.isButton)
-      .zIndex(type == .last ? 2 : 1)
   }
 }
