@@ -22,6 +22,10 @@ struct Answers {
   }
 
   fileprivate mutating func submit(_ word: String, enteredByUser: Bool) {
+    if contains(word) {
+      return
+    }
+
     let guess = Answer(word: word, enteredByUser: enteredByUser)
     values.insert(guess, at: 0)
   }
