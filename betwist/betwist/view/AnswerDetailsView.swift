@@ -11,13 +11,17 @@ struct AnswerDetailsView: View {
       Text("Words You Found")
         .font(.title)
 
-      ScrollView {
-        ForEach(answers.values) {
-          Text(verbatim: $0.word)
-            .bold($0.enteredByUser)
-            .foregroundStyle($0.enteredByUser ? .black : .accent)
-        }
-      }
+//      List {
+//        ForEach(answers.wordSizes) { size in
+//          Section(header: Text("\(size) letters")) {
+//            ForEach(answers.words(ofSize: size)) { answer in
+//              Text(verbatim: answer.word)
+//                .bold(answer.enteredByUser)
+//                .foregroundStyle(answer.enteredByUser ? .black : .accent)
+//            }
+//          }
+//        }
+//      }
 
       Button("Back") {
         dismiss()
