@@ -74,6 +74,8 @@ struct Game {
 
     if answer.count < Self.minimumSize {
       message = "Word is too short"
+    } else if answers.contains(answer) {
+      message = "Duplicate word!"
     } else if !vocabulary.contains(answer) {
       message = "That's not a word!"
     }
