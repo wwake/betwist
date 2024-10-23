@@ -1,4 +1,7 @@
 
+* New game
+* Set parameters (eg board size)
+
 * Warn on duplicate words
 * Change rules for replacing existing words
 * Should Guesses manage prefix testing & insertion?
@@ -7,12 +10,10 @@
 
 * Click first letter to cancel whole word
 
-* New game
-* Set parameters (eg board size)
 
 
 * iPad is so big it overwhelms our approach to infinite grid [limit size artificially?]
-
+`
 * When should we generate the full answer list? now or later?
 
 * Sound

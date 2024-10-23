@@ -23,7 +23,7 @@ struct Guesses {
 
   fileprivate mutating func guess(_ guessString: String, userGuessed: Bool) {
     let guess = Guess(word: guessString, userGuessed: userGuessed)
-    guesses.removeAll { $0 == guess }
+    guesses.removeAll { $0.word == guess.word }
     guesses.insert(guess, at: 0)
   }
 
