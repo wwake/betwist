@@ -10,7 +10,7 @@ struct ColorChooser {
       return Color(.cellForegroundSelected)
     }
   }
-  
+
   func backgroundColor(_ type: SelectionType, hue: Double) -> Color {
     switch type {
     case .open, .neighbor:

@@ -55,6 +55,10 @@ struct Answers {
       .joined(by: "\n")
     )
   }
+
+  func contains(_ word: String) -> Bool {
+    values.contains { $0.word == word }
+  }
 }
 
 extension Answers: Equatable { }

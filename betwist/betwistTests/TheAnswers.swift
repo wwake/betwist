@@ -20,4 +20,13 @@ struct TheAnswers {
 
     #expect(sut.preview == "FISH\nSTICKS")
   }
+
+  @Test
+  func knows_whether_it_contains_a_word() {
+    var sut = Answers()
+    sut.submit("FRIED")
+
+    #expect(sut.contains("FRIED"))
+    #expect(!sut.contains("BOILED"))
+  }
 }
