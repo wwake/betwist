@@ -27,7 +27,7 @@ struct Selection {
     selection.last
   }
 
-  var guess: String {
+  var answer: String {
     selection
       .map { location in
         grid[location.row, location.column]

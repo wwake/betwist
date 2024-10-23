@@ -6,7 +6,7 @@ struct Game {
   var twister: Twister
 
   var selection: Selection
-  var guesses = Answers()
+  var answers = Answers()
 
   var vocabulary: Vocabulary
 
@@ -28,8 +28,8 @@ struct Game {
     grid.size
   }
 
-  var guess: String {
-    selection.guess
+  var answer: String {
+    selection.answer
   }
 
   subscript(_ row: Int, _ column: Int) -> String {
@@ -70,26 +70,26 @@ struct Game {
   }
 
   mutating func validate() {
-    if guess.count == 0 { return }
+    if answer.count == 0 { return }
 
-    if guess.count < Self.minimumSize {
+    if answer.count < Self.minimumSize {
       message = "Word is too short"
-    } else if !vocabulary.contains(guess) {
+    } else if !vocabulary.contains(answer) {
       message = "That's not a word!"
     }
   }
 
   mutating func collect() {
-    guard message.isEmpty && !guess.isEmpty else { return }
+    guard message.isEmpty && !answer.isEmpty else { return }
 
-    for length in Self.minimumSize..<guess.count {
-      let prefix = String(guess.prefix(length))
+    for length in Self.minimumSize..<answer.count {
+      let prefix = String(answer.prefix(length))
       if vocabulary.contains(prefix) {
-        guesses.guessPrefix(prefix)
+        answers.submitPrefix(prefix)
       }
     }
-    if vocabulary.contains(guess) {
-      guesses.guess(guess)
+    if vocabulary.contains(answer) {
+      answers.submit(answer)
     }
   }
 
@@ -131,9 +131,9 @@ struct Game {
   fileprivate func tryAllExtensions(_ result: inout Set<String>, _ selection: Selection, _ neighbors: Set<Location>) {
     for location in neighbors {
       let newSelection = Selection(selection, location)
-      let (contained, prefixed) = vocabulary.containsAndPrefixes(newSelection.guess)
+      let (contained, prefixed) = vocabulary.containsAndPrefixes(newSelection.answer)
       if contained {
-        result.insert(newSelection.guess)
+        result.insert(newSelection.answer)
       }
       if prefixed {
         let neighbors = openNeighbors(newSelection)
@@ -143,7 +143,7 @@ struct Game {
   }
 
   var score: Score {
-    Score(wordCount: guesses.wordCount, letterCount: guesses.letterCount, mostLetters: guesses.mostLetters)
+    Score(wordCount: answers.wordCount, letterCount: answers.letterCount, mostLetters: answers.mostLetters)
   }
 
   mutating func rotateLeft() {

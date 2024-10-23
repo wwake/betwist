@@ -17,11 +17,11 @@ struct AnswersView: View {
         Text("Found Words")
           .font(.title3)
 
-        Text(verbatim: game.guesses.preview)
+        Text(verbatim: game.answers.preview)
           .frame(width: 150)
       }
       .bold()
-      .opacity(game.guesses.isEmpty ? 0 : 1)
+      .opacity(game.answers.isEmpty ? 0 : 1)
     }
   }
 }

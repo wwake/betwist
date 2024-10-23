@@ -4,21 +4,21 @@ struct ContentView: View {
   static var cellSize = 50.0
 
   @Binding var game: Game
-  @State private var guessProgress = 0.0
-  @State private var showGuesses = false
+  @State private var progress = 0.0
+  @State private var showAnswers = false
 
   fileprivate func collectWord() {
-    if game.guess.isEmpty { return }
+    if game.answer.isEmpty { return }
 
     game.validate()
     if !game.message.isEmpty { return }
 
     game.blockSelection()
     withAnimation(.easeInOut(duration: 0.75)) {
-      guessProgress = 1.0
+      progress = 1.0
     }
     completion: {
-      guessProgress = 0.0
+      progress = 0.0
       game.collect()
       game.deselectAll()
     }
@@ -27,7 +27,7 @@ struct ContentView: View {
   var body: some View {
     GeometryReader { geometry in
       VStack {
-        GuessView(game: $game, guessProgress: guessProgress, height: 500) {
+        AnswerInProgressView(game: $game, progress: progress, height: 500) {
           collectWord()
         }
 
@@ -58,7 +58,7 @@ struct ContentView: View {
         HStack(alignment: .top) {
           ScoreView(score: game.score)
           AnswersView(game: $game) {
-            showGuesses.toggle()
+            showAnswers.toggle()
           }
         }
         Spacer()
@@ -66,8 +66,8 @@ struct ContentView: View {
       .padding(.top, 40)
       .ignoresSafeArea()
       .background(Gradient(colors: [.gray, .black]).opacity(0.5))
-      .sheet(isPresented: $showGuesses) {
-        AnswerDetailsView(guesses: game.guesses)
+      .sheet(isPresented: $showAnswers) {
+        AnswerDetailsView(answers: game.answers)
       }
     }
   }

@@ -1,8 +1,8 @@
 import SwiftUI
 
-struct GuessView: View {
+struct AnswerInProgressView: View {
   @Binding var game: Game
-  var guessProgress: Double
+  var progress: Double
   var height: Double
 
   var action: () -> Void
@@ -22,7 +22,7 @@ struct GuessView: View {
           .background(Color(white: 1.0))
           .border(.black, width: 2)
 
-        Text(game.guess)
+        Text(game.answer)
           .font(.largeTitle)
           .foregroundStyle(game.message.isEmpty ? Color.black : Color.red)
           .frame(minWidth: 230)
@@ -31,9 +31,9 @@ struct GuessView: View {
           .background(Color(white: 1.0))
           .border(.black, width: 2)
           .accessibilityAddTraits(.isButton)
-          .offset(x: 80 * guessProgress, y: guessProgress * height)
-          .opacity(1 - 0.8 * guessProgress)
-          .scaleEffect(1 - 0.1 * guessProgress)
+          .offset(x: 80 * progress, y: progress * height)
+          .opacity(1 - 0.8 * progress)
+          .scaleEffect(1 - 0.1 * progress)
           .onTapGesture {
             action()
           }

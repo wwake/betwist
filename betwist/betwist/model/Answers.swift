@@ -3,7 +3,7 @@ import Foundation
 struct Answer: Identifiable, Equatable {
   let id = UUID()
   let word: String
-  let userGuessed: Bool
+  let enteredByUser: Bool
 
   var count: Int {
     word.count
@@ -11,45 +11,45 @@ struct Answer: Identifiable, Equatable {
 }
 
 struct Answers {
-  var answers = [Answer]()
+  var values = [Answer]()
 
-  mutating func guess(_ guessString: String) {
-    guess(guessString, userGuessed: true)
+  mutating func submit(_ word: String) {
+    submit(word, enteredByUser: true)
   }
 
-  mutating func guessPrefix(_ guessString: String) {
-    guess(guessString, userGuessed: false)
+  mutating func submitPrefix(_ word: String) {
+    submit(word, enteredByUser: false)
   }
 
-  fileprivate mutating func guess(_ guessString: String, userGuessed: Bool) {
-    let guess = Answer(word: guessString, userGuessed: userGuessed)
-    answers.removeAll { $0.word == guess.word }
-    answers.insert(guess, at: 0)
+  fileprivate mutating func submit(_ word: String, enteredByUser: Bool) {
+    let guess = Answer(word: word, enteredByUser: enteredByUser)
+    values.removeAll { $0.word == guess.word }
+    values.insert(guess, at: 0)
   }
 
   var isEmpty: Bool {
-    answers.isEmpty
+    values.isEmpty
   }
 
   var wordCount: Int {
-    answers.count
+    values.count
   }
 
   var letterCount: Int {
-    answers.reduce(0) { soFar, guess in
-      soFar + guess.count
+    values.reduce(0) { soFar, answer in
+      soFar + answer.count
     }
   }
 
   var mostLetters: Int {
-    answers
+    values
       .map { $0.count }
       .max() ?? 0
   }
 
   var preview: String {
     String(
-      answers
+      values
       .prefix(3)
       .map { $0.word }
       .joined(by: "\n")

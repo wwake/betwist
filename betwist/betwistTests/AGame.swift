@@ -3,7 +3,7 @@ import Testing
 
 struct AGame {
   @Test
-  func prepends_a_collected_guess() {
+  func prepends_a_collected_answer() {
     var game = Game(2, ["A", "B", "C", "D"])
     game.select(Location(0, 0))
     game.select(Location(0, 1))
@@ -18,7 +18,7 @@ struct AGame {
 
     game.collect()
 
-    #expect(game.guesses.preview == "BDCA\nABCD")
+    #expect(game.answers.preview == "BDCA\nABCD")
   }
 
   @Test
@@ -67,7 +67,7 @@ struct AGame {
   func collecting_empty_word_gets_ignored() {
     var game = Game(2, ["A", "B", "C", "D"])
     game.collect()
-    #expect(game.guesses.isEmpty)
+    #expect(game.answers.isEmpty)
     #expect(game.message.isEmpty)
   }
 
@@ -80,7 +80,7 @@ struct AGame {
     game.collect()
 
     #expect(game.message == "Word is too short")
-    #expect(game.guesses.isEmpty)
+    #expect(game.answers.isEmpty)
   }
 
   @Test
@@ -163,7 +163,7 @@ struct AGame {
     game.select(Location(2, 0))
     game.collect()
 
-    #expect(game.guesses.preview == "MASTERY\nMASTER\nMAST")
+    #expect(game.answers.preview == "MASTERY\nMASTER\nMAST")
   }
 
   @Test
@@ -176,7 +176,7 @@ struct AGame {
 
     game.collect()
 
-    #expect(game.guesses.wordCount == 0)
+    #expect(game.answers.wordCount == 0)
   }
 
   @Test

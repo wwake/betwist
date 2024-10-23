@@ -7,7 +7,7 @@ struct ASelection {
     let grid = LetterGrid(2, ["A", "B", "C", "D"])
     let sut = Selection(grid)
     #expect(sut.count == 0)
-    #expect(sut.guess.isEmpty)
+    #expect(sut.answer.isEmpty)
   }
 
   @Test
@@ -18,7 +18,7 @@ struct ASelection {
     sut.select(Location(1, 0))
 
     #expect(sut.count == 1)
-    #expect(sut.guess == "C")
+    #expect(sut.answer == "C")
   }
 
   @Test
@@ -30,7 +30,7 @@ struct ASelection {
     sut.select(Location(0, 0))
 
     #expect(sut.count == 2)
-    #expect(sut.guess == "BA")
+    #expect(sut.answer == "BA")
   }
 
   @Test
@@ -47,7 +47,7 @@ struct ASelection {
     sut.select(Location(0, 2))
 
     #expect(sut.count == 1)
-    #expect(sut.guess == "C")
+    #expect(sut.answer == "C")
   }
 
   @Test
@@ -60,7 +60,7 @@ struct ASelection {
     sut.select(Location(0, 1))
 
     #expect(sut.count == 1)
-    #expect(sut.guess == "B")
+    #expect(sut.answer == "B")
   }
 
   @Test
@@ -123,7 +123,7 @@ struct ASelection {
 
     sut.select(Location(0, 0))
 
-    #expect(sut.guess.isEmpty)
+    #expect(sut.answer.isEmpty)
   }
 
   @Test
@@ -135,6 +135,6 @@ struct ASelection {
     sut.clear()
     sut.select(Location(0, 0))
 
-    #expect(sut.guess == "A")
+    #expect(sut.answer == "A")
   }
 }
