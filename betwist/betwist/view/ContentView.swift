@@ -56,7 +56,13 @@ struct ContentView: View {
         InfiniteGrid(game: $game, collectWord: collectWord, cellSize: Self.cellSize, boardSize: geometry.size.width)
 
         HStack(alignment: .top) {
-          ScoreView(score: game.score)
+          VStack {
+            ScoreView(score: game.score)
+            Button("New Game") {
+              game = Game(game.size, GameMaker(game.size), game.vocabulary)
+            }
+            .capsuled()
+          }
           AnswersView(game: $game) {
             showAnswers.toggle()
           }

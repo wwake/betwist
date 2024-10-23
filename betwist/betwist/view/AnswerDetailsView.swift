@@ -19,7 +19,7 @@ struct AnswerDetailsView: View {
         }
       }
 
-      Button("Done") {
+      Button("Back") {
         dismiss()
       }
       .capsuled()
