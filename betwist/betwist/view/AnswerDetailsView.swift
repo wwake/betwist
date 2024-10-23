@@ -4,7 +4,7 @@ struct AnswerDetailsView: View {
   @Environment(\.dismiss)
   var dismiss
 
-  var guesses: Guesses
+  var guesses: Answers
 
   var body: some View {
     VStack {
@@ -12,7 +12,7 @@ struct AnswerDetailsView: View {
         .font(.title)
 
       ScrollView {
-        ForEach(guesses.guesses) {
+        ForEach(guesses.answers) {
           Text(verbatim: $0.word)
             .bold($0.userGuessed)
             .foregroundStyle($0.userGuessed ? .black : .accent)

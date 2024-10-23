@@ -1,6 +1,6 @@
 import Foundation
 
-struct Guess: Identifiable, Equatable {
+struct Answer: Identifiable, Equatable {
   let id = UUID()
   let word: String
   let userGuessed: Bool
@@ -10,8 +10,8 @@ struct Guess: Identifiable, Equatable {
   }
 }
 
-struct Guesses {
-  var guesses = [Guess]()
+struct Answers {
+  var answers = [Answer]()
 
   mutating func guess(_ guessString: String) {
     guess(guessString, userGuessed: true)
@@ -22,34 +22,34 @@ struct Guesses {
   }
 
   fileprivate mutating func guess(_ guessString: String, userGuessed: Bool) {
-    let guess = Guess(word: guessString, userGuessed: userGuessed)
-    guesses.removeAll { $0.word == guess.word }
-    guesses.insert(guess, at: 0)
+    let guess = Answer(word: guessString, userGuessed: userGuessed)
+    answers.removeAll { $0.word == guess.word }
+    answers.insert(guess, at: 0)
   }
 
   var isEmpty: Bool {
-    guesses.isEmpty
+    answers.isEmpty
   }
 
   var wordCount: Int {
-    guesses.count
+    answers.count
   }
 
   var letterCount: Int {
-    guesses.reduce(0) { soFar, guess in
+    answers.reduce(0) { soFar, guess in
       soFar + guess.count
     }
   }
 
   var mostLetters: Int {
-    guesses
+    answers
       .map { $0.count }
       .max() ?? 0
   }
 
   var preview: String {
     String(
-      guesses
+      answers
       .prefix(3)
       .map { $0.word }
       .joined(by: "\n")
@@ -57,10 +57,4 @@ struct Guesses {
   }
 }
 
-extension Guesses: Equatable { }
-
-extension Guesses: CustomStringConvertible {
-  public var description: String {
-    String(guesses.map { $0.word }.joined(by: "\n"))
-  }
-}
+extension Answers: Equatable { }

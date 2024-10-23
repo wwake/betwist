@@ -6,7 +6,7 @@ struct Game {
   var twister: Twister
 
   var selection: Selection
-  var guesses = Guesses()
+  var guesses = Answers()
 
   var vocabulary: Vocabulary
 

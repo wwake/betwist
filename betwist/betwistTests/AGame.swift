@@ -18,7 +18,7 @@ struct AGame {
 
     game.collect()
 
-    #expect(game.guesses.description == "BDCA\nABCD")
+    #expect(game.guesses.preview == "BDCA\nABCD")
   }
 
   @Test
@@ -163,7 +163,7 @@ struct AGame {
     game.select(Location(2, 0))
     game.collect()
 
-    #expect(game.guesses.description == "MASTERY\nMASTER\nMAST")
+    #expect(game.guesses.preview == "MASTERY\nMASTER\nMAST")
   }
 
   @Test
