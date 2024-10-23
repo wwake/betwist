@@ -62,6 +62,17 @@ struct Answers {
   func contains(_ word: String) -> Bool {
     values.contains { $0.word == word }
   }
+
+  var wordSizes: [Int] {
+    values.grouped(by: \.count).keys.sorted().reversed()
+  }
+
+  func words(ofSize: Int) -> [Answer] {
+    let words = values.grouped(by: \.count)[ofSize]
+    if words == nil { return [] }
+
+    return words!.sorted { $0.word < $1.word }
+  }
 }
 
 extension Answers: Equatable { }

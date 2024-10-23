@@ -29,4 +29,16 @@ struct TheAnswers {
     #expect(sut.contains("FRIED"))
     #expect(!sut.contains("BOILED"))
   }
+
+  @Test
+  func knows_words_grouped_by_size_and_sorted_within_group() {
+    var sut = Answers()
+    sut.submit("FISH")
+    sut.submit("BARD")
+    sut.submit("STICK")
+    sut.submit("SANDWICH")
+
+    #expect(sut.wordSizes == [8, 5, 4])
+    #expect(sut.words(ofSize: 4).map { $0.word } == ["BARD", "FISH"])
+  }
 }

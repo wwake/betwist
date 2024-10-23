@@ -36,7 +36,7 @@ Ideas for faster lookup
 * New game (button triggers new game)
 * Experiment - tried a 20x20 board - worked but allAnswers was slow
 * Warn on duplicate words
-* Change rules for replacing existing words (Don't allow duplicates in Answers)
+* Change rules for replacing existing words - Don't allow duplicates in Answers
 
 2024-10-22 - WORD-24-17 - Rotate via Twister
 * Remove old "twist" function
