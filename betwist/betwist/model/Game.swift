@@ -1,6 +1,6 @@
 struct Game {
   static let minimumSize = 4
-  static let maxPuzzleSize = 10
+  static let maxPuzzleSize = 25
 
   var grid: LetterGrid
   var twister: Twister

@@ -1,5 +1,5 @@
-* New game
-* Set parameters (eg board size)
+
+* New game sets parameters (eg board size)
 
 * Warn on duplicate words
 * Change rules for replacing existing words
@@ -18,6 +18,8 @@
 
 Tessellations?
 
+* Make selection use gradient from first to last letter (ColorChooser would need access to the index position of the selected letter)
+
 Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swiftui-layout-protocol-f7b0efeeacbf
 
 Mirror - top<->bottom, left<->right, diagonal-left <-> diagonal-right
@@ -35,6 +37,7 @@ Ideas for faster lookup
 2024-10-23 - WORD-24-18 - New Game
 * Fixed bug where Answer was compared by equality of the whole struct instead of just the word
 * Renamed Guess to Answer throughout
+* New game (button triggers new game)
 
 2024-10-22 - WORD-24-17 - Rotate via Twister
 * Remove old "twist" function
