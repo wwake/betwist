@@ -23,7 +23,6 @@ struct Answers {
 
   fileprivate mutating func submit(_ word: String, enteredByUser: Bool) {
     let guess = Answer(word: word, enteredByUser: enteredByUser)
-    values.removeAll { $0.word == guess.word }
     values.insert(guess, at: 0)
   }
 

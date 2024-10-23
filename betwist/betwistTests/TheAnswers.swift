@@ -11,14 +11,14 @@ struct TheAnswers {
   }
 
   @Test
-  func moves_duplicate_word_to_the_beginning() {
+  func allows_duplicate_words() {
     var sut = Answers()
     sut.submit("FISH")
     sut.submit("STICKS")
 
     sut.submit("FISH")
 
-    #expect(sut.preview == "FISH\nSTICKS")
+    #expect(sut.preview == "FISH\nSTICKS\nFISH")
   }
 
   @Test
