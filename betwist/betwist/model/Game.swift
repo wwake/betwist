@@ -152,7 +152,7 @@ struct Game {
   }
 
   mutating func rotateLeft() {
-    twister.rotateLeft()
+      twister.rotateLeft()
   }
 
   mutating func rotateRight() {

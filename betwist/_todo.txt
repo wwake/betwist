@@ -1,5 +1,4 @@
 
-
 * Animation on rotation
 
 * Click first letter to cancel whole word
@@ -14,6 +13,12 @@
 
 Tessellations?
 
+Ideas for faster lookup
+* Try a 3- or 4-letter prefix dictionary
+* Bloom filter - multiple hashes for a probabilistic answer
+* Trie
+* Performance idea: Generate full list of words for board - with some performance improvements - and use that as the "dictionary"
+
 * Make selection use gradient from first to last letter (ColorChooser would need access to the index position of the selected letter)
 
 Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swiftui-layout-protocol-f7b0efeeacbf
@@ -25,17 +30,13 @@ Mirror - top<->bottom, left<->right, diagonal-left <-> diagonal-right
 Trigger mirror by shake? [random mirror]
 Trigger by swipe from the edge?
 
-Rotation trigger by rotating phone left or right but ignoring rotation back to normal position
+Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
-Ideas for faster lookup
-* Try a 3- or 4-letter prefix dictionary
-* Bloom filter - multiple hashes for a probabilistic answer
-* Trie
-* Performance idea: Generate full list of words for board - with some performance improvements - and use that as the "dictionary"
 
 2024-10-24 - WORD-24-19 - Sort Answers
 * Sort answers (by length)
 * Reworked how Game manages prefix testing & insertion
+* Change representation of Answers so we can more quickly look up by word size
 
 
 2024-10-23 - WORD-24-18 - New Game
