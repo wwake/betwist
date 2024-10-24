@@ -11,14 +11,22 @@ struct TheAnswers {
   }
 
   @Test
+  func finds_word_by_string() {
+    var sut = Answers()
+    sut.submit("SPLISH", isPrefix: false)
+    #expect(sut["SPLISH"]!.word == "SPLISH")
+    #expect(sut["SPLISH"]!.enteredByUser)
+    #expect(sut["SPLASH"] == nil)
+    #expect(sut["BATH"] == nil)
+  }
+
+  @Test
   func knows_whether_word_was_submitted_as_a_prefix() {
     var sut = Answers()
     sut.submit("FISH", isPrefix: true)
     sut.submit("SPLASH", isPrefix: false)
-    #expect(sut.values[0].word == "SPLASH")
-    #expect(sut.values[0].enteredByUser == true)
-    #expect(sut.values[1].word == "FISH")
-    #expect(sut.values[1].enteredByUser == false)
+    #expect(sut["SPLASH"]!.enteredByUser)
+    #expect(!sut["FISH"]!.enteredByUser)
   }
 
   @Test

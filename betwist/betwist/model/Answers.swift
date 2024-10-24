@@ -11,6 +11,8 @@ struct Answer: Identifiable, Equatable {
 }
 
 struct Answers {
+  static let previewCount = 3
+
   internal var values = [Answer]()
   fileprivate var answersByLength = [Int: [Answer]]()
 
@@ -21,6 +23,9 @@ struct Answers {
 
     let answer = Answer(word: word, enteredByUser: !isPrefix)
     values.insert(answer, at: 0)
+    if values.count > Self.previewCount {
+      values.removeLast()
+    }
 
     var priorAnswers = answersByLength[word.count] ?? []
     priorAnswers.append(answer)
@@ -50,7 +55,7 @@ struct Answers {
   var preview: String {
     String(
       values
-      .prefix(3)
+      .prefix(Self.previewCount)
       .map { $0.word }
       .joined(by: "\n")
     )
@@ -59,6 +64,10 @@ struct Answers {
   func contains(_ word: String) -> Bool {
     let possibleAnswers = answersByLength[word.count] ?? []
     return possibleAnswers.contains { $0.word == word }
+  }
+
+  subscript (word: String) -> Answer? {
+    answersByLength[word.count]?.first(where: { $0.word == word })
   }
 
   var wordSizes: [Int] {
