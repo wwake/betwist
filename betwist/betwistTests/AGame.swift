@@ -9,14 +9,14 @@ struct AGame {
     game.select(Location(0, 1))
     game.select(Location(1, 0))
     game.select(Location(1, 1))
-    game.collect()
+    game.submit()
     game.deselectAll()
     game.select(Location(0, 1))
     game.select(Location(1, 1))
     game.select(Location(1, 0))
     game.select(Location(0, 0))
 
-    game.collect()
+    game.submit()
 
     #expect(game.answers.preview == "BDCA\nABCD")
   }
@@ -66,7 +66,7 @@ struct AGame {
   @Test
   func collecting_empty_word_gets_ignored() {
     var game = Game(2, ["A", "B", "C", "D"])
-    game.collect()
+    game.submit()
     #expect(game.answers.isEmpty)
     #expect(game.message.isEmpty)
   }
@@ -77,7 +77,7 @@ struct AGame {
     game.select(Location(0, 1))
     game.message = "Word is too short"
 
-    game.collect()
+    game.submit()
 
     #expect(game.message == "Word is too short")
     #expect(game.answers.isEmpty)
@@ -124,7 +124,7 @@ struct AGame {
     game.select(Location(0, 1))
     game.select(Location(1, 0))
     game.select(Location(1, 1))
-    game.collect()
+    game.submit()
     game.select(Location(0, 0))
     game.select(Location(0, 1))
     game.select(Location(1, 0))
@@ -166,7 +166,7 @@ struct AGame {
     game.select(Location(1, 1))
     game.select(Location(1, 2))
     game.select(Location(2, 0))
-    game.collect()
+    game.submit()
 
     #expect(game.answers.preview == "MASTERY\nMASTER\nMAST")
   }
@@ -179,7 +179,7 @@ struct AGame {
     game.select(Location(1, 0))
     game.select(Location(1, 1))
 
-    game.collect()
+    game.submit()
 
     #expect(game.answers.wordCount == 0)
   }
@@ -243,7 +243,7 @@ struct AGame {
     game.select(Location(1, 0))
     game.select(Location(1, 1))
 
-    game.collect()
+    game.submit()
 
     #expect(game.score == Score(wordCount: 1, letterCount: 4, mostLetters: 4))
   }

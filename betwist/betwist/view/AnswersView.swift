@@ -11,7 +11,7 @@ struct AnswersView: View {
       }
       .capsuled()
 
-      Text(verbatim: String(Array(game.allAnswers).joined(by: "\n")))
+   //   Text(verbatim: String(Array(game.allAnswers).joined(by: "\n")))
 
       ScrollView {
         Text("Found Words")

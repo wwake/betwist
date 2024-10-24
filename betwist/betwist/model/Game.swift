@@ -81,17 +81,22 @@ struct Game {
     }
   }
 
-  mutating func collect() {
+  fileprivate func prefixes(of word: String) -> [String] {
+    (Self.minimumSize..<word.count)
+      .map { String(word.prefix($0)) }
+  }
+
+  mutating func submit() {
     guard message.isEmpty && !answer.isEmpty else { return }
 
-    for length in Self.minimumSize..<answer.count {
-      let prefix = String(answer.prefix(length))
+    for prefix in prefixes(of: answer) {
       if vocabulary.contains(prefix) {
-        answers.submitPrefix(prefix)
+        answers.submit(prefix, isPrefix: true)
       }
     }
+
     if vocabulary.contains(answer) {
-      answers.submit(answer)
+      answers.submit(answer, isPrefix: false)
     }
   }
 

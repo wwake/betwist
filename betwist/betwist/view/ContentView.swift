@@ -19,7 +19,7 @@ struct ContentView: View {
     }
     completion: {
       progress = 0.0
-      game.collect()
+      game.submit()
       game.deselectAll()
     }
   }

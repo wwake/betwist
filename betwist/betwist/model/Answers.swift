@@ -13,20 +13,12 @@ struct Answer: Identifiable, Equatable {
 struct Answers {
   var values = [Answer]()
 
-  mutating func submit(_ word: String) {
-    submit(word, enteredByUser: true)
-  }
-
-  mutating func submitPrefix(_ word: String) {
-    submit(word, enteredByUser: false)
-  }
-
-  fileprivate mutating func submit(_ word: String, enteredByUser: Bool) {
+  mutating func submit(_ word: String, isPrefix: Bool) {
     if contains(word) {
       return
     }
 
-    let guess = Answer(word: word, enteredByUser: enteredByUser)
+    let guess = Answer(word: word, enteredByUser: !isPrefix)
     values.insert(guess, at: 0)
   }
 
