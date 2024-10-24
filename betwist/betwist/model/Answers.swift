@@ -11,15 +11,20 @@ struct Answer: Identifiable, Equatable {
 }
 
 struct Answers {
-  var values = [Answer]()
+  internal var values = [Answer]()
+  fileprivate var answersByLength = [Int: [Answer]]()
 
   mutating func submit(_ word: String, isPrefix: Bool) {
     if contains(word) {
       return
     }
 
-    let guess = Answer(word: word, enteredByUser: !isPrefix)
-    values.insert(guess, at: 0)
+    let answer = Answer(word: word, enteredByUser: !isPrefix)
+    values.insert(answer, at: 0)
+
+    var priorAnswers = answersByLength[word.count] ?? []
+    priorAnswers.append(answer)
+    answersByLength.updateValue(priorAnswers, forKey: word.count)
   }
 
   var isEmpty: Bool {
@@ -56,11 +61,11 @@ struct Answers {
   }
 
   var wordSizes: [Int] {
-    values.grouped(by: \.count).keys.sorted().reversed()
+    answersByLength.keys.sorted().reversed()
   }
 
   func words(ofSize: Int) -> [Answer] {
-    let words = values.grouped(by: \.count)[ofSize]
+    let words = answersByLength[ofSize]
     if words == nil { return [] }
 
     return words!.sorted { $0.word < $1.word }
