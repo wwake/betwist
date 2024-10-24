@@ -10,12 +10,15 @@ struct InfiniteGrid: View {
   @State private var priorOffset = CGSize.zero
 
   var body: some View {
+    let gridView = GridView(cellSize: cellSize, game: $game, collectWord: collectWord)
+
+    return
     VStack {
       VStack(spacing: 0) {
         ForEach(1...3, id: \.self) { _ in
           HStack(spacing: 0) {
             ForEach(1...3, id: \.self) { _ in
-              GridView(cellSize: cellSize, game: $game, collectWord: collectWord)
+              gridView
             }
           }
         }

@@ -1,5 +1,4 @@
 
-* Animation on rotation
 
 * Click first letter to cancel whole word
 
@@ -37,6 +36,7 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 * Sort answers (by length)
 * Reworked how Game manages prefix testing & insertion
 * Change representation of Answers so we can more quickly look up by word size
+* Animation on rotation (by individual letters, but we'd have preferred the rotation to animate)
 
 
 2024-10-23 - WORD-24-18 - New Game
