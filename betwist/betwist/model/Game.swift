@@ -89,10 +89,8 @@ struct Game {
   mutating func submit() {
     guard message.isEmpty && !answer.isEmpty else { return }
 
-    for prefix in prefixes(of: answer) {
-      if vocabulary.contains(prefix) {
+    for prefix in prefixes(of: answer) where vocabulary.contains(prefix) {
         answers.submit(prefix, isPrefix: true)
-      }
     }
 
     if vocabulary.contains(answer) {
