@@ -28,23 +28,23 @@ struct Answers {
   }
 
   var isEmpty: Bool {
-    values.isEmpty
+    answersByLength.isEmpty
   }
 
   var wordCount: Int {
-    values.count
+    answersByLength.reduce(0) { soFar, answers in
+      soFar + answers.value.count
+    }
   }
 
   var letterCount: Int {
-    values.reduce(0) { soFar, answer in
-      soFar + answer.count
+    answersByLength.reduce(0) { soFar, answers in
+      soFar + answers.key * answers.value.count
     }
   }
 
   var mostLetters: Int {
-    values
-      .map { $0.count }
-      .max() ?? 0
+    answersByLength.keys.max() ?? 0
   }
 
   var preview: String {
@@ -57,7 +57,8 @@ struct Answers {
   }
 
   func contains(_ word: String) -> Bool {
-    values.contains { $0.word == word }
+    let possibleAnswers = answersByLength[word.count] ?? []
+    return possibleAnswers.contains { $0.word == word }
   }
 
   var wordSizes: [Int] {
