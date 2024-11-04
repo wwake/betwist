@@ -4,15 +4,15 @@ struct Trie {
   let isWord: Bool
   let next: [(Character, Trie)]
 
-  func contains(_ value: String) -> Bool {
+  func containsAndPrefixes(_ value: String) -> SearchResult {
     let target = Array(value)
 
     var trie = self
     for ch in target {
       let node = next.first(where: { $0.0 == ch })
-      if node == nil { return false }
+      if node == nil { return SearchResult(isWord: false, isProperPrefix: false) }
       trie = node!.1
     }
-    return trie.isWord
+    return SearchResult(isWord: trie.isWord, isProperPrefix: !trie.next.isEmpty)
   }
 }

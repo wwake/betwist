@@ -1,4 +1,4 @@
-struct SearchResult {
+struct SearchResult: Equatable {
   let isWord: Bool
   let isProperPrefix: Bool
 }
