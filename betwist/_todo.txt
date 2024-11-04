@@ -2,15 +2,19 @@
 
 * Click first letter to cancel whole word
 
-* New game sets parameters (eg board size)
-
-* iPad is so big it overwhelms our approach to infinite grid [limit size artificially?]
-
 * When should we generate the full answer list? now or later? thread?
 
 * Sound
 
-Tessellations?
+* Tessellations
+
+* New game sets parameters (eg board size)
+
+* iPad is so big it overwhelms our approach to infinite grid [limit size artificially?]
+
+
+* Rotation animation - can we make it look even better? Should rotation angle be called in completion{}?
+
 
 Ideas for faster lookup
 * Try a 3- or 4-letter prefix dictionary
@@ -30,14 +34,14 @@ Trigger mirror by shake? [random mirror]
 Trigger by swipe from the edge?
 
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
-
+=====
 
 2024-10-24 - WORD-24-19 - Sort Answers
 * Sort answers (by length)
 * Reworked how Game manages prefix testing & insertion
 * Change representation of Answers so we can more quickly look up by word size
 * Animation on rotation (by individual letters, but we'd have preferred the rotation to animate)
-
+* Animation on rotation by twisting the view 90 degrees (still could look better:)
 
 2024-10-23 - WORD-24-18 - New Game
 * Fixed bug where Answer was compared by equality of the whole struct instead of just the word

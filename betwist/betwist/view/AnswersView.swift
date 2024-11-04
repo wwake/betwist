@@ -5,23 +5,21 @@ struct AnswersView: View {
   var viewAction: () -> Void
 
   var body: some View {
-    VStack(spacing: 0) {
+    VStack {
+      //   Text(verbatim: String(Array(game.allAnswers).joined(by: "\n")))
+
+      Text("Found Words")
+        .font(.title3)
+
+      Text(verbatim: game.answers.preview)
+
       Button("More...") {
         viewAction()
       }
       .capsuled()
-
-   //   Text(verbatim: String(Array(game.allAnswers).joined(by: "\n")))
-
-      ScrollView {
-        Text("Found Words")
-          .font(.title3)
-
-        Text(verbatim: game.answers.preview)
-          .frame(width: 150)
-      }
-      .bold()
-      .opacity(game.answers.isEmpty ? 0 : 1)
     }
+    .bold()
+    .frame(width: 150)
+    .opacity(game.answers.isEmpty ? 0 : 1)
   }
 }

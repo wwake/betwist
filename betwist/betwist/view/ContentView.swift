@@ -6,6 +6,7 @@ struct ContentView: View {
   @Binding var game: Game
   @State private var progress = 0.0
   @State private var showAnswers = false
+  @State private var angle = Angle.zero
 
   fileprivate func collectWord() {
     if game.answer.isEmpty { return }
@@ -34,7 +35,10 @@ struct ContentView: View {
         HStack {
           Button {
             withAnimation {
+              angle = .degrees(-90)
               game.rotateLeft()
+            } completion: {
+              angle = .zero
             }
           } label: {
             Image(systemName: "arrow.counterclockwise")
@@ -48,7 +52,10 @@ struct ContentView: View {
 
           Button {
             withAnimation {
+              angle = .degrees(90)
               game.rotateRight()
+            } completion: {
+              angle = .zero
             }
           } label: {
             Image(systemName: "arrow.clockwise")
@@ -58,6 +65,7 @@ struct ContentView: View {
         }
 
         InfiniteGrid(game: $game, collectWord: collectWord, cellSize: Self.cellSize, boardSize: geometry.size.width)
+          .rotationEffect(angle)
 
         HStack(alignment: .top) {
           VStack {
