@@ -81,7 +81,7 @@ struct Game {
     }
   }
 
-  fileprivate func prefixes(of word: String) -> [String] {
+  fileprivate func properPrefixes(of word: String) -> [String] {
     (Self.minimumSize..<word.count)
       .map { String(word.prefix($0)) }
   }
@@ -89,7 +89,7 @@ struct Game {
   mutating func submit() {
     guard message.isEmpty && !answer.isEmpty else { return }
 
-    for prefix in prefixes(of: answer) where vocabulary.contains(prefix) {
+    for prefix in properPrefixes(of: answer) where vocabulary.contains(prefix) {
         answers.submit(prefix, isPrefix: true)
     }
 
@@ -136,11 +136,11 @@ struct Game {
   fileprivate func tryAllExtensions(_ result: inout Set<String>, _ selection: Selection, _ neighbors: Set<Location>) {
     for location in neighbors {
       let newSelection = Selection(selection, location)
-      let (contained, prefixed) = vocabulary.containsAndPrefixes(newSelection.answer)
-      if contained {
+      let searchResult = vocabulary.containsAndPrefixes(newSelection.answer)
+      if searchResult.isWord {
         result.insert(newSelection.answer)
       }
-      if prefixed {
+      if searchResult.isProperPrefix {
         let neighbors = openNeighbors(newSelection)
         tryAllExtensions(&result, newSelection, neighbors)
       }

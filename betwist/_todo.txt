@@ -1,4 +1,7 @@
+* Refactored to introduce SearchResult (rather than boolean pair)
+* Search in Trie
 
+* New app to build the Trie dictionary
 
 * Click first letter to cancel whole word
 

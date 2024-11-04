@@ -2,6 +2,12 @@
 import Foundation
 import Testing
 
+extension Vocabulary {
+  func hasPrefix(_ prefix: String) -> Bool {
+    containsAndPrefixes(prefix).isProperPrefix
+  }
+}
+
 struct AVocabulary {
   @Test
   func finds_word_that_is_there() {

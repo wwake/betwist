@@ -1,3 +1,8 @@
+struct SearchResult {
+  let isWord: Bool
+  let isProperPrefix: Bool
+}
+
 class Vocabulary {
   let words: [String]
 
@@ -30,26 +35,24 @@ class Vocabulary {
   }
 
   func contains(_ word: String) -> Bool {
-    let (contained, _) = containsAndPrefixes(word)
-    return contained
+    containsAndPrefixes(word).isWord
   }
 
-  func hasPrefix(_ prefix: String) -> Bool {
-    let (_, prefixed) = containsAndPrefixes(prefix)
-    return prefixed
-  }
-
-  func containsAndPrefixes(_ target: String) -> (Bool, Bool) {
+  func containsAndPrefixes(_ target: String) -> SearchResult {
     let index = binarySearchIndex(target, words)
 
-    if index >= words.count { return (false, false) }
-
-    if words[index] == target {
-      if index + 1 >= words.count { return (true, false) }
-      return (true, words[index + 1].starts(with: target))
+    if index >= words.count {
+      return SearchResult(isWord: false, isProperPrefix: false)
     }
 
-    return (false, words[index].starts(with: target))
+    if words[index] == target {
+      if index + 1 >= words.count {
+        return SearchResult(isWord: true, isProperPrefix: false)
+      }
+      return SearchResult(isWord: true, isProperPrefix: words[index + 1].starts(with: target))
+    }
+
+    return SearchResult(isWord: false, isProperPrefix: words[index].starts(with: target))
   }
 }
 
