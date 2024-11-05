@@ -41,11 +41,21 @@ struct Trie: Codable {
   }
 }
 
-class TrieNode {
-  var isWord: Bool
-  var next: [(Character, TrieNode)]
+struct TrieNodeMatch: Codable {
+  let char: Character
+  let trie: TrieNode
 
-  init(isWord: Bool, next: [(Character, TrieNode)]) {
+  init(_ char: Character, _ trie: TrieNode) {
+    self.char = char
+    self.trie = trie
+  }
+}
+
+class TrieNode: Codable {
+  var isWord: Bool
+  var next: [TrieNodeMatch]
+
+  init(isWord: Bool, next: [TrieNodeMatch]) {
     self.isWord = isWord
     self.next = next
   }
@@ -66,13 +76,13 @@ class TrieBuilder {
 
     var trie = root
     for letter in value {
-      let node = trie.next.first(where: { $0.0 == letter })
+      let node = trie.next.first(where: { $0.char == letter })
       if node == nil {
         let newTrie = TrieNode(isWord: false, next: [])
-        trie.next.append((letter, newTrie))
+        trie.next.append(TrieNodeMatch(letter, newTrie))
         trie = newTrie
       } else {
-        trie = node!.1
+        trie = node!.trie
       }
     }
     trie.isWord = true
@@ -86,9 +96,9 @@ class TrieBuilder {
     Trie(isWord: node.isWord, next: makeList(node.next))
   }
 
-  fileprivate func makeList(_ list: [(Character, TrieNode)]) -> [TrieMatch] {
-    list.map { ch, node in
-      TrieMatch(ch, make(node))
+  fileprivate func makeList(_ list: [TrieNodeMatch]) -> [TrieMatch] {
+    list.map { match in
+      TrieMatch(match.char, make(match.trie))
     }
   }
 }
