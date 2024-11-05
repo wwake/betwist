@@ -1,17 +1,41 @@
 import Foundation
 
-struct Trie {
+extension Character: Codable {
+  public init(from decoder: Decoder) throws {
+    let container = try decoder.singleValueContainer()
+    let s = try container.decode(String.self)
+    // if it's not a single character, use code FFFF to indicate illegal value
+    self = s.count == 1 ? s.first! : "\u{FFFF}"
+  }
+
+  public func encode(to encoder: Encoder) throws {
+    var container = encoder.singleValueContainer()
+    try container.encode(String(describing: self))
+  }
+}
+
+struct TrieMatch: Codable {
+  let char: Character
+  let trie: Trie
+
+  init(_ char: Character, _ trie: Trie) {
+    self.char = char
+    self.trie = trie
+  }
+}
+
+struct Trie: Codable {
   let isWord: Bool
-  let next: [(Character, Trie)]
+  let next: [TrieMatch]
 
   func containsAndPrefixes(_ value: String) -> SearchResult {
     let target = Array(value)
 
     var trie = self
     for ch in target {
-      let node = trie.next.first(where: { $0.0 == ch })
+      let node = trie.next.first(where: { $0.char == ch })
       if node == nil { return SearchResult(isWord: false, isProperPrefix: false) }
-      trie = node!.1
+      trie = node!.trie
     }
     return SearchResult(isWord: trie.isWord, isProperPrefix: !trie.next.isEmpty)
   }
@@ -62,9 +86,9 @@ class TrieBuilder {
     Trie(isWord: node.isWord, next: makeList(node.next))
   }
 
-  fileprivate func makeList(_ list: [(Character, TrieNode)]) -> [(Character, Trie)] {
+  fileprivate func makeList(_ list: [(Character, TrieNode)]) -> [TrieMatch] {
     list.map { ch, node in
-      (ch, make(node))
+      TrieMatch(ch, make(node))
     }
   }
 }

@@ -1,5 +1,4 @@
 
-* Build Trie from list of words (using TrieBuilder)
 
 * New app to build the Trie dictionary?
 
@@ -38,6 +37,9 @@ Trigger by swipe from the edge?
 
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 =====
+2024-11-05 - WORD-24-21 - Trie, Trie Again
+* Build Trie from list of words (using TrieBuilder)
+
 2024-11-04 - WORD-24-20 - Trie
 * Refactored to introduce SearchResult (rather than boolean pair)
 * Search in Trie
