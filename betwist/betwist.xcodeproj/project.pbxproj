@@ -120,8 +120,6 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		911EE9F72CAD99A7005C391D /* resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = resources; sourceTree = "<group>"; };
-		9128470F2CD9691800FA21BA /* BetwistDictionary */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BetwistDictionary; sourceTree = "<group>"; };
-		912847202CD9691B00FA21BA /* BetwistDictionaryTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BetwistDictionaryTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,8 +212,6 @@
 				910C97922CA3690600893B79 /* betwist.xctestplan */,
 				91FA96712C81333A0011BB7F /* betwist */,
 				91FA96822C81333E0011BB7F /* betwistTests */,
-				9128470F2CD9691800FA21BA /* BetwistDictionary */,
-				912847202CD9691B00FA21BA /* BetwistDictionaryTests */,
 				9181F0A02CA34EA60091A771 /* Frameworks */,
 				91FA96702C81333A0011BB7F /* Products */,
 			);
@@ -284,9 +280,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				9128470F2CD9691800FA21BA /* BetwistDictionary */,
-			);
 			name = BetwistDictionary;
 			packageProductDependencies = (
 			);
@@ -306,9 +299,6 @@
 			);
 			dependencies = (
 				9128471F2CD9691B00FA21BA /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				912847202CD9691B00FA21BA /* BetwistDictionaryTests */,
 			);
 			name = BetwistDictionaryTests;
 			packageProductDependencies = (
