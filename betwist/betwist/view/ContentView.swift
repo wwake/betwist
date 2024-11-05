@@ -79,6 +79,10 @@ struct ContentView: View {
             showAnswers.toggle()
           }
         }
+
+        ScrollView {
+          Text(game.allAnswers.joined(separator: "\n"))
+        }
         Spacer()
       }
       .padding(.top, 40)

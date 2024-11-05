@@ -52,13 +52,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9128471E2CD9691B00FA21BA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 91FA96672C81333A0011BB7F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9128470D2CD9691800FA21BA;
-			remoteInfo = BetwistDictionary;
-		};
 		91FA96802C81333E0011BB7F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 91FA96672C81333A0011BB7F /* Project object */;
@@ -93,8 +86,6 @@
 		911EEA002CAF30D7005C391D /* TheAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAnswers.swift; sourceTree = "<group>"; };
 		912847062CD9583800FA21BA /* ATrie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATrie.swift; sourceTree = "<group>"; };
 		912847082CD9586C00FA21BA /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
-		9128470E2CD9691800FA21BA /* BetwistDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetwistDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9128471D2CD9691B00FA21BA /* BetwistDictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetwistDictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		912847382CD969CA00FA21BA /* BetwistDictionary.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BetwistDictionary.xctestplan; sourceTree = "<group>"; };
 		912CFEE72C88A6B10074C066 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -123,20 +114,6 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9128470B2CD9691800FA21BA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9128471A2CD9691B00FA21BA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		91FA966C2C81333A0011BB7F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,8 +199,6 @@
 			children = (
 				91FA966F2C81333A0011BB7F /* betwist.app */,
 				91FA967F2C81333E0011BB7F /* betwistTests.xctest */,
-				9128470E2CD9691800FA21BA /* BetwistDictionary.app */,
-				9128471D2CD9691B00FA21BA /* BetwistDictionaryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,45 +243,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9128470D2CD9691800FA21BA /* BetwistDictionary */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9128472F2CD9691B00FA21BA /* Build configuration list for PBXNativeTarget "BetwistDictionary" */;
-			buildPhases = (
-				9128470A2CD9691800FA21BA /* Sources */,
-				9128470B2CD9691800FA21BA /* Frameworks */,
-				9128470C2CD9691800FA21BA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BetwistDictionary;
-			packageProductDependencies = (
-			);
-			productName = BetwistDictionary;
-			productReference = 9128470E2CD9691800FA21BA /* BetwistDictionary.app */;
-			productType = "com.apple.product-type.application";
-		};
-		9128471C2CD9691B00FA21BA /* BetwistDictionaryTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 912847322CD9691B00FA21BA /* Build configuration list for PBXNativeTarget "BetwistDictionaryTests" */;
-			buildPhases = (
-				912847192CD9691B00FA21BA /* Sources */,
-				9128471A2CD9691B00FA21BA /* Frameworks */,
-				9128471B2CD9691B00FA21BA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9128471F2CD9691B00FA21BA /* PBXTargetDependency */,
-			);
-			name = BetwistDictionaryTests;
-			packageProductDependencies = (
-			);
-			productName = BetwistDictionaryTests;
-			productReference = 9128471D2CD9691B00FA21BA /* BetwistDictionaryTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		91FA966E2C81333A0011BB7F /* betwist */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91FA96932C81333F0011BB7F /* Build configuration list for PBXNativeTarget "betwist" */;
@@ -356,13 +292,6 @@
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					9128470D2CD9691800FA21BA = {
-						CreatedOnToolsVersion = 16.1;
-					};
-					9128471C2CD9691B00FA21BA = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = 9128470D2CD9691800FA21BA;
-					};
 					91FA966E2C81333A0011BB7F = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -392,27 +321,11 @@
 			targets = (
 				91FA966E2C81333A0011BB7F /* betwist */,
 				91FA967E2C81333E0011BB7F /* betwistTests */,
-				9128470D2CD9691800FA21BA /* BetwistDictionary */,
-				9128471C2CD9691B00FA21BA /* BetwistDictionaryTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9128470C2CD9691800FA21BA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9128471B2CD9691B00FA21BA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		91FA966D2C81333A0011BB7F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -458,20 +371,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9128470A2CD9691800FA21BA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		912847192CD9691B00FA21BA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		91FA966B2C81333A0011BB7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -523,11 +422,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9128471F2CD9691B00FA21BA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9128470D2CD9691800FA21BA /* BetwistDictionary */;
-			targetProxy = 9128471E2CD9691B00FA21BA /* PBXContainerItemProxy */;
-		};
 		91FA96812C81333E0011BB7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 91FA966E2C81333A0011BB7F /* betwist */;
@@ -536,110 +430,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		912847302CD9691B00FA21BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_ASSET_PATHS = "\"BetwistDictionary/Preview Content\"";
-				DEVELOPMENT_TEAM = 7B9VB3YTHK;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.BetwistDictionary;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		912847312CD9691B00FA21BA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BetwistDictionary/Preview Content\"";
-				DEVELOPMENT_TEAM = 7B9VB3YTHK;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.BetwistDictionary;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		912847332CD9691B00FA21BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 7B9VB3YTHK;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.BetwistDictionaryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BetwistDictionary.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BetwistDictionary";
-			};
-			name = Debug;
-		};
-		912847342CD9691B00FA21BA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7B9VB3YTHK;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.BetwistDictionaryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BetwistDictionary.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BetwistDictionary";
-			};
-			name = Release;
-		};
 		91FA96912C81333F0011BB7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -862,24 +652,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9128472F2CD9691B00FA21BA /* Build configuration list for PBXNativeTarget "BetwistDictionary" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				912847302CD9691B00FA21BA /* Debug */,
-				912847312CD9691B00FA21BA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		912847322CD9691B00FA21BA /* Build configuration list for PBXNativeTarget "BetwistDictionaryTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				912847332CD9691B00FA21BA /* Debug */,
-				912847342CD9691B00FA21BA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		91FA966A2C81333A0011BB7F /* Build configuration list for PBXProject "betwist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

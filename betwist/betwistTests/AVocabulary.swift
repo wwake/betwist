@@ -56,26 +56,26 @@ struct AVocabulary {
 //  2024-10-09 18:25:42 +0000
 //  ✔ Test performance_test() passed after 0.116 seconds.
 
-  @Test(.disabled())
-  func performance_test_contains() {
-    let count = 1_000_000
-    let sut = Self.load()
-    let randomWords = (0..<count).map { _ in
-      sut.words.randomElement()!
-    }
-    var result = 0
-    print(Date())
-
-    (0..<count).forEach { index in
-      let found = sut.contains(randomWords[index])
-      if found {
-        result += 1
-      }
-    }
-
-    print("count=\(result) should be \(count)")
-    print(Date())
-  }
+//  @Test(.disabled())
+//  func performance_test_contains() {
+//    let count = 1_000_000
+//    let sut = Self.load()
+//    let randomWords = (0..<count).map { _ in
+//      sut.words.randomElement()!
+//    }
+//    var result = 0
+//    print(Date())
+//
+//    (0..<count).forEach { index in
+//      let found = sut.contains(randomWords[index])
+//      if found {
+//        result += 1
+//      }
+//    }
+//
+//    print("count=\(result) should be \(count)")
+//    print(Date())
+//  }
 
   // Before:
 //  ◇ Test performance_test_hasPrefix() started.
@@ -91,49 +91,49 @@ struct AVocabulary {
 //  2024-10-09 19:06:22 +0000
 //  ✔ Test performance_test_hasPrefix() passed after 0.114 seconds.
 
-  @Test(.disabled())
-  func performance_test_hasPrefix() {
-    let sut = Self.load()
-    let randomWords = (0..<10000).map { _ in
-      sut.words.randomElement()!
-    }
-    var result = 0
-    print(Date())
-
-    (0..<10000).forEach { index in
-      let found = sut.hasPrefix(String(randomWords[index].prefix(4)))
-      if found {
-        result += 1
-      }
-    }
-
-    print("count=\(result) needn't be 10000")
-    print(Date())
-  }
-
-  @Test(.disabled())
-  func performance_test_containsAndPrefix() {
-    let count = 1_000_000
-    let sut = Self.load()
-    let randomWords = (0..<count).map { _ in
-      sut.words.randomElement()!
-    }
-    var result = 0
-    print(Date())
-
-    (0..<count).forEach { index in
-      let word: String = randomWords[index]
-      let contained = sut.contains(word)
-      let prefixed = sut.hasPrefix(word)
-//      let (contained, prefixed) = sut.containsAndPrefixes(randomWords[index])
-      if contained || prefixed {
-        result += 1
-      }
-    }
-
-    print("count=\(result) should be \(count)")
-    print(Date())
-  }
+//  @Test(.disabled())
+//  func performance_test_hasPrefix() {
+//    let sut = Self.load()
+//    let randomWords = (0..<10000).map { _ in
+//      sut.words.randomElement()!
+//    }
+//    var result = 0
+//    print(Date())
+//
+//    (0..<10000).forEach { index in
+//      let found = sut.hasPrefix(String(randomWords[index].prefix(4)))
+//      if found {
+//        result += 1
+//      }
+//    }
+//
+//    print("count=\(result) needn't be 10000")
+//    print(Date())
+//  }
+//
+//  @Test(.disabled())
+//  func performance_test_containsAndPrefix() {
+//    let count = 1_000_000
+//    let sut = Self.load()
+//    let randomWords = (0..<count).map { _ in
+//      sut.words.randomElement()!
+//    }
+//    var result = 0
+//    print(Date())
+//
+//    (0..<count).forEach { index in
+//      let word: String = randomWords[index]
+//      let contained = sut.contains(word)
+//      let prefixed = sut.hasPrefix(word)
+////      let (contained, prefixed) = sut.containsAndPrefixes(randomWords[index])
+//      if contained || prefixed {
+//        result += 1
+//      }
+//    }
+//
+//    print("count=\(result) should be \(count)")
+//    print(Date())
+//  }
 
   @Test
   func contains_can_find_any_word_in_list() {

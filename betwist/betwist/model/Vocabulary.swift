@@ -4,6 +4,22 @@ struct SearchResult: Equatable {
 }
 
 class Vocabulary {
+  let trie: Trie
+
+  init(_ words: [String]) {
+    trie = TrieBuilder().add(words).make()
+  }
+
+  func contains(_ word: String) -> Bool {
+    containsAndPrefixes(word).isWord
+  }
+
+  func containsAndPrefixes(_ target: String) -> SearchResult {
+    trie.containsAndPrefixes(target)
+  }
+}
+
+class Vocabulary2 {
   let words: [String]
 
   init(_ words: [String]) {
