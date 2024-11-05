@@ -1,7 +1,7 @@
-* Refactored to introduce SearchResult (rather than boolean pair)
-* Search in Trie
 
-* New app to build the Trie dictionary
+* Build Trie from list of words (using TrieBuilder)
+
+* New app to build the Trie dictionary?
 
 * Click first letter to cancel whole word
 
@@ -38,6 +38,9 @@ Trigger by swipe from the edge?
 
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 =====
+2024-11-04 - WORD-24-20 - Trie
+* Refactored to introduce SearchResult (rather than boolean pair)
+* Search in Trie
 
 2024-10-24 - WORD-24-19 - Sort Answers
 * Sort answers (by length)
