@@ -1,4 +1,5 @@
 
+* Write json for a Trie (one time)
 
 * New app to build the Trie dictionary?
 
@@ -39,6 +40,7 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 =====
 2024-11-05 - WORD-24-21 - Trie, Trie Again
 * Build Trie from list of words (using TrieBuilder)
+* Make Trie and TrieNode be Codable
 
 2024-11-04 - WORD-24-20 - Trie
 * Refactored to introduce SearchResult (rather than boolean pair)

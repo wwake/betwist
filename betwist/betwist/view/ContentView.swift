@@ -28,6 +28,9 @@ struct ContentView: View {
   var body: some View {
     GeometryReader { geometry in
       VStack {
+        Spacer()
+          .frame(height: 25)
+
         AnswerInProgressView(game: $game, progress: progress, height: 500) {
           collectWord()
         }
@@ -80,9 +83,11 @@ struct ContentView: View {
           }
         }
 
+        #if true
         ScrollView {
           Text(game.allAnswers.joined(separator: "\n"))
         }
+        #endif
         Spacer()
       }
       .padding(.top, 40)

@@ -21,5 +21,6 @@ struct GridView: View {
         }
       }
     }
+    .border(.accent, width: 2)
   }
 }
