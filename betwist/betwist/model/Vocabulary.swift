@@ -8,10 +8,10 @@ class Vocabulary {
   let trie: Trie
 
   init(_ words: [String]) {
-//    trie = TrieBuilder().add(words).make()
-//  }
-//
-//  init() {
+    trie = TrieBuilder().add(words).make()
+  }
+
+  init() {
     do {
       if let path = Bundle.main.path(forResource: "trie", ofType: "json") {
         let data = try String(contentsOfFile: path, encoding: .utf8).data(using: .utf8)
@@ -87,7 +87,7 @@ class Vocabulary2 {
 }
 
 class NullVocabulary: Vocabulary {
-  init() {
+  override init() {
     super.init([])
   }
 
