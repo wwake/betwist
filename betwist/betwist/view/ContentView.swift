@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
+  static let showMakerView = true
   static var cellSize = 50.0
 
   @Binding var game: Game
@@ -30,6 +31,10 @@ struct ContentView: View {
       VStack {
         Spacer()
           .frame(height: 25)
+
+        if ContentView.showMakerView {
+          MakerView(game: game)
+        }
 
         AnswerInProgressView(game: $game, progress: progress, height: 500) {
           collectWord()

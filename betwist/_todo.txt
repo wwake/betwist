@@ -1,5 +1,9 @@
+* Read JSON for the Trie
 
-* Write json for a Trie (one time)
+* Ideas for reducing size:
+  - choose smaller field names
+  - zip/gzip to store, unzip on read
+  - custom format with a parser
 
 * New app to build the Trie dictionary?
 
@@ -38,6 +42,10 @@ Trigger by swipe from the edge?
 
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 =====
+2024-11-06 - WORD-24-22 - Write and Read the Trie
+* Make a Maker view with "Generate Trie" button
+* Write json for a Trie (one time) - but it's large (27M)
+
 2024-11-05 - WORD-24-21 - Trie, Trie Again
 * Build Trie from list of words (using TrieBuilder)
 * Make Trie and TrieNode be Codable

@@ -1,3 +1,4 @@
+import Foundation
 struct SearchResult: Equatable {
   let isWord: Bool
   let isProperPrefix: Bool
@@ -8,6 +9,20 @@ class Vocabulary {
 
   init(_ words: [String]) {
     trie = TrieBuilder().add(words).make()
+  }
+
+  init() {
+    do {
+      if let path = Bundle.main.path(forResource: "trie", ofType: "json") {
+        let data = try String(contentsOfFile: path, encoding: .utf8).data(using: .utf8)
+        trie = try JSONDecoder().decode(Trie.self, from: data!)
+        print("done loading trie")
+        return
+      }
+    } catch {
+      print(error)
+    }
+    trie = Trie(isWord: false, next: [])
   }
 
   func contains(_ word: String) -> Bool {
@@ -30,12 +45,12 @@ class Vocabulary2 {
     var lower = -1
     var upper = words.count
     while lower + 1 != upper {
-        let mid = (lower + upper) / 2
-        if words[mid] < target {
-            lower = mid
-        } else {
-            upper = mid
-        }
+      let mid = (lower + upper) / 2
+      if words[mid] < target {
+        lower = mid
+      } else {
+        upper = mid
+      }
     }
     return upper
   }
@@ -45,7 +60,7 @@ class Vocabulary2 {
   fileprivate func binarySearch(_ target: String, _ words: [String]) -> Int {
     var result = binarySearchIndex(target, words)
     if result >= words.count || words[result] != target {
-        result = -1
+      result = -1
     }
     return result
   }

@@ -30,6 +30,8 @@
 		911EEA012CAF30D7005C391D /* TheAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EEA002CAF30D7005C391D /* TheAnswers.swift */; };
 		912847072CD9583800FA21BA /* ATrie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912847062CD9583800FA21BA /* ATrie.swift */; };
 		912847092CD9586F00FA21BA /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912847082CD9586C00FA21BA /* Trie.swift */; };
+		9128473F2CDBF51700FA21BA /* MakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128473E2CDBF51700FA21BA /* MakerView.swift */; };
+		912847412CDBF8E700FA21BA /* Character+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912847402CDBF8E700FA21BA /* Character+Codable.swift */; };
 		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
 		912CFEEA2C88A6B10074C066 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE82C88A6B10074C066 /* README.md */; };
 		914A539A2CA3664E00C05BB7 /* betwist.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 914A53992CA3664E00C05BB7 /* betwist.xctestplan */; };
@@ -87,6 +89,8 @@
 		912847062CD9583800FA21BA /* ATrie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATrie.swift; sourceTree = "<group>"; };
 		912847082CD9586C00FA21BA /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		912847382CD969CA00FA21BA /* BetwistDictionary.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BetwistDictionary.xctestplan; sourceTree = "<group>"; };
+		9128473E2CDBF51700FA21BA /* MakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakerView.swift; sourceTree = "<group>"; };
+		912847402CDBF8E700FA21BA /* Character+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Codable.swift"; sourceTree = "<group>"; };
 		912CFEE72C88A6B10074C066 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		914A53992CA3664E00C05BB7 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
@@ -135,16 +139,17 @@
 		917642212CC6D8E90064AD48 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				912847082CD9586C00FA21BA /* Trie.swift */,
+				911EE9FE2CAF2DDF005C391D /* Answers.swift */,
 				910C6FB72CC0390F00BD6A0D /* CGSize+wrap.swift */,
+				912847402CDBF8E700FA21BA /* Character+Codable.swift */,
 				9104FD2D2CA5E85500A8CBB3 /* Game.swift */,
 				911EE9E62CAB28CE005C391D /* GameMaker.swift */,
-				911EE9FE2CAF2DDF005C391D /* Answers.swift */,
 				9181F09D2CA347370091A771 /* Int+wrap.swift */,
 				9181F09B2CA3444A0091A771 /* LetterGrid.swift */,
 				910C97A82CA48AAD00893B79 /* Location.swift */,
 				91A387772CC1889700E00F7B /* Score.swift */,
 				910C97AA2CA48AD900893B79 /* Selection.swift */,
+				912847082CD9586C00FA21BA /* Trie.swift */,
 				911EE9F12CAC8096005C391D /* Twister.swift */,
 				911EE9FA2CADD2D6005C391D /* Vocabulary.swift */,
 			);
@@ -165,6 +170,7 @@
 				910C6FAD2CBDB6AD00BD6A0D /* LetterView.swift */,
 				91A387712CC056C800E00F7B /* ScoreView.swift */,
 				910C6FAF2CBEED2000BD6A0D /* Text+italic.swift */,
+				9128473E2CDBF51700FA21BA /* MakerView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 				910C6FB82CC0391500BD6A0D /* CGSize+wrap.swift in Sources */,
 				911EE9FB2CADD2D6005C391D /* Vocabulary.swift in Sources */,
 				91FA96752C81333A0011BB7F /* ContentView.swift in Sources */,
+				9128473F2CDBF51700FA21BA /* MakerView.swift in Sources */,
 				9104FD2E2CA5E85900A8CBB3 /* Game.swift in Sources */,
 				910C6FAE2CBDB6AD00BD6A0D /* LetterView.swift in Sources */,
 				911EE9FF2CAF2DE4005C391D /* Answers.swift in Sources */,
@@ -397,6 +404,7 @@
 				91A387742CC1427100E00F7B /* AnswersView.swift in Sources */,
 				91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */,
 				9181F09C2CA3444A0091A771 /* LetterGrid.swift in Sources */,
+				912847412CDBF8E700FA21BA /* Character+Codable.swift in Sources */,
 				910C6FAC2CBDB4BF00BD6A0D /* GridView.swift in Sources */,
 				911EE9F22CAC8096005C391D /* Twister.swift in Sources */,
 			);
