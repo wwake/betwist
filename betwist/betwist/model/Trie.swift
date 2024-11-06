@@ -1,16 +1,13 @@
 import Foundation
 
 struct Trie: Codable {
-  let i: Bool
-  let n: [TrieMatch]
+  let isWord: Bool
+  let next: [TrieMatch]
 
   init(_ isWord: Bool, _ next: [TrieMatch]) {
-    self.i = isWord
-    self.n = next
+    self.isWord = isWord
+    self.next = next
   }
-
-  var isWord: Bool { i }
-  var next: [TrieMatch] { n }
 
   func containsAndPrefixes(_ value: String) -> SearchResult {
     let target = Array(value)
