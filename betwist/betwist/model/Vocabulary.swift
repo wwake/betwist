@@ -16,7 +16,6 @@ class Vocabulary {
       if let path = Bundle.main.path(forResource: "trie", ofType: "json") {
         let data = try String(contentsOfFile: path, encoding: .utf8).data(using: .utf8)
         trie = try JSONDecoder().decode(Trie.self, from: data!)
-        print("done loading trie")
         return
       }
     } catch {

@@ -32,6 +32,7 @@
 		912847092CD9586F00FA21BA /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912847082CD9586C00FA21BA /* Trie.swift */; };
 		9128473F2CDBF51700FA21BA /* MakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128473E2CDBF51700FA21BA /* MakerView.swift */; };
 		912847412CDBF8E700FA21BA /* Character+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912847402CDBF8E700FA21BA /* Character+Codable.swift */; };
+		9128474B2CDC0C9600FA21BA /* VocabularyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128474A2CDC0C9600FA21BA /* VocabularyLoader.swift */; };
 		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
 		912CFEEA2C88A6B10074C066 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE82C88A6B10074C066 /* README.md */; };
 		914A539A2CA3664E00C05BB7 /* betwist.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 914A53992CA3664E00C05BB7 /* betwist.xctestplan */; };
@@ -91,6 +92,7 @@
 		912847382CD969CA00FA21BA /* BetwistDictionary.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BetwistDictionary.xctestplan; sourceTree = "<group>"; };
 		9128473E2CDBF51700FA21BA /* MakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakerView.swift; sourceTree = "<group>"; };
 		912847402CDBF8E700FA21BA /* Character+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Codable.swift"; sourceTree = "<group>"; };
+		9128474A2CDC0C9600FA21BA /* VocabularyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyLoader.swift; sourceTree = "<group>"; };
 		912CFEE72C88A6B10074C066 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		914A53992CA3664E00C05BB7 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				912847082CD9586C00FA21BA /* Trie.swift */,
 				911EE9F12CAC8096005C391D /* Twister.swift */,
 				911EE9FA2CADD2D6005C391D /* Vocabulary.swift */,
+				9128474A2CDC0C9600FA21BA /* VocabularyLoader.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				9128473F2CDBF51700FA21BA /* MakerView.swift in Sources */,
 				9104FD2E2CA5E85900A8CBB3 /* Game.swift in Sources */,
 				910C6FAE2CBDB6AD00BD6A0D /* LetterView.swift in Sources */,
+				9128474B2CDC0C9600FA21BA /* VocabularyLoader.swift in Sources */,
 				911EE9FF2CAF2DE4005C391D /* Answers.swift in Sources */,
 				9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */,
 				912847092CD9586F00FA21BA /* Trie.swift in Sources */,

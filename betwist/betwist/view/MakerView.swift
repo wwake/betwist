@@ -7,7 +7,10 @@ struct MakerView: View {
     VStack {
       Button("Generate Trie") {
         do {
-          let data = try JSONEncoder().encode(game.vocabulary.trie)
+          let words = VocabularyLoader.loadStrings()
+          let trie = TrieBuilder().add(words).make()
+
+          let data = try JSONEncoder().encode(trie)
           let url = URL.documentsDirectory.appending(path: "trie.json")
           try data.write(to: url, options: [.atomic, .completeFileProtection])
           print("Copy \(url) to project's resources folder")

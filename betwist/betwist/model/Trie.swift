@@ -23,16 +23,13 @@ struct Trie: Codable {
 }
 
 struct TrieMatch: Codable {
-  let c: Character
-  let t: Trie
+  let char: Character
+  let trie: Trie
 
   init(_ char: Character, _ trie: Trie) {
-    self.c = char
-    self.t = trie
+    self.char = char
+    self.trie = trie
   }
-
-  var char: Character { c }
-  var trie: Trie { t }
 }
 
 struct TrieNodeMatch: Codable {
