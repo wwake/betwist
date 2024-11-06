@@ -22,7 +22,7 @@ class Vocabulary {
     } catch {
       print(error)
     }
-    trie = Trie(isWord: false, next: [])
+    trie = Trie(false, [])
   }
 
   func contains(_ word: String) -> Bool {
@@ -88,7 +88,7 @@ class Vocabulary2 {
 }
 
 class NullVocabulary: Vocabulary {
-  init() {
+  override init() {
     super.init([])
   }
 

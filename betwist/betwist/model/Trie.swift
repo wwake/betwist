@@ -1,8 +1,16 @@
 import Foundation
 
 struct Trie: Codable {
-  let isWord: Bool
-  let next: [TrieMatch]
+  let i: Bool
+  let n: [TrieMatch]
+
+  init(_ isWord: Bool, _ next: [TrieMatch]) {
+    self.i = isWord
+    self.n = next
+  }
+
+  var isWord: Bool { i }
+  var next: [TrieMatch] { n }
 
   func containsAndPrefixes(_ value: String) -> SearchResult {
     let target = Array(value)
@@ -18,13 +26,16 @@ struct Trie: Codable {
 }
 
 struct TrieMatch: Codable {
-  let char: Character
-  let trie: Trie
+  let c: Character
+  let t: Trie
 
   init(_ char: Character, _ trie: Trie) {
-    self.char = char
-    self.trie = trie
+    self.c = char
+    self.t = trie
   }
+
+  var char: Character { c }
+  var trie: Trie { t }
 }
 
 struct TrieNodeMatch: Codable {
@@ -79,7 +90,7 @@ class TrieBuilder {
   }
 
   func make(_ node: TrieNode) -> Trie {
-    Trie(isWord: node.isWord, next: makeList(node.next))
+    Trie(node.isWord, makeList(node.next))
   }
 
   fileprivate func makeList(_ list: [TrieNodeMatch]) -> [TrieMatch] {
