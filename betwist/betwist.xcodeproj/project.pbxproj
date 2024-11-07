@@ -40,6 +40,7 @@
 		912CFEEA2C88A6B10074C066 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE82C88A6B10074C066 /* README.md */; };
 		914A539A2CA3664E00C05BB7 /* betwist.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 914A53992CA3664E00C05BB7 /* betwist.xctestplan */; };
 		917642242CC6D9D70064AD48 /* Button+viewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917642232CC6D9C40064AD48 /* Button+viewModifier.swift */; };
+		917C44AB2CDD62610041B790 /* SortedAnswersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917C44AA2CDD625D0041B790 /* SortedAnswersView.swift */; };
 		9181F09A2CA33C2A0091A771 /* ALetterGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181F0992CA33C2A0091A771 /* ALetterGrid.swift */; };
 		9181F09C2CA3444A0091A771 /* LetterGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181F09B2CA3444A0091A771 /* LetterGrid.swift */; };
 		9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181F09D2CA347370091A771 /* Int+wrap.swift */; };
@@ -104,6 +105,7 @@
 		914A53992CA3664E00C05BB7 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
 		917642232CC6D9C40064AD48 /* Button+viewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+viewModifier.swift"; sourceTree = "<group>"; };
 		917C44A92CDD55600041B790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		917C44AA2CDD625D0041B790 /* SortedAnswersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedAnswersView.swift; sourceTree = "<group>"; };
 		9181F0992CA33C2A0091A771 /* ALetterGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALetterGrid.swift; sourceTree = "<group>"; };
 		9181F09B2CA3444A0091A771 /* LetterGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGrid.swift; sourceTree = "<group>"; };
 		9181F09D2CA347370091A771 /* Int+wrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+wrap.swift"; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		917642222CC6D8F00064AD48 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				917C44AA2CDD625D0041B790 /* SortedAnswersView.swift */,
 				917642232CC6D9C40064AD48 /* Button+viewModifier.swift */,
 				911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */,
 				91A387732CC1427100E00F7B /* AnswersView.swift */,
@@ -414,6 +417,7 @@
 				910C6FB62CBEF78D00BD6A0D /* InfiniteGrid.swift in Sources */,
 				911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */,
 				910C6FB22CBEED7500BD6A0D /* ColorChooser.swift in Sources */,
+				917C44AB2CDD62610041B790 /* SortedAnswersView.swift in Sources */,
 				910C6FB02CBEED2000BD6A0D /* Text+italic.swift in Sources */,
 				910C97A92CA48AAD00893B79 /* Location.swift in Sources */,
 				91A387742CC1427100E00F7B /* AnswersView.swift in Sources */,
