@@ -241,6 +241,12 @@ struct AGame {
     #expect(game.openNeighbors(selection) == [Location(1, 1)])
   }
 
+  @Test
+  func finds_all_the_answers() {
+    let game = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
+    #expect(game.allTheAnswers.preview == "FUND")
+  }
+
   @Test()
   func scores_answers() {
     var game = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))

@@ -109,6 +109,14 @@ struct Game {
     selection.last == twister[location]
   }
 
+  var allTheAnswers: Answers {
+    var result = Answers()
+    allAnswers.forEach {
+      result.submit($0, isPrefix: true)
+    }
+    return result
+  }
+
   var allAnswers: Set<String> {
     var result = Set<String>()
     let selection = Selection(grid)
