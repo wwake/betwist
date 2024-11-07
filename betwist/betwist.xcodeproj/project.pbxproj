@@ -103,6 +103,7 @@
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		914A53992CA3664E00C05BB7 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
 		917642232CC6D9C40064AD48 /* Button+viewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+viewModifier.swift"; sourceTree = "<group>"; };
+		917C44A92CDD55600041B790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9181F0992CA33C2A0091A771 /* ALetterGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALetterGrid.swift; sourceTree = "<group>"; };
 		9181F09B2CA3444A0091A771 /* LetterGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGrid.swift; sourceTree = "<group>"; };
 		9181F09D2CA347370091A771 /* Int+wrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+wrap.swift"; sourceTree = "<group>"; };
@@ -223,6 +224,7 @@
 		91FA96712C81333A0011BB7F /* betwist */ = {
 			isa = PBXGroup;
 			children = (
+				917C44A92CDD55600041B790 /* Info.plist */,
 				917642212CC6D8E90064AD48 /* model */,
 				917642222CC6D8F00064AD48 /* view */,
 				91FA96722C81333A0011BB7F /* betwistApp.swift */,
@@ -585,9 +587,9 @@
 				DEVELOPMENT_TEAM = 7B9VB3YTHK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = betwist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -614,9 +616,9 @@
 				DEVELOPMENT_TEAM = 7B9VB3YTHK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = betwist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
