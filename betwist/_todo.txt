@@ -4,27 +4,26 @@
 
 * Don't allow entering new words when in review mode (but do clear selection)
 
+* iPad is so big it overwhelms our approach to infinite grid [limit size artificially?]
+
+====
+
 * Load the Trie using Async/Await
 
-* Sound
+* When showing system-found words, show user's words in black
+* Link system-found words to a dictionary definition - see api_dictionaryapi_dev/api/v2/entries/en/[the word]
+
 
 * Tessellations
 
-* Link system-found words to a dictionary definition - see api_dictionaryapi_dev/api/v2/entries/en/[the word]
 
 * New game sets parameters (eg board size)
 
-* iPad is so big it overwhelms our approach to infinite grid [limit size artificially?]
+====
 
+* Sound
 
 * Rotation animation - can we make it look even better? Should rotation angle be called in completion{}?
-
-
-Ideas for faster lookup
-* Try a 3- or 4-letter prefix dictionary
-* Bloom filter - multiple hashes for a probabilistic answer
-* Trie
-* Performance idea: Generate full list of words for board - with some performance improvements - and use that as the "dictionary"
 
 * Make selection use gradient from first to last letter (ColorChooser would need access to the index position of the selected letter)
 
