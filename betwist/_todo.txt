@@ -1,8 +1,9 @@
-* When should we generate the full answer list? now or later? thread?
+* Show system answers like user ones
 
 * Click first letter to cancel whole word
 * Dark mode
 
+* Don't allow entering new words when in review mode (but do clear selection)
 
 * Load the Trie using Async/Await
 
@@ -42,6 +43,9 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 * Pass in URL to Trie writer
 * Hand-verify "Generate Trie" since we've changed its method
 * Compress JSON with NSDATA - goes from 27M to 2.5M
+* Add modes to game: play or review
+* Only have "Show Me" button in play mode (switches to review mode and shows all answers)
+
 
 2024-11-06 - WORD-24-22 - Write and Read the Trie
 * Make a Maker view with "Generate Trie" button

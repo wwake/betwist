@@ -6,8 +6,6 @@ struct AnswersView: View {
 
   var body: some View {
     VStack {
-      //   Text(verbatim: String(Array(game.allAnswers).joined(by: "\n")))
-
       Text("Found Words")
         .font(.title3)
 
@@ -20,6 +18,6 @@ struct AnswersView: View {
     }
     .bold()
     .frame(width: 150)
-    .opacity(game.answers.isEmpty ? 0 : 1)
+
   }
 }

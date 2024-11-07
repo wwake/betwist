@@ -34,26 +34,33 @@ struct AnswerDetailsView: View {
         .font(.title2)
 
       if mode == .play {
-        Button("Show Me!") {
-          mode = .review
+        VStack {
+          Button("Show Me!") {
+            mode = .review
+          }
+          .capsuled()
+
+          Text("(ends the game)")
+            .font(.footnote)
         }
-        .capsuled()
       }
 
-      Text(allAnswers.joined(separator: "\n"))
-      //        List {
-      //          ForEach(answers.wordSizes, id: \.self) { size in
-      //            Section(header: Text("\(size) letters")) {
-      //              ForEach(answers.words(ofSize: size)) { answer in
-      //                Text(verbatim: answer.word)
-      //                  .bold(answer.enteredByUser)
-      //                  .foregroundStyle(answer.enteredByUser ? .black : .accent)
-      //              }
-      //            }
-      //          }
-      //        }
-      //        .listStyle(.plain)
-        .opacity(mode == .review ? 1 : 0)
+      if mode == .review {
+          Text(allAnswers.joined(separator: "\n"))
+          //        List {
+          //          ForEach(answers.wordSizes, id: \.self) { size in
+          //            Section(header: Text("\(size) letters")) {
+          //              ForEach(answers.words(ofSize: size)) { answer in
+          //                Text(verbatim: answer.word)
+          //                  .bold(answer.enteredByUser)
+          //                  .foregroundStyle(answer.enteredByUser ? .black : .accent)
+          //              }
+          //            }
+          //          }
+          //        }
+          //        .listStyle(.plain)
+      }
+      Spacer()
     }
   }
 
