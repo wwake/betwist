@@ -1,15 +1,10 @@
-* Load the Trie using Async/Await
-
-* Ideas for reducing size:
-  - choose smaller field names
-  - zip/gzip to store, unzip on read
-  - custom format with a parser
-
-* New app to build the Trie dictionary?
+* When should we generate the full answer list? now or later? thread?
 
 * Click first letter to cancel whole word
 * Dark mode
-* When should we generate the full answer list? now or later? thread?
+
+
+* Load the Trie using Async/Await
 
 * Sound
 

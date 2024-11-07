@@ -1,6 +1,13 @@
+enum GameMode {
+  case play
+  case review
+}
+
 struct Game {
   static let minimumSize = 4
   static let maxPuzzleSize = 25
+
+  var mode = GameMode.play
 
   var grid: LetterGrid
   var twister: Twister

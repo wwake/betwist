@@ -88,18 +88,13 @@ struct ContentView: View {
           }
         }
 
-        #if false
-        ScrollView {
-          Text(game.allAnswers.joined(separator: "\n"))
-        }
-        #endif
         Spacer()
       }
       .padding(.top, 40)
       .ignoresSafeArea()
       .background(Gradient(colors: [.gray, .black]).opacity(0.5))
       .sheet(isPresented: $showAnswers) {
-        AnswerDetailsView(answers: game.answers)
+        AnswerDetailsView(answers: game.answers, allAnswers: game.allAnswers, mode: $game.mode)
       }
     }
   }

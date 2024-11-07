@@ -3,6 +3,12 @@ import Testing
 
 struct AGame {
   @Test
+  func starts_in_play_mode() {
+    let sut = Game(2, ["A", "B", "C", "D"])
+    #expect(sut.mode == .play)
+  }
+
+  @Test
   func prepends_a_collected_answer() {
     var game = Game(2, ["A", "B", "C", "D"])
     game.select(Location(0, 0))
