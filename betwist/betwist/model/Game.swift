@@ -5,6 +5,7 @@ enum GameMode {
 
 struct Game {
   static let minimumSize = 4
+  static let minimumSystemAnswerSize = 6
   static let maxPuzzleSize = 25
 
   var mode = GameMode.play
@@ -111,9 +112,11 @@ struct Game {
 
   var allTheAnswers: Answers {
     var result = Answers()
-    allAnswers.forEach {
-      result.submit($0, isPrefix: true)
-    }
+    allAnswers
+      .filter { $0.count >= Self.minimumSystemAnswerSize }
+      .forEach {
+        result.submit($0, isPrefix: true)
+      }
     return result
   }
 

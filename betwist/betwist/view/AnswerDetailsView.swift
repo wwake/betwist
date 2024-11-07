@@ -36,6 +36,9 @@ struct AnswerDetailsView: View {
       }
 
       if mode == .review {
+        Text("6+ letters only")
+          .font(.footnote)
+
         SortedAnswersView(answers: allAnswers)
       }
       Spacer()

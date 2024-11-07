@@ -243,8 +243,18 @@ struct AGame {
 
   @Test
   func finds_all_the_answers() {
-    let game = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
-    #expect(game.allTheAnswers.preview == "FUND")
+    let game = Game(
+      4,
+      ["F", "U", "N", "D", "E", "R", "S", "T", "W", "H", "I", "L", "E", "A", "L", "S"],
+      Vocabulary(["FUND", "FUNDER", "FUNDERS", "WHILE", "UNDER", "TWIST", "BECKON", "ERSTWHILE"].sorted())
+    )
+
+    let result = game.allTheAnswers
+
+    #expect(result.wordCount == 3)
+    #expect(result.contains("FUNDER"))
+    #expect(result.contains("FUNDERS"))
+    #expect(result.contains("ERSTWHILE"))
   }
 
   @Test()
