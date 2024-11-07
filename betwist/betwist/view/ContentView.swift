@@ -94,7 +94,7 @@ struct ContentView: View {
       .ignoresSafeArea()
       .background(Gradient(colors: [.gray, .black]).opacity(0.5))
       .sheet(isPresented: $showAnswers) {
-        AnswerDetailsView(answers: game.answers, allAnswers: game.allAnswers, mode: $game.mode)
+        AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
       }
     }
   }

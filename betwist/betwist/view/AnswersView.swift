@@ -18,6 +18,5 @@ struct AnswersView: View {
     }
     .bold()
     .frame(width: 150)
-
   }
 }
