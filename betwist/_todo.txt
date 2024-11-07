@@ -1,4 +1,4 @@
-* Try compressing JSON with NSDATA
+* Load the Trie using Async/Await
 
 * Ideas for reducing size:
   - choose smaller field names
@@ -46,6 +46,7 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 2024-11-07 - WORD-24-23 - Compress the Trie
 * Pass in URL to Trie writer
 * Hand-verify "Generate Trie" since we've changed its method
+* Compress JSON with NSDATA - goes from 27M to 2.5M
 
 2024-11-06 - WORD-24-22 - Write and Read the Trie
 * Make a Maker view with "Generate Trie" button

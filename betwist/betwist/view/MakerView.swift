@@ -10,7 +10,7 @@ struct MakerView: View {
           let words = WordLoader.load()
           let trie = TrieBuilder().add(words).make()
 
-          let url = URL.documentsDirectory.appending(path: "trie.json")
+          let url = URL.documentsDirectory.appending(path: "trie.json-compressed")
           try trie.write(url)
           print("Copy \(url) to project's resources folder")
         } catch {

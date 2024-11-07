@@ -3,7 +3,7 @@ import Foundation
 extension Trie {
   static func read(_ filename: String) -> Trie {
     do {
-      if let path = Bundle.main.path(forResource: filename, ofType: "json") {
+      if let path = Bundle.main.path(forResource: filename, ofType: "json-compressed") {
         let decompressed = try NSData(contentsOfFile: path).decompressed(using: .lzfse)
         return try JSONDecoder().decode(Trie.self, from: decompressed as Data)
       }
