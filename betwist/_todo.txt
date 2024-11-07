@@ -1,5 +1,3 @@
-* Pass in URL to Trie writer
-* Hand-verify "Generate Trie" since we've changed its method
 * Try compressing JSON with NSDATA
 
 * Ideas for reducing size:
@@ -10,7 +8,7 @@
 * New app to build the Trie dictionary?
 
 * Click first letter to cancel whole word
-
+* Dark mode
 * When should we generate the full answer list? now or later? thread?
 
 * Sound
@@ -44,6 +42,11 @@ Trigger by swipe from the edge?
 
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 =====
+
+2024-11-07 - WORD-24-23 - Compress the Trie
+* Pass in URL to Trie writer
+* Hand-verify "Generate Trie" since we've changed its method
+
 2024-11-06 - WORD-24-22 - Write and Read the Trie
 * Make a Maker view with "Generate Trie" button
 * Write json for a Trie (one time) - but it's large (27M)

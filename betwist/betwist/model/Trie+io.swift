@@ -1,11 +1,11 @@
 import Foundation
 
 extension Trie {
-  static func load(_ filename: String) -> Trie {
+  static func read(_ filename: String) -> Trie {
     do {
       if let path = Bundle.main.path(forResource: filename, ofType: "json") {
-        let data = try String(contentsOfFile: path, encoding: .utf8).data(using: .utf8)
-        return try JSONDecoder().decode(Trie.self, from: data!)
+        let decompressed = try NSData(contentsOfFile: path).decompressed(using: .lzfse)
+        return try JSONDecoder().decode(Trie.self, from: decompressed as Data)
       }
     } catch {
       print(error)
@@ -15,6 +15,7 @@ extension Trie {
 
   func write(_ url: URL) throws {
     let data = try JSONEncoder().encode(self)
-    try data.write(to: url, options: [.atomic, .completeFileProtection])
+    let compressedData = try (data as NSData).compressed(using: .lzfse)
+    try compressedData.write(to: url, options: [.atomic, .completeFileProtection])
   }
 }
