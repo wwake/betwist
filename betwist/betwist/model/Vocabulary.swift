@@ -8,10 +8,6 @@ struct SearchResult: Equatable {
 class Vocabulary {
   let trie: Trie
 
-  init() {
-    trie = Trie.load("trie")
-  }
-
   init(_ trie: Trie) {
     self.trie = trie
   }
@@ -26,7 +22,7 @@ class Vocabulary {
 }
 
 class NullVocabulary: Vocabulary {
-  override init() {
+  init() {
     super.init(Trie(false, []))
   }
 

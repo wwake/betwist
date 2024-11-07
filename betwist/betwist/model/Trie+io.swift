@@ -12,4 +12,9 @@ extension Trie {
     }
     return Trie(false, [])
   }
+
+  func write(_ url: URL) throws {
+    let data = try JSONEncoder().encode(self)
+    try data.write(to: url, options: [.atomic, .completeFileProtection])
+  }
 }

@@ -1,7 +1,7 @@
 import Foundation
 
-enum VocabularyLoader {
-  static func loadStrings() -> [String] {
+enum WordLoader {
+  static func load() -> [String] {
     let path = Bundle.main.path(forResource: "words", ofType: "list")!
     let words = try! String(contentsOfFile: path, encoding: .utf8)
       .split(separator: "\n")

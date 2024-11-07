@@ -7,12 +7,11 @@ struct MakerView: View {
     VStack {
       Button("Generate Trie") {
         do {
-          let words = VocabularyLoader.loadStrings()
+          let words = WordLoader.load()
           let trie = TrieBuilder().add(words).make()
 
-          let data = try JSONEncoder().encode(trie)
           let url = URL.documentsDirectory.appending(path: "trie.json")
-          try data.write(to: url, options: [.atomic, .completeFileProtection])
+          try trie.write(url)
           print("Copy \(url) to project's resources folder")
         } catch {
             print(error.localizedDescription)

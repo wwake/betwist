@@ -88,7 +88,7 @@ struct ContentView: View {
           }
         }
 
-        #if true
+        #if false
         ScrollView {
           Text(game.allAnswers.joined(separator: "\n"))
         }
