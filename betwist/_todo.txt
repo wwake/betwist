@@ -6,6 +6,8 @@
 
 * iPad is so big it overwhelms our approach to infinite grid [limit size artificially?]
 
+* Better letter generation
+
 ====
 
 * Load the Trie using Async/Await
