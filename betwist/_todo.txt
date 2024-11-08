@@ -48,7 +48,6 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 * Show system answers like user ones
 * System answers only have 6+ letters
 
-
 2024-11-06 - WORD-24-22 - Write and Read the Trie
 * Make a Maker view with "Generate Trie" button
 * Write json for a Trie (one time) - but it's large (27M)
