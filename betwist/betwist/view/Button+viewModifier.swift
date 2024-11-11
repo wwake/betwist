@@ -6,7 +6,7 @@ struct ButtonCapsuleModifier: ViewModifier {
       .bold()
       .padding([.top, .bottom], 6)
       .padding([.leading, .trailing], 16)
-      .foregroundStyle(.white)
+      .foregroundStyle(.buttonForeground)
       .background(.accent)
       .cornerRadius(10)
   }
@@ -15,9 +15,10 @@ struct ButtonCapsuleModifier: ViewModifier {
 struct ButtonCircleModifier: ViewModifier {
   func body(content: Content) -> some View {
     content
+      .bold()
       .padding(3)
       .font(.title)
-      .background(.white)
+      .background(.buttonForeground)
       .clipShape(Circle())
   }
 }

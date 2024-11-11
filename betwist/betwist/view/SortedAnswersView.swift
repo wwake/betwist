@@ -10,7 +10,7 @@ struct SortedAnswersView: View {
           ForEach(answers.words(ofSize: size)) { answer in
             Text(verbatim: answer.word)
               .bold()
-              .foregroundStyle(answer.enteredByUser ? .black : .accent)
+              .foregroundStyle(answer.enteredByUser ? .userWordListForeground : .accent)
           }
         }
       }

@@ -45,7 +45,7 @@ struct AnswerInProgressView: View {
         Image(systemName: "checkmark.circle.fill")
           .accessibilityLabel(Text("Enter"))
           .font(.largeTitle)
-          .background(.white)
+          .background(.buttonForeground)
           .tint(.accent)
           .clipShape(Circle())
       }

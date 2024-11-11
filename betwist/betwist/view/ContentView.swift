@@ -3,14 +3,14 @@ import SwiftUI
 struct ContentView: View {
   static let showMakerView = true
   static var cellSize = 50.0
-
+  
   @Binding var game: Game
   @State private var submitIsInProgress = false
-
+  
   @State private var progress = 0.0
   @State private var showAnswers = false
   @State private var angle = Angle.zero
-
+  
   fileprivate func handleSelection(_ location: Location) {
     if !game.lastLocationSelected(was: location) {
       select(location)
@@ -20,23 +20,23 @@ struct ContentView: View {
       collectWord()
     }
   }
-
+  
   fileprivate func select(_ location: Location) {
     if submitIsInProgress { return }
     game.select(location)
   }
-
+  
   fileprivate func collectWord() {
     let word = game.answer
-
+    
     if submitIsInProgress { return }
     if word.isEmpty { return }
-
+    
     game.validate()
     guard game.hasValidSelection else { return }
-
+    
     submitIsInProgress = true
-
+    
     withAnimation(.easeInOut(duration: 0.75)) {
       progress = 1.0
     }
@@ -46,21 +46,21 @@ struct ContentView: View {
       submitIsInProgress = false
     }
   }
-
+  
   var body: some View {
     GeometryReader { geometry in
       VStack {
         Spacer()
           .frame(height: 25)
-
+        
         if ContentView.showMakerView {
           MakerView(game: game)
         }
-
+        
         AnswerInProgressView(game: $game, progress: progress, height: 500) {
           collectWord()
         }
-
+        
         HStack {
           Button {
             withAnimation {
@@ -73,12 +73,13 @@ struct ContentView: View {
             Image(systemName: "arrow.counterclockwise")
               .accessibilityLabel(Text("Rotate Left"))
           }.circled()
-
+          
           Text(game.message)
-          .foregroundStyle(.red)
-          .frame(width: 250, height: 40)
-          .opacity(game.message.isEmpty ? 0.0 : 1.0)
-
+            .bold()
+            .foregroundStyle(.red)
+            .frame(width: 250, height: 40)
+            .opacity(game.message.isEmpty ? 0.0 : 1.0)
+          
           Button {
             withAnimation {
               angle = .degrees(90)
@@ -92,7 +93,7 @@ struct ContentView: View {
           }
           .circled()
         }
-
+        
         InfiniteGrid(
           game: $game,
           handleSelection: handleSelection,
@@ -100,7 +101,7 @@ struct ContentView: View {
           boardSize: geometry.size.width
         )
         .rotationEffect(angle)
-
+        
         HStack(alignment: .top) {
           VStack {
             ScoreView(score: game.score)
@@ -113,7 +114,7 @@ struct ContentView: View {
             showAnswers.toggle()
           }
         }
-
+        
         Spacer()
       }
       .padding(.top, 40)
@@ -128,6 +129,6 @@ struct ContentView: View {
 
 #Preview {
   @Previewable @State var game = Game(2, ["A", "B", "C", "D"])
-
+  
   ContentView(game: $game)
 }
