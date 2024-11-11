@@ -93,7 +93,6 @@
 		911EEA002CAF30D7005C391D /* TheAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAnswers.swift; sourceTree = "<group>"; };
 		912847062CD9583800FA21BA /* ATrie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATrie.swift; sourceTree = "<group>"; };
 		912847082CD9586C00FA21BA /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
-		912847382CD969CA00FA21BA /* BetwistDictionary.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BetwistDictionary.xctestplan; sourceTree = "<group>"; };
 		9128473E2CDBF51700FA21BA /* MakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakerView.swift; sourceTree = "<group>"; };
 		912847402CDBF8E700FA21BA /* Character+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Codable.swift"; sourceTree = "<group>"; };
 		9128474A2CDC0C9600FA21BA /* WordLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLoader.swift; sourceTree = "<group>"; };
@@ -173,19 +172,19 @@
 		917642222CC6D8F00064AD48 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				917C44AA2CDD625D0041B790 /* SortedAnswersView.swift */,
-				917642232CC6D9C40064AD48 /* Button+viewModifier.swift */,
 				911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */,
+				91A387752CC144E500E00F7B /* AnswerInProgressView.swift */,
 				91A387732CC1427100E00F7B /* AnswersView.swift */,
+				917642232CC6D9C40064AD48 /* Button+viewModifier.swift */,
 				910C6FB12CBEED7500BD6A0D /* ColorChooser.swift */,
 				91FA96742C81333A0011BB7F /* ContentView.swift */,
 				910C6FAB2CBDB4BF00BD6A0D /* GridView.swift */,
-				91A387752CC144E500E00F7B /* AnswerInProgressView.swift */,
 				910C6FB52CBEF78D00BD6A0D /* InfiniteGrid.swift */,
 				910C6FAD2CBDB6AD00BD6A0D /* LetterView.swift */,
-				91A387712CC056C800E00F7B /* ScoreView.swift */,
-				910C6FAF2CBEED2000BD6A0D /* Text+italic.swift */,
 				9128473E2CDBF51700FA21BA /* MakerView.swift */,
+				91A387712CC056C800E00F7B /* ScoreView.swift */,
+				917C44AA2CDD625D0041B790 /* SortedAnswersView.swift */,
+				910C6FAF2CBEED2000BD6A0D /* Text+italic.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -200,7 +199,6 @@
 		91FA96662C81333A0011BB7F = {
 			isa = PBXGroup;
 			children = (
-				912847382CD969CA00FA21BA /* BetwistDictionary.xctestplan */,
 				91FA969C2C813F5E0011BB7F /* _todo.txt */,
 				912CFEE72C88A6B10074C066 /* LICENSE */,
 				912CFEE82C88A6B10074C066 /* README.md */,

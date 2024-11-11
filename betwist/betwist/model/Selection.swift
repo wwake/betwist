@@ -56,7 +56,6 @@ struct Selection {
 
   mutating func clear() {
     selection.removeAll()
-    blocked = false
   }
 
   func type(_ location: Location) -> SelectionType {

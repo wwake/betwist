@@ -14,6 +14,8 @@ struct Game {
   var twister: Twister
 
   var selection: Selection
+  var selectionIsBlocked = false
+
   var answers = Answers()
 
   var vocabulary: Vocabulary
@@ -50,8 +52,12 @@ struct Game {
     return grid[newLocation.row, newLocation.column]
   }
 
-  mutating func blockSelection() {
+  mutating func startAnimation() {
     selection.blocked = true
+  }
+
+  mutating func finishAnimation() {
+    selection.blocked = false
   }
 
   mutating func select(_ location: Location) {
@@ -95,8 +101,6 @@ struct Game {
   }
 
   mutating func submit() {
-    guard message.isEmpty && !answer.isEmpty else { return }
-
     for prefix in properPrefixes(of: answer) where vocabulary.contains(prefix) {
         answers.submit(prefix, isPrefix: true)
     }

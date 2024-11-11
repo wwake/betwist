@@ -10,19 +10,18 @@ struct ContentView: View {
   @State private var angle = Angle.zero
 
   fileprivate func collectWord() {
-    if game.answer.isEmpty { return }
-
     game.validate()
     if !game.message.isEmpty { return }
 
-    game.blockSelection()
+    game.startAnimation()
+
     withAnimation(.easeInOut(duration: 0.75)) {
       progress = 1.0
     }
     completion: {
       progress = 0.0
       game.submit()
-      game.deselectAll()
+      game.finishAnimation()
     }
   }
 

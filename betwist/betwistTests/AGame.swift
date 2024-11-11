@@ -70,26 +70,6 @@ struct AGame {
   }
 
   @Test
-  func collecting_empty_word_gets_ignored() {
-    var game = Game(2, ["A", "B", "C", "D"])
-    game.submit()
-    #expect(game.answers.isEmpty)
-    #expect(game.message.isEmpty)
-  }
-
-  @Test
-  func collecting_doesnt_collect_word_that_got_message() {
-    var game = Game(2, ["A", "B", "C", "D"])
-    game.select(Location(0, 1))
-    game.message = "Word is too short"
-
-    game.submit()
-
-    #expect(game.message == "Word is too short")
-    #expect(game.answers.isEmpty)
-  }
-
-  @Test
   func validating_empty_word_gets_no_message() {
     var game = Game(2, ["A", "B", "C", "D"])
 

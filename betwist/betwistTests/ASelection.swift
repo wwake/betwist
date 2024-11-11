@@ -125,16 +125,4 @@ struct ASelection {
 
     #expect(sut.answer.isEmpty)
   }
-
-  @Test
-  func clearing_removes_block() {
-    let grid = LetterGrid(2, ["A", "B", "C", "D"])
-    var sut = Selection(grid)
-    sut.blocked = true
-
-    sut.clear()
-    sut.select(Location(0, 0))
-
-    #expect(sut.answer == "A")
-  }
 }
