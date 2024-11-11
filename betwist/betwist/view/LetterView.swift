@@ -8,6 +8,7 @@ struct LetterView<S: InsettableShape>: View {
 
   var location: Location
   var collectWord: () -> Void
+  var select: (Location) -> Void
 
   var chooser = ColorChooser()
 
@@ -29,7 +30,7 @@ struct LetterView<S: InsettableShape>: View {
         if game.lastLocationSelected(was: location) {
           collectWord()
         } else {
-          game.select(location)
+          select(location)
         }
       }
       .accessibilityAddTraits(.isButton)

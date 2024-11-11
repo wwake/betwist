@@ -39,7 +39,7 @@ Trigger by swipe from the edge?
 
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 =====
-
+2024-11-11 - WORD-24-24
 2024-11-07 - WORD-24-23 - Compress the Trie
 * Pass in URL to Trie writer
 * Hand-verify "Generate Trie" since we've changed its method

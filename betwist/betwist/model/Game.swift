@@ -14,7 +14,7 @@ struct Game {
   var twister: Twister
 
   var selection: Selection
-  var submitIsActive = false
+  var submitIsInProgress = false
 
   var answers = Answers()
 
@@ -57,15 +57,14 @@ struct Game {
   }
 
   mutating func startAnimation() {
-    submitIsActive = true
+    submitIsInProgress = true
   }
 
   mutating func finishAnimation() {
-    submitIsActive = false
+    submitIsInProgress = false
   }
 
   mutating func select(_ location: Location) {
-    if submitIsActive { return }
     selection.select(twister[location])
     message = ""
   }

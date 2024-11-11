@@ -9,8 +9,13 @@ struct ContentView: View {
   @State private var showAnswers = false
   @State private var angle = Angle.zero
 
+  fileprivate func select(_ location: Location) {
+    if game.submitIsInProgress { return }
+    game.select(location)
+  }
+
   fileprivate func collectWord() {
-    if game.submitIsActive { return }
+    if game.submitIsInProgress { return }
 
     let word = game.answer
     game.validate()
@@ -74,7 +79,7 @@ struct ContentView: View {
           .circled()
         }
 
-        InfiniteGrid(game: $game, collectWord: collectWord, cellSize: Self.cellSize, boardSize: geometry.size.width)
+        InfiniteGrid(game: $game, collectWord: collectWord, select: select, cellSize: Self.cellSize, boardSize: geometry.size.width)
           .rotationEffect(angle)
 
         HStack(alignment: .top) {

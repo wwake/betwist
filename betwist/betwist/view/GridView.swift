@@ -4,6 +4,7 @@ struct GridView: View {
   var cellSize: Double
   @Binding var game: Game
   var collectWord: () -> Void
+  var select: (Location) -> Void
 
   var body: some View {
     VStack(spacing: 0) {
@@ -15,7 +16,8 @@ struct GridView: View {
               size: cellSize,
               game: $game,
               location: Location(row, column),
-              collectWord: collectWord
+              collectWord: collectWord,
+              select: select
             )
           }
         }
