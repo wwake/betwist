@@ -2,8 +2,7 @@ import SwiftUI
 
 struct InfiniteGrid: View {
   @Binding var game: Game
-  var collectWord: () -> Void
-  var select: (Location) -> Void
+  var handleSelection: (Location) -> Void
 
   var cellSize: Double
   var boardSize: Double
@@ -12,7 +11,7 @@ struct InfiniteGrid: View {
   @State private var priorOffset = CGSize.zero
 
   var body: some View {
-    let gridView = GridView(cellSize: cellSize, game: $game, collectWord: collectWord, select: select)
+    let gridView = GridView(cellSize: cellSize, game: $game, handleSelection: handleSelection)
 
     return VStack {
       VStack(spacing: 0) {

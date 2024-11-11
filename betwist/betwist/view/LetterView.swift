@@ -7,8 +7,7 @@ struct LetterView<S: InsettableShape>: View {
   @Binding var game: Game
 
   var location: Location
-  var collectWord: () -> Void
-  var select: (Location) -> Void
+  var handleSelection: (Location) -> Void
 
   var chooser = ColorChooser()
 
@@ -27,11 +26,7 @@ struct LetterView<S: InsettableShape>: View {
           .allowsHitTesting(false)
       }
       .onTapGesture {
-        if game.lastLocationSelected(was: location) {
-          collectWord()
-        } else {
-          select(location)
-        }
+        handleSelection(location)
       }
       .accessibilityAddTraits(.isButton)
   }

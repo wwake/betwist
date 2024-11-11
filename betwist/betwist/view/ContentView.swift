@@ -11,6 +11,16 @@ struct ContentView: View {
   @State private var showAnswers = false
   @State private var angle = Angle.zero
 
+  fileprivate func handleSelection(_ location: Location) {
+    if !game.lastLocationSelected(was: location) {
+      select(location)
+    } else if game.selection.count == 1 {
+      game.deselectAll()
+    } else {
+      collectWord()
+    }
+  }
+
   fileprivate func select(_ location: Location) {
     if submitIsInProgress { return }
     game.select(location)
@@ -25,7 +35,7 @@ struct ContentView: View {
 
     submitIsInProgress = true
 
-    withAnimation(.easeInOut(duration: 3.75)) {
+    withAnimation(.easeInOut(duration: 0.75)) {
       progress = 1.0
     }
     completion: {
@@ -83,8 +93,7 @@ struct ContentView: View {
 
         InfiniteGrid(
           game: $game,
-          collectWord: collectWord,
-          select: select,
+          handleSelection: handleSelection,
           cellSize: Self.cellSize,
           boardSize: geometry.size.width
         )
