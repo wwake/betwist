@@ -1,4 +1,3 @@
-* Click first letter to cancel whole word
 * Dark mode
 
 * Don't allow entering new words when in review mode (but do clear selection)
@@ -38,9 +37,11 @@ Trigger mirror by shake? [random mirror]
 Trigger by swipe from the edge?
 
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
+
 =====
 2024-11-11 - WORD-24-24 - Dark Mode
 * You can't select or submit while submit animation is in progress
+* Click first letter to cancel whole word
 
 2024-11-07 - WORD-24-23 - Compress the Trie
 * Pass in URL to Trie writer

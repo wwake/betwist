@@ -27,9 +27,11 @@ struct ContentView: View {
   }
 
   fileprivate func collectWord() {
-    if submitIsInProgress { return }
-
     let word = game.answer
+
+    if submitIsInProgress { return }
+    if word.isEmpty { return }
+
     game.validate()
     guard game.hasValidSelection else { return }
 
