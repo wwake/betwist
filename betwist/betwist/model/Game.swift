@@ -42,6 +42,10 @@ struct Game {
     selection.answer
   }
 
+  var hasAnswers: Bool {
+    !answers.isEmpty
+  }
+
   subscript(_ row: Int, _ column: Int) -> String {
     let newLocation = twister[Location(row, column)]
     return grid[newLocation.row, newLocation.column]
@@ -53,16 +57,21 @@ struct Game {
   }
 
   mutating func startAnimation() {
-    selection.blocked = true
+    selectionIsBlocked = true
   }
 
   mutating func finishAnimation() {
-    selection.blocked = false
+    selectionIsBlocked = false
   }
 
   mutating func select(_ location: Location) {
+    if selectionIsBlocked { return }
     selection.select(twister[location])
     message = ""
+  }
+
+  var hasSelection: Bool {
+    !selection.isEmpty
   }
 
   mutating func deselectAll() {
@@ -92,7 +101,13 @@ struct Game {
       message = "Duplicate word!"
     } else if !vocabulary.contains(answer) {
       message = "That's not a word!"
+    } else {
+      message = ""
     }
+  }
+
+  var hasValidSelection: Bool {
+    message.isEmpty
   }
 
   fileprivate func properPrefixes(of word: String) -> [String] {
@@ -108,6 +123,8 @@ struct Game {
     if vocabulary.contains(answer) {
       answers.submit(answer, isPrefix: false)
     }
+
+    deselectAll()
   }
 
   func lastLocationSelected(was location: Location) -> Bool {

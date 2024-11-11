@@ -19,6 +19,10 @@ struct Selection {
     selection.append(location)
   }
 
+  var isEmpty: Bool {
+    selection.isEmpty
+  }
+
   var count: Int {
     selection.count
   }

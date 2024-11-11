@@ -11,7 +11,7 @@ struct ContentView: View {
 
   fileprivate func collectWord() {
     game.validate()
-    if !game.message.isEmpty { return }
+    guard game.hasValidSelection else { return }
 
     game.startAnimation()
 

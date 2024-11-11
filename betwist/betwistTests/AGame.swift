@@ -134,7 +134,7 @@ struct AGame {
   }
 
   @Test
-  func collect_collects_prefix_words_long_to_short() {
+  func collect_collects_prefix_words_long_to_short_and_clears_selection() {
     var game = Game(
       3,
       [
@@ -155,10 +155,11 @@ struct AGame {
     game.submit()
 
     #expect(game.answers.preview == "MASTERY\nMASTER\nMAST")
+    #expect(game.selection.isEmpty)
   }
 
   @Test
-  func collect_rejects_invalid_word() {
+  func submit_rejects_invalid_words_and_deselects() {
     var game = Game(2, ["A", "B", "C", "D"], Vocabulary(["ABCD"]))
     game.select(Location(0, 1))
     game.select(Location(0, 0))
@@ -167,7 +168,8 @@ struct AGame {
 
     game.submit()
 
-    #expect(game.answers.wordCount == 0)
+    #expect(!game.hasAnswers)
+    #expect(!game.hasSelection)
   }
 
   @Test
