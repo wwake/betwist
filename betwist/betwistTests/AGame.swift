@@ -15,14 +15,14 @@ struct AGame {
     game.select(Location(0, 1))
     game.select(Location(1, 0))
     game.select(Location(1, 1))
-    game.submit()
+    game.submit(game.answer)
     game.deselectAll()
     game.select(Location(0, 1))
     game.select(Location(1, 1))
     game.select(Location(1, 0))
     game.select(Location(0, 0))
 
-    game.submit()
+    game.submit(game.answer)
 
     #expect(game.answers.preview == "BDCA\nABCD")
   }
@@ -110,7 +110,7 @@ struct AGame {
     game.select(Location(0, 1))
     game.select(Location(1, 0))
     game.select(Location(1, 1))
-    game.submit()
+    game.submit(game.answer)
     game.select(Location(0, 0))
     game.select(Location(0, 1))
     game.select(Location(1, 0))
@@ -152,7 +152,7 @@ struct AGame {
     game.select(Location(1, 1))
     game.select(Location(1, 2))
     game.select(Location(2, 0))
-    game.submit()
+    game.submit(game.answer)
 
     #expect(game.answers.preview == "MASTERY\nMASTER\nMAST")
     #expect(game.selection.isEmpty)
@@ -166,20 +166,24 @@ struct AGame {
     game.select(Location(1, 0))
     game.select(Location(1, 1))
 
-    game.submit()
+    game.submit(game.answer)
 
     #expect(!game.hasAnswers)
     #expect(!game.hasSelection)
   }
 
   @Test
-  func cant_select_while_blocked() {
+  func cant_submit_while_blocked() {
     var sut = Game(2, ["A", "B", "C", "D"], Vocabulary(["ABCD"]))
+    sut.select(Location(0, 0))
+    sut.select(Location(0, 1))
+    sut.select(Location(1, 0))
+    sut.select(Location(1, 1))
 
     sut.startAnimation()
-    sut.select(Location(0, 0))
+    sut.submit(sut.answer)
 
-    #expect(!sut.hasSelection)
+    #expect(!sut.hasAnswers)
   }
 
   @Test
@@ -257,7 +261,7 @@ struct AGame {
     game.select(Location(1, 0))
     game.select(Location(1, 1))
 
-    game.submit()
+    game.submit(game.answer)
 
     #expect(game.score == Score(wordCount: 1, letterCount: 4, mostLetters: 4))
   }

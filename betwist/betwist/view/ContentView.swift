@@ -10,17 +10,20 @@ struct ContentView: View {
   @State private var angle = Angle.zero
 
   fileprivate func collectWord() {
+    if game.submitIsActive { return }
+
+    let word = game.answer
     game.validate()
     guard game.hasValidSelection else { return }
 
     game.startAnimation()
 
-    withAnimation(.easeInOut(duration: 0.75)) {
+    withAnimation(.easeInOut(duration: 3.75)) {
       progress = 1.0
     }
     completion: {
       progress = 0.0
-      game.submit()
+      game.submit(word)
       game.finishAnimation()
     }
   }

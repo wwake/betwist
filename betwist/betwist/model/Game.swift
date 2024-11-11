@@ -14,7 +14,7 @@ struct Game {
   var twister: Twister
 
   var selection: Selection
-  var selectionIsBlocked = false
+  var submitIsActive = false
 
   var answers = Answers()
 
@@ -57,15 +57,15 @@ struct Game {
   }
 
   mutating func startAnimation() {
-    selectionIsBlocked = true
+    submitIsActive = true
   }
 
   mutating func finishAnimation() {
-    selectionIsBlocked = false
+    submitIsActive = false
   }
 
   mutating func select(_ location: Location) {
-    if selectionIsBlocked { return }
+    if submitIsActive { return }
     selection.select(twister[location])
     message = ""
   }
@@ -115,13 +115,13 @@ struct Game {
       .map { String(word.prefix($0)) }
   }
 
-  mutating func submit() {
-    for prefix in properPrefixes(of: answer) where vocabulary.contains(prefix) {
+  mutating func submit(_ word: String) {
+    for prefix in properPrefixes(of: word) where vocabulary.contains(prefix) {
         answers.submit(prefix, isPrefix: true)
     }
 
-    if vocabulary.contains(answer) {
-      answers.submit(answer, isPrefix: false)
+    if vocabulary.contains(word) {
+      answers.submit(word, isPrefix: false)
     }
 
     deselectAll()
