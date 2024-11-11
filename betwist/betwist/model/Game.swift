@@ -14,7 +14,6 @@ struct Game {
   var twister: Twister
 
   var selection: Selection
-  var submitIsInProgress = false
 
   var answers = Answers()
 
@@ -54,14 +53,6 @@ struct Game {
   subscript(_ location: Location) -> String {
     let newLocation = twister[location]
     return grid[newLocation.row, newLocation.column]
-  }
-
-  mutating func startAnimation() {
-    submitIsInProgress = true
-  }
-
-  mutating func finishAnimation() {
-    submitIsInProgress = false
   }
 
   mutating func select(_ location: Location) {

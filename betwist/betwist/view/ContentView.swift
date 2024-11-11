@@ -5,23 +5,25 @@ struct ContentView: View {
   static var cellSize = 50.0
 
   @Binding var game: Game
+  @State private var submitIsInProgress = false
+
   @State private var progress = 0.0
   @State private var showAnswers = false
   @State private var angle = Angle.zero
 
   fileprivate func select(_ location: Location) {
-    if game.submitIsInProgress { return }
+    if submitIsInProgress { return }
     game.select(location)
   }
 
   fileprivate func collectWord() {
-    if game.submitIsInProgress { return }
+    if submitIsInProgress { return }
 
     let word = game.answer
     game.validate()
     guard game.hasValidSelection else { return }
 
-    game.startAnimation()
+    submitIsInProgress = true
 
     withAnimation(.easeInOut(duration: 3.75)) {
       progress = 1.0
@@ -29,7 +31,7 @@ struct ContentView: View {
     completion: {
       progress = 0.0
       game.submit(word)
-      game.finishAnimation()
+      submitIsInProgress = false
     }
   }
 
@@ -79,8 +81,14 @@ struct ContentView: View {
           .circled()
         }
 
-        InfiniteGrid(game: $game, collectWord: collectWord, select: select, cellSize: Self.cellSize, boardSize: geometry.size.width)
-          .rotationEffect(angle)
+        InfiniteGrid(
+          game: $game,
+          collectWord: collectWord,
+          select: select,
+          cellSize: Self.cellSize,
+          boardSize: geometry.size.width
+        )
+        .rotationEffect(angle)
 
         HStack(alignment: .top) {
           VStack {
