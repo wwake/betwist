@@ -7,8 +7,6 @@ struct Selection {
 
   var selection = [Location]()
 
-  var blocked = false
-
   init(grid: LetterGrid) {
     self.grid = grid
   }
@@ -44,8 +42,6 @@ struct Selection {
   }
 
   mutating func select(_ location: Location) {
-    guard !blocked else { return }
-
     if let index = selection.firstIndex(of: location) {
       selection = selection.dropLast(count - index - 1)
       return

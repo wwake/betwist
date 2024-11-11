@@ -173,6 +173,16 @@ struct AGame {
   }
 
   @Test
+  func cant_select_while_blocked() {
+    var sut = Game(2, ["A", "B", "C", "D"], Vocabulary(["ABCD"]))
+
+    sut.startAnimation()
+    sut.select(Location(0, 0))
+
+    #expect(!sut.hasSelection)
+  }
+
+  @Test
   func finds_all_answers_in_1_cell_board() {
     let game = Game(1, ["A"], Vocabulary(["A"]))
     #expect(game.allAnswers == Set(["A"]))

@@ -114,15 +114,4 @@ struct ASelection {
     #expect(sut.type(Location(3, 2)) == .open)
     #expect(sut.type(Location(3, 3)) == .open)
   }
-
-  @Test
-  func ignores_selection_while_blocked() {
-    let grid = LetterGrid(2, ["A", "B", "C", "D"])
-    var sut = Selection(grid)
-    sut.blocked = true
-
-    sut.select(Location(0, 0))
-
-    #expect(sut.answer.isEmpty)
-  }
 }
