@@ -3,7 +3,7 @@ import SwiftUI
 struct ContentView: View {
   static let showMakerView = true
   static var cellSize = 50.0
-  
+
   @Binding var game: Game
   @State private var submitIsInProgress = false
   
@@ -114,7 +114,7 @@ struct ContentView: View {
             showAnswers.toggle()
           }
         }
-        
+
         Spacer()
       }
       .padding(.top, 40)
@@ -127,6 +127,8 @@ struct ContentView: View {
     .onChange(of: game.mode) { _, new in
       switch game.mode {
       case .play:
+        submitIsInProgress = false
+        game.message = ""
         break
 
       case .review:
