@@ -134,7 +134,7 @@ struct Game {
   var allAnswers: Set<String> {
     var result = Set<String>()
     let selection = Selection(grid)
-    tryAllExtensions(&result, selection, availableNeighbors(selection))
+    tryAllExtensions(&result, selection)
     return result
   }
 
@@ -161,7 +161,9 @@ struct Game {
     return neighbors
   }
 
-  fileprivate func tryAllExtensions(_ result: inout Set<String>, _ selection: Selection, _ neighbors: Set<Location>) {
+  fileprivate func tryAllExtensions(_ result: inout Set<String>, _ selection: Selection) {
+    let neighbors = availableNeighbors(selection)
+
     for location in neighbors {
       let newSelection = Selection(selection, location)
       let searchResult = vocabulary.containsAndPrefixes(newSelection.answer)
@@ -169,8 +171,7 @@ struct Game {
         result.insert(newSelection.answer)
       }
       if searchResult.isProperPrefix {
-        let neighbors = availableNeighbors(newSelection)
-        tryAllExtensions(&result, newSelection, neighbors)
+        tryAllExtensions(&result, newSelection)
       }
     }
   }
