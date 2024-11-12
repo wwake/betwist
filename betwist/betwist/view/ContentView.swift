@@ -124,6 +124,16 @@ struct ContentView: View {
         AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
       }
     }
+    .onChange(of: game.mode) { _, new in
+      switch game.mode {
+      case .play:
+        break
+
+      case .review:
+        submitIsInProgress = true
+        game.message = "Game Over"
+      }
+    }
   }
 }
 

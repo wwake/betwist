@@ -1,5 +1,10 @@
+* Show a "Game Over" message
 
 * Don't allow entering new words when in review mode (but do clear selection)
+* Don't allow selecting in review mode
+* Don't score words after game over
+
+* Defect - system-found words reuse letters but shouldn't
 
 * iPad is so big it overwhelms our approach to infinite grid [limit size artificially?]
 
@@ -38,6 +43,9 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2024-11-12 - WORD-24-25 - Enforce Game Over
+
+
 2024-11-11 - WORD-24-24 - Dark Mode
 * You can't select or submit while submit animation is in progress
 * Click first letter to cancel whole word
