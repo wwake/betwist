@@ -47,6 +47,17 @@ struct ALocation {
   }
 
   @Test
+  func all_neighbors_have_positive_locations() {
+    let sut = Location(0, 0)
+    let result = sut.allNeighbors(wrap: 4)
+    #expect(result == [
+      Location(3, 3), Location(3, 0), Location(3, 1),
+      Location(0, 3), Location(0, 1),
+      Location(1, 3), Location(1, 0), Location(1, 1),
+    ])
+  }
+
+  @Test
   func moves_by_a_delta() {
     #expect(Location(3, 5).movedBy(DeltaLocation(1, -3), wrap: 6) == Location(4, 2))
     #expect(Location(1, 2).movedBy(DeltaLocation(5, -3), wrap: 4) == Location(2, 3))
