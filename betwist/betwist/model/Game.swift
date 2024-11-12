@@ -145,7 +145,7 @@ struct Game {
 
     let locations = selection.last!.allNeighbors(wrap: size)
 
-    return Set(locations)
+    return locations
       .filter {
         type(at: $0, in: selection) == .neighbor
       }
