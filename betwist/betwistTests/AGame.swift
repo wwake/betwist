@@ -199,7 +199,7 @@ struct AGame {
     let game = Game(2, ["F", "U", "N", "D"])
     let selection = Selection(game.grid)
 
-    #expect(game.openNeighbors(selection) == [Location(0, 0), Location(0, 1), Location(1, 0), Location(1, 1)])
+    #expect(game.availableNeighbors(selection) == [Location(0, 0), Location(0, 1), Location(1, 0), Location(1, 1)])
   }
 
   @Test
@@ -208,7 +208,7 @@ struct AGame {
     var selection = Selection(game.grid)
     selection.select(Location(0, 0))
 
-    #expect(game.openNeighbors(selection) == [Location(0, 1), Location(1, 0), Location(1, 1)])
+    #expect(game.availableNeighbors(selection) == [Location(0, 1), Location(1, 0), Location(1, 1)])
   }
 
   @Test
@@ -220,7 +220,7 @@ struct AGame {
     selection.select(Location(1, 0))
     selection.select(Location(0, 0))
 
-    #expect(game.openNeighbors(selection) == [Location(1, 1)])
+    #expect(game.availableNeighbors(selection) == [Location(1, 1)])
   }
 
   @Test
@@ -237,6 +237,12 @@ struct AGame {
     #expect(result.contains("FUNDER"))
     #expect(result.contains("FUNDERS"))
     #expect(result.contains("ERSTWHILE"))
+  }
+
+  @Test()
+  func doesnt_reuse_letters_in_finding_all_answers() {
+    let game = Game(2, ["T", "Z", "E", "D"], Vocabulary(["ZED", "TZETZE"]))
+    #expect(game.allAnswers == Set(["ZED"]))
   }
 
   @Test()

@@ -134,11 +134,11 @@ struct Game {
   var allAnswers: Set<String> {
     var result = Set<String>()
     let selection = Selection(grid)
-    tryAllExtensions(&result, selection, openNeighbors(selection))
+    tryAllExtensions(&result, selection, availableNeighbors(selection))
     return result
   }
 
-  func openNeighbors(_ selection: Selection) -> Set<Location> {
+  func availableNeighbors(_ selection: Selection) -> Set<Location> {
     guard selection.last != nil else {
       return allLocations
     }
@@ -147,8 +147,7 @@ struct Game {
 
     return Set(locations)
       .filter {
-        type(at: $0, in: selection) == .open
-        || type(at: $0, in: selection) == .neighbor
+        type(at: $0, in: selection) == .neighbor
       }
   }
 
@@ -170,7 +169,7 @@ struct Game {
         result.insert(newSelection.answer)
       }
       if searchResult.isProperPrefix {
-        let neighbors = openNeighbors(newSelection)
+        let neighbors = availableNeighbors(newSelection)
         tryAllExtensions(&result, newSelection, neighbors)
       }
     }
