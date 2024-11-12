@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-  static let showMakerView = true
+  static let showMakerView = false
   static var cellSize = 50.0
 
   @Binding var game: Game

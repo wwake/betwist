@@ -1,8 +1,9 @@
-* Defect - system-found words reuse letters but shouldn't
-
-* iPad is so big it overwhelms our approach to infinite grid [limit size artificially?]
+* Allow landscape mode by putting current header and score above the grid, "your words" to the right
+* Change end of game - New Game button starts "End Game" -> shows system words, maybe activates a button for that too, and changes the button "New Game" to generate new grid
 
 * Better letter generation
+
+* Disable "Trie Generation" button
 
 ====
 
@@ -44,6 +45,12 @@ Game Over
 * Don't allow selecting in review mode
 * Don't score words after game over
 
+Defect
+* Defect - system-found words reuse letters but shouldn't. We couldn't reproduce though we made changes to word finding.
+
+iPad
+* Made infinite grid "bigger" so it works on iPad
+* Turned off device rotation as landscape doesn't look good
 
 2024-11-11 - WORD-24-24 - Dark Mode
 * You can't select or submit while submit animation is in progress

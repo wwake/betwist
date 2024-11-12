@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct InfiniteGrid: View {
+  let maxGrids = 5
+
   @Binding var game: Game
   var handleSelection: (Location) -> Void
 
@@ -15,9 +17,9 @@ struct InfiniteGrid: View {
 
     return VStack {
       VStack(spacing: 0) {
-        ForEach(1...3, id: \.self) { _ in
+        ForEach(1...maxGrids, id: \.self) { _ in
           HStack(spacing: 0) {
-            ForEach(1...3, id: \.self) { _ in
+            ForEach(1...maxGrids, id: \.self) { _ in
               gridView
             }
           }
