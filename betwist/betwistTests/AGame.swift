@@ -2,6 +2,18 @@
 import Testing
 
 struct AGame {
+  fileprivate func split(_ input: [String]) -> [String] {
+    input
+      .map { Array($0) }
+      .flatMap { $0 }
+      .map { String($0) }
+  }
+
+  @Test
+  func helper_split_turns_array_of_strings_to_one_letter_strings() {
+    #expect(split(["ABC", "D", "EF"]) == ["A", "B", "C", "D", "E", "F"])
+  }
+
   @Test
   func starts_in_play_mode() {
     let sut = Game(2, ["A", "B", "C", "D"])
@@ -239,13 +251,23 @@ struct AGame {
     #expect(result.contains("ERSTWHILE"))
   }
 
-  @Test()
+  @Test
   func doesnt_reuse_letters_in_finding_all_answers() {
     let game = Game(2, ["T", "Z", "E", "D"], Vocabulary(["ZED", "TZETZE"]))
     #expect(game.allAnswers == Set(["ZED"]))
   }
 
-  @Test()
+  @Test
+  func doesnt_reuse_letters_in_finding_all_answers_concoction() {
+    let game = Game(
+      5,
+      split(["IUHHS", "NKBHA", "JEEEU", "CNZEI", "ROBKT"]),
+      Vocabulary(["CONE", "CONCOCT", "CONCOCTION"])
+    )
+    #expect(game.allAnswers == Set(["CONE"]))
+  }
+
+  @Test
   func scores_answers() {
     var game = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
     game.select(Location(0, 0))
