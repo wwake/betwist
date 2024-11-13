@@ -17,5 +17,6 @@ struct RotateButton: View {
       Image(systemName: clockwise ? "arrow.clockwise" : "arrow.counterclockwise")
         .accessibilityLabel(Text(clockwise ? "Rotate Right" : "Rotate Left"))
     }.circled()
+      .padding([.bottom], 6)
   }
 }
