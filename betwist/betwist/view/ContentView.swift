@@ -4,7 +4,8 @@ struct ContentView: View {
   static let showMakerView = false
   static var cellSize = 50.0
 
-  @Environment(\.verticalSizeClass) var verticalSizeClass
+  @Environment(\.verticalSizeClass)
+  var verticalSizeClass
 
   @Binding var game: Game
   @State private var submitIsInProgress = false
@@ -81,11 +82,8 @@ struct ContentView: View {
 
           Spacer()
 
-          Text(game.message)
-            .bold()
-            .foregroundStyle(.red)
+          MessageView(message: game.message)
             .frame(width: 250, height: 40)
-            .opacity(game.message.isEmpty ? 0.0 : 1.0)
 
           Spacer()
 
@@ -106,13 +104,10 @@ struct ContentView: View {
           if verticalSizeClass == .compact {
             VStack {
               ScoreView(score: game.score)
-              Button("New Game") {
-                game = Game(game.size, GameMaker(game.size), game.vocabulary)
-              }
-              .capsuled()
+              NewGameButton(game: $game)
             }
           }
-          AnswersView(game: $game) {
+          AnswersSummaryView(game: $game) {
             showAnswers.toggle()
           }
         }

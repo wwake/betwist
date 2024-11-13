@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AnswersView: View {
+struct AnswersSummaryView: View {
   @Binding var game: Game
   var viewAction: () -> Void
 
