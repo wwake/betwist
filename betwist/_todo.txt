@@ -1,9 +1,13 @@
+
 * Allow landscape mode by putting current header and score above the grid, "your words" to the right
+
 * Change end of game - New Game button starts "End Game" -> shows system words, maybe activates a button for that too, and changes the button "New Game" to generate new grid
 
 * Better letter generation
 
 * Disable "Trie Generation" button
+
+* Q => QU
 
 ====
 
@@ -38,6 +42,9 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2024-11-13 - WORD-24-26 - iPad Support
+
+
 2024-11-12 - WORD-24-25 - Enforce Game Over
 Game Over
 * Show a "Game Over" message

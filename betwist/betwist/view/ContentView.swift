@@ -4,6 +4,8 @@ struct ContentView: View {
   static let showMakerView = false
   static var cellSize = 50.0
 
+  @Environment(\.verticalSizeClass) var verticalSizeClass
+
   @Binding var game: Game
   @State private var submitIsInProgress = false
 
@@ -57,22 +59,27 @@ struct ContentView: View {
           MakerView(game: game)
         }
 
-        AnswerInProgressView(game: $game, progress: progress, height: 500) {
-          collectWord()
+        HStack {
+          Spacer()
+          AnswerInProgressView(game: $game, progress: progress, height: 500) {
+            collectWord()
+          }
+          Spacer()
+          if verticalSizeClass == .regular {
+            HStack {
+              ScoreView(score: game.score)
+              NewGameButton(game: $game)
+            }
+            Spacer()
+          }
         }
+        .zIndex(5)
 
         HStack {
-          Button {
-            withAnimation {
-              angle = .degrees(-90)
-              game.rotateLeft()
-            } completion: {
-              angle = .zero
-            }
-          } label: {
-            Image(systemName: "arrow.counterclockwise")
-              .accessibilityLabel(Text("Rotate Left"))
-          }.circled()
+          RotateButton(clockwise: false, angle: $angle, game: $game)
+          .padding([.leading], 20)
+
+          Spacer()
 
           Text(game.message)
             .bold()
@@ -80,18 +87,10 @@ struct ContentView: View {
             .frame(width: 250, height: 40)
             .opacity(game.message.isEmpty ? 0.0 : 1.0)
 
-          Button {
-            withAnimation {
-              angle = .degrees(90)
-              game.rotateRight()
-            } completion: {
-              angle = .zero
-            }
-          } label: {
-            Image(systemName: "arrow.clockwise")
-              .accessibilityLabel(Text("Rotate Right"))
-          }
-          .circled()
+          Spacer()
+
+          RotateButton(clockwise: true, angle: $angle, game: $game)
+          .padding([.trailing], 20)
         }
 
         InfiniteGrid(
@@ -101,14 +100,17 @@ struct ContentView: View {
           boardSize: geometry.size.width
         )
         .rotationEffect(angle)
+        .zIndex(1)
 
         HStack(alignment: .top) {
-          VStack {
-            ScoreView(score: game.score)
-            Button("New Game") {
-              game = Game(game.size, GameMaker(game.size), game.vocabulary)
+          if verticalSizeClass == .compact {
+            VStack {
+              ScoreView(score: game.score)
+              Button("New Game") {
+                game = Game(game.size, GameMaker(game.size), game.vocabulary)
+              }
+              .capsuled()
             }
-            .capsuled()
           }
           AnswersView(game: $game) {
             showAnswers.toggle()

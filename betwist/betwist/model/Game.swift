@@ -180,11 +180,11 @@ struct Game {
     Score(wordCount: answers.wordCount, letterCount: answers.letterCount, mostLetters: answers.mostLetters)
   }
 
-  mutating func rotateLeft() {
+  mutating func rotate(clockwise: Bool) {
+    if clockwise {
+      twister.rotateRight()
+    } else {
       twister.rotateLeft()
-  }
-
-  mutating func rotateRight() {
-    twister.rotateRight()
+    }
   }
 }
