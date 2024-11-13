@@ -3,8 +3,9 @@ import SwiftUI
 struct RotatingGridView: View {
   static var cellSize = 50.0
 
+  @State private var angle = Angle.zero
+
   @Binding var game: Game
-  @Binding var angle: Angle
   var handleSelection: (Location) -> Void
   var width: CGFloat
 

@@ -11,7 +11,6 @@ struct ContentView: View {
 
   @State private var progress = 0.0
   @State private var showAnswers = false
-  @State private var angle = Angle.zero
 
   fileprivate func handleSelection(_ location: Location) {
     if !game.lastLocationSelected(was: location) {
@@ -77,7 +76,7 @@ struct ContentView: View {
         MessageView(message: game.message)
           .frame(width: 250, height: 40)
 
-        RotatingGridView(game: $game, angle: $angle, handleSelection: handleSelection, width: geometry.size.width)
+        RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width)
 
         HStack(alignment: .top) {
           if verticalSizeClass == .compact {
