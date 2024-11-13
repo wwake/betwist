@@ -2,7 +2,6 @@ import SwiftUI
 
 struct ContentView: View {
   static let showMakerView = false
-  static var cellSize = 50.0
 
   @Environment(\.verticalSizeClass)
   var verticalSizeClass
@@ -75,30 +74,10 @@ struct ContentView: View {
           }
         }
         .zIndex(5)
+        MessageView(message: game.message)
+          .frame(width: 250, height: 40)
 
-        HStack {
-          RotateButton(clockwise: false, angle: $angle, game: $game)
-          .padding([.leading], 20)
-
-          Spacer()
-
-          MessageView(message: game.message)
-            .frame(width: 250, height: 40)
-
-          Spacer()
-
-          RotateButton(clockwise: true, angle: $angle, game: $game)
-          .padding([.trailing], 20)
-        }
-
-        InfiniteGrid(
-          game: $game,
-          handleSelection: handleSelection,
-          cellSize: Self.cellSize,
-          boardSize: geometry.size.width
-        )
-        .rotationEffect(angle)
-        .zIndex(1)
+        RotatingGridView(game: $game, angle: $angle, handleSelection: handleSelection, width: geometry.size.width)
 
         HStack(alignment: .top) {
           if verticalSizeClass == .compact {

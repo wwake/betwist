@@ -53,6 +53,7 @@
 		91C8BFA52CE53AC5009810AF /* NewGameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFA42CE53AC5009810AF /* NewGameButton.swift */; };
 		91C8BFA72CE53F2A009810AF /* RotateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFA62CE53F2A009810AF /* RotateButton.swift */; };
 		91C8BFA92CE54003009810AF /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFA82CE54003009810AF /* MessageView.swift */; };
+		91C8BFAB2CE54236009810AF /* RotatingGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFAA2CE54236009810AF /* RotatingGridView.swift */; };
 		91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96722C81333A0011BB7F /* betwistApp.swift */; };
 		91FA96752C81333A0011BB7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96742C81333A0011BB7F /* ContentView.swift */; };
 		91FA967A2C81333E0011BB7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FA96792C81333E0011BB7F /* Preview Assets.xcassets */; };
@@ -119,6 +120,7 @@
 		91C8BFA42CE53AC5009810AF /* NewGameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameButton.swift; sourceTree = "<group>"; };
 		91C8BFA62CE53F2A009810AF /* RotateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateButton.swift; sourceTree = "<group>"; };
 		91C8BFA82CE54003009810AF /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		91C8BFAA2CE54236009810AF /* RotatingGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingGridView.swift; sourceTree = "<group>"; };
 		91FA966F2C81333A0011BB7F /* betwist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betwist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA96722C81333A0011BB7F /* betwistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = betwistApp.swift; sourceTree = "<group>"; };
 		91FA96742C81333A0011BB7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		917642222CC6D8F00064AD48 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				91C8BFAA2CE54236009810AF /* RotatingGridView.swift */,
 				91C8BFA82CE54003009810AF /* MessageView.swift */,
 				911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */,
 				91A387752CC144E500E00F7B /* AnswerInProgressView.swift */,
@@ -405,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C8BFAB2CE54236009810AF /* RotatingGridView.swift in Sources */,
 				911EE9FD2CAF26E4005C391D /* AnswerDetailsView.swift in Sources */,
 				910C97AC2CA48AF400893B79 /* Selection.swift in Sources */,
 				910C6FB82CC0391500BD6A0D /* CGSize+wrap.swift in Sources */,
