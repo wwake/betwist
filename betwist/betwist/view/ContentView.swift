@@ -1,5 +1,9 @@
 import SwiftUI
 
+enum Orientation {
+  case landscape, portrait
+}
+
 struct ContentView: View {
   static let showMakerView = false
 
@@ -48,55 +52,120 @@ struct ContentView: View {
     }
   }
 
-  var body: some View {
-    GeometryReader { geometry in
-      VStack {
+  fileprivate func regularPortraitView(_ geometry: GeometryProxy) -> some View {
+    return VStack {
+      Spacer()
+        .frame(height: 25)
+
+      if ContentView.showMakerView {
+        MakerView(game: game)
+      }
+
+      HStack {
         Spacer()
-          .frame(height: 25)
-
-        if ContentView.showMakerView {
-          MakerView(game: game)
+        AnswerInProgressView(game: $game, progress: progress, height: 500) {
+          collectWord()
         }
-
-        HStack {
-          Spacer()
-          AnswerInProgressView(game: $game, progress: progress, height: 500) {
-            collectWord()
+        Spacer()
+        if verticalSizeClass == .regular {
+          HStack {
+            ScoreView(score: game.score)
+            NewGameButton(game: $game)
           }
           Spacer()
-          if verticalSizeClass == .regular {
-            HStack {
-              ScoreView(score: game.score)
-              NewGameButton(game: $game)
-            }
-            Spacer()
+        }
+      }
+      .zIndex(5)
+      MessageView(message: game.message)
+        .frame(width: 250, height: 40)
+        .offset(y: 50)
+
+      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width)
+
+      HStack(alignment: .top) {
+        if verticalSizeClass == .compact {
+          VStack {
+            ScoreView(score: game.score)
+            NewGameButton(game: $game)
           }
         }
-        .zIndex(5)
-        MessageView(message: game.message)
-          .frame(width: 250, height: 40)
+        AnswersSummaryView(game: $game) {
+          showAnswers.toggle()
+        }
+      }
 
-        RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width)
+      Spacer()
+    }
+    .padding(.top, 40)
+    .ignoresSafeArea()
+    .background(Gradient(colors: [.gray, .black]).opacity(0.5))
+    .sheet(isPresented: $showAnswers) {
+      AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
+    }
+  }
 
-        HStack(alignment: .top) {
-          if verticalSizeClass == .compact {
-            VStack {
-              ScoreView(score: game.score)
-              NewGameButton(game: $game)
-            }
-          }
-          AnswersSummaryView(game: $game) {
+  fileprivate func regularLandscapeView(_ geometry: GeometryProxy) -> some View {
+    HStack(alignment: .top) {
+      VStack {
+        AnswerInProgressView(game: $game, progress: progress, height: 500) {
+          collectWord()
+        }
+
+        VStack(spacing: 8) {
+          MessageView(message: game.message)
+            .font(.title)
+            .frame(width: 250, height: 40)
+            .padding([.bottom], 20)
+
+          ScoreView(score: game.score)
+            .font(.title)
+            .padding([.bottom], 20)
+
+          NewGameButton(game: $game)
+            .font(.title)
+            .padding([.bottom], 20)
+
+          YouFoundView(answers: game.answers)
+          .font(.title)
+          .frame(width: 250)
+
+          Button("More...") {
             showAnswers.toggle()
           }
+          .capsuled()
+          .font(.title)
+          .padding(8)
         }
-
-        Spacer()
       }
-      .padding(.top, 40)
-      .ignoresSafeArea()
-      .background(Gradient(colors: [.gray, .black]).opacity(0.5))
-      .sheet(isPresented: $showAnswers) {
-        AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
+      .zIndex(5)
+
+      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width)
+
+    }
+    .padding(.top, 40)
+    .ignoresSafeArea()
+    .background(Gradient(colors: [.gray, .black]).opacity(0.5))
+    .sheet(isPresented: $showAnswers) {
+      AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
+    }
+  }
+
+
+  var body: some View {
+    GeometryReader { geometry in
+      if ContentView.showMakerView {
+        MakerView(game: game)
+      }
+
+      switch (verticalSizeClass, orientation(geometry)) {
+      case (.regular, .portrait):
+        regularPortraitView(geometry)
+
+      case (.regular, .landscape):
+        regularLandscapeView(geometry)
+
+      default:
+        Text("Not yet")
       }
     }
     .onChange(of: game.mode) { _, new in
@@ -110,6 +179,10 @@ struct ContentView: View {
         game.message = "Game Over"
       }
     }
+  }
+
+  fileprivate func orientation(_ geometry: GeometryProxy) -> Orientation {
+    geometry.size.width > geometry.size.height ? .landscape : .portrait
   }
 }
 

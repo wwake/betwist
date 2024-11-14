@@ -54,6 +54,7 @@
 		91C8BFA72CE53F2A009810AF /* RotateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFA62CE53F2A009810AF /* RotateButton.swift */; };
 		91C8BFA92CE54003009810AF /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFA82CE54003009810AF /* MessageView.swift */; };
 		91C8BFAB2CE54236009810AF /* RotatingGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFAA2CE54236009810AF /* RotatingGridView.swift */; };
+		91C8BFAF2CE6863D009810AF /* YouFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFAE2CE6863D009810AF /* YouFoundView.swift */; };
 		91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96722C81333A0011BB7F /* betwistApp.swift */; };
 		91FA96752C81333A0011BB7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96742C81333A0011BB7F /* ContentView.swift */; };
 		91FA967A2C81333E0011BB7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FA96792C81333E0011BB7F /* Preview Assets.xcassets */; };
@@ -121,6 +122,7 @@
 		91C8BFA62CE53F2A009810AF /* RotateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateButton.swift; sourceTree = "<group>"; };
 		91C8BFA82CE54003009810AF /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		91C8BFAA2CE54236009810AF /* RotatingGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingGridView.swift; sourceTree = "<group>"; };
+		91C8BFAE2CE6863D009810AF /* YouFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouFoundView.swift; sourceTree = "<group>"; };
 		91FA966F2C81333A0011BB7F /* betwist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betwist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA96722C81333A0011BB7F /* betwistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = betwistApp.swift; sourceTree = "<group>"; };
 		91FA96742C81333A0011BB7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				91C8BFAA2CE54236009810AF /* RotatingGridView.swift */,
 				91C8BFA82CE54003009810AF /* MessageView.swift */,
 				911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */,
+				91C8BFAE2CE6863D009810AF /* YouFoundView.swift */,
 				91A387752CC144E500E00F7B /* AnswerInProgressView.swift */,
 				91A387732CC1427100E00F7B /* AnswersSummaryView.swift */,
 				917642232CC6D9C40064AD48 /* Button+viewModifier.swift */,
@@ -438,6 +441,7 @@
 				91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */,
 				9181F09C2CA3444A0091A771 /* LetterGrid.swift in Sources */,
 				912847412CDBF8E700FA21BA /* Character+Codable.swift in Sources */,
+				91C8BFAF2CE6863D009810AF /* YouFoundView.swift in Sources */,
 				910C6FAC2CBDB4BF00BD6A0D /* GridView.swift in Sources */,
 				912847512CDC10E100FA21BA /* Trie+io.swift in Sources */,
 				911EE9F22CAC8096005C391D /* Twister.swift in Sources */,

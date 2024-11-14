@@ -9,15 +9,6 @@ struct AnswerDetailsView: View {
 
   @Binding var mode: GameMode
 
-  fileprivate func wordsYouFound() -> some View {
-    VStack {
-      Text("You Found")
-        .font(.title2)
-
-      SortedAnswersView(answers: answers)
-    }
-  }
-
   fileprivate func wordsSystemFound() -> some View {
     VStack {
       Text("System Found")
@@ -48,7 +39,7 @@ struct AnswerDetailsView: View {
   var body: some View {
     VStack {
       HStack {
-        wordsYouFound()
+        YouFoundView(answers: answers)
           .frame(maxWidth: .infinity)
 
         Divider()

@@ -6,7 +6,6 @@ struct ScoreView: View {
   var body: some View {
     VStack(alignment: .leading) {
       Text("Score")
-        .font(.title3)
 
       Text("Words: \(score.wordCount)")
 
@@ -15,5 +14,7 @@ struct ScoreView: View {
       Text("Most Letters: \(score.mostLetters)")
     }
     .bold()
+    .padding(12)
+    .border(.white, width: 2)
   }
 }
