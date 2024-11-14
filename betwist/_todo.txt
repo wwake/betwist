@@ -1,4 +1,7 @@
 
+* Check why there's space at the top of the compactPortrait view
+* Make Score's text scale down from title size
+
 * Allow landscape mode by putting current header and score above the grid, "your words" to the right
 
 * Change end of game - New Game button starts "End Game" -> shows system words, maybe activates a button for that too, and changes the button "New Game" to generate new grid

@@ -9,12 +9,6 @@ struct AnswerInProgressView: View {
 
   var body: some View {
     HStack {
-      Image("TheIcon")
-        .resizable()
-        .scaledToFit()
-        .frame(width: 40, height: 40)
-        .accessibilityLabel(Text("Betwist"))
-
       ZStack {
         Text(" ")
           .frame(width: 230, height: 40)

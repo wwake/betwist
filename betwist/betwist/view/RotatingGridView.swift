@@ -16,6 +16,18 @@ struct RotatingGridView: View {
           .padding([.leading], 20)
 
         Spacer()
+        Image("TheIcon")
+          .resizable()
+          .scaledToFit()
+          .frame(width: 40, height: 40)
+          .accessibilityLabel(Text("Betwist"))
+
+        Text("Betwist")
+          .bold()
+          .font(.title)
+          .padding([.leading], 8)
+
+        Spacer()
 
         RotateButton(clockwise: true, angle: $angle, game: $game)
           .padding([.trailing], 20)

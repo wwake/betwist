@@ -17,6 +17,5 @@ struct AnswersSummaryView: View {
       .capsuled()
     }
     .bold()
-    .frame(width: 150)
   }
 }

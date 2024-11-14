@@ -10,6 +10,9 @@ struct ContentView: View {
   @Environment(\.verticalSizeClass)
   var verticalSizeClass
 
+  @Environment(\.horizontalSizeClass)
+  var horizontalSizeClass
+
   @Binding var game: Game
   @State private var submitIsInProgress = false
 
@@ -54,9 +57,6 @@ struct ContentView: View {
 
   fileprivate func regularPortraitView(_ geometry: GeometryProxy) -> some View {
     return VStack {
-      Spacer()
-        .frame(height: 25)
-
       if ContentView.showMakerView {
         MakerView(game: game)
       }
@@ -67,15 +67,15 @@ struct ContentView: View {
           collectWord()
         }
         Spacer()
-        if verticalSizeClass == .regular {
-          HStack {
-            ScoreView(score: game.score)
-            NewGameButton(game: $game)
-          }
-          Spacer()
+
+        HStack {
+          ScoreView(score: game.score)
+          NewGameButton(game: $game)
         }
+        Spacer()
       }
       .zIndex(5)
+
       MessageView(message: game.message)
         .frame(width: 250, height: 40)
         .offset(y: 50)
@@ -83,12 +83,6 @@ struct ContentView: View {
       RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width)
 
       HStack(alignment: .top) {
-        if verticalSizeClass == .compact {
-          VStack {
-            ScoreView(score: game.score)
-            NewGameButton(game: $game)
-          }
-        }
         AnswersSummaryView(game: $game) {
           showAnswers.toggle()
         }
@@ -97,8 +91,48 @@ struct ContentView: View {
       Spacer()
     }
     .padding(.top, 40)
-    .ignoresSafeArea()
-    .background(Gradient(colors: [.gray, .black]).opacity(0.5))
+    .sheet(isPresented: $showAnswers) {
+      AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
+    }
+  }
+
+  fileprivate func compactPortraitView(_ geometry: GeometryProxy) -> some View {
+    return VStack {
+      if ContentView.showMakerView {
+        MakerView(game: game)
+      }
+
+      AnswerInProgressView(game: $game, progress: progress, height: 500) {
+        collectWord()
+      }
+      .zIndex(5)
+      .border(.green)
+
+      MessageView(message: game.message)
+        .frame(height: 32)
+        .frame(maxWidth: .infinity)
+        .font(.title)
+        .border(.red)
+
+      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width)
+
+      HStack(alignment: .top) {
+        VStack {
+          ScoreView(score: game.score)
+            .font(.title3)
+
+          NewGameButton(game: $game)
+        }
+
+        AnswersSummaryView(game: $game) {
+          showAnswers.toggle()
+        }
+      }
+      .padding([.top], 12)
+
+      Spacer()
+    }
+    .padding(.top, 40)
     .sheet(isPresented: $showAnswers) {
       AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
     }
@@ -110,12 +144,14 @@ struct ContentView: View {
         AnswerInProgressView(game: $game, progress: progress, height: 500) {
           collectWord()
         }
+        .border(.orange)
 
         VStack(spacing: 8) {
           MessageView(message: game.message)
             .font(.title)
-            .frame(width: 250, height: 40)
+            .frame(maxWidth: .infinity)
             .padding([.bottom], 20)
+            .border(.red)
 
           ScoreView(score: game.score)
             .font(.title)
@@ -126,8 +162,8 @@ struct ContentView: View {
             .padding([.bottom], 20)
 
           YouFoundView(answers: game.answers)
-          .font(.title)
-          .frame(width: 250)
+            .font(.title)
+            .frame(width: 250)
 
           Button("More...") {
             showAnswers.toggle()
@@ -142,8 +178,6 @@ struct ContentView: View {
       RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.height)
     }
     .padding(.top, 40)
-    .ignoresSafeArea()
-    .background(Gradient(colors: [.gray, .black]).opacity(0.5))
     .sheet(isPresented: $showAnswers) {
       AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
     }
@@ -152,30 +186,42 @@ struct ContentView: View {
 
   var body: some View {
     GeometryReader { geometry in
-      if ContentView.showMakerView {
-        MakerView(game: game)
-      }
+      ZStack {
+        LinearGradient(
+          colors: [Color(.backgroundStart), Color(.backgroundEnd)],
+            startPoint: .top, endPoint: .bottom)
+        .ignoresSafeArea()
 
-      switch (verticalSizeClass, orientation(geometry)) {
-      case (.regular, .portrait):
-        regularPortraitView(geometry)
+        VStack {
+          if Self.showMakerView {
+            MakerView(game: game)
+          }
 
-      case (.regular, .landscape):
-        regularLandscapeView(geometry)
+          switch (horizontalSizeClass, verticalSizeClass, orientation(geometry)) {
+          case (.regular, .regular, .portrait):
+            regularPortraitView(geometry)
 
-      default:
-        Text("Not yet")
-      }
-    }
-    .onChange(of: game.mode) { _, new in
-      switch new {
-      case .play:
-        submitIsInProgress = false
-        game.message = ""
+          case (.regular, .regular, .landscape):
+            regularLandscapeView(geometry)
 
-      case .review:
-        submitIsInProgress = true
-        game.message = "Game Over"
+          case (.compact, .regular, .portrait):
+            compactPortraitView(geometry)
+
+          default:
+            Text("Not yet")
+          }
+        }
+        .onChange(of: game.mode) { _, new in
+          switch new {
+          case .play:
+            submitIsInProgress = false
+            game.message = ""
+
+          case .review:
+            submitIsInProgress = true
+            game.message = "Game Over"
+          }
+        }
       }
     }
   }
