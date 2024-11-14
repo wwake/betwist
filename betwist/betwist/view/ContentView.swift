@@ -134,13 +134,12 @@ struct ContentView: View {
           }
           .capsuled()
           .font(.title)
-          .padding(8)
+          .padding(12)
         }
       }
       .zIndex(5)
 
-      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width)
-
+      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.height)
     }
     .padding(.top, 40)
     .ignoresSafeArea()
