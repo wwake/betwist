@@ -97,7 +97,7 @@ struct ContentView: View {
   }
 
   fileprivate func compactPortraitView(_ geometry: GeometryProxy) -> some View {
-    return VStack {
+    VStack {
       if ContentView.showMakerView {
         MakerView(game: game)
       }
@@ -106,13 +106,11 @@ struct ContentView: View {
         collectWord()
       }
       .zIndex(5)
-      .border(.green)
 
       MessageView(message: game.message)
-        .frame(height: 32)
+        .frame(height: 24)
         .frame(maxWidth: .infinity)
         .font(.title)
-        .border(.red)
 
       RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width)
 
@@ -132,7 +130,7 @@ struct ContentView: View {
 
       Spacer()
     }
-    .padding(.top, 40)
+    .padding(.top, 1)
     .sheet(isPresented: $showAnswers) {
       AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
     }
@@ -144,14 +142,12 @@ struct ContentView: View {
         AnswerInProgressView(game: $game, progress: progress, height: 500) {
           collectWord()
         }
-        .border(.orange)
 
         VStack(spacing: 8) {
           MessageView(message: game.message)
             .font(.title)
             .frame(maxWidth: .infinity)
             .padding([.bottom], 20)
-            .border(.red)
 
           ScoreView(score: game.score)
             .font(.title)
@@ -207,6 +203,9 @@ struct ContentView: View {
           case (.compact, .regular, .portrait):
             compactPortraitView(geometry)
 
+          case (.regular, .compact, .landscape):
+            Text("iPhone landscape")
+
           default:
             Text("Not yet")
           }
@@ -231,8 +230,13 @@ struct ContentView: View {
   }
 }
 
-#Preview {
+#Preview(traits: .portrait) {
   @Previewable @State var game = Game(2, ["A", "B", "C", "D"])
-
-  ContentView(game: $game)
+    ContentView(game: $game)
 }
+
+#Preview(traits: .landscapeLeft) {
+  @Previewable @State var game = Game(2, ["A", "B", "C", "D"])
+    ContentView(game: $game)
+}
+

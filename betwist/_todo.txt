@@ -1,8 +1,7 @@
 
 * Check why there's space at the top of the compactPortrait view
 * Make Score's text scale down from title size
-
-* Allow landscape mode by putting current header and score above the grid, "your words" to the right
+* Handle compact landscape view
 
 * Change end of game - New Game button starts "End Game" -> shows system words, maybe activates a button for that too, and changes the button "New Game" to generate new grid
 
@@ -45,8 +44,12 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
-2024-11-13 - WORD-24-26 - iPad Support
+2024-11-14 - WORD-24-27 - Portrait and Landscape
+* Finish landscape view for iPad
+* Handle portrait view for iPhone - though it's a little too big for the smaller phones
 
+2024-11-13 - WORD-24-26 - iPad Support
+* Work on portrait and landscape mode for iPad
 
 2024-11-12 - WORD-24-25 - Enforce Game Over
 Game Over
