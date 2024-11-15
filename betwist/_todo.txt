@@ -1,11 +1,12 @@
 
 * Check why there's space at the top of the compactPortrait view
-* Make Score's text scale down from title size
 * Handle compact landscape view
+* Make Score's text scale down from title size
+
+* Better letter generation
 
 * Change end of game - New Game button starts "End Game" -> shows system words, maybe activates a button for that too, and changes the button "New Game" to generate new grid
 
-* Better letter generation
 
 * Disable "Trie Generation" button
 

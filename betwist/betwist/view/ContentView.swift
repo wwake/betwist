@@ -56,7 +56,7 @@ struct ContentView: View {
   }
 
   fileprivate func regularPortraitView(_ geometry: GeometryProxy) -> some View {
-    return VStack {
+    VStack {
       if ContentView.showMakerView {
         MakerView(game: game)
       }
@@ -70,7 +70,14 @@ struct ContentView: View {
 
         HStack {
           ScoreView(score: game.score)
-          NewGameButton(game: $game)
+
+          VStack {
+            NewGameButton(game: $game)
+
+            AnswersSummaryView(game: $game) {
+              showAnswers.toggle()
+            }
+          }
         }
         Spacer()
       }
