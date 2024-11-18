@@ -11,6 +11,12 @@ struct AnswerInProgressView: View {
 
   var body: some View {
     HStack {
+      Image(systemName: "checkmark.circle.fill")
+        .accessibilityLabel(Text("padding"))
+        .font(.largeTitle)
+        .clipShape(Circle())
+        .opacity(0)
+
       ZStack {
         Text(" ")
           .frame(width: boxWidth, height: 40)

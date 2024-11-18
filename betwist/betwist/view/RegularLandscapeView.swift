@@ -19,27 +19,21 @@ struct RegularLandscapeView: View {
         VStack(spacing: 8) {
           MessageView(message: game.message)
             .font(.title)
-            .frame(maxWidth: .infinity)
+            .frame(height: 40)
             .padding([.bottom], 20)
 
           ScoreView(score: game.score)
             .font(.title)
             .padding([.bottom], 20)
 
+          AnswersSummaryView(game: $game) {
+            showAnswers.toggle()
+          }
+          .font(.title)
+
           NewGameButton(game: $game)
             .font(.title)
             .padding([.bottom], 20)
-
-          YouFoundView(answers: game.answers)
-            .font(.title)
-            .frame(width: 250)
-
-          Button("More...") {
-            showAnswers.toggle()
-          }
-          .capsuled()
-          .font(.title)
-          .padding(12)
         }
       }
       .zIndex(5)

@@ -41,6 +41,7 @@ struct RotatingGridView: View {
       )
       .rotationEffect(angle)
     }
+    .frame(width: width)
     .zIndex(1)
   }
 }

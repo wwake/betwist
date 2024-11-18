@@ -1,4 +1,3 @@
-* Finalize RegularLandscapeView
 * Finalize CompactPortraitView
 
 * Better letter generation
@@ -14,9 +13,13 @@
 
 
 ====
+* RegularLandscapeView
+  - doesn't have animation when word found
+
 * RegularPortraitView
   - doesn't have animation when word found
   - found words pushes the screen down slightly [give it a fixed size?]
+  - doesn't fit on iPhone SE
 
 * Use ToastUI framework to briefly pop up score in compact landscape mode [https://www.quanshousio.com/ToastUI]
 
@@ -61,6 +64,8 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 * Improve RegularPortraitView
   - but doesn't have animation when word found
   - but found words pushes the screen down slightly
+* Improve RegularLandscapeView
+  - but doesn't have animation when word found
 
 
 2024-11-14 - WORD-24-27 - Portrait and Landscape

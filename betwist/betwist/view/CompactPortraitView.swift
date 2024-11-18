@@ -39,7 +39,7 @@ struct CompactPortraitView: View {
           showAnswers.toggle()
         }
       }
-      .padding([.top], 12)
+      .padding(.top, 12)
 
       Spacer()
     }
