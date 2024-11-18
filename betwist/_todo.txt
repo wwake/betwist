@@ -1,5 +1,3 @@
-
-* Check why there's space at the top of the compactPortrait view
 * Handle compact landscape view
 * Make Score's text scale down from title size
 
@@ -12,7 +10,11 @@
 
 * Q => QU
 
+* Bigger start picture to cover ipad
+
 ====
+
+* Investigate defect where not having a one-pixel padding partially overwrites the safe area ".padding(.top, 1)"
 
 * Load the Trie using Async/Await
 
@@ -45,6 +47,9 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2024-11-18 - WORD-24-28 - iPhone Landscape
+* Check why there's space at the top of the compactPortrait view [we have explicit padding; reduced to one pixel]
+
 2024-11-14 - WORD-24-27 - Portrait and Landscape
 * Finish landscape view for iPad
 * Handle portrait view for iPhone - though it's a little too big for the smaller phones

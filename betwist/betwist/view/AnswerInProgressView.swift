@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct AnswerInProgressView: View {
+  let boxWidth: CGFloat = 200
+
   @Binding var game: Game
   var progress: Double
   var height: Double
@@ -11,7 +13,7 @@ struct AnswerInProgressView: View {
     HStack {
       ZStack {
         Text(" ")
-          .frame(width: 230, height: 40)
+          .frame(width: boxWidth, height: 40)
           .padding(4)
           .background(Color(white: 1.0))
           .border(.black, width: 2)
@@ -19,7 +21,7 @@ struct AnswerInProgressView: View {
         Text(game.answer)
           .font(.largeTitle)
           .foregroundStyle(game.message.isEmpty ? Color.black : Color.red)
-          .frame(minWidth: 230)
+          .frame(minWidth: boxWidth)
           .frame(height: 40)
           .padding(4)
           .background(Color(white: 1.0))

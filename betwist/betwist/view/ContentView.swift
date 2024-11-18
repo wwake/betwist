@@ -97,7 +97,7 @@ struct ContentView: View {
 
       Spacer()
     }
-    .padding(.top, 40)
+    .padding(.top, 20)
     .sheet(isPresented: $showAnswers) {
       AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
     }
@@ -180,11 +180,12 @@ struct ContentView: View {
 
       RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.height)
     }
-    .padding(.top, 40)
+    .padding(.top, 20)
     .sheet(isPresented: $showAnswers) {
       AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
     }
   }
+
 
 
   var body: some View {
@@ -210,11 +211,11 @@ struct ContentView: View {
           case (.compact, .regular, .portrait):
             compactPortraitView(geometry)
 
-          case (.regular, .compact, .landscape):
-            Text("iPhone landscape")
+          case (.compact, .compact, .landscape):
+            CompactLandscapeView(geometry: geometry, game: $game, collectWord: collectWord, handleSelection: handleSelection)
 
           default:
-            Text("Not yet")
+            compactPortraitView(geometry)
           }
         }
         .onChange(of: game.mode) { _, new in

@@ -6,12 +6,14 @@ struct AnswersSummaryView: View {
 
   var body: some View {
     VStack {
-      Text("Found Words")
-        .font(.title3)
+      if !game.answers.isEmpty {
+        Text("Found Words")
+          .font(.title3)
 
-      Text(verbatim: game.answers.preview)
+        Text(verbatim: game.answers.preview)
+      }
 
-      Button("More...") {
+      Button("All Answers...") {
         viewAction()
       }
       .capsuled()
