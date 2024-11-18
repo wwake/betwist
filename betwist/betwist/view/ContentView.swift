@@ -89,7 +89,6 @@ struct ContentView: View {
 
       Spacer()
     }
-    .padding(.top, 1)
     .sheet(isPresented: $showAnswers) {
       AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
     }

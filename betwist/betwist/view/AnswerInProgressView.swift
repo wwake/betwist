@@ -15,7 +15,7 @@ struct AnswerInProgressView: View {
         Text(" ")
           .frame(width: boxWidth, height: 40)
           .padding(4)
-          .background(Color(white: 1.0))
+          .background { Color(white: 1.0) }
           .border(.black, width: 2)
 
         Text(game.answer)
@@ -24,7 +24,7 @@ struct AnswerInProgressView: View {
           .frame(minWidth: boxWidth)
           .frame(height: 40)
           .padding(4)
-          .background(Color(white: 1.0))
+          .background { Color(white: 1.0) }
           .border(.black, width: 2)
           .accessibilityAddTraits(.isButton)
           .offset(x: 80 * progress, y: progress * height)

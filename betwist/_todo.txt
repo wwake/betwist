@@ -1,6 +1,6 @@
-
 * Finalize RegularLandscapeView
 * Finalize CompactPortraitView
+
 * Better letter generation
 
 * Change end of game - New Game button starts "End Game" -> shows system words, maybe activates a button for that too, and changes the button "New Game" to generate new grid
@@ -16,7 +16,7 @@
 ====
 * RegularPortraitView
   - doesn't have animation when word found
-  - found words pushes the screen down slightly
+  - found words pushes the screen down slightly [give it a fixed size?]
 
 * Use ToastUI framework to briefly pop up score in compact landscape mode [https://www.quanshousio.com/ToastUI]
 
@@ -56,6 +56,7 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 2024-11-18 - WORD-24-28 - iPhone Landscape
 * Check why there's space at the top of the compactPortrait view [we have explicit padding; reduced to one pixel]
 * Handle compact landscape view
+* Fix need for top padding in compact portrait view - use background { .color } instead of background(.color)
 * Make Score's text scale down from title size
 * Improve RegularPortraitView
   - but doesn't have animation when word found
