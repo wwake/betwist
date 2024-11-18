@@ -55,87 +55,6 @@ struct ContentView: View {
     }
   }
 
-  fileprivate func compactPortraitView(_ geometry: GeometryProxy) -> some View {
-    VStack {
-      if ContentView.showMakerView {
-        MakerView(game: game)
-      }
-
-      AnswerInProgressView(game: $game, progress: progress, height: 500) {
-        collectWord()
-      }
-      .zIndex(5)
-
-      MessageView(message: game.message)
-        .frame(height: 24)
-        .frame(maxWidth: .infinity)
-        .font(.title)
-
-      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width)
-
-      HStack(alignment: .top) {
-        VStack {
-          ScoreView(score: game.score)
-            .font(.title3)
-
-          NewGameButton(game: $game)
-        }
-
-        AnswersSummaryView(game: $game) {
-          showAnswers.toggle()
-        }
-      }
-      .padding([.top], 12)
-
-      Spacer()
-    }
-    .sheet(isPresented: $showAnswers) {
-      AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
-    }
-  }
-
-  fileprivate func regularLandscapeView(_ geometry: GeometryProxy) -> some View {
-    HStack(alignment: .top) {
-      VStack {
-        AnswerInProgressView(game: $game, progress: progress, height: 500) {
-          collectWord()
-        }
-
-        VStack(spacing: 8) {
-          MessageView(message: game.message)
-            .font(.title)
-            .frame(maxWidth: .infinity)
-            .padding([.bottom], 20)
-
-          ScoreView(score: game.score)
-            .font(.title)
-            .padding([.bottom], 20)
-
-          NewGameButton(game: $game)
-            .font(.title)
-            .padding([.bottom], 20)
-
-          YouFoundView(answers: game.answers)
-            .font(.title)
-            .frame(width: 250)
-
-          Button("More...") {
-            showAnswers.toggle()
-          }
-          .capsuled()
-          .font(.title)
-          .padding(12)
-        }
-      }
-      .zIndex(5)
-
-      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.height)
-    }
-    .padding(.top, 20)
-    .sheet(isPresented: $showAnswers) {
-      AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
-    }
-  }
 
 
 
@@ -157,16 +76,16 @@ struct ContentView: View {
             RegularPortraitView(geometry: geometry, game: $game, collectWord: collectWord, handleSelection: handleSelection)
 
           case (.regular, .regular, .landscape):
-            regularLandscapeView(geometry)
+            RegularLandscapeView(geometry: geometry, game: $game, collectWord: collectWord, handleSelection: handleSelection)
 
           case (.compact, .regular, .portrait):
-            compactPortraitView(geometry)
+            CompactPortraitView(geometry: geometry, game: $game, collectWord: collectWord, handleSelection: handleSelection)
 
           case (.compact, .compact, .landscape):
             CompactLandscapeView(geometry: geometry, game: $game, collectWord: collectWord, handleSelection: handleSelection)
 
           default:
-            compactPortraitView(geometry)
+            CompactPortraitView(geometry: geometry, game: $game, collectWord: collectWord, handleSelection: handleSelection)
           }
         }
         .onChange(of: game.mode) { _, new in
