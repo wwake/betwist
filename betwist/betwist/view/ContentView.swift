@@ -55,54 +55,6 @@ struct ContentView: View {
     }
   }
 
-  fileprivate func regularPortraitView(_ geometry: GeometryProxy) -> some View {
-    VStack {
-      if ContentView.showMakerView {
-        MakerView(game: game)
-      }
-
-      HStack {
-        Spacer()
-        AnswerInProgressView(game: $game, progress: progress, height: 500) {
-          collectWord()
-        }
-        Spacer()
-
-        HStack {
-          ScoreView(score: game.score)
-
-          VStack {
-            NewGameButton(game: $game)
-
-            AnswersSummaryView(game: $game) {
-              showAnswers.toggle()
-            }
-          }
-        }
-        Spacer()
-      }
-      .zIndex(5)
-
-      MessageView(message: game.message)
-        .frame(width: 250, height: 40)
-        .offset(y: 50)
-
-      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width)
-
-      HStack(alignment: .top) {
-        AnswersSummaryView(game: $game) {
-          showAnswers.toggle()
-        }
-      }
-
-      Spacer()
-    }
-    .padding(.top, 20)
-    .sheet(isPresented: $showAnswers) {
-      AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
-    }
-  }
-
   fileprivate func compactPortraitView(_ geometry: GeometryProxy) -> some View {
     VStack {
       if ContentView.showMakerView {
@@ -203,7 +155,7 @@ struct ContentView: View {
 
           switch (horizontalSizeClass, verticalSizeClass, orientation(geometry)) {
           case (.regular, .regular, .portrait):
-            regularPortraitView(geometry)
+            RegularPortraitView(geometry: geometry, game: $game, collectWord: collectWord, handleSelection: handleSelection)
 
           case (.regular, .regular, .landscape):
             regularLandscapeView(geometry)
