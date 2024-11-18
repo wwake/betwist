@@ -19,7 +19,7 @@ struct CompactLandscapeView: View {
 
         VStack(spacing: 8) {
           MessageView(message: game.message)
-            .font(.title)
+            .font(.title2)
             .frame(maxWidth: .infinity)
             .padding([.bottom], 20)
 

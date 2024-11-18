@@ -7,11 +7,14 @@ struct ScoreView: View {
     VStack(alignment: .leading) {
       Text("Score")
 
-      Text("Words: \(score.wordCount)")
+      Group {
+        Text("Words: \(score.wordCount)")
 
-      Text("Letters: \(score.letterCount)")
+        Text("Letters: \(score.letterCount)")
 
-      Text("Most Letters: \(score.mostLetters)")
+        Text("Most Letters: \(score.mostLetters)")
+      }
+      .scaleEffect(0.9)
     }
     .bold()
     .padding(12)

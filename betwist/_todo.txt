@@ -12,7 +12,10 @@
 
 * Bigger start picture to cover ipad
 
+
 ====
+
+* Use ToastUI framework to briefly pop up score in compact landscape mode [https://www.quanshousio.com/ToastUI]
 
 * Investigate defect where not having a one-pixel padding partially overwrites the safe area ".padding(.top, 1)"
 
