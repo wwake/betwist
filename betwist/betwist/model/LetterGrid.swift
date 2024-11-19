@@ -5,10 +5,10 @@ struct LetterGrid {
   let size: Int
   let grid: [[String]]
 
-  init(_ size: Int, _ source: any Sequence<String>) {
+  init(_ size: Int, _ source: [String]) {
     self.size = size
 
-    self.grid = Array(source).chunks(ofCount: size).map(Array.init)
+    self.grid = source.chunks(ofCount: size).map(Array.init)
   }
 
   subscript(_ row: Int, _ column: Int) -> String {

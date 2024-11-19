@@ -24,7 +24,7 @@ struct Game {
   private var hues: [Double]
 
   init(_ size: Int, _ source: any Sequence<String>, _ vocabulary: Vocabulary = NullVocabulary()) {
-    self.grid = LetterGrid(size, source)
+    self.grid = LetterGrid(size, Array(source))
     self.twister = Twister(size)
 
     self.selection = Selection(grid)
