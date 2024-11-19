@@ -1,7 +1,7 @@
 struct GameMaker {
   let size: Int
 
-  let letterDice = [
+  var letterDice = [
     "AAEEGN",
     "ABBJOO",
     "ACHOPS",
@@ -23,8 +23,11 @@ struct GameMaker {
   let candidates =
   "AAAAAABBCCDDDEEEEEEEEEEEFFGGHHHHHIIIIIIJKLLLLMMNNNNNNOOOOOOOPPQRRRRSSSSSSTTTTTTTTTUUUVVWWWXYYYZ"
 
-  init(_ size: Int) {
+  init(_ size: Int, _ dice: [String]? = nil) {
     self.size = size
+    if dice != nil {
+      self.letterDice = dice!
+    }
   }
 
   func makeRandom() -> String {
@@ -45,7 +48,7 @@ struct GameMaker {
 
     return dice
       .shuffled()
-      .map { string in Array(string).randomElement()! }
-      .map { String($0) }
+      .map { die in Array(die).randomElement()! }
+      .map { $0 == "Q" ? "QU" : String($0) }
   }
 }

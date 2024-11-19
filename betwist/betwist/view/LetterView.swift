@@ -19,7 +19,9 @@ struct LetterView<S: InsettableShape>: View {
       .strokeBorder(chooser.borderColor(type), lineWidth: chooser.borderWidth(type))
       .frame(width: size, height: size)
       .overlay {
-        Text("\(game[location])")
+        Text("\(game[location].capitalized)")
+          .minimumScaleFactor(0.4)
+          .scaleEffect(x: game[location].count == 2 ? 0.85 : 1.0)
           .font(.largeTitle)
           .italic(type == .neighbor)
           .foregroundStyle(chooser.foregroundColor(type))

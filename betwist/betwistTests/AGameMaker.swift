@@ -18,4 +18,10 @@ struct AGameMaker {
 
     #expect(eCount > kCount)
   }
+
+  @Test
+  func converts_q_to_qu() {
+    let sample = GameMaker(1, ["QQQQQQ"]).make()
+    #expect(sample.first! == "QU")
+  }
 }
