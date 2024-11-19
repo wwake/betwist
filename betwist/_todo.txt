@@ -1,14 +1,12 @@
 
+* Adjust size of infinite grid  (without rotate buttons) not RotatingGridView - pass geometry down rather than just width
 
-* Change end of game - New Game button starts "End Game" -> shows system words, maybe activates a button for that too, and changes the button "New Game" to generate new grid
-
-* CompactPortraitView - On SE, stuff gets pushed off the bottom - try adjusting the frame height of the grid to avoid that - based on the aspect ratio
+SE: 647x375 -> 1.73 aspect ratio
+16: 759x394 -> 1.93 aspect ratio
 
 * Disable "Trie Generation" button
 
-
 * Animation isn't happening when word is guessed - zIndex issue?
-
 
 ====
 * RegularLandscapeView
@@ -58,6 +56,8 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 * Bigger splashScreen picture to cover ipad
 * Better letter generation - use letter dice
 * Q => QU [but note you can't spell U-less Q words:)]
+* Change end of game - New Game button starts "I give up" -> shows system words, maybe activates a button for that too, and changes the button "New Game" to generate new grid
+* CompactPortraitView - On SE, stuff gets pushed off the bottom - try adjusting the frame height of the grid to avoid that - based on the aspect ratio [needs improvement to take rotate buttons into account properly]
 
 2024-11-18 - WORD-24-28 - iPhone Landscape
 * Check why there's space at the top of the compactPortrait view [we have explicit padding; reduced to one pixel]
