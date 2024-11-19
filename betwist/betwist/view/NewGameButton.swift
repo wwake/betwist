@@ -5,7 +5,7 @@ struct NewGameButton: View {
 
   var body: some View {
     Button("New Game") {
-      game = Game(game.size, GameMaker(game.size), game.vocabulary)
+      game = Game(game.size, GameMaker(game.size).make(), game.vocabulary)
     }
     .capsuled()
   }

@@ -1,4 +1,4 @@
-struct GameMaker: Sequence, IteratorProtocol {
+struct GameMaker {
   let size: Int
   var count = 0
 
@@ -13,5 +13,15 @@ struct GameMaker: Sequence, IteratorProtocol {
     if count + 1 > size * size { return nil }
     count += 1
     return String(candidates.randomElement()!)
+  }
+
+  func make() -> [String] {
+    var result = [String]()
+
+    (1...(size * size)).forEach { _ in
+      result.append(String(candidates.randomElement()!))
+    }
+
+    return result
   }
 }
