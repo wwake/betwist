@@ -2,9 +2,9 @@ import SwiftUI
 
 struct SortedAnswersView: View {
   let answers: Answers
-  
+
   var body: some View {
-    VStack {      
+    VStack {
       List {
         ForEach(answers.wordSizes, id: \.self) { size in
           Section(header: Text("\(size) letters")) {

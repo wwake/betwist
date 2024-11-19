@@ -14,7 +14,7 @@ struct ScoreDetailView: View {
         .scaleEffect(1.5)
 
       Spacer()
-      
+
       Button("Back") {
         dismiss()
       }
@@ -23,7 +23,6 @@ struct ScoreDetailView: View {
     .padding()
   }
 }
-
 
 #Preview {
   ScoreDetailView(score: Score(wordCount: 10, letterCount: 20, mostLetters: 30))

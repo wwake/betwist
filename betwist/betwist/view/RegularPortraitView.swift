@@ -35,7 +35,6 @@ struct RegularPortraitView: View {
             AnswersSummaryView(game: $game) {
               showAnswers.toggle()
             }
-
           }
         }
         Spacer()

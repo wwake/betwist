@@ -60,7 +60,9 @@ struct ContentView: View {
       ZStack {
         LinearGradient(
           colors: [Color(.backgroundStart), Color(.backgroundEnd)],
-            startPoint: .top, endPoint: .bottom)
+          startPoint: .top,
+          endPoint: .bottom
+        )
         .ignoresSafeArea()
 
         VStack {
@@ -70,19 +72,44 @@ struct ContentView: View {
 
           switch (horizontalSizeClass, verticalSizeClass, orientation(geometry)) {
           case (.regular, .regular, .portrait):
-            RegularPortraitView(geometry: geometry, game: $game, collectWord: collectWord, handleSelection: handleSelection)
+            RegularPortraitView(
+              geometry: geometry,
+              game: $game,
+              collectWord: collectWord,
+              handleSelection: handleSelection
+            )
 
           case (.regular, .regular, .landscape):
-            RegularLandscapeView(geometry: geometry, game: $game, collectWord: collectWord, handleSelection: handleSelection)
+            RegularLandscapeView(
+              geometry: geometry,
+              game: $game,
+              collectWord: collectWord,
+              handleSelection: handleSelection
+            )
 
           case (.compact, .regular, .portrait):
-            CompactPortraitView(geometry: geometry, game: $game, collectWord: collectWord, handleSelection: handleSelection)
+            CompactPortraitView(
+              geometry: geometry,
+              game: $game,
+              collectWord: collectWord,
+              handleSelection: handleSelection
+            )
 
           case (.compact, .compact, .landscape):
-            CompactLandscapeView(geometry: geometry, game: $game, collectWord: collectWord, handleSelection: handleSelection)
+            CompactLandscapeView(
+              geometry: geometry,
+              game: $game,
+              collectWord: collectWord,
+              handleSelection: handleSelection
+            )
 
           default:
-            CompactPortraitView(geometry: geometry, game: $game, collectWord: collectWord, handleSelection: handleSelection)
+            CompactPortraitView(
+              geometry: geometry,
+              game: $game,
+              collectWord: collectWord,
+              handleSelection: handleSelection
+            )
           }
         }
         .onChange(of: game.mode) { _, new in
@@ -114,4 +141,3 @@ struct ContentView: View {
   @Previewable @State var game = Game(2, ["A", "B", "C", "D"])
     ContentView(game: $game)
 }
-

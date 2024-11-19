@@ -32,7 +32,7 @@ struct RotatingGridView: View {
         RotateButton(clockwise: true, angle: $angle, game: $game)
           .padding([.trailing], 20)
       }
-      
+
       InfiniteGrid(
         game: $game,
         handleSelection: handleSelection,
