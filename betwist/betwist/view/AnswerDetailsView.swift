@@ -11,22 +11,10 @@ struct AnswerDetailsView: View {
 
   fileprivate func wordsSystemFound() -> some View {
     VStack {
-      Text("System Found")
-        .font(.title2)
-
-      if mode == .play {
-        VStack {
-          Button("Show Me!") {
-            mode = .review
-          }
-          .capsuled()
-
-          Text("(ends the game)")
-            .font(.footnote)
-        }
-      }
-
       if mode == .review {
+        Text("System Found")
+          .font(.title2)
+
         Text("6+ letters only")
           .font(.footnote)
 
@@ -49,7 +37,7 @@ struct AnswerDetailsView: View {
           .frame(maxWidth: .infinity)
       }
 
-      Button("Back") {
+      Button("Done") {
         dismiss()
       }
       .capsuled()

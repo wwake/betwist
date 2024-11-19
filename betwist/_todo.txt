@@ -1,5 +1,4 @@
 
-* Q => QU
 
 * Change end of game - New Game button starts "End Game" -> shows system words, maybe activates a button for that too, and changes the button "New Game" to generate new grid
 
@@ -58,6 +57,7 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 2024-11-19 - WORD-24-29 - Better Random Letters
 * Bigger splashScreen picture to cover ipad
 * Better letter generation - use letter dice
+* Q => QU [but note you can't spell U-less Q words:)]
 
 2024-11-18 - WORD-24-28 - iPhone Landscape
 * Check why there's space at the top of the compactPortrait view [we have explicit padding; reduced to one pixel]
