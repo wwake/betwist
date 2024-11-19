@@ -5,6 +5,8 @@ struct AGameMaker {
   @Test
   func returns_enough_letters() {
     #expect(GameMaker(3).make().count == 9)
+    #expect(GameMaker(4).make().count == 16)
+    #expect(GameMaker(5).make().count == 25)
   }
 
   @Test

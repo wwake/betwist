@@ -1,27 +1,51 @@
 struct GameMaker {
   let size: Int
-  var count = 0
+
+  let letterDice = [
+    "AAEEGN",
+    "ABBJOO",
+    "ACHOPS",
+    "AFFKPS",
+    "AOOTTW",
+    "CIMOTU",
+    "DEILRX",
+    "DELRVY",
+    "DISTTY",
+    "EEGHNW",
+    "EEINSU",
+    "EHRTVW",
+    "EIOSST",
+    "ELRTTY",
+    "HIMNUQ",
+    "HLNNRZ",
+  ]
 
   let candidates =
-"AAAAAABBCCDDDEEEEEEEEEEEFFGGHHHHHIIIIIIJKLLLLMMNNNNNNOOOOOOOPPQRRRRSSSSSSTTTTTTTTTUUUVVWWWXYYYZ"
+  "AAAAAABBCCDDDEEEEEEEEEEEFFGGHHHHHIIIIIIJKLLLLMMNNNNNNOOOOOOOPPQRRRRSSSSSSTTTTTTTTTUUUVVWWWXYYYZ"
 
   init(_ size: Int) {
     self.size = size
   }
 
-  mutating func next() -> String? {
-    if count + 1 > size * size { return nil }
-    count += 1
-    return String(candidates.randomElement()!)
+  func makeRandom() -> String {
+    String(candidates.randomElement()!)
   }
 
   func make() -> [String] {
-    var result = [String]()
+    var dice = [String]()
+    let square = size * size
 
-    (1...(size * size)).forEach { _ in
-      result.append(String(candidates.randomElement()!))
+    for _ in 0..<(square / letterDice.count) {
+      dice.append(contentsOf: letterDice)
     }
 
-    return result
+    for _ in 0..<(square % letterDice.count) {
+      dice.append(letterDice.randomElement()!)
+    }
+
+    return dice
+      .shuffled()
+      .map { string in Array(string).randomElement()! }
+      .map { String($0) }
   }
 }
