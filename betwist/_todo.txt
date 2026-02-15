@@ -1,4 +1,15 @@
 
+* Return key submits word ?
+* I give up => show me or All Answers
+* Make "gimme" words blue
+* Message when system didn't find any (extra) words
+* All answers => Your Words So Far
+* Swap sides so score on right
+* Score => Score So Far (or Final Score?)
+* Guess in progress near bottom?
+* Colors of words - explain?
+* Link to dictionary - https://dictionaryapi.dev
+
 * Adjust size of infinite grid  (without rotate buttons) not RotatingGridView - pass geometry down rather than just width
 
 SE: 647x375 -> 1.73 aspect ratio
