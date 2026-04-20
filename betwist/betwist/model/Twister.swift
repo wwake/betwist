@@ -1,7 +1,7 @@
 struct Twister {
   var size: Int
 
-  var transform: [[Location]]
+  private var transform: [[Location]]
 
   init(_ size: Int) {
     self.size = size

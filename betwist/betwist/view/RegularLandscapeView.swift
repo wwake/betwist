@@ -42,7 +42,7 @@ struct RegularLandscapeView: View {
     }
     .padding(.top, 20)
     .sheet(isPresented: $showAnswers) {
-      AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
+      AnswerDetailsView(answers: game.answers, allAnswers: game.systemAnswers, mode: $game.mode)
     }
   }
 }

@@ -16,6 +16,12 @@ struct Answers {
   internal var values = [Answer]()
   fileprivate var answersByLength = [Int: [Answer]]()
 
+  init(_ answers: [String] = []) {
+    for answer in answers {
+      submit(answer, isPrefix: true)
+    }
+  }
+
   mutating func submit(_ word: String, isPrefix: Bool) {
     if contains(word) {
       return
@@ -79,6 +85,10 @@ struct Answers {
     if words == nil { return [] }
 
     return words!.sorted { $0.word < $1.word }
+  }
+
+  var allWords: Set<String> {
+    Set(values.map(\.word))
   }
 }
 

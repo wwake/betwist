@@ -52,7 +52,7 @@ struct CompactPortraitView: View {
       Spacer()
     }
     .sheet(isPresented: $showAnswers) {
-      AnswerDetailsView(answers: game.answers, allAnswers: game.allTheAnswers, mode: $game.mode)
+      AnswerDetailsView(answers: game.answers, allAnswers: game.systemAnswers, mode: $game.mode)
     }
   }
 }
