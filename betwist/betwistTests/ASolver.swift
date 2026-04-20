@@ -64,7 +64,7 @@ struct ASolver {
   func finds_all_answers_in_1_cell_board() {
     let game = Game(1, ["A"], Vocabulary(["A"]))
     let sut = Solver(minimumAnswerSize: 1, vocabulary: game.vocabulary, grid: game.grid)
-    #expect(sut.allAnswers == Set(["A"]))
+    #expect(matches(sut.answers(), Answers(["A"])))
   }
 
   @Test()
@@ -72,19 +72,24 @@ struct ASolver {
     let game = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUN", "FUND"]))
     let sut = Solver(minimumAnswerSize: 1, vocabulary: game.vocabulary, grid: game.grid)
 
-    #expect(sut.allAnswers == Set(["FUN", "FUND"]))
+    #expect(matches(sut.answers(), Answers(["FUN", "FUND"])))
   }
 
   @Test
   func finds_all_answers_in_16_cell_board() {
     let game = Game(
       4,
-      ["F", "U", "N", "D", "E", "R", "S", "T", "W", "H", "I", "L", "E", "A", "L", "S"],
+      [
+       "F", "U", "N", "D",
+       "E", "R", "S", "T",
+       "W", "H", "I", "L",
+       "E", "A", "L", "S",
+      ],
       Vocabulary(["FUN", "FUND", "FUNDER", "FUNDERS", "WHILE", "UNDER", "TWIST", "BECKON", "ERSTWHILE"].sorted())
     )
     let sut = Solver(minimumAnswerSize: 1, vocabulary: game.vocabulary, grid: game.grid)
 
-    #expect(sut.allAnswers == Set(["FUN", "FUND", "FUNDER", "FUNDERS", "UNDER", "WHILE", "ERSTWHILE"]))
+    #expect(matches(sut.answers(), Answers(["FUN", "FUND", "FUNDER", "FUNDERS", "UNDER", "WHILE", "ERSTWHILE"])))
   }
 
   @Test
@@ -104,7 +109,7 @@ struct ASolver {
     let game = Game(2, ["T", "Z", "E", "D"], Vocabulary(["ZED", "TZETZE"]))
     let sut = Solver(minimumAnswerSize: 1, vocabulary: game.vocabulary, grid: game.grid)
 
-    #expect(sut.allAnswers == Set(["ZED"]))
+    #expect(matches(sut.answers(), Answers(["ZED"])))
   }
 
   @Test
@@ -116,6 +121,6 @@ struct ASolver {
     )
     let sut = Solver(minimumAnswerSize: 1, vocabulary: game.vocabulary, grid: game.grid)
 
-    #expect(sut.allAnswers == Set(["CONE"]))
+    #expect(matches(sut.answers(), Answers(["CONE"])))
   }
 }

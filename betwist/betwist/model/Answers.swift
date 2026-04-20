@@ -18,7 +18,7 @@ struct Answers {
 
   init(_ answers: [String] = []) {
     for answer in answers {
-      submit(answer, isPrefix: true)
+      submit(answer, isPrefix: false)
     }
   }
 
@@ -88,7 +88,11 @@ struct Answers {
   }
 
   var allWords: Set<String> {
-    Set(values.map(\.word))
+    var results = [[String]]()
+    for size in wordSizes {
+      results.append(words(ofSize: size).map(\.word))
+    }
+    return Set(results.flatMap { $0 })
   }
 }
 

@@ -21,7 +21,7 @@ struct Solver {
     return result
   }
 
-  var allAnswers: Set<String> {
+  fileprivate var allAnswers: Set<String> {
     var result = Set<String>()
     let selection = Selection(grid)
     tryAllExtensions(&result, selection)
