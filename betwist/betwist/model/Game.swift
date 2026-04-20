@@ -10,7 +10,7 @@ struct Game {
 
   var mode = GameMode.play
 
-  var grid: LetterGrid
+  let grid: LetterGrid
   var twister: Twister
 
   var selection: Selection

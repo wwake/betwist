@@ -1,4 +1,13 @@
+"System found" list is empty after 1-3 rotations, ok for 0 or 4
 
+* More colorful logo
+* Mirror buttons
+* Dictionary lookup
+* Bigger letters on iPad
+* Strikethrough on words you found
+* Better labels; consistent fonts
+
+===
 * Return key submits word ?
 * I give up => show me or All Answers
 * Make "gimme" words blue
