@@ -1,11 +1,10 @@
-"System found" list is empty after 1-3 rotations, ok for 0 or 4
 
 * More colorful logo
-* Mirror buttons
+* Mirror buttons - ControlGroup
 * Dictionary lookup
 * Bigger letters on iPad
-* Strikethrough on words you found
-* Better labels; consistent fonts
+* Strikethrough on system words that you also found
+* Better labels; consistent fonts & formatting
 
 ===
 * Return key submits word ?
@@ -19,7 +18,7 @@
 * Colors of words - explain?
 * Link to dictionary - https://dictionaryapi.dev
 
-* Adjust size of infinite grid  (without rotate buttons) not RotatingGridView - pass geometry down rather than just width
+* Adjust size of infinite grid (without rotate buttons) not RotatingGridView - pass geometry down rather than just width
 
 SE: 647x375 -> 1.73 aspect ratio
 16: 759x394 -> 1.93 aspect ratio
@@ -72,6 +71,9 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2026-04-20 - Restart the Project
+* Fix "System found" list is empty after 1-3 rotations, ok for 0 or 4. Part of the word solver was looking at positions in the translated grid while the solver usually looks at the original grid.
+
 2024-11-19 - WORD-24-29 - Better Random Letters
 * Bigger splashScreen picture to cover ipad
 * Better letter generation - use letter dice
