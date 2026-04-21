@@ -17,12 +17,6 @@ struct AnswerInProgressView: View {
         .frame(width: 40, height: 40)
         .accessibilityLabel(Text("Betwist"))
 
-      Image(systemName: "checkmark.circle.fill")
-        .accessibilityLabel(Text("padding"))
-        .font(.largeTitle)
-        .clipShape(Circle())
-        .opacity(0)
-
       ZStack {
         Text(" ")
           .frame(width: boxWidth, height: 40)

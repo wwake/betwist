@@ -1,5 +1,6 @@
+ControlGroup
 
-* Mirror buttons - ControlGroup
+* Mirror buttons -
 * Dictionary lookup
 * Bigger letters on iPad
 * Strikethrough on system words that you also found

@@ -13,13 +13,12 @@ struct RotatingGridView: View {
     VStack {
       HStack {
         RotateButton(clockwise: false, angle: $angle, game: $game)
-          .padding([.leading], 20)
-
-        Spacer()
 
         RotateButton(clockwise: true, angle: $angle, game: $game)
-          .padding([.trailing], 20)
       }
+      .padding(.top, 5)
+      .padding([.leading, .trailing], 8)
+      .background(Capsule().fill(.thinMaterial))
 
       InfiniteGrid(
         game: $game,
