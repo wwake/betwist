@@ -5,7 +5,8 @@ extension Trie {
     do {
       if let path = Bundle.main.path(forResource: filename, ofType: "json-compressed") {
         let decompressed = try NSData(contentsOfFile: path).decompressed(using: .lzfse)
-        return try JSONDecoder().decode(Trie.self, from: decompressed as Data)
+        let result = try JSONDecoder().decode(Trie.self, from: decompressed as Data)
+        return result
       }
     } catch {
       print(error)
