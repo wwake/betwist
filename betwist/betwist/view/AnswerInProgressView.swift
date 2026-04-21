@@ -11,6 +11,12 @@ struct AnswerInProgressView: View {
 
   var body: some View {
     HStack {
+      Image("TheIcon")
+        .resizable()
+        .scaledToFit()
+        .frame(width: 40, height: 40)
+        .accessibilityLabel(Text("Betwist"))
+
       Image(systemName: "checkmark.circle.fill")
         .accessibilityLabel(Text("padding"))
         .font(.largeTitle)

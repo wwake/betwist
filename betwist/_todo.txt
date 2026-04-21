@@ -1,5 +1,4 @@
 
-* More colorful logo
 * Mirror buttons - ControlGroup
 * Dictionary lookup
 * Bigger letters on iPad
@@ -71,6 +70,9 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2026-04-21 - Improved Logo and Look
+* Improve the logo (pastels instead of black-and-white)
+
 2026-04-20 - Restart the Project
 * Fix "System found" list is empty after 1-3 rotations, ok for 0 or 4. Part of the word solver was looking at positions in the translated grid while the solver usually looks at the original grid.
 
