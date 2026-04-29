@@ -140,4 +140,8 @@ struct Game {
       twister.transform(Location.rotateLeft)
     }
   }
+
+  mutating func transform(transformFn: (Location) -> (Int) -> Location) {
+    twister.transform(transformFn)
+  }
 }

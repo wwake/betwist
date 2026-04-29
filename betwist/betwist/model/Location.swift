@@ -21,6 +21,10 @@ struct Location: Equatable {
     Location(column, size - 1 - row)
   }
 
+  func flipHorizontal(size: Int) -> Location {
+    Location(row, size - 1 - column)
+  }
+
   func hasNeighbor(_ other: Location, wrap size: Int) -> Bool {
     if self == other {
       return false

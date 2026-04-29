@@ -1,4 +1,7 @@
+* Add Location.flipHorizontal
+* Use flipHorizontal for a mirror button
 * Mirror buttons - horizontal, vertical, \, and /
+
 * Dictionary lookup
 * Bigger letters on iPad
 * Strikethrough on system words that you also found
@@ -70,6 +73,9 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2026-04-29 - Mirror
+* Extracted a Location function to rotateLeft and used that as Twister's transform
+
 2026-04-21 - Improved Logo and Look
 * Improve the logo (pastels instead of black-and-white)
 * Put twister controls together in a single capsule

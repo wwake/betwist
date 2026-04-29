@@ -57,6 +57,7 @@
 		91A387742CC1427100E00F7B /* AnswersSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A387732CC1427100E00F7B /* AnswersSummaryView.swift */; };
 		91A387762CC144E600E00F7B /* AnswerInProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A387752CC144E500E00F7B /* AnswerInProgressView.swift */; };
 		91A387782CC1889700E00F7B /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A387772CC1889700E00F7B /* Score.swift */; };
+		91A75CE02FA2823600BB040C /* MirrorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A75CDF2FA2823600BB040C /* MirrorButton.swift */; };
 		91C8BFA52CE53AC5009810AF /* NewGameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFA42CE53AC5009810AF /* NewGameButton.swift */; };
 		91C8BFA72CE53F2A009810AF /* RotateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFA62CE53F2A009810AF /* RotateButton.swift */; };
 		91C8BFA92CE54003009810AF /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFA82CE54003009810AF /* MessageView.swift */; };
@@ -132,6 +133,7 @@
 		91A387732CC1427100E00F7B /* AnswersSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersSummaryView.swift; sourceTree = "<group>"; };
 		91A387752CC144E500E00F7B /* AnswerInProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerInProgressView.swift; sourceTree = "<group>"; };
 		91A387772CC1889700E00F7B /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		91A75CDF2FA2823600BB040C /* MirrorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorButton.swift; sourceTree = "<group>"; };
 		91C8BFA42CE53AC5009810AF /* NewGameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameButton.swift; sourceTree = "<group>"; };
 		91C8BFA62CE53F2A009810AF /* RotateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateButton.swift; sourceTree = "<group>"; };
 		91C8BFA82CE54003009810AF /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				917C44AA2CDD625D0041B790 /* SortedAnswersView.swift */,
 				910C6FAF2CBEED2000BD6A0D /* Text+italic.swift */,
 				91C8BFAE2CE6863D009810AF /* YouFoundView.swift */,
+				91A75CDF2FA2823600BB040C /* MirrorButton.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				917642242CC6D9D70064AD48 /* Button+viewModifier.swift in Sources */,
 				91A387782CC1889700E00F7B /* Score.swift in Sources */,
 				910C6FB62CBEF78D00BD6A0D /* InfiniteGrid.swift in Sources */,
+				91A75CE02FA2823600BB040C /* MirrorButton.swift in Sources */,
 				911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */,
 				910C6FB22CBEED7500BD6A0D /* ColorChooser.swift in Sources */,
 				917C44AB2CDD62610041B790 /* SortedAnswersView.swift in Sources */,

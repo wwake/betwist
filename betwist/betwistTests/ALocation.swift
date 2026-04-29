@@ -62,4 +62,14 @@ struct ALocation {
     #expect(Location(3, 5).movedBy(DeltaLocation(1, -3), wrap: 6) == Location(4, 2))
     #expect(Location(1, 2).movedBy(DeltaLocation(5, -3), wrap: 4) == Location(2, 3))
   }
+
+  @Test
+  func `rotates to the left`() {
+    #expect(Location(3, 5).rotateLeft(size: 6) == Location(5, 2))
+  }
+
+  @Test
+  func `flips horizontally`() {
+    #expect(Location(3, 5).flipHorizontal(size: 6) == Location(3, 0))
+  }
 }

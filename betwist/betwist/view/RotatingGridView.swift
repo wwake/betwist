@@ -14,6 +14,13 @@ struct RotatingGridView: View {
       HStack {
         RotateButton(clockwise: false, angle: $angle, game: $game)
 
+        MirrorButton(
+          iconName: "arrow.left.arrow.right",
+          label: "Mirror Horizontally",
+          transformFn: Location.flipHorizontal,
+          game: $game
+        )
+
         RotateButton(clockwise: true, angle: $angle, game: $game)
       }
       .padding(.top, 5)
