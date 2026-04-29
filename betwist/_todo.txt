@@ -1,5 +1,4 @@
-
-* Mirror buttons -
+* Mirror buttons - horizontal, vertical, \, and /
 * Dictionary lookup
 * Bigger letters on iPad
 * Strikethrough on system words that you also found
