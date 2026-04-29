@@ -24,25 +24,21 @@ struct Twister {
     return [[Location]](repeating: newRow, count: size)
   }
 
-  static func rotateLeft(location: Location, size: Int) -> Location {
-    Location(location.column, size - 1 - location.row)
-  }
-
-  mutating func transform(_ locationTransform: (Location, Int) -> Location) {
+  mutating func transform(_ locationTransform: (Location) -> (Int) -> Location) {
     var newTransform = map
     for row in 0..<size {
       for column in 0..<size {
         let location = Location(row, column)
-        newTransform[row][column] = self[locationTransform(location, size)]
+        newTransform[row][column] = self[locationTransform(location)(size)]
       }
     }
     map = newTransform
   }
 
   mutating func rotateRight() {
-    transform(Self.rotateLeft)
-    transform(Self.rotateLeft)
-    transform(Self.rotateLeft)
+    transform(Location.rotateLeft)
+    transform(Location.rotateLeft)
+    transform(Location.rotateLeft)
   }
 }
 

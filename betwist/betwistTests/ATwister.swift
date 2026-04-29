@@ -14,7 +14,7 @@ struct ATwister {
     // CD  => AC
 
     var twister = Twister(2)
-    twister.transform(Twister.rotateLeft)
+    twister.transform(Location.rotateLeft)
     #expect(twister[Location(0, 0)] == Location(0, 1))
     #expect(twister[Location(0, 1)] == Location(1, 1))
   }

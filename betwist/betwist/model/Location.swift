@@ -17,6 +17,10 @@ struct Location: Equatable {
     self.column = column
   }
 
+  func rotateLeft(size: Int) -> Location {
+    Location(column, size - 1 - row)
+  }
+
   func hasNeighbor(_ other: Location, wrap size: Int) -> Bool {
     if self == other {
       return false
