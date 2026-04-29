@@ -1,7 +1,7 @@
 struct Twister {
   var size: Int
 
-  private var transform: [[Location]]
+  private var map: [[Location]]
 
   init(_ size: Int) {
     self.size = size
@@ -12,11 +12,11 @@ struct Twister {
         newTransform[row][column ] = Location(row, column)
       }
     }
-    transform = newTransform
+    map = newTransform
   }
 
   subscript (location: Location) -> Location {
-    transform[location.row][location.column]
+    map[location.row][location.column]
   }
 
   static func makeTransform(size: Int) -> [[Location]] {
@@ -24,24 +24,25 @@ struct Twister {
     return [[Location]](repeating: newRow, count: size)
   }
 
-  func transformRotateLeft(row: Int, column: Int, size: Int) -> Location {
+  static func rotateLeft(row: Int, column: Int, size: Int) -> Location {
     Location(column, size - 1 - row)
   }
 
-  mutating func rotateLeft() {
-    var newTransform = Self.makeTransform(size: size)
+  mutating func transform(_ locationTransform: (Int, Int, Int) -> Location) {
+    var newTransform = map
     for row in 0..<size {
       for column in 0..<size {
-        newTransform[row][column] = transform[column][size - 1 - row]
+        let location = Location(row, column)
+        newTransform[row][column] = self[locationTransform(location.row, location.column, size)]
       }
     }
-    transform = newTransform
+    map = newTransform
   }
 
   mutating func rotateRight() {
-    rotateLeft()
-    rotateLeft()
-    rotateLeft()
+    transform(Self.rotateLeft)
+    transform(Self.rotateLeft)
+    transform(Self.rotateLeft)
   }
 }
 

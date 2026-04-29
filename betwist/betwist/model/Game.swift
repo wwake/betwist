@@ -137,7 +137,7 @@ struct Game {
     if clockwise {
       twister.rotateRight()
     } else {
-      twister.rotateLeft()
+      twister.transform(Twister.rotateLeft(row:column:size:))
     }
   }
 }
