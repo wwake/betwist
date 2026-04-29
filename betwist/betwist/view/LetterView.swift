@@ -9,6 +9,8 @@ struct LetterView<S: InsettableShape>: View {
   var location: Location
   var handleSelection: (Location) -> Void
 
+  var angle: Angle
+
   var chooser = ColorChooser()
 
   var body: some View {
@@ -26,6 +28,7 @@ struct LetterView<S: InsettableShape>: View {
           .italic(type == .neighbor)
           .foregroundStyle(chooser.foregroundColor(type))
           .allowsHitTesting(false)
+          .rotation3DEffect(angle, axis: (x: 0, y: -1, z: 0))
       }
       .onTapGesture {
         handleSelection(location)

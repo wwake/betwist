@@ -18,7 +18,8 @@ struct RotatingGridView: View {
           iconName: "arrow.left.arrow.right",
           label: "Mirror Horizontally",
           transformFn: Location.flipHorizontal,
-          game: $game
+          game: $game,
+          angle: $angle
         )
 
         RotateButton(clockwise: true, angle: $angle, game: $game)
@@ -31,9 +32,11 @@ struct RotatingGridView: View {
         game: $game,
         handleSelection: handleSelection,
         cellSize: Self.cellSize,
-        boardSize: width
+        boardSize: width,
+        angle: angle
       )
-      .rotationEffect(angle)
+//      .rotationEffect(angle)
+      .rotation3DEffect(angle, axis: (x: 0, y: 1, z: 0))
     }
     .frame(width: width)
     .zIndex(1)
