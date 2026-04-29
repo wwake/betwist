@@ -58,6 +58,8 @@
 		91A387762CC144E600E00F7B /* AnswerInProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A387752CC144E500E00F7B /* AnswerInProgressView.swift */; };
 		91A387782CC1889700E00F7B /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A387772CC1889700E00F7B /* Score.swift */; };
 		91A75CE02FA2823600BB040C /* MirrorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A75CDF2FA2823600BB040C /* MirrorButton.swift */; };
+		91A75CE22FA299C900BB040C /* Angle+normalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A75CE12FA299C300BB040C /* Angle+normalized.swift */; };
+		91A75CE42FA29B2700BB040C /* AnAngle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A75CE32FA29B2700BB040C /* AnAngle.swift */; };
 		91C8BFA52CE53AC5009810AF /* NewGameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFA42CE53AC5009810AF /* NewGameButton.swift */; };
 		91C8BFA72CE53F2A009810AF /* RotateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFA62CE53F2A009810AF /* RotateButton.swift */; };
 		91C8BFA92CE54003009810AF /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFA82CE54003009810AF /* MessageView.swift */; };
@@ -134,6 +136,8 @@
 		91A387752CC144E500E00F7B /* AnswerInProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerInProgressView.swift; sourceTree = "<group>"; };
 		91A387772CC1889700E00F7B /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		91A75CDF2FA2823600BB040C /* MirrorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorButton.swift; sourceTree = "<group>"; };
+		91A75CE12FA299C300BB040C /* Angle+normalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Angle+normalized.swift"; sourceTree = "<group>"; };
+		91A75CE32FA29B2700BB040C /* AnAngle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnAngle.swift; sourceTree = "<group>"; };
 		91C8BFA42CE53AC5009810AF /* NewGameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameButton.swift; sourceTree = "<group>"; };
 		91C8BFA62CE53F2A009810AF /* RotateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateButton.swift; sourceTree = "<group>"; };
 		91C8BFA82CE54003009810AF /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 		917642222CC6D8F00064AD48 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				91A75CE12FA299C300BB040C /* Angle+normalized.swift */,
 				911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */,
 				91A387752CC144E500E00F7B /* AnswerInProgressView.swift */,
 				91A387732CC1427100E00F7B /* AnswersSummaryView.swift */,
@@ -296,6 +301,7 @@
 				911EEA002CAF30D7005C391D /* TheAnswers.swift */,
 				912847522CDC131D00FA21BA /* Vocabulary+init.swift */,
 				915C72C32F967534005EA8DC /* ASolver.swift */,
+				91A75CE32FA29B2700BB040C /* AnAngle.swift */,
 			);
 			path = betwistTests;
 			sourceTree = "<group>";
@@ -472,6 +478,7 @@
 				9128474B2CDC0C9600FA21BA /* WordLoader.swift in Sources */,
 				911EE9FF2CAF2DE4005C391D /* Answers.swift in Sources */,
 				9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */,
+				91A75CE22FA299C900BB040C /* Angle+normalized.swift in Sources */,
 				912847092CD9586F00FA21BA /* Trie.swift in Sources */,
 				91A387762CC144E600E00F7B /* AnswerInProgressView.swift in Sources */,
 				91407FD92CEBD74600EC058D /* RegularPortraitView.swift in Sources */,
@@ -507,6 +514,7 @@
 				915C72C42F967534005EA8DC /* ASolver.swift in Sources */,
 				910C6FBA2CC03A3300BD6A0D /* ACGSize.swift in Sources */,
 				9181F0A62CA3556D0091A771 /* ASelection.swift in Sources */,
+				91A75CE42FA29B2700BB040C /* AnAngle.swift in Sources */,
 				911EE9E52CAB24CA005C391D /* AGameMaker.swift in Sources */,
 				911EEA012CAF30D7005C391D /* TheAnswers.swift in Sources */,
 				911EE9F02CAC7CB9005C391D /* ATwister.swift in Sources */,

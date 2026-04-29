@@ -10,19 +10,8 @@ struct MirrorButton: View {
 
   var body: some View {
     Button {
-      print(angle)
-//      angle = Angle.zero
-      var newAngle = angle + Angle(degrees: 180)
-      if newAngle >= Angle(degrees: 360) {
-        newAngle -= Angle(degrees: 360)
-      }
       withAnimation {
-        angle = newAngle
-      } completion: {
-        _ = transaction { _ in
-  //        angle = Angle.zero
- //         game.transform(transformFn: transformFn)
-        }
+        angle = (angle + Angle(degrees: 180)).normalized
       }
     } label: {
       Image(systemName: iconName)
