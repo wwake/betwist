@@ -1,5 +1,6 @@
-* Add Location.flipHorizontal
-* Use flipHorizontal for a mirror button
+* Look into .animation(:value) - a way to apply last transform?
+* Decide what to give up - nice animation or transforms
+
 * Mirror buttons - horizontal, vertical, \, and /
 
 * Dictionary lookup
@@ -73,8 +74,17 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2026-04-30 - View Transformations
+* Tried doing transforms with CGAffineTransform - allows "stacking" but doesn't animate.
+* Need to decide which approach to use
+
 2026-04-29 - Mirror
 * Extracted a Location function to rotateLeft and used that as Twister's transform
+* Add Location.flipHorizontal
+* Use flipHorizontal for a mirror button
+* Mirror buttons - horizontal
+* Made letters rotate opposite while we rotated the grid
+* ==> Realized that we can just rotate the view without worrying about rotation in the game
 
 2026-04-21 - Improved Logo and Look
 * Improve the logo (pastels instead of black-and-white)
