@@ -9,7 +9,9 @@ struct LetterView<S: InsettableShape>: View {
   var location: Location
   var handleSelection: (Location) -> Void
 
-  var angle: Angle
+  var yAnimationAngle: Angle
+  var zAnimationAngle: Angle
+  var twistLetter: CGAffineTransform
 
   var chooser = ColorChooser()
 
@@ -23,16 +25,18 @@ struct LetterView<S: InsettableShape>: View {
       .overlay {
         Text("\(game[location].capitalized)")
           .minimumScaleFactor(0.4)
-          .scaleEffect(x: game[location].count == 2 ? 0.85 : 1.0)
           .font(.largeTitle)
           .italic(type == .neighbor)
           .foregroundStyle(chooser.foregroundColor(type))
           .allowsHitTesting(false)
-          .rotation3DEffect(angle, axis: (x: 0, y: -1, z: 0))
+          .scaleEffect(x: game[location].count == 2 ? 0.85 : 1.0)
+          .rotation3DEffect(yAnimationAngle, axis: (x: 0, y: 1, z: 0))
+          .rotation3DEffect(zAnimationAngle, axis: (x: 0, y: 0, z: -1))
       }
       .onTapGesture {
         handleSelection(location)
       }
       .accessibilityAddTraits(.isButton)
+      .transformEffect(twistLetter)
   }
 }

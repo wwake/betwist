@@ -9,13 +9,24 @@ struct InfiniteGrid: View {
   var cellSize: Double
   var boardSize: Double
 
-  var angle: Angle
+  var yAnimationAngle: Angle
+  var zAnimationAngle: Angle
+  var twistBoard: CGAffineTransform
+  var twistLetter: CGAffineTransform
 
   @State private var offset = CGSize.zero
   @State private var priorOffset = CGSize.zero
 
   var body: some View {
-    let gridView = GridView(cellSize: cellSize, game: $game, handleSelection: handleSelection, angle: angle)
+    let gridView = GridView(
+      cellSize: cellSize,
+      game: $game,
+      handleSelection: handleSelection,
+      yAnimationAngle: yAnimationAngle,
+      zAnimationAngle: zAnimationAngle,
+      twistBoard: twistBoard,
+      twistLetter: twistLetter
+    )
 
     return VStack {
       VStack(spacing: 0) {

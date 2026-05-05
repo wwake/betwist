@@ -4,7 +4,11 @@ struct GridView: View {
   var cellSize: Double
   @Binding var game: Game
   var handleSelection: (Location) -> Void
-  var angle: Angle
+
+  var yAnimationAngle: Angle
+  var zAnimationAngle: Angle
+  var twistBoard: CGAffineTransform
+  var twistLetter: CGAffineTransform
 
   var body: some View {
     VStack(spacing: 0) {
@@ -17,12 +21,15 @@ struct GridView: View {
               game: $game,
               location: Location(row, column),
               handleSelection: handleSelection,
-              angle: angle
+              yAnimationAngle: yAnimationAngle,
+              zAnimationAngle: zAnimationAngle,
+              twistLetter: twistLetter
             )
           }
         }
       }
     }
+    .transformEffect(twistBoard)
     .border(.accent, width: 2)
   }
 }

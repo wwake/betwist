@@ -1,5 +1,10 @@
+
+* Make sure the transform puts it back inside the border
 * Look into .animation(:value) - a way to apply last transform?
 * Decide what to give up - nice animation or transforms
+* Reset angles & transforms on new game
+* Disable twist buttons while animating
+* Shifting problem when grid is not centered (from dragging)
 
 * Mirror buttons - horizontal, vertical, \, and /
 
@@ -74,6 +79,13 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2026-05-05 - More Animation
+* Fixed the rotation and mirror twists to adjust location properly
+* Made untwist apply the original untwist last instead of first (LIFO)
+
+2026-05-04 - Smooth Animations or Stacked Twists?
+* Fixed mirroring to apply transform before grid lines
+
 2026-04-30 - View Transformations
 * Tried doing transforms with CGAffineTransform - allows "stacking" but doesn't animate.
 * Need to decide which approach to use

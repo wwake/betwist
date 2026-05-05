@@ -1,9 +1,13 @@
 import SwiftUI
 
 struct RotatingGridView: View {
-  static var cellSize = 50.0
+  static var cellSize = 51.0
 
-  @State private var angle = Angle.zero
+  @State private var twistBoard: CGAffineTransform = CGAffineTransformIdentity
+  @State private var twistLetter: CGAffineTransform = CGAffineTransformIdentity
+
+  @State private var yAnimationAngle = Angle.zero
+  @State private var zAnimationAngle = Angle.zero
 
   @Binding var game: Game
   var handleSelection: (Location) -> Void
@@ -12,17 +16,35 @@ struct RotatingGridView: View {
   var body: some View {
     VStack {
       HStack {
-        RotateButton(clockwise: false, angle: $angle, game: $game)
+        RotateButton(
+          clockwise: false,
+          game: $game,
+          zAnimationAngle: $zAnimationAngle,
+          twistBoard: $twistBoard,
+          untwistLetter: $twistLetter,
+          cellWidth: Self.cellSize,
+        )
 
         MirrorButton(
           iconName: "arrow.left.arrow.right",
           label: "Mirror Horizontally",
           transformFn: Location.flipHorizontal,
           game: $game,
-          angle: $angle
+          yAnimationAngle: $yAnimationAngle,
+          twistBoard: $twistBoard,
+          untwistLetter: $twistLetter,
+          width: width,
+          cellSize: Self.cellSize
         )
 
-        RotateButton(clockwise: true, angle: $angle, game: $game)
+        RotateButton(
+          clockwise: true,
+          game: $game,
+          zAnimationAngle: $zAnimationAngle,
+          twistBoard: $twistBoard,
+          untwistLetter: $twistLetter,
+          cellWidth: Self.cellSize,
+        )
       }
       .padding(.top, 5)
       .padding([.leading, .trailing], 8)
@@ -33,10 +55,15 @@ struct RotatingGridView: View {
         handleSelection: handleSelection,
         cellSize: Self.cellSize,
         boardSize: width,
-        angle: angle
+        yAnimationAngle: yAnimationAngle,
+        zAnimationAngle: zAnimationAngle,
+        twistBoard: twistBoard,
+        twistLetter: twistLetter
       )
 //      .rotationEffect(angle)
-      .rotation3DEffect(angle, axis: (x: 0, y: 1, z: 0))
+//       .transformEffect(twistBoard)
+      .rotation3DEffect(yAnimationAngle, axis: (x: 0, y: -1, z: 0))
+      .rotation3DEffect(zAnimationAngle, axis: (x: 0, y: 0, z: 1))
     }
     .frame(width: width)
     .zIndex(1)

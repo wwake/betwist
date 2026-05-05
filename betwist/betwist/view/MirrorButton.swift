@@ -6,12 +6,29 @@ struct MirrorButton: View {
   var transformFn: (Location) -> (Int) -> Location
 
   @Binding var game: Game
-  @Binding var angle: Angle
+  @Binding var yAnimationAngle: Angle
+  @Binding var twistBoard: CGAffineTransform
+  @Binding var untwistLetter: CGAffineTransform
+  var width: CGFloat
+  var cellSize: CGFloat
 
   var body: some View {
     Button {
-      withAnimation {
-        angle = (angle + Angle(degrees: 180)).normalized
+      withAnimation(.easeInOut(duration: 1.5)) {
+        yAnimationAngle = (yAnimationAngle + Angle(degrees: 180)).normalized
+      } completion: {
+        yAnimationAngle = Angle.zero
+        twistBoard = twistBoard.concatenating(
+          CGAffineTransformMakeScale(-1, 1)
+            .concatenating(
+              CGAffineTransformMakeTranslation(CGFloat(game.size) * cellSize, 0)
+            )
+          //           .concatenating(CGAffineTransformMakeTranslation(3.0 * cellWidth, 0))  // ?? why 3.0?
+        )
+        untwistLetter =
+          CGAffineTransformMakeTranslation(-cellSize, 0)
+          .concatenating(CGAffineTransformMakeScale(-1, 1))
+          .concatenating(untwistLetter)
       }
     } label: {
       Image(systemName: iconName)
@@ -27,6 +44,10 @@ struct MirrorButton: View {
     label: "Mirror Horizontally",
     transformFn: { loc in { _ in loc } },
     game: .constant(Game(2, ["A", "D", "O", "N"])),
-    angle: .constant(Angle.zero)
+    yAnimationAngle: .constant(Angle.zero),
+    twistBoard: .constant(CGAffineTransformIdentity),
+    untwistLetter: .constant(CGAffineTransformIdentity),
+    width: 400,
+    cellSize: 50
   )
 }
