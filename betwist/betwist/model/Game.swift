@@ -4,6 +4,7 @@ enum GameMode {
 }
 
 struct Game {
+  static let defaultSize = 5
   static let minimumSize = 4
   static let minimumSystemAnswerSize = 6
   static let maxPuzzleSize = 25

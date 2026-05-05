@@ -16,11 +16,12 @@ struct RotatingGridView: View {
   var body: some View {
     VStack {
       HStack {
-        RotateLeftButton(
+        RotateButton(
           game: $game,
           zAnimationAngle: $zAnimationAngle,
           twistBoard: $twistBoard,
           untwistLetter: $twistLetter,
+          twist: Twist.rotateLeft,
           cellSize: Self.cellSize,
         )
 
@@ -35,11 +36,12 @@ struct RotatingGridView: View {
           cellSize: Self.cellSize
         )
 
-        RotateRightButton(
+        RotateButton(
           game: $game,
           zAnimationAngle: $zAnimationAngle,
           twistBoard: $twistBoard,
           untwistLetter: $twistLetter,
+          twist: Twist.rotateRight,
           cellSize: Self.cellSize,
         )
       }

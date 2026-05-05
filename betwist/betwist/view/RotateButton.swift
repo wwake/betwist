@@ -1,86 +1,70 @@
 import SwiftUI
 
-struct RotateLeftButton: View {
-  @Binding var game: Game
+struct Twist {
+  static let quarterTurn = .pi / 2.0
 
-  @Binding var zAnimationAngle: Angle
-  @Binding var twistBoard: CGAffineTransform
-  @Binding var untwistLetter: CGAffineTransform
+  let label: Label<Text, Image>
+  let zRadians: Double
+  let twist: CGAffineTransform
+  let untwist: CGAffineTransform
 
-  var cellSize: CGFloat
+  static let rotateLeft = Twist(
+    label: Label("Rotate Left", systemImage: "arrow.counterclockwise"),
+    zRadians: -Self.quarterTurn,
 
-  var body: some View {
-    Button {
-      withAnimation(.easeInOut(duration: 1.5)) {
-        zAnimationAngle = .degrees(-90)
-      } completion: {
-        zAnimationAngle = Angle.zero
-        twistBoard = twistBoard.concatenating(
-          CGAffineTransformMakeRotation(-.pi / 2.0)
-            .concatenating(
-              CGAffineTransformMakeTranslation(
-                0,
-                CGFloat(game.size) * cellSize
-              )
-            )
+    twist:
+      CGAffineTransformMakeRotation(-Self.quarterTurn)
+      .concatenating(
+        CGAffineTransformMakeTranslation(0, Double(Game.defaultSize) * RotatingGridView.cellSize)
+      ),
+
+    untwist:
+      CGAffineTransformMakeRotation(Self.quarterTurn)
+      .concatenating(
+        CGAffineTransformMakeTranslation(RotatingGridView.cellSize, 0)
+      )
+  )
+
+  static let rotateRight = Twist(
+    label: Label("Rotate Right", systemImage: "arrow.clockwise" ),
+    zRadians: Self.quarterTurn,
+
+    twist: CGAffineTransformMakeRotation(Self.quarterTurn)
+      .concatenating(
+        CGAffineTransformMakeTranslation(
+          Double(Game.defaultSize) * RotatingGridView.cellSize,
+          0
         )
-        untwistLetter =
-          CGAffineTransformMakeRotation(.pi / 2.0)
-          .concatenating(
-            CGAffineTransformMakeTranslation(
-              cellSize,
-              0
-            )
-          )
-          .concatenating(untwistLetter)
-      }
-    } label: {
-      Image(systemName: "arrow.counterclockwise")
-        .accessibilityLabel(Text("Rotate Left"))
-    }.circled()
-      .padding([.bottom], 6)
-  }
+      ),
+
+    untwist: CGAffineTransformMakeRotation(-Self.quarterTurn)
+      .concatenating(CGAffineTransformMakeTranslation(0, RotatingGridView.cellSize))
+  )
 }
 
-struct RotateRightButton: View {
+struct RotateButton: View {
   @Binding var game: Game
 
   @Binding var zAnimationAngle: Angle
   @Binding var twistBoard: CGAffineTransform
   @Binding var untwistLetter: CGAffineTransform
 
+  var twist: Twist
+
   var cellSize: CGFloat
 
   var body: some View {
     Button {
       withAnimation(.easeInOut(duration: 1.5)) {
-        zAnimationAngle = .degrees(90)
+        zAnimationAngle = .radians(twist.zRadians)
       } completion: {
         zAnimationAngle = Angle.zero
-        twistBoard = twistBoard.concatenating(
-          CGAffineTransformMakeRotation(.pi / 2.0)
-            .concatenating(
-              CGAffineTransformMakeTranslation(
-                CGFloat(game.size) * cellSize,
-                0
-              )
-            )
-        )
-        untwistLetter =
-          CGAffineTransformMakeRotation(-.pi / 2.0)
-          .concatenating(
-            CGAffineTransformMakeTranslation(
-              0,
-              cellSize
-            )
-          )
-          .concatenating(untwistLetter)
+        twistBoard = twistBoard.concatenating(twist.twist)
+        untwistLetter = twist.untwist.concatenating(untwistLetter)
       }
     } label: {
-      Image(
-        systemName: "arrow.clockwise"
-      )
-      .accessibilityLabel(Text("Rotate Right"))
+      twist.label
+        .labelStyle(.iconOnly)
     }.circled()
       .padding([.bottom], 6)
   }
