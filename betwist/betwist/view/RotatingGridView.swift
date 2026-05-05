@@ -28,7 +28,6 @@ struct RotatingGridView: View {
         MirrorButton(
           iconName: "arrow.left.arrow.right",
           label: "Mirror Horizontally",
-          transformFn: Location.flipHorizontal,
           game: $game,
           yAnimationAngle: $yAnimationAngle,
           twistBoard: $twistBoard,
@@ -60,8 +59,6 @@ struct RotatingGridView: View {
         twistBoard: twistBoard,
         twistLetter: twistLetter
       )
-//      .rotationEffect(angle)
-//       .transformEffect(twistBoard)
       .rotation3DEffect(yAnimationAngle, axis: (x: 0, y: -1, z: 0))
       .rotation3DEffect(zAnimationAngle, axis: (x: 0, y: 0, z: 1))
     }

@@ -3,7 +3,6 @@ import SwiftUI
 struct MirrorButton: View {
   var iconName: String
   var label: String
-  var transformFn: (Location) -> (Int) -> Location
 
   @Binding var game: Game
   @Binding var yAnimationAngle: Angle
@@ -42,7 +41,6 @@ struct MirrorButton: View {
   MirrorButton(
     iconName: "",
     label: "Mirror Horizontally",
-    transformFn: { loc in { _ in loc } },
     game: .constant(Game(2, ["A", "D", "O", "N"])),
     yAnimationAngle: .constant(Angle.zero),
     twistBoard: .constant(CGAffineTransformIdentity),

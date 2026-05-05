@@ -1,0 +1,11 @@
+
+2026-05-05 Twisting view instead of model
+Error: The grid was in the wrong place after twisting
+How detected: Used a single grid instead of InfiniteGrid; this let us see our grid relative to its border
+Fixed: Since our origin is in the left corner, rotation requires an adjusting translation to come out in the right place
+
+2026-05-05 "Untwisting" letter so it looks right regardless of parent view orientation
+Error: Grid was off two cells
+How detected: Once we straightened out the grid twisting, this error was very visible
+Problem: We offset the letter by cellSize but should be -cellSize
+Fixed: Used correct offset

@@ -18,6 +18,7 @@
 		910C97A92CA48AAD00893B79 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97A82CA48AAD00893B79 /* Location.swift */; };
 		910C97AC2CA48AF400893B79 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97AA2CA48AD900893B79 /* Selection.swift */; };
 		910C97AE2CA4990700893B79 /* ALocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97AD2CA4990700893B79 /* ALocation.swift */; };
+		9110CF5C2FAA2EE000AB6E6E /* errors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9110CF5B2FAA2EDA00AB6E6E /* errors.txt */; };
 		911EE9E32CAB21E5005C391D /* AGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E22CAB21E5005C391D /* AGame.swift */; };
 		911EE9E52CAB24CA005C391D /* AGameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E42CAB24CA005C391D /* AGameMaker.swift */; };
 		911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E62CAB28CE005C391D /* GameMaker.swift */; };
@@ -96,6 +97,7 @@
 		910C97A82CA48AAD00893B79 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		910C97AA2CA48AD900893B79 /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 		910C97AD2CA4990700893B79 /* ALocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALocation.swift; sourceTree = "<group>"; };
+		9110CF5B2FAA2EDA00AB6E6E /* errors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = errors.txt; sourceTree = "<group>"; };
 		911EE9E22CAB21E5005C391D /* AGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGame.swift; sourceTree = "<group>"; };
 		911EE9E42CAB24CA005C391D /* AGameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGameMaker.swift; sourceTree = "<group>"; };
 		911EE9E62CAB28CE005C391D /* GameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaker.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				91FA969C2C813F5E0011BB7F /* _todo.txt */,
+				9110CF5B2FAA2EDA00AB6E6E /* errors.txt */,
 				912CFEE72C88A6B10074C066 /* LICENSE */,
 				912CFEE82C88A6B10074C066 /* README.md */,
 				91FA96A32C814BAE0011BB7F /* betwist.key */,
@@ -399,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				912CFEE92C88A6B10074C066 /* LICENSE in Resources */,
+				9110CF5C2FAA2EE000AB6E6E /* errors.txt in Resources */,
 				91FA96A02C8141010011BB7F /* .swiftlint.yml in Resources */,
 				91FA969D2C813F5E0011BB7F /* _todo.txt in Resources */,
 				912CFEEA2C88A6B10074C066 /* README.md in Resources */,
