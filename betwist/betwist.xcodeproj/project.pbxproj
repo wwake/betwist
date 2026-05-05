@@ -22,8 +22,6 @@
 		911EE9E32CAB21E5005C391D /* AGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E22CAB21E5005C391D /* AGame.swift */; };
 		911EE9E52CAB24CA005C391D /* AGameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E42CAB24CA005C391D /* AGameMaker.swift */; };
 		911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E62CAB28CE005C391D /* GameMaker.swift */; };
-		911EE9F02CAC7CB9005C391D /* ATwister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9EF2CAC7CB9005C391D /* ATwister.swift */; };
-		911EE9F22CAC8096005C391D /* Twister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9F12CAC8096005C391D /* Twister.swift */; };
 		911EE9F92CADD10F005C391D /* AVocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9F82CADD10F005C391D /* AVocabulary.swift */; };
 		911EE9FB2CADD2D6005C391D /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9FA2CADD2D6005C391D /* Vocabulary.swift */; };
 		911EE9FD2CAF26E4005C391D /* AnswerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */; };
@@ -101,8 +99,6 @@
 		911EE9E22CAB21E5005C391D /* AGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGame.swift; sourceTree = "<group>"; };
 		911EE9E42CAB24CA005C391D /* AGameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGameMaker.swift; sourceTree = "<group>"; };
 		911EE9E62CAB28CE005C391D /* GameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaker.swift; sourceTree = "<group>"; };
-		911EE9EF2CAC7CB9005C391D /* ATwister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATwister.swift; sourceTree = "<group>"; };
-		911EE9F12CAC8096005C391D /* Twister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twister.swift; sourceTree = "<group>"; };
 		911EE9F82CADD10F005C391D /* AVocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVocabulary.swift; sourceTree = "<group>"; };
 		911EE9FA2CADD2D6005C391D /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
 		911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerDetailsView.swift; sourceTree = "<group>"; };
@@ -195,7 +191,6 @@
 				912847082CD9586C00FA21BA /* Trie.swift */,
 				912847502CDC10D700FA21BA /* Trie+io.swift */,
 				9128474E2CDC0EFB00FA21BA /* TrieBuilder.swift */,
-				911EE9F12CAC8096005C391D /* Twister.swift */,
 				911EE9FA2CADD2D6005C391D /* Vocabulary.swift */,
 				9128474A2CDC0C9600FA21BA /* WordLoader.swift */,
 			);
@@ -299,7 +294,6 @@
 				910C97AD2CA4990700893B79 /* ALocation.swift */,
 				9181F0A52CA3556D0091A771 /* ASelection.swift */,
 				912847062CD9583800FA21BA /* ATrie.swift */,
-				911EE9EF2CAC7CB9005C391D /* ATwister.swift */,
 				911EE9F82CADD10F005C391D /* AVocabulary.swift */,
 				911EEA002CAF30D7005C391D /* TheAnswers.swift */,
 				912847522CDC131D00FA21BA /* Vocabulary+init.swift */,
@@ -506,7 +500,6 @@
 				91C8BFAF2CE6863D009810AF /* YouFoundView.swift in Sources */,
 				910C6FAC2CBDB4BF00BD6A0D /* GridView.swift in Sources */,
 				912847512CDC10E100FA21BA /* Trie+io.swift in Sources */,
-				911EE9F22CAC8096005C391D /* Twister.swift in Sources */,
 				9128474F2CDC0EFF00FA21BA /* TrieBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,7 +514,6 @@
 				91A75CE42FA29B2700BB040C /* AnAngle.swift in Sources */,
 				911EE9E52CAB24CA005C391D /* AGameMaker.swift in Sources */,
 				911EEA012CAF30D7005C391D /* TheAnswers.swift in Sources */,
-				911EE9F02CAC7CB9005C391D /* ATwister.swift in Sources */,
 				911EE9F92CADD10F005C391D /* AVocabulary.swift in Sources */,
 				911EE9E32CAB21E5005C391D /* AGame.swift in Sources */,
 				910C97AE2CA4990700893B79 /* ALocation.swift in Sources */,

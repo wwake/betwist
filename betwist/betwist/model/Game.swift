@@ -11,7 +11,6 @@ struct Game {
   var mode = GameMode.play
 
   let grid: LetterGrid
-  var twister: Twister
 
   var selection: Selection
 
@@ -25,7 +24,6 @@ struct Game {
 
   init(_ size: Int, _ source: any Sequence<String>, _ vocabulary: Vocabulary = NullVocabulary()) {
     self.grid = LetterGrid(size, Array(source))
-    self.twister = Twister(size)
 
     self.selection = Selection(grid)
     self.vocabulary = vocabulary
@@ -46,17 +44,15 @@ struct Game {
   }
 
   subscript(_ row: Int, _ column: Int) -> String {
-    let newLocation = twister[Location(row, column)]
-    return grid[newLocation.row, newLocation.column]
+    grid[row, column]
   }
 
   subscript(_ location: Location) -> String {
-    let newLocation = twister[location]
-    return grid[newLocation.row, newLocation.column]
+    grid[location.row, location.column]
   }
 
   mutating func select(_ location: Location) {
-    selection.select(twister[location])
+    selection.select(location)
     message = ""
   }
 
@@ -70,7 +66,7 @@ struct Game {
   }
 
   func type(at location: Location) -> SelectionType {
-    selection.type(twister[location])
+    selection.type(location)
   }
 
   func type(at location: Location, in selection: Selection) -> SelectionType {
@@ -78,8 +74,7 @@ struct Game {
   }
 
   func hue(at location: Location) -> Double {
-    let newLocation = twister[location]
-    return hues[newLocation.row * size + newLocation.column]
+    hues[location.row * size + location.column]
   }
 
   mutating func validate() {
@@ -118,7 +113,7 @@ struct Game {
   }
 
   func lastLocationSelected(was location: Location) -> Bool {
-    selection.last == twister[location]
+    selection.last == location
   }
 
   var systemAnswers: Answers {
@@ -131,13 +126,5 @@ struct Game {
 
   var score: Score {
     Score(wordCount: answers.wordCount, letterCount: answers.letterCount, mostLetters: answers.mostLetters)
-  }
-
-  mutating func rotate(clockwise: Bool) {
-    if clockwise {
-      twister.rotateRight()
-    } else {
-      twister.transform(Location.rotateLeft)
-    }
   }
 }

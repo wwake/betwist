@@ -47,20 +47,6 @@ struct ASolver {
   }
 
   @Test
-  func knows_type_of_neighbors_when_some_selected_even_if_game_is_rotated() {
-    var game = Game(3, ["F", "U", "Z", "N", "D", "Z", "Z", "Z", "Z"])
-    let sut = Solver(minimumAnswerSize: 4, vocabulary: game.vocabulary, grid: game.grid)
-    game.rotate(clockwise: false)
-    var selection = Selection(game.grid)
-
-    selection.select(Location(0, 1))
-    selection.select(Location(1, 0))
-    selection.select(Location(0, 0))
-
-    #expect(sut.type(at: Location(1, 1), in: selection) == .neighbor)
-  }
-
-  @Test
   func finds_all_answers_in_1_cell_board() {
     let game = Game(1, ["A"], Vocabulary(["A"]))
     let sut = Solver(minimumAnswerSize: 1, vocabulary: game.vocabulary, grid: game.grid)
