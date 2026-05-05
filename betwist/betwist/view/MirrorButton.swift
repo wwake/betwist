@@ -22,7 +22,6 @@ struct MirrorButton: View {
             .concatenating(
               CGAffineTransformMakeTranslation(CGFloat(game.size) * cellSize, 0)
             )
-          //           .concatenating(CGAffineTransformMakeTranslation(3.0 * cellWidth, 0))  // ?? why 3.0?
         )
         untwistLetter =
           CGAffineTransformMakeTranslation(-cellSize, 0)

@@ -16,13 +16,12 @@ struct RotatingGridView: View {
   var body: some View {
     VStack {
       HStack {
-        RotateButton(
-          clockwise: false,
+        RotateLeftButton(
           game: $game,
           zAnimationAngle: $zAnimationAngle,
           twistBoard: $twistBoard,
           untwistLetter: $twistLetter,
-          cellWidth: Self.cellSize,
+          cellSize: Self.cellSize,
         )
 
         MirrorButton(
@@ -36,13 +35,12 @@ struct RotatingGridView: View {
           cellSize: Self.cellSize
         )
 
-        RotateButton(
-          clockwise: true,
+        RotateRightButton(
           game: $game,
           zAnimationAngle: $zAnimationAngle,
           twistBoard: $twistBoard,
           untwistLetter: $twistLetter,
-          cellWidth: Self.cellSize,
+          cellSize: Self.cellSize,
         )
       }
       .padding(.top, 5)
