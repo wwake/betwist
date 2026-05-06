@@ -1,7 +1,5 @@
 import SwiftUI
 
-typealias Axis = (x: CGFloat, y: CGFloat, z: CGFloat)
-
 struct Twist {
   static let quarterTurn = .pi / 2.0
 
@@ -14,7 +12,7 @@ struct Twist {
   static let rotateLeft = Twist(
     label: Label("Rotate Left", systemImage: "arrow.counterclockwise"),
     rotationRadians: -Self.quarterTurn,
-    rotationAxis: (x: 0, y: 0, z: 1),
+    rotationAxis: Axis(x: 0.0, y: 0.0, z: 1.0),
 
     twist:
       CGAffineTransformMakeRotation(-Self.quarterTurn)
@@ -32,7 +30,7 @@ struct Twist {
   static let rotateRight = Twist(
     label: Label("Rotate Right", systemImage: "arrow.clockwise" ),
     rotationRadians: Self.quarterTurn,
-    rotationAxis: (x: 0, y: 0, z: 1),
+    rotationAxis: Axis(x: 0.0, y: 0.0, z: 1.0),
 
     twist: CGAffineTransformMakeRotation(Self.quarterTurn)
       .concatenating(
