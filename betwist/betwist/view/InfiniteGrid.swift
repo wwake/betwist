@@ -10,7 +10,8 @@ struct InfiniteGrid: View {
   var boardSize: Double
 
   var yAnimationAngle: Angle
-  var zAnimationAngle: Angle
+  var animationAngle: Angle
+  var axis: Axis
   var twistBoard: CGAffineTransform
   var twistLetter: CGAffineTransform
 
@@ -23,7 +24,8 @@ struct InfiniteGrid: View {
       game: $game,
       handleSelection: handleSelection,
       yAnimationAngle: yAnimationAngle,
-      zAnimationAngle: zAnimationAngle,
+      animationAngle: animationAngle,
+      axis: axis,
       twistBoard: twistBoard,
       twistLetter: twistLetter
     )

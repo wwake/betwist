@@ -12,7 +12,7 @@ struct Twist {
   static let rotateLeft = Twist(
     label: Label("Rotate Left", systemImage: "arrow.counterclockwise"),
     rotationRadians: -Self.quarterTurn,
-    rotationAxis: Axis(x: 0.0, y: 0.0, z: 1.0),
+    rotationAxis: Axis(x: 0, y: 0, z: 1),
 
     twist:
       CGAffineTransformMakeRotation(-Self.quarterTurn)
@@ -30,7 +30,7 @@ struct Twist {
   static let rotateRight = Twist(
     label: Label("Rotate Right", systemImage: "arrow.clockwise" ),
     rotationRadians: Self.quarterTurn,
-    rotationAxis: Axis(x: 0.0, y: 0.0, z: 1.0),
+    rotationAxis: Axis(x: 0, y: 0, z: 1),
 
     twist: CGAffineTransformMakeRotation(Self.quarterTurn)
       .concatenating(
@@ -42,6 +42,20 @@ struct Twist {
 
     untwist: CGAffineTransformMakeRotation(-Self.quarterTurn)
       .concatenating(CGAffineTransformMakeTranslation(0, RotatingGridView.cellSize))
+  )
+
+  static let mirrorHorizontally = Twist(
+    label: Label("Mirror Horizontally", systemImage: "arrow.left.arrow.right"),
+    rotationRadians: 2.0 * Self.quarterTurn,
+    rotationAxis: Axis(x: 0, y: -1, z: 0),
+
+    twist: CGAffineTransformMakeScale(-1, 1)
+      .concatenating(
+        CGAffineTransformMakeTranslation(Double(Game.defaultSize) * RotatingGridView.cellSize, 0)
+      ),
+
+    untwist: CGAffineTransformMakeTranslation(-RotatingGridView.cellSize, 0)
+      .concatenating(CGAffineTransformMakeScale(-1, 1))
   )
 }
 

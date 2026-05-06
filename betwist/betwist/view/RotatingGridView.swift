@@ -58,7 +58,8 @@ struct RotatingGridView: View {
         cellSize: Self.cellSize,
         boardSize: width,
         yAnimationAngle: yAnimationAngle,
-        zAnimationAngle: animationAngle,
+        animationAngle: animationAngle,
+        axis: animationAxis,
         twistBoard: twistBoard,
         twistLetter: twistLetter
       )
