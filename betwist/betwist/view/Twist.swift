@@ -47,7 +47,7 @@ struct Twist {
   static let mirrorHorizontally = Twist(
     label: Label("Mirror Horizontally", systemImage: "arrow.left.arrow.right"),
     rotationAngle: Angle.degrees(180),
-    rotationAxis: Axis(x: 0, y: -1, z: 0),
+    rotationAxis: Axis(x: 0, y: 1, z: 0),
 
     twist: CGAffineTransformMakeScale(-1, 1)
       .concatenating(
