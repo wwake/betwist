@@ -14,7 +14,7 @@ struct MirrorButton: View {
   var body: some View {
     Button {
       withAnimation(.easeInOut(duration: 1.5)) {
-        yAnimationAngle = (yAnimationAngle + Angle(degrees: 180)).normalized
+        yAnimationAngle = Angle(degrees: 180)
       } completion: {
         yAnimationAngle = Angle.zero
         twistBoard = twistBoard.concatenating(
