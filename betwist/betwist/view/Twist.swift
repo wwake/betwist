@@ -51,10 +51,30 @@ struct Twist {
 
     twist: CGAffineTransformMakeScale(-1, 1)
       .concatenating(
-        CGAffineTransformMakeTranslation(Double(Game.defaultSize) * RotatingGridView.cellSize, 0)
+        CGAffineTransformMakeTranslation(
+          Double(Game.defaultSize) * RotatingGridView.cellSize,
+          0
+        )
       ),
 
     untwist: CGAffineTransformMakeTranslation(-RotatingGridView.cellSize, 0)
       .concatenating(CGAffineTransformMakeScale(-1, 1))
+  )
+
+  static let mirrorVertically = Twist(
+    label: Label("Mirror Vertically", systemImage: "arrow.up.arrow.down"),
+    rotationAngle: Angle.degrees(180),
+    rotationAxis: Axis(x: 1, y: 0, z: 0),
+
+    twist: CGAffineTransformMakeScale(1, -1)
+      .concatenating(
+        CGAffineTransformMakeTranslation(
+          0,
+          Double(Game.defaultSize) * RotatingGridView.cellSize
+        )
+      ),
+
+    untwist: CGAffineTransformMakeTranslation(0, -RotatingGridView.cellSize)
+      .concatenating(CGAffineTransformMakeScale(1, -1))
   )
 }

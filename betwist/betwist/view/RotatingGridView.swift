@@ -40,6 +40,15 @@ struct RotatingGridView: View {
           axis: $animationAxis,
           twistBoard: $twistBoard,
           untwistLetter: $twistLetter,
+          twist: Twist.mirrorVertically,
+        )
+
+        TwistButton(
+          game: $game,
+          animationAngle: $animationAngle,
+          axis: $animationAxis,
+          twistBoard: $twistBoard,
+          untwistLetter: $twistLetter,
           twist: Twist.rotateRight,
         )
       }

@@ -1,4 +1,4 @@
-* Refactor MirrorButton to use Twist
+* Mirror Vertically
 * Reset angles & transforms on new game
 * Disable twist buttons while animating
 * Shifting problem when grid is not centered (from dragging)
@@ -76,6 +76,9 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2026-05-06 - Refactor Animation; Mirror Vertically
+* Refactor MirrorButton to use Twist
+
 2026-05-05 - More Animation
 * Decided to combine 3d animation (last twist) with transform approach (accumulated twists)
 * Fixed the rotation and mirror twists to adjust location properly
