@@ -16,6 +16,7 @@ struct CompactLandscapeView: View {
         AnswerInProgressView(game: $game, progress: progress, height: 500) {
           collectWord()
         }
+        .padding(.top, 32)
 
         VStack(spacing: 8) {
           MessageView(message: game.message)
@@ -36,7 +37,6 @@ struct CompactLandscapeView: View {
             .padding([.bottom], 20)
         }
       }
-      .zIndex(5)
 
       RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.height)
     }

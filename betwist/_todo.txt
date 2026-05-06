@@ -1,9 +1,6 @@
-* Mirror Vertically
-* Reset angles & transforms on new game
-* Disable twist buttons while animating
-* Shifting problem when grid is not centered (from dragging)
 
-* Mirror buttons - horizontal, vertical, \, and /
+* Reset angles & transforms on new game
+* Shifting problem when grid is not centered (from dragging)
 
 * Dictionary lookup
 * Bigger letters on iPad
@@ -31,6 +28,8 @@ SE: 647x375 -> 1.73 aspect ratio
 * Disable "Trie Generation" button
 
 * Animation isn't happening when word is guessed - zIndex issue?
+
+* Mirror buttons - \, and /
 
 ====
 * RegularLandscapeView
@@ -78,6 +77,8 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 =====
 2026-05-06 - Refactor Animation; Mirror Vertically
 * Refactor MirrorButton to use Twist
+* Mirror Vertically
+* Animation appears to be above controls (as desired)
 
 2026-05-05 - More Animation
 * Decided to combine 3d animation (last twist) with transform approach (accumulated twists)

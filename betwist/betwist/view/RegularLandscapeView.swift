@@ -36,7 +36,7 @@ struct RegularLandscapeView: View {
             .padding([.bottom], 20)
         }
       }
-      .zIndex(5)
+      .padding(.top, 64)
 
       RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.height)
     }

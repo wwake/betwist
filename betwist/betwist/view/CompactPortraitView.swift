@@ -24,7 +24,6 @@ struct CompactPortraitView: View {
       AnswerInProgressView(game: $game, progress: progress, height: 500) {
         collectWord()
       }
-      .zIndex(5)
 
       MessageView(message: game.message)
         .frame(height: 24)
