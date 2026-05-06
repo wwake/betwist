@@ -5,7 +5,6 @@ struct GridView: View {
   @Binding var game: Game
   var handleSelection: (Location) -> Void
 
-  var yAnimationAngle: Angle
   var animationAngle: Angle
   var axis: Axis
   var twistBoard: CGAffineTransform
@@ -22,7 +21,6 @@ struct GridView: View {
               game: $game,
               location: Location(row, column),
               handleSelection: handleSelection,
-              yAnimationAngle: yAnimationAngle,
               animationAngle: animationAngle,
               axis: axis,
               twistLetter: twistLetter

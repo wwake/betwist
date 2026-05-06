@@ -9,7 +9,6 @@ struct LetterView<S: InsettableShape>: View {
   var location: Location
   var handleSelection: (Location) -> Void
 
-  var yAnimationAngle: Angle
   var animationAngle: Angle
   var axis: Axis
   var twistLetter: CGAffineTransform
@@ -31,7 +30,6 @@ struct LetterView<S: InsettableShape>: View {
           .foregroundStyle(chooser.foregroundColor(type))
           .allowsHitTesting(false)
           .scaleEffect(x: game[location].count == 2 ? 0.85 : 1.0)
-          .rotation3DEffect(yAnimationAngle, axis: (x: 0, y: 1, z: 0))
           .rotation3DEffect(animationAngle, axis: invert(axis))
       }
       .onTapGesture {

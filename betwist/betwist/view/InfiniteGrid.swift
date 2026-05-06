@@ -9,7 +9,6 @@ struct InfiniteGrid: View {
   var cellSize: Double
   var boardSize: Double
 
-  var yAnimationAngle: Angle
   var animationAngle: Angle
   var axis: Axis
   var twistBoard: CGAffineTransform
@@ -23,7 +22,6 @@ struct InfiniteGrid: View {
       cellSize: cellSize,
       game: $game,
       handleSelection: handleSelection,
-      yAnimationAngle: yAnimationAngle,
       animationAngle: animationAngle,
       axis: axis,
       twistBoard: twistBoard,

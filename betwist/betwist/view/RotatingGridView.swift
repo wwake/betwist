@@ -6,7 +6,6 @@ struct RotatingGridView: View {
   @State private var twistBoard: CGAffineTransform = CGAffineTransformIdentity
   @State private var twistLetter: CGAffineTransform = CGAffineTransformIdentity
 
-  @State private var yAnimationAngle = Angle.zero
   @State private var animationAngle = Angle.zero
   @State private var animationAxis = Axis(x: 0.0, y: 0.0, z: 0.0)
 
@@ -56,13 +55,11 @@ struct RotatingGridView: View {
         handleSelection: handleSelection,
         cellSize: Self.cellSize,
         boardSize: width,
-        yAnimationAngle: yAnimationAngle,
         animationAngle: animationAngle,
         axis: animationAxis,
         twistBoard: twistBoard,
         twistLetter: twistLetter
       )
-      .rotation3DEffect(yAnimationAngle, axis: (x: 0, y: -1, z: 0))
       .rotation3DEffect(animationAngle, axis: animationAxis)
     }
     .frame(width: width)
