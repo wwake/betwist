@@ -4,14 +4,14 @@ struct Twist {
   static let quarterTurn = .pi / 2.0
 
   let label: Label<Text, Image>
-  let rotationRadians: Double
+  let rotationAngle: Angle
   let rotationAxis: Axis
   let twist: CGAffineTransform
   let untwist: CGAffineTransform
 
   static let rotateLeft = Twist(
     label: Label("Rotate Left", systemImage: "arrow.counterclockwise"),
-    rotationRadians: -Self.quarterTurn,
+    rotationAngle: Angle.degrees(-90),
     rotationAxis: Axis(x: 0, y: 0, z: 1),
 
     twist:
@@ -29,7 +29,7 @@ struct Twist {
 
   static let rotateRight = Twist(
     label: Label("Rotate Right", systemImage: "arrow.clockwise" ),
-    rotationRadians: Self.quarterTurn,
+    rotationAngle: Angle.degrees(90),
     rotationAxis: Axis(x: 0, y: 0, z: 1),
 
     twist: CGAffineTransformMakeRotation(Self.quarterTurn)
@@ -46,7 +46,7 @@ struct Twist {
 
   static let mirrorHorizontally = Twist(
     label: Label("Mirror Horizontally", systemImage: "arrow.left.arrow.right"),
-    rotationRadians: 2.0 * Self.quarterTurn,
+    rotationAngle: Angle.degrees(180),
     rotationAxis: Axis(x: 0, y: -1, z: 0),
 
     twist: CGAffineTransformMakeScale(-1, 1)

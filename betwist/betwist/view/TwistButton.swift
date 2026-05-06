@@ -17,7 +17,7 @@ struct TwistButton: View {
     Button {
       axis = twist.rotationAxis
       withAnimation(.easeInOut(duration: 1.5)) {
-        animationAngle = .radians(twist.rotationRadians)
+        animationAngle = twist.rotationAngle
       } completion: {
         animationAngle = Angle.zero
         twistBoard = twistBoard.concatenating(twist.twist)
