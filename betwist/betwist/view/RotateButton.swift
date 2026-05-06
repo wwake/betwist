@@ -1,16 +1,20 @@
 import SwiftUI
 
+typealias Axis = (x: CGFloat, y: CGFloat, z: CGFloat)
+
 struct Twist {
   static let quarterTurn = .pi / 2.0
 
   let label: Label<Text, Image>
-  let zRadians: Double
+  let rotationRadians: Double
+  let rotationAxis: Axis
   let twist: CGAffineTransform
   let untwist: CGAffineTransform
 
   static let rotateLeft = Twist(
     label: Label("Rotate Left", systemImage: "arrow.counterclockwise"),
-    zRadians: -Self.quarterTurn,
+    rotationRadians: -Self.quarterTurn,
+    rotationAxis: (x: 0, y: 0, z: 1),
 
     twist:
       CGAffineTransformMakeRotation(-Self.quarterTurn)
@@ -27,7 +31,8 @@ struct Twist {
 
   static let rotateRight = Twist(
     label: Label("Rotate Right", systemImage: "arrow.clockwise" ),
-    zRadians: Self.quarterTurn,
+    rotationRadians: Self.quarterTurn,
+    rotationAxis: (x: 0, y: 0, z: 1),
 
     twist: CGAffineTransformMakeRotation(Self.quarterTurn)
       .concatenating(
@@ -45,7 +50,9 @@ struct Twist {
 struct RotateButton: View {
   @Binding var game: Game
 
-  @Binding var zAnimationAngle: Angle
+  @Binding var animationAngle: Angle
+  @Binding var axis: Axis
+
   @Binding var twistBoard: CGAffineTransform
   @Binding var untwistLetter: CGAffineTransform
 
@@ -55,10 +62,11 @@ struct RotateButton: View {
 
   var body: some View {
     Button {
+      axis = twist.rotationAxis
       withAnimation(.easeInOut(duration: 1.5)) {
-        zAnimationAngle = .radians(twist.zRadians)
+        animationAngle = .radians(twist.rotationRadians)
       } completion: {
-        zAnimationAngle = Angle.zero
+        animationAngle = Angle.zero
         twistBoard = twistBoard.concatenating(twist.twist)
         untwistLetter = twist.untwist.concatenating(untwistLetter)
       }

@@ -7,7 +7,8 @@ struct RotatingGridView: View {
   @State private var twistLetter: CGAffineTransform = CGAffineTransformIdentity
 
   @State private var yAnimationAngle = Angle.zero
-  @State private var zAnimationAngle = Angle.zero
+  @State private var animationAngle = Angle.zero
+  @State private var animationAxis = Axis(x: 0.0, y: 0.0, z: 0.0)
 
   @Binding var game: Game
   var handleSelection: (Location) -> Void
@@ -18,7 +19,8 @@ struct RotatingGridView: View {
       HStack {
         RotateButton(
           game: $game,
-          zAnimationAngle: $zAnimationAngle,
+          animationAngle: $animationAngle,
+          axis: $animationAxis,
           twistBoard: $twistBoard,
           untwistLetter: $twistLetter,
           twist: Twist.rotateLeft,
@@ -38,7 +40,8 @@ struct RotatingGridView: View {
 
         RotateButton(
           game: $game,
-          zAnimationAngle: $zAnimationAngle,
+          animationAngle: $animationAngle,
+          axis: $animationAxis,
           twistBoard: $twistBoard,
           untwistLetter: $twistLetter,
           twist: Twist.rotateRight,
@@ -55,12 +58,12 @@ struct RotatingGridView: View {
         cellSize: Self.cellSize,
         boardSize: width,
         yAnimationAngle: yAnimationAngle,
-        zAnimationAngle: zAnimationAngle,
+        zAnimationAngle: animationAngle,
         twistBoard: twistBoard,
         twistLetter: twistLetter
       )
       .rotation3DEffect(yAnimationAngle, axis: (x: 0, y: -1, z: 0))
-      .rotation3DEffect(zAnimationAngle, axis: (x: 0, y: 0, z: 1))
+      .rotation3DEffect(animationAngle, axis: animationAxis)
     }
     .frame(width: width)
     .zIndex(1)

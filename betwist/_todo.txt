@@ -1,7 +1,4 @@
-
-* Make sure the transform puts it back inside the border
-* Look into .animation(:value) - a way to apply last transform?
-* Decide what to give up - nice animation or transforms
+* Refactor MirrorButton to use Twist
 * Reset angles & transforms on new game
 * Disable twist buttons while animating
 * Shifting problem when grid is not centered (from dragging)
@@ -80,6 +77,7 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 
 =====
 2026-05-05 - More Animation
+* Decided to combine 3d animation (last twist) with transform approach (accumulated twists)
 * Fixed the rotation and mirror twists to adjust location properly
 * Made untwist apply the original untwist last instead of first (LIFO)
 
