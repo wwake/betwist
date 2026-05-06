@@ -7,13 +7,14 @@ struct AnswersSummaryView: View {
   var body: some View {
     VStack {
       if !game.answers.isEmpty {
-        Text("Found Words")
+        Text("Latest Found")
           .font(.title3)
+          .underline()
 
         Text(verbatim: game.answers.preview)
       }
 
-      Button("All Answers...") {
+      Button("Your Answers...") {
         viewAction()
       }
       .capsuled()

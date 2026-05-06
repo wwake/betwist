@@ -8,13 +8,13 @@ struct NewGameButton: View {
   var body: some View {
     Group {
       if game.mode == .play {
-        Button("I give up 😢") {
+        Button("Done") {
           game.mode = .review
           showAnswers = true
         }
         .capsuled()
       } else {
-        Button("New Game 🎉") {
+        Button("Start New Game") {
           showAnswers = false
           game = Game(game.size, GameMaker(game.size).make(), game.vocabulary)
         }

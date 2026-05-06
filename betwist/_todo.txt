@@ -10,17 +10,15 @@
 
 ===
 * Return key submits word ?
-* I give up => show me or All Answers
 * Make "gimme" words blue
 * Message when system didn't find any (extra) words
-* All answers => Your Words So Far
 * Swap sides so score on right
 * Score => Score So Far (or Final Score?)
 * Guess in progress near bottom?
 * Colors of words - explain?
-* Link to dictionary - https://dictionaryapi.dev
 
-* Adjust size of infinite grid (without rotate buttons) not RotatingGridView - pass geometry down rather than just width
+* Link to dictionary - https://dictionaryapi.dev
+* Link system-found words to a dictionary definition - see api_dictionaryapi_dev/api/v2/entries/en/[the word]
 
 SE: 647x375 -> 1.73 aspect ratio
 16: 759x394 -> 1.93 aspect ratio
@@ -47,7 +45,6 @@ SE: 647x375 -> 1.73 aspect ratio
 * Load the Trie using Async/Await
 
 * When showing system-found words, show user's words in black
-* Link system-found words to a dictionary definition - see api_dictionaryapi_dev/api/v2/entries/en/[the word]
 
 
 * Tessellations
@@ -79,6 +76,9 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 * Refactor MirrorButton to use Twist
 * Mirror Vertically
 * Animation appears to be above controls (as desired)
+* "I give up" => "Done"; "New Game" => "Start New Game"
+* The "Found Words" title looks like a word itself (underlined now)
+
 
 2026-05-05 - More Animation
 * Decided to combine 3d animation (last twist) with transform approach (accumulated twists)
