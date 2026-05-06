@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RotatingGridView: View {
-  static var cellSize = 51.0
+  static var cellSize = 50.0
 
   @State private var twistBoard: CGAffineTransform = CGAffineTransformIdentity
   @State private var twistLetter: CGAffineTransform = CGAffineTransformIdentity
@@ -23,7 +23,6 @@ struct RotatingGridView: View {
           twistBoard: $twistBoard,
           untwistLetter: $twistLetter,
           twist: Twist.rotateLeft,
-          cellSize: Self.cellSize,
         )
 
         TwistButton(
@@ -33,7 +32,6 @@ struct RotatingGridView: View {
           twistBoard: $twistBoard,
           untwistLetter: $twistLetter,
           twist: Twist.mirrorHorizontally,
-          cellSize: Self.cellSize,
         )
 
         TwistButton(
@@ -43,7 +41,6 @@ struct RotatingGridView: View {
           twistBoard: $twistBoard,
           untwistLetter: $twistLetter,
           twist: Twist.rotateRight,
-          cellSize: Self.cellSize,
         )
       }
       .padding(.top, 5)

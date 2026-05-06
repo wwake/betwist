@@ -11,8 +11,6 @@ struct TwistButton: View {
 
   var twist: Twist
 
-  var cellSize: CGFloat
-
   var body: some View {
     Button {
       axis = twist.rotationAxis
