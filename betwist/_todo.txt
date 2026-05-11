@@ -1,7 +1,3 @@
-* Shifting problem when grid is not centered (from dragging)
-* Teal lines didn't get translated
-
-
 * Reset angles & transforms on new game
 
 * Dictionary lookup
@@ -76,6 +72,7 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 =====
 2026-05-11 - What a Drag
 * Vertical mirroring was asymmetric because board wasn't centered; removed aspect ratio adjustment so infinite board is square
+* Made dragging work as a new transform and made sure the teal border dragged too
 
 2026-05-06 - Refactor Animation; Mirror Vertically
 * Refactor MirrorButton to use Twist

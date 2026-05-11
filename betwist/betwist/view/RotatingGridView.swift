@@ -37,5 +37,13 @@ struct RotatingGridView: View {
       .clipped()
       .rotation3DEffect(animationAngle, axis: animationAxis)
     }
+    .onChange(of: game.mode) {
+      if game.mode == .play {
+        twistBoard = CGAffineTransformIdentity
+        untwistLetter = CGAffineTransformIdentity
+        animationAngle = Angle.zero
+        animationAxis = Axis(x: 0.0, y: 0.0, z: 0.0)
+      }
+    }
   }
 }
