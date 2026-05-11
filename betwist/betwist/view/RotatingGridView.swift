@@ -15,46 +15,13 @@ struct RotatingGridView: View {
 
   var body: some View {
     VStack {
-      HStack {
-        TwistButton(
-          game: $game,
-          animationAngle: $animationAngle,
-          axis: $animationAxis,
-          twistBoard: $twistBoard,
-          untwistLetter: $twistLetter,
-          twist: Twist.rotateLeft,
-        )
-
-        TwistButton(
-          game: $game,
-          animationAngle: $animationAngle,
-          axis: $animationAxis,
-          twistBoard: $twistBoard,
-          untwistLetter: $twistLetter,
-          twist: Twist.mirrorHorizontally,
-        )
-
-        TwistButton(
-          game: $game,
-          animationAngle: $animationAngle,
-          axis: $animationAxis,
-          twistBoard: $twistBoard,
-          untwistLetter: $twistLetter,
-          twist: Twist.mirrorVertically,
-        )
-
-        TwistButton(
-          game: $game,
-          animationAngle: $animationAngle,
-          axis: $animationAxis,
-          twistBoard: $twistBoard,
-          untwistLetter: $twistLetter,
-          twist: Twist.rotateRight,
-        )
-      }
-      .padding(.top, 5)
-      .padding([.leading, .trailing], 8)
-      .background(Capsule().fill(.thinMaterial))
+      TwistButtons(
+        game: $game,
+        twistBoard: $twistBoard,
+        twistLetter: $twistLetter,
+        animationAngle: $animationAngle,
+        animationAxis: $animationAxis,
+      )
 
       InfiniteGrid(
         game: $game,
@@ -66,9 +33,10 @@ struct RotatingGridView: View {
         twistBoard: twistBoard,
         twistLetter: twistLetter
       )
+      .frame(width: width, height: width)
+      .clipped()
       .rotation3DEffect(animationAngle, axis: animationAxis)
+      .zIndex(1)
     }
-    .frame(width: width)
-    .zIndex(1)
   }
 }
