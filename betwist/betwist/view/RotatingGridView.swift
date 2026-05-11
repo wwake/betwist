@@ -4,7 +4,7 @@ struct RotatingGridView: View {
   static var cellSize = 50.0
 
   @State private var twistBoard: CGAffineTransform = CGAffineTransformIdentity
-  @State private var twistLetter: CGAffineTransform = CGAffineTransformIdentity
+  @State private var untwistLetter: CGAffineTransform = CGAffineTransformIdentity
 
   @State private var animationAngle = Angle.zero
   @State private var animationAxis = Axis(x: 0.0, y: 0.0, z: 0.0)
@@ -18,7 +18,7 @@ struct RotatingGridView: View {
       TwistButtons(
         game: $game,
         twistBoard: $twistBoard,
-        twistLetter: $twistLetter,
+        twistLetter: $untwistLetter,
         animationAngle: $animationAngle,
         animationAxis: $animationAxis,
       )
@@ -30,8 +30,8 @@ struct RotatingGridView: View {
         boardSize: width,
         animationAngle: animationAngle,
         axis: animationAxis,
-        twistBoard: twistBoard,
-        twistLetter: twistLetter
+        twistBoard: $twistBoard,
+        untwistLetter: $untwistLetter
       )
       .frame(width: width, height: width)
       .clipped()

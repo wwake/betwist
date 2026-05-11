@@ -11,8 +11,9 @@ struct InfiniteGrid: View {
 
   var animationAngle: Angle
   var axis: Axis
-  var twistBoard: CGAffineTransform
-  var twistLetter: CGAffineTransform
+
+  @Binding var twistBoard: CGAffineTransform
+  @Binding var untwistLetter: CGAffineTransform
 
   @State private var offset = CGSize.zero
   @State private var priorOffset = CGSize.zero
@@ -25,7 +26,7 @@ struct InfiniteGrid: View {
       animationAngle: animationAngle,
       axis: axis,
       twistBoard: twistBoard,
-      twistLetter: twistLetter
+      twistLetter: untwistLetter
     )
 
     return VStack {

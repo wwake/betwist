@@ -1,7 +1,6 @@
-* Vertical mirroring seems asymmetric
+* Shifting problem when grid is not centered (from dragging)
 * Teal lines didn't get translated
 
-* Shifting problem when grid is not centered (from dragging)
 
 * Reset angles & transforms on new game
 
@@ -75,6 +74,9 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2026-05-11 - What a Drag
+* Vertical mirroring was asymmetric because board wasn't centered; removed aspect ratio adjustment so infinite board is square
+
 2026-05-06 - Refactor Animation; Mirror Vertically
 * Refactor MirrorButton to use Twist
 * Mirror Vertically
