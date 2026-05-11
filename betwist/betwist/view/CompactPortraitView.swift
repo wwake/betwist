@@ -31,6 +31,7 @@ struct CompactPortraitView: View {
         .font(.title)
 
       RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width)
+        .zIndex(5)
 
       HStack(alignment: .top) {
         VStack {

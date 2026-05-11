@@ -52,6 +52,5 @@ struct AnswerInProgressView: View {
           .clipShape(Circle())
       }
     }
-    .zIndex(10)
   }
 }

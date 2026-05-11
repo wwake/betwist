@@ -36,7 +36,6 @@ struct RotatingGridView: View {
       .frame(width: width, height: width)
       .clipped()
       .rotation3DEffect(animationAngle, axis: animationAxis)
-      .zIndex(1)
     }
   }
 }

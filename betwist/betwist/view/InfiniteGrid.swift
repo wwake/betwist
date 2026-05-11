@@ -16,7 +16,6 @@ struct InfiniteGrid: View {
   @Binding var untwistLetter: CGAffineTransform
 
   @State private var offset = CGSize.zero
-  @State private var priorOffset = CGSize.zero
 
   var body: some View {
     let gridView = GridView(
@@ -45,13 +44,14 @@ struct InfiniteGrid: View {
       .gesture(
         DragGesture(minimumDistance: 4)
           .onChanged { dragInfo in
-            offset.width = priorOffset.width + dragInfo.translation.width
-            offset.height = priorOffset.height + dragInfo.translation.height
+            offset.width = dragInfo.translation.width
+            offset.height = dragInfo.translation.height
 
             offset = offset.wrap(Double(game.size) * cellSize)
           }
           .onEnded { _ in
-            priorOffset = offset
+            twistBoard = twistBoard.translatedBy(x: offset.width, y: offset.height)
+            offset = CGSize.zero
           }
       )
     }

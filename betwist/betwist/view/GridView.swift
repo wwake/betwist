@@ -29,7 +29,7 @@ struct GridView: View {
         }
       }
     }
-    .transformEffect(twistBoard)
     .border(.accent, width: 2)
+    .transformEffect(twistBoard)
   }
 }
