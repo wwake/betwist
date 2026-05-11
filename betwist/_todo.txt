@@ -1,6 +1,6 @@
+* Shifting problem when grid is not centered (from dragging)
 
 * Reset angles & transforms on new game
-* Shifting problem when grid is not centered (from dragging)
 
 * Dictionary lookup
 * Bigger letters on iPad
