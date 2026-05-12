@@ -1,6 +1,7 @@
-* Reset angles & transforms on new game
+* Startup is slow
 
 * Dictionary lookup
+
 * Bigger letters on iPad
 * Strikethrough on system words that you also found
 * Better labels; consistent fonts & formatting
@@ -73,6 +74,7 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 2026-05-11 - What a Drag
 * Vertical mirroring was asymmetric because board wasn't centered; removed aspect ratio adjustment so infinite board is square
 * Made dragging work as a new transform and made sure the teal border dragged too
+* Reset rotations & animations when a new game is started
 
 2026-05-06 - Refactor Animation; Mirror Vertically
 * Refactor MirrorButton to use Twist
