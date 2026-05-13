@@ -1,4 +1,8 @@
-* Startup is slow
+
+* Test Data extension
+* Build TrieBuilder => Data
+
+* Startup is slow: try a better Trie data structure
 
 * Dictionary lookup
 
@@ -71,6 +75,10 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2026-05-12 - Speeding Up Load Time - Spike
+* Looked at perfect-hash [can't handle large enough key set] and cmph [couldn't build]; pursuing our binary trie instead.
+* Started writing code for TrieBuilder to produce a Data object.
+
 2026-05-11 - What a Drag
 * Vertical mirroring was asymmetric because board wasn't centered; removed aspect ratio adjustment so infinite board is square
 * Made dragging work as a new transform and made sure the teal border dragged too

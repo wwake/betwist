@@ -40,6 +40,13 @@ struct ATrie {
   }
 
   @Test
+  func convert_empty_word_list_to_empty_buffer() {
+    let data = TrieBuilder().makeData()
+    #expect(data[quadbyte: 0] == 0)
+    #expect(data[quadbyte: 1] == 0)
+  }
+
+  @Test
   func convert_empty_word_list_to_empty_trie() {
     let trie = TrieBuilder().make()
     #expect(!trie.isWord)

@@ -1,3 +1,5 @@
+import Foundation
+
 class TrieNode: Codable {
   var isWord: Bool
   var next: [TrieNodeMatch]
@@ -19,6 +21,8 @@ struct TrieNodeMatch: Codable {
 }
 
 class TrieBuilder {
+  let emptyWord: [UInt8] = [0, 0, 0, 0]
+
   var root = TrieNode(isWord: false, next: [])
 
   func add(_ words: [String]) -> Self {
@@ -57,5 +61,26 @@ class TrieBuilder {
     list.map { match in
       TrieMatch(match.char, make(match.trie))
     }
+  }
+
+  func makeData() -> Data {
+    var data = Data()
+
+    if !root.isWord && root.next.isEmpty {
+      data.append(contentsOf: emptyWord)  // isWord flag
+      data.append(contentsOf: emptyWord)  // last entry
+    }
+    return data
+  }
+}
+
+extension Data {
+  subscript(quadbyte quadbyte: Int) -> UInt32 {
+    let index = 4 * quadbyte
+
+    return UInt32(self[index]) << 24
+      & UInt32(self[index + 1]) << 16
+      & UInt32(self[index + 2]) << 8
+      & UInt32(self[index + 3])
   }
 }
