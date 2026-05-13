@@ -46,7 +46,7 @@ struct ATrie {
   @Test
   func convert_empty_word_list_to_buffer() {
     let data = TrieBuilder().makeData()
-    #expect(data[quadbyte: 0] == 0)
+    #expect(data[quadbyte: 0] == 0x00ffffff)
   }
 
   @Test

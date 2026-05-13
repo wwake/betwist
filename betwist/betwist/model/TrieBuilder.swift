@@ -21,7 +21,7 @@ struct BuilderMatch: Codable {
 }
 
 class TrieBuilder {
-  let endMarker: [UInt8] = [0, 0, 0, 0]
+  let endMarker: [UInt8] = [0, 0xff, 0xff, 0xff]
 
   var root = BuilderTrie(next: [])
 
