@@ -11,10 +11,6 @@ struct RegularPortraitView: View {
 
   var body: some View {
     VStack {
-      if ContentView.showMakerView {
-        MakerView(game: game)
-      }
-
       HStack {
         Spacer()
         VStack {

@@ -1,21 +1,21 @@
 import Foundation
 
-class TrieBuilderNode: Codable {
+class BuilderTrie: Codable {
   var isWord: Bool
-  var next: [TrieBuilderNodeMatch]
+  var next: [BuilderMatch]
 
-  init(isWord: Bool, next: [TrieBuilderNodeMatch]) {
+  init(isWord: Bool, next: [BuilderMatch]) {
     self.isWord = isWord
     self.next = next
   }
 }
 
-struct TrieBuilderNodeMatch: Codable {
+struct BuilderMatch: Codable {
   let char: Character
-  let isWord: Bool
-  let trie: TrieBuilderNode
+  var isWord: Bool
+  let trie: BuilderTrie
 
-  init(_ char: Character, _ trie: TrieBuilderNode) {
+  init(_ char: Character, _ trie: BuilderTrie) {
     self.char = char
     self.isWord = false
     self.trie = trie
@@ -25,7 +25,7 @@ struct TrieBuilderNodeMatch: Codable {
 class TrieBuilder {
   let emptyWord: [UInt8] = [0, 0, 0, 0]
 
-  var root = TrieBuilderNode(isWord: false, next: [])
+  var root = BuilderTrie(isWord: false, next: [])
 
   func add(_ words: [String]) -> Self {
     for word in words {
@@ -38,16 +38,21 @@ class TrieBuilder {
     let value = Array(word)
 
     var trie = root
+    var lastTrie: BuilderTrie?
     for letter in value {
+      lastTrie = trie
       let node = trie.next.first(where: { $0.char == letter })
       if node == nil {
-        let newTrie = TrieBuilderNode(isWord: false, next: [])
-        trie.next.append(TrieBuilderNodeMatch(letter, newTrie))
+        let newTrie = BuilderTrie(isWord: false, next: [])
+        trie.next.append(BuilderMatch(letter, newTrie))
         trie = newTrie
       } else {
         trie = node!.trie
       }
     }
+    let lastLetterIndex = lastTrie!.next.firstIndex { $0.char == value.last! }
+    lastTrie!.next[lastLetterIndex!].isWord = true
+
     trie.isWord = true
   }
 
@@ -55,13 +60,13 @@ class TrieBuilder {
     make(root)
   }
 
-  fileprivate func make(_ node: TrieBuilderNode) -> Trie {
+  fileprivate func make(_ node: BuilderTrie) -> Trie {
     Trie(node.isWord, makeList(node.next))
   }
 
-  fileprivate func makeList(_ list: [TrieBuilderNodeMatch]) -> [TrieMatch] {
+  fileprivate func makeList(_ list: [BuilderMatch]) -> [TrieMatch] {
     list.map { match in
-      TrieMatch(match.char, make(match.trie))
+      TrieMatch(match.char, match.isWord, make(match.trie))
     }
   }
 

@@ -1,7 +1,7 @@
-* Add isWord to character check on TrieBuilder
-* Convert BuilderTrie to regular Trie with that field present
-* Import, ignores it
-* Add isWord to character check on Trie
+
+Original JSON - 2.5 M
+Revised with added isWord flag on character - 3.6 M
+
 * Import, still works
 * Modify code to use isWord on character
 * Delete flag from Trie
@@ -82,6 +82,11 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2026-05-13 - A More Compact Trie
+* Add isWord to character check on TrieBuilder
+* Convert BuilderTrie to regular Trie ignoring that field
+* Add isWord to character check on Trie
+
 2026-05-12 - Speeding Up Load Time - Spike
 * Looked at perfect-hash [can't handle large enough key set] and cmph [couldn't build]; pursuing our binary trie instead.
 * Started writing code for TrieBuilder to produce a Data object.
