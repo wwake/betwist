@@ -1,3 +1,10 @@
+* Add isWord to character check on TrieBuilder
+* Convert BuilderTrie to regular Trie with that field present
+* Import, ignores it
+* Add isWord to character check on Trie
+* Import, still works
+* Modify code to use isWord on character
+* Delete flag from Trie
 
 * Test Data extension
 * Build TrieBuilder => Data
