@@ -1,11 +1,9 @@
 import Foundation
 
 struct Trie: Codable {
-  let isWord: Bool
   let next: [TrieMatch]
 
-  init(_ isWord: Bool, _ next: [TrieMatch]) {
-    self.isWord = isWord
+  init(_ next: [TrieMatch]) {
     self.next = next
   }
 

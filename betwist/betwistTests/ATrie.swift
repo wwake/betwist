@@ -2,37 +2,36 @@
 import Testing
 
 struct ATrie {
-  let wordEnd = Trie(true, [])
+  let wordEnd = Trie([])
 
   @Test
   func returns_isWord_flag_for_empty_string_() async throws {
-    #expect(Trie(true, []).containsAndPrefixes("") == SearchResult(isWord: false, isProperPrefix: false))
- //   #expect(Trie(false, []).containsAndPrefixes("") == SearchResult(isWord: false, isProperPrefix: false))
+    #expect(Trie([]).containsAndPrefixes("") == SearchResult(isWord: false, isProperPrefix: false))
   }
 
   @Test
   func doesnt_contain_string_with_mismatched_letter() {
-    let trie = Trie(false, [TrieMatch("S", true, wordEnd)])
+    let trie = Trie([TrieMatch("S", true, wordEnd)])
     #expect(trie.containsAndPrefixes("A") == SearchResult(isWord: false, isProperPrefix: false))
   }
 
   @Test
   func contains_string_with_last_letter_available() {
-    let trie = Trie(false, [TrieMatch("I", true, wordEnd), TrieMatch("A", true, wordEnd)])
+    let trie = Trie([TrieMatch("I", true, wordEnd), TrieMatch("A", true, wordEnd)])
     #expect(trie.containsAndPrefixes("A") == SearchResult(isWord: true, isProperPrefix: false))
   }
 
   @Test
   func is_prefix_when_more_letters_after_found_word() {
-    let allowsS = Trie(true, [TrieMatch("S", true, wordEnd)])
-    let trie = Trie(false, [TrieMatch("A", true, allowsS)])
+    let allowsS = Trie([TrieMatch("S", true, wordEnd)])
+    let trie = Trie([TrieMatch("A", true, allowsS)])
     #expect(trie.containsAndPrefixes("A") == SearchResult(isWord: true, isProperPrefix: true))
   }
 
   @Test
   func is_prefix_when_more_letters_after_unfound_word() {
-    let allowsS = Trie(false, [TrieMatch("S", true, wordEnd)])
-    let trie = Trie(false, [TrieMatch("I", false, wordEnd), TrieMatch("A", false, allowsS)])
+    let allowsS = Trie([TrieMatch("S", true, wordEnd)])
+    let trie = Trie([TrieMatch("I", false, wordEnd), TrieMatch("A", false, allowsS)])
     #expect(trie.containsAndPrefixes("A") == SearchResult(isWord: false, isProperPrefix: true))
   }
 
@@ -46,32 +45,26 @@ struct ATrie {
   @Test
   func convert_empty_word_list_to_empty_trie() {
     let trie = TrieBuilder().make()
-    #expect(!trie.isWord)
     #expect(trie.next.isEmpty)
   }
 
   @Test
   func built_from_one_letter() {
     let trie = TrieBuilder().add(["A"]).make()
-    #expect(!trie.isWord)
     #expect(trie.next.count == 1)
     #expect(trie.next[0].char == "A")
     #expect(trie.next[0].isWord)
-    #expect(trie.next[0].trie.isWord)
     #expect(trie.next[0].trie.next.isEmpty)
   }
 
   @Test
   func built_from_two_letters() {
     let trie = TrieBuilder().add(["AS"]).make()
-    #expect(!trie.isWord)
     #expect(trie.next.count == 1)
     #expect(trie.next[0].char == "A")
     #expect(!trie.next[0].isWord)
-    #expect(!trie.next[0].trie.isWord)
     #expect(trie.next[0].trie.next[0].char == "S")
     #expect(trie.next[0].trie.next[0].isWord)
-    #expect(trie.next[0].trie.next[0].trie.isWord)
   }
 
   @Test

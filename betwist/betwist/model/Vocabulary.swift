@@ -23,7 +23,7 @@ class Vocabulary {
 
 class NullVocabulary: Vocabulary {
   init() {
-    super.init(Trie(false, []))
+    super.init(Trie([]))
   }
 
   override func contains(_ word: String) -> Bool {

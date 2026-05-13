@@ -61,7 +61,7 @@ class TrieBuilder {
   }
 
   fileprivate func make(_ node: BuilderTrie) -> Trie {
-    Trie(node.isWord, makeList(node.next))
+    Trie(makeList(node.next))
   }
 
   fileprivate func makeList(_ list: [BuilderMatch]) -> [TrieMatch] {

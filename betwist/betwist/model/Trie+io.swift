@@ -11,7 +11,7 @@ extension Trie {
     } catch {
       print(error)
     }
-    return Trie(false, [])
+    return Trie([])
   }
 
   func write(_ url: URL) throws {
