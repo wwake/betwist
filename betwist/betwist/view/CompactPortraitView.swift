@@ -17,10 +17,6 @@ struct CompactPortraitView: View {
 
   var body: some View {
     VStack {
-      if ContentView.showMakerView {
-        MakerView(game: game)
-      }
-
       AnswerInProgressView(game: $game, progress: progress, height: 500) {
         collectWord()
       }
