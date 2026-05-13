@@ -1,11 +1,9 @@
 import Foundation
 
 class BuilderTrie: Codable {
-  var isWord: Bool
   var next: [BuilderMatch]
 
-  init(isWord: Bool, next: [BuilderMatch]) {
-    self.isWord = isWord
+  init(next: [BuilderMatch]) {
     self.next = next
   }
 }
@@ -23,9 +21,9 @@ struct BuilderMatch: Codable {
 }
 
 class TrieBuilder {
-  let emptyWord: [UInt8] = [0, 0, 0, 0]
+  let endMarker: [UInt8] = [0, 0, 0, 0]
 
-  var root = BuilderTrie(isWord: false, next: [])
+  var root = BuilderTrie(next: [])
 
   func add(_ words: [String]) -> Self {
     for word in words {
@@ -43,7 +41,7 @@ class TrieBuilder {
       lastTrie = trie
       let node = trie.next.first(where: { $0.char == letter })
       if node == nil {
-        let newTrie = BuilderTrie(isWord: false, next: [])
+        let newTrie = BuilderTrie(next: [])
         trie.next.append(BuilderMatch(letter, newTrie))
         trie = newTrie
       } else {
@@ -52,8 +50,6 @@ class TrieBuilder {
     }
     let lastLetterIndex = lastTrie!.next.firstIndex { $0.char == value.last! }
     lastTrie!.next[lastLetterIndex!].isWord = true
-
-    trie.isWord = true
   }
 
   func make() -> Trie {
@@ -73,9 +69,8 @@ class TrieBuilder {
   func makeData() -> Data {
     var data = Data()
 
-    if !root.isWord && root.next.isEmpty {
-      data.append(contentsOf: emptyWord)  // isWord flag
-      data.append(contentsOf: emptyWord)  // last entry
+    if root.next.isEmpty {
+      data.append(contentsOf: endMarker)
     }
     return data
   }
@@ -86,8 +81,8 @@ extension Data {
     let index = 4 * quadbyte
 
     return UInt32(self[index]) << 24
-      & UInt32(self[index + 1]) << 16
-      & UInt32(self[index + 2]) << 8
-      & UInt32(self[index + 3])
+      | UInt32(self[index + 1]) << 16
+      | UInt32(self[index + 2]) << 8
+      | UInt32(self[index + 3])
   }
 }

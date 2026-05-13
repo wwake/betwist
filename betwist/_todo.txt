@@ -1,10 +1,7 @@
 
 Original JSON - 2.5 M
 Revised with added isWord flag on character - 3.6 M
-
-* Import, still works
-* Modify code to use isWord on character
-* Delete flag from Trie
+With isWord removed from Trie - 2.6M
 
 * Test Data extension
 * Build TrieBuilder => Data
@@ -86,6 +83,8 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 * Add isWord to character check on TrieBuilder
 * Convert BuilderTrie to regular Trie ignoring that field
 * Add isWord to character check on Trie
+* Modified code to use character's isWord
+* Deleted use of isWord in Trie
 
 2026-05-12 - Speeding Up Load Time - Spike
 * Looked at perfect-hash [can't handle large enough key set] and cmph [couldn't build]; pursuing our binary trie instead.
