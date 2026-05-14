@@ -66,6 +66,8 @@
 		91C8BFA92CE54003009810AF /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFA82CE54003009810AF /* MessageView.swift */; };
 		91C8BFAB2CE54236009810AF /* RotatingGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFAA2CE54236009810AF /* RotatingGridView.swift */; };
 		91C8BFAF2CE6863D009810AF /* YouFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8BFAE2CE6863D009810AF /* YouFoundView.swift */; };
+		91DC40352FB60EA700E9F82E /* DataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DC40342FB60EA700E9F82E /* DataBuilder.swift */; };
+		91DC40372FB60F0000E9F82E /* ADataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DC40362FB60F0000E9F82E /* ADataBuilder.swift */; };
 		91FA96732C81333A0011BB7F /* betwistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96722C81333A0011BB7F /* betwistApp.swift */; };
 		91FA96752C81333A0011BB7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA96742C81333A0011BB7F /* ContentView.swift */; };
 		91FA967A2C81333E0011BB7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FA96792C81333E0011BB7F /* Preview Assets.xcassets */; };
@@ -145,6 +147,8 @@
 		91C8BFA82CE54003009810AF /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		91C8BFAA2CE54236009810AF /* RotatingGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingGridView.swift; sourceTree = "<group>"; };
 		91C8BFAE2CE6863D009810AF /* YouFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouFoundView.swift; sourceTree = "<group>"; };
+		91DC40342FB60EA700E9F82E /* DataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBuilder.swift; sourceTree = "<group>"; };
+		91DC40362FB60F0000E9F82E /* ADataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADataBuilder.swift; sourceTree = "<group>"; };
 		91FA966F2C81333A0011BB7F /* betwist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betwist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA96722C81333A0011BB7F /* betwistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = betwistApp.swift; sourceTree = "<group>"; };
 		91FA96742C81333A0011BB7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				911EE9FE2CAF2DDF005C391D /* Answers.swift */,
 				910C6FB72CC0390F00BD6A0D /* CGSize+wrap.swift */,
 				912847402CDBF8E700FA21BA /* Character+Codable.swift */,
+				91DC40342FB60EA700E9F82E /* DataBuilder.swift */,
 				9104FD2D2CA5E85500A8CBB3 /* Game.swift */,
 				911EE9E62CAB28CE005C391D /* GameMaker.swift */,
 				9181F09D2CA347370091A771 /* Int+wrap.swift */,
@@ -305,6 +310,7 @@
 				912847522CDC131D00FA21BA /* Vocabulary+init.swift */,
 				915C72C32F967534005EA8DC /* ASolver.swift */,
 				91A75CE32FA29B2700BB040C /* AnAngle.swift */,
+				91DC40362FB60F0000E9F82E /* ADataBuilder.swift */,
 			);
 			path = betwistTests;
 			sourceTree = "<group>";
@@ -490,6 +496,7 @@
 				91A387722CC056C800E00F7B /* ScoreView.swift in Sources */,
 				917642242CC6D9D70064AD48 /* Button+viewModifier.swift in Sources */,
 				91A387782CC1889700E00F7B /* Score.swift in Sources */,
+				91DC40352FB60EA700E9F82E /* DataBuilder.swift in Sources */,
 				910C6FB62CBEF78D00BD6A0D /* InfiniteGrid.swift in Sources */,
 				9110CF602FAB7EDE00AB6E6E /* Twist.swift in Sources */,
 				911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */,
@@ -527,6 +534,7 @@
 				910C97AE2CA4990700893B79 /* ALocation.swift in Sources */,
 				9181F09A2CA33C2A0091A771 /* ALetterGrid.swift in Sources */,
 				912847532CDC131D00FA21BA /* Vocabulary+init.swift in Sources */,
+				91DC40372FB60F0000E9F82E /* ADataBuilder.swift in Sources */,
 				912847072CD9583800FA21BA /* ATrie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
