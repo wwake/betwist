@@ -13,20 +13,12 @@ struct DataBuilder {
     return data
   }
 
-  func reserve(_ data: inout Data, count: Int) {
-    let zeros: [UInt8] = [0, 0, 0, 0]
-
-    for _ in 0..<count {
-      data.append(contentsOf: zeros)
-    }
-  }
-
   func writeData(_ data: inout Data, trie: BuilderTrie) -> UInt32 {
     if trie.next.isEmpty { return 0 }
 
     let startIndex = data.count
 
-    reserve(&data, count: trie.next.count + 1)
+    data.reserve(quadbytes: trie.next.count + 1)
 
     for i in 0..<(trie.next.count) {
       let match = trie.next[i]

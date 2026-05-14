@@ -31,7 +31,7 @@ A matcher has 4 bytes:
 	
 	0x61-0x7a is a-z (isWord true)
   
-* Three bytes for the quadbyte index of the matcher's trie.
+* Three bytes for the byte index of the matcher's trie.
 
 	This will be extended with a fourth upper byte of 0 to get that address.
 	

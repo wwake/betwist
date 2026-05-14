@@ -37,13 +37,6 @@ struct ATrie {
   }
 
   @Test
-  func `data can provide 4 bytes at a time`() {
-    var sut = Data()
-    sut.append(contentsOf: [0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08])
-    #expect(sut[quadbyte: 1] == 0x05060708)
-  }
-
-  @Test
   func convert_empty_word_list_to_empty_trie() {
     let trie = TrieBuilder().make()
     #expect(trie.next.isEmpty)
