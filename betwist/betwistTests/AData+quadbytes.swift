@@ -22,4 +22,19 @@ struct AData_quadbytes {
     #expect(sut[quadbyte: 1] == 0x00000000)
     #expect(sut[8] == 0)
   }
+
+  @Test
+  func `data can overwrite quadbytes`() {
+    var sut = Data()
+    sut.append(contentsOf: [0x01])
+    sut.reserve(quadbytes: 2)
+    sut.append(contentsOf: [0x02, 0x03, 0x04])
+
+    sut.overwriteQuad(index: 1, [0xbe, 0xad, 0xed, 0x99])
+
+    #expect(sut.count == 12)
+    #expect(sut[quadbyte: 0] == 0x01beaded)
+    #expect(sut[quadbyte: 1] == 0x99000000)
+    #expect(sut[quadbyte: 2] == 0x00020304)
+  }
 }

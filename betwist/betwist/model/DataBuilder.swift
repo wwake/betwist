@@ -15,6 +15,21 @@ class DataBuilder {
     return data
   }
 
+  func matchByte(match: BuilderMatch) -> UInt8 {
+    let isWordFlag = match.isWord ? UInt8(32) : 0
+    let charValue = isWordFlag | match.char.asciiValue!
+    return charValue
+  }
+
+  func asQuadbytes(_ charByte: UInt8, _ trieAddress: UInt32) -> [UInt8] {
+    [
+      charByte,
+      UInt8((trieAddress >> 16) & 0xff),
+      UInt8((trieAddress >> 8) & 0xff),
+      UInt8(trieAddress & 0xff),
+    ]
+  }
+
   func writeData(trie: BuilderTrie) -> UInt32 {
     if trie.next.isEmpty { return 0 }
 
@@ -23,29 +38,17 @@ class DataBuilder {
     data.reserve(quadbytes: trie.next.count + 1)
 
     for i in 0..<(trie.next.count) {
-      let match = trie.next[i]
-      let isWordFlag = match.isWord ? UInt8(32) : 0
-      let charValue = match.char.asciiValue! | isWordFlag
+      let charByte = matchByte(match: trie.next[i])
 
-      let childTrie = writeData(trie: trie.next[i].trie)
+      let childTrieAddress = writeData(trie: trie.next[i].trie)
 
-      data.replaceSubrange(
-        (startIndex + i * 4)..<(startIndex + (i + 1) * 4),
-        with: [
-          charValue,
-          UInt8((childTrie >> 16) & 0xff),
-          UInt8((childTrie >> 8) & 0xff),
-          UInt8(childTrie & 0xff),
-        ]
+      data.overwriteQuad(
+        index: startIndex + i * 4,
+        asQuadbytes(charByte, childTrieAddress)
       )
     }
 
-    let lastIndex = trie.next.count
-    let range = (startIndex + lastIndex * 4)..<(startIndex + (lastIndex + 1) * 4)
-    data.replaceSubrange(
-      range,
-      with: Self.endMarker
-    )
+    data.overwriteQuad(index: startIndex + 4 * trie.next.count, Self.endMarker)
 
     return UInt32(startIndex)
   }

@@ -20,3 +20,12 @@ extension Data {
     }
   }
 }
+
+extension Data {
+  mutating func overwriteQuad(index: Int, _ bytes: [UInt8]) {
+    replaceSubrange(
+      index..<(index + 4),
+      with: bytes
+    )
+  }
+}
