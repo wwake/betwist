@@ -1,19 +1,21 @@
 import Foundation
 
-struct DataBuilder {
+class DataBuilder {
   static let endMarker: [UInt8] = [0, 0xff, 0xff, 0xff]
 
-  func makeData(trie: BuilderTrie) -> Data {
-    var data = Data()
+  var data = Data()
+
+  func make(trie: BuilderTrie) -> Data {
+    data = Data()
 
     data.append(contentsOf: Self.endMarker)
 
-    _ = writeData(&data, trie: trie)
+    _ = writeData(trie: trie)
 
     return data
   }
 
-  func writeData(_ data: inout Data, trie: BuilderTrie) -> UInt32 {
+  func writeData(trie: BuilderTrie) -> UInt32 {
     if trie.next.isEmpty { return 0 }
 
     let startIndex = data.count
@@ -25,7 +27,7 @@ struct DataBuilder {
       let isWordFlag = match.isWord ? UInt8(32) : 0
       let charValue = match.char.asciiValue! | isWordFlag
 
-      let childTrie = writeData(&data, trie: trie.next[i].trie)
+      let childTrie = writeData(trie: trie.next[i].trie)
 
       data.replaceSubrange(
         (startIndex + i * 4)..<(startIndex + (i + 1) * 4),
@@ -39,8 +41,9 @@ struct DataBuilder {
     }
 
     let lastIndex = trie.next.count
+    let range = (startIndex + lastIndex * 4)..<(startIndex + (lastIndex + 1) * 4)
     data.replaceSubrange(
-      (startIndex + lastIndex * 4)..<(startIndex + (lastIndex + 1) * 4),
+      range,
       with: Self.endMarker
     )
 

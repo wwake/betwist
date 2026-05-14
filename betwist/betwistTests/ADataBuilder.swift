@@ -5,7 +5,7 @@ import Testing
 struct ADataBuilder {
   @Test
   func convert_empty_word_list_to_buffer() {
-    let data = DataBuilder().makeData(trie: BuilderTrie(next: []))
+    let data = DataBuilder().make(trie: BuilderTrie(next: []))
     #expect(data[quadbyte: 0] == 0x00ffffff)
   }
 
@@ -14,7 +14,7 @@ struct ADataBuilder {
     let trie = TrieBuilder().add(["A"]).root
     let sut = DataBuilder()
 
-    let data = sut.makeData(trie: trie)
+    let data = sut.make(trie: trie)
 
     #expect(data[quadbyte: 0] == 0x00ffffff)
     #expect(data[quadbyte: 1] == 0x61000000)   // lowercase 'a' => end of word
@@ -27,7 +27,7 @@ struct ADataBuilder {
     let trie = TrieBuilder().add(words).root
     let sut = DataBuilder()
 
-    let data = sut.makeData(trie: trie)
+    let data = sut.make(trie: trie)
 
     #expect(data[quadbyte: 0] == 0x00ffffff)
     #expect(data[quadbyte: 1] == 0x42000010)    // 'B'
