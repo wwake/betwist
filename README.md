@@ -35,4 +35,4 @@ A matcher has 4 bytes:
 
 	This will be extended with a fourth upper byte of 0 to get that address.
 	
-	All bytes 0 will get to slot 0, the "leaf" trie. [Do we need that?]
+	A 0 for the address will get to slot 0, the "leaf" trie. [Do we need that?]
