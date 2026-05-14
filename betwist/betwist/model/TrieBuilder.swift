@@ -21,7 +21,7 @@ struct BuilderMatch: Codable {
 }
 
 class TrieBuilder {
-  let endMarker: [UInt8] = [0, 0xff, 0xff, 0xff]
+  static let endMarker: [UInt8] = [0, 0xff, 0xff, 0xff]
 
   var root = BuilderTrie(next: [])
 
@@ -69,10 +69,53 @@ class TrieBuilder {
   func makeData() -> Data {
     var data = Data()
 
-    if root.next.isEmpty {
-      data.append(contentsOf: endMarker)
-    }
+    data.append(contentsOf: Self.endMarker)
+
+    _ = writeData(&data, trie: root)
+
     return data
+  }
+
+  func reserve(_ data: inout Data, count: Int) {
+    let zeros: [UInt8] = [0, 0, 0, 0]
+
+    for _ in 0..<count {
+      data.append(contentsOf: zeros)
+    }
+  }
+
+  func writeData(_ data: inout Data, trie: BuilderTrie) -> UInt32 {
+    if trie.next.isEmpty { return 0 }
+
+    let startIndex = data.count
+
+    reserve(&data, count: trie.next.count + 1)
+
+    for i in 0..<(trie.next.count) {
+      let match = trie.next[i]
+      let isWordFlag = match.isWord ? UInt8(32) : 0
+      let charValue = match.char.asciiValue! | isWordFlag
+
+      let childTrie = writeData(&data, trie: trie.next[i].trie)
+
+      data.replaceSubrange(
+        (startIndex + i * 4)..<(startIndex + (i + 1) * 4),
+        with: [
+          charValue,
+          UInt8((childTrie >> 16) & 0xff),
+          UInt8((childTrie >> 8) & 0xff),
+          UInt8(childTrie & 0xff),
+        ]
+      )
+    }
+
+    let lastIndex = trie.next.count
+    data.replaceSubrange(
+      (startIndex + lastIndex * 4)..<(startIndex + (lastIndex + 1) * 4),
+      with: Self.endMarker
+    )
+
+    return UInt32(startIndex)
   }
 }
 

@@ -50,6 +50,14 @@ struct ATrie {
   }
 
   @Test
+  func convert_single_word_to_buffer() {
+    let data = TrieBuilder().add(["A"]).makeData()
+    #expect(data[quadbyte: 0] == 0x00ffffff)
+    #expect(data[quadbyte: 1] == 0x61000000)   // lowercase 'a' => end of word
+    #expect(data[quadbyte: 2] == 0x00ffffff)
+  }
+
+  @Test
   func convert_empty_word_list_to_empty_trie() {
     let trie = TrieBuilder().make()
     #expect(trie.next.isEmpty)
