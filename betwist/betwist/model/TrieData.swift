@@ -31,7 +31,15 @@ struct TrieData {
     )
   }
 
-  func isEndMark(_ position: Int) -> Bool {
+  func isEndMark(at position: Int) -> Bool {
     data[position] == 0
+  }
+
+  func character(at position: Int) -> UInt8 {
+    data[position] & 0x5f
+  }
+
+  func completesWord(at position: Int) -> Bool {
+    (data[position] & 0x20) != 0
   }
 }

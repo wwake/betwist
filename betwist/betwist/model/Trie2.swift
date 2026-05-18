@@ -9,12 +9,12 @@ struct Trie2 {
   }
 
   private func walk(_ position: Int, _ target: String) -> SearchResult {
-    if data.isEndMark(position) {
+    if data.isEndMark(at: position) {
       return SearchResult(isWord: false, isProperPrefix: false)
     }
-    if (data[position] & 0x5f) == target.first!.asciiValue! {
+    if data.character(at: position) == target.first!.asciiValue! {
       return SearchResult(
-        isWord: (data[position] & 0x20) != 0,
+        isWord: data.completesWord(at: position),
         isProperPrefix: false
       )
     }
