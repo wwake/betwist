@@ -1,3 +1,4 @@
+import Foundation
 import SwiftUI
 
 struct MakerView: View {
@@ -8,7 +9,8 @@ struct MakerView: View {
       Button("Generate Trie") {
         do {
           let words = WordLoader.load()
-          let trie = TrieBuilder().add(words).make()
+          let builder = TrieBuilder().add(words)
+          let trie = builder.make()
 
           let url = URL.documentsDirectory.appending(path: "trie.json-compressed")
           try trie.write(url)

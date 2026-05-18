@@ -3,6 +3,9 @@ Original JSON - 2.5 M
 Revised with added isWord flag on character - 3.6 M
 With isWord removed from Trie - 2.6M
 
+In binary form, 4M
+Compressed of binary 1.7M
+
 * Test Data extension
 * Build TrieBuilder => Data
 

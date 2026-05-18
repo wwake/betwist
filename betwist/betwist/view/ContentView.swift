@@ -5,7 +5,7 @@ enum Orientation {
 }
 
 struct ContentView: View {
-  static let showMakerView = false
+  static let showMakerView = true
 
   @Environment(\.verticalSizeClass)
   var verticalSizeClass
