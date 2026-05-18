@@ -7,6 +7,17 @@ struct TrieData {
     data.append(contentsOf: values)
   }
 
+  mutating func append(_ letter: Character, _ isWord: Bool, _ offset: Int) {
+    let flag = isWord ? UInt8(0x20) : 0
+
+    let byte0 = UInt8(letter.asciiValue! | flag)
+    let byte1 = UInt8((offset >> 16) & 0xff)
+    let byte2 = UInt8((offset >> 8) & 0xff)
+    let byte3 = UInt8(offset & 0xff)
+
+    append(bytes: [byte0, byte1, byte2, byte3])
+  }
+
   subscript(byte byteOffset: Int) -> UInt8 {
     data[byteOffset]
   }
