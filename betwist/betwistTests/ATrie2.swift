@@ -41,4 +41,34 @@ struct ATrie2 {
     #expect(sut.containsAndPrefixes("I").isWord)
     #expect(!sut.containsAndPrefixes("I").isProperPrefix)
   }
+
+  @Test
+  func `moves to next letter if prior letter matches`() {
+    var data = TrieData(data: Data())
+    data.reserve(quadbytes: 1)
+    data.append("A", true, 12)
+    data.reserve(quadbytes: 1)
+    data.append("S", true, 0)
+    data.reserve(quadbytes: 1)
+
+    let sut = Trie2(data: data)
+
+    #expect(sut.containsAndPrefixes("AS").isWord)
+    #expect(!sut.containsAndPrefixes("AS").isProperPrefix)
+  }
+
+  @Test
+  func `recognizes when an accepted word could be extended`() {
+    var data = TrieData(data: Data())
+    data.reserve(quadbytes: 1)
+    data.append("B", false, 12)
+    data.reserve(quadbytes: 1)
+    data.append("Y", true, 0)
+    data.reserve(quadbytes: 1)
+
+    let sut = Trie2(data: data)
+
+    #expect(!sut.containsAndPrefixes("B").isWord)
+    #expect(sut.containsAndPrefixes("B").isProperPrefix)
+  }
 }

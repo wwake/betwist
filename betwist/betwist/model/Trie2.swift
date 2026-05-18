@@ -8,15 +8,24 @@ struct Trie2 {
     walk(root, target)
   }
 
-  private func walk(_ position: Int, _ target: String) -> SearchResult {
+  private func walk(_ position: Int, _ searchString: String) -> SearchResult {
     var current = position
+    var target = searchString
 
     while !data.isEndMark(at: current) {
       if data.character(at: current) == target.first!.asciiValue! {
-        return SearchResult(
-          isWord: data.completesWord(at: current),
-          isProperPrefix: false
-        )
+        target.removeFirst()
+
+        if target.isEmpty {
+          return SearchResult(
+            isWord: data.completesWord(at: current),
+            isProperPrefix: data.canExtend(at: current)
+          )
+        }
+
+        current = data.address(at: current)
+
+        continue
       }
 
       current += 4

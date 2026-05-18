@@ -81,4 +81,26 @@ struct ATrieData {
     #expect(!sut.completesWord(at: 4))
     #expect(sut.completesWord(at: 8))
   }
+
+  @Test
+  func `knows address at position`() {
+    var sut = TrieData(data: Data())
+    sut.reserve(quadbytes: 1)
+    sut.append("A", false, 0x654321)
+    #expect(sut.address(at: 4) == 0x654321)
+  }
+
+  @Test
+  func `knows whether word is a valid prefix`() {
+    var sut = TrieData(data: Data())
+    sut.reserve(quadbytes: 1)
+    sut.append("A", true, 0)
+    sut.append("B", false, 16)
+    sut.reserve(quadbytes: 1)
+    sut.append("Y", true, 0)
+    sut.reserve(quadbytes: 1)
+
+    #expect(!sut.canExtend(at: 4))
+    #expect(sut.canExtend(at: 8))
+  }
 }
