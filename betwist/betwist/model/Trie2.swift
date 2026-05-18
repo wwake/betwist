@@ -9,15 +9,19 @@ struct Trie2 {
   }
 
   private func walk(_ position: Int, _ target: String) -> SearchResult {
-    if data.isEndMark(at: position) {
-      return SearchResult(isWord: false, isProperPrefix: false)
+    var current = position
+
+    while !data.isEndMark(at: current) {
+      if data.character(at: current) == target.first!.asciiValue! {
+        return SearchResult(
+          isWord: data.completesWord(at: current),
+          isProperPrefix: false
+        )
+      }
+
+      current += 4
     }
-    if data.character(at: position) == target.first!.asciiValue! {
-      return SearchResult(
-        isWord: data.completesWord(at: position),
-        isProperPrefix: false
-      )
-    }
-    return SearchResult(isWord: true, isProperPrefix: true)
+
+    return SearchResult(isWord: false, isProperPrefix: false)
   }
 }
