@@ -19,7 +19,7 @@ struct ATrie2 {
   func `matches the last letter`() {
     var data = TrieData(data: Data())
     data.reserve(quadbytes: 8)
-    data.overwriteQuad(index: 4, [0x61, 0, 0, 0])
+    data.overwrite(at: 4, bytes: [0x61, 0, 0, 0])
 
     let sut = Trie2(data: data)
 
