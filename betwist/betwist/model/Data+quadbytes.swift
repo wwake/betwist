@@ -29,3 +29,9 @@ extension Data {
     )
   }
 }
+
+extension Data {
+  func isEndMark(_ position: Int) -> Bool {
+    self[position] == 0
+  }
+}

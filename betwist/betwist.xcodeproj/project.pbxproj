@@ -45,6 +45,8 @@
 		91407FDB2CEBDD3400EC058D /* CompactPortraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91407FDA2CEBDD3400EC058D /* CompactPortraitView.swift */; };
 		91407FDD2CEBDD9E00EC058D /* RegularLandscapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91407FDC2CEBDD9E00EC058D /* RegularLandscapeView.swift */; };
 		914A539A2CA3664E00C05BB7 /* betwist.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 914A53992CA3664E00C05BB7 /* betwist.xctestplan */; };
+		914F2ACD2FBB48DF00F3E32D /* ATrie2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2ACC2FBB48DF00F3E32D /* ATrie2.swift */; };
+		914F2ACF2FBB49B900F3E32D /* Trie2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2ACE2FBB49AF00F3E32D /* Trie2.swift */; };
 		915C72C22F966AD3005EA8DC /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915C72C12F966AD0005EA8DC /* Solver.swift */; };
 		915C72C42F967534005EA8DC /* ASolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915C72C32F967534005EA8DC /* ASolver.swift */; };
 		917642242CC6D9D70064AD48 /* Button+viewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917642232CC6D9C40064AD48 /* Button+viewModifier.swift */; };
@@ -128,6 +130,8 @@
 		91407FDA2CEBDD3400EC058D /* CompactPortraitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactPortraitView.swift; sourceTree = "<group>"; };
 		91407FDC2CEBDD9E00EC058D /* RegularLandscapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularLandscapeView.swift; sourceTree = "<group>"; };
 		914A53992CA3664E00C05BB7 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
+		914F2ACC2FBB48DF00F3E32D /* ATrie2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATrie2.swift; sourceTree = "<group>"; };
+		914F2ACE2FBB49AF00F3E32D /* Trie2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie2.swift; sourceTree = "<group>"; };
 		915C72C12F966AD0005EA8DC /* Solver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver.swift; sourceTree = "<group>"; };
 		915C72C32F967534005EA8DC /* ASolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASolver.swift; sourceTree = "<group>"; };
 		917642232CC6D9C40064AD48 /* Button+viewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+viewModifier.swift"; sourceTree = "<group>"; };
@@ -189,10 +193,10 @@
 		917642212CC6D8E90064AD48 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				915C72C12F966AD0005EA8DC /* Solver.swift */,
 				911EE9FE2CAF2DDF005C391D /* Answers.swift */,
 				910C6FB72CC0390F00BD6A0D /* CGSize+wrap.swift */,
 				912847402CDBF8E700FA21BA /* Character+Codable.swift */,
+				91DC40382FB6117D00E9F82E /* Data+quadbytes.swift */,
 				91DC40342FB60EA700E9F82E /* DataBuilder.swift */,
 				9104FD2D2CA5E85500A8CBB3 /* Game.swift */,
 				911EE9E62CAB28CE005C391D /* GameMaker.swift */,
@@ -201,10 +205,11 @@
 				910C97A82CA48AAD00893B79 /* Location.swift */,
 				91A387772CC1889700E00F7B /* Score.swift */,
 				910C97AA2CA48AD900893B79 /* Selection.swift */,
+				915C72C12F966AD0005EA8DC /* Solver.swift */,
 				912847082CD9586C00FA21BA /* Trie.swift */,
 				912847502CDC10D700FA21BA /* Trie+io.swift */,
+				914F2ACE2FBB49AF00F3E32D /* Trie2.swift */,
 				9128474E2CDC0EFB00FA21BA /* TrieBuilder.swift */,
-				91DC40382FB6117D00E9F82E /* Data+quadbytes.swift */,
 				911EE9FA2CADD2D6005C391D /* Vocabulary.swift */,
 				9128474A2CDC0C9600FA21BA /* WordLoader.swift */,
 			);
@@ -317,6 +322,7 @@
 				91A75CE32FA29B2700BB040C /* AnAngle.swift */,
 				91DC40362FB60F0000E9F82E /* ADataBuilder.swift */,
 				91DC403A2FB6135300E9F82E /* AData+quadbytes.swift */,
+				914F2ACC2FBB48DF00F3E32D /* ATrie2.swift */,
 			);
 			path = betwistTests;
 			sourceTree = "<group>";
@@ -506,6 +512,7 @@
 				910C6FB62CBEF78D00BD6A0D /* InfiniteGrid.swift in Sources */,
 				9110CF602FAB7EDE00AB6E6E /* Twist.swift in Sources */,
 				911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */,
+				914F2ACF2FBB49B900F3E32D /* Trie2.swift in Sources */,
 				91DC40392FB6117D00E9F82E /* Data+quadbytes.swift in Sources */,
 				910C6FB22CBEED7500BD6A0D /* ColorChooser.swift in Sources */,
 				9110CF5E2FAB79C300AB6E6E /* Axis.swift in Sources */,
@@ -535,6 +542,7 @@
 				91DC403B2FB6135300E9F82E /* AData+quadbytes.swift in Sources */,
 				9181F0A62CA3556D0091A771 /* ASelection.swift in Sources */,
 				91A75CE42FA29B2700BB040C /* AnAngle.swift in Sources */,
+				914F2ACD2FBB48DF00F3E32D /* ATrie2.swift in Sources */,
 				911EE9E52CAB24CA005C391D /* AGameMaker.swift in Sources */,
 				911EEA012CAF30D7005C391D /* TheAnswers.swift in Sources */,
 				911EE9F92CADD10F005C391D /* AVocabulary.swift in Sources */,
