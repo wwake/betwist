@@ -71,4 +71,20 @@ struct ATrie2 {
     #expect(!sut.containsAndPrefixes("B").isWord)
     #expect(sut.containsAndPrefixes("B").isProperPrefix)
   }
+
+  @Test
+  func `finds alternatives for the second letter`() {
+    var data = TrieData(data: Data())
+    data.reserve(quadbytes: 1)
+    data.append("B", false, 12)
+    data.reserve(quadbytes: 1)
+    data.append("E", true, 0)
+    data.append("Y", true, 0)
+    data.reserve(quadbytes: 1)
+
+    let sut = Trie2(data: data)
+
+    #expect(sut.containsAndPrefixes("BY").isWord)
+    #expect(!sut.containsAndPrefixes("BY").isProperPrefix)
+  }
 }

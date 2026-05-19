@@ -1,4 +1,6 @@
 
+We might need to test that it increments by 4 when the second letter is not immediately found
+
 Original JSON - 2.5 M
 Revised with added isWord flag on character - 3.6 M
 With isWord removed from Trie - 2.6M
@@ -82,6 +84,9 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2026-05-18 - Read the Binary Trie
+* Developed Trie2, same interface as Trie, that walks a trie from given Data.
+
 2026-05-13 - A More Compact Trie
 * Add isWord to character check on TrieBuilder
 * Convert BuilderTrie to regular Trie ignoring that field
