@@ -86,6 +86,11 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2026-05-19 - Use the Binary Trie
+* Ran Trie and Trie2 in parallel, verifying they responded the same
+* Removed Trie
+* Trying to establish actual startup time.
+
 2026-05-18 - Read the Binary Trie
 * Developed Trie2, same interface as Trie, that walks a trie from given Data.
 
