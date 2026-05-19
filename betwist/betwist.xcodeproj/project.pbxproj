@@ -49,6 +49,7 @@
 		914F2ACF2FBB49B900F3E32D /* Trie2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2ACE2FBB49AF00F3E32D /* Trie2.swift */; };
 		914F2AD12FBB52B500F3E32D /* TrieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2AD02FBB52B100F3E32D /* TrieData.swift */; };
 		914F2AD32FBB55A500F3E32D /* ATrieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2AD22FBB55A500F3E32D /* ATrieData.swift */; };
+		914F2AD52FBC9A4300F3E32D /* Trie2+io.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2AD42FBC9A4300F3E32D /* Trie2+io.swift */; };
 		915C72C22F966AD3005EA8DC /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915C72C12F966AD0005EA8DC /* Solver.swift */; };
 		915C72C42F967534005EA8DC /* ASolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915C72C32F967534005EA8DC /* ASolver.swift */; };
 		917642242CC6D9D70064AD48 /* Button+viewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917642232CC6D9C40064AD48 /* Button+viewModifier.swift */; };
@@ -136,6 +137,7 @@
 		914F2ACE2FBB49AF00F3E32D /* Trie2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie2.swift; sourceTree = "<group>"; };
 		914F2AD02FBB52B100F3E32D /* TrieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrieData.swift; sourceTree = "<group>"; };
 		914F2AD22FBB55A500F3E32D /* ATrieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATrieData.swift; sourceTree = "<group>"; };
+		914F2AD42FBC9A4300F3E32D /* Trie2+io.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trie2+io.swift"; sourceTree = "<group>"; };
 		915C72C12F966AD0005EA8DC /* Solver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver.swift; sourceTree = "<group>"; };
 		915C72C32F967534005EA8DC /* ASolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASolver.swift; sourceTree = "<group>"; };
 		917642232CC6D9C40064AD48 /* Button+viewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+viewModifier.swift"; sourceTree = "<group>"; };
@@ -197,7 +199,6 @@
 		917642212CC6D8E90064AD48 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				914F2AD02FBB52B100F3E32D /* TrieData.swift */,
 				911EE9FE2CAF2DDF005C391D /* Answers.swift */,
 				910C6FB72CC0390F00BD6A0D /* CGSize+wrap.swift */,
 				912847402CDBF8E700FA21BA /* Character+Codable.swift */,
@@ -214,7 +215,9 @@
 				912847082CD9586C00FA21BA /* Trie.swift */,
 				912847502CDC10D700FA21BA /* Trie+io.swift */,
 				914F2ACE2FBB49AF00F3E32D /* Trie2.swift */,
+				914F2AD42FBC9A4300F3E32D /* Trie2+io.swift */,
 				9128474E2CDC0EFB00FA21BA /* TrieBuilder.swift */,
+				914F2AD02FBB52B100F3E32D /* TrieData.swift */,
 				911EE9FA2CADD2D6005C391D /* Vocabulary.swift */,
 				9128474A2CDC0C9600FA21BA /* WordLoader.swift */,
 			);
@@ -521,6 +524,7 @@
 				911EE9E82CAB2B49005C391D /* GameMaker.swift in Sources */,
 				914F2ACF2FBB49B900F3E32D /* Trie2.swift in Sources */,
 				91DC40392FB6117D00E9F82E /* Data+quadbytes.swift in Sources */,
+				914F2AD52FBC9A4300F3E32D /* Trie2+io.swift in Sources */,
 				910C6FB22CBEED7500BD6A0D /* ColorChooser.swift in Sources */,
 				9110CF5E2FAB79C300AB6E6E /* Axis.swift in Sources */,
 				917C44AB2CDD62610041B790 /* SortedAnswersView.swift in Sources */,

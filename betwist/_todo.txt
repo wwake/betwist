@@ -1,6 +1,8 @@
 
 We might need to test that it increments by 4 when the second letter is not immediately found
 
+Write on TrieBuilder instead?
+
 Original JSON - 2.5 M
 Revised with added isWord flag on character - 3.6 M
 With isWord removed from Trie - 2.6M
