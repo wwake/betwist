@@ -86,6 +86,18 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		91D4DB312FBE027000A44E4A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9104FD2D2CA5E85500A8CBB3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		910C6FAB2CBDB4BF00BD6A0D /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
@@ -146,6 +158,7 @@
 		91C8BFA82CE54003009810AF /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		91C8BFAA2CE54236009810AF /* RotatingGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingGridView.swift; sourceTree = "<group>"; };
 		91C8BFAE2CE6863D009810AF /* YouFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouFoundView.swift; sourceTree = "<group>"; };
+		91D4DB332FBE027000A44E4A /* BetwistMaker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BetwistMaker; sourceTree = BUILT_PRODUCTS_DIR; };
 		91DC40362FB60F0000E9F82E /* ADataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADataBuilder.swift; sourceTree = "<group>"; };
 		91DC40382FB6117D00E9F82E /* Data+quadbytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+quadbytes.swift"; sourceTree = "<group>"; };
 		91DC403A2FB6135300E9F82E /* AData+quadbytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AData+quadbytes.swift"; sourceTree = "<group>"; };
@@ -161,11 +174,19 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		911EE9F72CAD99A7005C391D /* resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = resources; sourceTree = "<group>"; };
-		91A732AA2FBDF7AA0095F4AD /* maker */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = maker; sourceTree = "<group>"; };
 		91A732AB2FBDF7F20095F4AD /* maker */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = maker; sourceTree = "<group>"; };
+		91D4DB342FBE027000A44E4A /* BetwistMaker */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BetwistMaker; sourceTree = "<group>"; };
+		91DB1CC92FBE014500889E6E /* maker */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = maker; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		91D4DB302FBE027000A44E4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		91FA966C2C81333A0011BB7F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -187,7 +208,7 @@
 		917642212CC6D8E90064AD48 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				91A732AA2FBDF7AA0095F4AD /* maker */,
+				91DB1CC92FBE014500889E6E /* maker */,
 				911EE9FE2CAF2DDF005C391D /* Answers.swift */,
 				910C6FB72CC0390F00BD6A0D /* CGSize+wrap.swift */,
 				912847402CDBF8E700FA21BA /* Character+Codable.swift */,
@@ -262,6 +283,7 @@
 				910C97922CA3690600893B79 /* betwist.xctestplan */,
 				91FA96712C81333A0011BB7F /* betwist */,
 				91FA96822C81333E0011BB7F /* betwistTests */,
+				91D4DB342FBE027000A44E4A /* BetwistMaker */,
 				9181F0A02CA34EA60091A771 /* Frameworks */,
 				91FA96702C81333A0011BB7F /* Products */,
 			);
@@ -272,6 +294,7 @@
 			children = (
 				91FA966F2C81333A0011BB7F /* betwist.app */,
 				91FA967F2C81333E0011BB7F /* betwistTests.xctest */,
+				91D4DB332FBE027000A44E4A /* BetwistMaker */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -322,6 +345,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		91D4DB322FBE027000A44E4A /* BetwistMaker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91D4DB392FBE027000A44E4A /* Build configuration list for PBXNativeTarget "BetwistMaker" */;
+			buildPhases = (
+				91D4DB2F2FBE027000A44E4A /* Sources */,
+				91D4DB302FBE027000A44E4A /* Frameworks */,
+				91D4DB312FBE027000A44E4A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				91D4DB342FBE027000A44E4A /* BetwistMaker */,
+			);
+			name = BetwistMaker;
+			packageProductDependencies = (
+			);
+			productName = BetwistMaker;
+			productReference = 91D4DB332FBE027000A44E4A /* BetwistMaker */;
+			productType = "com.apple.product-type.tool";
+		};
 		91FA966E2C81333A0011BB7F /* betwist */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91FA96932C81333F0011BB7F /* Build configuration list for PBXNativeTarget "betwist" */;
@@ -338,8 +383,8 @@
 			);
 			fileSystemSynchronizedGroups = (
 				911EE9F72CAD99A7005C391D /* resources */,
-				91A732AA2FBDF7AA0095F4AD /* maker */,
 				91A732AB2FBDF7F20095F4AD /* maker */,
+				91DB1CC92FBE014500889E6E /* maker */,
 			);
 			name = betwist;
 			productName = betwist;
@@ -372,9 +417,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1610;
+				LastSwiftUpdateCheck = 2650;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
+					91D4DB322FBE027000A44E4A = {
+						CreatedOnToolsVersion = 26.5;
+					};
 					91FA966E2C81333A0011BB7F = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -404,6 +452,7 @@
 			targets = (
 				91FA966E2C81333A0011BB7F /* betwist */,
 				91FA967E2C81333E0011BB7F /* betwistTests */,
+				91D4DB322FBE027000A44E4A /* BetwistMaker */,
 			);
 		};
 /* End PBXProject section */
@@ -473,6 +522,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		91D4DB2F2FBE027000A44E4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		91FA966B2C81333A0011BB7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -560,6 +616,39 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		91D4DB372FBE027000A44E4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7B9VB3YTHK;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		91D4DB382FBE027000A44E4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7B9VB3YTHK;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		91FA96912C81333F0011BB7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -794,6 +883,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		91D4DB392FBE027000A44E4A /* Build configuration list for PBXNativeTarget "BetwistMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91D4DB372FBE027000A44E4A /* Debug */,
+				91D4DB382FBE027000A44E4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		91FA966A2C81333A0011BB7F /* Build configuration list for PBXProject "betwist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
