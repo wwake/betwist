@@ -3,7 +3,7 @@ import Foundation
 
 import Testing
 
-struct ATrieData {
+struct ATrieDataReader {
   @Test
   func `creates a match entry`() {
     var sut = TrieDataReader(data: Data())
