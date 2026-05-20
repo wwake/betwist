@@ -14,7 +14,7 @@ struct TwistButton: View {
   var body: some View {
     Button {
       axis = twist.rotationAxis
-      withAnimation(.easeInOut(duration: 1.5)) {
+      withAnimation(.easeInOut(duration: 1)) {
         animationAngle = twist.rotationAngle
       } completion: {
         animationAngle = Angle.zero
