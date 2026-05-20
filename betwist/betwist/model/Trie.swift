@@ -1,6 +1,6 @@
 import Foundation
 
-struct Trie2 {
+struct Trie {
   let data: TrieData
   let root = 4
 

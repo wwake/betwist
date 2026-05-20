@@ -6,10 +6,10 @@ struct SearchResult: Equatable {
 }
 
 class Vocabulary {
-  let trie2: Trie2
+  private let trie: Trie
 
-  init(_ trie2: Trie2) {
-    self.trie2 = trie2
+  init(_ trie: Trie) {
+    self.trie = trie
   }
 
   func contains(_ word: String) -> Bool {
@@ -17,13 +17,13 @@ class Vocabulary {
   }
 
   func containsAndPrefixes(_ target: String) -> SearchResult {
-    trie2.containsAndPrefixes(target)
+    trie.containsAndPrefixes(target)
   }
 }
 
 class NullVocabulary: Vocabulary {
   init() {
-    super.init(Trie2(data: TrieData(data: Data())))
+    super.init(Trie(data: TrieData(data: Data())))
   }
 
   override func contains(_ word: String) -> Bool {

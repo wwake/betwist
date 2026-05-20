@@ -12,7 +12,7 @@ struct MakerView: View {
           let builder = TrieBuilder().add(words)
           let data = DataBuilder().make(trie: builder.root)
           let url2 = URL.documentsDirectory.appending(path: "trie.dat")
-          try Trie2.write(url2, data)
+          try Trie.write(url2, data)
           print("Copy \(url2) to project's resources folder")
         } catch {
             print(error.localizedDescription)

@@ -9,7 +9,7 @@ struct ATrie2 {
     var data = TrieData(data: Data())
     data.reserve(quadbytes: 2)
 
-    let sut = Trie2(data: data)
+    let sut = Trie(data: data)
 
     #expect(!sut.containsAndPrefixes("ANYTHING").isWord)
     #expect(!sut.containsAndPrefixes("ANYTHING").isProperPrefix)
@@ -22,7 +22,7 @@ struct ATrie2 {
     data.append("A", true, 0)
     data.reserve(quadbytes: 1)
 
-    let sut = Trie2(data: data)
+    let sut = Trie(data: data)
 
     #expect(sut.containsAndPrefixes("A").isWord)
     #expect(!sut.containsAndPrefixes("A").isProperPrefix)
@@ -36,7 +36,7 @@ struct ATrie2 {
     data.append("I", true, 0)
     data.reserve(quadbytes: 1)
 
-    let sut = Trie2(data: data)
+    let sut = Trie(data: data)
 
     #expect(sut.containsAndPrefixes("I").isWord)
     #expect(!sut.containsAndPrefixes("I").isProperPrefix)
@@ -51,7 +51,7 @@ struct ATrie2 {
     data.append("S", true, 0)
     data.reserve(quadbytes: 1)
 
-    let sut = Trie2(data: data)
+    let sut = Trie(data: data)
 
     #expect(sut.containsAndPrefixes("AS").isWord)
     #expect(!sut.containsAndPrefixes("AS").isProperPrefix)
@@ -66,7 +66,7 @@ struct ATrie2 {
     data.append("Y", true, 0)
     data.reserve(quadbytes: 1)
 
-    let sut = Trie2(data: data)
+    let sut = Trie(data: data)
 
     #expect(!sut.containsAndPrefixes("B").isWord)
     #expect(sut.containsAndPrefixes("B").isProperPrefix)
@@ -82,7 +82,7 @@ struct ATrie2 {
     data.append("Y", true, 0)
     data.reserve(quadbytes: 1)
 
-    let sut = Trie2(data: data)
+    let sut = Trie(data: data)
 
     #expect(sut.containsAndPrefixes("BY").isWord)
     #expect(!sut.containsAndPrefixes("BY").isProperPrefix)
