@@ -2,6 +2,9 @@
 
 extension Vocabulary {
   convenience init(_ words: [String]) {
-    self.init(TrieBuilder().add(words).make())
+    let uppercaseWords = words.map { String($0).uppercased() }
+    let root = TrieBuilder().add(uppercaseWords).root
+    let data = DataBuilder().make(trie: root)
+    self.init(Trie2(data: TrieData(data: data)))
   }
 }

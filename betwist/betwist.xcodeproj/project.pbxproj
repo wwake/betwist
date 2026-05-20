@@ -317,21 +317,21 @@
 			isa = PBXGroup;
 			children = (
 				910C6FB92CC03A3300BD6A0D /* ACGSize.swift */,
+				91DC403A2FB6135300E9F82E /* AData+quadbytes.swift */,
+				91DC40362FB60F0000E9F82E /* ADataBuilder.swift */,
 				911EE9E22CAB21E5005C391D /* AGame.swift */,
 				911EE9E42CAB24CA005C391D /* AGameMaker.swift */,
 				9181F0992CA33C2A0091A771 /* ALetterGrid.swift */,
 				910C97AD2CA4990700893B79 /* ALocation.swift */,
+				91A75CE32FA29B2700BB040C /* AnAngle.swift */,
 				9181F0A52CA3556D0091A771 /* ASelection.swift */,
+				915C72C32F967534005EA8DC /* ASolver.swift */,
 				912847062CD9583800FA21BA /* ATrie.swift */,
+				914F2ACC2FBB48DF00F3E32D /* ATrie2.swift */,
+				914F2AD22FBB55A500F3E32D /* ATrieData.swift */,
 				911EE9F82CADD10F005C391D /* AVocabulary.swift */,
 				911EEA002CAF30D7005C391D /* TheAnswers.swift */,
 				912847522CDC131D00FA21BA /* Vocabulary+init.swift */,
-				915C72C32F967534005EA8DC /* ASolver.swift */,
-				91A75CE32FA29B2700BB040C /* AnAngle.swift */,
-				91DC40362FB60F0000E9F82E /* ADataBuilder.swift */,
-				91DC403A2FB6135300E9F82E /* AData+quadbytes.swift */,
-				914F2ACC2FBB48DF00F3E32D /* ATrie2.swift */,
-				914F2AD22FBB55A500F3E32D /* ATrieData.swift */,
 			);
 			path = betwistTests;
 			sourceTree = "<group>";

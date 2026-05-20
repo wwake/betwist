@@ -1,19 +1,5 @@
 
-We might need to test that it increments by 4 when the second letter is not immediately found
-
 Write on TrieBuilder instead?
-
-Original JSON - 2.5 M
-Revised with added isWord flag on character - 3.6 M
-With isWord removed from Trie - 2.6M
-
-In binary form, 4M
-Compressed of binary 1.7M
-
-* Test Data extension
-* Build TrieBuilder => Data
-
-* Startup is slow: try a better Trie data structure
 
 * Dictionary lookup
 
@@ -86,10 +72,23 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+2026-05-20 - Remove the Old Trie
+
+
 2026-05-19 - Use the Binary Trie
+* Test that Trie2 increments by 4 when the second letter is not immediately found
 * Ran Trie and Trie2 in parallel, verifying they responded the same
 * Removed Trie
 * Trying to establish actual startup time.
+
+Results:
+* Original JSON - 2.5 M
+* Revised with added isWord flag on character - 3.6 M
+* With isWord removed from Trie - 2.6M
+  Took ~5s to load
+* New trie - In binary form, 4M
+* Compressed of binary 1.7M
+  Takes ~1s to load
 
 2026-05-18 - Read the Binary Trie
 * Developed Trie2, same interface as Trie, that walks a trie from given Data.

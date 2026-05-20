@@ -11,9 +11,9 @@ extension Vocabulary {
 struct AVocabulary {
   @Test
   func finds_word_that_is_there() {
-    let sut = Vocabulary(["hello", "world"])
+    let sut = Vocabulary(["HELLO", "WORLD"])
 
-    #expect(sut.contains("world"))
+    #expect(sut.contains("WORLD"))
   }
 
   @Test
@@ -25,13 +25,13 @@ struct AVocabulary {
 
   @Test
   func knows_whether_string_is_prefix_of_a_longer_word() {
-    let sut = Vocabulary(["ease", "east", "easy", "west"])
-    #expect(sut.hasPrefix("eas"))
-    #expect(!sut.hasPrefix("east"))
-    #expect(!sut.hasPrefix("north"))
-    #expect(!sut.hasPrefix("easy"))
-    #expect(!sut.hasPrefix("west"))
-    #expect(!sut.hasPrefix("zoo"))
+    let sut = Vocabulary(["EASE", "EAST", "EASY", "WEST"])
+    #expect(sut.hasPrefix("EAS"))
+    #expect(!sut.hasPrefix("EAST"))
+    #expect(!sut.hasPrefix("NORTH"))
+    #expect(!sut.hasPrefix("EASY"))
+    #expect(!sut.hasPrefix("WEST"))
+    #expect(!sut.hasPrefix("ZOO"))
   }
 
   static func load() -> Vocabulary {
@@ -141,8 +141,8 @@ struct AVocabulary {
     let sut = Vocabulary(words)
 
     words.forEach { word in
-      #expect(sut.contains(word))
+      #expect(sut.contains(word.uppercased(with: .autoupdatingCurrent)))
     }
-    #expect(!sut.contains("north"))
+    #expect(!sut.contains("NORTH"))
   }
 }
