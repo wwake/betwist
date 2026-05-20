@@ -1,4 +1,4 @@
-struct GameMaker {
+struct GameGenerator {
   let size: Int
 
   var letterDice = [

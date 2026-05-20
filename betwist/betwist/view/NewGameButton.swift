@@ -16,7 +16,7 @@ struct NewGameButton: View {
       } else {
         Button("Start New Game") {
           showAnswers = false
-          game = Game(game.size, GameMaker(game.size).make(), game.vocabulary)
+          game = Game(game.size, GameGenerator(game.size).make(), game.vocabulary)
         }
         .capsuled()
       }

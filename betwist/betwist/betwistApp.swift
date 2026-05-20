@@ -4,7 +4,7 @@ import SwiftUI
 struct betwistApp: App {
   @State private var game = Game(
     5,
-    GameMaker(5).make(),
+    GameGenerator(5).make(),
     Vocabulary(Trie.read("trie"))
   )
 
