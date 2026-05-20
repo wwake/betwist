@@ -1,4 +1,6 @@
 
+Sort out where dictionary will live for the maker
+
 Write on TrieBuilder instead?
 
 Animation - LetterView - try doing 10 rotations instead of 1 (quick spin)

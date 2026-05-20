@@ -190,6 +190,7 @@
 				MakerTrie.swift,
 				TrieBuilder.swift,
 				TrieDataWriter.swift,
+				WordLoader.swift,
 			);
 			target = 91D4DB512FBE075300A44E4A /* BetwistMakerTests */;
 		};
