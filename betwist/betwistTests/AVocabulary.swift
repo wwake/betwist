@@ -138,10 +138,12 @@ struct AVocabulary {
   @Test
   func contains_can_find_any_word_in_list() {
     let words = ["brother", "ease", "east", "easy", "father", "mother", "sister", "west"]
+      .map { $0.uppercased(with: .autoupdatingCurrent) }
+
     let sut = Vocabulary(words)
 
     words.forEach { word in
-      #expect(sut.contains(word.uppercased(with: .autoupdatingCurrent)))
+      #expect(sut.contains(word))
     }
     #expect(!sut.contains("NORTH"))
   }
