@@ -1,6 +1,6 @@
 import Foundation
 
-class TrieBuilder {
+public class TrieBuilder {
   var root = MakerTrie(next: [])
 
   func add(_ words: [String]) -> Self {

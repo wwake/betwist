@@ -1,6 +1,6 @@
 import Foundation
 
-struct TrieData {
+public struct TrieDataWriter {
   var data: Data
 
   mutating func append(bytes values: [UInt8]) {

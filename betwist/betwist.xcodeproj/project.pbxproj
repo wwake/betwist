@@ -77,6 +77,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		91D4DB5B2FBE08B600A44E4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91FA96672C81333A0011BB7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91D4DB322FBE027000A44E4A;
+			remoteInfo = BetwistMaker;
+		};
 		91FA96802C81333E0011BB7F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 91FA96672C81333A0011BB7F /* Project object */;
@@ -159,6 +166,7 @@
 		91C8BFAA2CE54236009810AF /* RotatingGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingGridView.swift; sourceTree = "<group>"; };
 		91C8BFAE2CE6863D009810AF /* YouFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouFoundView.swift; sourceTree = "<group>"; };
 		91D4DB332FBE027000A44E4A /* BetwistMaker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BetwistMaker; sourceTree = BUILT_PRODUCTS_DIR; };
+		91D4DB522FBE075300A44E4A /* BetwistMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetwistMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91DC40362FB60F0000E9F82E /* ADataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADataBuilder.swift; sourceTree = "<group>"; };
 		91DC40382FB6117D00E9F82E /* Data+quadbytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+quadbytes.swift"; sourceTree = "<group>"; };
 		91DC403A2FB6135300E9F82E /* AData+quadbytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AData+quadbytes.swift"; sourceTree = "<group>"; };
@@ -172,15 +180,38 @@
 		91FA96A32C814BAE0011BB7F /* betwist.key */ = {isa = PBXFileReference; lastKnownFileType = file; path = betwist.key; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		91D4DB632FBE0C8100A44E4A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Data+quadbytes.swift",
+				DataBuilder.swift,
+				main.swift,
+				MakerTrie.swift,
+				TrieBuilder.swift,
+				TrieDataWriter.swift,
+			);
+			target = 91D4DB512FBE075300A44E4A /* BetwistMakerTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		911EE9F72CAD99A7005C391D /* resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = resources; sourceTree = "<group>"; };
 		91A732AB2FBDF7F20095F4AD /* maker */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = maker; sourceTree = "<group>"; };
-		91D4DB342FBE027000A44E4A /* BetwistMaker */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BetwistMaker; sourceTree = "<group>"; };
+		91D4DB342FBE027000A44E4A /* BetwistMaker */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (91D4DB632FBE0C8100A44E4A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = BetwistMaker; sourceTree = "<group>"; };
+		91D4DB532FBE075300A44E4A /* BetwistMakerTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BetwistMakerTests; sourceTree = "<group>"; };
 		91DB1CC92FBE014500889E6E /* maker */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = maker; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		91D4DB302FBE027000A44E4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91D4DB4F2FBE075300A44E4A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -284,6 +315,7 @@
 				91FA96712C81333A0011BB7F /* betwist */,
 				91FA96822C81333E0011BB7F /* betwistTests */,
 				91D4DB342FBE027000A44E4A /* BetwistMaker */,
+				91D4DB532FBE075300A44E4A /* BetwistMakerTests */,
 				9181F0A02CA34EA60091A771 /* Frameworks */,
 				91FA96702C81333A0011BB7F /* Products */,
 			);
@@ -295,6 +327,7 @@
 				91FA966F2C81333A0011BB7F /* betwist.app */,
 				91FA967F2C81333E0011BB7F /* betwistTests.xctest */,
 				91D4DB332FBE027000A44E4A /* BetwistMaker */,
+				91D4DB522FBE075300A44E4A /* BetwistMakerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -367,6 +400,29 @@
 			productReference = 91D4DB332FBE027000A44E4A /* BetwistMaker */;
 			productType = "com.apple.product-type.tool";
 		};
+		91D4DB512FBE075300A44E4A /* BetwistMakerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91D4DB562FBE075300A44E4A /* Build configuration list for PBXNativeTarget "BetwistMakerTests" */;
+			buildPhases = (
+				91D4DB4E2FBE075300A44E4A /* Sources */,
+				91D4DB4F2FBE075300A44E4A /* Frameworks */,
+				91D4DB502FBE075300A44E4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91D4DB5C2FBE08B600A44E4A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				91D4DB532FBE075300A44E4A /* BetwistMakerTests */,
+			);
+			name = BetwistMakerTests;
+			packageProductDependencies = (
+			);
+			productName = BetwistMakerTests;
+			productReference = 91D4DB522FBE075300A44E4A /* BetwistMakerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		91FA966E2C81333A0011BB7F /* betwist */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91FA96932C81333F0011BB7F /* Build configuration list for PBXNativeTarget "betwist" */;
@@ -423,6 +479,9 @@
 					91D4DB322FBE027000A44E4A = {
 						CreatedOnToolsVersion = 26.5;
 					};
+					91D4DB512FBE075300A44E4A = {
+						CreatedOnToolsVersion = 26.5;
+					};
 					91FA966E2C81333A0011BB7F = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -453,11 +512,19 @@
 				91FA966E2C81333A0011BB7F /* betwist */,
 				91FA967E2C81333E0011BB7F /* betwistTests */,
 				91D4DB322FBE027000A44E4A /* BetwistMaker */,
+				91D4DB512FBE075300A44E4A /* BetwistMakerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		91D4DB502FBE075300A44E4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		91FA966D2C81333A0011BB7F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -523,6 +590,13 @@
 
 /* Begin PBXSourcesBuildPhase section */
 		91D4DB2F2FBE027000A44E4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91D4DB4E2FBE075300A44E4A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -608,6 +682,11 @@
 			isa = PBXTargetDependency;
 			productRef = 915C73432F97CEE8005EA8DC /* SwiftLintBuildToolPlugin */;
 		};
+		91D4DB5C2FBE08B600A44E4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91D4DB322FBE027000A44E4A /* BetwistMaker */;
+			targetProxy = 91D4DB5B2FBE08B600A44E4A /* PBXContainerItemProxy */;
+		};
 		91FA96812C81333E0011BB7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 91FA966E2C81333A0011BB7F /* betwist */;
@@ -644,6 +723,49 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		91D4DB572FBE075300A44E4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7B9VB3YTHK;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.BetwistMakerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		91D4DB582FBE075300A44E4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B9VB3YTHK;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.BetwistMakerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -888,6 +1010,15 @@
 			buildConfigurations = (
 				91D4DB372FBE027000A44E4A /* Debug */,
 				91D4DB382FBE027000A44E4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91D4DB562FBE075300A44E4A /* Build configuration list for PBXNativeTarget "BetwistMakerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91D4DB572FBE075300A44E4A /* Debug */,
+				91D4DB582FBE075300A44E4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

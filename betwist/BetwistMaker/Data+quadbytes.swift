@@ -1,6 +1,6 @@
 import Foundation
 
-extension Data {
+public extension Data {
   subscript(quadbyte quadbyte: Int) -> UInt32 {
     let index = 4 * quadbyte
 
@@ -11,7 +11,7 @@ extension Data {
   }
 }
 
-extension Data {
+public extension Data {
   mutating func reserve(quadbytes: Int) {
     let zeros: [UInt8] = [0, 0, 0, 0]
 
@@ -21,7 +21,7 @@ extension Data {
   }
 }
 
-extension Data {
+public extension Data {
   mutating func overwriteQuad(index: Int, _ bytes: [UInt8]) {
     replaceSubrange(
       index..<(index + 4),
@@ -30,7 +30,7 @@ extension Data {
   }
 }
 
-extension Data {
+public extension Data {
   func isEndMark(_ position: Int) -> Bool {
     self[position] == 0
   }

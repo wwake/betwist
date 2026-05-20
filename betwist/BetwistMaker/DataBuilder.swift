@@ -1,6 +1,6 @@
 import Foundation
 
-class DataBuilder {
+public class DataBuilder {
   static let endMarker: [UInt8] = [0, 0xff, 0xff, 0xff]
 
   var data = Data()
