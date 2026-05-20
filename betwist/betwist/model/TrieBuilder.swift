@@ -49,18 +49,4 @@ class TrieBuilder {
     let lastLetterIndex = lastTrie!.next.firstIndex { $0.char == value.last! }
     lastTrie!.next[lastLetterIndex!].isWord = true
   }
-
-  func make() -> Trie {
-    make(root)
-  }
-
-  fileprivate func make(_ node: BuilderTrie) -> Trie {
-    Trie(makeList(node.next))
-  }
-
-  fileprivate func makeList(_ list: [BuilderMatch]) -> [TrieMatch] {
-    list.map { match in
-      TrieMatch(match.char, match.isWord, make(match.trie))
-    }
-  }
 }

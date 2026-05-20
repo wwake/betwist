@@ -29,13 +29,10 @@
 		911EE9FD2CAF26E4005C391D /* AnswerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */; };
 		911EE9FF2CAF2DE4005C391D /* Answers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9FE2CAF2DDF005C391D /* Answers.swift */; };
 		911EEA012CAF30D7005C391D /* TheAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EEA002CAF30D7005C391D /* TheAnswers.swift */; };
-		912847072CD9583800FA21BA /* ATrie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912847062CD9583800FA21BA /* ATrie.swift */; };
-		912847092CD9586F00FA21BA /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912847082CD9586C00FA21BA /* Trie.swift */; };
 		9128473F2CDBF51700FA21BA /* MakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128473E2CDBF51700FA21BA /* MakerView.swift */; };
 		912847412CDBF8E700FA21BA /* Character+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912847402CDBF8E700FA21BA /* Character+Codable.swift */; };
 		9128474B2CDC0C9600FA21BA /* WordLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128474A2CDC0C9600FA21BA /* WordLoader.swift */; };
 		9128474F2CDC0EFF00FA21BA /* TrieBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128474E2CDC0EFB00FA21BA /* TrieBuilder.swift */; };
-		912847512CDC10E100FA21BA /* Trie+io.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912847502CDC10D700FA21BA /* Trie+io.swift */; };
 		912847532CDC131D00FA21BA /* Vocabulary+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912847522CDC131D00FA21BA /* Vocabulary+init.swift */; };
 		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
 		912CFEEA2C88A6B10074C066 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE82C88A6B10074C066 /* README.md */; };
@@ -117,13 +114,10 @@
 		911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerDetailsView.swift; sourceTree = "<group>"; };
 		911EE9FE2CAF2DDF005C391D /* Answers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answers.swift; sourceTree = "<group>"; };
 		911EEA002CAF30D7005C391D /* TheAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAnswers.swift; sourceTree = "<group>"; };
-		912847062CD9583800FA21BA /* ATrie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATrie.swift; sourceTree = "<group>"; };
-		912847082CD9586C00FA21BA /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		9128473E2CDBF51700FA21BA /* MakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakerView.swift; sourceTree = "<group>"; };
 		912847402CDBF8E700FA21BA /* Character+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Codable.swift"; sourceTree = "<group>"; };
 		9128474A2CDC0C9600FA21BA /* WordLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLoader.swift; sourceTree = "<group>"; };
 		9128474E2CDC0EFB00FA21BA /* TrieBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrieBuilder.swift; sourceTree = "<group>"; };
-		912847502CDC10D700FA21BA /* Trie+io.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trie+io.swift"; sourceTree = "<group>"; };
 		912847522CDC131D00FA21BA /* Vocabulary+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vocabulary+init.swift"; sourceTree = "<group>"; };
 		912CFEE72C88A6B10074C066 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -212,8 +206,6 @@
 				91A387772CC1889700E00F7B /* Score.swift */,
 				910C97AA2CA48AD900893B79 /* Selection.swift */,
 				915C72C12F966AD0005EA8DC /* Solver.swift */,
-				912847082CD9586C00FA21BA /* Trie.swift */,
-				912847502CDC10D700FA21BA /* Trie+io.swift */,
 				914F2ACE2FBB49AF00F3E32D /* Trie2.swift */,
 				914F2AD42FBC9A4300F3E32D /* Trie2+io.swift */,
 				9128474E2CDC0EFB00FA21BA /* TrieBuilder.swift */,
@@ -326,7 +318,6 @@
 				91A75CE32FA29B2700BB040C /* AnAngle.swift */,
 				9181F0A52CA3556D0091A771 /* ASelection.swift */,
 				915C72C32F967534005EA8DC /* ASolver.swift */,
-				912847062CD9583800FA21BA /* ATrie.swift */,
 				914F2ACC2FBB48DF00F3E32D /* ATrie2.swift */,
 				914F2AD22FBB55A500F3E32D /* ATrieData.swift */,
 				911EE9F82CADD10F005C391D /* AVocabulary.swift */,
@@ -512,7 +503,6 @@
 				911EE9FF2CAF2DE4005C391D /* Answers.swift in Sources */,
 				9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */,
 				91A75CE22FA299C900BB040C /* Angle+normalized.swift in Sources */,
-				912847092CD9586F00FA21BA /* Trie.swift in Sources */,
 				91A387762CC144E600E00F7B /* AnswerInProgressView.swift in Sources */,
 				91407FD92CEBD74600EC058D /* RegularPortraitView.swift in Sources */,
 				91A387722CC056C800E00F7B /* ScoreView.swift in Sources */,
@@ -539,7 +529,6 @@
 				912847412CDBF8E700FA21BA /* Character+Codable.swift in Sources */,
 				91C8BFAF2CE6863D009810AF /* YouFoundView.swift in Sources */,
 				910C6FAC2CBDB4BF00BD6A0D /* GridView.swift in Sources */,
-				912847512CDC10E100FA21BA /* Trie+io.swift in Sources */,
 				9128474F2CDC0EFF00FA21BA /* TrieBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,7 +552,6 @@
 				9181F09A2CA33C2A0091A771 /* ALetterGrid.swift in Sources */,
 				912847532CDC131D00FA21BA /* Vocabulary+init.swift in Sources */,
 				91DC40372FB60F0000E9F82E /* ADataBuilder.swift in Sources */,
-				912847072CD9583800FA21BA /* ATrie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

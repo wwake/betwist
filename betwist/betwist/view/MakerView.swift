@@ -10,11 +10,11 @@ struct MakerView: View {
         do {
           let words = WordLoader.load()
           let builder = TrieBuilder().add(words)
-          let trie = builder.make()
-
-          let url = URL.documentsDirectory.appending(path: "trie.json-compressed")
-          try trie.write(url)
-          print("Copy \(url) to project's resources folder")
+//          let trie = builder.make()
+//
+//          let url = URL.documentsDirectory.appending(path: "trie.json-compressed")
+//          try trie.write(url)
+//          print("Copy \(url) to project's resources folder")
 
           let dataBuilder = DataBuilder()
           let data = dataBuilder.make(trie: builder.root)
