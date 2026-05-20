@@ -1,11 +1,3 @@
-//
-//  MakerTrie.swift
-//  betwist
-//
-//  Created by Bill Wake on 5/20/26.
-//
-
-
 class MakerTrie {
   var next: [MakerMatch]
 

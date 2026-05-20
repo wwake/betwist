@@ -1,6 +1,5 @@
 import Foundation
 
-
 class TrieBuilder {
   var root = MakerTrie(next: [])
 

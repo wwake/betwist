@@ -6,7 +6,7 @@ import Testing
 struct ATrieData {
   @Test
   func `creates a match entry`() {
-    var sut = TrieData(data: Data())
+    var sut = TrieDataReader(data: Data())
     sut.append("A", true, 0x1234)
 
     #expect(sut[quadbyte: 0] == 0x61001234)
@@ -14,7 +14,7 @@ struct ATrieData {
 
   @Test
   func `accesses byte at position`() {
-    var sut = TrieData(data: Data())
+    var sut = TrieDataReader(data: Data())
     sut.append(bytes: [0x01, 0x02])
 
     #expect(sut[byte: 0] == 0x01)
@@ -23,7 +23,7 @@ struct ATrieData {
 
   @Test
   func `accesses quadbyte at position`() {
-    var sut = TrieData(data: Data())
+    var sut = TrieDataReader(data: Data())
     sut.append(bytes: [0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08])
 
     #expect(sut[quadbyte: 0] == 0x01020304)
@@ -31,7 +31,7 @@ struct ATrieData {
   }
 
   func `reserves quadbytes by filling with 0s`() {
-    var sut = TrieData(data: Data())
+    var sut = TrieDataReader(data: Data())
     sut.append(bytes: [0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08])
 
     sut.reserve(quadbytes: 2)
@@ -44,7 +44,7 @@ struct ATrieData {
 
   @Test
   func `overwrites bytes at position`() {
-    var sut = TrieData(data: Data())
+    var sut = TrieDataReader(data: Data())
     sut.append(bytes: [0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08])
 
     sut.overwrite(at: 4, bytes: [0x0a, 0x0b])
@@ -53,7 +53,7 @@ struct ATrieData {
 
   @Test
   func `recognizes an end mark`() {
-    var sut = TrieData(data: Data())
+    var sut = TrieDataReader(data: Data())
     sut.reserve(quadbytes: 1)
     sut.append("A", false, 0x654321)
     #expect(sut.isEndMark(at: 0))
@@ -62,7 +62,7 @@ struct ATrieData {
 
   @Test
   func `knows character at position`() {
-    var sut = TrieData(data: Data())
+    var sut = TrieDataReader(data: Data())
     sut.reserve(quadbytes: 1)
     sut.append("A", false, 0x654321)
     sut.append("Z", true, 0x654321)
@@ -73,7 +73,7 @@ struct ATrieData {
 
   @Test
   func `knows whether position completes word`() {
-    var sut = TrieData(data: Data())
+    var sut = TrieDataReader(data: Data())
     sut.reserve(quadbytes: 1)
     sut.append("A", false, 0x654321)
     sut.append("Z", true, 0x654321)
@@ -84,7 +84,7 @@ struct ATrieData {
 
   @Test
   func `knows address at position`() {
-    var sut = TrieData(data: Data())
+    var sut = TrieDataReader(data: Data())
     sut.reserve(quadbytes: 1)
     sut.append("A", false, 0x654321)
     #expect(sut.address(at: 4) == 0x654321)
@@ -92,7 +92,7 @@ struct ATrieData {
 
   @Test
   func `knows whether word is a valid prefix`() {
-    var sut = TrieData(data: Data())
+    var sut = TrieDataReader(data: Data())
     sut.reserve(quadbytes: 1)
     sut.append("A", true, 0)
     sut.append("B", false, 16)

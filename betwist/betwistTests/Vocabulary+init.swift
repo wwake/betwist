@@ -5,6 +5,6 @@ extension Vocabulary {
     let uppercaseWords = words.map { String($0).uppercased() }
     let root = TrieBuilder().add(uppercaseWords).root
     let data = DataBuilder().make(trie: root)
-    self.init(Trie(data: TrieData(data: data)))
+    self.init(Trie(data: TrieDataReader(data: data)))
   }
 }

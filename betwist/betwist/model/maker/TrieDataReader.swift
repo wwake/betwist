@@ -1,6 +1,6 @@
 import Foundation
 
-struct TrieData {
+struct TrieDataReader {
   var data: Data
 
   mutating func append(bytes values: [UInt8]) {

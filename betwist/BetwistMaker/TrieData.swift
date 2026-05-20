@@ -43,24 +43,4 @@ struct TrieData {
       with: bytes
     )
   }
-
-//  func isEndMark(at position: Int) -> Bool {
-//    data[position] == 0
-//  }
-//
-//  func character(at position: Int) -> UInt8 {
-//    data[position] & 0x5f
-//  }
-//
-//  func completesWord(at position: Int) -> Bool {
-//    (data[position] & 0x20) != 0
-//  }
-//
-//  func address(at position: Int) -> Int {
-//    Int(self[quadbyte: position] & 0x00ff_ffff)
-//  }
-//
-//  func canExtend(at position: Int) -> Bool {
-//    address(at: position) != 0
-//  }
 }

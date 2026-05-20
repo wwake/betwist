@@ -1,7 +1,7 @@
 import Foundation
 
 struct Trie {
-  let data: TrieData
+  let data: TrieDataReader
   let root = 4
 
   func containsAndPrefixes(_ target: String) -> SearchResult {
