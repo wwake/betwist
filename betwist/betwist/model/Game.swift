@@ -23,7 +23,7 @@ struct Game {
 
   private var hues: [Double]
 
-  init(_ size: Int, _ source: any Sequence<String>, _ vocabulary: Vocabulary = NullVocabulary()) {
+  init(_ size: Int, _ source: any Sequence<String>, _ vocabulary: Vocabulary) {
     self.grid = LetterGrid(size, Array(source))
 
     self.selection = Selection(grid)

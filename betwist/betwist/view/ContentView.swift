@@ -125,13 +125,3 @@ struct ContentView: View {
     geometry.size.width > geometry.size.height ? .landscape : .portrait
   }
 }
-
-#Preview(traits: .portrait) {
-  @Previewable @State var game = Game(2, ["A", "B", "C", "D"])
-    ContentView(game: $game)
-}
-
-#Preview(traits: .landscapeLeft) {
-  @Previewable @State var game = Game(2, ["A", "B", "C", "D"])
-    ContentView(game: $game)
-}
