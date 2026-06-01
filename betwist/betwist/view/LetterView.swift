@@ -11,6 +11,8 @@ struct LetterView<S: InsettableShape>: View {
 
   var animationAngle: Angle
   var axis: Axis
+  var boardAnimation: BoardAnimation
+
   var twistLetter: CGAffineTransform
 
   var chooser = ColorChooser()

@@ -5,6 +5,7 @@ struct TwistButton: View {
 
   @Binding var animationAngle: Angle
   @Binding var axis: Axis
+  @Binding var boardAnimation: BoardAnimation
 
   @Binding var twistBoard: CGAffineTransform
   @Binding var untwistLetter: CGAffineTransform

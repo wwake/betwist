@@ -7,6 +7,8 @@ struct GridView: View {
 
   var animationAngle: Angle
   var axis: Axis
+  var boardAnimation: BoardAnimation
+
   var twistBoard: CGAffineTransform
   var twistLetter: CGAffineTransform
 
@@ -23,6 +25,7 @@ struct GridView: View {
               handleSelection: handleSelection,
               animationAngle: animationAngle,
               axis: axis,
+              boardAnimation: boardAnimation,
               twistLetter: twistLetter
             )
           }

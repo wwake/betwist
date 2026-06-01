@@ -18,6 +18,7 @@ struct RotatingGridView: View {
   @State private var twistBoard: CGAffineTransform = CGAffineTransformIdentity
   @State private var untwistLetter: CGAffineTransform = CGAffineTransformIdentity
 
+  @State private var boardAnimation = BoardAnimation.zero
   @State private var animationAngle = Angle.zero
   @State private var animationAxis = Axis(x: 0.0, y: 0.0, z: 0.0)
 
@@ -33,6 +34,7 @@ struct RotatingGridView: View {
         twistLetter: $untwistLetter,
         animationAngle: $animationAngle,
         animationAxis: $animationAxis,
+        boardAnimation: $boardAnimation,
       )
 
       InfiniteGrid(
@@ -42,6 +44,7 @@ struct RotatingGridView: View {
         boardSize: width,
         animationAngle: animationAngle,
         axis: animationAxis,
+        boardAnimation: boardAnimation,
         twistBoard: $twistBoard,
         untwistLetter: $untwistLetter
       )
@@ -55,6 +58,7 @@ struct RotatingGridView: View {
         untwistLetter = CGAffineTransformIdentity
         animationAngle = Angle.zero
         animationAxis = Axis(x: 0.0, y: 0.0, z: 0.0)
+        boardAnimation = BoardAnimation.zero
       }
     }
   }

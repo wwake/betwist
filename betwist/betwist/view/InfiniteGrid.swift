@@ -11,6 +11,7 @@ struct InfiniteGrid: View {
 
   var animationAngle: Angle
   var axis: Axis
+  var boardAnimation: BoardAnimation
 
   @Binding var twistBoard: CGAffineTransform
   @Binding var untwistLetter: CGAffineTransform
@@ -24,6 +25,7 @@ struct InfiniteGrid: View {
       handleSelection: handleSelection,
       animationAngle: animationAngle,
       axis: axis,
+      boardAnimation: boardAnimation,
       twistBoard: twistBoard,
       twistLetter: untwistLetter
     )
