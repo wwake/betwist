@@ -1,4 +1,13 @@
 
+* Make animation degrees + axis a single object
+* Make twist & untwist a single object
+
+* Remove the error area - and put the error in place of the word they selected. Shorter: "(DUPLICATE!)", ("TOO SHORT!"). Goes away when they type the next thing.
+
+* SE:
+* On SE - scrollable score? Score button opens window? Squeeze score in? Show only most important score? Shorten latest to only show 1 or 2 words. Keep Done & Your Answers buttons fixed at bottom.
+* SE: 647x375 -> 1.73 aspect ratio
+
 * Animation - LetterView - try doing 10 rotations instead of 1 (quick spin)
 * Dictionary lookup
 
@@ -19,7 +28,6 @@
 * Link to dictionary - https://dictionaryapi.dev
 * Link system-found words to a dictionary definition - see api_dictionaryapi_dev/api/v2/entries/en/[the word]
 
-SE: 647x375 -> 1.73 aspect ratio
 16: 759x394 -> 1.93 aspect ratio
 
 * Disable "Trie Generation" button
@@ -63,12 +71,6 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 
 * Game modes - as much time as you want, time-limited, find a specific word
 * Two-player mode?   (set a seed)
-
-Mirror - top<->bottom, left<->right, diagonal-left <-> diagonal-right
-Trigger mirror by shake? [random mirror]
-Trigger by swipe from the edge?
-
-Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
 

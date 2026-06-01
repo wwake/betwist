@@ -6,6 +6,7 @@ struct Twist {
   let label: Label<Text, Image>
   let rotationAngle: Angle
   let rotationAxis: Axis
+  let animation: BoardAnimation
   let twist: CGAffineTransform
   let untwist: CGAffineTransform
 
@@ -13,6 +14,7 @@ struct Twist {
     label: Label("Rotate Left", systemImage: "arrow.counterclockwise"),
     rotationAngle: Angle.degrees(-90),
     rotationAxis: Axis(x: 0, y: 0, z: 1),
+    animation: BoardAnimation(Angle.degrees(-90), Axis(x: 0, y: 0, z: 1)),
 
     twist:
       CGAffineTransformMakeRotation(-Self.quarterTurn)
@@ -31,6 +33,7 @@ struct Twist {
     label: Label("Rotate Right", systemImage: "arrow.clockwise" ),
     rotationAngle: Angle.degrees(90),
     rotationAxis: Axis(x: 0, y: 0, z: 1),
+    animation: BoardAnimation(Angle.degrees(90), Axis(x: 0, y: 0, z: 1)),
 
     twist: CGAffineTransformMakeRotation(Self.quarterTurn)
       .concatenating(
@@ -48,6 +51,7 @@ struct Twist {
     label: Label("Mirror Horizontally", systemImage: "arrow.left.arrow.right"),
     rotationAngle: Angle.degrees(180),
     rotationAxis: Axis(x: 0, y: 1, z: 0),
+    animation: BoardAnimation(Angle.degrees(180), Axis(x: 0, y: 1, z: 0)),
 
     twist: CGAffineTransformMakeScale(-1, 1)
       .concatenating(
@@ -65,6 +69,7 @@ struct Twist {
     label: Label("Mirror Vertically", systemImage: "arrow.up.arrow.down"),
     rotationAngle: Angle.degrees(180),
     rotationAxis: Axis(x: 1, y: 0, z: 0),
+    animation: BoardAnimation(Angle.degrees(180), Axis(x: 1, y: 0, z: 0)),
 
     twist: CGAffineTransformMakeScale(1, -1)
       .concatenating(

@@ -1,5 +1,17 @@
 import SwiftUI
 
+struct BoardAnimation {
+  let animationAngle: Angle
+  let animationAxis: Axis
+
+  static let zero = BoardAnimation(Angle.zero, Axis(x: 0.0, y: 0.0, z: 0.0))
+
+  init(_ angle: SwiftUICore.Angle, _ axis: Axis) {
+    self.animationAngle = angle
+    self.animationAxis = axis
+  }
+}
+
 struct RotatingGridView: View {
   static var cellSize = 50.0
 
