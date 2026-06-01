@@ -198,7 +198,6 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		911EE9F72CAD99A7005C391D /* resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = resources; sourceTree = "<group>"; };
-		91A732AB2FBDF7F20095F4AD /* maker */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = maker; sourceTree = "<group>"; };
 		91D4DB342FBE027000A44E4A /* BetwistMaker */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (91D4DB632FBE0C8100A44E4A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = BetwistMaker; sourceTree = "<group>"; };
 		91D4DB532FBE075300A44E4A /* BetwistMakerTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BetwistMakerTests; sourceTree = "<group>"; };
 		91DB1CC92FBE014500889E6E /* maker */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = maker; sourceTree = "<group>"; };
@@ -264,7 +263,6 @@
 		917642222CC6D8F00064AD48 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				91A732AB2FBDF7F20095F4AD /* maker */,
 				91A75CE12FA299C300BB040C /* Angle+normalized.swift */,
 				911EE9FC2CAF26E4005C391D /* AnswerDetailsView.swift */,
 				91A387752CC144E500E00F7B /* AnswerInProgressView.swift */,
@@ -440,7 +438,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				911EE9F72CAD99A7005C391D /* resources */,
-				91A732AB2FBDF7F20095F4AD /* maker */,
 				91DB1CC92FBE014500889E6E /* maker */,
 			);
 			name = betwist;

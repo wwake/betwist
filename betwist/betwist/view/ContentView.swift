@@ -5,8 +5,6 @@ enum Orientation {
 }
 
 struct ContentView: View {
-  static let showMakerView = true
-
   @Environment(\.verticalSizeClass)
   var verticalSizeClass
 
@@ -66,10 +64,6 @@ struct ContentView: View {
         .ignoresSafeArea()
 
         VStack {
-          if Self.showMakerView {
-            MakerView(game: game)
-          }
-
           switch (horizontalSizeClass, verticalSizeClass, orientation(geometry)) {
           case (.regular, .regular, .portrait):
             RegularPortraitView(
