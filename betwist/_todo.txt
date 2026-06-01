@@ -1,8 +1,4 @@
 
-Sort out where dictionary will live for the maker
-
-Write on TrieBuilder instead?
-
 Animation - LetterView - try doing 10 rotations instead of 1 (quick spin)
 * Dictionary lookup
 
@@ -75,6 +71,15 @@ Trigger by swipe from the edge?
 Trigger rotation by rotating phone left or right but ignoring rotation back to normal position
 
 =====
+
+2026-06-01 - More Command Line
+* Get the command line working
+* Remove vestiges of MakerView and trie building from model
+* Move trie builder needed for test into a testSupport directory
+
+2026-05-21 - Command Line
+* Set up separate project structure with a maker app "main" that builds the trie
+
 2026-05-20 - Remove the Old Trie
 * Fixed tests to use uppercase letters
 * Sped up twist animation slightly
