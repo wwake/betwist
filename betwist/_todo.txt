@@ -1,5 +1,5 @@
 
-Animation - LetterView - try doing 10 rotations instead of 1 (quick spin)
+* Animation - LetterView - try doing 10 rotations instead of 1 (quick spin)
 * Dictionary lookup
 
 * Bigger letters on iPad
@@ -76,6 +76,8 @@ Trigger rotation by rotating phone left or right but ignoring rotation back to n
 * Get the command line working
 * Remove vestiges of MakerView and trie building from model
 * Move trie builder needed for test into a testSupport directory
+* Checked that command line works if output file present or input file missing
+* Removed unnecessary files from build target
 
 2026-05-21 - Command Line
 * Set up separate project structure with a maker app "main" that builds the trie

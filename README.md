@@ -36,3 +36,10 @@ A matcher has 4 bytes:
 	This will be extended with a fourth upper byte of 0 to get that address.
 	
 	A 0 for the address will get to slot 0, the "leaf" trie. [Do we need that?]
+
+## Creating the Trie
+* Set the project to BetwistMaker
+* Copy words.list from the resources folder to the downloads directory
+* Run "main" (cmd-R)
+* Copy trie.dat from the downloads directory to the resources folder
+
