@@ -1,5 +1,5 @@
 
-* Make animation degrees + axis a single object
+* Make animation degrees + axis a single object - remove all uses of animation and axis
 * Make twist & untwist a single object
 
 * Remove the error area - and put the error in place of the word they selected. Shorter: "(DUPLICATE!)", ("TOO SHORT!"). Goes away when they type the next thing.
@@ -80,6 +80,7 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Move trie builder needed for test into a testSupport directory
 * Checked that command line works if output file present or input file missing
 * Removed unnecessary files from build target
+* Introduced BoardAnimation and started using it
 
 2026-05-21 - Command Line
 * Set up separate project structure with a maker app "main" that builds the trie

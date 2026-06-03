@@ -32,7 +32,7 @@ struct LetterView<S: InsettableShape>: View {
           .foregroundStyle(chooser.foregroundColor(type))
           .allowsHitTesting(false)
           .scaleEffect(x: game[location].count == 2 ? 0.85 : 1.0)
-          .rotation3DEffect(animationAngle, axis: invert(axis))
+          .rotation3DEffect(boardAnimation.angle, axis: boardAnimation.axisInverted)
       }
       .onTapGesture {
         handleSelection(location)

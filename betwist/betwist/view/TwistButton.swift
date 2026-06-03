@@ -14,11 +14,14 @@ struct TwistButton: View {
 
   var body: some View {
     Button {
-      axis = twist.rotationAxis
       withAnimation(.easeInOut(duration: 1)) {
+        axis = twist.rotationAxis
         animationAngle = twist.rotationAngle
+        boardAnimation = twist.animation
       } completion: {
+        axis = Axis(x: 0, y: 0, z: 0)
         animationAngle = Angle.zero
+        boardAnimation = BoardAnimation.zero
         twistBoard = twistBoard.concatenating(twist.twist)
         untwistLetter = twist.untwist.concatenating(untwistLetter)
       }
