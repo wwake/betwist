@@ -5,22 +5,24 @@ struct TwistButton: View {
 
   @Binding var boardAnimation: BoardAnimation
 
+  @Binding var twist: Twist
   @Binding var twistBoard: CGAffineTransform
   @Binding var untwistLetter: CGAffineTransform
 
-  var twist: TwistButtonSpec
+  var twistSpec: TwistButtonSpec
 
   var body: some View {
     Button {
       withAnimation(.easeInOut(duration: 1)) {
-        boardAnimation = twist.animation
+        boardAnimation = twistSpec.animation
       } completion: {
         boardAnimation = BoardAnimation.zero
-        twistBoard = twistBoard.concatenating(twist.boardTwist)
-        untwistLetter = twist.untwist.concatenating(untwistLetter)
+        twist = twist.apply(twistSpec.twist)
+        twistBoard = twistBoard.concatenating(twistSpec.boardTwist)
+        untwistLetter = twistSpec.untwist.concatenating(untwistLetter)
       }
     } label: {
-      twist.label
+      twistSpec.label
         .labelStyle(.iconOnly)
     }.circled()
       .padding([.bottom], 6)

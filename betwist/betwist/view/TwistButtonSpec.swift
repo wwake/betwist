@@ -76,7 +76,6 @@ struct TwistButtonSpec {
             0
           )
         ),
-
       untwist: CGAffineTransformMakeTranslation(-RotatingGridView.cellSize, 0)
         .concatenating(CGAffineTransformMakeScale(-1, 1))
     ),

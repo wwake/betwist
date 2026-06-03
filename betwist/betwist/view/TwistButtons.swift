@@ -3,43 +3,48 @@ import SwiftUI
 struct TwistButtons: View {
   @Binding var game: Game
 
+  @Binding var boardAnimation: BoardAnimation
+
+  @Binding var twist: Twist
   @Binding var twistBoard: CGAffineTransform
   @Binding var twistLetter: CGAffineTransform
-
-  @Binding var boardAnimation: BoardAnimation
 
   var body: some View {
     HStack {
       TwistButton(
         game: $game,
         boardAnimation: $boardAnimation,
+        twist: $twist,
         twistBoard: $twistBoard,
         untwistLetter: $twistLetter,
-        twist: TwistButtonSpec.rotateLeft,
+        twistSpec: TwistButtonSpec.rotateLeft,
       )
 
       TwistButton(
         game: $game,
         boardAnimation: $boardAnimation,
+        twist: $twist,
         twistBoard: $twistBoard,
         untwistLetter: $twistLetter,
-        twist: TwistButtonSpec.mirrorHorizontally,
+        twistSpec: TwistButtonSpec.mirrorHorizontally,
       )
 
       TwistButton(
         game: $game,
         boardAnimation: $boardAnimation,
+        twist: $twist,
         twistBoard: $twistBoard,
         untwistLetter: $twistLetter,
-        twist: TwistButtonSpec.mirrorVertically,
+        twistSpec: TwistButtonSpec.mirrorVertically,
       )
 
       TwistButton(
         game: $game,
         boardAnimation: $boardAnimation,
+        twist: $twist,
         twistBoard: $twistBoard,
         untwistLetter: $twistLetter,
-        twist: TwistButtonSpec.rotateRight,
+        twistSpec: TwistButtonSpec.rotateRight,
       )
     }
     .padding(.top, 5)
