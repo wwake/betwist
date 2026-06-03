@@ -42,18 +42,12 @@ struct InfiniteGrid: View {
           .onChanged { dragInfo in
             offset.width = dragInfo.translation.width
             offset.height = dragInfo.translation.height
-
             offset = offset.wrap(Double(game.size) * cellSize)
           }
           .onEnded { _ in
             let translation = CGAffineTransformMakeTranslation(offset.width, offset.height)
 
-            twist = twist.apply(
-              Twist(
-                board: translation,
-                letter: CGAffineTransformIdentity
-              )
-            )
+            twist = twist.apply(Twist(board: translation))
             offset = CGSize.zero
           }
       )

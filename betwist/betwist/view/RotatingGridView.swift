@@ -7,10 +7,7 @@ struct RotatingGridView: View {
   @State private var animationAngle = Angle.zero
   @State private var animationAxis = Axis(x: 0.0, y: 0.0, z: 0.0)
 
-  @State private var twist = Twist(
-    board: CGAffineTransformIdentity,
-    letter: CGAffineTransformIdentity
-  )
+  @State private var twist = Twist()
 
   @Binding var game: Game
 
@@ -40,7 +37,7 @@ struct RotatingGridView: View {
     .onChange(of: game.mode) {
       if game.mode == .play {
         boardAnimation = BoardAnimation.zero
-        twist = Twist(board: CGAffineTransformIdentity, letter: CGAffineTransformIdentity)
+        twist = Twist()
       }
     }
   }
