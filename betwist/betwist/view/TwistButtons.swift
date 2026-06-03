@@ -15,7 +15,7 @@ struct TwistButtons: View {
         boardAnimation: $boardAnimation,
         twistBoard: $twistBoard,
         untwistLetter: $twistLetter,
-        twist: Twist.rotateLeft,
+        twist: TwistButtonSpec.rotateLeft,
       )
 
       TwistButton(
@@ -23,7 +23,7 @@ struct TwistButtons: View {
         boardAnimation: $boardAnimation,
         twistBoard: $twistBoard,
         untwistLetter: $twistLetter,
-        twist: Twist.mirrorHorizontally,
+        twist: TwistButtonSpec.mirrorHorizontally,
       )
 
       TwistButton(
@@ -31,7 +31,7 @@ struct TwistButtons: View {
         boardAnimation: $boardAnimation,
         twistBoard: $twistBoard,
         untwistLetter: $twistLetter,
-        twist: Twist.mirrorVertically,
+        twist: TwistButtonSpec.mirrorVertically,
       )
 
       TwistButton(
@@ -39,7 +39,7 @@ struct TwistButtons: View {
         boardAnimation: $boardAnimation,
         twistBoard: $twistBoard,
         untwistLetter: $twistLetter,
-        twist: Twist.rotateRight,
+        twist: TwistButtonSpec.rotateRight,
       )
     }
     .padding(.top, 5)

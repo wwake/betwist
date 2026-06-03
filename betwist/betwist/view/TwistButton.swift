@@ -8,7 +8,7 @@ struct TwistButton: View {
   @Binding var twistBoard: CGAffineTransform
   @Binding var untwistLetter: CGAffineTransform
 
-  var twist: Twist
+  var twist: TwistButtonSpec
 
   var body: some View {
     Button {

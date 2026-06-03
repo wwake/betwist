@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Twist {
+struct TwistButtonSpec {
   static let quarterTurn = .pi / 2.0
 
   let label: Label<Text, Image>
@@ -8,7 +8,7 @@ struct Twist {
   let twist: CGAffineTransform
   let untwist: CGAffineTransform
 
-  static let rotateLeft = Twist(
+  static let rotateLeft = TwistButtonSpec(
     label: Label("Rotate Left", systemImage: "arrow.counterclockwise"),
     animation: BoardAnimation(Angle.degrees(-90), Axis(x: 0, y: 0, z: 1)),
 
@@ -25,7 +25,7 @@ struct Twist {
       )
   )
 
-  static let rotateRight = Twist(
+  static let rotateRight = TwistButtonSpec(
     label: Label("Rotate Right", systemImage: "arrow.clockwise" ),
     animation: BoardAnimation(Angle.degrees(90), Axis(x: 0, y: 0, z: 1)),
 
@@ -41,7 +41,7 @@ struct Twist {
       .concatenating(CGAffineTransformMakeTranslation(0, RotatingGridView.cellSize))
   )
 
-  static let mirrorHorizontally = Twist(
+  static let mirrorHorizontally = TwistButtonSpec(
     label: Label("Mirror Horizontally", systemImage: "arrow.left.arrow.right"),
     animation: BoardAnimation(Angle.degrees(180), Axis(x: 0, y: 1, z: 0)),
 
@@ -57,7 +57,7 @@ struct Twist {
       .concatenating(CGAffineTransformMakeScale(-1, 1))
   )
 
-  static let mirrorVertically = Twist(
+  static let mirrorVertically = TwistButtonSpec(
     label: Label("Mirror Vertically", systemImage: "arrow.up.arrow.down"),
     animation: BoardAnimation(Angle.degrees(180), Axis(x: 1, y: 0, z: 0)),
 

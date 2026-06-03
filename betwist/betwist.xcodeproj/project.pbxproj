@@ -19,7 +19,7 @@
 		910C97AC2CA48AF400893B79 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97AA2CA48AD900893B79 /* Selection.swift */; };
 		910C97AE2CA4990700893B79 /* ALocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C97AD2CA4990700893B79 /* ALocation.swift */; };
 		9110CF5E2FAB79C300AB6E6E /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110CF5D2FAB79BF00AB6E6E /* Axis.swift */; };
-		9110CF602FAB7EDE00AB6E6E /* Twist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110CF5F2FAB7EDE00AB6E6E /* Twist.swift */; };
+		9110CF602FAB7EDE00AB6E6E /* TwistButtonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110CF5F2FAB7EDE00AB6E6E /* TwistButtonSpec.swift */; };
 		911EE9E32CAB21E5005C391D /* AGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E22CAB21E5005C391D /* AGame.swift */; };
 		911EE9E52CAB24CA005C391D /* AGameMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E42CAB24CA005C391D /* AGameMaker.swift */; };
 		911EE9E82CAB2B49005C391D /* GameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911EE9E62CAB28CE005C391D /* GameGenerator.swift */; };
@@ -113,7 +113,7 @@
 		910C97AD2CA4990700893B79 /* ALocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALocation.swift; sourceTree = "<group>"; };
 		9110CF5B2FAA2EDA00AB6E6E /* errors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = errors.txt; sourceTree = "<group>"; };
 		9110CF5D2FAB79BF00AB6E6E /* Axis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
-		9110CF5F2FAB7EDE00AB6E6E /* Twist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twist.swift; sourceTree = "<group>"; };
+		9110CF5F2FAB7EDE00AB6E6E /* TwistButtonSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwistButtonSpec.swift; sourceTree = "<group>"; };
 		911EE9E22CAB21E5005C391D /* AGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGame.swift; sourceTree = "<group>"; };
 		911EE9E42CAB24CA005C391D /* AGameMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGameMaker.swift; sourceTree = "<group>"; };
 		911EE9E62CAB28CE005C391D /* GameGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGenerator.swift; sourceTree = "<group>"; };
@@ -274,7 +274,7 @@
 				91A387712CC056C800E00F7B /* ScoreView.swift */,
 				917C44AA2CDD625D0041B790 /* SortedAnswersView.swift */,
 				910C6FAF2CBEED2000BD6A0D /* Text+italic.swift */,
-				9110CF5F2FAB7EDE00AB6E6E /* Twist.swift */,
+				9110CF5F2FAB7EDE00AB6E6E /* TwistButtonSpec.swift */,
 				91C8BFA62CE53F2A009810AF /* TwistButton.swift */,
 				91A49FB92FB21B1100822B44 /* TwistButtons.swift */,
 				91C8BFAE2CE6863D009810AF /* YouFoundView.swift */,
@@ -613,7 +613,7 @@
 				917642242CC6D9D70064AD48 /* Button+viewModifier.swift in Sources */,
 				91A387782CC1889700E00F7B /* Score.swift in Sources */,
 				910C6FB62CBEF78D00BD6A0D /* InfiniteGrid.swift in Sources */,
-				9110CF602FAB7EDE00AB6E6E /* Twist.swift in Sources */,
+				9110CF602FAB7EDE00AB6E6E /* TwistButtonSpec.swift in Sources */,
 				911EE9E82CAB2B49005C391D /* GameGenerator.swift in Sources */,
 				914F2ACF2FBB49B900F3E32D /* Trie.swift in Sources */,
 				915E61582FD06185003FCC53 /* BoardAnimation.swift in Sources */,
