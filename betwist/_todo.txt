@@ -29,8 +29,6 @@
 
 16: 759x394 -> 1.93 aspect ratio
 
-* Disable "Trie Generation" button
-
 * Animation isn't happening when word is guessed - zIndex issue?
 
 * Mirror buttons - \, and /
