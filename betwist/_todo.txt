@@ -1,6 +1,5 @@
 
-* Make animation degrees + axis a single object - remove all uses of animation and axis
-* Make twist & untwist a single object
+* Can we avoid translations by centering our grid?
 
 * Remove the error area - and put the error in place of the word they selected. Shorter: "(DUPLICATE!)", ("TOO SHORT!"). Goes away when they type the next thing.
 
@@ -73,6 +72,9 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Two-player mode?   (set a seed)
 
 =====
+2026-06-03 - Animation Abstraction
+* Make animation degrees + axis a single object - remove all uses of animation and axis (BoardAnimation)
+* Make twist & untwist a single object (Twist)
 
 2026-06-01 - More Command Line
 * Get the command line working
