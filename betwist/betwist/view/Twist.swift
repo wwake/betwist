@@ -1,13 +1,13 @@
 import Foundation
 
 struct Twist {
-  let twist: CGAffineTransform
-  let untwist: CGAffineTransform
+  let board: CGAffineTransform
+  let letter: CGAffineTransform
 
   func apply(_ newTwist: Twist) -> Twist {
     Twist(
-      twist: twist.concatenating(newTwist.twist),
-      untwist: newTwist.untwist.concatenating(untwist)
+      board: board.concatenating(newTwist.board),
+      letter: newTwist.letter.concatenating(letter)
     )
   }
 }

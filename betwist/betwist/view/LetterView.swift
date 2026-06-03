@@ -36,6 +36,6 @@ struct LetterView<S: InsettableShape>: View {
         handleSelection(location)
       }
       .accessibilityAddTraits(.isButton)
-      .transformEffect(twist.untwist)
+      .transformEffect(twist.letter)
   }
 }

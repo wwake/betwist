@@ -28,6 +28,6 @@ struct GridView: View {
       }
     }
     .border(.accent, width: 2)
-    .transformEffect(twist.twist)
+    .transformEffect(twist.board)
   }
 }

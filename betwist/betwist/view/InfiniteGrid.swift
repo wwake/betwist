@@ -50,8 +50,8 @@ struct InfiniteGrid: View {
 
             twist = twist.apply(
               Twist(
-                twist: translation,
-                untwist: CGAffineTransformIdentity
+                board: translation,
+                letter: CGAffineTransformIdentity
               )
             )
             offset = CGSize.zero
