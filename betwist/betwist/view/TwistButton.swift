@@ -16,7 +16,7 @@ struct TwistButton: View {
         boardAnimation = twist.animation
       } completion: {
         boardAnimation = BoardAnimation.zero
-        twistBoard = twistBoard.concatenating(twist.twist)
+        twistBoard = twistBoard.concatenating(twist.boardTwist)
         untwistLetter = twist.untwist.concatenating(untwistLetter)
       }
     } label: {
