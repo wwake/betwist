@@ -46,8 +46,6 @@ struct RotatingGridView: View {
         handleSelection: handleSelection,
         cellSize: Self.cellSize,
         boardSize: width,
-        animationAngle: animationAngle,
-        axis: animationAxis,
         boardAnimation: boardAnimation,
         twistBoard: $twistBoard,
         untwistLetter: $untwistLetter

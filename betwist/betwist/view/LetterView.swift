@@ -9,8 +9,6 @@ struct LetterView<S: InsettableShape>: View {
   var location: Location
   var handleSelection: (Location) -> Void
 
-  var animationAngle: Angle
-  var axis: Axis
   var boardAnimation: BoardAnimation
 
   var twistLetter: CGAffineTransform
