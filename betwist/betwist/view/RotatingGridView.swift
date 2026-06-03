@@ -36,8 +36,6 @@ struct RotatingGridView: View {
         game: $game,
         twistBoard: $twistBoard,
         twistLetter: $untwistLetter,
-        animationAngle: $animationAngle,
-        animationAxis: $animationAxis,
         boardAnimation: $boardAnimation,
       )
 
@@ -58,8 +56,6 @@ struct RotatingGridView: View {
       if game.mode == .play {
         twistBoard = CGAffineTransformIdentity
         untwistLetter = CGAffineTransformIdentity
-        animationAngle = Angle.zero
-        animationAxis = Axis(x: 0.0, y: 0.0, z: 0.0)
         boardAnimation = BoardAnimation.zero
       }
     }

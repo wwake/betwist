@@ -6,17 +6,12 @@ struct TwistButtons: View {
   @Binding var twistBoard: CGAffineTransform
   @Binding var twistLetter: CGAffineTransform
 
-  @Binding var animationAngle: Angle
-  @Binding var animationAxis: Axis
-
   @Binding var boardAnimation: BoardAnimation
 
   var body: some View {
     HStack {
       TwistButton(
         game: $game,
-        animationAngle: $animationAngle,
-        axis: $animationAxis,
         boardAnimation: $boardAnimation,
         twistBoard: $twistBoard,
         untwistLetter: $twistLetter,
@@ -25,8 +20,6 @@ struct TwistButtons: View {
 
       TwistButton(
         game: $game,
-        animationAngle: $animationAngle,
-        axis: $animationAxis,
         boardAnimation: $boardAnimation,
         twistBoard: $twistBoard,
         untwistLetter: $twistLetter,
@@ -35,8 +28,6 @@ struct TwistButtons: View {
 
       TwistButton(
         game: $game,
-        animationAngle: $animationAngle,
-        axis: $animationAxis,
         boardAnimation: $boardAnimation,
         twistBoard: $twistBoard,
         untwistLetter: $twistLetter,
@@ -45,8 +36,6 @@ struct TwistButtons: View {
 
       TwistButton(
         game: $game,
-        animationAngle: $animationAngle,
-        axis: $animationAxis,
         boardAnimation: $boardAnimation,
         twistBoard: $twistBoard,
         untwistLetter: $twistLetter,
