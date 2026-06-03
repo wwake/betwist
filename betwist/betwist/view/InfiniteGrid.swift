@@ -11,8 +11,7 @@ struct InfiniteGrid: View {
 
   var boardAnimation: BoardAnimation
 
-  @Binding var twistBoard: CGAffineTransform
-  @Binding var untwistLetter: CGAffineTransform
+  @Binding var twist: Twist
 
   @State private var offset = CGSize.zero
 
@@ -22,8 +21,7 @@ struct InfiniteGrid: View {
       game: $game,
       handleSelection: handleSelection,
       boardAnimation: boardAnimation,
-      twistBoard: twistBoard,
-      twistLetter: untwistLetter
+      twist: twist,
     )
 
     return VStack {
@@ -48,7 +46,14 @@ struct InfiniteGrid: View {
             offset = offset.wrap(Double(game.size) * cellSize)
           }
           .onEnded { _ in
-            twistBoard = twistBoard.translatedBy(x: offset.width, y: offset.height)
+            let translation = CGAffineTransformMakeTranslation(offset.width, offset.height)
+
+            twist = twist.apply(
+              Twist(
+                twist: translation,
+                untwist: CGAffineTransformIdentity
+              )
+            )
             offset = CGSize.zero
           }
       )

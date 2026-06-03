@@ -11,7 +11,7 @@ struct LetterView<S: InsettableShape>: View {
 
   var boardAnimation: BoardAnimation
 
-  var twistLetter: CGAffineTransform
+  let twist: Twist
 
   var chooser = ColorChooser()
 
@@ -36,6 +36,6 @@ struct LetterView<S: InsettableShape>: View {
         handleSelection(location)
       }
       .accessibilityAddTraits(.isButton)
-      .transformEffect(twistLetter)
+      .transformEffect(twist.untwist)
   }
 }

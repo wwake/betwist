@@ -6,8 +6,6 @@ struct TwistButton: View {
   @Binding var boardAnimation: BoardAnimation
 
   @Binding var twist: Twist
-  @Binding var twistBoard: CGAffineTransform
-  @Binding var untwistLetter: CGAffineTransform
 
   var twistSpec: TwistButtonSpec
 
@@ -18,8 +16,6 @@ struct TwistButton: View {
       } completion: {
         boardAnimation = BoardAnimation.zero
         twist = twist.apply(twistSpec.twist)
-        twistBoard = twistBoard.concatenating(twistSpec.boardTwist)
-        untwistLetter = twistSpec.untwist.concatenating(untwistLetter)
       }
     } label: {
       twistSpec.label

@@ -8,8 +8,6 @@ struct RotatingGridView: View {
   @State private var animationAxis = Axis(x: 0.0, y: 0.0, z: 0.0)
 
   @State private var twist = Twist(twist: CGAffineTransformIdentity, untwist: CGAffineTransformIdentity)
-  @State private var twistBoard: CGAffineTransform = CGAffineTransformIdentity
-  @State private var untwistLetter: CGAffineTransform = CGAffineTransformIdentity
 
   @Binding var game: Game
 
@@ -22,8 +20,6 @@ struct RotatingGridView: View {
         game: $game,
         boardAnimation: $boardAnimation,
         twist: $twist,
-        twistBoard: $twistBoard,
-        twistLetter: $untwistLetter,
       )
 
       InfiniteGrid(
@@ -32,8 +28,7 @@ struct RotatingGridView: View {
         cellSize: Self.cellSize,
         boardSize: width,
         boardAnimation: boardAnimation,
-        twistBoard: $twistBoard,
-        untwistLetter: $untwistLetter
+        twist: $twist,
       )
       .frame(width: width, height: width)
       .clipped()
@@ -41,9 +36,8 @@ struct RotatingGridView: View {
     }
     .onChange(of: game.mode) {
       if game.mode == .play {
-        twistBoard = CGAffineTransformIdentity
-        untwistLetter = CGAffineTransformIdentity
         boardAnimation = BoardAnimation.zero
+        twist = Twist(twist: CGAffineTransformIdentity, untwist: CGAffineTransformIdentity)
       }
     }
   }

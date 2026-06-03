@@ -7,8 +7,7 @@ struct GridView: View {
 
   var boardAnimation: BoardAnimation
 
-  var twistBoard: CGAffineTransform
-  var twistLetter: CGAffineTransform
+  var twist: Twist
 
   var body: some View {
     VStack(spacing: 0) {
@@ -22,13 +21,13 @@ struct GridView: View {
               location: Location(row, column),
               handleSelection: handleSelection,
               boardAnimation: boardAnimation,
-              twistLetter: twistLetter
+              twist: twist,
             )
           }
         }
       }
     }
     .border(.accent, width: 2)
-    .transformEffect(twistBoard)
+    .transformEffect(twist.twist)
   }
 }
