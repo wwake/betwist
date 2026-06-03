@@ -52,7 +52,7 @@ struct RotatingGridView: View {
       )
       .frame(width: width, height: width)
       .clipped()
-      .rotation3DEffect(animationAngle, axis: animationAxis)
+      .rotation3DEffect(boardAnimation.angle, axis: boardAnimation.axis)
     }
     .onChange(of: game.mode) {
       if game.mode == .play {
