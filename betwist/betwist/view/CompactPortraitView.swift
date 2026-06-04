@@ -17,17 +17,17 @@ struct CompactPortraitView: View {
 
   var body: some View {
     VStack {
-      AnswerInProgressView(game: $game, progress: progress, height: 500) {
-        collectWord()
-      }
+      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width)
+        .zIndex(5)
 
       MessageView(message: game.message)
         .frame(height: 24)
         .frame(maxWidth: .infinity)
         .font(.title)
 
-      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width)
-        .zIndex(5)
+      AnswerInProgressView(game: $game, progress: progress, height: 500) {
+        collectWord()
+      }
 
       HStack(alignment: .top) {
         VStack {

@@ -43,7 +43,9 @@ struct ContentView: View {
 
     submitIsInProgress = true
 
-    withAnimation(.easeInOut(duration: 0.75)) {
+    progress = 0.0
+
+    withAnimation(.easeInOut(duration: 2.75)) {
       progress = 1.0
     }
     completion: {

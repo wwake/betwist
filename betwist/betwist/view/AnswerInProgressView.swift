@@ -11,17 +11,22 @@ struct AnswerInProgressView: View {
 
   var body: some View {
     HStack {
+      Text("   ")
+        .accessibilityHidden(true)
+
       Text(game.answer)
         .font(.largeTitle)
         .foregroundStyle(game.message.isEmpty ? Color.black : Color.red)
         .frame(maxWidth: 400)
         .frame(height: 40)
+        .padding([.leading, .trailing], 8)
+        .padding([.top, .bottom], 4)
         .background { Color(white: 1.0) }
         .border(.black, width: 2)
-        .accessibilityAddTraits(.isButton)
         .offset(x: 80 * progress, y: progress * height)
         .opacity(1 - 0.8 * progress)
         .scaleEffect(1 - 0.1 * progress)
+        .accessibilityAddTraits(.isButton)
         .onTapGesture {
           action()
         }
