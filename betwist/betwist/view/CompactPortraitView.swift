@@ -21,9 +21,9 @@ struct CompactPortraitView: View {
         .zIndex(5)
 
       MessageView(message: game.message)
+        .font(.title)
         .frame(height: 24)
         .frame(maxWidth: .infinity)
-        .font(.title)
 
       AnswerInProgressView(game: $game, progress: progress, height: 500) {
         collectWord()
@@ -41,7 +41,7 @@ struct CompactPortraitView: View {
           showAnswers.toggle()
         }
       }
-      .padding(.top, 12)
+      //.padding(.top, 12)
 
       Spacer()
     }

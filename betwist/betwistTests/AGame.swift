@@ -99,7 +99,7 @@ struct AGame {
 
     game.validate()
 
-    #expect(game.message == "Word is too short")
+    #expect(game.message == "Too short!")
   }
 
   @Test
@@ -112,7 +112,7 @@ struct AGame {
 
     game.validate()
 
-    #expect(game.message == "That's not a word!")
+    #expect(game.message == "Not a word!")
   }
 
   @Test
@@ -130,7 +130,7 @@ struct AGame {
 
     game.validate()
 
-    #expect(game.message == "Duplicate word!")
+    #expect(game.message == "Duplicate!")
   }
 
   @Test

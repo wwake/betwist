@@ -18,7 +18,6 @@
 * Strikethrough on system words that you also found
 
 ===
-* Return key submits word ?
 * Make "gimme" words blue
 * Message when system didn't find any (extra) words
 * Swap sides so score on right
@@ -70,6 +69,11 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Two-player mode?   (set a seed)
 
 =====
+2026-06-04 - Improved Layout
+* Moved answer area below grid
+* Tweaked background colors
+* Changed button names
+
 2026-06-03 - Animation Abstraction
 * Make animation degrees + axis a single object - remove all uses of animation and axis (BoardAnimation)
 * Make twist & untwist a single object (Twist)
