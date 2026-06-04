@@ -37,7 +37,7 @@ struct RegularPortraitView: View {
       }
    //   .zIndex(5)
 
-      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width)
+      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width, height: geometry.size.height)
 
       Spacer()
 

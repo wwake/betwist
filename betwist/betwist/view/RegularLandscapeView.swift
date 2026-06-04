@@ -38,7 +38,7 @@ struct RegularLandscapeView: View {
       }
       .padding(.top, 64)
 
-      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.height)
+      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.height, height: geometry.size.height)
     }
     .padding(.top, 20)
     .sheet(isPresented: $showAnswers) {

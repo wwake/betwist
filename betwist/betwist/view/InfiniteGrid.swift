@@ -7,7 +7,6 @@ struct InfiniteGrid: View {
   var handleSelection: (Location) -> Void
 
   var cellSize: Double
-  var boardSize: Double
 
   var boardAnimation: BoardAnimation
 
@@ -35,7 +34,6 @@ struct InfiniteGrid: View {
         }
       }
       .offset(offset)
-      .frame(minWidth: boardSize, maxWidth: boardSize, minHeight: boardSize, maxHeight: boardSize)
       .contentShape(Rectangle())
       .gesture(
         DragGesture(minimumDistance: 4)

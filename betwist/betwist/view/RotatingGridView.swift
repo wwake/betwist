@@ -13,6 +13,7 @@ struct RotatingGridView: View {
 
   var handleSelection: (Location) -> Void
   var width: CGFloat
+  var height: CGFloat
 
   var body: some View {
     VStack {
@@ -26,11 +27,11 @@ struct RotatingGridView: View {
         game: $game,
         handleSelection: handleSelection,
         cellSize: Self.cellSize,
-        boardSize: width,
         boardAnimation: boardAnimation,
         twist: $twist,
       )
-      .frame(width: width, height: width)
+      .frame(width: width, height: height)
+      .contentShape(Rectangle())
       .clipped()
       .rotation3DEffect(boardAnimation.angle, axis: boardAnimation.axis)
     }
