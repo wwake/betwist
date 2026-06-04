@@ -29,24 +29,24 @@ struct CompactPortraitView: View {
         collectWord()
       }
 
-      HStack(alignment: .top) {
-        VStack {
+      ViewThatFits(in: .vertical) {
+        HStack(alignment: .top) {
           ScoreView(score: game.score)
             .font(.title3)
 
-          NewGameButton(game: $game)
+          AnswersSummaryView(game: $game) {
+            showAnswers.toggle()
+          }
         }
 
-        AnswersSummaryView(game: $game) {
-          showAnswers.toggle()
-        }
+        Text("")
       }
-      //.padding(.top, 12)
 
-      Spacer()
+      NewGameButton(game: $game)
+        .padding([.top, .bottom], 4)
     }
     .sheet(isPresented: $showAnswers) {
-      AnswerDetailsView(answers: game.answers, allAnswers: game.systemAnswers, mode: $game.mode)
+      AnswerDetailsView(score: game.score, answers: game.answers, allAnswers: game.systemAnswers, mode: $game.mode)
     }
   }
 }

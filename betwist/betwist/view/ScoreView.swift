@@ -5,7 +5,7 @@ struct ScoreView: View {
 
   var body: some View {
     VStack(alignment: .leading) {
-      Text("Score")
+      Text("Statistics")
         .underline()
 
       Group {

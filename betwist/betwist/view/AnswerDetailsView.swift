@@ -4,6 +4,7 @@ struct AnswerDetailsView: View {
   @Environment(\.dismiss)
   var dismiss
 
+  var score: Score
   var answers: Answers
   var allAnswers: Answers
 
@@ -26,6 +27,9 @@ struct AnswerDetailsView: View {
 
   var body: some View {
     VStack {
+      ScoreView(score: score)
+        .font(.title3)
+
       HStack {
         YouFoundView(answers: answers)
           .frame(maxWidth: .infinity)

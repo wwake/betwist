@@ -6,10 +6,11 @@ struct YouFoundView: View {
   var body: some View {
     VStack {
       Text("You Found")
-        .bold()
+        .font(.title2)
 
       if answers.isEmpty {
         Text("(None yet)")
+          .font(.footnote)
       }
 
       SortedAnswersView(answers: answers)
