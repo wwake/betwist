@@ -2,6 +2,9 @@ import Foundation
 
 public class DataBuilder {
   static let endMarker: [UInt8] = [0, 0xff, 0xff, 0xff]
+  static var nodeCount = 0
+  static var endCount = 0
+  static var largestJump = 0
 
   var data = Data()
 
@@ -17,6 +20,10 @@ public class DataBuilder {
 
     _ = writeData(trie: trie)
 
+    print("Node count \(Self.nodeCount)")
+    print("End count \(Self.endCount)")
+    print("Largest jump \(Self.largestJump)")
+    print("Data size \(data.count)")
     return data
   }
 
@@ -51,9 +58,12 @@ public class DataBuilder {
         index: startIndex + i * 4,
         asQuadbytes(charByte, childTrieAddress)
       )
+      Self.largestJump = max(Self.largestJump, Int(childTrieAddress) - startIndex + i * 4)
     }
+    Self.nodeCount += trie.next.count
 
     data.overwriteQuad(index: startIndex + 4 * trie.next.count, Self.endMarker)
+    Self.endCount += 1
 
     return UInt32(startIndex)
   }

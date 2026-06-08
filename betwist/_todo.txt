@@ -1,13 +1,7 @@
-
-* Remove the error area - and put the error in place of the word they selected. Shorter: "(DUPLICATE!)", ("TOO SHORT!"). Goes away when they type the next thing.
-
-* Check format on iPad portrait mode
 * Check format on iPad landscape mode
+* Make list of answers scrollable but not push "Reveal..." off screen
 
-* Bigger letters on iPad
-
-* All Answers button doesn't work
-
+* Rename Score* to Statistics*
 
 * Can we avoid translations by centering our grid?
 
@@ -16,11 +10,13 @@
 
 * Strikethrough on system words that you also found
 
+* Handle extra-large size text (adjust cell size, don't lose critical buttons)
+
+* Support ipad split screen / multitasking (UIRequiresFullScreen is deprecated)
+MudShark666: Fix: "If you need to keep UIRequiresFullScreen to support earlier versions of iOS after you’ve made these updates, add UIRequiresFullScreenIgnoredStartingWithVersion to your information property list to specify in which version of iOS you want the system to begin ignoring UIRequiresFullScreen in your app."
+
 ===
 * Make "gimme" words blue
-* Message when system didn't find any (extra) words
-* Swap sides so score on right
-* Score => Score So Far (or Final Score?)
 * Guess in progress near bottom?
 * Colors of words - explain?
 
@@ -34,15 +30,6 @@
 * Mirror buttons - \, and /
 
 ====
-* RegularLandscapeView
-  - doesn't have animation when word found
-
-* RegularPortraitView
-  - doesn't have animation when word found
-  - found words pushes the screen down slightly [give it a fixed size?]
-  - doesn't fit on iPhone SE
-
-* Use ToastUI framework to briefly pop up score in compact landscape mode [https://www.quanshousio.com/ToastUI]
 
 * Investigate defect where not having a one-pixel padding partially overwrites the safe area ".padding(.top, 1)"
 
@@ -60,14 +47,24 @@
 
 * Sound
 
-* Make selection use gradient from first to last letter (ColorChooser would need access to the index position of the selected letter)
-
 Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swiftui-layout-protocol-f7b0efeeacbf
 
-* Game modes - as much time as you want, time-limited, find a specific word
 * Two-player mode?   (set a seed)
 
 =====
+2026-06-09 - #!@$@% ScrollView
+[offline] Statistics of trie:
+  Node count 586553
+  End count 417478
+  Largest jump 3999632
+  Data size 4016128
+
+2026-06-08 - iPad Layout
+* Removed All Answers button
+* Made statistics only show if there's vertical space
+* Tweaked spacing throughout
+* Checked on iPhone SE, 14; iPad, iPad Pro
+
 2026-06-04 - Improved Layout
 * Moved answer area below grid
 * Tweaked background colors
