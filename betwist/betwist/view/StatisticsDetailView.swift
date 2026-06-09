@@ -1,15 +1,15 @@
 import SwiftUI
 
-struct ScoreDetailView: View {
+struct StatisticsDetailView: View {
   @Environment(\.dismiss)
   var dismiss
 
-  var score: Score
+  var statistics: Statistics
 
   var body: some View {
     VStack {
       Spacer()
-      ScoreView(score: score)
+      StatisticsView(statistics: statistics)
         .border(.black, width: 2)
         .scaleEffect(1.5)
 
@@ -25,5 +25,5 @@ struct ScoreDetailView: View {
 }
 
 #Preview {
-  ScoreDetailView(score: Score(wordCount: 10, letterCount: 20, mostLetters: 30))
+  StatisticsDetailView(statistics: Statistics(wordCount: 10, letterCount: 20, mostLetters: 30))
 }

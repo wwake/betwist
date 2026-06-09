@@ -185,7 +185,7 @@ struct AGame {
   }
 
   @Test
-  func scores_answers() {
+  func `generates statistics for answers`() {
     var game = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
     game.select(Location(0, 0))
     game.select(Location(0, 1))
@@ -194,6 +194,6 @@ struct AGame {
 
     game.submit(game.answer)
 
-    #expect(game.score == Score(wordCount: 1, letterCount: 4, mostLetters: 4))
+    #expect(game.statistics == Statistics(wordCount: 1, letterCount: 4, mostLetters: 4))
   }
 }

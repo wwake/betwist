@@ -125,7 +125,7 @@ struct Game {
     ).answers()
   }
 
-  var score: Score {
-    Score(wordCount: answers.wordCount, letterCount: answers.letterCount, mostLetters: answers.mostLetters)
+  var statistics: Statistics {
+    Statistics(wordCount: answers.wordCount, letterCount: answers.letterCount, mostLetters: answers.mostLetters)
   }
 }

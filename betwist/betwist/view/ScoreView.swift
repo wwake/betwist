@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct ScoreView: View {
-  var score: Score
+struct StatisticsView: View {
+  var statistics: Statistics
 
   var body: some View {
     VStack(alignment: .leading) {
@@ -9,13 +9,13 @@ struct ScoreView: View {
         .underline()
 
       Group {
-        Text("Words: \(score.wordCount)")
+        Text("Words: \(statistics.wordCount)")
           .fixedSize()
 
-        Text("Letters: \(score.letterCount)")
+        Text("Letters: \(statistics.letterCount)")
           .fixedSize()
 
-        Text("Longest: \(score.mostLetters)")
+        Text("Longest: \(statistics.mostLetters)")
           .fixedSize()
       }
     }
@@ -26,7 +26,7 @@ struct ScoreView: View {
 }
 
 #Preview {
-  ScoreView(score: Score(wordCount: 0, letterCount: 0, mostLetters: 0))
+  StatisticsView(statistics: Statistics(wordCount: 0, letterCount: 0, mostLetters: 0))
 
-  ScoreView(score: Score(wordCount: 500, letterCount: 9999, mostLetters: 97))
+  StatisticsView(statistics: Statistics(wordCount: 500, letterCount: 9999, mostLetters: 97))
 }

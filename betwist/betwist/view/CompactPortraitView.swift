@@ -40,7 +40,7 @@ struct CompactPortraitView: View {
         HStack(alignment: .top) {
           Spacer()
 
-          ScoreView(score: game.score)
+          StatisticsView(statistics: game.statistics)
             .font(.title3)
 
           Spacer()
@@ -58,7 +58,7 @@ struct CompactPortraitView: View {
     }
     .sheet(isPresented: $showAnswers) {
       AnswerDetailsView(
-        score: game.score,
+        statistics: game.statistics,
         answers: game.answers,
         allAnswers: game.systemAnswers,
         mode: $game.mode

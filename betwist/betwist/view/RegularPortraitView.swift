@@ -24,7 +24,7 @@ struct RegularPortraitView: View {
         Spacer()
 
         HStack {
-          ScoreView(score: game.score)
+          StatisticsView(statistics: game.statistics)
 
           VStack {
             AnswersSummaryView(game: $game)
@@ -47,7 +47,12 @@ struct RegularPortraitView: View {
     }
     .padding(.top, 20)
     .sheet(isPresented: $showAnswers) {
-      AnswerDetailsView(score: game.score, answers: game.answers, allAnswers: game.systemAnswers, mode: $game.mode)
+      AnswerDetailsView(
+        statistics: game.statistics,
+        answers: game.answers,
+        allAnswers: game.systemAnswers,
+        mode: $game.mode
+      )
     }
   }
 }

@@ -1,7 +1,4 @@
-* Check format on iPad landscape mode
-* Make list of answers scrollable but not push "Reveal..." off screen
-
-* Rename Score* to Statistics*
+* Eliminate unused views
 
 * Onboarding
 
@@ -61,6 +58,8 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
   End count 417478
   Largest jump 3999632
   Data size 4016128
+* Fix format on iPad landscape mode by making controls a set height
+* Rename Score* to Statistics*
 
 2026-06-08 - iPad Layout
 * Removed All Answers button

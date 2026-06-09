@@ -4,7 +4,7 @@ struct AnswerDetailsView: View {
   @Environment(\.dismiss)
   var dismiss
 
-  var score: Score
+  var statistics: Statistics
   var answers: Answers
   var allAnswers: Answers
 
@@ -27,7 +27,7 @@ struct AnswerDetailsView: View {
 
   var body: some View {
     VStack {
-      ScoreView(score: score)
+      StatisticsView(statistics: statistics)
         .font(.title3)
 
       HStack {

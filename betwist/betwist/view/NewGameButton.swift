@@ -22,7 +22,12 @@ struct NewGameButton: View {
       }
     }
     .sheet(isPresented: $showAnswers) {
-      AnswerDetailsView(score: game.score, answers: game.answers, allAnswers: game.systemAnswers, mode: $game.mode)
+      AnswerDetailsView(
+        statistics: game.statistics,
+        answers: game.answers,
+        allAnswers: game.systemAnswers,
+        mode: $game.mode
+      )
     }
   }
 }

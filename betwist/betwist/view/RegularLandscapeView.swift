@@ -21,7 +21,7 @@ struct RegularLandscapeView: View {
             .font(.title)
             .frame(minHeight: 40)
 
-          ScoreView(score: game.score)
+          StatisticsView(statistics: game.statistics)
             .font(.title)
             .padding([.bottom], 20)
 
@@ -49,7 +49,7 @@ struct RegularLandscapeView: View {
     .padding(.top, 20)
     .sheet(isPresented: $showAnswers) {
       AnswerDetailsView(
-        score: game.score,
+        statistics: game.statistics,
         answers: game.answers,
         allAnswers: game.systemAnswers,
         mode: $game.mode
