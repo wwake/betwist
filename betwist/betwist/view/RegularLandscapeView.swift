@@ -42,6 +42,7 @@ struct RegularLandscapeView: View {
         width: geometry.size.height,
         height: geometry.size.height
       )
+      .zIndex(5)
     }
     .padding(.top, 20)
     .sheet(isPresented: $showAnswers) {

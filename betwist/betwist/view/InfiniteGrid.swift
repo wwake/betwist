@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct InfiniteGrid: View {
-  let maxGrids = 5
+  let maxGrids = 7
 
   @Binding var game: Game
   var handleSelection: (Location) -> Void
