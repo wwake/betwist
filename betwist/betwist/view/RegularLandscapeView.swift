@@ -36,11 +36,21 @@ struct RegularLandscapeView: View {
       }
       .padding(.top, 64)
 
-      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.height, height: geometry.size.height)
+      RotatingGridView(
+        game: $game,
+        handleSelection: handleSelection,
+        width: geometry.size.height,
+        height: geometry.size.height
+      )
     }
     .padding(.top, 20)
     .sheet(isPresented: $showAnswers) {
-      AnswerDetailsView(score: game.score, answers: game.answers, allAnswers: game.systemAnswers, mode: $game.mode)
+      AnswerDetailsView(
+        score: game.score,
+        answers: game.answers,
+        allAnswers: game.systemAnswers,
+        mode: $game.mode
+      )
     }
   }
 }
