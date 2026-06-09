@@ -1,7 +1,10 @@
+
 * Check format on iPad landscape mode
 * Make list of answers scrollable but not push "Reveal..." off screen
 
 * Rename Score* to Statistics*
+
+* Onboarding
 
 * Can we avoid translations by centering our grid?
 
@@ -14,6 +17,7 @@
 
 * Support ipad split screen / multitasking (UIRequiresFullScreen is deprecated)
 MudShark666: Fix: "If you need to keep UIRequiresFullScreen to support earlier versions of iOS after you’ve made these updates, add UIRequiresFullScreenIgnoredStartingWithVersion to your information property list to specify in which version of iOS you want the system to begin ignoring UIRequiresFullScreen in your app."
+(Although - we tried it saying ios 26.0 and ios 27.0, and couldn't get the warning to go away. Probably easiest to add the support:)
 
 ===
 * Make "gimme" words blue
@@ -99,7 +103,7 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Trying to establish actual startup time.
 
 Results:
-* Original JSON - 2.5 M
+* Original JSON - 2.5 M  [compressed?]
 * Revised with added isWord flag on character - 3.6 M
 * With isWord removed from Trie - 2.6M
   Took ~5s to load

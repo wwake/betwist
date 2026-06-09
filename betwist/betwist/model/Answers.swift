@@ -11,7 +11,7 @@ struct Answer: Identifiable, Equatable {
 }
 
 struct Answers {
-  static let previewCount = 3
+  static let previewCount = 10
 
   internal var values = [Answer]()
   fileprivate var answersByLength = [Int: [Answer]]()

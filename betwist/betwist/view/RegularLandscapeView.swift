@@ -26,9 +26,7 @@ struct RegularLandscapeView: View {
             .font(.title)
             .padding([.bottom], 20)
 
-          AnswersSummaryView(game: $game) {
-            showAnswers.toggle()
-          }
+          AnswersSummaryView(game: $game)
           .font(.title)
 
           NewGameButton(game: $game)

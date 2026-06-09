@@ -17,6 +17,9 @@ struct CompactPortraitView: View {
 
   var body: some View {
     VStack {
+      Spacer()
+        .frame(height: 12)
+
       RotatingGridView(
         game: $game,
         handleSelection: handleSelection,
@@ -34,24 +37,33 @@ struct CompactPortraitView: View {
         collectWord()
       }
 
-      ViewThatFits(in: .vertical) {
+      ScrollView {
         HStack(alignment: .top) {
+          Spacer()
+
           ScoreView(score: game.score)
             .font(.title3)
 
-          AnswersSummaryView(game: $game) {
-            showAnswers.toggle()
-          }
-        }
+          Spacer()
 
-        Text("")
+          AnswersSummaryView(game: $game)
+
+          Spacer()
+        }
       }
 
+      Spacer()
+
       NewGameButton(game: $game)
-        .padding([.top, .bottom], 4)
+        .padding([.top, .bottom], 8)
     }
     .sheet(isPresented: $showAnswers) {
-      AnswerDetailsView(score: game.score, answers: game.answers, allAnswers: game.systemAnswers, mode: $game.mode)
+      AnswerDetailsView(
+        score: game.score,
+        answers: game.answers,
+        allAnswers: game.systemAnswers,
+        mode: $game.mode
+      )
     }
   }
 }

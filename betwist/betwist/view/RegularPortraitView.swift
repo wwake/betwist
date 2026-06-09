@@ -12,7 +12,6 @@ struct RegularPortraitView: View {
   var body: some View {
     VStack {
       HStack {
-        Spacer()
         VStack {
           AnswerInProgressView(game: $game, progress: progress, height: 500) {
             collectWord()
@@ -28,16 +27,18 @@ struct RegularPortraitView: View {
           ScoreView(score: game.score)
 
           VStack {
-            AnswersSummaryView(game: $game) {
-              showAnswers.toggle()
-            }
+            AnswersSummaryView(game: $game)
           }
         }
         Spacer()
       }
-   //   .zIndex(5)
 
-      RotatingGridView(game: $game, handleSelection: handleSelection, width: geometry.size.width, height: geometry.size.height)
+      RotatingGridView(
+        game: $game,
+        handleSelection: handleSelection,
+        width: geometry.size.width,
+        height: geometry.size.height
+      )
 
       Spacer()
 

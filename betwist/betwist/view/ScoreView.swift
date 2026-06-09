@@ -13,10 +13,11 @@ struct ScoreView: View {
           .fixedSize()
 
         Text("Letters: \(score.letterCount)")
+          .fixedSize()
 
         Text("Longest: \(score.mostLetters)")
+          .fixedSize()
       }
-      .scaleEffect(0.9)
     }
     .bold()
     .padding(12)

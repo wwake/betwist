@@ -20,7 +20,7 @@ struct AnswerInProgressView: View {
         .frame(maxWidth: 400)
         .frame(height: 40)
         .padding([.leading, .trailing], 8)
-        .padding([.top, .bottom], 4)
+        .padding([.bottom], 4)
         .background { Color(white: 1.0) }
         .border(.black, width: 2)
         .offset(x: 80 * progress, y: progress * height)
@@ -42,6 +42,7 @@ struct AnswerInProgressView: View {
           .clipShape(Circle())
       }
     }
-    .padding(12)
+    .padding(.trailing, 2)
+    .padding(.bottom, 8)
   }
 }
