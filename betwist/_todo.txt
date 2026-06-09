@@ -1,4 +1,3 @@
-
 * Check format on iPad landscape mode
 * Make list of answers scrollable but not push "Reveal..." off screen
 

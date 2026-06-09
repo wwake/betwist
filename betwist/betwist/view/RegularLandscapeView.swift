@@ -19,8 +19,7 @@ struct RegularLandscapeView: View {
         VStack(spacing: 8) {
           MessageView(message: game.message)
             .font(.title)
-            .frame(height: 40)
-            .padding([.bottom], 20)
+            .frame(minHeight: 40)
 
           ScoreView(score: game.score)
             .font(.title)
@@ -29,12 +28,15 @@ struct RegularLandscapeView: View {
           AnswersSummaryView(game: $game)
           .font(.title)
 
+          Spacer()
+
           NewGameButton(game: $game)
             .font(.title)
             .padding([.bottom], 20)
         }
       }
       .padding(.top, 64)
+      .frame(height: geometry.size.height)
 
       RotatingGridView(
         game: $game,

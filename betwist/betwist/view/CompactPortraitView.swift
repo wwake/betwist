@@ -30,8 +30,7 @@ struct CompactPortraitView: View {
 
       MessageView(message: game.message)
         .font(.title)
-        .frame(height: 24)
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, minHeight: 40)
 
       AnswerInProgressView(game: $game, progress: progress, height: 500) {
         collectWord()

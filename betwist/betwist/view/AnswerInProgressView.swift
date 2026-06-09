@@ -17,8 +17,7 @@ struct AnswerInProgressView: View {
       Text(game.answer)
         .font(.largeTitle)
         .foregroundStyle(game.message.isEmpty ? Color.black : Color.red)
-        .frame(maxWidth: 400)
-        .frame(height: 40)
+        .frame(maxWidth: 400, minHeight: 40)
         .padding([.leading, .trailing], 8)
         .padding([.bottom], 4)
         .background { Color(white: 1.0) }
