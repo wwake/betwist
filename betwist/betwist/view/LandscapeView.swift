@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct RegularLandscapeView: View {
+struct LandscapeView: View {
   var geometry: GeometryProxy
   @Binding var game: Game
   var collectWord: () -> Void

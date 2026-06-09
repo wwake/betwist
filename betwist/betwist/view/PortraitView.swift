@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CompactPortraitView: View {
+struct PortraitView: View {
   var geometry: GeometryProxy
   @Binding var game: Game
   var collectWord: () -> Void

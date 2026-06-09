@@ -67,16 +67,8 @@ struct ContentView: View {
 
         VStack {
           switch (horizontalSizeClass, verticalSizeClass, orientation(geometry)) {
-//          case (.regular, .regular, .portrait):
-//            RegularPortraitView(
-//              geometry: geometry,
-//              game: $game,
-//              collectWord: collectWord,
-//              handleSelection: handleSelection
-//            )
-
           case (.regular, .regular, .landscape):
-            RegularLandscapeView(
+            LandscapeView(
               geometry: geometry,
               game: $game,
               collectWord: collectWord,
@@ -84,7 +76,7 @@ struct ContentView: View {
             )
 
           default:
-            CompactPortraitView(
+            PortraitView(
               geometry: geometry,
               game: $game,
               collectWord: collectWord,

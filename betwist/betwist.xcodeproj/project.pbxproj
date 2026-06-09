@@ -32,9 +32,8 @@
 		9128474B2CDC0C9600FA21BA /* WordLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128474A2CDC0C9600FA21BA /* WordLoader.swift */; };
 		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
 		91407FD72CEBCC8200EC058D /* StatisticsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91407FD62CEBCC8200EC058D /* StatisticsDetailView.swift */; };
-		91407FD92CEBD74600EC058D /* RegularPortraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91407FD82CEBD74600EC058D /* RegularPortraitView.swift */; };
-		91407FDB2CEBDD3400EC058D /* CompactPortraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91407FDA2CEBDD3400EC058D /* CompactPortraitView.swift */; };
-		91407FDD2CEBDD9E00EC058D /* RegularLandscapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91407FDC2CEBDD9E00EC058D /* RegularLandscapeView.swift */; };
+		91407FDB2CEBDD3400EC058D /* PortraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91407FDA2CEBDD3400EC058D /* PortraitView.swift */; };
+		91407FDD2CEBDD9E00EC058D /* LandscapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91407FDC2CEBDD9E00EC058D /* LandscapeView.swift */; };
 		914F2ACD2FBB48DF00F3E32D /* ATrie2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2ACC2FBB48DF00F3E32D /* ATrie2.swift */; };
 		914F2ACF2FBB49B900F3E32D /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2ACE2FBB49AF00F3E32D /* Trie.swift */; };
 		914F2AD32FBB55A500F3E32D /* ATrieDataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F2AD22FBB55A500F3E32D /* ATrieDataReader.swift */; };
@@ -127,9 +126,8 @@
 		912CFEE72C88A6B10074C066 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		91407FD62CEBCC8200EC058D /* StatisticsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDetailView.swift; sourceTree = "<group>"; };
-		91407FD82CEBD74600EC058D /* RegularPortraitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularPortraitView.swift; sourceTree = "<group>"; };
-		91407FDA2CEBDD3400EC058D /* CompactPortraitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactPortraitView.swift; sourceTree = "<group>"; };
-		91407FDC2CEBDD9E00EC058D /* RegularLandscapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularLandscapeView.swift; sourceTree = "<group>"; };
+		91407FDA2CEBDD3400EC058D /* PortraitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitView.swift; sourceTree = "<group>"; };
+		91407FDC2CEBDD9E00EC058D /* LandscapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeView.swift; sourceTree = "<group>"; };
 		914A53992CA3664E00C05BB7 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
 		914F2ACC2FBB48DF00F3E32D /* ATrie2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATrie2.swift; sourceTree = "<group>"; };
 		914F2ACE2FBB49AF00F3E32D /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
@@ -260,15 +258,14 @@
 				915E61572FD06125003FCC53 /* BoardAnimation.swift */,
 				917642232CC6D9C40064AD48 /* Button+viewModifier.swift */,
 				910C6FB12CBEED7500BD6A0D /* ColorChooser.swift */,
-				91407FDA2CEBDD3400EC058D /* CompactPortraitView.swift */,
+				91407FDA2CEBDD3400EC058D /* PortraitView.swift */,
 				91FA96742C81333A0011BB7F /* ContentView.swift */,
 				910C6FAB2CBDB4BF00BD6A0D /* GridView.swift */,
 				910C6FB52CBEF78D00BD6A0D /* InfiniteGrid.swift */,
 				910C6FAD2CBDB6AD00BD6A0D /* LetterView.swift */,
 				91C8BFA82CE54003009810AF /* MessageView.swift */,
 				91C8BFA42CE53AC5009810AF /* NewGameButton.swift */,
-				91407FDC2CEBDD9E00EC058D /* RegularLandscapeView.swift */,
-				91407FD82CEBD74600EC058D /* RegularPortraitView.swift */,
+				91407FDC2CEBDD9E00EC058D /* LandscapeView.swift */,
 				91C8BFAA2CE54236009810AF /* RotatingGridView.swift */,
 				91407FD62CEBCC8200EC058D /* StatisticsDetailView.swift */,
 				91A387712CC056C800E00F7B /* ScoreView.swift */,
@@ -593,14 +590,14 @@
 				910C97AC2CA48AF400893B79 /* Selection.swift in Sources */,
 				910C6FB82CC0391500BD6A0D /* CGSize+wrap.swift in Sources */,
 				911EE9FB2CADD2D6005C391D /* Vocabulary.swift in Sources */,
-				91407FDD2CEBDD9E00EC058D /* RegularLandscapeView.swift in Sources */,
+				91407FDD2CEBDD9E00EC058D /* LandscapeView.swift in Sources */,
 				91FA96752C81333A0011BB7F /* ContentView.swift in Sources */,
 				91C8BFA52CE53AC5009810AF /* NewGameButton.swift in Sources */,
 				91882E212FCDC33F00CB628D /* TrieDataReader.swift in Sources */,
 				91C8BFA92CE54003009810AF /* MessageView.swift in Sources */,
 				91A49FBA2FB21B1100822B44 /* TwistButtons.swift in Sources */,
 				9104FD2E2CA5E85900A8CBB3 /* Game.swift in Sources */,
-				91407FDB2CEBDD3400EC058D /* CompactPortraitView.swift in Sources */,
+				91407FDB2CEBDD3400EC058D /* PortraitView.swift in Sources */,
 				910C6FAE2CBDB6AD00BD6A0D /* LetterView.swift in Sources */,
 				91407FD72CEBCC8200EC058D /* StatisticsDetailView.swift in Sources */,
 				9128474B2CDC0C9600FA21BA /* WordLoader.swift in Sources */,
@@ -608,7 +605,6 @@
 				9181F09E2CA347370091A771 /* Int+wrap.swift in Sources */,
 				91A75CE22FA299C900BB040C /* Angle+normalized.swift in Sources */,
 				91A387762CC144E600E00F7B /* AnswerInProgressView.swift in Sources */,
-				91407FD92CEBD74600EC058D /* RegularPortraitView.swift in Sources */,
 				915E615A2FD06572003FCC53 /* Twist.swift in Sources */,
 				91A387722CC056C800E00F7B /* ScoreView.swift in Sources */,
 				917642242CC6D9D70064AD48 /* Button+viewModifier.swift in Sources */,
