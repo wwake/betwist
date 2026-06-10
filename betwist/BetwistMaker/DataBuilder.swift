@@ -33,7 +33,7 @@ public class DataBuilder {
 
     let startIndex = data.count
 
-    data.reserve(quadbytes: trie.next.count + 1)
+    data.reserve(quadbytes: trie.next.count)
 
     for i in 0..<(trie.next.count) {
       let charByte = firstByte(
@@ -51,8 +51,8 @@ public class DataBuilder {
     }
     Self.nodeCount += trie.next.count
 
-    data.overwriteQuad(index: startIndex + 4 * trie.next.count, Self.endMarker)
-    Self.endCount += 1
+//    data.overwriteQuad(index: startIndex + 4 * trie.next.count, Self.endMarker)
+//    Self.endCount += 1
 
     return UInt32(startIndex)
   }
