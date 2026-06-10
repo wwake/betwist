@@ -15,9 +15,10 @@ class DataBuilder {
     return data
   }
 
-  func matchByte(match: BuilderMatch) -> UInt8 {
+  func firstByte(match: BuilderMatch, isLast: Bool) -> UInt8 {
+    let isLastFlag = isLast ? UInt8(128) : 0
     let isWordFlag = match.isWord ? UInt8(32) : 0
-    let charValue = isWordFlag | match.char.asciiValue!
+    let charValue = isLastFlag | isWordFlag | match.char.asciiValue!
     return charValue
   }
 
@@ -38,7 +39,10 @@ class DataBuilder {
     data.reserve(quadbytes: trie.next.count + 1)
 
     for i in 0..<(trie.next.count) {
-      let charByte = matchByte(match: trie.next[i])
+      let charByte = firstByte(
+        match: trie.next[i],
+        isLast: i == trie.next.count - 1
+      )
 
       let childTrieAddress = writeData(trie: trie.next[i].trie)
 

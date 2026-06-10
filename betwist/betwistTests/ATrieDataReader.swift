@@ -7,7 +7,7 @@ struct ATrieDataReader {
   @Test
   func `creates a match entry`() {
     var sut = TrieDataReader(data: Data())
-    sut.append("A", true, 0x1234)
+    sut.append("A", isWord: true, isLast: false, 0x1234)
 
     #expect(sut[quadbyte: 0] == 0x61001234)
   }
@@ -55,7 +55,7 @@ struct ATrieDataReader {
   func `recognizes an end mark`() {
     var sut = TrieDataReader(data: Data())
     sut.reserve(quadbytes: 1)
-    sut.append("A", false, 0x654321)
+    sut.append("A", isWord: false, isLast: true, 0x654321)
     #expect(sut.isEndMark(at: 0))
     #expect(!sut.isEndMark(at: 4))
   }
@@ -64,8 +64,8 @@ struct ATrieDataReader {
   func `knows character at position`() {
     var sut = TrieDataReader(data: Data())
     sut.reserve(quadbytes: 1)
-    sut.append("A", false, 0x654321)
-    sut.append("Z", true, 0x654321)
+    sut.append("A", isWord: false, isLast: false, 0x654321)
+    sut.append("Z", isWord: true, isLast: true, 0x654321)
     #expect(sut.character(at: 0) == 0)
     #expect(sut.character(at: 4) == 0x41)
     #expect(sut.character(at: 8) == 0x5A)
@@ -75,8 +75,8 @@ struct ATrieDataReader {
   func `knows whether position completes word`() {
     var sut = TrieDataReader(data: Data())
     sut.reserve(quadbytes: 1)
-    sut.append("A", false, 0x654321)
-    sut.append("Z", true, 0x654321)
+    sut.append("A", isWord: false, isLast: false, 0x654321)
+    sut.append("Z", isWord: true, isLast: true, 0x654321)
     #expect(!sut.completesWord(at: 0))
     #expect(!sut.completesWord(at: 4))
     #expect(sut.completesWord(at: 8))
@@ -86,7 +86,7 @@ struct ATrieDataReader {
   func `knows address at position`() {
     var sut = TrieDataReader(data: Data())
     sut.reserve(quadbytes: 1)
-    sut.append("A", false, 0x654321)
+    sut.append("A", isWord: false, isLast: false, 0x654321)
     #expect(sut.address(at: 4) == 0x654321)
   }
 
@@ -94,10 +94,10 @@ struct ATrieDataReader {
   func `knows whether word is a valid prefix`() {
     var sut = TrieDataReader(data: Data())
     sut.reserve(quadbytes: 1)
-    sut.append("A", true, 0)
-    sut.append("B", false, 16)
+    sut.append("A", isWord: true, isLast: false, 0)
+    sut.append("B", isWord: false, isLast: true, 16)
     sut.reserve(quadbytes: 1)
-    sut.append("Y", true, 0)
+    sut.append("Y", isWord: true, isLast: true, 0)
     sut.reserve(quadbytes: 1)
 
     #expect(!sut.canExtend(at: 4))

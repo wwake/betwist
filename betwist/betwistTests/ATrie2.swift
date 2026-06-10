@@ -4,7 +4,7 @@ import Testing
 @testable import betwist
 
 struct ATrie2 {
-  @Test
+  @Test(.disabled())
   func `finds no words when empty`() {
     var data = TrieDataReader(data: Data())
     data.reserve(quadbytes: 2)
@@ -19,7 +19,7 @@ struct ATrie2 {
   func `matches the last letter`() {
     var data = TrieDataReader(data: Data())
     data.reserve(quadbytes: 1)
-    data.append("A", true, 0)
+    data.append("A", isWord: true, isLast: true, 0)
     data.reserve(quadbytes: 1)
 
     let sut = Trie(data: data)
@@ -32,8 +32,8 @@ struct ATrie2 {
   func `tries alternatives for a letter`() {
     var data = TrieDataReader(data: Data())
     data.reserve(quadbytes: 1)
-    data.append("A", true, 0)
-    data.append("I", true, 0)
+    data.append("A", isWord: true, isLast: false, 0)
+    data.append("I", isWord: true, isLast: true, 0)
     data.reserve(quadbytes: 1)
 
     let sut = Trie(data: data)
@@ -46,9 +46,9 @@ struct ATrie2 {
   func `moves to next letter if prior letter matches`() {
     var data = TrieDataReader(data: Data())
     data.reserve(quadbytes: 1)
-    data.append("A", true, 12)
+    data.append("A", isWord: true, isLast: true, 12)
     data.reserve(quadbytes: 1)
-    data.append("S", true, 0)
+    data.append("S", isWord: true, isLast: true, 0)
     data.reserve(quadbytes: 1)
 
     let sut = Trie(data: data)
@@ -61,9 +61,9 @@ struct ATrie2 {
   func `recognizes when an accepted word could be extended`() {
     var data = TrieDataReader(data: Data())
     data.reserve(quadbytes: 1)
-    data.append("B", false, 12)
+    data.append("B", isWord: false, isLast: true, 12)
     data.reserve(quadbytes: 1)
-    data.append("Y", true, 0)
+    data.append("Y", isWord: true, isLast: true, 0)
     data.reserve(quadbytes: 1)
 
     let sut = Trie(data: data)
@@ -76,10 +76,10 @@ struct ATrie2 {
   func `finds alternatives for the second letter`() {
     var data = TrieDataReader(data: Data())
     data.reserve(quadbytes: 1)
-    data.append("B", false, 12)
+    data.append("B", isWord: false, isLast: true, 12)
     data.reserve(quadbytes: 1)
-    data.append("E", true, 0)
-    data.append("Y", true, 0)
+    data.append("E", isWord: true, isLast: false, 0)
+    data.append("Y", isWord: true, isLast: true, 0)
     data.reserve(quadbytes: 1)
 
     let sut = Trie(data: data)

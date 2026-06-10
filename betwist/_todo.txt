@@ -1,4 +1,5 @@
 * Eliminate marker nodes in the Trie
+* Restructure trie writing to a separate package
 
 * Onboarding
 
