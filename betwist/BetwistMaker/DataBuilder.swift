@@ -2,6 +2,7 @@ import Foundation
 
 public class DataBuilder {
   static let endMarker: [UInt8] = [0, 0xff, 0xff, 0xff]
+
   static var nodeCount = 0
   static var endCount = 0
   static var largestJump = 0
@@ -27,21 +28,6 @@ public class DataBuilder {
     return data
   }
 
-  func matchByte(match: MakerMatch) -> UInt8 {
-    let isWordFlag = match.isWord ? UInt8(32) : 0
-    let charValue = isWordFlag | match.char.asciiValue!
-    return charValue
-  }
-
-  func asQuadbytes(_ charByte: UInt8, _ trieAddress: UInt32) -> [UInt8] {
-    [
-      charByte,
-      UInt8((trieAddress >> 16) & 0xff),
-      UInt8((trieAddress >> 8) & 0xff),
-      UInt8(trieAddress & 0xff),
-    ]
-  }
-
   func writeData(trie: MakerTrie) -> UInt32 {
     if trie.next.isEmpty { return 0 }
 
@@ -50,7 +36,10 @@ public class DataBuilder {
     data.reserve(quadbytes: trie.next.count + 1)
 
     for i in 0..<(trie.next.count) {
-      let charByte = matchByte(match: trie.next[i])
+      let charByte = firstByte(
+        match: trie.next[i],
+        isLast: i == trie.next.count - 1
+      )
 
       let childTrieAddress = writeData(trie: trie.next[i].trie)
 
@@ -66,5 +55,21 @@ public class DataBuilder {
     Self.endCount += 1
 
     return UInt32(startIndex)
+  }
+
+  func firstByte(match: MakerMatch, isLast: Bool) -> UInt8 {
+    let isLastFlag = isLast ? UInt8(128) : 0
+    let isWordFlag = match.isWord ? UInt8(32) : 0
+    let charValue = isLastFlag | isWordFlag | match.char.asciiValue!
+    return charValue
+  }
+
+  func asQuadbytes(_ charByte: UInt8, _ trieAddress: UInt32) -> [UInt8] {
+    [
+      charByte,
+      UInt8((trieAddress >> 16) & 0xff),
+      UInt8((trieAddress >> 8) & 0xff),
+      UInt8(trieAddress & 0xff),
+    ]
   }
 }

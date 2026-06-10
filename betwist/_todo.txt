@@ -1,4 +1,4 @@
-* Eliminate unused views
+* Eliminate marker nodes in the Trie
 
 * Onboarding
 
@@ -33,8 +33,6 @@ MudShark666: Fix: "If you need to keep UIRequiresFullScreen to support earlier v
 
 * Investigate defect where not having a one-pixel padding partially overwrites the safe area ".padding(.top, 1)"
 
-* Load the Trie using Async/Await
-
 * When showing system-found words, show user's words in black
 
 
@@ -52,6 +50,9 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Two-player mode?   (set a seed)
 
 =====
+2026-06-10 - Eliminate Match End-Markers
+* Attempted to build BetwistMakerTests, failed due to linker error. Tried a bunch of things but didn't solve. We created a new empty command-line project and test, that failed too. Pursue with Apple.
+
 2026-06-09 - #!@$@% ScrollView
 [offline] Statistics of trie:
   Node count 586553
@@ -60,6 +61,7 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
   Data size 4016128
 * Fix format on iPad landscape mode by making controls a set height
 * Rename Score* to Statistics*
+* Eliminate unused views; rename remaining top-level views to PortraitView and LandscapeView
 
 2026-06-08 - iPad Layout
 * Removed All Answers button
