@@ -1,4 +1,4 @@
-* Eliminate marker nodes in the Trie
+* Eliminate marker nodes in the Trie - in tests
 * Restructure trie writing to a separate package
 
 * Onboarding
@@ -53,6 +53,12 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 =====
 2026-06-10 - Eliminate Match End-Markers
 * Attempted to build BetwistMakerTests, failed due to linker error. Tried a bunch of things but didn't solve. We created a new empty command-line project and test, that failed too. Pursue with Apple.
+* Removed end marker
+New statistics:
+  Node count 586553
+  End count 0
+  Largest jump 2336584
+  Data size 2346216
 
 2026-06-09 - #!@$@% ScrollView
 [offline] Statistics of trie:

@@ -51,9 +51,6 @@ public class DataBuilder {
     }
     Self.nodeCount += trie.next.count
 
-//    data.overwriteQuad(index: startIndex + 4 * trie.next.count, Self.endMarker)
-//    Self.endCount += 1
-
     return UInt32(startIndex)
   }
 
