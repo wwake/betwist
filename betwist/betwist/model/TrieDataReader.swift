@@ -49,10 +49,6 @@ struct TrieDataReader {
     (data[position] & 128) != 0
   }
 
-  func isEndMark(at position: Int) -> Bool {
-    data[position] == 0
-  }
-
   func character(at position: Int) -> UInt8 {
     data[position] & 0x5f
   }

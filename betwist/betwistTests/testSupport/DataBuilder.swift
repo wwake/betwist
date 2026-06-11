@@ -36,7 +36,7 @@ class DataBuilder {
 
     let startIndex = data.count
 
-    data.reserve(quadbytes: trie.next.count + 1)
+    data.reserve(quadbytes: trie.next.count)
 
     for i in 0..<(trie.next.count) {
       let charByte = firstByte(
@@ -51,8 +51,6 @@ class DataBuilder {
         asQuadbytes(charByte, childTrieAddress)
       )
     }
-
-    data.overwriteQuad(index: startIndex + 4 * trie.next.count, Self.endMarker)
 
     return UInt32(startIndex)
   }

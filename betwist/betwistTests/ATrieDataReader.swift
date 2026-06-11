@@ -52,15 +52,6 @@ struct ATrieDataReader {
   }
 
   @Test
-  func `recognizes an end mark`() {
-    var sut = TrieDataReader(data: Data())
-    sut.reserve(quadbytes: 1)
-    sut.append("A", isWord: false, isLast: true, 0x654321)
-    #expect(sut.isEndMark(at: 0))
-    #expect(!sut.isEndMark(at: 4))
-  }
-
-  @Test
   func `knows character at position`() {
     var sut = TrieDataReader(data: Data())
     sut.reserve(quadbytes: 1)
