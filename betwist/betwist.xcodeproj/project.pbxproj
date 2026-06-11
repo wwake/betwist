@@ -7,11 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9116C8FB2FDAF9D800C633C9 /* TrieGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; };
+		9116C9132FDAFBB600C633C9 /* TrieGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; };
 		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
 		9181F0A22CA34EA60091A771 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 9181F0A12CA34EA60091A771 /* Algorithms */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9116C8FC2FDAF9D800C633C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91FA96672C81333A0011BB7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9116C8F12FDAF9D700C633C9;
+			remoteInfo = TrieGenerator;
+		};
+		9116C9152FDAFBB600C633C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91FA96672C81333A0011BB7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9116C8F12FDAF9D700C633C9;
+			remoteInfo = TrieGenerator;
+		};
 		91D4DB5B2FBE08B600A44E4A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 91FA96672C81333A0011BB7F /* Project object */;
@@ -42,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		9110CF5B2FAA2EDA00AB6E6E /* errors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = errors.txt; sourceTree = "<group>"; };
+		9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrieGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9116C8FA2FDAF9D800C633C9 /* TrieGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrieGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		912CFEE72C88A6B10074C066 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		914A53992CA3664E00C05BB7 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
@@ -69,15 +87,33 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9116C86C2FDAF6A800C633C9 /* betwistTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = betwistTests; sourceTree = "<group>"; };
 		9116C8B82FDAF71200C633C9 /* betwist */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (9116C8EC2FDAF71300C633C9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = betwist; sourceTree = "<group>"; };
+		9116C8F32FDAF9D700C633C9 /* TrieGenerator */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TrieGenerator; sourceTree = "<group>"; };
+		9116C8FE2FDAF9D800C633C9 /* TrieGeneratorTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TrieGeneratorTests; sourceTree = "<group>"; };
 		91D4DB342FBE027000A44E4A /* BetwistMaker */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BetwistMaker; sourceTree = "<group>"; };
 		91D4DB532FBE075300A44E4A /* BetwistMakerTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BetwistMakerTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9116C8EF2FDAF9D700C633C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9116C8F72FDAF9D800C633C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9116C8FB2FDAF9D800C633C9 /* TrieGenerator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		91D4DB302FBE027000A44E4A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9116C9132FDAFBB600C633C9 /* TrieGenerator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +163,8 @@
 				9116C86C2FDAF6A800C633C9 /* betwistTests */,
 				91D4DB342FBE027000A44E4A /* BetwistMaker */,
 				91D4DB532FBE075300A44E4A /* BetwistMakerTests */,
+				9116C8F32FDAF9D700C633C9 /* TrieGenerator */,
+				9116C8FE2FDAF9D800C633C9 /* TrieGeneratorTests */,
 				9181F0A02CA34EA60091A771 /* Frameworks */,
 				91FA96702C81333A0011BB7F /* Products */,
 			);
@@ -139,13 +177,71 @@
 				91FA967F2C81333E0011BB7F /* betwistTests.xctest */,
 				91D4DB332FBE027000A44E4A /* BetwistMaker */,
 				91D4DB522FBE075300A44E4A /* BetwistMakerTests.xctest */,
+				9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */,
+				9116C8FA2FDAF9D800C633C9 /* TrieGeneratorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		9116C8ED2FDAF9D700C633C9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		9116C8F12FDAF9D700C633C9 /* TrieGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9116C9012FDAF9D800C633C9 /* Build configuration list for PBXNativeTarget "TrieGenerator" */;
+			buildPhases = (
+				9116C8ED2FDAF9D700C633C9 /* Headers */,
+				9116C8EE2FDAF9D700C633C9 /* Sources */,
+				9116C8EF2FDAF9D700C633C9 /* Frameworks */,
+				9116C8F02FDAF9D700C633C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				9116C8F32FDAF9D700C633C9 /* TrieGenerator */,
+			);
+			name = TrieGenerator;
+			packageProductDependencies = (
+			);
+			productName = TrieGenerator;
+			productReference = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9116C8F92FDAF9D800C633C9 /* TrieGeneratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9116C9042FDAF9D800C633C9 /* Build configuration list for PBXNativeTarget "TrieGeneratorTests" */;
+			buildPhases = (
+				9116C8F62FDAF9D800C633C9 /* Sources */,
+				9116C8F72FDAF9D800C633C9 /* Frameworks */,
+				9116C8F82FDAF9D800C633C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9116C8FD2FDAF9D800C633C9 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9116C8FE2FDAF9D800C633C9 /* TrieGeneratorTests */,
+			);
+			name = TrieGeneratorTests;
+			packageProductDependencies = (
+			);
+			productName = TrieGeneratorTests;
+			productReference = 9116C8FA2FDAF9D800C633C9 /* TrieGeneratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		91D4DB322FBE027000A44E4A /* BetwistMaker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91D4DB392FBE027000A44E4A /* Build configuration list for PBXNativeTarget "BetwistMaker" */;
@@ -157,6 +253,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9116C9162FDAFBB600C633C9 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				91D4DB342FBE027000A44E4A /* BetwistMaker */,
@@ -245,6 +342,12 @@
 				LastSwiftUpdateCheck = 2650;
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
+					9116C8F12FDAF9D700C633C9 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					9116C8F92FDAF9D800C633C9 = {
+						CreatedOnToolsVersion = 26.5;
+					};
 					91D4DB322FBE027000A44E4A = {
 						CreatedOnToolsVersion = 26.5;
 					};
@@ -282,11 +385,27 @@
 				91FA967E2C81333E0011BB7F /* betwistTests */,
 				91D4DB322FBE027000A44E4A /* BetwistMaker */,
 				91D4DB512FBE075300A44E4A /* BetwistMakerTests */,
+				9116C8F12FDAF9D700C633C9 /* TrieGenerator */,
+				9116C8F92FDAF9D800C633C9 /* TrieGeneratorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9116C8F02FDAF9D700C633C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9116C8F82FDAF9D800C633C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		91D4DB502FBE075300A44E4A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -351,6 +470,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9116C8EE2FDAF9D700C633C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9116C8F62FDAF9D800C633C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		91D4DB2F2FBE027000A44E4A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -382,6 +515,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9116C8FD2FDAF9D800C633C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9116C8F12FDAF9D700C633C9 /* TrieGenerator */;
+			targetProxy = 9116C8FC2FDAF9D800C633C9 /* PBXContainerItemProxy */;
+		};
+		9116C9162FDAFBB600C633C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9116C8F12FDAF9D700C633C9 /* TrieGenerator */;
+			targetProxy = 9116C9152FDAFBB600C633C9 /* PBXContainerItemProxy */;
+		};
 		915C73442F97CEE8005EA8DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 915C73432F97CEE8005EA8DC /* SwiftLintBuildToolPlugin */;
@@ -399,6 +542,156 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		9116C9022FDAF9D800C633C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7B9VB3YTHK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.TrieGenerator;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		9116C9032FDAF9D800C633C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B9VB3YTHK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.TrieGenerator;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		9116C9052FDAF9D800C633C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7B9VB3YTHK;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.TrieGeneratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		9116C9062FDAF9D800C633C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B9VB3YTHK;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.TrieGeneratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
 		91D4DB372FBE027000A44E4A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -515,6 +808,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7B9VB3YTHK;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -580,6 +874,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7B9VB3YTHK;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = NO;
@@ -713,6 +1008,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9116C9012FDAF9D800C633C9 /* Build configuration list for PBXNativeTarget "TrieGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9116C9022FDAF9D800C633C9 /* Debug */,
+				9116C9032FDAF9D800C633C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9116C9042FDAF9D800C633C9 /* Build configuration list for PBXNativeTarget "TrieGeneratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9116C9052FDAF9D800C633C9 /* Debug */,
+				9116C9062FDAF9D800C633C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		91D4DB392FBE027000A44E4A /* Build configuration list for PBXNativeTarget "BetwistMaker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

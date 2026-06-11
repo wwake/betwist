@@ -9,12 +9,14 @@ public class DataBuilder {
 
   var data = Data()
 
-  func write(_ url: URL) throws {
+  public init() { }
+
+  public func write(_ url: URL) throws {
     let compressedData = try (data as NSData).compressed(using: .lzfse)
     try compressedData.write(to: url, options: [.atomic, .completeFileProtection])
   }
 
-  func make(trie: MakerTrie) -> Data {
+  public func make(trie: MakerTrie) -> Data {
     data = Data()
 
     data.append(contentsOf: Self.endMarker)

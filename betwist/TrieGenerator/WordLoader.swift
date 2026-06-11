@@ -1,7 +1,7 @@
 import Foundation
 
-enum WordLoader {
-  static func load(path: String, minimumSize: Int) -> [String] {
+public enum WordLoader {
+  public static func load(path: String, minimumSize: Int) -> [String] {
     do {
       let words = try String(contentsOfFile: path, encoding: .utf8)
         .split(separator: "\n")

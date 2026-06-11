@@ -1,9 +1,11 @@
 import Foundation
 
 public class TrieBuilder {
-  var root = MakerTrie(next: [])
+  public var root = MakerTrie(next: [])
 
-  func add(_ words: [String]) -> Self {
+  public init() { }
+
+  public func add(_ words: [String]) -> Self {
     for word in words {
       addWord(word)
     }

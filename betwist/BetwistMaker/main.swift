@@ -1,4 +1,5 @@
 import Foundation
+import TrieGenerator
 
 // Instructions:
 // Copy words.list from the resources folder to the downloads directory

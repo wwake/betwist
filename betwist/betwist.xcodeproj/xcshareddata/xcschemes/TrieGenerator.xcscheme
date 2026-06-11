@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9128470D2CD9691800FA21BA"
-               BuildableName = "BetwistDictionary.app"
-               BlueprintName = "BetwistDictionary"
+               BlueprintIdentifier = "9116C8F12FDAF9D700C633C9"
+               BuildableName = "TrieGenerator.framework"
+               BlueprintName = "TrieGenerator"
                ReferencedContainer = "container:betwist.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -27,33 +27,17 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <TestPlans>
-         <TestPlanReference
-            reference = "container:BetwistDictionary.xctestplan"
-            default = "YES">
-         </TestPlanReference>
-      </TestPlans>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
       <Testables>
-         <TestableReference
-            skipped = "YES"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "912847262CD9691B00FA21BA"
-               BuildableName = "BetwistDictionaryUITests.xctest"
-               BlueprintName = "BetwistDictionaryUITests"
-               ReferencedContainer = "container:betwist.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
          <TestableReference
             skipped = "NO"
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9128471C2CD9691B00FA21BA"
-               BuildableName = "BetwistDictionaryTests.xctest"
-               BlueprintName = "BetwistDictionaryTests"
+               BlueprintIdentifier = "9116C8F92FDAF9D800C633C9"
+               BuildableName = "TrieGeneratorTests.xctest"
+               BlueprintName = "TrieGeneratorTests"
                ReferencedContainer = "container:betwist.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -68,17 +52,8 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9128470D2CD9691800FA21BA"
-            BuildableName = "BetwistDictionary.app"
-            BlueprintName = "BetwistDictionary"
-            ReferencedContainer = "container:betwist.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
+      allowLocationSimulation = "YES"
+      queueDebuggingEnableBacktraceRecording = "Yes">
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -86,16 +61,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9128470D2CD9691800FA21BA"
-            BuildableName = "BetwistDictionary.app"
-            BlueprintName = "BetwistDictionary"
+            BlueprintIdentifier = "9116C8F12FDAF9D700C633C9"
+            BuildableName = "TrieGenerator.framework"
+            BlueprintName = "TrieGenerator"
             ReferencedContainer = "container:betwist.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
