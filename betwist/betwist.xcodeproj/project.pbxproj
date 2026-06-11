@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9116C8FB2FDAF9D800C633C9 /* TrieGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; };
-		9116C9132FDAFBB600C633C9 /* TrieGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; };
+		9116C9202FDB040500C633C9 /* TrieGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; };
+		9116C9212FDB040500C633C9 /* TrieGenerator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
 		9181F0A22CA34EA60091A771 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 9181F0A12CA34EA60091A771 /* Algorithms */; };
 /* End PBXBuildFile section */
@@ -28,13 +29,6 @@
 			remoteGlobalIDString = 9116C8F12FDAF9D700C633C9;
 			remoteInfo = TrieGenerator;
 		};
-		91D4DB5B2FBE08B600A44E4A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 91FA96672C81333A0011BB7F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 91D4DB322FBE027000A44E4A;
-			remoteInfo = BetwistMaker;
-		};
 		91FA96802C81333E0011BB7F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 91FA96672C81333A0011BB7F /* Project object */;
@@ -45,6 +39,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		9116C9222FDB040500C633C9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9116C9212FDB040500C633C9 /* TrieGenerator.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		91D4DB312FBE027000A44E4A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,7 +69,6 @@
 		912CFEE82C88A6B10074C066 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		914A53992CA3664E00C05BB7 /* betwist.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = betwist.xctestplan; sourceTree = "<group>"; };
 		91D4DB332FBE027000A44E4A /* BetwistMaker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BetwistMaker; sourceTree = BUILT_PRODUCTS_DIR; };
-		91D4DB522FBE075300A44E4A /* BetwistMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetwistMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA966F2C81333A0011BB7F /* betwist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betwist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA967F2C81333E0011BB7F /* betwistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = betwistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA969C2C813F5E0011BB7F /* _todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _todo.txt; sourceTree = "<group>"; };
@@ -90,7 +94,6 @@
 		9116C8F32FDAF9D700C633C9 /* TrieGenerator */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TrieGenerator; sourceTree = "<group>"; };
 		9116C8FE2FDAF9D800C633C9 /* TrieGeneratorTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TrieGeneratorTests; sourceTree = "<group>"; };
 		91D4DB342FBE027000A44E4A /* BetwistMaker */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BetwistMaker; sourceTree = "<group>"; };
-		91D4DB532FBE075300A44E4A /* BetwistMakerTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BetwistMakerTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,14 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9116C9132FDAFBB600C633C9 /* TrieGenerator.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		91D4DB4F2FBE075300A44E4A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				9116C9202FDB040500C633C9 /* TrieGenerator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +158,6 @@
 				9116C8B82FDAF71200C633C9 /* betwist */,
 				9116C86C2FDAF6A800C633C9 /* betwistTests */,
 				91D4DB342FBE027000A44E4A /* BetwistMaker */,
-				91D4DB532FBE075300A44E4A /* BetwistMakerTests */,
 				9116C8F32FDAF9D700C633C9 /* TrieGenerator */,
 				9116C8FE2FDAF9D800C633C9 /* TrieGeneratorTests */,
 				9181F0A02CA34EA60091A771 /* Frameworks */,
@@ -176,7 +171,6 @@
 				91FA966F2C81333A0011BB7F /* betwist.app */,
 				91FA967F2C81333E0011BB7F /* betwistTests.xctest */,
 				91D4DB332FBE027000A44E4A /* BetwistMaker */,
-				91D4DB522FBE075300A44E4A /* BetwistMakerTests.xctest */,
 				9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */,
 				9116C8FA2FDAF9D800C633C9 /* TrieGeneratorTests.xctest */,
 			);
@@ -249,6 +243,7 @@
 				91D4DB2F2FBE027000A44E4A /* Sources */,
 				91D4DB302FBE027000A44E4A /* Frameworks */,
 				91D4DB312FBE027000A44E4A /* CopyFiles */,
+				9116C9222FDB040500C633C9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -264,29 +259,6 @@
 			productName = BetwistMaker;
 			productReference = 91D4DB332FBE027000A44E4A /* BetwistMaker */;
 			productType = "com.apple.product-type.tool";
-		};
-		91D4DB512FBE075300A44E4A /* BetwistMakerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 91D4DB562FBE075300A44E4A /* Build configuration list for PBXNativeTarget "BetwistMakerTests" */;
-			buildPhases = (
-				91D4DB4E2FBE075300A44E4A /* Sources */,
-				91D4DB4F2FBE075300A44E4A /* Frameworks */,
-				91D4DB502FBE075300A44E4A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				91D4DB5C2FBE08B600A44E4A /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				91D4DB532FBE075300A44E4A /* BetwistMakerTests */,
-			);
-			name = BetwistMakerTests;
-			packageProductDependencies = (
-			);
-			productName = BetwistMakerTests;
-			productReference = 91D4DB522FBE075300A44E4A /* BetwistMakerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		91FA966E2C81333A0011BB7F /* betwist */ = {
 			isa = PBXNativeTarget;
@@ -351,9 +323,6 @@
 					91D4DB322FBE027000A44E4A = {
 						CreatedOnToolsVersion = 26.5;
 					};
-					91D4DB512FBE075300A44E4A = {
-						CreatedOnToolsVersion = 26.5;
-					};
 					91FA966E2C81333A0011BB7F = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -384,7 +353,6 @@
 				91FA966E2C81333A0011BB7F /* betwist */,
 				91FA967E2C81333E0011BB7F /* betwistTests */,
 				91D4DB322FBE027000A44E4A /* BetwistMaker */,
-				91D4DB512FBE075300A44E4A /* BetwistMakerTests */,
 				9116C8F12FDAF9D700C633C9 /* TrieGenerator */,
 				9116C8F92FDAF9D800C633C9 /* TrieGeneratorTests */,
 			);
@@ -400,13 +368,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9116C8F82FDAF9D800C633C9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		91D4DB502FBE075300A44E4A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -491,13 +452,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		91D4DB4E2FBE075300A44E4A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		91FA966B2C81333A0011BB7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -528,11 +482,6 @@
 		915C73442F97CEE8005EA8DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 915C73432F97CEE8005EA8DC /* SwiftLintBuildToolPlugin */;
-		};
-		91D4DB5C2FBE08B600A44E4A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 91D4DB322FBE027000A44E4A /* BetwistMaker */;
-			targetProxy = 91D4DB5B2FBE08B600A44E4A /* PBXContainerItemProxy */;
 		};
 		91FA96812C81333E0011BB7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -722,51 +671,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		91D4DB572FBE075300A44E4A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 7B9VB3YTHK;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.BetwistMakerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		91D4DB582FBE075300A44E4A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 7B9VB3YTHK;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.BetwistMakerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1031,15 +935,6 @@
 			buildConfigurations = (
 				91D4DB372FBE027000A44E4A /* Debug */,
 				91D4DB382FBE027000A44E4A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		91D4DB562FBE075300A44E4A /* Build configuration list for PBXNativeTarget "BetwistMakerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				91D4DB572FBE075300A44E4A /* Debug */,
-				91D4DB582FBE075300A44E4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
