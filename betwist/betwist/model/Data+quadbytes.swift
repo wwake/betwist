@@ -1,7 +1,7 @@
 import Foundation
 
 extension Data {
-  subscript(quadbyte quadbyte: Int) -> UInt32 {
+  public subscript(quadbyte quadbyte: Int) -> UInt32 {
     let index = 4 * quadbyte
 
     return UInt32(self[index]) << 24

@@ -1,7 +1,7 @@
 import SwiftUI
 
 extension Angle {
-  var normalized: Angle {
+  public var normalized: Angle {
     var newAngle = self
 
     while newAngle >= Angle(degrees: 360) {
