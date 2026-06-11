@@ -12,9 +12,9 @@ struct Trie {
     var current = position
     var target = searchString
 
-    var keepGoing = true
+    var outOfOptions = false
 
-    while keepGoing {
+    while !outOfOptions {
       if data.character(at: current) == target.first!.asciiValue! {
         target.removeFirst()
 
@@ -29,7 +29,7 @@ struct Trie {
         continue
       }
 
-      keepGoing = !data.isLastMatch(at: current)
+      outOfOptions = data.isLastMatch(at: current)
       current += 4
     }
 
