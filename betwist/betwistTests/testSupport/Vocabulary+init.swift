@@ -1,4 +1,5 @@
 @testable import betwist
+import TrieGenerator
 
 extension Vocabulary {
   convenience init(_ words: [String]) {

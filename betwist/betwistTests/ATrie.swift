@@ -3,7 +3,7 @@ import Testing
 
 @testable import betwist
 
-struct ATrie2 {
+struct ATrie {
   @Test
   func `matches the last letter`() {
     var data = TrieDataReader(data: Data())

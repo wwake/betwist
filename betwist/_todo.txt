@@ -1,5 +1,4 @@
-* Eliminate marker nodes in the Trie - in tests
-* Restructure trie writing to a separate package
+* Make Betwist tests use TrieGenerator
 
 * Onboarding
 
@@ -51,6 +50,10 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Two-player mode?   (set a seed)
 
 =====
+2026-06-11 - Reorganize Dependencies
+* Eliminate marker nodes in the Trie - in tests
+* Restructure trie writing to a separate package
+
 2026-06-10 - Eliminate Match End-Markers
 * Attempted to build BetwistMakerTests, failed due to linker error. Tried a bunch of things but didn't solve. We created a new empty command-line project and test, that failed too. Pursue with Apple.
 * Removed end marker
