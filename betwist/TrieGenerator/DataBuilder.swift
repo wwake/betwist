@@ -1,8 +1,6 @@
 import Foundation
 
 public class DataBuilder {
-  static let endMarker: [UInt8] = [0, 0xff, 0xff, 0xff]
-
   static var nodeCount = 0
   static var endCount = 0
   static var largestJump = 0
@@ -18,8 +16,6 @@ public class DataBuilder {
 
   public func make(trie: MakerTrie) -> Data {
     data = Data()
-
-    data.append(contentsOf: Self.endMarker)
 
     _ = writeData(trie: trie)
 

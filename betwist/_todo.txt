@@ -1,4 +1,6 @@
 
+* Explore 3-byte entries in trie (instead of 4)
+
 * Onboarding
 
 * Can we avoid translations by centering our grid?
@@ -53,6 +55,7 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Eliminate marker nodes in the Trie - in tests
 * Restructure trie writing to a separate package
 * Make Betwist tests use TrieGenerator
+* Remove initial end marker from trie
 
 2026-06-10 - Eliminate Match End-Markers
 * Attempted to build BetwistMakerTests, failed due to linker error. Tried a bunch of things but didn't solve. We created a new empty command-line project and test, that failed too. Pursue with Apple.

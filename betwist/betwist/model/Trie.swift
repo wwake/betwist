@@ -2,7 +2,7 @@ import Foundation
 
 struct Trie {
   let data: TrieDataReader
-  let root = 4
+  let root = 0
 
   func containsAndPrefixes(_ target: String) -> SearchResult {
     walk(root, target)
