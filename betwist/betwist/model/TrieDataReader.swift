@@ -29,7 +29,7 @@ struct TrieDataReader {
   }
 
   func address(at row: Int) -> Int {
-    Int(self[quadbyte: row * bytesPerMatchEntry] & 0x00ff_ffff)
+    Int(self[quadbyte: row * bytesPerMatchEntry] & 0x00ff_ffff) / bytesPerMatchEntry
   }
 
   func canExtend(at row: Int) -> Bool {

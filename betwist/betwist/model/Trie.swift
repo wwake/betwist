@@ -26,7 +26,7 @@ struct Trie {
           )
         }
 
-        current = data.address(at: current) / bytesPerMatchEntry
+        current = data.address(at: current)
         continue
       }
 
