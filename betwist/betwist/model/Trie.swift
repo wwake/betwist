@@ -3,13 +3,14 @@ import Foundation
 struct Trie {
   let data: TrieDataReader
   let root = 0
+  let bytesPerMatchEntry = 4
 
   func containsAndPrefixes(_ target: String) -> SearchResult {
     walk(root, target)
   }
 
-  private func walk(_ position: Int, _ searchString: String) -> SearchResult {
-    var current = position
+  private func walk(_ matchRow: Int, _ searchString: String) -> SearchResult {
+    var current = matchRow
     var target = searchString
 
     var outOfOptions = false
@@ -25,12 +26,12 @@ struct Trie {
           )
         }
 
-        current = data.address(at: current)
+        current = data.address(at: current) / bytesPerMatchEntry
         continue
       }
 
       outOfOptions = data.isLastMatch(at: current)
-      current += 4
+      current += 1
     }
 
     return SearchResult(isWord: false, isProperPrefix: false)

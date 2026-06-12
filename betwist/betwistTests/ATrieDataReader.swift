@@ -58,8 +58,8 @@ struct ATrieDataReader {
     sut.append("A", isWord: false, isLast: false, 0x654321)
     sut.append("Z", isWord: true, isLast: true, 0x654321)
     #expect(sut.character(at: 0) == 0)
-    #expect(sut.character(at: 4) == 0x41)
-    #expect(sut.character(at: 8) == 0x5A)
+    #expect(sut.character(at: 1) == 0x41)
+    #expect(sut.character(at: 2) == 0x5A)
   }
 
   @Test
@@ -69,8 +69,8 @@ struct ATrieDataReader {
     sut.append("A", isWord: false, isLast: false, 0x654321)
     sut.append("Z", isWord: true, isLast: true, 0x654321)
     #expect(!sut.completesWord(at: 0))
-    #expect(!sut.completesWord(at: 4))
-    #expect(sut.completesWord(at: 8))
+    #expect(!sut.completesWord(at: 1))
+    #expect(sut.completesWord(at: 2))
   }
 
   @Test
@@ -78,7 +78,7 @@ struct ATrieDataReader {
     var sut = TrieDataReader(data: Data())
     sut.reserve(quadbytes: 1)
     sut.append("A", isWord: false, isLast: false, 0x654321)
-    #expect(sut.address(at: 4) == 0x654321)
+    #expect(sut.address(at: 1) == 0x654321)
   }
 
   @Test
@@ -91,7 +91,7 @@ struct ATrieDataReader {
     sut.append("Y", isWord: true, isLast: true, 0)
     sut.reserve(quadbytes: 1)
 
-    #expect(!sut.canExtend(at: 4))
-    #expect(sut.canExtend(at: 8))
+    #expect(!sut.canExtend(at: 1))
+    #expect(sut.canExtend(at: 2))
   }
 }

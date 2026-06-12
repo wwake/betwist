@@ -1,23 +1,9 @@
 import Foundation
 
 struct TrieDataReader {
+  let bytesPerMatchEntry = 4
+
   var data: Data
-
-  mutating func append(bytes values: [UInt8]) {
-    data.append(contentsOf: values)
-  }
-
-  mutating func append(_ letter: Character, isWord: Bool, isLast: Bool, _ offset: Int) {
-    let isLastFlag = isLast ? UInt8(128) : 0
-    let isWordFlag = isWord ? UInt8(0x20) : 0
-
-    let byte0 = UInt8(isLastFlag | isWordFlag | letter.asciiValue!)
-    let byte1 = UInt8((offset >> 16) & 0xff)
-    let byte2 = UInt8((offset >> 8) & 0xff)
-    let byte3 = UInt8(offset & 0xff)
-
-    append(bytes: [byte0, byte1, byte2, byte3])
-  }
 
   subscript(byte byteOffset: Int) -> UInt8 {
     data[byteOffset]
@@ -30,38 +16,23 @@ struct TrieDataReader {
       | UInt32(data[index + 3])
   }
 
-  mutating func reserve(quadbytes: Int) {
-    let zeros: [UInt8] = [0, 0, 0, 0]
-
-    for _ in 0..<quadbytes {
-      data.append(contentsOf: zeros)
-    }
+  func isLastMatch(at row: Int) -> Bool {
+    (data[row * bytesPerMatchEntry] & 128) != 0
   }
 
-  mutating func overwrite(at index: Int, bytes: [UInt8]) {
-    data.replaceSubrange(
-      index..<(index + bytes.count),
-      with: bytes
-    )
+  func character(at row: Int) -> UInt8 {
+    data[row * bytesPerMatchEntry] & 0x5f
   }
 
-  func isLastMatch(at position: Int) -> Bool {
-    (data[position] & 128) != 0
+  func completesWord(at row: Int) -> Bool {
+    (data[row * bytesPerMatchEntry] & 0x20) != 0
   }
 
-  func character(at position: Int) -> UInt8 {
-    data[position] & 0x5f
+  func address(at row: Int) -> Int {
+    Int(self[quadbyte: row * bytesPerMatchEntry] & 0x00ff_ffff)
   }
 
-  func completesWord(at position: Int) -> Bool {
-    (data[position] & 0x20) != 0
-  }
-
-  func address(at position: Int) -> Int {
-    Int(self[quadbyte: position] & 0x00ff_ffff)
-  }
-
-  func canExtend(at position: Int) -> Bool {
-    address(at: position) != 0
+  func canExtend(at row: Int) -> Bool {
+    address(at: row) != 0
   }
 }

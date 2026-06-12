@@ -1,9 +1,10 @@
-
+* Work in terms of match offsets rather than byte offsets
+* Make word finding based off the position of the first letter in the word
 * Make the first letter special - 3 bytes are all address, no char or flags
-* Measure the longest (non-initial) jump
-* Switch to an iterative generator
-* Change from stack to queue - see how big the distances are
-Explore 3-byte entries in trie (instead of 4)
+Use 3-byte entries in trie (instead of 4)
+
+
+Look at TrieDataReader+mutating - can we eliminate using TrieDataWriter?
 
 * Onboarding
 
@@ -55,6 +56,9 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Two-player mode?   (set a seed)
 
 =====
+2026-06-12 - Squeeze the Trie Further
+* Analyzed the maximum distance between neighboring letters => found all are < 64K cells away
+
 2026-06-11 - Reorganize Dependencies
 * Eliminate marker nodes in the Trie - in tests
 * Restructure trie writing to a separate package
