@@ -68,7 +68,7 @@ New statistics:
   Node count 586553
   End count 0
   Largest jump 2336584
-  Data size 2346216
+  Data size 2346212
 
 2026-06-09 - #!@$@% ScrollView
 [offline] Statistics of trie:
