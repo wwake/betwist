@@ -1,5 +1,9 @@
 
-* Explore 3-byte entries in trie (instead of 4)
+* Make the first letter special - 3 bytes are all address, no char or flags
+* Measure the longest (non-initial) jump
+* Switch to an iterative generator
+* Change from stack to queue - see how big the distances are
+Explore 3-byte entries in trie (instead of 4)
 
 * Onboarding
 
