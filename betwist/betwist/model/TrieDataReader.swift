@@ -5,34 +5,31 @@ struct TrieDataReader {
 
   var data: Data
 
-  subscript(byte byteOffset: Int) -> UInt8 {
-    data[byteOffset]
+  subscript(quadbyte row: Int) -> UInt32 {
+    let base = row * bytesPerMatchEntry
+    return UInt32(data[base]) << 24
+      | UInt32(data[base + 1]) << 16
+      | UInt32(data[base + 2]) << 8
+      | UInt32(data[base + 3])
   }
 
-  subscript(quadbyte index: Int) -> UInt32 {
-    UInt32(data[index]) << 24
-      | UInt32(data[index + 1]) << 16
-      | UInt32(data[index + 2]) << 8
-      | UInt32(data[index + 3])
-  }
-
-  func isLastMatch(at row: Int) -> Bool {
+  func isLastMatch(row: Int) -> Bool {
     (data[row * bytesPerMatchEntry] & 128) != 0
   }
 
-  func character(at row: Int) -> UInt8 {
+  func character(row: Int) -> UInt8 {
     data[row * bytesPerMatchEntry] & 0x5f
   }
 
-  func completesWord(at row: Int) -> Bool {
+  func completesWord(row: Int) -> Bool {
     (data[row * bytesPerMatchEntry] & 0x20) != 0
   }
 
-  func address(at row: Int) -> Int {
-    Int(self[quadbyte: row * bytesPerMatchEntry] & 0x00ff_ffff) / bytesPerMatchEntry
+  func address(row: Int) -> Int {
+    Int(self[quadbyte: row] & 0x00ff_ffff) / bytesPerMatchEntry
   }
 
-  func canExtend(at row: Int) -> Bool {
-    address(at: row) != 0
+  func canExtend(row: Int) -> Bool {
+    address(row: row) != 0
   }
 }

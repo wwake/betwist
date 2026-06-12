@@ -13,21 +13,12 @@ struct ATrieDataReader {
   }
 
   @Test
-  func `accesses byte at position`() {
-    var sut = TrieDataReader(data: Data())
-    sut.append(bytes: [0x01, 0x02])
-
-    #expect(sut[byte: 0] == 0x01)
-    #expect(sut[byte: 1] == 0x02)
-  }
-
-  @Test
   func `accesses quadbyte at position`() {
     var sut = TrieDataReader(data: Data())
     sut.append(bytes: [0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08])
 
     #expect(sut[quadbyte: 0] == 0x01020304)
-    #expect(sut[quadbyte: 4] == 0x05060708)
+    #expect(sut[quadbyte: 1] == 0x05060708)
   }
 
   func `reserves quadbytes by filling with 0s`() {
@@ -48,7 +39,7 @@ struct ATrieDataReader {
     sut.append(bytes: [0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08])
 
     sut.overwrite(at: 4, bytes: [0x0a, 0x0b])
-    #expect(sut[quadbyte: 4] == 0x0a0b0708)
+    #expect(sut[quadbyte: 1] == 0x0a0b0708)
   }
 
   @Test
@@ -57,9 +48,9 @@ struct ATrieDataReader {
     sut.reserve(quadbytes: 1)
     sut.append("A", isWord: false, isLast: false, 0x654321)
     sut.append("Z", isWord: true, isLast: true, 0x654321)
-    #expect(sut.character(at: 0) == 0)
-    #expect(sut.character(at: 1) == 0x41)
-    #expect(sut.character(at: 2) == 0x5A)
+    #expect(sut.character(row: 0) == 0)
+    #expect(sut.character(row: 1) == 0x41)
+    #expect(sut.character(row: 2) == 0x5A)
   }
 
   @Test
@@ -68,9 +59,9 @@ struct ATrieDataReader {
     sut.reserve(quadbytes: 1)
     sut.append("A", isWord: false, isLast: false, 0x654321)
     sut.append("Z", isWord: true, isLast: true, 0x654321)
-    #expect(!sut.completesWord(at: 0))
-    #expect(!sut.completesWord(at: 1))
-    #expect(sut.completesWord(at: 2))
+    #expect(!sut.completesWord(row: 0))
+    #expect(!sut.completesWord(row: 1))
+    #expect(sut.completesWord(row: 2))
   }
 
   @Test
@@ -78,7 +69,7 @@ struct ATrieDataReader {
     var sut = TrieDataReader(data: Data())
     sut.reserve(quadbytes: 1)
     sut.append("A", isWord: false, isLast: false, 4444)
-    #expect(sut.address(at: 1) == 1111)
+    #expect(sut.address(row: 1) == 1111)
   }
 
   @Test
@@ -91,7 +82,7 @@ struct ATrieDataReader {
     sut.append("Y", isWord: true, isLast: true, 0)
     sut.reserve(quadbytes: 1)
 
-    #expect(!sut.canExtend(at: 1))
-    #expect(sut.canExtend(at: 2))
+    #expect(!sut.canExtend(row: 1))
+    #expect(sut.canExtend(row: 2))
   }
 }

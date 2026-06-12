@@ -16,21 +16,21 @@ struct Trie {
     var outOfOptions = false
 
     while !outOfOptions {
-      if data.character(at: current) == target.first!.asciiValue! {
+      if data.character(row: current) == target.first!.asciiValue! {
         target.removeFirst()
 
         if target.isEmpty {
           return SearchResult(
-            isWord: data.completesWord(at: current),
-            isProperPrefix: data.canExtend(at: current)
+            isWord: data.completesWord(row: current),
+            isProperPrefix: data.canExtend(row: current)
           )
         }
 
-        current = data.address(at: current)
+        current = data.address(row: current)
         continue
       }
 
-      outOfOptions = data.isLastMatch(at: current)
+      outOfOptions = data.isLastMatch(row: current)
       current += 1
     }
 

@@ -4,6 +4,15 @@
 Use 3-byte entries in trie (instead of 4)
 
 
+For Apple - Renaming 'index' to 'row' only changes the parameter, not the body
+
+   subscript(quadbyte index: Int) -> UInt32 {
+    UInt32(data[index]) << 24
+      | UInt32(data[index + 1]) << 16
+      | UInt32(data[index + 2]) << 8
+      | UInt32(data[index + 3])
+
+
 Look at TrieDataReader+mutating - can we eliminate using TrieDataWriter?
 
 * Onboarding
