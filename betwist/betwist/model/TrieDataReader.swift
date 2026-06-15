@@ -5,7 +5,7 @@ struct TrieDataReader {
 
   var data: Data
 
-  subscript(quadbyte row: Int) -> UInt32 {
+  subscript(row: Int) -> UInt32 {
     let base = row * bytesPerMatchEntry
     return UInt32(data[base]) << 24
       | UInt32(data[base + 1]) << 16
@@ -26,7 +26,7 @@ struct TrieDataReader {
   }
 
   func address(row: Int) -> Int {
-    Int(self[quadbyte: row] & 0x00ff_ffff)
+    Int(self[row] & 0x00ff_ffff)
   }
 
   func canExtend(row: Int) -> Bool {
