@@ -27,7 +27,7 @@ struct ATrieDataReader {
   @Test
   func `knows address at position`() {
     var sut = TrieDataReader(data: Data())
-    sut.reserve(quadbytes: 1)
+    sut.reserve(matchEntries: 1)
     sut.append("A", isWord: false, isLast: false, 4444)
     #expect(sut.address(row: 1) == 4444)
   }

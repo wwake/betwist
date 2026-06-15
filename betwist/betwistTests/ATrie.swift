@@ -7,7 +7,7 @@ struct ATrie {
   @Test
   func `matches the last letter`() {
     var data = TrieDataReader(data: Data())
-    data.reserve(quadbytes: 1)
+    data.reserve(matchEntries: 1)
     data.append("A", isWord: true, isLast: true, 0)
 
     let sut = Trie(data: data)
@@ -19,7 +19,7 @@ struct ATrie {
   @Test
   func `tries alternatives for a letter`() {
     var data = TrieDataReader(data: Data())
-    data.reserve(quadbytes: 1)
+    data.reserve(matchEntries: 1)
     data.append("A", isWord: true, isLast: false, 0)
     data.append("I", isWord: true, isLast: true, 0)
 
@@ -32,7 +32,7 @@ struct ATrie {
   @Test
   func `moves to next letter if prior letter matches`() {
     var data = TrieDataReader(data: Data())
-    data.reserve(quadbytes: 1)
+    data.reserve(matchEntries: 1)
     data.append("A", isWord: true, isLast: true, 2)
     data.append("S", isWord: true, isLast: true, 0)
 
@@ -45,7 +45,7 @@ struct ATrie {
   @Test
   func `recognizes when an accepted word could be extended`() {
     var data = TrieDataReader(data: Data())
-    data.reserve(quadbytes: 1)
+    data.reserve(matchEntries: 1)
     data.append("B", isWord: false, isLast: true, 2)
     data.append("Y", isWord: true, isLast: true, 0)
 
@@ -58,7 +58,7 @@ struct ATrie {
   @Test
   func `finds alternatives for the second letter`() {
     var data = TrieDataReader(data: Data())
-    data.reserve(quadbytes: 1)
+    data.reserve(matchEntries: 1)
     data.append("B", isWord: false, isLast: true, 2)
     data.append("E", isWord: true, isLast: false, 0)
     data.append("Y", isWord: true, isLast: true, 0)

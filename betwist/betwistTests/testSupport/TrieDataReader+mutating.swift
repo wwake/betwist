@@ -17,10 +17,10 @@ extension TrieDataReader {
     append(bytes: [byte0, byte1, byte2, byte3])
   }
 
-  mutating func reserve(quadbytes: Int) {
+  mutating func reserve(matchEntries: Int) {
     let zeros: [UInt8] = [0, 0, 0, 0]
 
-    for _ in 0..<quadbytes {
+    for _ in 0..<matchEntries {
       data.append(contentsOf: zeros)
     }
   }
