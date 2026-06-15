@@ -29,7 +29,7 @@ struct ATrieDataReader {
     var sut = TrieDataReader(data: Data())
     sut.reserve(quadbytes: 1)
     sut.append("A", isWord: false, isLast: false, 4444)
-    #expect(sut.address(row: 1) == 1111)
+    #expect(sut.address(row: 1) == 4444)
   }
 
   @Test

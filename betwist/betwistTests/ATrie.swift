@@ -33,7 +33,7 @@ struct ATrie {
   func `moves to next letter if prior letter matches`() {
     var data = TrieDataReader(data: Data())
     data.reserve(quadbytes: 1)
-    data.append("A", isWord: true, isLast: true, 8)
+    data.append("A", isWord: true, isLast: true, 2)
     data.append("S", isWord: true, isLast: true, 0)
 
     let sut = Trie(data: data)
@@ -46,7 +46,7 @@ struct ATrie {
   func `recognizes when an accepted word could be extended`() {
     var data = TrieDataReader(data: Data())
     data.reserve(quadbytes: 1)
-    data.append("B", isWord: false, isLast: true, 8)
+    data.append("B", isWord: false, isLast: true, 2)
     data.append("Y", isWord: true, isLast: true, 0)
 
     let sut = Trie(data: data)
@@ -59,7 +59,7 @@ struct ATrie {
   func `finds alternatives for the second letter`() {
     var data = TrieDataReader(data: Data())
     data.reserve(quadbytes: 1)
-    data.append("B", isWord: false, isLast: true, 8)
+    data.append("B", isWord: false, isLast: true, 2)
     data.append("E", isWord: true, isLast: false, 0)
     data.append("Y", isWord: true, isLast: true, 0)
 
