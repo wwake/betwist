@@ -17,9 +17,8 @@ A trie has a set of letter matchers. A letter matcher has:
 
 We represent the whole trie in a large array, holding 4 bytes for each matcher.
 
-* Slot 0 (bytes 0-3) is an empty trie, used to terminate each trie.
-* Slot 1 (bytes 4-7) is the root of the trie.
-* The address of a trie is its (quadbyte) index in the array.
+* Slot 0 (bytes 0-3) is the root of the trie.
+* The address of a trie is its (row number) index in the array.
 
 The set of matchers is placed sequentially. There's an added failure matcher at the end of the list. To see if a word is extended, you walk through the list looking for a matching character. If you don't find one, you hit the failure matcher and the prefix is rejected.
 

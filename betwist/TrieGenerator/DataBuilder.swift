@@ -29,7 +29,7 @@ public class DataBuilder {
 
     let startIndex = data.count / 4
 
-    data.reserve(quadbytes: trie.next.count)
+    data.reserve(matchEntries: trie.next.count)
 
     for i in 0..<(trie.next.count) {
       let charByte = firstByte(
@@ -39,9 +39,9 @@ public class DataBuilder {
 
       let childTrieAddress = writeData(trie: trie.next[i].trie)
 
-      data.overwriteQuad(
-        index: (startIndex + i) * 4,
-        asQuadbytes(charByte, childTrieAddress)
+      data.overwriteBytes(
+        matchEntry: startIndex + i,
+        asBytes(charByte, childTrieAddress)
       )
       Self.largestJump = max(Self.largestJump, Int(childTrieAddress) - startIndex + i)
     }
@@ -57,7 +57,7 @@ public class DataBuilder {
     return charValue
   }
 
-  func asQuadbytes(_ charByte: UInt8, _ trieAddress: UInt32) -> [UInt8] {
+  func asBytes(_ charByte: UInt8, _ trieAddress: UInt32) -> [UInt8] {
     [
       charByte,
       UInt8((trieAddress >> 16) & 0xff),

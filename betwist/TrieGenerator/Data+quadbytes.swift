@@ -1,8 +1,10 @@
 import Foundation
 
+typealias MatchEntry = UInt32
+
 extension Data {
-  subscript(quadbyte quadbyte: Int) -> UInt32 {
-    let index = 4 * quadbyte
+  subscript(matchEntry matchEntry: Int) -> MatchEntry {
+    let index = 4 * matchEntry
 
     return UInt32(self[index]) << 24
       | UInt32(self[index + 1]) << 16
@@ -10,17 +12,19 @@ extension Data {
       | UInt32(self[index + 3])
   }
 
-  mutating func reserve(quadbytes: Int) {
+  mutating func reserve(matchEntries: Int) {
     let zeros: [UInt8] = [0, 0, 0, 0]
 
-    for _ in 0..<quadbytes {
+    for _ in 0..<matchEntries {
       append(contentsOf: zeros)
     }
   }
 
-  mutating func overwriteQuad(index: Int, _ bytes: [UInt8]) {
+  mutating func overwriteBytes(matchEntry: Int, _ bytes: [UInt8]) {
+    let byteOffset = matchEntry * 4
+
     replaceSubrange(
-      index..<(index + 4),
+      byteOffset..<(byteOffset + bytes.count),
       with: bytes
     )
   }
