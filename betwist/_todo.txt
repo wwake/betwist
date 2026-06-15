@@ -1,16 +1,9 @@
-* Work in terms of match offsets rather than byte offsets
+* Make generated data use match offsets
 * Make word finding based off the position of the first letter in the word
 * Make the first letter special - 3 bytes are all address, no char or flags
 Use 3-byte entries in trie (instead of 4)
 
-
-For Apple - Renaming 'index' to 'row' only changes the parameter, not the body
-
-   subscript(quadbyte index: Int) -> UInt32 {
-    UInt32(data[index]) << 24
-      | UInt32(data[index + 1]) << 16
-      | UInt32(data[index + 2]) << 8
-      | UInt32(data[index + 3])
+Analytics SDK
 
 
 Look at TrieDataReader+mutating - can we eliminate using TrieDataWriter?
@@ -65,8 +58,12 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Two-player mode?   (set a seed)
 
 =====
+2026-06-15 - Three-Byte Trie Matches
+* [offline] For Apple - In a subscript, renaming parameter 'index' to 'row' only changes the parameter, not the body
+
 2026-06-12 - Squeeze the Trie Further
 * Analyzed the maximum distance between neighboring letters => found all are < 64K cells away
+* TrieDataReader now works in terms of match offsets rather than byte offsets [generated data still uses byte offsets]
 
 2026-06-11 - Reorganize Dependencies
 * Eliminate marker nodes in the Trie - in tests
