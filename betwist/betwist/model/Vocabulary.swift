@@ -7,7 +7,7 @@ struct SearchResult: Equatable {
 
 class Vocabulary {
   private let trie: Trie
-  
+
   init(_ trie: Trie) {
     self.trie = trie
   }
