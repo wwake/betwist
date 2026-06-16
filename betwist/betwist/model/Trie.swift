@@ -5,10 +5,22 @@ struct Trie {
   let root = 0
 
   func containsAndPrefixes(_ target: String) -> SearchResult {
-    walk(root, target)
+    if target.count == 1 {
+      return SearchResult(isWord: false, isProperPrefix: true)
+    }
+
+    let base = data.base(target.first!)
+    var rest = target
+    rest.removeFirst()
+
+    return walk(base: base, current: base, target: rest)
   }
 
-  private func walk(_ matchRow: Int, _ searchString: String) -> SearchResult {
+  private func walk(
+    base: Int,
+    current matchRow: Int,
+    target searchString: String
+  ) -> SearchResult {
     var current = matchRow
     var target = searchString
 

@@ -7,33 +7,19 @@ struct ATrie {
   @Test
   func `matches the last letter`() {
     var data = TrieDataReader(data: Data())
-    data.reserve(matchEntries: 1)
-    data.append("A", isWord: true, isLast: true, 0)
+    data.append("A", isWord: false, isLast: true, 1)
+    data.append("D", isWord: true, isLast: true, 0)
 
     let sut = Trie(data: data)
 
-    #expect(sut.containsAndPrefixes("A").isWord)
-    #expect(!sut.containsAndPrefixes("A").isProperPrefix)
-  }
-
-  @Test
-  func `tries alternatives for a letter`() {
-    var data = TrieDataReader(data: Data())
-    data.reserve(matchEntries: 1)
-    data.append("A", isWord: true, isLast: false, 0)
-    data.append("I", isWord: true, isLast: true, 0)
-
-    let sut = Trie(data: data)
-
-    #expect(sut.containsAndPrefixes("I").isWord)
-    #expect(!sut.containsAndPrefixes("I").isProperPrefix)
+    #expect(sut.containsAndPrefixes("AD").isWord)
+    #expect(!sut.containsAndPrefixes("AD").isProperPrefix)
   }
 
   @Test
   func `moves to next letter if prior letter matches`() {
     var data = TrieDataReader(data: Data())
-    data.reserve(matchEntries: 1)
-    data.append("A", isWord: true, isLast: true, 2)
+    data.append("A", isWord: false, isLast: true, 1)
     data.append("S", isWord: true, isLast: true, 0)
 
     let sut = Trie(data: data)
@@ -43,10 +29,23 @@ struct ATrie {
   }
 
   @Test
+  func `tries alternatives for a letter`() {
+    var data = TrieDataReader(data: Data())
+    data.append("A", isWord: false, isLast: false, 0)
+    data.append("B", isWord: false, isLast: true, 2)
+    data.append("A", isWord: true, isLast: false, 0)
+    data.append("E", isWord: true, isLast: true, 0)
+
+    let sut = Trie(data: data)
+
+    #expect(sut.containsAndPrefixes("BE").isWord)
+    #expect(!sut.containsAndPrefixes("BE").isProperPrefix)
+  }
+
+  @Test
   func `recognizes when an accepted word could be extended`() {
     var data = TrieDataReader(data: Data())
-    data.reserve(matchEntries: 1)
-    data.append("B", isWord: false, isLast: true, 2)
+    data.append("B", isWord: false, isLast: true, 1)
     data.append("Y", isWord: true, isLast: true, 0)
 
     let sut = Trie(data: data)
@@ -67,5 +66,14 @@ struct ATrie {
 
     #expect(sut.containsAndPrefixes("BY").isWord)
     #expect(!sut.containsAndPrefixes("BY").isProperPrefix)
+  }
+
+  @Test
+  func `one-letter target isn't a word but is a valid prefix`() {
+    let data = TrieDataReader(data: Data())
+    let sut = Trie(data: data)
+
+    #expect(!sut.containsAndPrefixes("R").isWord)
+    #expect(sut.containsAndPrefixes("R").isProperPrefix)
   }
 }

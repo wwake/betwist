@@ -19,6 +19,10 @@ public struct TrieDataReader {
     data[row * bytesPerMatchEntry]
   }
 
+  public func base(_ char: Character) -> Int {
+    address(row: Int(char.asciiValue! - Character("A").asciiValue!))
+  }
+
   public func isLastMatch(row: Int) -> Bool {
     (matchEntryChar(row: row) & 128) != 0
   }

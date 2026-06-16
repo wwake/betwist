@@ -1,7 +1,9 @@
-* Encapsulate the size of the match entry (currently "quadbytes")
 * Make word finding based off the position of the first letter in the word
-* Make the first letter special - 3 bytes are all address, no char or flags
+* Make the first letter special - 3 bytes are all address, no char or flags ("jump table")
 Use 3-byte entries in trie (instead of 4)
+
+
+Eliminate twist methods in Location
 
 Analytics SDK
 
@@ -62,6 +64,7 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * [offline] For Apple - In a subscript, renaming parameter 'index' to 'row' only changes the parameter, not the body
 * Make generated data use match offsets
 * Make lookup use match offsets rather than byte offsets
+* Encapsulate the size of the match entry (currently "quadbytes")
 
 2026-06-12 - Squeeze the Trie Further
 * Analyzed the maximum distance between neighboring letters => found all are < 64K cells away

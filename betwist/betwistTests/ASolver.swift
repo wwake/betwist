@@ -47,16 +47,16 @@ struct ASolver {
   }
 
   @Test
-  func finds_all_answers_in_1_cell_board() {
+  func finds_no_answers_in_1_cell_board() {
     let game = Game(1, ["A"], Vocabulary(["A"]))
-    let sut = Solver(minimumAnswerSize: 1, vocabulary: game.vocabulary, grid: game.grid)
-    #expect(matches(sut.answers(), Answers(["A"])))
+    let sut = Solver(minimumAnswerSize: 2, vocabulary: game.vocabulary, grid: game.grid)
+    #expect(matches(sut.answers(), Answers([])))
   }
 
   @Test()
   func finds_all_answers_in_4_cell_board() {
     let game = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUN", "FUND"]))
-    let sut = Solver(minimumAnswerSize: 1, vocabulary: game.vocabulary, grid: game.grid)
+    let sut = Solver(minimumAnswerSize: 2, vocabulary: game.vocabulary, grid: game.grid)
 
     #expect(matches(sut.answers(), Answers(["FUN", "FUND"])))
   }
@@ -73,7 +73,7 @@ struct ASolver {
       ],
       Vocabulary(["FUN", "FUND", "FUNDER", "FUNDERS", "WHILE", "UNDER", "TWIST", "BECKON", "ERSTWHILE"].sorted())
     )
-    let sut = Solver(minimumAnswerSize: 1, vocabulary: game.vocabulary, grid: game.grid)
+    let sut = Solver(minimumAnswerSize: 2, vocabulary: game.vocabulary, grid: game.grid)
 
     #expect(matches(sut.answers(), Answers(["FUN", "FUND", "FUNDER", "FUNDERS", "UNDER", "WHILE", "ERSTWHILE"])))
   }
@@ -92,20 +92,20 @@ struct ASolver {
 
   @Test
   func doesnt_reuse_letters_in_finding_all_answers() {
-    let game = Game(2, ["T", "Z", "E", "D"], Vocabulary(["ZED", "TZETZE"]))
-    let sut = Solver(minimumAnswerSize: 1, vocabulary: game.vocabulary, grid: game.grid)
+    let game = Game(2, ["T", "X", "E", "D"], Vocabulary(["XED", "TXETXE"]))
+    let sut = Solver(minimumAnswerSize: 2, vocabulary: game.vocabulary, grid: game.grid)
 
-    #expect(matches(sut.answers(), Answers(["ZED"])))
+    #expect(matches(sut.answers(), Answers(["XED"])))
   }
 
   @Test
   func doesnt_reuse_letters_in_finding_all_answers_concoction() {
     let game = Game(
       5,
-      split(["IUHHS", "NKBHA", "JEEEU", "CNZEI", "ROBKT"]),
+      split(["IUHHS", "NKBHA", "JEEEU", "CNXEI", "ROBKT"]),
       Vocabulary(["CONE", "CONCOCT", "CONCOCTION"])
     )
-    let sut = Solver(minimumAnswerSize: 1, vocabulary: game.vocabulary, grid: game.grid)
+    let sut = Solver(minimumAnswerSize: 2, vocabulary: game.vocabulary, grid: game.grid)
 
     #expect(matches(sut.answers(), Answers(["CONE"])))
   }

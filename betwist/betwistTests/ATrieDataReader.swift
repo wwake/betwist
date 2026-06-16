@@ -15,6 +15,19 @@ struct ATrieDataReader {
   }
 
   @Test
+  func `knows index of trie for given first letter`() {
+    var sut = TrieDataReader(data: Data())
+    sut.append("A", isWord: false, isLast: false, 2)
+    sut.append("B", isWord: false, isLast: true, 3)
+    // omit C-Z; won't affect test
+    sut.append("T", isWord: true, isLast: true, 0)
+    sut.append("A", isWord: true, isLast: true, 0)
+
+    #expect(sut.base("A") == 2)
+    #expect(sut.base("B") == 3)
+  }
+
+  @Test
   func `knows whether position completes word`() {
     let ignoredAddress = 124
     var sut = TrieDataReader(data: Data())
