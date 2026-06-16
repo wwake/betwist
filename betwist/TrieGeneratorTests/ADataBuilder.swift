@@ -26,7 +26,7 @@ struct ADataBuilder {
 
     #expect(data[matchEntry: 2] == 0xF3000000)    // 's', last match
 
-    #expect(data[matchEntry: 3] == 0xE5000004)    // 'e', last match
+    #expect(data[matchEntry: 3] == 0xE5000001)    // 'e', last match
 
     #expect(data[matchEntry: 4] == 0x64000000)    // 'd'
     #expect(data[matchEntry: 5] == 0xF4000000)    // 't', last match

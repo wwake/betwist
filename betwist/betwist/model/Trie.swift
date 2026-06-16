@@ -37,7 +37,7 @@ struct Trie {
           )
         }
 
-        current = data.address(row: current)
+        current = base + data.address(row: current)
         continue
       }
 
