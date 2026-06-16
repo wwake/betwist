@@ -36,11 +36,6 @@ public class DataBuilder {
     data.reserve(matchEntries: trie.next.count)
 
     for i in 0..<(trie.next.count) {
-      let charByte = firstByte(
-        match: trie.next[i],
-        isLast: i == trie.next.count - 1
-      )
-
       let childTrieRow = writeSubTrie(
         base: (UInt32) (data.count / bytesPerMatchEntry),
         trie: trie.next[i].trie
@@ -48,9 +43,9 @@ public class DataBuilder {
 
       data.overwriteBytes(
         matchEntry: startIndex + i,
-        asBytes(charByte, childTrieRow)
+        asBytes(0, childTrieRow)
       )
-      Self.largestJump = max(Self.largestJump, Int(childTrieRow) - startIndex + i)
+      //Self.largestJump = max(Self.largestJump, Int(childTrieRow) - startIndex + i)
     }
     Self.nodeCount += trie.next.count
   }
@@ -75,7 +70,7 @@ public class DataBuilder {
         matchEntry: startIndex + i,
         asBytes(charByte, childTrieAddress)
       )
-      Self.largestJump = max(Self.largestJump, Int(childTrieAddress) - startIndex + i)
+      Self.largestJump = max(Self.largestJump, Int(childTrieAddress))
     }
     Self.nodeCount += trie.next.count
 
