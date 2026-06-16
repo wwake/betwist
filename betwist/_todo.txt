@@ -1,4 +1,4 @@
-* Make word finding based off the position of the first letter in the word
+* Make the trie calculate the current row based on the base row
 * Make the first letter special - 3 bytes are all address, no char or flags ("jump table")
 Use 3-byte entries in trie (instead of 4)
 
@@ -60,6 +60,9 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Two-player mode?   (set a seed)
 
 =====
+2026-06-16 - First-Letter Jump Table
+* Trie looks up the first letter as a jump table, and solves the rest as before.
+
 2026-06-15 - Three-Byte Trie Matches
 * [offline] For Apple - In a subscript, renaming parameter 'index' to 'row' only changes the parameter, not the body
 * Make generated data use match offsets

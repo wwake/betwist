@@ -16,7 +16,7 @@ public class DataBuilder {
   public func make(trie: MakerTrie) -> Data {
     data = Data()
 
-    _ = writeData(trie: trie)
+    writeData(trie: trie)
 
     print("Node count \(Self.nodeCount)")
     print("Largest jump \(Self.largestJump)")
@@ -24,7 +24,34 @@ public class DataBuilder {
     return data
   }
 
-  func writeData(trie: MakerTrie) -> UInt32 {
+  func writeData(trie: MakerTrie) {
+    writeFirstLetters(trie: trie)
+//    _ = writeRemainingLetters(trie: trie)
+  }
+
+  func writeFirstLetters(trie: MakerTrie) {
+    let startIndex = data.count / 4
+
+    data.reserve(matchEntries: trie.next.count)
+
+    for i in 0..<(trie.next.count) {
+      let charByte = firstByte(
+        match: trie.next[i],
+        isLast: i == trie.next.count - 1
+      )
+
+      let childTrieAddress = writeRemainingLetters(base: 0, trie: trie.next[i].trie)
+
+      data.overwriteBytes(
+        matchEntry: startIndex + i,
+        asBytes(charByte, childTrieAddress)
+      )
+      Self.largestJump = max(Self.largestJump, Int(childTrieAddress) - startIndex + i)
+    }
+    Self.nodeCount += trie.next.count
+  }
+
+  func writeRemainingLetters(base: Int, trie: MakerTrie) -> UInt32 {
     if trie.next.isEmpty { return 0 }
 
     let startIndex = data.count / 4
@@ -37,7 +64,7 @@ public class DataBuilder {
         isLast: i == trie.next.count - 1
       )
 
-      let childTrieAddress = writeData(trie: trie.next[i].trie)
+      let childTrieAddress = writeRemainingLetters(base: base, trie: trie.next[i].trie)
 
       data.overwriteBytes(
         matchEntry: startIndex + i,
