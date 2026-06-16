@@ -21,6 +21,7 @@ public class DataBuilder {
     print("Node count \(Self.nodeCount)")
     print("Largest jump \(Self.largestJump)")
     print("Data size \(data.count)")
+    sleep(3)
     return data
   }
 
