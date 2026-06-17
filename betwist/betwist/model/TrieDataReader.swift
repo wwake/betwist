@@ -3,24 +3,23 @@ import Foundation
 typealias MatchEntry = UInt32
 
 public struct TrieDataReader {
-  let bytesPerMatchEntry = 4
+  let bytesPerMatchEntry = 3
 
   var data: Data
 
   private func matchEntry(row: Int) -> MatchEntry {
     let base = row * bytesPerMatchEntry
-    return UInt32(data[base]) << 24
-      | UInt32(data[base + 1]) << 16
-      | UInt32(data[base + 2]) << 8
-      | UInt32(data[base + 3])
+    return UInt32(data[base]) << 16
+      | UInt32(data[base + 1]) << 8
+      | UInt32(data[base + 2])
   }
 
   private func matchEntryChar(row: Int) -> UInt8 {
     data[row * bytesPerMatchEntry]
   }
 
-  public func base(_ char: Character) -> Int {
-    address(row: Int(char.asciiValue! - Character("A").asciiValue!))
+  public func jumpAddress(_ char: Character) -> Int {
+    Int(matchEntry(row: Int(char.asciiValue! - Character("A").asciiValue!)))
   }
 
   public func isLastMatch(row: Int) -> Bool {
@@ -36,7 +35,7 @@ public struct TrieDataReader {
   }
 
   public func address(row: Int) -> Int {
-    Int(matchEntry(row: row) & 0x00ff_ffff)
+    Int(matchEntry(row: row) & 0xffff)
   }
 
   public func canExtend(row: Int) -> Bool {

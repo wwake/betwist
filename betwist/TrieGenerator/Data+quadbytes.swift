@@ -1,19 +1,19 @@
 import Foundation
 
 typealias MatchEntry = UInt32
+private let bytesPerMatchEntry = 3
 
 extension Data {
   subscript(matchEntry matchEntry: Int) -> MatchEntry {
-    let index = 4 * matchEntry
+    let index = matchEntry * bytesPerMatchEntry
 
-    return UInt32(self[index]) << 24
-      | UInt32(self[index + 1]) << 16
-      | UInt32(self[index + 2]) << 8
-      | UInt32(self[index + 3])
+    return UInt32(self[index]) << 16
+      | UInt32(self[index + 1]) << 8
+      | UInt32(self[index + 2])
   }
 
   mutating func reserve(matchEntries: Int) {
-    let zeros: [UInt8] = [0, 0, 0, 0]
+    let zeros: [UInt8] = [0, 0, 0]
 
     for _ in 0..<matchEntries {
       append(contentsOf: zeros)
@@ -21,7 +21,7 @@ extension Data {
   }
 
   mutating func overwriteBytes(matchEntry: Int, _ bytes: [UInt8]) {
-    let byteOffset = matchEntry * 4
+    let byteOffset = matchEntry * bytesPerMatchEntry
 
     replaceSubrange(
       byteOffset..<(byteOffset + bytes.count),

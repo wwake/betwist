@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "88BCBEC7-E72A-45A4-AB5C-FF0547E3AF5C",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:betwist.xcodeproj",
+        "identifier" : "9116C8F92FDAF9D800C633C9",
+        "name" : "TrieGeneratorTests"
+      }
+    }
+  ],
+  "version" : 1
+}

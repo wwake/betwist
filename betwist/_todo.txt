@@ -1,7 +1,4 @@
-* Jump table with 3-byte entries
-& Use 3-byte entries in trie (instead of 4)
 
-Using 4 bytes: 1.6M compressed, 2.4M raw
 
 Eliminate twist methods in Location
 
@@ -54,6 +51,17 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Two-player mode?   (set a seed)
 
 =====
+2026-06-17 - Finally, 3-Byte Trie Matches
+* Jump table with 3-byte entries
+* Use 3-byte entries in trie (instead of 4)
+
+Node count 586553
+Largest jump 63876
+Data size 1759659
+
+Using 4 bytes: 1.6M compressed, 2.4M raw
+Now, using 3 bytes: 1.4M compressed, 1.76M raw
+
 2026-06-16 - First-Letter Jump Table
 * Trie looks up the first letter as a jump table, and solves the rest as before.
 * Make the trie calculate the current row based on the base row

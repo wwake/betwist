@@ -4,13 +4,18 @@ public class DataBuilder {
   static var nodeCount = 0
   static var largestJump = 0
 
-  let bytesPerMatchEntry = 4
+  let bytesPerMatchEntry = 3
 
   var data = Data()
 
   public init() { }
 
   public func write(_ url: URL) throws {
+    let rawUrlString = (url.absoluteString + ".raw").dropFirst(7)
+
+    let rawUrl = URL(filePath: String(rawUrlString))
+    try data.write(to: rawUrl, options: [.atomic, .completeFileProtection])
+
     let compressedData = try (data as NSData).compressed(using: .lzfse)
     try compressedData.write(to: url, options: [.atomic, .completeFileProtection])
   }
@@ -43,9 +48,8 @@ public class DataBuilder {
 
       data.overwriteBytes(
         matchEntry: startIndex + i,
-        asBytes(0, childTrieRow)
+        asJumpAddress(childTrieRow)
       )
-      //Self.largestJump = max(Self.largestJump, Int(childTrieRow) - startIndex + i)
     }
     Self.nodeCount += trie.next.count
   }
@@ -53,7 +57,7 @@ public class DataBuilder {
   func writeSubTrie(base: UInt32, trie: MakerTrie) -> UInt32 {
     if trie.next.isEmpty { return 0 }
 
-    let startIndex = data.count / 4
+    let startIndex = data.count / bytesPerMatchEntry
 
     data.reserve(matchEntries: trie.next.count)
 
@@ -70,6 +74,7 @@ public class DataBuilder {
         matchEntry: startIndex + i,
         asBytes(charByte, childTrieAddress)
       )
+
       Self.largestJump = max(Self.largestJump, Int(childTrieAddress))
     }
     Self.nodeCount += trie.next.count
@@ -87,6 +92,13 @@ public class DataBuilder {
   func asBytes(_ charByte: UInt8, _ trieAddress: UInt32) -> [UInt8] {
     [
       charByte,
+      UInt8((trieAddress >> 8) & 0xff),
+      UInt8(trieAddress & 0xff),
+    ]
+  }
+
+  func asJumpAddress(_ trieAddress: UInt32) -> [UInt8] {
+    [
       UInt8((trieAddress >> 16) & 0xff),
       UInt8((trieAddress >> 8) & 0xff),
       UInt8(trieAddress & 0xff),

@@ -18,9 +18,9 @@ struct AVocabulary {
 
   @Test
   func doesnt_find_word_thats_not_there() {
-    let sut = Vocabulary(["hello", "world"])
+    let sut = Vocabulary(["HELLO", "WORLD"])
 
-    #expect(!sut.contains("goodbye"))
+    #expect(!sut.contains("GOODBYE"))
   }
 
   @Test

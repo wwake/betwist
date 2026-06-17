@@ -9,7 +9,7 @@ struct Trie {
       return SearchResult(isWord: false, isProperPrefix: true)
     }
 
-    let base = data.base(target.first!)
+    let base = data.jumpAddress(target.first!)
     var rest = target
     rest.removeFirst()
 
