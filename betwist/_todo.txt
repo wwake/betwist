@@ -1,21 +1,21 @@
-* Make the trie calculate the current row based on the base row
-* Make the first letter special - 3 bytes are all address, no char or flags ("jump table")
-Use 3-byte entries in trie (instead of 4)
+* Jump table with 3-byte entries
+& Use 3-byte entries in trie (instead of 4)
 
+Using 4 bytes: 1.6M compressed, 2.4M raw
 
 Eliminate twist methods in Location
 
 Analytics SDK
-
-
-Look at TrieDataReader+mutating - can we eliminate using TrieDataWriter?
 
 * Onboarding
 
 * Can we avoid translations by centering our grid?
 
 * Animation - LetterView - try doing 10 rotations instead of 1 (quick spin)
+
 * Dictionary lookup
+* Link to dictionary - https://dictionaryapi.dev
+* Link system-found words to a dictionary definition - see api_dictionaryapi_dev/api/v2/entries/en/[the word]
 
 * Strikethrough on system words that you also found
 
@@ -27,15 +27,13 @@ MudShark666: Fix: "If you need to keep UIRequiresFullScreen to support earlier v
 
 ===
 * Make "gimme" words blue
+* When showing system-found words, show user's words in black
+
 * Guess in progress near bottom?
 * Colors of words - explain?
 
-* Link to dictionary - https://dictionaryapi.dev
-* Link system-found words to a dictionary definition - see api_dictionaryapi_dev/api/v2/entries/en/[the word]
 
 16: 759x394 -> 1.93 aspect ratio
-
-* Animation isn't happening when word is guessed - zIndex issue?
 
 * Mirror buttons - \, and /
 
@@ -43,11 +41,7 @@ MudShark666: Fix: "If you need to keep UIRequiresFullScreen to support earlier v
 
 * Investigate defect where not having a one-pixel padding partially overwrites the safe area ".padding(.top, 1)"
 
-* When showing system-found words, show user's words in black
-
-
 * Tessellations
-
 
 * New game sets parameters (eg board size)
 
@@ -62,6 +56,8 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 =====
 2026-06-16 - First-Letter Jump Table
 * Trie looks up the first letter as a jump table, and solves the rest as before.
+* Make the trie calculate the current row based on the base row
+* Clear the first byte of the first-letter entries
 
 2026-06-15 - Three-Byte Trie Matches
 * [offline] For Apple - In a subscript, renaming parameter 'index' to 'row' only changes the parameter, not the body
