@@ -196,4 +196,16 @@ struct AGame {
 
     #expect(game.statistics == Statistics(wordCount: 1, letterCount: 4, mostLetters: 4))
   }
+
+  @Test
+  func `finishing a game clears the selection`() {
+    var game = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
+    game.select(Location(0, 0))
+
+    game.over()
+
+    #expect(game.mode == .review)
+    #expect(!game.hasSelection)
+    #expect(game.message == "Game Over")
+  }
 }

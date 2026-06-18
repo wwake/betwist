@@ -14,7 +14,6 @@ struct ContentView: View {
   @Binding var game: Game
   @State private var submitIsInProgress = false
 
-  @State private var progress = 0.0
   @State private var showAnswers = false
 
   fileprivate func handleSelection(_ location: Location) {
@@ -43,16 +42,8 @@ struct ContentView: View {
 
     submitIsInProgress = true
 
-    progress = 0.0
-
-    withAnimation(.easeInOut(duration: 2.75)) {
-      progress = 1.0
-    }
-    completion: {
-      progress = 0.0
-      game.submit(word)
-      submitIsInProgress = false
-    }
+    game.submit(word)
+    submitIsInProgress = false
   }
 
   var body: some View {
@@ -92,7 +83,7 @@ struct ContentView: View {
 
           case .review:
             submitIsInProgress = true
-            game.message = "Game Over"
+            game.over()
           }
         }
       }

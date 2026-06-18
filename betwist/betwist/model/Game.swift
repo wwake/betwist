@@ -3,7 +3,7 @@ enum GameMode {
   case review
 }
 
-struct Game {
+public struct Game {
   static let defaultSize = 5
   static let minimumSize = 4
   static let minimumSystemAnswerSize = 6
@@ -127,5 +127,11 @@ struct Game {
 
   var statistics: Statistics {
     Statistics(wordCount: answers.wordCount, letterCount: answers.letterCount, mostLetters: answers.mostLetters)
+  }
+
+  public mutating func over() {
+    selection.clear()
+    message = "Game Over"
+    mode = .review
   }
 }
