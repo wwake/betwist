@@ -103,11 +103,11 @@ struct Game {
 
   mutating func submit(_ word: String) {
     for prefix in properPrefixes(of: word) where vocabulary.contains(prefix) {
-        answers.submit(prefix, isPrefix: true)
+        answers.submit(prefix)
     }
 
     if vocabulary.contains(word) {
-      answers.submit(word, isPrefix: false)
+      answers.submit(word)
     }
 
     deselectAll()

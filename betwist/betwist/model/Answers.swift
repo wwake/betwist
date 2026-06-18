@@ -3,7 +3,6 @@ import Foundation
 struct Answer: Identifiable, Equatable {
   let id = UUID()
   let word: String
-  let enteredByUser: Bool
 
   var count: Int {
     word.count
@@ -18,16 +17,16 @@ struct Answers {
 
   init(_ answers: [String] = []) {
     for answer in answers {
-      submit(answer, isPrefix: false)
+      submit(answer)
     }
   }
 
-  mutating func submit(_ word: String, isPrefix: Bool) {
+  mutating func submit(_ word: String) {
     if contains(word) {
       return
     }
 
-    let answer = Answer(word: word, enteredByUser: !isPrefix)
+    let answer = Answer(word: word)
     values.insert(answer, at: 0)
     if values.count > Self.previewCount {
       values.removeLast()

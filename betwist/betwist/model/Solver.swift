@@ -16,7 +16,7 @@ struct Solver {
     allAnswers
       .filter { $0.count >= minimumAnswerSize }
       .forEach {
-        result.submit($0, isPrefix: true)
+        result.submit($0)
       }
     return result
   }

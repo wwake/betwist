@@ -1,7 +1,3 @@
-* Make "gimme" words blue
-* When showing system-found words, show user's words in black
-* Colors of words - explain?
-* Strikethrough on system words that you also found
 
 * Do we need the dice in GameGenerator? Or just generate a random string.
 
@@ -51,6 +47,8 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 =====
 2026-06-18 - Showing Words
 * Eliminate twist methods in Location
+* Show user-found words in black (including prefixes)
+* Strikethrough on system words that you also found
 
 2026-06-17 - Finally, 3-Byte Trie Matches
 * Jump table with 3-byte entries
