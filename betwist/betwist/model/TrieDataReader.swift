@@ -23,15 +23,15 @@ public struct TrieDataReader {
   }
 
   public func isLastMatch(row: Int) -> Bool {
-    (matchEntryChar(row: row) & 128) != 0
-  }
-
-  public func character(row: Int) -> UInt8 {
-    matchEntryChar(row: row) & 0x5f
+    (matchEntryChar(row: row) & 0x80) != 0
   }
 
   public func completesWord(row: Int) -> Bool {
     (matchEntryChar(row: row) & 0x20) != 0
+  }
+
+  public func character(row: Int) -> UInt8 {
+    matchEntryChar(row: row) & 0x5f
   }
 
   public func address(row: Int) -> Int {

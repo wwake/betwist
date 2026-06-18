@@ -1,10 +1,12 @@
-
-* Eliminate twist methods in Location
-
 * Make "gimme" words blue
 * When showing system-found words, show user's words in black
 * Colors of words - explain?
 * Strikethrough on system words that you also found
+
+* Do we need the dice in GameGenerator? Or just generate a random string.
+
+* Remove any partial word in progress when game ends (and messages)
+* Haptic feedback (sensoryFeedback on button)? Sound feedback?
 
 Analytics SDK
 
@@ -47,6 +49,9 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Two-player mode?   (set a seed)
 
 =====
+2026-06-18 - Showing Words
+* Eliminate twist methods in Location
+
 2026-06-17 - Finally, 3-Byte Trie Matches
 * Jump table with 3-byte entries
 * Use 3-byte entries in trie (instead of 4)

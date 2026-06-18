@@ -13,15 +13,14 @@ struct Trie {
     var rest = target
     rest.removeFirst()
 
-    return walk(base: base, current: base, target: rest)
+    return walk(base: base, target: rest)
   }
 
   private func walk(
     base: Int,
-    current matchRow: Int,
     target searchString: String
   ) -> SearchResult {
-    var current = matchRow
+    var current = base
     var target = searchString
 
     var outOfOptions = false
