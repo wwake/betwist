@@ -1,5 +1,7 @@
 * Remove any partial word in progress when game ends (and messages)
 
+* Is this needed? :   @Binding var game: Game in LetterView - how do we clear translations on InfiniteGrid
+
 * Dictionary lookup
 * Link to dictionary - https://dictionaryapi.dev
 * Link system-found words to a dictionary definition - see api_dictionaryapi_dev/api/v2/entries/en/[the word]

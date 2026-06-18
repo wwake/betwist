@@ -9,14 +9,15 @@ struct NewGameButton: View {
     Group {
       if game.mode == .play {
         Button("Reveal...") {
-          game.mode = .review
           showAnswers = true
+          game.over()
         }
         .capsuled()
       } else {
         Button("New Game") {
           showAnswers = false
           game = Game(game.size, GameGenerator(game.size).make(), game.vocabulary)
+          game.start()
         }
         .capsuled()
       }
