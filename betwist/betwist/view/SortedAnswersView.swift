@@ -7,11 +7,13 @@ struct SortedAnswersView: View {
     VStack {
       List {
         ForEach(answers.wordSizes, id: \.self) { size in
-          Section(header: Text("\(size) letters")) {
+          Section(
+            header: Text("\(size) letters")
+            .foregroundStyle(.userWordListForeground)
+          ) {
             ForEach(answers.words(ofSize: size)) { answer in
               Text(verbatim: answer.word)
                 .bold()
-                .foregroundStyle(answer.enteredByUser ? .userWordListForeground : .accent)
             }
           }
         }

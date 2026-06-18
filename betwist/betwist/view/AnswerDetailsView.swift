@@ -20,6 +20,8 @@ struct AnswerDetailsView: View {
           .font(.footnote)
 
         SortedAnswersView(answers: allAnswers)
+          .foregroundStyle(.accent)
+
       }
       Spacer()
     }
