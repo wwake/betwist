@@ -17,14 +17,6 @@ struct Location: Equatable {
     self.column = column
   }
 
-  func rotateLeft(size: Int) -> Location {
-    Location(column, size - 1 - row)
-  }
-
-  func flipHorizontal(size: Int) -> Location {
-    Location(row, size - 1 - column)
-  }
-
   func hasNeighbor(_ other: Location, wrap size: Int) -> Bool {
     if self == other {
       return false
@@ -44,13 +36,6 @@ struct Location: Equatable {
         Location((row + deltaRow) %% size, (column + deltaColumn) %% size)
       }
     return Set(locations)
-  }
-
-  func movedBy(_ delta: DeltaLocation, wrap size: Int) -> Location {
-    Location(
-      (self.row + delta.deltaRow) %% size,
-      (self.column + delta.deltaColumn) %% size
-    )
   }
 }
 
