@@ -53,6 +53,7 @@ public struct Game {
   }
 
   mutating func select(_ location: Location) {
+    if mode == .review { return }
     selection.select(location)
     message = ""
   }
@@ -76,6 +77,18 @@ public struct Game {
 
   func hue(at location: Location) -> Double {
     hues[location.row * size + location.column]
+  }
+
+  mutating func collectWord() {
+    if mode == .review { return }
+    let word = answer
+
+    if word.isEmpty { return }
+
+    validate()
+    guard hasValidSelection else { return }
+
+    submit(word)
   }
 
   mutating func validate() {
@@ -127,6 +140,11 @@ public struct Game {
 
   var statistics: Statistics {
     Statistics(wordCount: answers.wordCount, letterCount: answers.letterCount, mostLetters: answers.mostLetters)
+  }
+
+  public mutating func start() {
+    message = ""
+    mode = .play
   }
 
   public mutating func over() {

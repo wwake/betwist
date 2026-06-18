@@ -8,20 +8,17 @@ struct AnswerDetailsView: View {
   var answers: Answers
   var allAnswers: Answers
 
-  @Binding var mode: GameMode
-
   fileprivate func wordsSystemFound() -> some View {
     VStack {
-      if mode == .review {
-        Text("System Found")
-          .font(.title2)
+      Text("System Found")
+        .font(.title2)
 
-        Text("6+ letters only")
-          .font(.footnote)
+      Text("6+ letters only")
+        .font(.footnote)
 
-        SortedAnswersView(answers: allAnswers, matchingAnswers: answers)
-          .foregroundStyle(.accent)
-      }
+      SortedAnswersView(answers: allAnswers, matchingAnswers: answers)
+        .foregroundStyle(.accent)
+
       Spacer()
     }
   }

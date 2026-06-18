@@ -12,7 +12,6 @@ struct ContentView: View {
   var horizontalSizeClass
 
   @Binding var game: Game
-  @State private var submitIsInProgress = false
 
   @State private var showAnswers = false
 
@@ -27,23 +26,11 @@ struct ContentView: View {
   }
 
   fileprivate func select(_ location: Location) {
-    if submitIsInProgress { return }
     game.select(location)
   }
 
   fileprivate func collectWord() {
-    let word = game.answer
-
-    if submitIsInProgress { return }
-    if word.isEmpty { return }
-
-    game.validate()
-    guard game.hasValidSelection else { return }
-
-    submitIsInProgress = true
-
-    game.submit(word)
-    submitIsInProgress = false
+    game.collectWord()
   }
 
   var body: some View {
@@ -78,11 +65,9 @@ struct ContentView: View {
         .onChange(of: game.mode) { _, new in
           switch new {
           case .play:
-            submitIsInProgress = false
-            game.message = ""
+            game.start()
 
           case .review:
-            submitIsInProgress = true
             game.over()
           }
         }

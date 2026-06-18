@@ -52,7 +52,6 @@ struct LandscapeView: View {
         statistics: game.statistics,
         answers: game.answers,
         allAnswers: game.systemAnswers,
-        mode: $game.mode
       )
     }
   }
