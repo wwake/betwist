@@ -34,14 +34,6 @@ struct AVocabulary {
     #expect(!sut.hasPrefix("ZOO"))
   }
 
-  static func load() -> Vocabulary {
-    let path = Bundle.main.path(forResource: "words", ofType: "list")!
-    let words = try! String(contentsOfFile: path, encoding: .utf8)
-      .split(separator: "\n")
-      .map { String($0).uppercased() }
-    return Vocabulary(words)
-  }
-
   @Test
   func contains_can_find_any_word_in_list() {
     let words = ["brother", "ease", "east", "easy", "father", "mother", "sister", "west"]

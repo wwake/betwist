@@ -5,7 +5,7 @@ extension Vocabulary {
   convenience init(_ words: [String]) {
     let everyLetter = [
       "AZ", "BZ", "CZ", "DZ", "EZ", "FZ", "GZ", "HZ", "IZ", "JZ",
-      "KZ", "LZ", "MZ", "NZ", "OZ", "PZ", "QZ", "RZ", "SZ", "TZ", 
+      "KZ", "LZ", "MZ", "NZ", "OZ", "PZ", "QZ", "RZ", "SZ", "TZ",
       "UZ", "VZ", "WZ", "XZ", "YZ", "ZZ",
     ]
 
