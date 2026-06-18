@@ -1,6 +1,10 @@
 
+* Eliminate twist methods in Location
 
-Eliminate twist methods in Location
+* Make "gimme" words blue
+* When showing system-found words, show user's words in black
+* Colors of words - explain?
+* Strikethrough on system words that you also found
 
 Analytics SDK
 
@@ -14,7 +18,6 @@ Analytics SDK
 * Link to dictionary - https://dictionaryapi.dev
 * Link system-found words to a dictionary definition - see api_dictionaryapi_dev/api/v2/entries/en/[the word]
 
-* Strikethrough on system words that you also found
 
 * Handle extra-large size text (adjust cell size, don't lose critical buttons)
 
@@ -22,23 +25,16 @@ Analytics SDK
 MudShark666: Fix: "If you need to keep UIRequiresFullScreen to support earlier versions of iOS after you’ve made these updates, add UIRequiresFullScreenIgnoredStartingWithVersion to your information property list to specify in which version of iOS you want the system to begin ignoring UIRequiresFullScreen in your app."
 (Although - we tried it saying ios 26.0 and ios 27.0, and couldn't get the warning to go away. Probably easiest to add the support:)
 
-===
-* Make "gimme" words blue
-* When showing system-found words, show user's words in black
-
-* Guess in progress near bottom?
-* Colors of words - explain?
-
-
 16: 759x394 -> 1.93 aspect ratio
 
-* Mirror buttons - \, and /
 
 ====
 
 * Investigate defect where not having a one-pixel padding partially overwrites the safe area ".padding(.top, 1)"
 
 * Tessellations
+
+* Mirror buttons - \, and /
 
 * New game sets parameters (eg board size)
 
