@@ -19,9 +19,8 @@ struct AnswerDetailsView: View {
         Text("6+ letters only")
           .font(.footnote)
 
-        SortedAnswersView(answers: allAnswers)
+        SortedAnswersView(answers: allAnswers, matchingAnswers: answers)
           .foregroundStyle(.accent)
-
       }
       Spacer()
     }
