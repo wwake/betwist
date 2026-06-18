@@ -23,6 +23,8 @@ do {
 
   let dataBuilder = DataBuilder()
   _ = dataBuilder.make(trie: builder.root)
+  dataBuilder.printStatistics()
+
   let url = URL.downloadsDirectory.appending(path: "trie.dat")
   try dataBuilder.write(url)
   print("Copy \(url) to project's resources folder")

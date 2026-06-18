@@ -1,12 +1,12 @@
 import Foundation
 
 public class DataBuilder {
-  static var nodeCount = 0
-  static var largestJump = 0
+  public static var nodeCount = 0
+  public static var largestJump = 0
 
   let bytesPerMatchEntry = 3
 
-  var data = Data()
+  public var data = Data()
 
   public init() { }
 
@@ -25,9 +25,6 @@ public class DataBuilder {
 
     writeData(trie: trie)
 
-    print("Node count \(Self.nodeCount)")
-    print("Largest jump \(Self.largestJump)")
-    print("Data size \(data.count)")
     return data
   }
 
@@ -103,5 +100,11 @@ public class DataBuilder {
       UInt8((trieAddress >> 8) & 0xff),
       UInt8(trieAddress & 0xff),
     ]
+  }
+
+  public func printStatistics() {
+    print("Node count \(DataBuilder.nodeCount)")
+    print("Largest jump \(DataBuilder.largestJump)")
+    print("Data size \(data.count)")
   }
 }
