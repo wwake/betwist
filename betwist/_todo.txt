@@ -1,6 +1,4 @@
-* Remove any partial word in progress when game ends (and messages)
-
-* Is this needed? :   @Binding var game: Game in LetterView - how do we clear translations on InfiniteGrid
+* Is this needed?: @Binding var game: Game in LetterView - how do we clear translations on InfiniteGrid?
 
 * Dictionary lookup
 * Link to dictionary - https://dictionaryapi.dev
@@ -12,6 +10,7 @@ Sellable:
 * Onboarding
 
 * Payment (99c game? IAP - 20 games free, then 99c => 1000 or else board is 3x3 no infinite; free limited version, full paid version)
+* https://developer.apple.com/documentation/storekit/in-app-purchase
 
 
 * Do we need the dice in GameGenerator? Or just generate a random string.
@@ -61,6 +60,7 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Eliminate twist methods in Location
 * Show user-found words in black (including prefixes)
 * Strikethrough on system words that you also found
+* Remove any partial word in progress when game ends
 
 2026-06-17 - Finally, 3-Byte Trie Matches
 * Jump table with 3-byte entries

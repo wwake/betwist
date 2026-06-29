@@ -4,7 +4,7 @@ struct LetterView<S: InsettableShape>: View {
   var shape: S
   var size: Double
 
-  @Binding var game: Game
+  var game: Game
 
   var location: Location
   var handleSelection: (Location) -> Void

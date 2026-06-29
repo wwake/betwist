@@ -17,7 +17,7 @@ struct GridView: View {
             LetterView(
               shape: Rectangle(),
               size: cellSize,
-              game: $game,
+              game: game,
               location: Location(row, column),
               handleSelection: handleSelection,
               boardAnimation: boardAnimation,
