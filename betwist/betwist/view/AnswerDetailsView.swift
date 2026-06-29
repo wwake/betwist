@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct AnswerDetailsView: View {
-  @Environment(\.dismiss)
-  var dismiss
+  @Binding var showAnswers: Bool
 
   var statistics: Statistics
   var answers: Answers
@@ -16,8 +15,11 @@ struct AnswerDetailsView: View {
       Text("6+ letters only")
         .font(.footnote)
 
-      SortedAnswersView(answers: allAnswers, matchingAnswers: answers)
-        .foregroundStyle(.accent)
+      SortedAnswersView(
+        answers: allAnswers,
+        matchingAnswers: answers,
+      )
+      .foregroundStyle(.accent)
 
       Spacer()
     }
@@ -40,10 +42,13 @@ struct AnswerDetailsView: View {
       }
 
       Button("Done") {
-        dismiss()
+        withAnimation {
+          showAnswers = false
+        }
       }
       .capsuled()
     }
     .padding()
+    .background(Color.white)
   }
 }

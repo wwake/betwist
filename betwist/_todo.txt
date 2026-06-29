@@ -1,3 +1,4 @@
+* Show "Game over" on AnswerDetailsView?
 * Dictionary lookup
 * Link to dictionary - https://dictionaryapi.dev
 * Link system-found words to a dictionary definition - see api_dictionaryapi_dev/api/v2/entries/en/[the word]
@@ -58,6 +59,7 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Remove unnecessary uses of @Binding throughout views
 * Defined JSON-compatible objects for word definitions
 * Added a link to the answer summary view (not a real link yet)
+* Changed the summary view from being a sheet to being a peer view (so we can enable popovers)
 
 2026-06-18 - Showing Words
 * Eliminate twist methods in Location

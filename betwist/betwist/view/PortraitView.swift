@@ -15,7 +15,7 @@ struct PortraitView: View {
     return aspectRatio < 1.75 ? 0.85 * width : 1.0 * width
   }
 
-  var body: some View {
+  func boardView() -> some View {
     VStack {
       Spacer()
         .frame(height: 12)
@@ -53,15 +53,27 @@ struct PortraitView: View {
 
       Spacer()
 
-      NewGameButton(game: $game)
+      NewGameButton(game: $game, showAnswers: $showAnswers)
         .padding([.top, .bottom], 8)
     }
-    .sheet(isPresented: $showAnswers) {
+  }
+
+  var body: some View {
+    if showAnswers {
       AnswerDetailsView(
+        showAnswers: $showAnswers,
         statistics: game.statistics,
         answers: game.answers,
         allAnswers: game.systemAnswers,
       )
+      .transition(
+        .asymmetric(
+          insertion: .push(from: .trailing),
+          removal: .push(from: .leading)
+        )
+      )
+    } else {
+      boardView()
     }
   }
 }

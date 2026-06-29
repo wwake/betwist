@@ -9,7 +9,7 @@ struct LandscapeView: View {
   @State private var showAnswers = false
   @State private var progress = 0.0
 
-  var body: some View {
+  func boardView() -> some View {
     HStack(alignment: .top) {
       VStack {
         AnswerInProgressView(game: game, progress: progress, height: 500) {
@@ -26,11 +26,11 @@ struct LandscapeView: View {
             .padding([.bottom], 20)
 
           AnswersSummaryView(game: game)
-          .font(.title)
+            .font(.title)
 
           Spacer()
 
-          NewGameButton(game: $game)
+          NewGameButton(game: $game, showAnswers: $showAnswers)
             .font(.title)
             .padding([.bottom], 20)
         }
@@ -47,12 +47,24 @@ struct LandscapeView: View {
       .zIndex(5)
     }
     .padding(.top, 20)
-    .sheet(isPresented: $showAnswers) {
+  }
+
+  var body: some View {
+    if showAnswers {
       AnswerDetailsView(
+        showAnswers: $showAnswers,
         statistics: game.statistics,
         answers: game.answers,
         allAnswers: game.systemAnswers,
       )
+      .transition(
+        .asymmetric(
+          insertion: .push(from: .trailing),
+          removal: .push(from: .leading)
+        )
+      )
+    } else {
+      boardView()
     }
   }
 }

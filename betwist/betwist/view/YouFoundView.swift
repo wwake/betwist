@@ -13,7 +13,10 @@ struct YouFoundView: View {
           .font(.footnote)
       }
 
-      SortedAnswersView(answers: answers, matchingAnswers: Answers())
+      SortedAnswersView(
+        answers: answers,
+        matchingAnswers: Answers()
+      )
     }
   }
 }
