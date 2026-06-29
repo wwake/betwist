@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct TwistButton: View {
-  @Binding var game: Game
-
   @Binding var boardAnimation: BoardAnimation
 
   @Binding var twist: Twist

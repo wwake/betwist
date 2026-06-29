@@ -2,7 +2,7 @@ import SwiftUI
 
 struct GridView: View {
   var cellSize: Double
-  @Binding var game: Game
+  var game: Game
   var handleSelection: (Location) -> Void
 
   var boardAnimation: BoardAnimation

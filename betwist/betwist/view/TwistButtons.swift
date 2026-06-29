@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct TwistButtons: View {
-  @Binding var game: Game
-
   @Binding var boardAnimation: BoardAnimation
 
   @Binding var twist: Twist
@@ -10,28 +8,24 @@ struct TwistButtons: View {
   var body: some View {
     HStack {
       TwistButton(
-        game: $game,
         boardAnimation: $boardAnimation,
         twist: $twist,
         twistSpec: TwistButtonSpec.rotateLeft,
       )
 
       TwistButton(
-        game: $game,
         boardAnimation: $boardAnimation,
         twist: $twist,
         twistSpec: TwistButtonSpec.mirrorHorizontally,
       )
 
       TwistButton(
-        game: $game,
         boardAnimation: $boardAnimation,
         twist: $twist,
         twistSpec: TwistButtonSpec.mirrorVertically,
       )
 
       TwistButton(
-        game: $game,
         boardAnimation: $boardAnimation,
         twist: $twist,
         twistSpec: TwistButtonSpec.rotateRight,

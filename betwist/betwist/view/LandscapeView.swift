@@ -12,7 +12,7 @@ struct LandscapeView: View {
   var body: some View {
     HStack(alignment: .top) {
       VStack {
-        AnswerInProgressView(game: $game, progress: progress, height: 500) {
+        AnswerInProgressView(game: game, progress: progress, height: 500) {
           collectWord()
         }
 
@@ -25,7 +25,7 @@ struct LandscapeView: View {
             .font(.title)
             .padding([.bottom], 20)
 
-          AnswersSummaryView(game: $game)
+          AnswersSummaryView(game: game)
           .font(.title)
 
           Spacer()
@@ -39,7 +39,7 @@ struct LandscapeView: View {
       .frame(height: geometry.size.height)
 
       RotatingGridView(
-        game: $game,
+        game: game,
         handleSelection: handleSelection,
         width: geometry.size.height,
         height: geometry.size.height

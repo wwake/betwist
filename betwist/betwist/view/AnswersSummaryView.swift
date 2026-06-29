@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AnswersSummaryView: View {
-  @Binding var game: Game
+  var game: Game
 
   var body: some View {
     VStack {

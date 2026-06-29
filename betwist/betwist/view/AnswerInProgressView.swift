@@ -3,7 +3,7 @@ import SwiftUI
 struct AnswerInProgressView: View {
   let boxWidth: CGFloat = 200
 
-  @Binding var game: Game
+  var game: Game
   var progress: Double
   var height: Double
 

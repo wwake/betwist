@@ -9,7 +9,7 @@ struct RotatingGridView: View {
 
   @State private var twist = Twist()
 
-  @Binding var game: Game
+  var game: Game
 
   var handleSelection: (Location) -> Void
   var width: CGFloat
@@ -18,13 +18,12 @@ struct RotatingGridView: View {
   var body: some View {
     VStack {
       TwistButtons(
-        game: $game,
         boardAnimation: $boardAnimation,
         twist: $twist,
       )
 
       InfiniteGrid(
-        game: $game,
+        game: game,
         handleSelection: handleSelection,
         cellSize: Self.cellSize,
         boardAnimation: boardAnimation,

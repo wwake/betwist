@@ -3,7 +3,7 @@ import SwiftUI
 struct InfiniteGrid: View {
   let maxGrids = 7
 
-  @Binding var game: Game
+  var game: Game
   var handleSelection: (Location) -> Void
 
   var cellSize: Double
@@ -17,7 +17,7 @@ struct InfiniteGrid: View {
   var body: some View {
     let gridView = GridView(
       cellSize: cellSize,
-      game: $game,
+      game: game,
       handleSelection: handleSelection,
       boardAnimation: boardAnimation,
       twist: twist,

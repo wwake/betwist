@@ -21,7 +21,7 @@ struct PortraitView: View {
         .frame(height: 12)
 
       RotatingGridView(
-        game: $game,
+        game: game,
         handleSelection: handleSelection,
         width: geometry.size.width,
         height: adjustedHeight(geometry.size)
@@ -32,7 +32,7 @@ struct PortraitView: View {
         .font(.title)
         .frame(maxWidth: .infinity, minHeight: 40)
 
-      AnswerInProgressView(game: $game, progress: progress, height: 500) {
+      AnswerInProgressView(game: game, progress: progress, height: 500) {
         collectWord()
       }
 
@@ -45,7 +45,7 @@ struct PortraitView: View {
 
           Spacer()
 
-          AnswersSummaryView(game: $game)
+          AnswersSummaryView(game: game)
 
           Spacer()
         }
