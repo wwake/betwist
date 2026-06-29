@@ -18,7 +18,7 @@ struct SortedAnswersView: View {
           ) {
             ForEach(answers.words(ofSize: size)) { answer in
               Button(action: { print("lookup \(answer.word)") }) {
-                HStack {
+                HStack(spacing: 2) {
                   Text(verbatim: answer.word)
                     .bold()
                     .strikethrough(matchingAnswers.contains(answer.word))

@@ -56,6 +56,8 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 =====
 2026-06-29 - Definitions
 * Remove unnecessary uses of @Binding throughout views
+* Defined JSON-compatible objects for word definitions
+* Added a link to the answer summary view (not a real link yet)
 
 2026-06-18 - Showing Words
 * Eliminate twist methods in Location
