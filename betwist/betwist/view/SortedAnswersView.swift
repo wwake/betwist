@@ -1,33 +1,8 @@
 import SwiftUI
 
 struct SortedAnswersView: View {
-  let lookupIcon = Image(systemName: "text.magnifyingglass")
-    .accessibilityLabel("Definition")
-
-  @State var showDefinition = false
-  @State var definitions: Words?
-
   let answers: Answers
   let matchingAnswers: Answers
-
-  func lookupAction(_ word: String) {
-    definitions = nil
-    showDefinition = true
-  }
-
-  func wordView(_ word: String) -> some View {
-    Button(action: { lookupAction(word) }) {
-      HStack(spacing: 2) {
-        Text(verbatim: word)
-          .bold()
-          .strikethrough(matchingAnswers.contains(word))
-        lookupIcon
-      }
-    }
-//    .popover(isPresented: $showDefinition, arrowEdge: .bottom) {
-//      DefinitionsView(definitions: definitions)
-//    }
-  }
 
   var body: some View {
     VStack {
@@ -39,7 +14,7 @@ struct SortedAnswersView: View {
             )
           ) {
             ForEach(answers.words(ofSize: size)) { answer in
-              wordView(answer.word)
+              WordView(word: answer.word, matchingAnswers: matchingAnswers)
             }
           }
         }
@@ -54,5 +29,48 @@ struct DefinitionsView: View {
 
   var body: some View {
     Text("Hello world")
+  }
+}
+
+struct WordView: View {
+  let word: String
+  let matchingAnswers: Answers
+
+  @State var definitions: Words?
+
+  @State var showDefinition = false
+
+  let lookupIcon = Image(systemName: "text.magnifyingglass")
+    .accessibilityLabel("Definition")
+
+  func lookupAction(_ word: String) {
+    definitions = nil
+    showDefinition = true
+  }
+
+  var body: some View {
+    Button(action: { lookupAction(word) }) {
+      HStack(spacing: 2) {
+        Text(verbatim: word)
+          .bold()
+          .strikethrough(matchingAnswers.contains(word))
+        lookupIcon
+      }
+    }
+    .popover(isPresented: $showDefinition, arrowEdge: .trailing) {
+      DefinitionsView(definitions: definitions)
+    }
+  }
+}
+
+#Preview {
+  @Previewable @State var showPopover = false
+
+  return Button("Show Popover") {
+    showPopover = true
+  }
+  .popover(isPresented: $showPopover) {
+    Text("Hello SwiftUI!")
+      .padding()
   }
 }

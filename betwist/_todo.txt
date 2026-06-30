@@ -1,7 +1,9 @@
-* Show "Game over" on AnswerDetailsView?
+
 * Dictionary lookup
 * Link to dictionary - https://dictionaryapi.dev
 * Link system-found words to a dictionary definition - see api_dictionaryapi_dev/api/v2/entries/en/[the word]
+
+* Show "Game over" on AnswerDetailsView?
 
 Sellable:
 * Analytics SDK
