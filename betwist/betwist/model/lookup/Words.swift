@@ -1,18 +1,18 @@
 import Foundation
 
-struct Words: Codable {
+struct Words: Decodable {
   let entries: [WordEntry]
 }
 
-struct WordEntry: Codable {
+struct WordEntry: Decodable {
   let meanings: [Meaning]
 }
 
-struct Meaning: Codable {
+struct Meaning: Decodable {
   let partOfSpeech: String
   let definitions: [Definition]
 }
 
-struct Definition: Codable {
+struct Definition: Decodable {
   let definition: String
 }
