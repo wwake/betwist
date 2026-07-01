@@ -11,22 +11,17 @@ struct ADefinitionLoader {
   let sut = DefinitionLoader()
 
   @Test
-  func `bad url returns empty array`() async throws {
+  func `bad url returns .badUrl`() async throws {
     let result = await sut.load(
-      "BAD URL",
-      fetchData: { _ in Data()
-      }
+      "{BAD\\||URL}",
+      fetchData: { _ in Data() }
     )
 
-    if case let .data(data) = result {
-      #expect(data.isEmpty)
-    } else {
-      Issue.record("Wrong result type")
-    }
+    #expect(result == .badUrl)
   }
 
   @Test
-  func `failed fetch returns empty array`() async throws {
+  func `failed fetch returns .failedLoad`() async throws {
     let result = await sut.load(
       "WORD",
       fetchData: { _ in
@@ -38,7 +33,7 @@ struct ADefinitionLoader {
   }
 
   @Test
-  func `failed JSON decoding returns empty array`() async {
+  func `failed JSON decoding returns .notFound`() async {
     let result = await sut.load(
       "WORD",
       fetchData: { _ in
@@ -46,11 +41,7 @@ struct ADefinitionLoader {
       }
     )
 
-    if case let .data(data) = result {
-      #expect(data.isEmpty)
-    } else {
-      Issue.record("Wrong result type")
-    }
+    #expect(result == .notFound)
   }
 
   @Test

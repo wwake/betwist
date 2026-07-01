@@ -43,7 +43,13 @@ struct DefinitionsView: View {
       ScrollView {
         switch definitionState {
         case .idle:
-          Color.green
+          ProgressView()
+
+        case .badUrl:
+          ContentUnavailableView(
+            "Internal Problem (Bad URL) - please contact support",
+            systemImage: "exclamationmark.triangle"
+          )
 
         case .failedLoad:
           ContentUnavailableView {
@@ -53,6 +59,16 @@ struct DefinitionsView: View {
             )
           } description: {
             Text("Check your internet connection or try again later.")
+          }
+
+        case .notFound:
+          ContentUnavailableView {
+            Label(
+              "Word Not Found",
+              systemImage: "exclamationmark.triangle"
+            )
+          } description: {
+            Text("Try searching Wiktionary or on the web generally.")
           }
 
         case .data:
@@ -82,7 +98,7 @@ struct DefinitionsView: View {
       let loader = DefinitionLoader()
       definitionState = await loader.load(word, fetchData: fetchData)
 
-      if case let .data(data) = definitionState {
+      if case .data(let data) = definitionState {
         definitions = data
       } else {
         definitions = []
