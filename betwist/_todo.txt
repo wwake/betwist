@@ -1,7 +1,6 @@
-* Test the DefinitionLoader
-* Spinner
+
 * Link to https://en.wiktionary.org/wiki/chrematist#English (e.g.) if not found
-* Dictionary lookup
+Dictionary lookup
 
 * Show "Game over" on AnswerDetailsView?
 
@@ -61,6 +60,9 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * [offline] Separated a model package
 * Display the parts of speech and the definitions
 * Added a Done button to dismiss the definitions
+* Test the DefinitionLoader
+* Show spinner while definition loads
+* Custom messages for various conditions of loading
 
 2026-06-30 - Look Up Definitions
 * Show definition as a popover
