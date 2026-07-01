@@ -10,13 +10,13 @@
 		9116C8FB2FDAF9D800C633C9 /* TrieGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; };
 		9116C9202FDB040500C633C9 /* TrieGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; };
 		9116C9212FDB040500C633C9 /* TrieGenerator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9116C9232FDB05E800C633C9 /* TrieGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; platformFilter = ios; };
-		9116C9242FDB05E800C633C9 /* TrieGenerator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		912CFEE92C88A6B10074C066 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 912CFEE72C88A6B10074C066 /* LICENSE */; };
 		914899902FF4B4120060C5F4 /* model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914899872FF4B4110060C5F4 /* model.framework */; };
 		9148999A2FF4B4120060C5F4 /* model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914899872FF4B4110060C5F4 /* model.framework */; };
 		9148999B2FF4B4120060C5F4 /* model.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 914899872FF4B4110060C5F4 /* model.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		914899EA2FF4BB610060C5F4 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 914899E92FF4BB610060C5F4 /* Algorithms */; };
+		914899F22FF556BF0060C5F4 /* TrieGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; platformFilter = ios; };
+		914899F32FF556BF0060C5F4 /* TrieGenerator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,13 +28,6 @@
 			remoteInfo = TrieGenerator;
 		};
 		9116C9152FDAFBB600C633C9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 91FA96672C81333A0011BB7F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9116C8F12FDAF9D700C633C9;
-			remoteInfo = TrieGenerator;
-		};
-		9116C9252FDB05E800C633C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 91FA96672C81333A0011BB7F /* Project object */;
 			proxyType = 1;
@@ -62,12 +55,12 @@
 			remoteGlobalIDString = 914899862FF4B4110060C5F4;
 			remoteInfo = model;
 		};
-		91FA96802C81333E0011BB7F /* PBXContainerItemProxy */ = {
+		914899F42FF556BF0060C5F4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 91FA96672C81333A0011BB7F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 91FA966E2C81333A0011BB7F;
-			remoteInfo = betwist;
+			remoteGlobalIDString = 9116C8F12FDAF9D700C633C9;
+			remoteInfo = TrieGenerator;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -83,17 +76,6 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9116C9272FDB05E800C633C9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				9116C9242FDB05E800C633C9 /* TrieGenerator.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9148999F2FF4B4120060C5F4 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -101,6 +83,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9148999B2FF4B4120060C5F4 /* model.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		914899F62FF556BF0060C5F4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				914899F32FF556BF0060C5F4 /* TrieGenerator.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,7 +121,6 @@
 		919160F52FE2D574009F3B93 /* TrieGenerator.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrieGenerator.xctestplan; sourceTree = "<group>"; };
 		91D4DB332FBE027000A44E4A /* BetwistMaker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BetwistMaker; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA966F2C81333A0011BB7F /* betwist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betwist.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		91FA967F2C81333E0011BB7F /* betwistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = betwistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA969C2C813F5E0011BB7F /* _todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _todo.txt; sourceTree = "<group>"; };
 		91FA969F2C8141010011BB7F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		91FA96A32C814BAE0011BB7F /* betwist.key */ = {isa = PBXFileReference; lastKnownFileType = file; path = betwist.key; sourceTree = "<group>"; };
@@ -182,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				914899F22FF556BF0060C5F4 /* TrieGenerator.framework in Frameworks */,
 				914899902FF4B4120060C5F4 /* model.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,14 +192,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9148999A2FF4B4120060C5F4 /* model.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		91FA967C2C81333E0011BB7F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9116C9232FDB05E800C633C9 /* TrieGenerator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				91FA966F2C81333A0011BB7F /* betwist.app */,
-				91FA967F2C81333E0011BB7F /* betwistTests.xctest */,
 				91D4DB332FBE027000A44E4A /* BetwistMaker */,
 				9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */,
 				9116C8FA2FDAF9D800C633C9 /* TrieGeneratorTests.xctest */,
@@ -353,12 +337,14 @@
 				9148998B2FF4B4120060C5F4 /* Sources */,
 				9148998C2FF4B4120060C5F4 /* Frameworks */,
 				9148998D2FF4B4120060C5F4 /* Resources */,
+				914899F62FF556BF0060C5F4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				914899922FF4B4120060C5F4 /* PBXTargetDependency */,
 				914899942FF4B4120060C5F4 /* PBXTargetDependency */,
+				914899F52FF556BF0060C5F4 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				914899952FF4B4120060C5F4 /* modelTests */,
@@ -418,27 +404,6 @@
 			productReference = 91FA966F2C81333A0011BB7F /* betwist.app */;
 			productType = "com.apple.product-type.application";
 		};
-		91FA967E2C81333E0011BB7F /* betwistTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 91FA96962C81333F0011BB7F /* Build configuration list for PBXNativeTarget "betwistTests" */;
-			buildPhases = (
-				91FA967B2C81333E0011BB7F /* Sources */,
-				91FA967C2C81333E0011BB7F /* Frameworks */,
-				91FA967D2C81333E0011BB7F /* Resources */,
-				91FA96A12C8141C90011BB7F /* ShellScript */,
-				9116C9272FDB05E800C633C9 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				91FA96812C81333E0011BB7F /* PBXTargetDependency */,
-				9116C9262FDB05E800C633C9 /* PBXTargetDependency */,
-			);
-			name = betwistTests;
-			productName = betwistTests;
-			productReference = 91FA967F2C81333E0011BB7F /* betwistTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -468,11 +433,6 @@
 					91FA966E2C81333A0011BB7F = {
 						CreatedOnToolsVersion = 15.4;
 					};
-					91FA967E2C81333E0011BB7F = {
-						CreatedOnToolsVersion = 15.4;
-						LastSwiftMigration = 1600;
-						TestTargetID = 91FA966E2C81333A0011BB7F;
-					};
 				};
 			};
 			buildConfigurationList = 91FA966A2C81333A0011BB7F /* Build configuration list for PBXProject "betwist" */;
@@ -493,7 +453,6 @@
 			projectRoot = "";
 			targets = (
 				91FA966E2C81333A0011BB7F /* betwist */,
-				91FA967E2C81333E0011BB7F /* betwistTests */,
 				91D4DB322FBE027000A44E4A /* BetwistMaker */,
 				9116C8F12FDAF9D700C633C9 /* TrieGenerator */,
 				9116C8F92FDAF9D800C633C9 /* TrieGeneratorTests */,
@@ -540,13 +499,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		91FA967D2C81333E0011BB7F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -567,24 +519,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
-		};
-		91FA96A12C8141C90011BB7F /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >>/dev/null; then\n  swiftlint\nelse\n  echo \"warning: swiftlint not installed\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -631,13 +565,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		91FA967B2C81333E0011BB7F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -650,12 +577,6 @@
 			isa = PBXTargetDependency;
 			target = 9116C8F12FDAF9D700C633C9 /* TrieGenerator */;
 			targetProxy = 9116C9152FDAFBB600C633C9 /* PBXContainerItemProxy */;
-		};
-		9116C9262FDB05E800C633C9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 9116C8F12FDAF9D700C633C9 /* TrieGenerator */;
-			targetProxy = 9116C9252FDB05E800C633C9 /* PBXContainerItemProxy */;
 		};
 		914899922FF4B4120060C5F4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -672,14 +593,15 @@
 			target = 914899862FF4B4110060C5F4 /* model */;
 			targetProxy = 914899982FF4B4120060C5F4 /* PBXContainerItemProxy */;
 		};
+		914899F52FF556BF0060C5F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 9116C8F12FDAF9D700C633C9 /* TrieGenerator */;
+			targetProxy = 914899F42FF556BF0060C5F4 /* PBXContainerItemProxy */;
+		};
 		915C73442F97CEE8005EA8DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 915C73432F97CEE8005EA8DC /* SwiftLintBuildToolPlugin */;
-		};
-		91FA96812C81333E0011BB7F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 91FA966E2C81333A0011BB7F /* betwist */;
-			targetProxy = 91FA96802C81333E0011BB7F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -868,6 +790,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_MODULE = YES;
@@ -907,6 +831,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_MODULE = YES;
@@ -933,6 +859,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.modelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
@@ -955,6 +883,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.modelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
@@ -1197,51 +1127,6 @@
 			};
 			name = Release;
 		};
-		91FA96972C81333F0011BB7F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_DEBUG_DYLIB = NO;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.betwistTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/betwist.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/betwist";
-			};
-			name = Debug;
-		};
-		91FA96982C81333F0011BB7F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_DEBUG_DYLIB = NO;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xp123.betwistTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/betwist.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/betwist";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1304,15 +1189,6 @@
 			buildConfigurations = (
 				91FA96942C81333F0011BB7F /* Debug */,
 				91FA96952C81333F0011BB7F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		91FA96962C81333F0011BB7F /* Build configuration list for PBXNativeTarget "betwistTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				91FA96972C81333F0011BB7F /* Debug */,
-				91FA96982C81333F0011BB7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

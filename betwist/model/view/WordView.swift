@@ -4,15 +4,12 @@ struct WordView: View {
   let word: String
   let matchingAnswers: Answers
 
-  @State var definitions: Words?
-
   @State var showDefinition = false
 
   let lookupIcon = Image(systemName: "text.magnifyingglass")
     .accessibilityLabel("Definition")
 
   func lookupAction(_ word: String) {
-    definitions = nil
     showDefinition = true
   }
 
@@ -26,7 +23,7 @@ struct WordView: View {
       }
     }
     .popover(isPresented: $showDefinition, arrowEdge: .trailing) {
-      DefinitionsView(word: word, definitions: definitions?.entries ?? [])
+      DefinitionsView(word: word)
     }
   }
 }
