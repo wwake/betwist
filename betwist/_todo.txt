@@ -1,3 +1,4 @@
+* Test the DefinitionLoader
 * Spinner
 * Link to https://en.wiktionary.org/wiki/chrematist#English (e.g.) if not found
 * Dictionary lookup

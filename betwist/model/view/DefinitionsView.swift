@@ -28,28 +28,13 @@ struct DefinitionsView: View {
           }
         }
       }
-      .frame(alignment: .topLeading)
+      .frame(maxWidth: .infinity, alignment: .topLeading)
     }
   }
 
-  fileprivate func loadDefinitions() async {
-    if let url = URL(string: urlBase + word) {
-      do {
-        let (data, _) = try await URLSession.shared.data(from: url)
-        let decoder = JSONDecoder()
-
-        if let decodedResponse = try? decoder.decode(
-          [WordEntry].self,
-          from: data
-        ) {
-          definitions = decodedResponse
-        }
-      } catch {
-        definitions = []  // can't load
-      }
-    } else {
-      definitions = []  // bad url
-    }
+  fileprivate func fetchData(_ url: URL) async throws -> (Data) {
+    let (data, _) = try await URLSession.shared.data(from: url)
+    return data
   }
 
   var body: some View {
@@ -64,6 +49,7 @@ struct DefinitionsView: View {
           definitionsView()
         }
       }
+      .defaultScrollAnchor(.topLeading, for: .alignment)
 
       Spacer()
 
@@ -76,7 +62,8 @@ struct DefinitionsView: View {
     .foregroundStyle(.black)
     .padding(12)
     .task {
-      await loadDefinitions()
+      let loader = DefinitionLoader()
+      definitions = await loader.load(word, fetchData: fetchData)
     }
   }
 }
