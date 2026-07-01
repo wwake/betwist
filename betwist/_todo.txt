@@ -1,7 +1,6 @@
-
+* Pull in definitions
+* Spinner
 * Dictionary lookup
-* Link to dictionary - https://dictionaryapi.dev
-* Link system-found words to a dictionary definition - see api_dictionaryapi_dev/api/v2/entries/en/[the word]
 
 * Show "Game over" on AnswerDetailsView?
 
@@ -57,6 +56,16 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Two-player mode?   (set a seed)
 
 =====
+2026-07-01 - Definitions At Last
+* [offline] Separated a model package
+* Display the part of speech
+
+2026-06-30 - Look Up Definitions
+* Show definition as a popover
+* Use the API to pull down the definitions - just displayed the word
+* Link to dictionary - https://dictionaryapi.dev
+* Link system-found words to a dictionary definition - see api_dictionaryapi_dev/api/v2/entries/en/[the word]
+
 2026-06-29 - Definitions
 * Remove unnecessary uses of @Binding throughout views
 * Defined JSON-compatible objects for word definitions

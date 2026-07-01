@@ -11,7 +11,7 @@ public struct WordEntry: Decodable, Equatable, Hashable {
 
 public struct Meaning: Decodable, Equatable, Hashable {
   let partOfSpeech: String
-//  let definitions: [Definition]
+  let definitions: [Definition]
 }
 
 public struct Definition: Decodable, Equatable, Hashable {

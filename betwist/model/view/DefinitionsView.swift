@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct DefinitionsView: View {
+  @Environment(\.dismiss)
+  private var dismiss
+
   let urlBase = "https://api.dictionaryapi.dev/api/v2/entries/en/"
 
   var word: String
@@ -9,27 +12,46 @@ struct DefinitionsView: View {
 
   var body: some View {
     VStack {
-      if definitions.isEmpty {
-        ContentUnavailableView(
-          "No Definition Available",
-          systemImage: "exclamationmark.triangle"
-        )
-      } else {
-        ForEach(definitions, id: \.self) { entry in
-          Text(verbatim: entry.word)
-            .font(.title)
+      ScrollView {
+        if definitions.isEmpty {
+          ContentUnavailableView(
+            "No Definition Available",
+            systemImage: "exclamationmark.triangle"
+          )
+        } else {
+          VStack(alignment: .leading) {
 
-          ForEach(entry.meanings, id: \.self) { meaning in
-            Text(meaning.partOfSpeech)
-              .font(.title2)
-            //
-            //          ForEach(meaning.definitions.enumerated(), id: \.self) {
-            //            Text(
-            //          }
+            ForEach(definitions, id: \.self) { entry in
+              Text(verbatim: entry.word)
+                .font(.title)
+
+              ForEach(entry.meanings, id: \.self) { meaning in
+                Text(meaning.partOfSpeech)
+                  .font(.title2)
+                  .italic()
+                  .padding(.bottom, 2)
+
+                ForEach(meaning.definitions.enumerated(), id: \.0) { index, definition in
+                  Text("\(index + 1). \(definition.definition)")
+                    .padding(.bottom, 2)
+                }
+              }
+            }
+            .frame(alignment: .topLeading)
           }
         }
       }
+
+      Spacer()
+
+      Button("Done") {
+        dismiss()
+      }
+      .capsuled()
+      .frame(alignment: .center)
     }
+    .foregroundStyle(.black)
+    .padding(12)
     .task {
       if let url = URL(string: urlBase + word) {
         do {
@@ -42,9 +64,6 @@ struct DefinitionsView: View {
           ) {
             definitions = decodedResponse
           }
-          //          let contents = try String(contentsOf: url, encoding: .utf8)
-          //          print(contents)
-          //          definitions = Words(entries: [WordEntry(word: word, meanings: [])])
         } catch {
           definitions = []  // can't load
         }
