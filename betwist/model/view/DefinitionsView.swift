@@ -19,14 +19,14 @@ struct DefinitionsView: View {
           Text(verbatim: entry.word)
             .font(.title)
 
-//          ForEach(entry.meanings, id: \.self) { meaning in
-//                    Text(meaning.partOfSpeech)
-//                      .font(.title2)
-          //
-          //          ForEach(meaning.definitions.enumerated(), id: \.self) {
-          //            Text(
-          //          }
-         // }
+          ForEach(entry.meanings, id: \.self) { meaning in
+            Text(meaning.partOfSpeech)
+              .font(.title2)
+            //
+            //          ForEach(meaning.definitions.enumerated(), id: \.self) {
+            //            Text(
+            //          }
+          }
         }
       }
     }
@@ -36,17 +36,20 @@ struct DefinitionsView: View {
           let (data, _) = try await URLSession.shared.data(from: url)
           let decoder = JSONDecoder()
 
-          if let decodedResponse = try? decoder.decode([WordEntry].self, from: data) {
+          if let decodedResponse = try? decoder.decode(
+            [WordEntry].self,
+            from: data
+          ) {
             definitions = decodedResponse
           }
-//          let contents = try String(contentsOf: url, encoding: .utf8)
-//          print(contents)
-//          definitions = Words(entries: [WordEntry(word: word, meanings: [])])
+          //          let contents = try String(contentsOf: url, encoding: .utf8)
+          //          print(contents)
+          //          definitions = Words(entries: [WordEntry(word: word, meanings: [])])
         } catch {
           definitions = []  // can't load
         }
       } else {
-        definitions = [] // bad url
+        definitions = []  // bad url
       }
     }
   }
