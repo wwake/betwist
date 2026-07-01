@@ -8,7 +8,7 @@ struct DeltaLocation {
   }
 }
 
-struct Location: Equatable {
+public struct Location: Equatable {
   let row: Int
   let column: Int
 
@@ -42,7 +42,7 @@ struct Location: Equatable {
 extension Location: Hashable { }
 
 extension Location: CustomDebugStringConvertible {
-  var debugDescription: String {
+  public var debugDescription: String {
     "(\(row), \(column))"
   }
 }

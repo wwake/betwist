@@ -1,29 +1,29 @@
-enum GameMode {
+public enum GameMode {
   case play
   case review
 }
 
 public struct Game {
-  static let defaultSize = 5
-  static let minimumSize = 4
-  static let minimumSystemAnswerSize = 6
-  static let maxPuzzleSize = 25
+  public static let defaultSize = 5
+  public static let minimumSize = 4
+  public static let minimumSystemAnswerSize = 6
+  public static let maxPuzzleSize = 25
 
-  var mode = GameMode.play
+  public var mode = GameMode.play
 
-  let grid: LetterGrid
+  public let grid: LetterGrid
 
-  var selection: Selection
+  public var selection: Selection
 
-  var answers = Answers()
+  public var answers = Answers()
 
-  var vocabulary: Vocabulary
+  public var vocabulary: Vocabulary
 
-  var message = ""
+  public var message = ""
 
   private var hues: [Double]
 
-  init(_ size: Int, _ source: any Sequence<String>, _ vocabulary: Vocabulary) {
+  public init(_ size: Int, _ source: any Sequence<String>, _ vocabulary: Vocabulary) {
     self.grid = LetterGrid(size, Array(source))
 
     self.selection = Selection(grid)
@@ -52,17 +52,17 @@ public struct Game {
     grid[location.row, location.column]
   }
 
-  mutating func select(_ location: Location) {
+  public mutating func select(_ location: Location) {
     if mode == .review { return }
     selection.select(location)
     message = ""
   }
 
-  var hasSelection: Bool {
+  public var hasSelection: Bool {
     !selection.isEmpty
   }
 
-  mutating func deselectAll() {
+  public mutating func deselectAll() {
     selection.clear()
     message = ""
   }
@@ -79,7 +79,7 @@ public struct Game {
     hues[location.row * size + location.column]
   }
 
-  mutating func collectWord() {
+  public mutating func collectWord() {
     if mode == .review { return }
     let word = answer
 
@@ -130,7 +130,7 @@ public struct Game {
     selection.last == location
   }
 
-  var systemAnswers: Answers {
+  public var systemAnswers: Answers {
     Solver(
       minimumAnswerSize: Self.minimumSystemAnswerSize,
       vocabulary: vocabulary,
@@ -138,7 +138,7 @@ public struct Game {
     ).answers()
   }
 
-  var statistics: Statistics {
+  public var statistics: Statistics {
     Statistics(wordCount: answers.wordCount, letterCount: answers.letterCount, mostLetters: answers.mostLetters)
   }
 

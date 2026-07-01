@@ -1,7 +1,7 @@
 import Foundation
 
-struct Answer: Identifiable, Equatable {
-  let id = UUID()
+public struct Answer: Identifiable, Equatable {
+  public let id = UUID()
   let word: String
 
   var count: Int {
@@ -9,7 +9,7 @@ struct Answer: Identifiable, Equatable {
   }
 }
 
-struct Answers {
+public struct Answers {
   static let previewCount = 10
 
   internal var values = [Answer]()

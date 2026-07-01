@@ -1,8 +1,8 @@
-enum SelectionType {
+public enum SelectionType {
   case first, middle, last, open, neighbor
 }
 
-struct Selection {
+public struct Selection {
   let grid: LetterGrid
 
   var selection = [Location]()

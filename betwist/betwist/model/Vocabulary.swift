@@ -1,11 +1,11 @@
 import Foundation
 
-struct SearchResult: Equatable {
+public struct SearchResult: Equatable {
   let isWord: Bool
   let isProperPrefix: Bool
 }
 
-class Vocabulary {
+public class Vocabulary {
   private let trie: Trie
 
   init(_ trie: Trie) {
