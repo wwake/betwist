@@ -32,23 +32,23 @@ public struct Game {
     self.hues = (0..<(Self.maxPuzzleSize * Self.maxPuzzleSize)).map { _ in Double.random(in: 0..<1.0) }
   }
 
-  var size: Int {
+  public var size: Int {
     grid.size
   }
 
-  var answer: String {
+  public var answer: String {
     selection.answer
   }
 
-  var hasAnswers: Bool {
+  public var hasAnswers: Bool {
     !answers.isEmpty
   }
 
-  subscript(_ row: Int, _ column: Int) -> String {
+  public subscript(_ row: Int, _ column: Int) -> String {
     grid[row, column]
   }
 
-  subscript(_ location: Location) -> String {
+  public subscript(_ location: Location) -> String {
     grid[location.row, location.column]
   }
 
@@ -67,15 +67,15 @@ public struct Game {
     message = ""
   }
 
-  func type(at location: Location) -> SelectionType {
+  public func type(at location: Location) -> SelectionType {
     selection.type(location)
   }
 
-  func type(at location: Location, in selection: Selection) -> SelectionType {
+  public func type(at location: Location, in selection: Selection) -> SelectionType {
     selection.type(location)
   }
 
-  func hue(at location: Location) -> Double {
+  public func hue(at location: Location) -> Double {
     hues[location.row * size + location.column]
   }
 
@@ -126,7 +126,7 @@ public struct Game {
     deselectAll()
   }
 
-  func lastLocationSelected(was location: Location) -> Bool {
+  public func lastLocationSelected(was location: Location) -> Bool {
     selection.last == location
   }
 

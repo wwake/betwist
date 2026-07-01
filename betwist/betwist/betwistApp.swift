@@ -1,5 +1,6 @@
 import model
 import SwiftUI
+import view
 
 @main
 struct betwistApp: App {

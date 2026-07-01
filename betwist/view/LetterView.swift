@@ -1,3 +1,4 @@
+import model
 import SwiftUI
 
 struct LetterView<S: InsettableShape>: View {

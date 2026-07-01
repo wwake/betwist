@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "1B679ED8-26E0-43B6-A5D2-5127F9515C8A",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:betwist.xcodeproj",
+        "identifier" : "91489A532FF596800060C5F4",
+        "name" : "viewTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -3,9 +3,9 @@ import Foundation
 
 public struct Answer: Identifiable, Equatable {
   public let id = UUID()
-  let word: String
+  public let word: String
 
-  var count: Int {
+  public var count: Int {
     word.count
   }
 }
@@ -16,7 +16,7 @@ public struct Answers {
   internal var values = [Answer]()
   fileprivate var answersByLength = [Int: [Answer]]()
 
-  init(_ answers: [String] = []) {
+  public init(_ answers: [String] = []) {
     for answer in answers {
       submit(answer)
     }
@@ -38,7 +38,7 @@ public struct Answers {
     answersByLength.updateValue(priorAnswers, forKey: word.count)
   }
 
-  var isEmpty: Bool {
+  public var isEmpty: Bool {
     answersByLength.isEmpty
   }
 
@@ -58,7 +58,7 @@ public struct Answers {
     answersByLength.keys.max() ?? 0
   }
 
-  var preview: String {
+  public var preview: String {
     String(
       values
       .prefix(Self.previewCount)
@@ -67,7 +67,7 @@ public struct Answers {
     )
   }
 
-  func contains(_ word: String) -> Bool {
+  public func contains(_ word: String) -> Bool {
     let possibleAnswers = answersByLength[word.count] ?? []
     return possibleAnswers.contains { $0.word == word }
   }
@@ -76,18 +76,18 @@ public struct Answers {
     answersByLength[word.count]?.first(where: { $0.word == word })
   }
 
-  var wordSizes: [Int] {
+  public var wordSizes: [Int] {
     answersByLength.keys.sorted().reversed()
   }
 
-  func words(ofSize: Int) -> [Answer] {
+  public func words(ofSize: Int) -> [Answer] {
     let words = answersByLength[ofSize]
     if words == nil { return [] }
 
     return words!.sorted { $0.word < $1.word }
   }
 
-  var allWords: Set<String> {
+  public var allWords: Set<String> {
     var results = [[String]]()
     for size in wordSizes {
       results.append(words(ofSize: size).map(\.word))

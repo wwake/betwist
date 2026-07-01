@@ -11,6 +11,8 @@ public enum DefinitionState: Equatable {
 public struct DefinitionLoader {
   let urlBase = "https://api.dictionaryapi.dev/api/v2/entries/en/"
 
+  public init() {}
+
   public func load(
     _ word: String,
     fetchData: (URL) async throws -> (Data)

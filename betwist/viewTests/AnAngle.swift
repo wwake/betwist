@@ -1,6 +1,6 @@
-@testable import model
 import SwiftUI
 import Testing
+@testable import view
 
 struct AnAngle {
   @Test

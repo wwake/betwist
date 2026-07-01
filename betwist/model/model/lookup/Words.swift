@@ -5,15 +5,15 @@ public struct Words: Decodable, Equatable, Hashable {
 }
 
 public struct WordEntry: Decodable, Equatable, Hashable {
-  let word: String
-  let meanings: [Meaning]
+  public let word: String
+  public let meanings: [Meaning]
 }
 
 public struct Meaning: Decodable, Equatable, Hashable {
-  let partOfSpeech: String
-  let definitions: [Definition]
+  public let partOfSpeech: String
+  public let definitions: [Definition]
 }
 
 public struct Definition: Decodable, Equatable, Hashable {
-  let definition: String
+  public let definition: String
 }

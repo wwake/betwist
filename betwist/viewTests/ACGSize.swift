@@ -1,6 +1,6 @@
 import Foundation
-@testable import model
 import Testing
+@testable import view
 
 struct ACGSize {
   @Test

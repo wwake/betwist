@@ -1,3 +1,4 @@
+import model
 import SwiftUI
 
 enum Orientation {
@@ -73,6 +74,9 @@ public struct ContentView: View {
 
           case .review:
             game.over()
+
+          @unknown default:
+            fatalError("Unknown game mode \(game.mode)")
           }
         }
       }

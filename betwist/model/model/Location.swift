@@ -1,4 +1,4 @@
-struct DeltaLocation {
+public struct DeltaLocation {
   let deltaRow: Int
   let deltaColumn: Int
 
@@ -9,15 +9,15 @@ struct DeltaLocation {
 }
 
 public struct Location: Equatable {
-  let row: Int
-  let column: Int
+  public let row: Int
+  public let column: Int
 
-  init(_ row: Int, _ column: Int) {
+  public init(_ row: Int, _ column: Int) {
     self.row = row
     self.column = column
   }
 
-  func hasNeighbor(_ other: Location, wrap size: Int) -> Bool {
+  public func hasNeighbor(_ other: Location, wrap size: Int) -> Bool {
     if self == other {
       return false
     }
@@ -30,7 +30,7 @@ public struct Location: Equatable {
     return distance <= 1 || distance == wrap - 1
   }
 
-  func allNeighbors(wrap size: Int) -> Set<Location> {
+  public func allNeighbors(wrap size: Int) -> Set<Location> {
     let locations = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
       .map { deltaRow, deltaColumn in
         Location((row + deltaRow) %% size, (column + deltaColumn) %% size)

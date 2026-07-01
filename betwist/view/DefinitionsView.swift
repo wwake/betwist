@@ -1,3 +1,4 @@
+import model
 import SwiftUI
 
 struct DefinitionsView: View {
@@ -80,6 +81,9 @@ struct DefinitionsView: View {
           } else {
             definitionsView()
           }
+
+        @unknown default:
+          fatalError("Unknown DefinitionState \(definitionState)")
         }
       }
       .defaultScrollAnchor(.topLeading, for: .alignment)

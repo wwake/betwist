@@ -21,7 +21,7 @@ public struct Selection {
     selection.isEmpty
   }
 
-  var count: Int {
+  public var count: Int {
     selection.count
   }
 

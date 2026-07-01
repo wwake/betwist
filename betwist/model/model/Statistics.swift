@@ -1,5 +1,11 @@
 public struct Statistics: Equatable {
-  var wordCount: Int
-  var letterCount: Int
-  var mostLetters: Int
+  public var wordCount: Int
+  public var letterCount: Int
+  public var mostLetters: Int
+
+  public init(wordCount: Int, letterCount: Int, mostLetters: Int) {
+    self.wordCount = wordCount
+    self.letterCount = letterCount
+    self.mostLetters = mostLetters
+  }
 }

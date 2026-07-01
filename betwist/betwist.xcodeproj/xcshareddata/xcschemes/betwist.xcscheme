@@ -30,8 +30,11 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:betwist.xctestplan"
+            reference = "container:model.xctestplan"
             default = "YES">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:viewTests.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>
@@ -54,6 +57,17 @@
                BlueprintIdentifier = "9148998E2FF4B4120060C5F4"
                BuildableName = "modelTests.xctest"
                BlueprintName = "modelTests"
+               ReferencedContainer = "container:betwist.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "91489A532FF596800060C5F4"
+               BuildableName = "viewTests.xctest"
+               BlueprintName = "viewTests"
                ReferencedContainer = "container:betwist.xcodeproj">
             </BuildableReference>
          </TestableReference>
