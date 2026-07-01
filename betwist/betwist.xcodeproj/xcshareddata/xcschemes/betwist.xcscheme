@@ -46,6 +46,17 @@
                ReferencedContainer = "container:betwist.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9148998E2FF4B4120060C5F4"
+               BuildableName = "modelTests.xctest"
+               BlueprintName = "modelTests"
+               ReferencedContainer = "container:betwist.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
