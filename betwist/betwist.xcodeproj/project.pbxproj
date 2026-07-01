@@ -146,7 +146,6 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		9116C86C2FDAF6A800C633C9 /* betwistTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = betwistTests; sourceTree = "<group>"; };
 		9116C8B82FDAF71200C633C9 /* betwist */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (9116C8EC2FDAF71300C633C9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = betwist; sourceTree = "<group>"; };
 		9116C8F32FDAF9D700C633C9 /* TrieGenerator */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TrieGenerator; sourceTree = "<group>"; };
 		9116C8FE2FDAF9D800C633C9 /* TrieGeneratorTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TrieGeneratorTests; sourceTree = "<group>"; };
@@ -233,7 +232,6 @@
 				91FA969F2C8141010011BB7F /* .swiftlint.yml */,
 				914A53992CA3664E00C05BB7 /* betwist.xctestplan */,
 				9116C8B82FDAF71200C633C9 /* betwist */,
-				9116C86C2FDAF6A800C633C9 /* betwistTests */,
 				91D4DB342FBE027000A44E4A /* BetwistMaker */,
 				914899882FF4B4110060C5F4 /* model */,
 				914899952FF4B4120060C5F4 /* modelTests */,
@@ -435,9 +433,6 @@
 			dependencies = (
 				91FA96812C81333E0011BB7F /* PBXTargetDependency */,
 				9116C9262FDB05E800C633C9 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				9116C86C2FDAF6A800C633C9 /* betwistTests */,
 			);
 			name = betwistTests;
 			productName = betwistTests;
