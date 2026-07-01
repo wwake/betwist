@@ -26,7 +26,7 @@ struct WordView: View {
       }
     }
     .popover(isPresented: $showDefinition, arrowEdge: .trailing) {
-      DefinitionsView(definitions: definitions)
+      DefinitionsView(word: word, definitions: definitions?.entries ?? [])
     }
   }
 }
