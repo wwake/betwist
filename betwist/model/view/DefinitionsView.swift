@@ -8,6 +8,7 @@ struct DefinitionsView: View {
 
   var word: String
 
+  @State var definitionState = DefinitionState.idle
   @State var definitions = [WordEntry]()
 
   fileprivate func definitionsView() -> some View {
@@ -40,13 +41,29 @@ struct DefinitionsView: View {
   var body: some View {
     VStack {
       ScrollView {
-        if definitions.isEmpty {
-          ContentUnavailableView(
-            "No Definition Available",
-            systemImage: "exclamationmark.triangle"
-          )
-        } else {
-          definitionsView()
+        switch definitionState {
+        case .idle:
+          Color.green
+
+        case .failedLoad:
+          ContentUnavailableView {
+            Label(
+              "Unable to Fetch Definition",
+              systemImage: "exclamationmark.triangle"
+            )
+          } description: {
+            Text("Check your internet connection or try again later.")
+          }
+
+        case .data:
+          if definitions.isEmpty {
+            ContentUnavailableView(
+              "No Definition Available",
+              systemImage: "exclamationmark.triangle"
+            )
+          } else {
+            definitionsView()
+          }
         }
       }
       .defaultScrollAnchor(.topLeading, for: .alignment)
@@ -63,7 +80,13 @@ struct DefinitionsView: View {
     .padding(12)
     .task {
       let loader = DefinitionLoader()
-      definitions = await loader.load(word, fetchData: fetchData)
+      definitionState = await loader.load(word, fetchData: fetchData)
+
+      if case let .data(data) = definitionState {
+        definitions = data
+      } else {
+        definitions = []
+      }
     }
   }
 }
