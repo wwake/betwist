@@ -1,5 +1,6 @@
 
 * Link to https://en.wiktionary.org/wiki/chrematist#English (e.g.) if not found
+* Link("Button name", destination: URL(string: "some url"))
 Dictionary lookup
 
 * Show "Game over" on AnswerDetailsView?
