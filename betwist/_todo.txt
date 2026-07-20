@@ -1,8 +1,4 @@
 
-* Link to https://en.wiktionary.org/wiki/chrematist#English (e.g.) if not found
-* Link("Button name", destination: URL(string: "some url"))
-Dictionary lookup
-
 * Show "Game over" on AnswerDetailsView?
 
 Sellable:
@@ -57,6 +53,13 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Two-player mode?   (set a seed)
 
 =====
+2026-07-20 - Alternate Definition Sources
+
+Dictionary lookup
+* Link to https://en.wiktionary.org/wiki/chrematist#English (e.g.) if not found
+* Link("Button name", destination: URL(string: "some url"))
+* Add link for Wiktionary or search engine
+
 2026-07-01 - Definitions At Last
 * [offline] Separated a model package
 * Display the parts of speech and the definitions

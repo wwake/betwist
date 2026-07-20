@@ -33,3 +33,9 @@ extension Button {
     self.modifier(ButtonCircleModifier())
   }
 }
+
+extension View {
+  func capsuled() -> some View {
+    self.modifier(ButtonCapsuleModifier())
+  }
+}

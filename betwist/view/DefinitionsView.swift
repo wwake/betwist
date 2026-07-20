@@ -12,6 +12,14 @@ struct DefinitionsView: View {
   @State var definitionState = DefinitionState.idle
   @State var definitions = [WordEntry]()
 
+  fileprivate func asWiktionaryLink(_ word: String) -> URL {
+    URL(string: "https://en.wiktionary.org/wiki/\(word.lowercased())#English")!
+  }
+
+  fileprivate func asDuckDuckGoLink(_ word: String) -> URL {
+    URL(string: "https://duckduckgo.com/\(word.lowercased())")!
+  }
+
   fileprivate func definitionsView() -> some View {
     VStack(alignment: .leading) {
       ForEach(definitions, id: \.self) { entry in
@@ -69,7 +77,18 @@ struct DefinitionsView: View {
               systemImage: "exclamationmark.triangle"
             )
           } description: {
-            Text("Try searching Wiktionary or on the web generally.")
+            Text("'\(word)' is a real word, but our dictionary doesn't know it.")
+
+            VStack {
+              Link("Look on Wiktionary", destination: asWiktionaryLink(word))
+                .frame(maxWidth: .infinity)
+                .capsuled()
+
+              Link("Look on DuckDuckGo", destination: asDuckDuckGoLink(word))
+                .frame(maxWidth: .infinity)
+                .capsuled()
+            }
+            .fixedSize(horizontal: true, vertical: false)
           }
 
         case .data:
