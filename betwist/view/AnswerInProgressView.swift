@@ -8,12 +8,20 @@ struct AnswerInProgressView: View {
   var progress: Double
   var height: Double
 
-  var action: () -> Void
+  var acceptWord: () -> Void
 
   var body: some View {
     HStack {
-      Text("   ")
-        .accessibilityHidden(true)
+      Button {
+        print("hi")
+      } label: {
+        Image(systemName: "info.circle.fill")
+          .accessibilityLabel(Text("Instructions"))
+          .font(.largeTitle)
+          .background(.buttonForeground)
+          .tint(.accent)
+          .clipShape(Circle())
+      }
 
       Text(game.answer)
         .font(.largeTitle)
@@ -28,11 +36,11 @@ struct AnswerInProgressView: View {
         .scaleEffect(1 - 0.1 * progress)
         .accessibilityAddTraits(.isButton)
         .onTapGesture {
-          action()
+          acceptWord()
         }
 
       Button {
-        action()
+        acceptWord()
       } label: {
         Image(systemName: "checkmark.circle.fill")
           .accessibilityLabel(Text("Enter"))
@@ -42,7 +50,7 @@ struct AnswerInProgressView: View {
           .clipShape(Circle())
       }
     }
-    .padding(.trailing, 2)
+    .padding([.leading, .trailing], 4)
     .padding(.bottom, 8)
   }
 }

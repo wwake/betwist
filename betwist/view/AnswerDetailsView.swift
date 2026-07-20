@@ -28,6 +28,9 @@ struct AnswerDetailsView: View {
 
   var body: some View {
     VStack {
+      Text("Game Over")
+        .font(.title2)
+
       StatisticsView(statistics: statistics)
         .font(.title3)
 
