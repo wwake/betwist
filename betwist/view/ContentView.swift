@@ -15,6 +15,7 @@ public struct ContentView: View {
   @Binding var game: Game
 
   @State private var showAnswers = false
+  @State private var showOnboarding = false
 
   public init(game: Binding<Game>) {
     self._game = game
@@ -55,7 +56,8 @@ public struct ContentView: View {
               geometry: geometry,
               game: $game,
               collectWord: collectWord,
-              handleSelection: handleSelection
+              handleSelection: handleSelection,
+              showOnboarding: { showOnboarding = true },
             )
 
           default:
@@ -63,7 +65,8 @@ public struct ContentView: View {
               geometry: geometry,
               game: $game,
               collectWord: collectWord,
-              handleSelection: handleSelection
+              handleSelection: handleSelection,
+              showOnboarding: { showOnboarding = true },
             )
           }
         }
@@ -79,6 +82,9 @@ public struct ContentView: View {
             fatalError("Unknown game mode \(game.mode)")
           }
         }
+      }
+      .sheet(isPresented: $showOnboarding) {
+        OnboardingView()
       }
     }
   }

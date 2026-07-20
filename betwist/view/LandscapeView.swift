@@ -6,6 +6,7 @@ struct LandscapeView: View {
   @Binding var game: Game
   var collectWord: () -> Void
   var handleSelection: (Location) -> Void
+  var showOnboarding: () -> Void
 
   @State private var showAnswers = false
   @State private var progress = 0.0
@@ -13,9 +14,13 @@ struct LandscapeView: View {
   func boardView() -> some View {
     HStack(alignment: .top) {
       VStack {
-        AnswerInProgressView(game: game, progress: progress, height: 500) {
-          collectWord()
-        }
+        AnswerInProgressView(
+          game: game,
+          progress: progress,
+          height: 500,
+          showOnboarding: { showOnboarding() },
+          acceptWord: { collectWord() },
+        )
 
         VStack(spacing: 8) {
           MessageView(message: game.message)

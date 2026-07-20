@@ -8,12 +8,13 @@ struct AnswerInProgressView: View {
   var progress: Double
   var height: Double
 
+  var showOnboarding: () -> Void
   var acceptWord: () -> Void
 
   var body: some View {
     HStack {
       Button {
-        print("hi")
+        showOnboarding()
       } label: {
         Image(systemName: "info.circle.fill")
           .accessibilityLabel(Text("Instructions"))

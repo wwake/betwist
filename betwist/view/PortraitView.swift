@@ -6,6 +6,7 @@ struct PortraitView: View {
   @Binding var game: Game
   var collectWord: () -> Void
   var handleSelection: (Location) -> Void
+  var showOnboarding: () -> Void
 
   @State private var showAnswers = false
   @State private var progress = 0.0
@@ -33,9 +34,13 @@ struct PortraitView: View {
         .font(.title)
         .frame(maxWidth: .infinity, minHeight: 40)
 
-      AnswerInProgressView(game: game, progress: progress, height: 500) {
-        collectWord()
-      }
+      AnswerInProgressView(
+        game: game,
+        progress: progress,
+        height: 500,
+        showOnboarding: showOnboarding,
+        acceptWord: { collectWord() }
+      )
 
       ScrollView {
         HStack(alignment: .top) {
