@@ -1,7 +1,6 @@
-import model
 import SwiftUI
 
-struct ButtonCapsuleModifier: ViewModifier {
+struct CapsuleModifier: ViewModifier {
   func body(content: Content) -> some View {
     content
       .bold()
@@ -13,7 +12,7 @@ struct ButtonCapsuleModifier: ViewModifier {
   }
 }
 
-struct ButtonCircleModifier: ViewModifier {
+struct CircleModifier: ViewModifier {
   func body(content: Content) -> some View {
     content
       .bold()
@@ -24,18 +23,12 @@ struct ButtonCircleModifier: ViewModifier {
   }
 }
 
-extension Button {
+extension View {
   func capsuled() -> some View {
-    self.modifier(ButtonCapsuleModifier())
+    self.modifier(CapsuleModifier())
   }
 
   func circled() -> some View {
-    self.modifier(ButtonCircleModifier())
-  }
-}
-
-extension View {
-  func capsuled() -> some View {
-    self.modifier(ButtonCapsuleModifier())
+    self.modifier(CircleModifier())
   }
 }

@@ -85,6 +85,7 @@ public struct ContentView: View {
       }
       .sheet(isPresented: $showOnboarding) {
         OnboardingView()
+          .presentationBackground(Color.accent)
       }
     }
   }

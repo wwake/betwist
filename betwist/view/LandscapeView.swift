@@ -18,7 +18,7 @@ struct LandscapeView: View {
           game: game,
           progress: progress,
           height: 500,
-          showOnboarding: { showOnboarding() },
+          showOnboarding: showOnboarding,
           acceptWord: { collectWord() },
         )
 

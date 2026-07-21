@@ -1,5 +1,8 @@
+* Close button
+* Build a carousel for onboarding instructions
+* Package images for onboarding
+Onboarding
 
-* Show "Game over" on AnswerDetailsView?
 
 Sellable:
 * Analytics SDK
@@ -54,6 +57,11 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 
 =====
 2026-07-20 - Alternate Definition Sources
+Onboarding
+* Created a paged tab view with marker dots, slide ability
+
+Answers:
+* Show "Game over" on AnswerDetailsView
 
 Dictionary lookup
 * Link to https://en.wiktionary.org/wiki/chrematist#English (e.g.) if not found
