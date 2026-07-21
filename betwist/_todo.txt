@@ -1,8 +1,6 @@
-* Close button
-* Build a carousel for onboarding instructions
 * Package images for onboarding
+* Start with onboarding on first run
 Onboarding
-
 
 Sellable:
 * Analytics SDK
@@ -56,6 +54,11 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Two-player mode?   (set a seed)
 
 =====
+2026-07-21 - Onboarding
+* Close button
+* Showed images on carousel
+* Start creating onboarding images
+
 2026-07-20 - Alternate Definition Sources
 Onboarding
 * Created a paged tab view with marker dots, slide ability
