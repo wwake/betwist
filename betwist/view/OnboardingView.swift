@@ -4,8 +4,9 @@ struct OnboardingView: View {
   @Environment(\.dismiss)
   var dismiss
 
+  var images: [(ImageResource, String)]
+
   @State private var selection = 0
-  private static let lastPage = 7
 
   var body: some View {
     HStack {
@@ -18,40 +19,12 @@ struct OnboardingView: View {
       .foregroundStyle(selection == 0 ? .gray : .black)
 
       TabView(selection: $selection) {
-        Image(.onboardTitle)
-          .onboard()
-          .tag(0)
-          .accessibilityLabel("Betwist - Finding words with a twist. The letters are in a repeating grid")
-
-        Image(.onboardFormWord)
-          .onboard()
-          .tag(1)
-          .accessibilityLabel("Tap neighbors to build a word")
-
-        Image(.onboardUndo)
-          .onboard()
-          .tag(2)
-          .accessibilityLabel("Tap an earlier letter to undo")
-
-        Image(.onboardScore)
-          .onboard()
-          .tag(3)
-          .accessibilityLabel("Tap the last letter twice to score. You get credit for shorter words too!")
-
-        Image(.onboardTwist)
-          .onboard()
-          .tag(4)
-          .accessibilityLabel("Tap a twist button if you get stuck")
-
-        Image(.onboardReveal)
-          .onboard()
-          .tag(5)
-          .accessibilityLabel("'Reveal' shows words you and the system found")
-
-        Image(.onboardDefinition)
-          .onboard()
-          .tag(6)
-          .accessibilityLabel("Tap the magnifying glass to see a definition (if we have it)")
+        ForEach(images.enumerated(), id: \.0) { n, imagePair in
+          Image(imagePair.0)
+            .onboard()
+            .tag(n)
+            .accessibilityLabel(imagePair.1)
+        }
 
         VStack {
           Text("Have fun!")
@@ -61,7 +34,7 @@ struct OnboardingView: View {
           Button("Play") { dismiss() }
             .capsuled()
         }
-        .tag(7)
+        .tag(images.count)
       }
       .indexViewStyle(.page(backgroundDisplayMode: .always))
       .tabViewStyle(.page)
@@ -71,8 +44,8 @@ struct OnboardingView: View {
       }
       .labelStyle(.iconOnly)
       .font(.title)
-      .disabled(selection == Self.lastPage)
-      .foregroundStyle(selection == Self.lastPage ? .gray : .black)
+      .disabled(selection == images.count)
+      .foregroundStyle(selection == images.count ? .gray : .black)
     }
     .foregroundStyle(.black)
     .padding([.leading, .trailing], 8)
@@ -97,5 +70,5 @@ extension Image {
 }
 
 #Preview {
-  OnboardingView()
+  OnboardingView(images: [(.onboardTitle, "acc")])
 }

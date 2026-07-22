@@ -17,6 +17,16 @@ public struct ContentView: View {
   @State private var showAnswers = false
   @State private var showOnboarding = false
 
+  static let onboardImages: [(ImageResource, String)] = [
+    (.onboardTitle, "Betwist - Finding words with a twist. The letters are in a repeating grid."),
+    (.onboardFormWord, "Tap neighbors to build a word"),
+    (.onboardUndo, "Tap an earlier letter to undo"),
+    (.onboardScore, "Tap the last letter twice to score. You get credit for shorter words too!"),
+    (.onboardTwist, "Tap a twist button if you get stuck"),
+    (.onboardReveal, "'Reveal' shows words you and the system found"),
+    (.onboardDefinition, "Tap the magnifying glass to see a definition (if we have it)"),
+  ]
+
   public init(game: Binding<Game>) {
     self._game = game
   }
@@ -84,8 +94,8 @@ public struct ContentView: View {
         }
       }
       .sheet(isPresented: $showOnboarding) {
-        OnboardingView()
-          .presentationBackground(Color.accent.opacity(0.33))
+        OnboardingView(images: Self.onboardImages)
+          .presentationBackground(Color.accent.opacity(0.5))
       }
     }
   }
