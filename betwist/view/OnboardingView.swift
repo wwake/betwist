@@ -48,7 +48,7 @@ struct OnboardingView: View {
       .foregroundStyle(selection == images.count ? .gray : .black)
     }
     .foregroundStyle(.black)
-    .padding([.leading, .trailing], 8)
+    .padding([.leading, .trailing], 12)
     .overlay(
       Button("Close", systemImage: "xmark") { dismiss() }
         .labelStyle(.iconOnly)

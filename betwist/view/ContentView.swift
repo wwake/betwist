@@ -12,9 +12,13 @@ public struct ContentView: View {
   @Environment(\.horizontalSizeClass)
   var horizontalSizeClass
 
+  @AppStorage("priorVersion")
+  var priorVersion: String = ""
+
   @Binding var game: Game
 
   @State private var showAnswers = false
+
   @State private var showOnboarding = false
 
   static let onboardImages: [(ImageResource, String)] = [
@@ -29,6 +33,14 @@ public struct ContentView: View {
 
   public init(game: Binding<Game>) {
     self._game = game
+  }
+
+  fileprivate func getVersion() -> String {
+    Bundle.main.infoDictionary!["CFBundleShortVersionString"]! as! String
+  }
+
+  func onboard() {
+    showOnboarding = true
   }
 
   fileprivate func handleSelection(_ location: Location) {
@@ -67,7 +79,7 @@ public struct ContentView: View {
               game: $game,
               collectWord: collectWord,
               handleSelection: handleSelection,
-              showOnboarding: { showOnboarding = true },
+              showOnboarding: onboard,
             )
 
           default:
@@ -76,7 +88,7 @@ public struct ContentView: View {
               game: $game,
               collectWord: collectWord,
               handleSelection: handleSelection,
-              showOnboarding: { showOnboarding = true },
+              showOnboarding: onboard,
             )
           }
         }
@@ -96,6 +108,11 @@ public struct ContentView: View {
       .sheet(isPresented: $showOnboarding) {
         OnboardingView(images: Self.onboardImages)
           .presentationBackground(Color.accent.opacity(0.5))
+      }
+      .onAppear {
+        let currentVersion = getVersion()
+        showOnboarding = priorVersion != currentVersion
+        priorVersion = currentVersion
       }
     }
   }

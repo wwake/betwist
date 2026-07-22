@@ -1,15 +1,15 @@
-* Arrows
-* Package images for onboarding
-* Start with onboarding on first run
-Onboarding
+* Animate the twist buttons after inactivity?
 
-Sellable:
-* Analytics SDK
-
-* Onboarding
+* Some color at least on word list and definitions
 
 * Payment (99c game? IAP - 20 games free, then 99c => 1000 or else board is 3x3 no infinite; free limited version, full paid version)
 * https://developer.apple.com/documentation/storekit/in-app-purchase
+
+* Package images for onboarding
+Onboarding
+
+Sellable:
+* Analytics SDK - doubtful
 
 
 * Do we need the dice in GameGenerator? Or just generate a random string.
@@ -20,7 +20,6 @@ Sellable:
 Inactivity:
 * Start with a random(?) letter selected? or after inactivity if nothing selected
 * Flash random locations after inactivity?
-* Animate the twist buttons after inactivity?
 
 * Can we avoid translations by centering our grid?
 
@@ -54,7 +53,14 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 
 * Two-player mode?   (set a seed)
 
+* Let people post seed + scores
+
 =====
+2026-07-22 - More Onboarding
+* Arrows to move between pages
+* Start with onboarding on first run (when version != prior version)
+
+
 2026-07-21 - Onboarding
 * Close button
 * Showed images on carousel
