@@ -4,38 +4,78 @@ struct OnboardingView: View {
   @Environment(\.dismiss)
   var dismiss
 
+  @State private var selection = 0
+  private static let lastPage = 7
+
   var body: some View {
-    TabView {
-      Image(.onboardTitle)
-        .onboard()
-        .accessibilityLabel("Betwist - Finding words with a twist. The letters are in a repeating grid")
+    HStack {
+      Button("Previous", systemImage: "arrowtriangle.left.fill") {
+        selection -= 1
+      }
+      .labelStyle(.iconOnly)
+      .font(.title)
+      .disabled(selection == 0)
+      .foregroundStyle(selection == 0 ? .gray : .black)
 
-      Image(.onboardFormWord)
-        .onboard()
-        .accessibilityLabel("Tap neighbors to build a word")
+      TabView(selection: $selection) {
+        Image(.onboardTitle)
+          .onboard()
+          .tag(0)
+          .accessibilityLabel("Betwist - Finding words with a twist. The letters are in a repeating grid")
 
-      Image(.onboardUndo)
-        .onboard()
-        .accessibilityLabel("Tap an earlier letter to undo")
+        Image(.onboardFormWord)
+          .onboard()
+          .tag(1)
+          .accessibilityLabel("Tap neighbors to build a word")
 
-      Image(.onboardScore)
-        .onboard()
-        .accessibilityLabel("Tap the last letter twice to score. You get credit for shorter words too!")
+        Image(.onboardUndo)
+          .onboard()
+          .tag(2)
+          .accessibilityLabel("Tap an earlier letter to undo")
 
-      Image(.onboardTwist)
-        .onboard()
-        .accessibilityLabel("Tap a twist button if you get stuck")
+        Image(.onboardScore)
+          .onboard()
+          .tag(3)
+          .accessibilityLabel("Tap the last letter twice to score. You get credit for shorter words too!")
 
-      Image(.onboardReveal)
-        .onboard()
-        .accessibilityLabel("'Reveal' shows words you and the system found")
+        Image(.onboardTwist)
+          .onboard()
+          .tag(4)
+          .accessibilityLabel("Tap a twist button if you get stuck")
 
-      Image(.onboardDefinition)
-        .onboard()
-        .accessibilityLabel("Tap the magnifying glass to see a definition (if we have it)")
+        Image(.onboardReveal)
+          .onboard()
+          .tag(5)
+          .accessibilityLabel("'Reveal' shows words you and the system found")
+
+        Image(.onboardDefinition)
+          .onboard()
+          .tag(6)
+          .accessibilityLabel("Tap the magnifying glass to see a definition (if we have it)")
+
+        VStack {
+          Text("Have fun!")
+            .font(.title2)
+            .padding(.bottom, 16)
+
+          Button("Play") { dismiss() }
+            .capsuled()
+        }
+        .tag(7)
+      }
+      .indexViewStyle(.page(backgroundDisplayMode: .always))
+      .tabViewStyle(.page)
+
+      Button("Next", systemImage: "arrowtriangle.right.fill") {
+        selection += 1
+      }
+      .labelStyle(.iconOnly)
+      .font(.title)
+      .disabled(selection == Self.lastPage)
+      .foregroundStyle(selection == Self.lastPage ? .gray : .black)
     }
-    .indexViewStyle(.page(backgroundDisplayMode: .always))
-    .tabViewStyle(.page)
+    .foregroundStyle(.black)
+    .padding([.leading, .trailing], 8)
     .overlay(
       Button("Close", systemImage: "xmark") { dismiss() }
         .labelStyle(.iconOnly)

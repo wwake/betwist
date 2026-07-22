@@ -85,7 +85,7 @@ public struct ContentView: View {
       }
       .sheet(isPresented: $showOnboarding) {
         OnboardingView()
-          .presentationBackground(Color.accent)
+          .presentationBackground(Color.accent.opacity(0.33))
       }
     }
   }
