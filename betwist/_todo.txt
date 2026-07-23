@@ -1,10 +1,15 @@
+* Count the number of games played (app storage)
+* "n free games remaining"
+* Detect the max # of free games
+* IAP a permanent unlock after exceeding limit
+
+* Payment ($4.99 game? IAP - 20 games free, then $4.99 => 1000 or else board is 3x3 no infinite; free limited version, full paid version)
+* https://developer.apple.com/documentation/storekit/in-app-purchase
+Purchase
 
 * Some color at least on word list and definitions
 
-* Payment (99c game? IAP - 20 games free, then 99c => 1000 or else board is 3x3 no infinite; free limited version, full paid version)
-* https://developer.apple.com/documentation/storekit/in-app-purchase
-
-* Package images for onboarding
+* Improve images for onboarding
 Onboarding
 
 Sellable:
@@ -56,7 +61,11 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 
 =====
 2026-07-23 - Sparkle
+Sparkle
 * Animate the twist buttons periodically (shimmer effect)
+
+Purchase
+
 
 2026-07-22 - More Onboarding
 * Arrows to move between pages

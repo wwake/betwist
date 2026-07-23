@@ -23,6 +23,8 @@ public struct Game {
 
   private var hues: [Double]
 
+  public static var timesPlayed = 0
+
   public init(_ size: Int, _ source: any Sequence<String>, _ vocabulary: Vocabulary) {
     self.grid = LetterGrid(size, Array(source))
 
@@ -148,8 +150,9 @@ public struct Game {
   }
 
   public mutating func over() {
+    Self.timesPlayed += 1
     selection.clear()
-    message = "Game Over"
+    message = "Games played: \(Self.timesPlayed)"
     mode = .review
   }
 }

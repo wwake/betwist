@@ -92,18 +92,6 @@ public struct ContentView: View {
             )
           }
         }
-        .onChange(of: game.mode) { _, new in
-          switch new {
-          case .play:
-            game.start()
-
-          case .review:
-            game.over()
-
-          @unknown default:
-            fatalError("Unknown game mode \(game.mode)")
-          }
-        }
       }
       .sheet(isPresented: $showOnboarding) {
         OnboardingView(images: Self.onboardImages)

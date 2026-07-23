@@ -43,7 +43,7 @@ struct AGame {
   }
 
   @Test
-  func `finishing a game clears the selection`() {
+  func `finishing a game resets it`() {
     var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
     sut.select(Location(0, 0))
 
@@ -51,7 +51,7 @@ struct AGame {
 
     #expect(sut.mode == .review)
     #expect(!sut.hasSelection)
-    #expect(sut.message == "Game Over")
+    #expect(sut.message == "Games played: \(Game.timesPlayed)")
   }
 
   @Test
@@ -223,5 +223,16 @@ struct AGame {
     sut.submit(sut.answer)
 
     #expect(sut.statistics == Statistics(wordCount: 1, letterCount: 4, mostLetters: 4))
+  }
+
+  @Test
+  func `completing a game increments timesPlayed`() async throws {
+    var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
+    let initialTimesPlayed = Game.timesPlayed
+
+    sut.over()
+
+    #expect(Game.timesPlayed == initialTimesPlayed + 1)
+    #expect(sut.message == "Games played: \(Game.timesPlayed)")
   }
 }
