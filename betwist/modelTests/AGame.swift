@@ -269,4 +269,14 @@ struct AGame {
     sut.over()
     #expect(sut.message == "0 free game(s) left")
   }
+
+  @Test(.disabled())
+  func `mode is 'buy' when out of free games`() async throws {
+    var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
+    Game.timesPlayed = Game.maxFreeGames
+
+    sut.over()
+
+    #expect(sut.mode == .buy)
+  }
 }

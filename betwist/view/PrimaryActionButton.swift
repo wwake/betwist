@@ -1,22 +1,25 @@
 import model
 import SwiftUI
 
-struct NewGameButton: View {
+struct PrimaryActionButton: View {
   @Binding var game: Game
 
   @Binding var showAnswers: Bool
 
   var body: some View {
     Group {
-      if game.mode == .play {
-        Button("Reveal...") {
+      switch game.mode {
+      case .play:
+        Button("End Game...") {
           withAnimation {
             showAnswers = true
           }
           game.over()
         }
         .capsuled()
-      } else {
+        .foregroundStyle(.red)
+
+      case .review:
         Button("New Game") {
           withAnimation {
             showAnswers = false
@@ -25,6 +28,15 @@ struct NewGameButton: View {
           game.start()
         }
         .capsuled()
+
+      case .buy:
+        Button("Buy") {
+          print("buy")
+        }
+        .capsuled()
+
+      @unknown default:
+        fatalError("PrimaryActionButton - unexpected case \(game.mode)")
       }
     }
   }

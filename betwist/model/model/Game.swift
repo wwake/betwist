@@ -1,6 +1,7 @@
 public enum GameMode {
   case play
   case review
+  case buy
 }
 
 public struct Game {
@@ -146,8 +147,8 @@ public struct Game {
   }
 
   public mutating func start() {
-    Self.timesPlayed += 1
     message = ""
+    Self.timesPlayed += 1
     mode = .play
   }
 

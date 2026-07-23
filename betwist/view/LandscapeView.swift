@@ -36,7 +36,7 @@ struct LandscapeView: View {
 
           Spacer()
 
-          NewGameButton(game: $game, showAnswers: $showAnswers)
+          PrimaryActionButton(game: $game, showAnswers: $showAnswers)
             .font(.title)
             .padding([.bottom], 20)
         }
