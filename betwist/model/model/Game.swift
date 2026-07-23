@@ -145,12 +145,12 @@ public struct Game {
   }
 
   public mutating func start() {
+    Self.timesPlayed += 1
     message = ""
     mode = .play
   }
 
   public mutating func over() {
-    Self.timesPlayed += 1
     selection.clear()
     message = "Games played: \(Self.timesPlayed)"
     mode = .review
