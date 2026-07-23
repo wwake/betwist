@@ -25,6 +25,7 @@
 		91489A412FF591DA0060C5F4 /* TrieGenerator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		91489A5F2FF596B80060C5F4 /* view.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91489A012FF5917F0060C5F4 /* view.framework */; };
 		91489A602FF596B80060C5F4 /* view.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91489A012FF5917F0060C5F4 /* view.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		91A5C75330111F33007EE373 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 91A5C75230111F33007EE373 /* Shimmer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -255,6 +256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A5C75330111F33007EE373 /* Shimmer in Frameworks */,
 				91489A402FF591DA0060C5F4 /* TrieGenerator.framework in Frameworks */,
 				91489A3B2FF591D70060C5F4 /* model.framework in Frameworks */,
 			);
@@ -479,6 +481,7 @@
 			);
 			name = view;
 			packageProductDependencies = (
+				91A5C75230111F33007EE373 /* Shimmer */,
 			);
 			productName = view;
 			productReference = 91489A012FF5917F0060C5F4 /* view.framework */;
@@ -607,6 +610,7 @@
 			packageReferences = (
 				91FA96A22C8144FF0011BB7F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 				9181F09F2CA34E610091A771 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				91A5C75130111F33007EE373 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
 			);
 			productRefGroup = 91FA96702C81333A0011BB7F /* Products */;
 			projectDirPath = "";
@@ -1581,6 +1585,14 @@
 				minimumVersion = 1.2.0;
 			};
 		};
+		91A5C75130111F33007EE373 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.1;
+			};
+		};
 		91FA96A22C8144FF0011BB7F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
@@ -1601,6 +1613,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 91FA96A22C8144FF0011BB7F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
 			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		91A5C75230111F33007EE373 /* Shimmer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91A5C75130111F33007EE373 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */;
+			productName = Shimmer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

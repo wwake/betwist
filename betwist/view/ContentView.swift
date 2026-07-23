@@ -66,8 +66,8 @@ public struct ContentView: View {
       ZStack {
         LinearGradient(
           colors: [Color(.backgroundStart), Color(.backgroundEnd)],
-          startPoint: .top,
-          endPoint: .bottom
+          startPoint: .topLeading,
+          endPoint: .bottomTrailing
         )
         .ignoresSafeArea()
 
