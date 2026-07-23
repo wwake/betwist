@@ -1,6 +1,10 @@
-* Count the number of games played (app storage)
-* "n free games remaining"
+
+* Show words only shows system words in the review state
+
 * Detect the max # of free games
+* App storage?
+* Enter the 'buy' state
+* Handle the Buy button ("Get More Games...")
 * IAP a permanent unlock after exceeding limit
 
 * Payment ($4.99 game? IAP - 20 games free, then $4.99 => 1000 or else board is 3x3 no infinite; free limited version, full paid version)
@@ -69,7 +73,11 @@ Sparkle
 * Animate the twist buttons periodically (shimmer effect)
 
 Purchase
+* Count the number of games played (app storage)
+* "n free games remaining"
 
+State Management
+* Make "Show Words" available any time
 
 2026-07-22 - More Onboarding
 * Arrows to move between pages

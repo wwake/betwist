@@ -17,7 +17,6 @@ struct PrimaryActionButton: View {
           game.over()
         }
         .capsuled()
-        .foregroundStyle(.red)
 
       case .review:
         Button("New Game") {

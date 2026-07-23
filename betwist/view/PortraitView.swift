@@ -59,8 +59,18 @@ struct PortraitView: View {
 
       Spacer()
 
-      PrimaryActionButton(game: $game, showAnswers: $showAnswers)
-        .padding([.top, .bottom], 8)
+      HStack {
+        PrimaryActionButton(
+          game: $game,
+          showAnswers: $showAnswers
+        )
+
+        Button("Show Words...") {
+          showAnswers = true
+        }
+        .capsuled()
+      }
+      .padding([.top, .bottom], 8)
     }
   }
 

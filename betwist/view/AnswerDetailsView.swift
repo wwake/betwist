@@ -45,7 +45,7 @@ struct AnswerDetailsView: View {
           .frame(maxWidth: .infinity)
       }
 
-      Button("Done") {
+      Button("Back") {
         withAnimation {
           showAnswers = false
         }
