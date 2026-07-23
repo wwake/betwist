@@ -56,13 +56,14 @@ struct AGame {
   @Test
   func `finishing a game resets it`() {
     var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
+    Game.timesPlayed = 1
     sut.select(Location(0, 0))
 
     sut.over()
 
     #expect(sut.mode == .review)
     #expect(!sut.hasSelection)
-    #expect(sut.message == "Games played: 1")
+    #expect(sut.message == "19 free game(s) left")
   }
 
   @Test
@@ -235,5 +236,37 @@ struct AGame {
     sut.submit(sut.answer)
 
     #expect(sut.statistics == Statistics(wordCount: 1, letterCount: 4, mostLetters: 4))
+  }
+
+  @Test
+  func `message tells # of free games remaining`() {
+    var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
+    Game.timesPlayed = 1
+    sut.over()
+    #expect(sut.message == "\(Game.maxFreeGames - 1) free game(s) left")
+  }
+
+  @Test
+  func `message knows when 1 free game remaining`() {
+    var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
+    Game.timesPlayed = Game.maxFreeGames - 1
+    sut.over()
+    #expect(sut.message == "1 free game(s) left")
+  }
+
+  @Test
+  func `message knows when 0 free game remaining`() {
+    var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
+    Game.timesPlayed = Game.maxFreeGames
+    sut.over()
+    #expect(sut.message == "0 free game(s) left")
+  }
+
+  @Test
+  func `message reports 0 free game remaining when limit exceeded`() {
+    var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
+    Game.timesPlayed = Game.maxFreeGames + 1
+    sut.over()
+    #expect(sut.message == "0 free game(s) left")
   }
 }

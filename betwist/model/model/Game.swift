@@ -8,6 +8,7 @@ public struct Game {
   public static let minimumSize = 4
   public static let minimumSystemAnswerSize = 6
   public static let maxPuzzleSize = 25
+  public static let maxFreeGames = 20
 
   public var mode = GameMode.play
 
@@ -150,9 +151,15 @@ public struct Game {
     mode = .play
   }
 
+  func gameOverMessage() -> String {
+    let freeGamesRemaining = max(0, Self.maxFreeGames - Self.timesPlayed)
+
+    return "\(freeGamesRemaining) free game(s) left"
+  }
+
   public mutating func over() {
     selection.clear()
-    message = "Games played: \(Self.timesPlayed)"
+    message = gameOverMessage()
     mode = .review
   }
 }
