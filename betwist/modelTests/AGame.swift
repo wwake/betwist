@@ -19,6 +19,7 @@ struct AGame {
     let sut = Game(2, ["A", "B", "C", "D"])
     #expect(sut.mode == .play)
     #expect(sut.message.isEmpty)
+    #expect(Game.timesPlayed == 1)
   }
 
   @Test
@@ -57,7 +58,6 @@ struct AGame {
     var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
     sut.select(Location(0, 0))
 
-    sut.start()
     sut.over()
 
     #expect(sut.mode == .review)
@@ -121,12 +121,13 @@ struct AGame {
   }
 
   @Test
-  func `validating empty word gets no message`() {
+  func `validating empty word leaves message unchanged`() {
     var sut = Game(2, ["A", "B", "C", "D"])
 
+    sut.message = "SOME MESSAGE"
     sut.validate()
 
-    #expect(sut.message.isEmpty)
+    #expect(sut.message == "SOME MESSAGE")
   }
 
   @Test

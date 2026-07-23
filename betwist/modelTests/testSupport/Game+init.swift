@@ -3,6 +3,6 @@
 extension Game {
   public init(_ size: Int, _ source: any Sequence<String>) {
     self.init(size, source, NullVocabulary())
-    Self.timesPlayed = 0
+    Self.timesPlayed = 1
   }
 }

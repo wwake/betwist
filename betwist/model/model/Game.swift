@@ -19,11 +19,11 @@ public struct Game {
 
   public var vocabulary: Vocabulary
 
+  public static var timesPlayed = 1
+
   public var message = ""
 
   private var hues: [Double]
-
-  public static var timesPlayed = 0
 
   public init(_ size: Int, _ source: any Sequence<String>, _ vocabulary: Vocabulary) {
     self.grid = LetterGrid(size, Array(source))

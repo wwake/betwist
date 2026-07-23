@@ -59,6 +59,8 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 
 * Let people post seed + scores
 
+* Daily challenge ala Wordle
+
 =====
 2026-07-23 - Sparkle
 Sparkle
