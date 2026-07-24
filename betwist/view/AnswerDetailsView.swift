@@ -45,12 +45,13 @@ struct AnswerDetailsView: View {
           .frame(maxWidth: .infinity)
       }
 
-      Button("Back") {
-        withAnimation {
-          showAnswers = false
+        Button("Back") {
+          withAnimation {
+            showAnswers = false
+          }
         }
-      }
-      .capsuled()
+        .capsuled()
+        .frame(width: 100)
     }
     .padding()
     .background(Color.white)

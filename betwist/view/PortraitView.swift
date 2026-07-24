@@ -71,6 +71,7 @@ struct PortraitView: View {
         .capsuled()
       }
       .padding([.top, .bottom], 8)
+      .padding([.leading, .trailing], 24)
     }
   }
 

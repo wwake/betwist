@@ -1,13 +1,16 @@
 import SwiftUI
 
 struct CapsuleModifier: ViewModifier {
+  var backgroundColor: Color
+
   func body(content: Content) -> some View {
     content
       .bold()
+      .frame(minWidth: 0, maxWidth: .infinity)
       .padding([.top, .bottom], 6)
       .padding([.leading, .trailing], 16)
       .foregroundStyle(.buttonForeground)
-      .background(.accent)
+      .background(backgroundColor)
       .cornerRadius(10)
   }
 }
@@ -24,8 +27,8 @@ struct CircleModifier: ViewModifier {
 }
 
 extension View {
-  func capsuled() -> some View {
-    self.modifier(CapsuleModifier())
+  func capsuled(_ background: Color = .accent) -> some View {
+    self.modifier(CapsuleModifier(backgroundColor: background))
   }
 
   func circled() -> some View {

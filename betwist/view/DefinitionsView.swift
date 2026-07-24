@@ -109,11 +109,11 @@ struct DefinitionsView: View {
 
       Spacer()
 
-      Button("Done") {
+      Button("Back") {
         dismiss()
       }
       .capsuled()
-      .frame(alignment: .center)
+      .frame(width: 100, alignment: .center)
     }
     .foregroundStyle(.black)
     .padding(12)

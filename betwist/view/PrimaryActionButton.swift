@@ -16,7 +16,7 @@ struct PrimaryActionButton: View {
           }
           game.over()
         }
-        .capsuled()
+        .capsuled(.red)
 
       case .review:
         Button("New Game") {
