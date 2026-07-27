@@ -3,6 +3,10 @@ public enum GameMode {
   case review
 }
 
+public enum GuessStatus {
+  case ok, tooShort, duplicate, nonWord
+}
+
 public struct Game {
   public static let defaultSize = 5
   public static let minimumSize = 4
@@ -22,6 +26,7 @@ public struct Game {
   public static var timesPlayed = 1
 
   public var message = ""
+  public var guessStatus = GuessStatus.ok
 
   private var hues: [Double]
 
@@ -94,6 +99,18 @@ public struct Game {
   }
 
   mutating func validate() {
+    if answer.count == 0 {
+      guessStatus = .ok
+    } else if answer.count < Self.minimumSize {
+      guessStatus = .tooShort
+    } else if answers.contains(answer) {
+      guessStatus = .duplicate
+    } else if !vocabulary.contains(answer) {
+      guessStatus = .nonWord
+    } else {
+      guessStatus = .ok
+    }
+
     if answer.count == 0 { return }
 
     if answer.count < Self.minimumSize {

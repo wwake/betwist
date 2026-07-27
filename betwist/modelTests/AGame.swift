@@ -151,7 +151,7 @@ struct AGame {
 
     sut.validate()
 
-    #expect(sut.message == "Too short!")
+    #expect(sut.guessStatus == .tooShort)
   }
 
   @Test
@@ -164,11 +164,11 @@ struct AGame {
 
     sut.validate()
 
-    #expect(sut.message == "Not a word!")
+    #expect(sut.guessStatus == .nonWord)
   }
 
   @Test
-  func validating_duplicate_word_gets_a_message() {
+  func validating_duplicate_word_is_detected() {
     var sut = Game(2, ["A", "B", "C", "D"], Vocabulary(["ABCD"]))
     sut.select(Location(0, 0))
     sut.select(Location(0, 1))
@@ -182,7 +182,7 @@ struct AGame {
 
     sut.validate()
 
-    #expect(sut.message == "Duplicate!")
+    #expect(sut.guessStatus == .duplicate)
   }
 
   @Test
