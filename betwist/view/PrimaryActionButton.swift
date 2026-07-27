@@ -26,10 +26,10 @@ struct PrimaryActionButton: View {
           game = Game(game.size, GameGenerator(game.size).make(), game.vocabulary)
           game.start()
         }
-        .capsuled()
+        .capsuled(.red)
 
       case .buy:
-        Button("Buy") {
+        Button("Buy...") {
           print("buy")
         }
         .capsuled()

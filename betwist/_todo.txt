@@ -68,6 +68,10 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * After N games, you start with a "hint token" - the first 5 letters of a longer word already marked.
 
 =====
+2026-07-27 - Rework Review
+* Make system answers show only when game is over
+* Refactor: make YouFound view and system view the same
+
 2026-07-23 - Sparkle
 Sparkle
 * Animate the twist buttons periodically (shimmer effect)

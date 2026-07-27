@@ -14,9 +14,6 @@ struct AnswerDetailsView: View {
       Text("System Found")
         .font(.title2)
 
-      Text("6+ letters only")
-        .font(.footnote)
-
       if answers.isEmpty {
         Text("(None yet)")
           .font(.footnote)
@@ -41,21 +38,32 @@ struct AnswerDetailsView: View {
         .font(.title3)
 
       HStack {
-        YouFoundView(answers: answers)
+        AnswersView(
+          whoFound: "You",
+          minimumWordSize: 4,
+          answers: answers,
+          matchingAnswers: Answers()
+        )
           .frame(maxWidth: .infinity)
 
         Divider()
           .frame(width: 2)
 
-        wordsSystemFound()
+        AnswersView(
+          whoFound: "System",
+          minimumWordSize: 6,
+          answers: allAnswers,
+          matchingAnswers: answers,
+        )
+          .foregroundStyle(.accent)
           .frame(maxWidth: .infinity)
       }
 
-        Button("Back") {
-          closeAction()
-        }
-        .capsuled()
-        .frame(width: 100)
+      Button("Back") {
+        closeAction()
+      }
+      .capsuled()
+      .frame(width: 100)
     }
     .padding()
     .background(Color.white)
