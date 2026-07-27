@@ -2,6 +2,7 @@ import model
 import SwiftUI
 
 struct AnswerDetailsView: View {
+  var closeAction: () -> Void
   @Binding var showAnswers: Bool
 
   var statistics: Statistics
@@ -15,6 +16,11 @@ struct AnswerDetailsView: View {
 
       Text("6+ letters only")
         .font(.footnote)
+
+      if answers.isEmpty {
+        Text("(None yet)")
+          .font(.footnote)
+      }
 
       SortedAnswersView(
         answers: allAnswers,
@@ -46,9 +52,7 @@ struct AnswerDetailsView: View {
       }
 
         Button("Back") {
-          withAnimation {
-            showAnswers = false
-          }
+          closeAction()
         }
         .capsuled()
         .frame(width: 100)

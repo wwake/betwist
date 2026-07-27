@@ -135,7 +135,10 @@ public struct Game {
   }
 
   public var systemAnswers: Answers {
-    Solver(
+    guard mode != .play else {
+      return Answers()
+    }
+    return Solver(
       minimumAnswerSize: Self.minimumSystemAnswerSize,
       vocabulary: vocabulary,
       grid: grid

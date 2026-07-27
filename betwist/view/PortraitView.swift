@@ -78,6 +78,11 @@ struct PortraitView: View {
   var body: some View {
     if showAnswers {
       AnswerDetailsView(
+        closeAction: {
+          withAnimation {
+            showAnswers = false
+          }
+        },
         showAnswers: $showAnswers,
         statistics: game.statistics,
         answers: game.answers,
