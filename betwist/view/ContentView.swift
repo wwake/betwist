@@ -24,7 +24,6 @@ public struct ContentView: View {
   static let onboardImages: [(ImageResource, String)] = [
     (.onboardTitle, "Betwist - Finding words with a twist. The letters are in a repeating grid."),
     (.onboardFormWord, "Tap neighbors to build a word"),
-    (.onboardUndo, "Tap an earlier letter to undo"),
     (.onboardScore, "Tap the last letter twice to score. You get credit for shorter words too!"),
     (.onboardTwist, "Tap a twist button if you get stuck"),
     (.onboardReveal, "'Reveal' shows words you and the system found"),

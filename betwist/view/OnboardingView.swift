@@ -33,6 +33,7 @@ struct OnboardingView: View {
 
           Button("Play") { dismiss() }
             .capsuled()
+            .frame(width: 150)
         }
         .tag(images.count)
       }
