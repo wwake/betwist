@@ -4,18 +4,6 @@ public enum GameMode {
   case buy
 }
 
-public struct Monetizer {
-  public static let maxFreeGames = 20
-
-  var freeGamesRemaining: Int {
-    max(0, Self.maxFreeGames - Game.timesPlayed)
-  }
-
-  var hasFreeGamesRemaining: Bool {
-    freeGamesRemaining > 0
-  }
-}
-
 public struct Game {
   public static let defaultSize = 5
   public static let minimumSize = 4
