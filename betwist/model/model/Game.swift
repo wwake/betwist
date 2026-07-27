@@ -25,7 +25,6 @@ public struct Game {
 
   public static var timesPlayed = 1
 
-  public var message = ""
   public var guessStatus = GuessStatus.ok
 
   private var hues: [Double]
@@ -62,7 +61,6 @@ public struct Game {
   public mutating func select(_ location: Location) {
     if mode == .review { return }
     selection.select(location)
-    message = ""
     guessStatus = .ok
   }
 
@@ -72,7 +70,7 @@ public struct Game {
 
   public mutating func deselectAll() {
     selection.clear()
-    message = ""
+    guessStatus = .ok
   }
 
   public func type(at location: Location) -> SelectionType {
@@ -113,16 +111,6 @@ public struct Game {
     }
 
     if answer.count == 0 { return }
-
-    if answer.count < Self.minimumSize {
-      message = "Too short!"
-    } else if answers.contains(answer) {
-      message = "Duplicate!"
-    } else if !vocabulary.contains(answer) {
-      message = "Not a word!"
-    } else {
-      message = ""
-    }
   }
 
   fileprivate func properPrefixes(of word: String) -> [String] {
@@ -162,22 +150,13 @@ public struct Game {
   }
 
   public mutating func start() {
-    message = ""
+    guessStatus = .ok
     Self.timesPlayed += 1
     mode = .play
   }
 
-  func gameOverMessage() -> String {
-    let monetizer = Monetizer()
-    if monetizer.hasFreeGamesRemaining {
-      return "\(monetizer.freeGamesRemaining) free game(s) left"
-    }
-    return "No more free games"
-  }
-
   public mutating func over() {
     selection.clear()
-    message = gameOverMessage()
     mode = .review
   }
 }

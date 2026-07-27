@@ -18,20 +18,20 @@ struct AGame {
   func `game starts in play mode`() {
     let sut = Game(2, ["A", "B", "C", "D"])
     #expect(sut.mode == .play)
-    #expect(sut.message.isEmpty)
+    #expect(sut.guessStatus == .ok)
     #expect(Game.timesPlayed == 1)
   }
 
   @Test
-  func `starting a game clears the message`() {
+  func `starting a game resets the status`() {
     var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
-    sut.message = "Any message"
+    sut.guessStatus = .duplicate
     sut.mode = .review
 
     sut.start()
 
     #expect(sut.mode == .play)
-    #expect(sut.message.isEmpty)
+    #expect(sut.guessStatus == .ok)
   }
 
   @Test
@@ -63,18 +63,7 @@ struct AGame {
 
     #expect(sut.mode == .review)
     #expect(!sut.hasSelection)
-    #expect(sut.message == "19 free game(s) left")
-  }
-
-  @Test
-  func `finishing a game triggers Buy if out of free games`() async throws {
-    var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
-    Game.timesPlayed = Monetizer.maxFreeGames - 1
-
-    sut.start()
-    sut.over()
-
-    #expect(sut.message == "No more free games")
+    #expect(sut.guessStatus == .ok)
   }
 
   @Test
@@ -99,13 +88,11 @@ struct AGame {
   @Test
   func `select resets guess status`() {
     var sut = Game(2, ["A", "B", "C", "D"])
-    sut.message = "hi"
     sut.guessStatus = .duplicate
 
     sut.select(Location(0, 0))
 
     #expect(sut.guessStatus == .ok)
-    #expect(sut.message.isEmpty)
   }
 
   @Test
@@ -124,28 +111,28 @@ struct AGame {
   }
 
   @Test
-  func `deselectAll clears the message`() {
+  func `deselectAll resets guess status`() {
     var sut = Game(2, ["A", "B", "C", "D"])
     sut.select(Location(0, 0))
-    sut.message = "hi"
+    sut.guessStatus = .nonWord
 
     sut.deselectAll()
 
-    #expect(sut.message.isEmpty)
+    #expect(sut.guessStatus == .ok)
   }
 
   @Test
   func `validating empty word leaves message unchanged`() {
     var sut = Game(2, ["A", "B", "C", "D"])
 
-    sut.message = "SOME MESSAGE"
+    sut.guessStatus = .nonWord
     sut.validate()
 
-    #expect(sut.message == "SOME MESSAGE")
+    #expect(sut.guessStatus == .ok)
   }
 
   @Test
-  func validating_short_word_gets_message() {
+  func `validate detects short word`() {
     var sut = Game(2, ["A", "B", "C", "D"])
     sut.select(Location(0, 1))
     sut.select(Location(0, 0))
@@ -157,7 +144,7 @@ struct AGame {
   }
 
   @Test
-  func validating_illegal_word_gets_a_message() {
+  func `validate detects non-word`() {
     var sut = Game(2, ["A", "B", "C", "D"], Vocabulary(["ABCD"]))
     sut.select(Location(0, 1))
     sut.select(Location(0, 0))
@@ -170,7 +157,7 @@ struct AGame {
   }
 
   @Test
-  func validating_duplicate_word_is_detected() {
+  func `validate detects duplicate`() {
     var sut = Game(2, ["A", "B", "C", "D"], Vocabulary(["ABCD"]))
     sut.select(Location(0, 0))
     sut.select(Location(0, 1))
@@ -249,37 +236,5 @@ struct AGame {
     sut.submit(sut.answer)
 
     #expect(sut.statistics == Statistics(wordCount: 1, letterCount: 4, mostLetters: 4))
-  }
-
-  @Test
-  func `message tells # of free games remaining`() {
-    var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
-    Game.timesPlayed = 1
-    sut.over()
-    #expect(sut.message == "\(Monetizer.maxFreeGames - 1) free game(s) left")
-  }
-
-  @Test
-  func `message knows when 1 free game remaining`() {
-    var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
-    Game.timesPlayed = Monetizer.maxFreeGames - 1
-    sut.over()
-    #expect(sut.message == "1 free game(s) left")
-  }
-
-  @Test
-  func `message knows when 0 free games remaining`() {
-    var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
-    Game.timesPlayed = Monetizer.maxFreeGames
-    sut.over()
-    #expect(sut.message == "No more free games")
-  }
-
-  @Test
-  func `message reports 0 free games remaining when limit exceeded`() {
-    var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
-    Game.timesPlayed = Monetizer.maxFreeGames + 1
-    sut.over()
-    #expect(sut.message == "No more free games")
   }
 }
