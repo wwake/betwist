@@ -85,8 +85,8 @@ struct PortraitView: View {
         },
         showAnswers: $showAnswers,
         statistics: game.statistics,
-        answers: game.answers,
-        allAnswers: game.systemAnswers,
+        userAnswers: game.answers,
+        systemAnswers: game.systemAnswers,
       )
       .transition(
         .asymmetric(

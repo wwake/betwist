@@ -6,28 +6,8 @@ struct AnswerDetailsView: View {
   @Binding var showAnswers: Bool
 
   var statistics: Statistics
-  var answers: Answers
-  var allAnswers: Answers
-
-  fileprivate func wordsSystemFound() -> some View {
-    VStack {
-      Text("System Found")
-        .font(.title2)
-
-      if answers.isEmpty {
-        Text("(None yet)")
-          .font(.footnote)
-      }
-
-      SortedAnswersView(
-        answers: allAnswers,
-        matchingAnswers: answers,
-      )
-      .foregroundStyle(.accent)
-
-      Spacer()
-    }
-  }
+  var userAnswers: Answers
+  var systemAnswers: Answers
 
   var body: some View {
     VStack {
@@ -41,7 +21,7 @@ struct AnswerDetailsView: View {
         AnswersView(
           whoFound: "You",
           minimumWordSize: 4,
-          answers: answers,
+          answers: userAnswers,
           matchingAnswers: Answers()
         )
           .frame(maxWidth: .infinity)
@@ -52,8 +32,8 @@ struct AnswerDetailsView: View {
         AnswersView(
           whoFound: "System",
           minimumWordSize: 6,
-          answers: allAnswers,
-          matchingAnswers: answers,
+          answers: systemAnswers,
+          matchingAnswers: userAnswers,
         )
           .foregroundStyle(.accent)
           .frame(maxWidth: .infinity)
