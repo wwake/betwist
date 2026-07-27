@@ -25,6 +25,7 @@
 		91489A412FF591DA0060C5F4 /* TrieGenerator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9116C8F22FDAF9D700C633C9 /* TrieGenerator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		91489A5F2FF596B80060C5F4 /* view.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91489A012FF5917F0060C5F4 /* view.framework */; };
 		91489A602FF596B80060C5F4 /* view.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91489A012FF5917F0060C5F4 /* view.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		918B822D3017B55400FD9AA9 /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 918B822C3017B55400FD9AA9 /* StoreKitTestCertificate.cer */; };
 		91A5C75330111F33007EE373 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 91A5C75230111F33007EE373 /* Shimmer */; };
 /* End PBXBuildFile section */
 
@@ -189,6 +190,8 @@
 		91489A542FF596800060C5F4 /* viewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = viewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91489A672FF597B00060C5F4 /* view.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = view.xctestplan; sourceTree = "<group>"; };
 		914A53992CA3664E00C05BB7 /* model.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = model.xctestplan; sourceTree = "<group>"; };
+		918B822B3017B3E000FD9AA9 /* BetwistApp.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = BetwistApp.storekit; sourceTree = "<group>"; };
+		918B822C3017B55400FD9AA9 /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		919160F52FE2D574009F3B93 /* TrieGenerator.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrieGenerator.xctestplan; sourceTree = "<group>"; };
 		91D4DB332FBE027000A44E4A /* BetwistMaker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BetwistMaker; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FA966F2C81333A0011BB7F /* betwist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betwist.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,6 +312,8 @@
 				914A53992CA3664E00C05BB7 /* model.xctestplan */,
 				919160F52FE2D574009F3B93 /* TrieGenerator.xctestplan */,
 				91489A672FF597B00060C5F4 /* view.xctestplan */,
+				918B822B3017B3E000FD9AA9 /* BetwistApp.storekit */,
+				918B822C3017B55400FD9AA9 /* StoreKitTestCertificate.cer */,
 				9116C8B82FDAF71200C633C9 /* betwist */,
 				91D4DB342FBE027000A44E4A /* BetwistMaker */,
 				914899882FF4B4110060C5F4 /* model */,
@@ -661,6 +666,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				918B822D3017B55400FD9AA9 /* StoreKitTestCertificate.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

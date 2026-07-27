@@ -1,3 +1,5 @@
+
+https://developer.apple.com/documentation/storekit/getting-started-with-in-app-purchases-using-storekit-views
 * Handle the Buy button ("Get More Games...")
 * App storage?
 * IAP a permanent unlock after exceeding limit
@@ -66,10 +68,14 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 2026-07-27 - Rework Review
 * Show words only shows system words in the review state
 * Refactor: make YouFound view and system view the same
+
+IAP
 * Detect when you've played the max # of free games
 * Make "Monetizer" know the free game limit, whether user has paid etc, and modify view messages
 * Make game report mode and validation status (rather than generating strings); let view decide how to display
 * Model no longer knows message string
+* Test store setup: https://developer.apple.com/documentation/Xcode/setting-up-storekit-testing-in-xcode
+* Test IAP: https://developer.apple.com/documentation/xcode/testing-in-app-purchases-with-storekit-transaction-manager-in-code
 
 2026-07-23 - Sparkle
 Sparkle
