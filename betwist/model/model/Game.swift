@@ -4,12 +4,23 @@ public enum GameMode {
   case buy
 }
 
+public struct Monetizer {
+  public static let maxFreeGames = 20
+
+  var freeGamesRemaining: Int {
+    max(0, Self.maxFreeGames - Game.timesPlayed)
+  }
+
+  var hasFreeGamesRemaining: Bool {
+    freeGamesRemaining > 0
+  }
+}
+
 public struct Game {
   public static let defaultSize = 5
   public static let minimumSize = 4
   public static let minimumSystemAnswerSize = 6
   public static let maxPuzzleSize = 25
-  public static let maxFreeGames = 20
 
   public var mode = GameMode.play
 
@@ -156,17 +167,16 @@ public struct Game {
   }
 
   func gameOverMessage() -> String {
-    let freeGamesRemaining = max(0, Self.maxFreeGames - Self.timesPlayed)
-
-    if freeGamesRemaining <= 0 {
-      return "No more free games"
+    let monetizer = Monetizer()
+    if monetizer.hasFreeGamesRemaining {
+      return "\(monetizer.freeGamesRemaining) free game(s) left"
     }
-    return "\(freeGamesRemaining) free game(s) left"
+    return "No more free games"
   }
 
   public mutating func over() {
     selection.clear()
     message = gameOverMessage()
-    mode = Self.maxFreeGames - Self.timesPlayed <= 0 ? .buy : .review
+    mode = Monetizer().hasFreeGamesRemaining ? .review : .buy
   }
 }

@@ -1,11 +1,9 @@
-* Detect the max # of free games
-* App storage?
-* Enter the 'buy' state
+* Make "Monetizer" know the free game limit, whether user has paid etc, and modify view messages
 * Handle the Buy button ("Get More Games...")
+* App storage?
 * IAP a permanent unlock after exceeding limit
 
 * Make game report mode and validation status (rather than generating strings); let view decide how to display
-* Make "Monetizer" know the free game limit, whether user has paid etc, and modify view messages
 
 * Payment ($4.99 game? IAP - 20 games free, then $4.99 => 1000 or else board is 3x3 no infinite; free limited version, full paid version)
 * https://developer.apple.com/documentation/storekit/in-app-purchase
@@ -71,6 +69,7 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 2026-07-27 - Rework Review
 * Show words only shows system words in the review state
 * Refactor: make YouFound view and system view the same
+* Detect when you've played the max # of free games
 
 2026-07-23 - Sparkle
 Sparkle
