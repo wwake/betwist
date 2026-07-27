@@ -18,6 +18,7 @@ struct BuyView: View {
       dismiss()
     }
     .capsuled()
+    .frame(width: 150)
   }
 }
 
