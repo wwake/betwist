@@ -63,6 +63,7 @@ public struct Game {
     if mode == .review { return }
     selection.select(location)
     message = ""
+    guessStatus = .ok
   }
 
   public var hasSelection: Bool {
@@ -93,13 +94,13 @@ public struct Game {
     if word.isEmpty { return }
 
     validate()
-    guard hasValidSelection else { return }
+    guard guessStatus == .ok else { return }
 
     submit(word)
   }
 
   mutating func validate() {
-    if answer.count == 0 {
+    if answer.isEmpty {
       guessStatus = .ok
     } else if answer.count < Self.minimumSize {
       guessStatus = .tooShort
@@ -122,10 +123,6 @@ public struct Game {
     } else {
       message = ""
     }
-  }
-
-  var hasValidSelection: Bool {
-    message.isEmpty
   }
 
   fileprivate func properPrefixes(of word: String) -> [String] {

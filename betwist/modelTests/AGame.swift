@@ -97,12 +97,14 @@ struct AGame {
   }
 
   @Test
-  func `select clears the message`() {
+  func `select resets guess status`() {
     var sut = Game(2, ["A", "B", "C", "D"])
     sut.message = "hi"
+    sut.guessStatus = .duplicate
 
     sut.select(Location(0, 0))
 
+    #expect(sut.guessStatus == .ok)
     #expect(sut.message.isEmpty)
   }
 

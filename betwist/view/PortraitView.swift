@@ -30,7 +30,7 @@ struct PortraitView: View {
       )
       .zIndex(5)
 
-      MessageView(message: game.message)
+      MessageView(mode: game.mode, guessStatus: game.guessStatus, )
         .font(.title)
         .frame(maxWidth: .infinity, minHeight: 40)
 

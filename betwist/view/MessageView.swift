@@ -1,12 +1,46 @@
+import model
 import SwiftUI
 
 struct MessageView: View {
-  var message: String
+  var mode: GameMode
+  var guessStatus: GuessStatus
+  var monetizer = Monetizer()
+
+  var messageBody: String {
+    switch mode {
+    case .play:
+      switch guessStatus {
+      case .ok:
+        return ""
+
+      case .tooShort:
+        return "Too short!"
+
+      case .duplicate:
+        return "Duplicate!"
+
+      case .nonWord:
+        return "Not a word!"
+
+      @unknown default:
+        fatalError("MessageView mode \(guessStatus)")
+      }
+
+    case .review:
+      if monetizer.hasFreeGamesRemaining {
+        return "\(monetizer.freeGamesRemaining) free game(s) left"
+      }
+      return "No more free games"
+
+    @unknown default:
+      fatalError("MessageView mode \(mode)")
+    }
+  }
 
   var body: some View {
-    Text(message)
+    Text(messageBody)
       .bold()
       .foregroundStyle(.red)
-      .opacity(message.isEmpty ? 0.0 : 1.0)
+      .opacity(messageBody.isEmpty ? 0.0 : 1.0)
   }
 }

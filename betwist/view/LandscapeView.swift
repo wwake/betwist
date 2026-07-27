@@ -23,7 +23,7 @@ struct LandscapeView: View {
         )
 
         VStack(spacing: 8) {
-          MessageView(message: game.message)
+          MessageView(mode: game.mode, guessStatus: game.guessStatus)
             .font(.title)
             .frame(minHeight: 40)
 
