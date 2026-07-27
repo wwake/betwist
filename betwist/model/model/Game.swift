@@ -1,7 +1,6 @@
 public enum GameMode {
   case play
   case review
-  case buy
 }
 
 public struct Game {
@@ -165,6 +164,6 @@ public struct Game {
   public mutating func over() {
     selection.clear()
     message = gameOverMessage()
-    mode = Monetizer().hasFreeGamesRemaining ? .review : .buy
+    mode = .review
   }
 }

@@ -7,35 +7,36 @@ struct PrimaryActionButton: View {
   @Binding var showAnswers: Bool
 
   var body: some View {
-    Group {
-      switch game.mode {
-      case .play:
-        Button("End Game...") {
-          withAnimation {
-            showAnswers = true
+    if !Monetizer().hasFreeGamesRemaining {
+      Button("More Games...") {
+        print("buy")
+      }
+      .capsuled(.red)
+    } else {
+      Group {
+        switch game.mode {
+        case .play:
+          Button("End Game...") {
+            withAnimation {
+              showAnswers = true
+            }
+            game.over()
           }
-          game.over()
-        }
-        .capsuled(.red)
+          .capsuled(.red)
 
-      case .review:
-        Button("New Game") {
-          withAnimation {
-            showAnswers = false
+        case .review:
+          Button("New Game") {
+            withAnimation {
+              showAnswers = false
+            }
+            game = Game(game.size, GameGenerator(game.size).make(), game.vocabulary)
+            game.start()
           }
-          game = Game(game.size, GameGenerator(game.size).make(), game.vocabulary)
-          game.start()
-        }
-        .capsuled()
+          .capsuled()
 
-      case .buy:
-        Button("More Games...") {
-          print("buy")
+        @unknown default:
+          fatalError("PrimaryActionButton - unexpected case \(game.mode)")
         }
-        .capsuled(.red)
-
-      @unknown default:
-        fatalError("PrimaryActionButton - unexpected case \(game.mode)")
       }
     }
   }

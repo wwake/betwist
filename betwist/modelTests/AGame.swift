@@ -74,7 +74,6 @@ struct AGame {
     sut.start()
     sut.over()
 
-    #expect(sut.mode == .buy)
     #expect(sut.message == "No more free games")
   }
 
@@ -280,15 +279,5 @@ struct AGame {
     Game.timesPlayed = Monetizer.maxFreeGames + 1
     sut.over()
     #expect(sut.message == "No more free games")
-  }
-
-  @Test(.disabled())
-  func `mode is 'buy' when out of free games`() async throws {
-    var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
-    Game.timesPlayed = Monetizer.maxFreeGames
-
-    sut.over()
-
-    #expect(sut.mode == .buy)
   }
 }
