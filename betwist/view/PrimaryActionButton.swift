@@ -6,38 +6,45 @@ struct PrimaryActionButton: View {
 
   @Binding var showAnswers: Bool
 
+  @State var showBuySheet = false
+
   var body: some View {
-    if !Monetizer().hasFreeGamesRemaining {
-      Button("More Games...") {
-        print("buy")
-      }
-      .capsuled(.red)
-    } else {
-      Group {
-        switch game.mode {
-        case .play:
-          Button("End Game...") {
-            withAnimation {
-              showAnswers = true
+    Group {
+      if !Monetizer().hasFreeGamesRemaining {
+        Button("More Games...") {
+          showBuySheet = true
+        }
+        .capsuled(.red)
+      } else {
+        Group {
+          switch game.mode {
+          case .play:
+            Button("End Game...") {
+              withAnimation {
+                showAnswers = true
+              }
+              game.over()
             }
-            game.over()
-          }
-          .capsuled(.red)
+            .capsuled(.red)
 
-        case .review:
-          Button("New Game") {
-            withAnimation {
-              showAnswers = false
+          case .review:
+            Button("New Game") {
+              withAnimation {
+                showAnswers = false
+              }
+              game = Game(game.size, GameGenerator(game.size).make(), game.vocabulary)
+              game.start()
             }
-            game = Game(game.size, GameGenerator(game.size).make(), game.vocabulary)
-            game.start()
-          }
-          .capsuled()
+            .capsuled()
 
-        @unknown default:
-          fatalError("PrimaryActionButton - unexpected case \(game.mode)")
+          @unknown default:
+            fatalError("PrimaryActionButton - unexpected case \(game.mode)")
+          }
         }
       }
+    }
+    .sheet(isPresented: $showBuySheet) {
+      BuyView()
     }
   }
 }

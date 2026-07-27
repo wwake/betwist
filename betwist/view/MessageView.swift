@@ -2,6 +2,13 @@ import model
 import SwiftUI
 
 struct MessageView: View {
+  static let guessMessage = [
+    GuessStatus.ok: "",
+    .tooShort: "Too short!",
+    .duplicate: "Duplicate!",
+    .nonWord: "Not a word!",
+  ]
+
   var mode: GameMode
   var guessStatus: GuessStatus
   var monetizer = Monetizer()
@@ -9,22 +16,7 @@ struct MessageView: View {
   var messageBody: String {
     switch mode {
     case .play:
-      switch guessStatus {
-      case .ok:
-        return ""
-
-      case .tooShort:
-        return "Too short!"
-
-      case .duplicate:
-        return "Duplicate!"
-
-      case .nonWord:
-        return "Not a word!"
-
-      @unknown default:
-        fatalError("MessageView mode \(guessStatus)")
-      }
+      return MessageView.guessMessage[guessStatus] ?? ""
 
     case .review:
       if monetizer.hasFreeGamesRemaining {

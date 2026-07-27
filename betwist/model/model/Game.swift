@@ -109,8 +109,6 @@ public struct Game {
     } else {
       guessStatus = .ok
     }
-
-    if answer.count == 0 { return }
   }
 
   fileprivate func properPrefixes(of word: String) -> [String] {

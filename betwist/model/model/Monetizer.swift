@@ -8,6 +8,7 @@ public struct Monetizer {
   }
 
   public var hasFreeGamesRemaining: Bool {
-    freeGamesRemaining > 0
+    false
+    // freeGamesRemaining > 0
   }
 }
