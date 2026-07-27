@@ -67,6 +67,18 @@ struct AGame {
   }
 
   @Test
+  func `finishing a game triggers Buy if out of free games`() async throws {
+    var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
+    Game.timesPlayed = Game.maxFreeGames - 1
+
+    sut.start()
+    sut.over()
+
+    #expect(sut.mode == .buy)
+    #expect(sut.message == "No more free games")
+  }
+
+  @Test
   func `prepends a collected answer`() {
     var sut = Game(2, ["A", "B", "C", "D"])
     sut.select(Location(0, 0))
@@ -255,19 +267,19 @@ struct AGame {
   }
 
   @Test
-  func `message knows when 0 free game remaining`() {
+  func `message knows when 0 free games remaining`() {
     var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
     Game.timesPlayed = Game.maxFreeGames
     sut.over()
-    #expect(sut.message == "0 free game(s) left")
+    #expect(sut.message == "No more free games")
   }
 
   @Test
-  func `message reports 0 free game remaining when limit exceeded`() {
+  func `message reports 0 free games remaining when limit exceeded`() {
     var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
     Game.timesPlayed = Game.maxFreeGames + 1
     sut.over()
-    #expect(sut.message == "0 free game(s) left")
+    #expect(sut.message == "No more free games")
   }
 
   @Test(.disabled())

@@ -24,7 +24,7 @@ struct AnswerDetailsView: View {
           answers: userAnswers,
           matchingAnswers: Answers()
         )
-          .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity)
 
         Divider()
           .frame(width: 2)

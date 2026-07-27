@@ -158,12 +158,15 @@ public struct Game {
   func gameOverMessage() -> String {
     let freeGamesRemaining = max(0, Self.maxFreeGames - Self.timesPlayed)
 
+    if freeGamesRemaining <= 0 {
+      return "No more free games"
+    }
     return "\(freeGamesRemaining) free game(s) left"
   }
 
   public mutating func over() {
     selection.clear()
     message = gameOverMessage()
-    mode = .review
+    mode = Self.maxFreeGames - Self.timesPlayed <= 0 ? .buy : .review
   }
 }
