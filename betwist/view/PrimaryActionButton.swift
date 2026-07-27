@@ -26,13 +26,13 @@ struct PrimaryActionButton: View {
           game = Game(game.size, GameGenerator(game.size).make(), game.vocabulary)
           game.start()
         }
-        .capsuled(.red)
+        .capsuled()
 
       case .buy:
-        Button("Buy...") {
+        Button("More Games...") {
           print("buy")
         }
-        .capsuled()
+        .capsuled(.red)
 
       @unknown default:
         fatalError("PrimaryActionButton - unexpected case \(game.mode)")
