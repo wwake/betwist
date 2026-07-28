@@ -1,6 +1,3 @@
-https://developer.apple.com/documentation/storekit/getting-started-with-in-app-purchases-using-storekit-views
-https://developer.apple.com/forums/thread/812056
-https://www.releasemyapp.com/blog/app-rejected-in-app-purchase-policy-3-1
 * Handle the Buy button ("Get More Games...")
 * App storage?
 * IAP a permanent unlock after exceeding limit
@@ -74,6 +71,10 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Rename hasFreeGames to requiresLicense, flip the logic; then to "allowsPlay" with original logic:)
 * Fixed problem where last free game triggered the 'buy' before the game was over
 * If you have a license, you're always allowed to play
+* StoreKit info:
+https://developer.apple.com/documentation/storekit/getting-started-with-in-app-purchases-using-storekit-views
+https://developer.apple.com/forums/thread/812056
+https://www.releasemyapp.com/blog/app-rejected-in-app-purchase-policy-3-1
 
 2026-07-27 - Rework Review
 * Show words only shows system words in the review state

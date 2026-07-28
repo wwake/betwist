@@ -9,6 +9,7 @@ private class TestStore: Store {
   }
 }
 
+@Suite(.serialized)   // serialize since multiple tests change Game.timesPlayed
 struct AMonetizer {
   @Test
   func `knows the license is active when the store says it is`() {
