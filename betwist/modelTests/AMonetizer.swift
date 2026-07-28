@@ -24,8 +24,11 @@ struct AMonetizer {
 
   @Test
   func `knows the number of free games remaining`() async throws {
+    let sut = Monetizer(store: TestStore())
+    #expect(Monetizer.maxFreeGames > 10)
+
     Game.timesPlayed = 7
-    #expect(Monetizer(store: TestStore()).freeGamesRemaining == Monetizer.maxFreeGames - 7)
+    #expect(sut.freeGamesRemaining == Monetizer.maxFreeGames - 7)
   }
 
   @Test

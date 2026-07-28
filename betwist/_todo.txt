@@ -71,8 +71,9 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 2026-07-28 - In-App Purchase
 * Created Store that detects entitlements & changes in them
 * Made Monetizer a class, gave it access to the store, and passed it to subviews
-* Rename hasFreeGames to requiresLicense, flip the logic
+* Rename hasFreeGames to requiresLicense, flip the logic; then to "allowsPlay" with original logic:)
 * Fixed problem where last free game triggered the 'buy' before the game was over
+* If you have a license, you're always allowed to play
 
 2026-07-27 - Rework Review
 * Show words only shows system words in the review state
