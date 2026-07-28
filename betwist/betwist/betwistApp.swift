@@ -4,7 +4,6 @@ import view
 
 @main
 struct betwistApp: App {
-  @State private var store = Store()
   @State private var monetizer: Monetizer
 
   @State private var game = Game(
@@ -14,7 +13,7 @@ struct betwistApp: App {
   )
 
   init() {
-    monetizer = Monetizer()
+    monetizer = Monetizer(store: MyStore())
   }
 
   var body: some Scene {

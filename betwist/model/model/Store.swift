@@ -2,17 +2,24 @@ import Foundation
 import Observation
 import StoreKit
 
+public protocol Store {
+  var hasLicense: Bool { get }
+}
+
 @MainActor
 @Observable
-public final class Store {
+public final class MyStore: Store {
   static let productID = "com.xp123.betwist_test123"
 
   public var hasLicense: Bool = false
 
   public init() {
-    // Because the tasks below capture 'self' in their closures, this object must be fully initialized before this point.
+    // Because the tasks below capture 'self' in their closures,
+    // this object must be fully initialized before this point.
+
     Task(priority: .background) {
-      // Finish any unfinished transactions -- for example, if the app was terminated before finishing a transaction.
+      // Finish any unfinished transactions -- for example, if the app was
+      // terminated before finishing a transaction.
       for await verificationResult in Transaction.unfinished {
         await handle(updatedTransaction: verificationResult)
       }

@@ -4,7 +4,11 @@ import Foundation
 public class Monetizer {
   public static let maxFreeGames = 20
 
-  public init() {}
+  private var store: Store
+
+  public init(store: Store) {
+    self.store = store
+  }
 
   public var freeGamesRemaining: Int {
     max(0, Self.maxFreeGames - Game.timesPlayed)
