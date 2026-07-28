@@ -21,9 +21,14 @@ struct MessageView: View {
       return MessageView.guessMessage[guessStatus] ?? ""
 
     case .review:
-      if !monetizer.requiresPurchase {
+      if monetizer.hasAppLicense {
+        return "Game Over"
+      }
+
+      if monetizer.allowsPlay {
         return "\(monetizer.freeGamesRemaining) free game(s) left"
       }
+
       return "No more free games"
 
     @unknown default:

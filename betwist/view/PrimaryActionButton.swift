@@ -25,7 +25,7 @@ struct PrimaryActionButton: View {
           .capsuled(.red)
 
         case .review:
-          if monetizer.requiresPurchase {
+          if !monetizer.allowsPlay {
             Button("More Games...") {
               showBuySheet = true
             }
