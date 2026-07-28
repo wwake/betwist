@@ -2,6 +2,9 @@ import model
 import SwiftUI
 
 struct MessageView: View {
+  @Environment(Monetizer.self)
+  var monetizer
+
   static let guessMessage = [
     GuessStatus.ok: "",
     .tooShort: "Too short!",
@@ -11,8 +14,7 @@ struct MessageView: View {
 
   var mode: GameMode
   var guessStatus: GuessStatus
-  var monetizer = Monetizer()
-
+  
   var messageBody: String {
     switch mode {
     case .play:

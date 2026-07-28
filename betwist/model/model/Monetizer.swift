@@ -1,4 +1,7 @@
-public struct Monetizer {
+import Foundation
+
+@Observable
+public class Monetizer {
   public static let maxFreeGames = 20
 
   public init() {}
@@ -8,7 +11,6 @@ public struct Monetizer {
   }
 
   public var hasFreeGamesRemaining: Bool {
-    false
-    // freeGamesRemaining > 0
+    freeGamesRemaining > 0
   }
 }

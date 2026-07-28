@@ -2,6 +2,9 @@ import model
 import SwiftUI
 
 struct PrimaryActionButton: View {
+  @Environment(Monetizer.self)
+  var monetizer
+
   @Binding var game: Game
 
   @Binding var showAnswers: Bool
@@ -10,7 +13,7 @@ struct PrimaryActionButton: View {
 
   var body: some View {
     Group {
-      if !Monetizer().hasFreeGamesRemaining {
+      if !monetizer.hasFreeGamesRemaining {
         Button("More Games...") {
           showBuySheet = true
         }

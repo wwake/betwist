@@ -1,5 +1,6 @@
-
 https://developer.apple.com/documentation/storekit/getting-started-with-in-app-purchases-using-storekit-views
+https://developer.apple.com/forums/thread/812056
+https://www.releasemyapp.com/blog/app-rejected-in-app-purchase-policy-3-1
 * Handle the Buy button ("Get More Games...")
 * App storage?
 * IAP a permanent unlock after exceeding limit
@@ -49,6 +50,8 @@ MudShark666: Fix: "If you need to keep UIRequiresFullScreen to support earlier v
 * Mirror buttons - \, and /
 
 * New game sets parameters (eg board size)
+
+* High-score list (bonus - discourages reinstall) - include seed so you can replay for a better score - don't allow new high score for a given seed though:) - or show #tries
 
 ====
 
