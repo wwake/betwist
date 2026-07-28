@@ -21,9 +21,9 @@ struct AMonetizer {
     let sut = Monetizer(store: TestStore())
 
     Game.timesPlayed = 1
-    #expect(sut.hasFreeGamesRemaining)
+    #expect(!sut.requiresPurchase)
 
     Game.timesPlayed = Monetizer.maxFreeGames
-    #expect(!sut.hasFreeGamesRemaining)
+    #expect(sut.requiresPurchase)
   }
 }

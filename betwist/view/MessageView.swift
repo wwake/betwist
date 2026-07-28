@@ -14,14 +14,14 @@ struct MessageView: View {
 
   var mode: GameMode
   var guessStatus: GuessStatus
-  
+
   var messageBody: String {
     switch mode {
     case .play:
       return MessageView.guessMessage[guessStatus] ?? ""
 
     case .review:
-      if monetizer.hasFreeGamesRemaining {
+      if !monetizer.requiresPurchase {
         return "\(monetizer.freeGamesRemaining) free game(s) left"
       }
       return "No more free games"

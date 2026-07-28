@@ -14,7 +14,7 @@ public class Monetizer {
     max(0, Self.maxFreeGames - Game.timesPlayed)
   }
 
-  public var hasFreeGamesRemaining: Bool {
-    freeGamesRemaining > 0
+  public var requiresPurchase: Bool {
+    freeGamesRemaining < 1
   }
 }

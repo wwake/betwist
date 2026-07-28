@@ -1,5 +1,5 @@
-import model
 import SwiftUI
+import model
 
 struct PrimaryActionButton: View {
   @Environment(Monetizer.self)
@@ -13,36 +13,40 @@ struct PrimaryActionButton: View {
 
   var body: some View {
     Group {
-      if !monetizer.hasFreeGamesRemaining {
-        Button("More Games...") {
-          showBuySheet = true
-        }
-        .capsuled(.red)
-      } else {
-        Group {
-          switch game.mode {
-          case .play:
-            Button("End Game...") {
-              withAnimation {
-                showAnswers = true
-              }
-              game.over()
+      Group {
+        switch game.mode {
+        case .play:
+          Button("End Game...") {
+            withAnimation {
+              showAnswers = true
+            }
+            game.over()
+          }
+          .capsuled(.red)
+
+        case .review:
+          if monetizer.requiresPurchase {
+            Button("More Games...") {
+              showBuySheet = true
             }
             .capsuled(.red)
-
-          case .review:
+          } else {
             Button("New Game") {
               withAnimation {
                 showAnswers = false
               }
-              game = Game(game.size, GameGenerator(game.size).make(), game.vocabulary)
+              game = Game(
+                game.size,
+                GameGenerator(game.size).make(),
+                game.vocabulary
+              )
               game.start()
             }
             .capsuled()
-
-          @unknown default:
-            fatalError("PrimaryActionButton - unexpected case \(game.mode)")
           }
+
+        @unknown default:
+          fatalError("PrimaryActionButton - unexpected case \(game.mode)")
         }
       }
     }
