@@ -17,4 +17,8 @@ public class Monetizer {
   public var requiresPurchase: Bool {
     freeGamesRemaining < 1
   }
+
+  public var hasAppLicense: Bool {
+    store.hasAppLicense
+  }
 }

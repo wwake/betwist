@@ -2,10 +2,10 @@
 import Testing
 
 private class TestStore: Store {
-  let hasLicense: Bool
+  let hasAppLicense: Bool
 
   init(_ answer: Bool = false) {
-    hasLicense = answer
+    hasAppLicense = answer
   }
 }
 
@@ -25,5 +25,17 @@ struct AMonetizer {
 
     Game.timesPlayed = Monetizer.maxFreeGames
     #expect(sut.requiresPurchase)
+  }
+
+  @Test
+  func `knows the license is active when the store says it is`() {
+    let sut = Monetizer(store: TestStore(true))
+    #expect(sut.hasAppLicense)
+  }
+
+  @Test
+  func `knows the license is inactive when the store says that`() {
+    let sut = Monetizer(store: TestStore(false))
+    #expect(!sut.hasAppLicense)
   }
 }

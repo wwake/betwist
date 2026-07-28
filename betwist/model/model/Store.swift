@@ -3,7 +3,7 @@ import Observation
 import StoreKit
 
 public protocol Store {
-  var hasLicense: Bool { get }
+  var hasAppLicense: Bool { get }
 }
 
 @MainActor
@@ -11,7 +11,7 @@ public protocol Store {
 public final class MyStore: Store {
   static let productID = "com.xp123.betwist_test123"
 
-  public var hasLicense: Bool = false
+  public var hasAppLicense: Bool = false
 
   public init() {
     // Because the tasks below capture 'self' in their closures,
@@ -48,7 +48,7 @@ public final class MyStore: Store {
     if transaction.revocationDate != nil {
       // `Transaction.revocationReason` provides details about the revoked transaction.
 
-      hasLicense = false
+      hasAppLicense = false
       print("revoked product \(Self.productID)")
 
       await transaction.finish()
@@ -59,7 +59,7 @@ public final class MyStore: Store {
         "transaction ID \(transaction.id), product ID \(transaction.productID)"
       )
 
-      hasLicense = true
+      hasAppLicense = true
 
       await transaction.finish()
       return

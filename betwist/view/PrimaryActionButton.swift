@@ -1,5 +1,5 @@
-import SwiftUI
 import model
+import SwiftUI
 
 struct PrimaryActionButton: View {
   @Environment(Monetizer.self)
