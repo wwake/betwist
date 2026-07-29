@@ -23,6 +23,8 @@ You may play 20 free games.
 After that, you can purchase this game with a one-time payment, for about the price of a cup of coffee.")
 
 Whether or not you buy, we won't show ads.
+
+Betwist is produced by an indie developer.
 """
         )
       }
