@@ -21,4 +21,8 @@ public class Monetizer {
   public var hasAppLicense: Bool {
     store.hasAppLicense
   }
+
+  public var allowsPurchase: Bool {
+    store.allowsPurchase
+  }
 }

@@ -1,3 +1,4 @@
+import model
 import StoreKit
 import SwiftUI
 
@@ -5,35 +6,45 @@ struct BuyView: View {
   @Environment(\.dismiss)
   private var dismiss
 
-  //  @Environment(Store.self) private var store: Store
+  @Environment(Monetizer.self)
+  var monetizer
 
   var body: some View {
-  //  @Bindable var store = store
+    VStack {
+      Text("Betwist - More Games")
+        .font(.title)
+        .padding(.bottom, 24)
 
-    Text("Get More Games")
-      .font(.title)
+      VStack(alignment: .leading) {
+        Text(
+"""
+You may play 20 free games.
 
-    Text("You've played 20 free games - with no ads!")
-    Text("You can purchase this game with a one-time payment: $4.99.")
-    Text("You won't have ads then either.")
+After that, you can purchase this game with a one-time payment, for about the price of a cup of coffee.")
 
-    Spacer()
+Whether or not you buy, we won't show ads.
+"""
+        )
+      }
+      .padding(.bottom, 24)
 
-//    VStack {
-//      // ProductID.all is an array of your product ID strings.
-//      StoreView(ids: ProductID.all)
-//        .storeButton(.hidden, for: .cancellation)
-//        .storeButton(.visible, for: .restorePurchases)
-//    }
-//    .padding()
+      if monetizer.allowsPurchase {
+        ProductView(id: "com.xp123.betwist_test123", prefersPromotionalIcon: true)
+          .productViewStyle(.large)
+          .onInAppPurchaseCompletion { _, _ in
+            dismiss()
+          }
+      }
 
-    Spacer()
+      Spacer()
 
-    Button("Done") {
-      dismiss()
+      Button("Done") {
+        dismiss()
+      }
+      .capsuled()
+      .frame(width: 150)
     }
-    .capsuled()
-    .frame(width: 150)
+    .padding(24)
   }
 }
 

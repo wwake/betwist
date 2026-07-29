@@ -3,6 +3,7 @@ import Testing
 
 private class TestStore: Store {
   let hasAppLicense: Bool
+  let allowsPurchase = true
 
   init(_ answer: Bool = false) {
     hasAppLicense = answer

@@ -1,12 +1,52 @@
+import model
+import StoreKit
 import SwiftUI
+
+private func getVersion() -> String {
+  guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
+    return "no version info"
+  }
+  return version
+}
 
 struct OnboardingView: View {
   @Environment(\.dismiss)
   var dismiss
 
+  @Environment(Monetizer.self)
+  var monetizer
+
   var images: [(ImageResource, String)]
 
   @State private var selection = 0
+
+  @State private var showBuyPage = false
+
+  fileprivate func lastOnboardPage() -> some View {
+    VStack {
+      Text("Have fun!")
+        .font(.title2)
+        .padding(.bottom, 16)
+
+      if monetizer.allowsPurchase {
+        Button("Buy Now") {
+          showBuyPage = true
+        }
+        .capsuled()
+        .frame(width: 150)
+        .padding(.bottom, 24)
+      }
+
+      Button("Play Now") { dismiss() }
+        .capsuled()
+        .frame(width: 150)
+
+      Text("Version: \(getVersion())")
+        .font(.footnote)
+        .padding(.top, 48)
+    }
+    .tag(images.count)
+  }
 
   var body: some View {
     HStack {
@@ -26,16 +66,7 @@ struct OnboardingView: View {
             .accessibilityLabel(imagePair.1)
         }
 
-        VStack {
-          Text("Have fun!")
-            .font(.title2)
-            .padding(.bottom, 16)
-
-          Button("Play") { dismiss() }
-            .capsuled()
-            .frame(width: 150)
-        }
-        .tag(images.count)
+        lastOnboardPage()
       }
       .indexViewStyle(.page(backgroundDisplayMode: .always))
       .tabViewStyle(.page)
@@ -57,6 +88,9 @@ struct OnboardingView: View {
         .foregroundStyle(.black),
       alignment: .topTrailing
     )
+    .sheet(isPresented: $showBuyPage) {
+      BuyView()
+    }
   }
 }
 

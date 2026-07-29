@@ -4,6 +4,7 @@ import StoreKit
 
 public protocol Store {
   var hasAppLicense: Bool { get }
+  var allowsPurchase: Bool { get }
 }
 
 @MainActor
@@ -12,6 +13,10 @@ public final class MyStore: Store {
   static let productID = "com.xp123.betwist_test123"
 
   public var hasAppLicense: Bool = false
+
+  public var allowsPurchase: Bool {
+    AppStore.canMakePayments
+  }
 
   public init() {
     // Because the tasks below capture 'self' in their closures,
