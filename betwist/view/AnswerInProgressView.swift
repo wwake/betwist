@@ -51,7 +51,7 @@ struct AnswerInProgressView: View {
           .clipShape(Circle())
       }
     }
-    .padding([.leading, .trailing], 4)
+    .padding([.leading, .trailing], 8)
     .padding(.bottom, 8)
   }
 }
