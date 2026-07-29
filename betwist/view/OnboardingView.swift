@@ -28,17 +28,19 @@ struct OnboardingView: View {
         .font(.title2)
         .padding(.bottom, 16)
 
-      if monetizer.allowsPurchase {
-        Button("Buy Now") {
+      if !monetizer.hasAppLicense && monetizer.allowsPurchase {
+        Button("Buy Now", role: .destructive) {
           showBuyPage = true
         }
-        .capsuled()
+        .foregroundStyle(.red)
+        .capsuled(.white)
         .frame(width: 150)
         .padding(.bottom, 24)
       }
 
       Button("Play Now") { dismiss() }
-        .capsuled()
+        .foregroundStyle(.black)
+        .capsuled(.white)
         .frame(width: 150)
 
       Text("Version: \(getVersion())")

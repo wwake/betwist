@@ -94,7 +94,7 @@ public struct ContentView: View {
       }
       .sheet(isPresented: $showOnboarding) {
         OnboardingView(images: Self.onboardImages)
-          .presentationBackground(Color.accent.opacity(0.15))
+          .presentationBackground(Color.accent)
       }
       .onAppear {
         let currentVersion = getVersion()
