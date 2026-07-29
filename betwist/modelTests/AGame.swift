@@ -19,7 +19,6 @@ struct AGame {
     let sut = Game(2, ["A", "B", "C", "D"])
     #expect(sut.mode == .play)
     #expect(sut.guessStatus == .ok)
-    #expect(Game.timesPlayed == 1)
   }
 
   @Test
@@ -44,20 +43,10 @@ struct AGame {
   }
 
   @Test
-  func `starting a game increments timesPlayed`() async throws {
-    var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
-    let initialTimesPlayed = Game.timesPlayed
-
-    sut.start()
-
-    #expect(Game.timesPlayed == initialTimesPlayed + 1)
-  }
-
-  @Test
   func `finishing a game resets it`() {
     var sut = Game(2, ["F", "U", "N", "D"], Vocabulary(["FUND"]))
-    Game.timesPlayed = 1
     sut.select(Location(0, 0))
+    sut.guessStatus = .duplicate
 
     sut.over()
 

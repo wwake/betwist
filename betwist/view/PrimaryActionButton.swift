@@ -17,9 +17,6 @@ struct PrimaryActionButton: View {
         switch game.mode {
         case .play:
           Button("End Game...") {
-            withAnimation {
-              showAnswers = true
-            }
             game.over()
           }
           .capsuled(.red)
@@ -32,15 +29,12 @@ struct PrimaryActionButton: View {
             .capsuled(.red)
           } else {
             Button("New Game") {
-              withAnimation {
-                showAnswers = false
-              }
               game = Game(
                 game.size,
                 GameGenerator(game.size).make(),
                 game.vocabulary
               )
-              game.start()
+              monetizer.startedNewGame()
             }
             .capsuled()
           }

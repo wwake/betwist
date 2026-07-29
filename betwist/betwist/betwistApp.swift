@@ -14,6 +14,7 @@ struct betwistApp: App {
 
   init() {
     monetizer = Monetizer(store: MyStore())
+    monetizer.startedNewGame()
   }
 
   var body: some Scene {

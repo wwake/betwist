@@ -23,8 +23,6 @@ public struct Game {
 
   public var vocabulary: Vocabulary
 
-  public static var timesPlayed = 1
-
   public var guessStatus = GuessStatus.ok
 
   private var hues: [Double]
@@ -149,12 +147,12 @@ public struct Game {
 
   public mutating func start() {
     guessStatus = .ok
-    Self.timesPlayed += 1
     mode = .play
   }
 
   public mutating func over() {
     selection.clear()
     mode = .review
+    guessStatus = .ok
   }
 }

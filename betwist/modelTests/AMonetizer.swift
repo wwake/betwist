@@ -1,3 +1,4 @@
+import Foundation
 @testable import model
 import Testing
 
@@ -29,25 +30,35 @@ struct AMonetizer {
     let sut = Monetizer(store: TestStore())
     #expect(Monetizer.maxFreeGames > 10)
 
-    Game.timesPlayed = 7
+    sut.setTimesPlayed(7)
+
     #expect(sut.freeGamesRemaining == Monetizer.maxFreeGames - 7)
+  }
+
+  @Test
+  func `counts the number of times played`() {
+    let sut = Monetizer(store: TestStore())
+    let original = sut.timesPlayed
+    sut.startedNewGame()
+    #expect(sut.timesPlayed == original + 1)
+    #expect(UserDefaults.standard.integer(forKey: "timesPlayed") == sut.timesPlayed)
   }
 
   @Test
   func `knows whether play is allowed when no license present`() async throws {
     let sut = Monetizer(store: TestStore(false))
 
-    Game.timesPlayed = 1
+    sut.setTimesPlayed(1)
     #expect(sut.allowsPlay)
 
-    Game.timesPlayed = Monetizer.maxFreeGames
+    sut.setTimesPlayed(Monetizer.maxFreeGames)
     #expect(!sut.allowsPlay)
   }
 
   @Test
   func `knows play is allowed when license found`() {
     let sut = Monetizer(store: TestStore(true))
-    Game.timesPlayed = Monetizer.maxFreeGames
+    sut.setTimesPlayed(Monetizer.maxFreeGames)
     #expect(sut.allowsPlay)
   }
 }

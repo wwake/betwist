@@ -1,3 +1,4 @@
+* Handle "extra" game count message (briefly flashes new count)
 * App storage for timesPlayed counter
 
 * Payment ($4.99 game? IAP - 20 games free, then $4.99 => 1000 or else board is 3x3 no infinite; free limited version, full paid version)
@@ -64,10 +65,12 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 
 =====
 2026-07-29 W - Triggering "Buy"
+In-App Purchase
 * Added ProductView to our Buy page so people can purchase a license
 * Verified that purchase gives immediate access
 * Need to do App Store Connect work to test further
 * Add Buy page from onboarding; About/version info
+* Put timesPlayed counter in DefaultStorage, controlled by Monetizer
 
 2026-07-28 - In-App Purchase
 Permanent unlock after a free trial
