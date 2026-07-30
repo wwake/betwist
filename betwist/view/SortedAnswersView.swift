@@ -18,8 +18,10 @@ struct SortedAnswersView: View {
               WordView(word: answer.word, matchingAnswers: matchingAnswers)
             }
           }
+          .listRowBackground(Color.wordBackground)
         }
       }
+      .scrollContentBackground(.hidden)
       .listStyle(.plain)
     }
   }

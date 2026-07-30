@@ -115,8 +115,9 @@ struct DefinitionsView: View {
       .capsuled()
       .frame(width: 100, alignment: .center)
     }
-    .foregroundStyle(.black)
     .padding(12)
+    .background(Color.wordBackground)
+    .foregroundStyle(.black)
     .task {
       let loader = DefinitionLoader()
       definitionState = await loader.load(word, fetchData: fetchData)

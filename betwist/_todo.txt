@@ -1,14 +1,5 @@
 
-* Handle "extra" game count message (briefly flashes new count)
-
-* Payment ($4.99 game? IAP - 20 games free, then $4.99 => 1000 or else board is 3x3 no infinite; free limited version, full paid version)
-* https://developer.apple.com/documentation/storekit/in-app-purchase
-Purchase
-
 * Some color at least on word list and definitions
-
-* Improve images for onboarding
-Onboarding
 
 Sellable:
 * Analytics SDK - doubtful
@@ -64,6 +55,11 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * After N games, you start with a "hint token" - the first 5 letters of a longer word already marked.
 
 =====
+2026-07-30 Th - Fix Free Games Count
+* Handle "extra" game count message (briefly flashes new count)
+  - We added a delay before updating the new game count
+  - This lets new game start before we have lowered the count, so we no longer see the flashed message
+
 2026-07-29 W - Triggering "Buy"
 In-App Purchase
 * Added ProductView to our Buy page so people can purchase a license

@@ -46,6 +46,6 @@ struct AnswerDetailsView: View {
       .frame(width: 100)
     }
     .padding()
-    .background(Color.white)
+    .background(.wordBackground)
   }
 }
