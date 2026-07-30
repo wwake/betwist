@@ -34,7 +34,9 @@ struct PrimaryActionButton: View {
                 GameGenerator(game.size).make(),
                 game.vocabulary
               )
-              monetizer.startedNewGame()
+              DispatchQueue.main.asyncAfter(deadline: DispatchTime.now().advanced(by: .seconds(1))) {
+                monetizer.startedNewGame()
+              }
             }
             .capsuled()
           }

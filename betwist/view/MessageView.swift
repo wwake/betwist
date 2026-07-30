@@ -26,7 +26,7 @@ struct MessageView: View {
       }
 
       if monetizer.allowsPlay {
-        return "\(monetizer.freeGamesRemaining) free game(s) left"
+        return "\(monetizer.freeGamesRemaining) free games left"
       }
 
       return "No more free games"

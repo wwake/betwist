@@ -1,5 +1,5 @@
+
 * Handle "extra" game count message (briefly flashes new count)
-* App storage for timesPlayed counter
 
 * Payment ($4.99 game? IAP - 20 games free, then $4.99 => 1000 or else board is 3x3 no infinite; free limited version, full paid version)
 * https://developer.apple.com/documentation/storekit/in-app-purchase
