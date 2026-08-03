@@ -1,5 +1,4 @@
-
-* Some color at least on word list and definitions
+* Feedback button - email address
 
 Sellable:
 * Analytics SDK - doubtful
@@ -59,6 +58,7 @@ Behext? - https://betterprogramming.pub/building-a-hexagonal-grid-with-the-swift
 * Handle "extra" game count message (briefly flashes new count)
   - We added a delay before updating the new game count
   - This lets new game start before we have lowered the count, so we no longer see the flashed message
+* Use very light gray background on word list and definitions
 
 2026-07-29 W - Triggering "Buy"
 In-App Purchase
