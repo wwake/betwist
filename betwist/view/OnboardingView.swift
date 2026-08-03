@@ -10,6 +10,8 @@ private func getVersion() -> String {
 }
 
 struct OnboardingView: View {
+  static let supportEmail = "bill@xp123.com"
+
   @Environment(\.dismiss)
   var dismiss
 
@@ -42,6 +44,13 @@ struct OnboardingView: View {
         .foregroundStyle(.black)
         .capsuled(.white)
         .frame(width: 150)
+        .padding(.bottom, 24)
+
+      Link(
+        "Suggestions or support? Email \(Self.supportEmail)",
+        destination: URL(string: "mailto:\(Self.supportEmail)?subject=Betwist")!
+      )
+      .underline()
 
       Text("Version: \(getVersion())")
         .font(.footnote)
