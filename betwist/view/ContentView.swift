@@ -22,12 +22,21 @@ public struct ContentView: View {
   @State private var showOnboarding = false
 
   static let onboardImages: [(ImageResource, String)] = [
-    (.onboardTitle, "Betwist - Finding words with a twist. The letters are in a repeating grid."),
+    (
+      .onboardTitle,
+      "Betwist - Finding words with a twist. The letters are in a repeating grid."
+    ),
     (.onboardFormWord, "Tap neighbors to build a word"),
-    (.onboardScore, "Tap the last letter twice to score. You get credit for shorter words too!"),
+    (
+      .onboardScore,
+      "Tap the last letter twice to score. You get credit for shorter words too!"
+    ),
     (.onboardTwist, "Tap a twist button if you get stuck"),
     (.onboardReveal, "'Reveal' shows words you and the system found"),
-    (.onboardDefinition, "Tap the magnifying glass to see a definition (if we have it)"),
+    (
+      .onboardDefinition,
+      "Tap the magnifying glass to see a definition (if we have it)"
+    ),
   ]
 
   public init(game: Binding<Game>) {
@@ -60,6 +69,52 @@ public struct ContentView: View {
     game.collectWord()
   }
 
+  fileprivate func boardView(_ geometry: GeometryProxy) -> some View {
+    VStack {
+      switch (horizontalSizeClass, verticalSizeClass, orientation(geometry)) {
+      case (.regular, .regular, .landscape):
+        LandscapeView(
+          geometry: geometry,
+          game: $game,
+          collectWord: collectWord,
+          handleSelection: handleSelection,
+          showOnboarding: onboard,
+          showAnswers: $showAnswers,
+        )
+
+      default:
+        PortraitView(
+          geometry: geometry,
+          game: $game,
+          collectWord: collectWord,
+          handleSelection: handleSelection,
+          showOnboarding: onboard,
+          showAnswers: $showAnswers,
+        )
+      }
+    }
+  }
+
+  fileprivate func answerView() -> some View {
+    AnswerDetailsView(
+      closeAction: {
+        withAnimation {
+          showAnswers = false
+        }
+      },
+      showAnswers: $showAnswers,
+      statistics: game.statistics,
+      userAnswers: game.answers,
+      systemAnswers: game.systemAnswers,
+    )
+    .transition(
+      .asymmetric(
+        insertion: .push(from: .trailing),
+        removal: .push(from: .leading)
+      )
+    )
+  }
+
   public var body: some View {
     GeometryReader { geometry in
       ZStack {
@@ -70,28 +125,18 @@ public struct ContentView: View {
         )
         .ignoresSafeArea()
 
-        VStack {
-          switch (horizontalSizeClass, verticalSizeClass, orientation(geometry)) {
-          case (.regular, .regular, .landscape):
-            LandscapeView(
-              geometry: geometry,
-              game: $game,
-              collectWord: collectWord,
-              handleSelection: handleSelection,
-              showOnboarding: onboard,
-            )
-
-          default:
-            PortraitView(
-              geometry: geometry,
-              game: $game,
-              collectWord: collectWord,
-              handleSelection: handleSelection,
-              showOnboarding: onboard,
-            )
-          }
+        if showAnswers {
+          answerView()
+        } else {
+          boardView(geometry)
         }
       }
+      .onChange(of: game.mode) {
+        if game.mode == .review {
+          showAnswers = true
+        }
+      }
+
       .sheet(isPresented: $showOnboarding) {
         OnboardingView(images: Self.onboardImages)
           .presentationBackground(Color.accent)

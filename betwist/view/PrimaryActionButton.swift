@@ -7,8 +7,6 @@ struct PrimaryActionButton: View {
 
   @Binding var game: Game
 
-  @Binding var showAnswers: Bool
-
   @State var showBuySheet = false
 
   var body: some View {

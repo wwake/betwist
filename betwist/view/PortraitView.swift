@@ -1,14 +1,14 @@
 import model
 import SwiftUI
 
-struct PortraitView: View {
+public struct PortraitView: View {
   var geometry: GeometryProxy
   @Binding var game: Game
   var collectWord: () -> Void
   var handleSelection: (Location) -> Void
   var showOnboarding: () -> Void
 
-  @State private var showAnswers = false
+  @Binding var showAnswers: Bool
   @State private var progress = 0.0
 
   func adjustedHeight(_ size: CGSize) -> Double {
@@ -17,7 +17,7 @@ struct PortraitView: View {
     return aspectRatio < 1.75 ? 0.85 * width : 1.0 * width
   }
 
-  func boardView() -> some View {
+  public var body: some View {
     VStack {
       Spacer()
         .frame(height: 12)
@@ -62,10 +62,7 @@ struct PortraitView: View {
       HStack {
         Spacer()
 
-        PrimaryActionButton(
-          game: $game,
-          showAnswers: $showAnswers
-        )
+        PrimaryActionButton(game: $game)
         .frame(maxWidth: 150)
 
         Spacer()
@@ -80,37 +77,6 @@ struct PortraitView: View {
       }
       .padding([.top, .bottom], 8)
       .padding([.leading, .trailing], 24)
-    }
-  }
-
-  var body: some View {
-    Group {
-      if showAnswers {
-        AnswerDetailsView(
-          closeAction: {
-            withAnimation {
-              showAnswers = false
-            }
-          },
-          showAnswers: $showAnswers,
-          statistics: game.statistics,
-          userAnswers: game.answers,
-          systemAnswers: game.systemAnswers,
-        )
-        .transition(
-          .asymmetric(
-            insertion: .push(from: .trailing),
-            removal: .push(from: .leading)
-          )
-        )
-      } else {
-        boardView()
-      }
-    }
-    .onChange(of: game.mode) {
-      if game.mode == .review {
-        showAnswers = true
-      }
     }
   }
 }

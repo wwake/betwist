@@ -1,17 +1,18 @@
 import model
 import SwiftUI
 
-struct LandscapeView: View {
+public struct LandscapeView: View {
   var geometry: GeometryProxy
   @Binding var game: Game
   var collectWord: () -> Void
   var handleSelection: (Location) -> Void
   var showOnboarding: () -> Void
 
-  @State private var showAnswers = false
+  @Binding var showAnswers: Bool
+
   @State private var progress = 0.0
 
-  func boardView() -> some View {
+  public var body: some View {
     HStack(alignment: .top) {
       VStack {
         AnswerInProgressView(
@@ -37,13 +38,10 @@ struct LandscapeView: View {
           Spacer()
 
           HStack {
-            PrimaryActionButton(
-              game: $game,
-              showAnswers: $showAnswers
-            )
+            PrimaryActionButton(game: $game)
 
             Button("Show Words...") {
-              print("show words")
+              showAnswers = true
             }
             .capsuled()
           }
@@ -63,29 +61,5 @@ struct LandscapeView: View {
       .zIndex(5)
     }
     .padding(.top, 20)
-  }
-
-  var body: some View {
-    if showAnswers {
-      AnswerDetailsView(
-        closeAction: {
-          withAnimation {
-            showAnswers = false
-          }
-        },
-        showAnswers: $showAnswers,
-        statistics: game.statistics,
-        userAnswers: game.answers,
-        systemAnswers: game.systemAnswers,
-      )
-      .transition(
-        .asymmetric(
-          insertion: .push(from: .trailing),
-          removal: .push(from: .leading)
-        )
-      )
-    } else {
-      boardView()
-    }
   }
 }
