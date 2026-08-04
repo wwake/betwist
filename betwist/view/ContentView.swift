@@ -70,7 +70,7 @@ public struct ContentView: View {
   }
 
   fileprivate func boardView(_ geometry: GeometryProxy) -> some View {
-    VStack {
+    Group {
       switch (horizontalSizeClass, verticalSizeClass, orientation(geometry)) {
       case (.regular, .regular, .landscape):
         LandscapeView(

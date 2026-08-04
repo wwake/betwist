@@ -37,16 +37,9 @@ public struct LandscapeView: View {
 
           Spacer()
 
-          HStack {
-            PrimaryActionButton(game: $game)
-
-            Button("Show Words...") {
-              showAnswers = true
-            }
-            .capsuled()
-          }
-          .font(.title)
-          .padding([.bottom], 20)
+          GameButtons(game: $game, showAnswers: $showAnswers)
+            .font(.title)
+            .padding([.bottom], 20)
         }
       }
       .padding(.top, 64)
