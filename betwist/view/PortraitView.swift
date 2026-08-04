@@ -84,26 +84,33 @@ struct PortraitView: View {
   }
 
   var body: some View {
-    if showAnswers {
-      AnswerDetailsView(
-        closeAction: {
-          withAnimation {
-            showAnswers = false
-          }
-        },
-        showAnswers: $showAnswers,
-        statistics: game.statistics,
-        userAnswers: game.answers,
-        systemAnswers: game.systemAnswers,
-      )
-      .transition(
-        .asymmetric(
-          insertion: .push(from: .trailing),
-          removal: .push(from: .leading)
+    Group {
+      if showAnswers {
+        AnswerDetailsView(
+          closeAction: {
+            withAnimation {
+              showAnswers = false
+            }
+          },
+          showAnswers: $showAnswers,
+          statistics: game.statistics,
+          userAnswers: game.answers,
+          systemAnswers: game.systemAnswers,
         )
-      )
-    } else {
-      boardView()
+        .transition(
+          .asymmetric(
+            insertion: .push(from: .trailing),
+            removal: .push(from: .leading)
+          )
+        )
+      } else {
+        boardView()
+      }
+    }
+    .onChange(of: game.mode) {
+      if game.mode == .review {
+        showAnswers = true
+      }
     }
   }
 }

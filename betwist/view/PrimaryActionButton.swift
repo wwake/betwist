@@ -18,7 +18,6 @@ struct PrimaryActionButton: View {
         case .play:
           Button("End Game...") {
             game.over()
-            showAnswers = true
           }
           .capsuled(.red)
 
